@@ -6,7 +6,7 @@
     <controls>
         <control type="group" id="9001">
             <visible>!Window.IsActive(infodialog)</visible>
-            <visible>IsEmpty(Window(home).Property(morefullscreeninfo)) + !Control.IsVisible(9004) + !Control.IsVisible(9005)</visible>
+            <visible>IsEmpty(Window(home).Property(morefullscreeninfo)) + !Control.IsVisible(9004) + !Control.IsVisible(9005) + !Control.IsVisible(9006)</visible>
             <animation type="Visible">
                 <effect type="fade" time="320" end="100" />
                 <effect type="slide" time="320" start="0,-135" end="0,0" tween="cubic" />
@@ -62,8 +62,8 @@
                 <include>Neon_Topbar</include>
             </control>
             <control type="label">
-                <posx>510</posx>
-                <posy>14</posy>
+                <posx>520</posx>
+                <posy>18</posy>
                 <width>900</width>
                 <height>68</height>
                 <align>center</align>
@@ -105,8 +105,8 @@
                         <visible>IsEmpty(VideoPlayer.Studio)</visible>
                     </control>
                     <control type="label">
-                        <posx>-5</posx>
-                        <posy>8</posy>
+                        <posx>5</posx>
+                        <posy>-5</posy>
                         <width>155</width>
                         <height>70</height>
                         <align>center</align>
@@ -117,32 +117,38 @@
                         <visible>IsEmpty(Control.GetLabel(76))</visible>
                     </control>
                 </control>
-                <control type="image">
-                    <posx>315</posx>
+                <control type="image" id="2117">
+                    <posx>325</posx>
                     <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[VideoRatingFlagVar,flags/rating/,.png]</texture>
                     <include>OSDFlagVars</include>
                     <visible>!VideoPlayer.Content(files)</visible>
                 </control>
                 <control type="image">
-                    <posx>1470</posx>
-                    <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+                    <posx>325</posx>
+                    <texture>$VAR[ColorFlagsRating]rating/MPAA_NR_Certificate_US.png</texture>
+                    <include>OSDFlagVars</include>
+                    <visible>!VideoPlayer.Content(files) + IsEmpty(Control.GetLabel(2117))</visible>
+                </control>				
+                <control type="image">
+                    <posx>1480</posx>
+                    <texture>$VAR[ColorFlagsAspectRatio]aspectratio/$INFO[VideoPlayer.VideoAspect,,.png]</texture>
                     <include>OSDFlagVars</include>
                     <animation effect="slide" end="-1305" condition="VideoPlayer.Content(files)">Conditional</animation>
                 </control>
                 <control type="image">
-                    <posx>1620</posx>
-                    <texture fallback="flags/resolution/defaultscreen.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+                    <posx>1600</posx>
+                    <texture fallback="flags/resolution/defaultscreen.png">$VAR[ColorFlagsResolution]resolution/$INFO[VideoPlayer.VideoResolution,,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
                 <control type="image">
-                    <posx>1770</posx>
-                    <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+                    <posx>1745</posx>
+                    <texture fallback="flags/audio/defaultsound.png">$VAR[ColorFlagsAudio]audio/$INFO[VideoPlayer.AudioCodec]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
             </control>
         </control>
         <control type="group" id="9002">
-            <visible>IsEmpty(Window(home).Property(morefullscreeninfo)) + !Control.IsVisible(9004) + !Control.IsVisible(9005)</visible>
+            <visible>IsEmpty(Window(home).Property(morefullscreeninfo)) + !Control.IsVisible(9004) + !Control.IsVisible(9005) + !Control.IsVisible(9006)</visible>
             <animation type="Visible">
                 <effect type="fade" time="320" end="100" />
                 <effect type="slide" time="320" start="0,135" end="0,0" tween="cubic" />
@@ -161,7 +167,56 @@
             </animation>
             <include condition="VideoPlayer.Content(livetv)">FullScreenInfoBarLiveTV</include>
             <include condition="!VideoPlayer.Content(livetv)">FullScreenInfoBar</include>
+            <control type="group">
+				<animation effect="slide" end="-1800,0" condition="VideoPlayer.Content(files)">Conditional</animation>
+				<visible>Skin.HasSetting(AudioSubFlag)</visible>
+			    <control type="image">
+                    <posx>1820</posx>
+                    <posy>1000</posy>
+					<width>30</width>
+					<height>30</height>
+					<aspectratio>keep</aspectratio>
+					<fadetime>IconCrossfadeTime2</fadetime>
+					<colordiffuse>white2</colordiffuse>
+					<texture fallback="">special://skin/extras/BigIcons/Subtitle.png</texture>
+					<visible>!IsEmpty(VideoPlayer.SubtitlesLanguage)</visible>
+                </control>
+                <control type="image">
+                    <posx>1820</posx>
+                    <posy>970</posy>
+					<width>30</width>
+					<height>30</height>
+					<aspectratio>keep</aspectratio>
+					<fadetime>IconCrossfadeTime2</fadetime>
+					<colordiffuse>white2</colordiffuse>
+					<texture fallback="">special://skin/extras/BigIcons/Speaker.png</texture>
+					<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
+					<visible>!Substring(VideoPlayer.AudioLanguage,und)</visible>
+                </control>				
+                <control type="image">
+                    <posx>1860</posx>
+                    <posy>970</posy>
+					<width>30</width>
+					<height>30</height>
+					<aspectratio>keep</aspectratio>
+					<fadetime>IconCrossfadeTime2</fadetime>
+					<colordiffuse>white2</colordiffuse>
+					<texture fallback="">$VAR[ColorFlagsLanguage]$INFO[VideoPlayer.AudioLanguage,,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>1860</posx>
+                    <posy>1000</posy>
+					<width>30</width>
+					<height>30</height>
+					<aspectratio>keep</aspectratio>
+					<fadetime>IconCrossfadeTime2</fadetime>
+					<colordiffuse>white2</colordiffuse>
+					<animation effect="fade" time="200">VisibleChange</animation>
+					<texture fallback="">$VAR[ColorFlagsLanguage]$INFO[VideoPlayer.SubtitlesLanguage,,.png]</texture>
+                </control>	
+			</control>									
         </control>
+        <include>AlaskaPausedLabel</include>
         <control type="group" id="9004">
             <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" end="-729,0" time="320" tween="quadratic">WindowClose</animation>
@@ -281,17 +336,28 @@
                     </control>
                 </control>
                 <!-- First Row -->
+                <control type="image" id="11465">
+                    <posx>10</posx>
+                    <posy>102</posy>
+                    <width>249</width>
+                    <height>57</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>$VAR[ColorFlagsRating]rating/info/$VAR[RatingFlagVar,,.png]</texture>
+                    <animation effect="fade" time="200">VisibleChange</animation>
+                    <colordiffuse>grey</colordiffuse>
+                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos)</visible>
+                </control>
                 <control type="image">
                     <posx>10</posx>
                     <posy>102</posy>
                     <width>249</width>
                     <height>57</height>
                     <aspectratio>keep</aspectratio>
-                    <texture fallback="flags/rating/info/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/info/,.png]</texture>
+                    <texture>$VAR[ColorFlagsRating]rating/MPAA_NR_Certificate_US.png</texture>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <colordiffuse>grey</colordiffuse>
-                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos)</visible>
-                </control>
+                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) + IsEmpty(Control.GetLabel(11465))</visible>
+                </control>				
                 <control type="group">
                     <visible>!VideoPlayer.Content(episodes)</visible>
                     <control type="label">
@@ -303,7 +369,7 @@
                         <label fallback="-">$INFO[VideoPlayer.Year]</label>
                         <font>Font_Bold42</font>
                         <textcolor>grey</textcolor>
-                    </control>
+                    </control>					
                     <control type="label">
                         <posx>272</posx>
                         <posy>136</posy>
@@ -327,16 +393,27 @@
                         <font>Font_Bold46</font>
                         <textcolor>grey</textcolor>
                     </control>
-                    <control type="image">
-                        <posx>285</posx>
-                        <posy>87</posy>
-                        <width>135</width>
-                        <height>90</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <colordiffuse>grey</colordiffuse>
-                    </control>
+					<control type="group">
+						<width>135</width>
+						<height>90</height>						
+						<control type="image" id="1156">
+							<posx>285</posx>
+							<posy>87</posy>
+							<aspectratio align="center">keep</aspectratio>
+							<texture>$VAR[ColorFlagsRating]rating/$VAR[RatingFlagVar,,.png]</texture>
+							<animation effect="fade" time="200">VisibleChange</animation>
+							<colordiffuse>grey</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>285</posx>
+							<posy>87</posy>
+							<aspectratio align="center">keep</aspectratio>
+							<texture>$VAR[ColorFlagsRating]rating/MPAA_NR_Certificate_US.png</texture>
+							<animation effect="fade" time="200">VisibleChange</animation>
+							<colordiffuse>grey</colordiffuse>
+							<visible>IsEmpty(Control.GetLabel(1156))</visible>
+						</control>
+					</control>						
                 </control>
                 <control type="group">
                     <posx>435</posx>
@@ -416,8 +493,8 @@
                         <visible>!IsEmpty(Control.GetLabel(800011))</visible>
                     </control>
                     <control type="label">
-                        <posx>291</posx>
-                        <posy></posy>
+                        <posx>310</posx>
+                        <posy>-8</posy>
                         <width>155</width>
                         <height>74</height>
                         <align>center</align>
@@ -677,7 +754,7 @@
             <animation effect="slide" start="0,1080" end="0,100" time="320" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" start="0,100" end="0,-1080" time="400" tween="quadratic">WindowClose</animation>
             <animation effect="slide" start="0,1080" end="0,100" time="320" tween="quadratic">VisibleChange</animation>
-            <visible>VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg + !Window.IsActive(infodialog) + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
+            <visible>!VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg + !Window.IsActive(infodialog) + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
             <control type="image">
                 <posx>260</posx>
                 <width>1400</width>
@@ -717,7 +794,7 @@
                 <control type="group">
                     <visible>IsEmpty(Window(home).Property(LiveTVShowEpgNext))</visible>
                     <control type="label">
-                        <posy>15</posy>
+                        <posy>-690</posy>
                         <width>1320</width>
                         <label>$INFO[VideoPlayer.Title]</label>
                         <font>Font_Reg57_Caps</font>
@@ -833,7 +910,7 @@
                     </control>
                 </control>
                 <control type="label">
-                    <posy>62</posy>
+                    <posy>-790</posy>
                     <width>1050</width>
                     <label>$INFO[VideoPlayer.ChannelName]</label>
                     <font>Font_Reg38</font>
@@ -891,7 +968,7 @@
                     <control type="image">
                         <posy>-10</posy>
                         <width>132</width>
-                        <height>90</height>
+                        <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture fallback="flags/source/defaultsource.png">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
                         <colordiffuse>FF7c7c7c</colordiffuse>
@@ -901,9 +978,9 @@
                         <include>Furniture_FlagUpright</include>
                     </control>
                     <control type="image">
-                        <posy>-18</posy>
+                        <posy>0</posy>
                         <width>161</width>
-                        <height>109</height>
+                        <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
                         <colordiffuse>FF7c7c7c</colordiffuse>
@@ -922,9 +999,9 @@
                         <include>Furniture_FlagUpright</include>
                     </control>
                     <control type="image">
-                        <posy>-10</posy>
+                        <posy>0</posy>
                         <width>132</width>
-                        <height>90</height>
+                        <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
                         <colordiffuse>FF7c7c7c</colordiffuse>
@@ -943,5 +1020,167 @@
                 </control>
             </control>
         </control>
+		
+		<!-- New DialogInfo for LiveTV -->
+		<control type="group" id="9006">
+            <animation effect="slide" start="0,1080" end="0,60" time="400" easing="out" tween="back">WindowOpen</animation>
+            <animation effect="slide" start="0,60" end="0,1080" time="400" easing="in" tween="back">WindowClose</animation>
+            <visible>VideoPlayer.Content(LiveTV) + !Window.IsActive(infodialog) + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
+            <control type="image">
+                <posx>260</posx>
+                <width>1400</width>
+                <height>800</height>
+                <texture>wall/wall_bg.png</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <animation effect="fade" end="95" condition="true">Conditional</animation>
+            </control>
+            <control type="group">
+                <posx>300</posx>
+                <posy>70</posy>
+                <width>1320</width>
+                <height>780</height> 
+				<control type="label"> <!-- Channel name -->
+                    <posy>-790</posy>
+                    <width>1050</width>
+                    <label>$INFO[VideoPlayer.ChannelName]</label>
+                    <font>Font_Reg38</font>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
+                </control>
+                <control type="image"> <!-- pvr line -->
+                    <posy>84</posy>
+                    <width>1320</width>
+                    <height>1</height>
+                    <texture>new_pvr/osd_back_pvr_line_white.png</texture>
+                    <colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
+                </control>
+				<control type="image"> <!-- Logo background -->
+                    <posx>1050</posx>
+                    <posy>-20</posy>
+                    <width>250</width>
+                    <height>200</height>
+                    <texture>pvr/bg_channel_icon.png</texture>
+					<align>center</align>
+                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+					<visible>false</visible>
+                </control>
+                <control type="image"> <!-- Channel logo -->
+                    <posx>1050</posx>
+                    <posy>100</posy>
+                    <width>200</width>
+                    <height>200</height>
+                    <aspectratio>keep</aspectratio>
+					<align>center</align>
+                    <texture>$INFO[VideoPlayer.Cover]</texture>
+					<visible>IsEmpty(VideoPlayer.PlotOutline)</visible>
+                </control>
+				<control type="image"> <!-- Show\Movie poster -->
+                    <posx>1050</posx>
+                    <posy>100</posy>
+                    <width>250</width>
+                    <height>440</height>
+					<align>center</align>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[VideoPlayer.PlotOutline]</texture>
+					<visible>!IsEmpty(VideoPlayer.PlotOutline)</visible>
+                </control>
+                <control type="group">
+                    <visible>IsEmpty(Window(home).Property(LiveTVShowEpgNext))</visible>
+                    <control type="label">
+                        <posy>-690</posy>
+                        <width>1320</width>
+                        <label>$INFO[VideoPlayer.Title]</label>
+                        <font>Font_Reg57</font>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="label">
+                        <posy>90</posy>
+                        <width>1000</width>
+                        <height>40</height>
+                        <label fallback="31006">$INFO[VideoPlayer.Genre]</label>
+                        <font>Font_Reg34_Caps</font>
+                        <textcolor>grey</textcolor>
+                    </control>
+                    <control type="textbox">
+                        <posx>4</posx>
+                        <posy>135</posy>
+                        <width>1000</width>
+                        <height>445</height>
+                        <label fallback="31006">$INFO[VideoPlayer.Plot]</label>
+                        <font>Font_Reg35</font>
+                        <pagecontrol>60</pagecontrol>
+                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
+                        <visible>!Control.IsVisible(50)</visible>
+                    </control>
+                </control>
+                <control type="group">
+                    <visible>!IsEmpty(Window(home).Property(LiveTVShowEpgNext))</visible>
+                    <control type="label">
+                        <posy>15</posy>
+                        <width>1320</width>
+                        <label>$LOCALIZE[19031]: $INFO[VideoPlayer.NextTitle]</label>
+                        <font>Font_Reg57_Caps</font>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="label">
+                        <posy>85</posy>
+                        <width>1000</width>
+                        <height>85</height>
+                        <label fallback="31006">$INFO[VideoPlayer.NextGenre]</label>
+                        <font>Font_Reg34_Caps</font>
+                        <textcolor>grey</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>180</posx>
+                        <posy>167</posy>
+                        <width>750</width>
+                        <height>44</height>
+                        <label>$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime]</label>
+                        <font>Font_Reg30</font>
+                    </control>
+                    <control type="textbox">
+                        <posx>4</posx>
+                        <posy>310</posy>
+                        <width>1320</width>
+                        <height>350</height>
+                        <label fallback="31006">$INFO[VideoPlayer.NextPlot]</label>
+                        <font>Font_Reg35</font>
+                        <pagecontrol>60</pagecontrol>
+                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
+                        <visible>!Control.IsVisible(50)</visible>
+                    </control>
+                </control>               
+                <control type="togglebutton" id="9000">
+                    <posy>640</posy>
+                    <width>1320</width>
+                    <height>50</height>
+                    <textoffsetx>0</textoffsetx>
+                    <textoffsety>4</textoffsety>
+                    <align>center</align>
+                    <aligny>top</aligny>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <alttexturefocus>-</alttexturefocus>
+                    <alttexturenofocus>-</alttexturenofocus>
+                    <label>$LOCALIZE[31075]</label>
+                    <altlabel>$LOCALIZE[31075]</altlabel>
+                    <font>Font_Reg22</font>
+                    <textcolor>grey</textcolor>
+                    <onleft>StepBack</onleft>
+                    <onright>StepForward</onright>
+                    <onup>BigStepForward</onup>
+                    <ondown>BigStepBack</ondown>
+                    <onclick condition="IsEmpty(Window(home).Property(LiveTVShowEpgNext))">SetProperty(LiveTVShowEpgNext,1,home)</onclick>
+                    <onclick condition="!IsEmpty(Window(home).Property(LiveTVShowEpgNext))">ClearProperty(LiveTVShowEpgNext,home)</onclick>
+                    <visible>false</visible>
+					<!--<visible>!IsEmpty(VideoPlayer.NextTitle)</visible>-->
+                </control>
+            </control>
+        </control>
+		
+		<!-- Include FullScreenInfoBarLiveTV for LiveTV -->
+		<control type="group" id="9007"> 
+            <visible>VideoPlayer.Content(LiveTV) + Control.IsVisible(9006)</visible>
+            <include condition="VideoPlayer.Content(livetv)">FullScreenInfoBarLiveTV</include>
+		</control>
     </controls>
 </window>

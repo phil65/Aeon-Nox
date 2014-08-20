@@ -2532,6 +2532,18 @@
         <value condition="Control.IsVisible(13) + !StringCompare(Container(13).ListItem.Icon,DefaultVideo.png)">$INFO[Container(13).ListItem.Icon]</value>
         <value>special://skin/backgrounds/fallback_record.jpg</value>
     </variable>
+	<variable name="LiveTvModOptionsClickVar">
+		<value condition="IsEmpty(Skin.String(LiveTV.EpgViewChannels))">Skin.SetString(LiveTV.EpgViewChannels,1)</value>
+		<value condition="StringCompare(Skin.String(LiveTV.EpgViewChannels),1)">Skin.SetString(LiveTV.EpgViewChannels,2)</value>
+		<value condition="StringCompare(Skin.String(LiveTV.EpgViewChannels),2)">Skin.Reset(LiveTV.EpgViewChannels)</value>
+	</variable>
+	<variable name="LiveTvModOptionsLabelVar">
+		<value condition="StringCompare(Skin.String(LiveTV.EpgViewChannels),1)">Icon only</value>
+		<value condition="StringCompare(Skin.String(LiveTV.EpgViewChannels),2)">Name &amp; Icon</value>
+		<value>Name only</value>
+	</variable>
+
+    
     <variable name="PlayerArtworkVar">
         <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>
