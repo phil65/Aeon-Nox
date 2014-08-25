@@ -4,7 +4,7 @@
     <onload>ClearProperty(Logo,home)</onload>
     <onload>ClearProperty(Shout.Count,home)</onload>
     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,artistname=$INFO[ListItem.Artist])</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album]])</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album])</onload>
     <onload condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onload>
     <onload condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onload>
     <onunload condition="System.HasAddon(script.artistslideshow)">clearProperty(ArtistSlideshow.ExternalCall)</onunload>
