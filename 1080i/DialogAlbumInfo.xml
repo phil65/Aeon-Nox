@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol>40</defaultcontrol>
-    <onload>ClearProperty(Logo,home)</onload>
-    <onload>ClearProperty(Shout.Count,home)</onload>
     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,artistname=$INFO[ListItem.Artist])</onload>
     <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album])</onload>
-    <onload condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onload>
-    <onload condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onload>
-    <onunload condition="System.HasAddon(script.artistslideshow)">clearProperty(ArtistSlideshow.ExternalCall)</onunload>
-    <animation type="WindowOpen" reversible="false">
-        <effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />
-        <effect type="fade" end="100" time="200" />
-    </animation>
-    <animation type="WindowClose" reversible="false">
-        <effect type="fade" start="100" end="0" time="240" />
-        <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-    </animation>
+    <include>Animation_OpenCloseZoom_New</include>
     <controls>
            <control type="button" id="9023">
             <include>HiddenObject</include>

@@ -54,7 +54,6 @@
             <visible>!Container.Content()</visible>
             <!--             <visible>!SubString(ListItem.FolderPath,videodb://movies/sets/,left)</visible>
  -->
-            <visible>!SubString(ListItem.FolderPath,videodb://movies/sets/,left) | skin.hassetting(backendmode)</visible>
             <!--             <visible>!SubString(Container.FolderPath,library://,left)</visible> -->
             <visible>!Stringcompare(ListItem.Label,..)</visible>
             <visible>!Container.Content(years)</visible>
@@ -218,7 +217,7 @@
                     </animation>
                 </control>
             </control>
-                <include condition="skin.hassetting(backendmode)">FloorSetDiscArt</include>
+                <include>FloorSetDiscArt</include>
             <control type="group">
                 <control type="button" id="7000">
                     <include>HiddenObject</include>
