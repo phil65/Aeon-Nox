@@ -1032,6 +1032,128 @@
                     <control type="group" id="10001">
                         <posx>131</posx>
                         <posy>91</posy>
+                      <control type="list" id="10003">
+                            <posx>-5</posx>
+                            <posy>-5</posy>
+                            <width>380</width>
+                            <height>560</height>
+                            <onup>10012</onup>
+                            <ondown>10012</ondown>
+                            <onleft>9010</onleft>
+                            <onright>10010</onright>
+                            <orientation>vertical</orientation>
+                            <focusposition>0</focusposition>
+                            <scrolltime tween="quadratic">200</scrolltime>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout width="366" height="140">
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <aspectratio aligny="center">scale</aspectratio>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <bordersize>5</bordersize>
+                                </control>
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <colordiffuse>60FFFFFF</colordiffuse>
+                                </control>
+                                <control type="group">
+                                    <posy>5</posy>
+                                    <animation effect="fade" end="80" start="100" time="0" condition="true">Conditional</animation>
+                                    <control type="label">
+                                        <posy>5</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posy>40</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posy>75</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="366" height="140">
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <aspectratio aligny="center">scale</aspectratio>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <bordersize>5</bordersize>
+                                </control>
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <colordiffuse>60FFFFFF</colordiffuse>
+                                </control>
+                                <control type="group">
+                                    <posy>5</posy>
+                                    <animation effect="fade" end="80" start="100" time="0" condition="!Control.HasFocus(7003)">Conditional</animation>
+                                    <control type="label">
+                                        <posy>5</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>white2</textcolor>
+                                        <scroll>true</scroll>
+                                    </control>
+                                    <control type="label">
+                                        <posy>40</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>white2</textcolor>
+                                        <scroll>true</scroll>
+                                    </control>
+                                    <control type="label">
+                                        <posy>75</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                </control>
+                                <control type="image">
+                                    <posy>-5</posy>
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture>common/blank.png</texture>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                    <bordertexture border="5">views/addonwall_select.png</bordertexture>
+                                    <bordersize>5</bordersize>
+                                    <visible>Control.HasFocus(7003)</visible>
+                                </control>
+                            </focusedlayout>
+                            <content>
+                                <include>MusicVideosItems</include>
+                            </content>
+                        </control>
+                        
                         <control type="label">
                             <posx>-100</posx>
                             <posy>-15</posy>
@@ -1043,6 +1165,7 @@
                             <textcolor>$VAR[TitleColorVar]</textcolor>
                         </control>
                         <control type="group">
+                            <visible>false</visible>
                             <posx>-90</posx>
                             <posy>27</posy>
                             <control type="image">
@@ -1083,7 +1206,7 @@
                             <ondown>10012</ondown>
                             <onback>Dialog.Close(1154)</onback>
                             <onright>11010</onright>
-                            <onleft>9010</onleft>
+                            <onleft>10003</onleft>
                             <orientation>vertical</orientation>
                             <pagecontrol>60</pagecontrol>
                             <focusposition>0</focusposition>
