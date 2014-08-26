@@ -121,6 +121,135 @@
         <posy>66</posy>
         <include>Dialogs_LabelVars</include>
     </include>
+    <include name="VenueSidebarLayouts">
+                <itemlayout width="500" height="120">
+                <control type="image">
+                    <width>500</width>
+                    <height>120</height>
+                    <texture border="3">settings/listselect_nf.png</texture>
+                </control>
+                <control type="image">
+                    <posy>5</posy>
+                    <posx>15</posx>
+                    <width>120</width>
+                    <height>110</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture fallback="DefaultArtist.png">$INFO[ListItem.Property(Venue_Image)]</texture>
+                </control>
+                <control type="label">
+                    <posx>150</posx>
+                    <posy>5</posy>
+                    <width>345</width>
+                    <height>35</height>
+                    <font>Font_Reg26</font>
+                    <textcolor>white2</textcolor>
+                    <label>[B]$INFO[ListItem.Property(Name)][/B]</label>
+                </control>
+                <control type="textbox">
+                    <posx>150</posx>
+                    <posy>40</posy>
+                    <width>345</width>
+                    <height>110</height>
+                    <align>left</align>
+                    <font>Font_Reg31_Caps</font>
+                    <textcolor>white2</textcolor>
+                    <label>$LOCALIZE[31926]</label>
+                    <visible>Stringcompare(ListItem.Property(EventName),Window(home).Property(TempLocation))</visible>
+                </control>
+                <control type="group">
+                <visible>!Stringcompare(ListItem.Property(EventName),Window(home).Property(TempLocation))</visible>
+                <control type="label">
+                    <posx>150</posx>
+                    <posy>90</posy>
+                    <width>345</width>
+                    <height>35</height>
+                    <font>Font_Reg22_Caps</font>
+                    <textcolor>grey2</textcolor>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="textbox">
+                    <posy>35</posy>
+                    <posx>150</posx>
+                    <width>305</width>
+                    <height>65</height>
+                    <font>Font_Reg26</font>
+                    <align>left</align>
+                    <textcolor>grey2</textcolor>
+                    <label>$INFO[ListItem.Property(EventName)]</label>
+                </control>
+                </control>
+
+            </itemlayout>
+            <focusedlayout width="500" height="120">
+                <control type="image">
+                    <width>500</width>
+                    <height>120</height>
+                    <texture border="3">settings/listselect_nf.png</texture>
+                    <visible>!Control.HasFocus(9011)</visible>
+                </control>
+                <control type="image">
+                    <width>500</width>
+                    <height>120</height>
+                    <texture border="8">views/tripanel/listselect_fo.png</texture>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <include>PanelGlowFade</include>
+                    <visible>Control.HasFocus(9011)</visible>
+                </control>
+                <control type="image">
+                    <posy>5</posy>
+                    <posx>15</posx>
+                    <width>120</width>
+                    <height>110</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture fallback="DefaultArtist.png">$INFO[ListItem.Property(Venue_Image)]</texture>
+                </control>
+                <control type="label">
+                    <posx>150</posx>
+                    <posy>5</posy>
+                    <width>345</width>
+                    <height>35</height>
+                    <font>Font_Reg26</font>
+                    <textcolor>white2</textcolor>
+                    <label>[B]$INFO[ListItem.Property(Name)][/B]</label>
+                </control>
+                <control type="textbox">
+                    <posx>150</posx>
+                    <posy>40</posy>
+                    <width>345</width>
+                    <height>110</height>
+                    <align>left</align>
+                    <font>Font_Reg31_Caps</font>
+                    <textcolor>white2</textcolor>
+                    <label>$LOCALIZE[31926]</label>
+                    <visible>Stringcompare(ListItem.Property(EventName),Window(home).Property(TempLocation))</visible>
+                </control>
+                <control type="group">
+                <visible>!Stringcompare(ListItem.Property(EventName),Window(home).Property(TempLocation))</visible>
+                <control type="label">
+                    <posx>150</posx>
+                    <posy>90</posy>
+                    <width>345</width>
+                    <height>35</height>
+                    <font>Font_Reg22_Caps</font>
+                    <textcolor>grey2</textcolor>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="textbox">
+                    <posy>35</posy>
+                    <posx>150</posx>
+                    <width>305</width>
+                    <height>65</height>
+                    <font>Font_Reg26</font>
+                    <align>left</align>
+                    <textcolor>grey2</textcolor>
+                    <label>$INFO[ListItem.Property(EventName)]</label>
+                </control>
+                </control>
+                
+            </focusedlayout>
+    
+    
+    </include>
     <include name="ConcertLayouts">
                    <itemlayout height="280" width="700">
                         <control type="image">
@@ -311,9 +440,8 @@
         <focusedcolor>white6</focusedcolor>
         <onleft>ClearProperty(viewtypeselect,home)</onleft>
         <onleft>ActivateWindow(1121)</onleft>
-        <radiowidth>65</radiowidth>
-        <radioposx>8</radioposx>
-        <radioposy>4</radioposy>
+        <radiowidth>98</radiowidth>
+        <radioposx>308</radioposx>
     </include>
     <include name="Objects_MediaMenuButtonAround">
         <width>400</width>
@@ -597,7 +725,7 @@
         <height>74</height>
         <textoffsetx>30</textoffsetx>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
         <radioposx>1300</radioposx>
@@ -607,7 +735,7 @@
         <height>74</height>
         <textoffsetx>30</textoffsetx>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
         <radioposx>565</radioposx>
@@ -617,7 +745,7 @@
         <height>74</height>
         <textoffsetx>30</textoffsetx>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
     </include>
@@ -626,7 +754,7 @@
         <height>74</height>
         <textoffsetx>30</textoffsetx>
         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texturenofocus>
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
     </include>
@@ -747,8 +875,6 @@
         <onload>Skin.SetString(font_PVR,FF6db9e5)</onload>
         <onload>Skin.SetString(BackgroundDarkness,80FFFFFF)</onload>
         <onload>Skin.SetString(LibraryStructure,2)</onload>
-        <onload>Skin.SetString(TriPanelSquarePosition,1)</onload>
-        <onload>Skin.SetString(TriPanelPosition,1)</onload>
         <onload>Skin.SetBool(alternativerss)</onload>
         <onload>Skin.SetBool(DisableGlowbar)</onload>
         <onload>Skin.SetBool(colortext)</onload>

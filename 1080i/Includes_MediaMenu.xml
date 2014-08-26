@@ -130,10 +130,10 @@
             <selected>Control.HasFocus(16)</selected>
         </control>
         <control type="radiobutton" id="100">
-            <label>$LOCALIZE[31022]</label>
+            <label>$LOCALIZE[29800]</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Folder.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Folder.png</textureradiooff>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/book2.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/book2.png</textureradiooff>
             <selected>Control.HasFocus(100)</selected>
             <onclick>ReplaceWindow(MusicFiles)</onclick>
             <visible>Window.IsActive(MusicLibrary)</visible>
@@ -205,8 +205,8 @@
         <control type="radiobutton" id="7">
             <label>136</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/playlist.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/playlist.png</textureradiooff>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Format.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Format.png</textureradiooff>
             <selected>Control.HasFocus(7)</selected>
             <visible>!SubString(Container.FolderPath,special://musicplaylists/,left)</visible>
         </control>
@@ -261,8 +261,8 @@
         <control type="radiobutton" id="7">
             <label>13318</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ImageRec.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/ImageRec.png</textureradiooff>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Image.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Image.png</textureradiooff>
             <selected>Control.HasFocus(7)</selected>
         </control>
         <control type="radiobutton" id="9">
@@ -272,21 +272,13 @@
             <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/ButtonShuffle.png</textureradiooff>
             <selected>Control.HasFocus(9)</selected>
         </control>
-        <control type="radiobutton" id="1688">
-            <label>Show Images on Map</label>
-            <onclick>RunScript(script.maps.browser,folder=$INFO[Container.FolderPath])</onclick>
-            <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/WORLD.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/WORLD.png</textureradiooff>
-            <selected>Control.HasFocus(1688)</selected>
-        </control>
     </include>
     <include name="ViewtypeSettingsButton">
         <control type="radiobutton" id="1665">
             <label>$LOCALIZE[31171]</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Controlpanel.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Controlpanel.png</textureradiooff>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ControlPanel.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/ControlPanel.png</textureradiooff>
                     <selected>Control.HasFocus(1665)</selected>
             <onclick condition="Control.IsVisible(50)">SetProperty(actualViewtype,List,home)</onclick>
             <onclick condition="Control.IsVisible(52)">SetProperty(actualViewtype,Tripanel,home)</onclick>
@@ -494,8 +486,8 @@
                 <include condition="!Skin.HasSetting(hideoptions)">ViewtypeSettingsButton</include>
                 <control type="radiobutton" id="612">
 			<description>Go to playlist</description>
-                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/playlist.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/playlist.png</textureradiooff>
+                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Format.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Format.png</textureradiooff>
                     <label>13350</label>
                     <include>Objects_MediaMenuButtonIcons</include>
                     <selected>Control.HasFocus(612)</selected>
@@ -548,7 +540,7 @@
         </control>
     </include>
     <include name="MediaMenuIcons">
-        <posx>10</posx>
+        <left>10</left>
         <width>75</width>
         <height>75</height>
         <colordiffuse>white</colordiffuse>
