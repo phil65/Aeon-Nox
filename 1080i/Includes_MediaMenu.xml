@@ -456,7 +456,6 @@
                     <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Format.png</textureradioon>
                     <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Format.png</textureradiooff>
                     <selected>Control.HasFocus(3)</selected>
-                    <onleft>ClearProperty(viewtypeselect,home)</onleft>
                     <include>Objects_MediaMenuButtonIcons</include>
                     <visible>Control.IsEnabled(3)</visible>
                 </control>
@@ -575,6 +574,7 @@
             <textureradioon>defaulticons/DefaultFolderBack.png</textureradioon>
             <textureradiooff colordiffuse="grey">defaulticons/DefaultFolderBack.png</textureradiooff>
             <focusedcolor>white6</focusedcolor>
+            <visible>Skin.hasSetting(quicknav)</visible>
         </control>
     </include>
 </includes>
