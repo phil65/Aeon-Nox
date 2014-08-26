@@ -2,8 +2,8 @@
 <window>
     <defaultcontrol>40</defaultcontrol>
     <onload>ClearProperty(logo,home)</onload>
-    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,artistname=$INFO[ListItem.Artist])</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album])</onload>
+    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
            <control type="button" id="9023">
