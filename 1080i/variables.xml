@@ -1542,7 +1542,7 @@
         <value>common/puzzle_icon.png</value>
     </variable>
     <variable name="VideoInfoPosterVar">
-        <value condition="[[Control.HasFocus(601) + Stringcompare(Window(home).Property(ListType),Actors)] | Control.HasFocus(600)] + !IsEmpty(Container(600).ListItem.Thumb)">$INFO[Container(600).ListItem.Thumb]</value>
+        <value condition="[[Control.HasFocus(601) + Stringcompare(Window(home).Property(ListType),Actors)] | Control.HasFocus(600)] + !IsEmpty(Container(50).ListItem.Thumb)">$INFO[Container(50).ListItem.Thumb]</value>
         <value condition="Control.HasFocus(700) + !IsEmpty(Container(700).ListItem.Property(Poster))">$INFO[Container(700).ListItem.Property(Poster)]</value>
         <value condition="Control.HasFocus(701) + !IsEmpty(Container(701).ListItem.Property(Poster))">$INFO[Container(701).ListItem.Property(Poster)]</value>
         <value>$VAR[PosterVar]</value>
