@@ -2814,12 +2814,14 @@
                         <include>WidgetMenuLabel</include>
                         <onclick condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onclick>
                         <onclick condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onclick>
+                        <onclick>Dialog.Close(1165)</onclick>
                         <onclick>$VAR[InfoWidgetPlayOnclickVar]</onclick>
                         <visible>[!Substring(Window(home).Property(WidgetType),online) + !Substring(Window(home).Property(WidgetType),trending)] | !IsEmpty(Window(home).Property(Play))</visible>
                     </control>
                     <control type="button" id="5018">
                         <label>$LOCALIZE[13404] $INFO[Window(home).Property(PercentPlayed),(,)]</label>
                         <include>WidgetMenuLabel</include>
+                        <onclick>Dialog.Close(1165)</onclick>
                         <onclick>$INFO[Window(home).Property(Path)]</onclick>
                         <visible>!Substring(Window(home).Property(WidgetType),nextaired)</visible>
                         <visible>!IsEmpty(Window(home).Property(DBID)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
@@ -3504,6 +3506,7 @@
                         <onclick condition="!Substring(Window(home).Property(WidgetType),artist)">$INFO[Window(home).Property(Path)]</onclick>
                         <onclick condition="Substring(Window(home).Property(WidgetType),addons)">RunAddon($INFO[Window(home).Property(Path)])</onclick>
                         <onclick condition="Substring(Window(home).Property(WidgetType),rss)">PlayMedia($ESCINFO[Window(home).Property(Path)])</onclick>
+                        <onclick>Dialog.Close(1165)</onclick>
                         <onclick>Dialog.Close(musicinformation)</onclick>
                         <visible>!IsEmpty(Window(home).Property(Path))</visible>
                     </control>
