@@ -61,7 +61,7 @@
                 </control>
                 
                 <control type="group">
-                    <control type="button" id="130">
+                    <control type="button" id="130" description="director_button">
                         <posx>875</posx>
                         <posy>242</posy>
                         <width>960</width>
@@ -76,7 +76,7 @@
                         <ondown>131</ondown>
                         <visible>!IsEmpty(ListItem.Director)</visible>
                     </control>
-                    <control type="button" id="131">
+                    <control type="button" id="131" description="writer_button">
                         <posx>875</posx>
                         <posy>283</posy>
                         <width>960</width>
@@ -97,8 +97,6 @@
                 <control type="group">
                     <posx>825</posx>
                     <posy>68</posy>
-                    <width>1042</width>
-                    <height>854</height>
                     <control type="image">
                         <posy>90</posy>
                         <width>1042</width>
@@ -532,7 +530,7 @@
                         <texture>defaulticons/DefaultActor.png</texture>
                     </control>
                     <control type="group">
-                   <control type="image" id="690">
+                   <control type="image" id="690"><!--loader-->
                         <posx>450</posx>
                         <posy>630</posy>
                         <width>74</width>
@@ -543,7 +541,7 @@
                         <visible>ControlGroup(5000).HasFocus(111) + !IsEmpty(Window(home).Property(extendedinfo_running))</visible>
                         <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
                     </control>
-                <control type="panel" id="700">
+                <control type="panel" id="700"><!--similarmovies-->
                     <posx>0</posx>
                     <posy>550</posy>
                     <width>1040</width>
@@ -656,9 +654,10 @@
                     </content>
                     </control>
 
-                        <control type="grouplist">
+                        <control type="group">
                         <visible>!Control.IsVisible(700) + !Control.IsVisible(690)</visible>
-
+                    <include>Animation_VisibleChange200</include>
+                    <control type="grouplist">
                             <orientation>vertical</orientation>
                             <posx>4</posx>
                             <posy>556</posy>
@@ -671,7 +670,7 @@
                                 <font>Font_Bold30</font>
                                 <visible>!IsEmpty(ListItem.Tagline)</visible>
                             </control>
-                            <control type="textbox">
+                            <control type="textbox" id="800" description="wide_textbox">
                                 <width>1016</width>
                                 <height>325</height>
                                 <align>left</align>
@@ -679,16 +678,16 @@
                                 <font>Font_Reg28_2</font>
                                 <pagecontrol>60</pagecontrol>
                                 <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
-                                <visible>IsEmpty(ListItem.Art(discart)) + IsEmpty(ListItem.Art(characterart)) + IsEmpty(ListItem.Art(tvshow.characterart))</visible>
+                                <visible>IsEmpty(ListItem.Art(discart)) + IsEmpty(ListItem.Art(characterart)) + [IsEmpty(ListItem.Art(tvshow.characterart)) | !Container.Content(episodes)]</visible>
                             </control>
-                            <control type="textbox">
+                            <control type="textbox" description="narrow_textbox">
                                 <width>746</width>
                                 <height>325</height>
                                 <label fallback="31003">$INFO[ListItem.Plot]</label>
                                 <font>Font_Reg28_2</font>
                                 <pagecontrol>60</pagecontrol>
                                 <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
-                                <visible>!IsEmpty(ListItem.Art(discart)) | !IsEmpty(ListItem.Art(characterart)) | !IsEmpty(ListItem.Art(tvshow.characterart))</visible>
+                                <visible>!Control.IsVisible(800)</visible>
                             </control>
                         </control>
                         <control type="image">
@@ -698,9 +697,42 @@
                             <height>315</height>
                             <aspectratio>keep</aspectratio>
                             <texture background="true">$VAR[CharacterArtVar]</texture>
-                            <visible>!Control.IsVisible(700) + !Control.IsVisible(690)</visible>
                         </control>
+                <control type="image">
+         <!--            <posx>825</posx>
+                    <posy>68</posy> -->
+                    <posx>785</posx>
+                    <posy>592</posy>
+                    <width>300</width>
+                    <height>300</height>
+                    <texture background="true">$INFO[ListItem.Art(discart)]</texture>
+                    <!--                 <visible>!ControlGroup(6000).HasFocus</visible>
+ -->
+                    <animation type="WindowOpen" reversible="false">
+                        <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
+                        <effect type="rotate" start="0" center="935,742" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
+                        <effect type="zoom" start="104" center="935,742" end="100" delay="2120" time="140" tween="quadratic" easing="out" />
+                    </animation>
+                    <animation type="WindowClose" reversible="false">
+                        <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
+                        <effect type="rotate" start="0" center="935,742" end="-720" time="700" tween="quadratic" easing="out" />
+                    </animation>
+                </control>
+                <control type="spincontrol" id="60">
+                    <posx>995</posx>
+                    <animation effect="slide" start="0,0" end="-260,0" time="0" condition="!Control.IsVisible(800)">Conditional</animation>
+                    <animation effect="slide" start="0,0" end="0,30" time="0" condition="!IsEmpty(ListItem.Tagline)">Conditional</animation>
+                    <posy>532</posy>
+                    <width>50</width>
+                    <height>88</height>
+                    <onup>5000</onup>
+                    <onleft>5000</onleft>
+                    <onright>5000</onright>
+                    <ondown>5000</ondown>
+                    <visible>!ControlGroup(6000).HasFocus</visible>
+                </control>
                     </control>
+                        </control>
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
@@ -872,39 +904,6 @@
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                     </control>
-                </control>
-                <control type="spincontrol" id="60">
-                    <posx>1820</posx>
-                    <animation effect="slide" start="0,0" end="-260,0" time="0" condition="!IsEmpty(ListItem.Art(discart)) | !IsEmpty(ListItem.Art(characterart)) | !IsEmpty(ListItem.Art(tvshow.characterart))">Conditional</animation>
-                    <animation effect="slide" start="0,0" end="0,30" time="0" condition="!IsEmpty(ListItem.Tagline)">Conditional</animation>
-                    <posy>600</posy>
-                    <width>50</width>
-                    <height>88</height>
-                    <onup>5000</onup>
-                    <onleft>5000</onleft>
-                    <onright>5000</onright>
-                    <ondown>5000</ondown>
-                    <visible>!ControlGroup(6000).HasFocus + !Control.IsVisible(700) + !Control.IsVisible(690)</visible>
-                </control>
-                <control type="image">
-                    <posx>1610</posx>
-                    <posy>660</posy>
-                    <width>300</width>
-                    <height>300</height>
-                    <visible>!Control.IsVisible(700) + !Control.IsVisible(690)</visible>
-                    <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                    <include>Animation_VisibleChange200</include>
-                    <!--                 <visible>!ControlGroup(6000).HasFocus</visible>
- -->
-                    <animation type="WindowOpen" reversible="false">
-                        <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
-                        <effect type="rotate" start="0" center="1760,810" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
-                        <effect type="zoom" start="104" center="1760,810" end="100" delay="2120" time="140" tween="quadratic" easing="out" />
-                    </animation>
-                    <animation type="WindowClose" reversible="false">
-                        <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
-                        <effect type="rotate" start="0" center="1760,810" end="-720" time="700" tween="quadratic" easing="out" />
-                    </animation>
                 </control>
                 <control type="button" id="600">
                     <posx>875</posx>
