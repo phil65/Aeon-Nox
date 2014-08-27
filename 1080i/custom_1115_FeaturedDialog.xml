@@ -630,21 +630,17 @@
                         <texture>common/DefaultSearch.png</texture>
                         <colordiffuse>white</colordiffuse>
                     </control>
-                    <control type="image">
+                    <control type="button" id="3001">
                         <posx>21</posx>
                         <posy>471</posy>
                         <width>1290</width>
                         <height>118</height>
-                        <texture border="10">featured/search_tile_fo.png</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Control.HasFocus(3001)</visible>
-                    </control>
-                    <control type="button" id="3001">
-                        <include>HiddenObject</include>
                         <onup>3012</onup>
                         <ondown>3012</ondown>
                         <onright>5001</onright>
                         <onleft>4003</onleft>
+                        <texturefocus colordiffuse="$VAR[ColorDiffuseVar]" border="10">featured/search_tile_fo.png</texturefocus>
+                        <texturenofocus>-</texturenofocus>
                         <onunfocus>ClearProperty(HomeSearch,Home)</onunfocus>
                         <onfocus>SetProperty(HomeSearch,1)</onfocus>
                         <onclick>RunScript(script.globalsearch)</onclick>
