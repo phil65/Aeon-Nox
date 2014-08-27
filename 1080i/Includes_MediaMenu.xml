@@ -491,8 +491,7 @@
                 </control>
             
                 <include condition="!Skin.HasSetting(hideoptions)">ViewtypeSettingsButton</include>
-                <control type="radiobutton" id="612">
-			<description>Go to playlist</description>
+                <control type="radiobutton" id="612" description="GoToPlaylist">
                     <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/playlist.png</textureradioon>
                     <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/playlist.png</textureradiooff>
                     <label>13350</label>
@@ -501,6 +500,15 @@
                     <onclick>FullScreen</onclick>
                     <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
                     <visible>!Window.IsVisible(MusicPlaylist) + !Window.IsVisible(VideoPlaylist)</visible>
+                </control>
+                <control type="radiobutton" id="613" description="GoFullScreen">
+                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Media2.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Media2.png</textureradiooff>
+                    <label>FullScreen Media</label>
+                    <include>Objects_MediaMenuButtonIcons</include>
+                    <selected>Control.HasFocus(613)</selected>
+                    <onclick>FullScreen</onclick>
+                    <visible>Player.HasMedia</visible>
                 </control>
             </control>
             <include>QuickNavLabel</include>
