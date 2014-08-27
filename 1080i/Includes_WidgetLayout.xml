@@ -2698,9 +2698,9 @@
         <control type="group">
             <control type="button" id="5055">
                 <include>HiddenObject</include>
-                <onfocus condition="Substring(Window(home).Property(WidgetType),movie) + System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,type=movie&amp;movieid=$INFO[Window(home).Property(DBID)])</onfocus>
-                <onfocus condition="Substring(Window(home).Property(WidgetType),musicvideo) + System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,type=musicvideo&amp;movieid=$INFO[Window(home).Property(DBID)])</onfocus>
-                <onfocus condition="Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),nextaired) + System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,type=episode&amp;movieid=$INFO[Window(home).Property(DBID)])</onfocus>
+                <onfocus condition="Substring(Window(home).Property(WidgetType),movie)">RunScript(script.extendedinfo,info=flags,type=movie&amp;id=$INFO[Window(home).Property(DBID)])</onfocus>
+                <onfocus condition="Substring(Window(home).Property(WidgetType),musicvideo)">RunScript(script.extendedinfo,info=flags,type=musicvideo&amp;id=$INFO[Window(home).Property(DBID)])</onfocus>
+                <onfocus condition="Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),nextaired)">RunScript(script.extendedinfo,info=flags,type=episode&amp;id=$INFO[Window(home).Property(DBID)])</onfocus>
                 <onfocus condition="Substring(Window(home).Property(WidgetType),images)">ClearProperty(PanelWidget2Info,home)</onfocus>
                 <onfocus condition="Substring(Window(home).Property(WidgetType),images)">ClearProperty(PanelWidgetInfo,home)</onfocus>
                 <onfocus condition="Substring(Window(home).Property(WidgetType),images)">SetFocus(22222)</onfocus>
