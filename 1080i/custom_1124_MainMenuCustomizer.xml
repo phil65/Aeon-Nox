@@ -6,8 +6,6 @@
     <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>Skin.SetString(widgetlist,$INFO[Control.GetLabel(11111)])</onunload>
     <onunload>Skin.SetString(widget2list,$INFO[Control.GetLabel(11112)])</onunload>
-    <onunload>Skin.SetString(backgroundlist,$INFO[Control.GetLabel(11113)])</onunload>
-    <onunload>Skin.SetString(submenulist,$INFO[Control.GetLabel(11114)])</onunload>
     <coordinates>
         <posx>0</posx>
         <posy>0</posy>
@@ -25,7 +23,7 @@
             <onfocus>Skin.Setstring(ItemToEdit.WidgetTitle,$ESCINFO[Container(9000).ListItem.Property(WidgetTitle)])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.Widget2Title,$ESCINFO[Container(9000).ListItem.Property(Widget2Title)])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.InfoLine,$INFO[Container(9000).ListItem.Property(InfoLine)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.SubMenu,$INFO[Container(9000).ListItem.Property(SubMenu)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.SubMenu,$INFO[Container(9000).ListItem.Property(submenuVisibility)])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(9000).ListItem.Property(DisableIcon)])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.Type,$INFO[Container(9000).ListItem.Property(Type)])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.Path,$ESCINFO[Container(9000).ListItem.Property(Path)])</onfocus>
@@ -198,23 +196,6 @@
             <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="zoom" end="80" center="960,520" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
             <include>Animation_OpenCloseZoom</include>
-            <!-- Submenu -->
-            <control type="group" id="9001">
-                <posx>240</posx>
-                <posy>609</posy>
-                <animation effect="fade" start="100" end="0" time="240" condition="!IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
-                <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
-                <control type="image">
-                    <posx>70</posx>
-                    <posy>3</posy>
-                    <width>1300</width>
-                    <height>87</height>
-                    <texture>$VAR[SubMenuImageVar]</texture>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                </control>
-                <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
-                <include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
-            </control>
             <!-- Home Menu Bar -->
             <control type="image">
                 <posy>453</posy>

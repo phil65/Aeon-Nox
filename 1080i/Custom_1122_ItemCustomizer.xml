@@ -18,7 +18,7 @@
     <controls>
         <control type="group">
             <posy>-40</posy>
-            <visible>!Window.IsActive(script-RSS_Editor-rssEditor.xml) + !Window.IsActive(1137) + !Window.IsActive(1150) + !Window.IsActive(1160) + !Window.IsActive(1162) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1144) + !Window.IsActive(1146) + !Window.IsActive(1155) + !Window.IsVisible(DialogKeyboard.xml)</visible>
+            <visible>!Window.IsActive(script-RSS_Editor-rssEditor.xml) + !Window.IsActive(1137) + !Window.IsActive(1160) + !Window.IsActive(1162) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1144) + !Window.IsActive(1146) + !Window.IsActive(1155) + !Window.IsVisible(DialogKeyboard.xml)</visible>
             <include>Animation_DialogPopupVisibleChange</include>
             <control type="image">
                 <posx>456</posx>
@@ -172,7 +172,7 @@
                     <control type="button" id="270">
                         <label>31704</label>
                         <include>Objects_CustomizerSettingsButton</include>
-                        <onclick>ActivateWindow(1150)</onclick>
+                        <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=$INFO[Skin.String(ItemToEdit.SubMenu)])</onclick>
                     </control>
                     <control type="button" id="28">
                         <label>31807</label>
