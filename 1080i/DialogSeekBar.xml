@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol>1</defaultcontrol>
-    <visible>[Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(videoosd) | Window.IsVisible(fullscreeninfo) | Window.IsActive(script-XBMC-Subtitles-main.xml)] + Window.IsVisible(fullscreenvideo)</visible>
-	<!--<visible>[Window.IsVisible(fullscreenvideo) + !Window.IsVisible(fullscreeninfo)] + [Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(videoosd) | Window.IsActive(script-XBMC-Subtitles-main.xml)]</visible>-->
+    <visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![VideoPlayer.Content(livetv) | Window.IsVisible(videoosd) | Window.IsVisible(fullscreeninfo) | Window.IsActive(SubtitleSearch)] + Window.IsVisible(fullscreenvideo)</visible>
     <coordinates>
         <posx>0</posx>
         <posy>0</posy>
@@ -10,7 +9,7 @@
     </coordinates>
     <controls>
         <control type="group">
-            <visible>!Skin.HasSetting(Show_Info_Paused) + !VideoPlayer.Content(LiveTV)</visible>
+            <visible>!Skin.HasSetting(Show_Info_Paused)</visible>
             <control type="group">
                 <visible>Player.Paused</visible>
                 <visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(movies)</visible>
@@ -85,48 +84,56 @@
                     <height>87</height>
                     <texture>osd/osd_progress_bar_back.png</texture>
                 </control>
-                <control type="progress">
+                <control type="progress" id="20">
                     <posx>645</posx>
                     <posy>57</posy>
                     <width>630</width>
                     <height>20</height>
+                    <texturebg>osd/seek/progress_back.png</texturebg>
+                    <lefttexture border="1">osd/seek/progresscache_left.png</lefttexture>
+                    <midtexture border="1">osd/seek/progresscache_mid.png</midtexture>
+                    <righttexture border="1">osd/seek/progresscache_right.png</righttexture>
                     <info>Player.ProgressCache</info>
                 </control>
-                <control type="progress" id="23">
+                <control type="progress" id="20">
                     <posx>645</posx>
                     <posy>57</posy>
                     <width>630</width>
                     <height>20</height>
+                    <texturebg>osd/seek/progresscache_back.png</texturebg>
+                    <lefttexture border="1">osd/seek/progress_left.png</lefttexture>
+                    <midtexture border="1">osd/seek/progress_mid.png</midtexture>
+                    <righttexture border="1">osd/seek/progress_right.png</righttexture>
                     <info>Player.Progress</info>
                 </control>
                 <control type="label">
-                    <posx>340</posx>
+                    <posx>630</posx>
                     <posy>45</posy>
                     <width>300</width>
                     <height>42</height>
-                    <font>Font_Reg19</font>
-                    <textcolor>osdseek</textcolor>
-                    <label>$INFO[Player.Time]</label>
                     <align>right</align>
+                    <label>$INFO[Player.Time]</label>
+                    <font>Font_Reg30_2</font>
+                    <textcolor>osdseek</textcolor>
                 </control>
                 <control type="label">
                     <posx>1290</posx>
                     <posy>45</posy>
                     <width>300</width>
                     <height>42</height>
-                    <font>Font_Reg19</font>
-                    <textcolor>osdseek</textcolor>
                     <label>$INFO[Player.Duration]</label>
+                    <font>Font_Reg30_2</font>
+                    <textcolor>osdseek</textcolor>
                     <visible>!Skin.HasSetting(PreferRemaining)</visible>
                 </control>
                 <control type="label">
-                    <posx>1275</posx>
+                    <posx>1281</posx>
                     <posy>45</posy>
                     <width>300</width>
                     <height>42</height>
-                    <font>Font_Reg19</font>
-                    <textcolor>osdseek</textcolor>
                     <label>$INFO[Player.TimeRemaining,- ]</label>
+                    <font>Font_Reg30_2</font>
+                    <textcolor>osdseek</textcolor>
                     <visible>Skin.HasSetting(PreferRemaining)</visible>
                 </control>
             </control>
@@ -182,21 +189,21 @@
                     <height>87</height>
                     <texture>osd/osd_bottom_bar.png</texture>
                 </control>
-				<control type="label" id="1">
-					<posx>-150</posx>
-					<width>748</width>
-					<height>42</height>
-					<align>right</align>
-					<font>Font_Reg22_Caps</font>
-					<textcolor>FF363636</textcolor>
-					<shadowcolor>88e5e5e5</shadowcolor>
-					<label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
-					<visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
-				</control>
+                <control type="label" id="1">
+                    <posx>668</posx>
+                    <width>748</width>
+                    <height>42</height>
+                    <align>right</align>
+                    <label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
+                    <font>Font_Reg33_Caps</font>
+                    <shadowcolor>88e5e5e5</shadowcolor>
+                    <textcolor>FF363636</textcolor>
+                    <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
+                </control>
             </control>
         </control>
         <control type="group">
-            <visible>Skin.HasSetting(Show_Info_Paused) + !VideoPlayer.Content(LiveTV)</visible>
+            <visible>Skin.HasSetting(Show_Info_Paused)</visible>
             <control type="group" id="4001">
                 <decscription>bottom bar</decscription>
                 <visible>[Player.Seeking | [Player.DisplayAfterSeek + [!IsEmpty(Player.SeekOffset) | !IsEmpty(Player.Chapter)]] | Player.Forwarding | Player.Rewinding] + ![Player.Paused|[Player.Paused+Player.Seeking] | [Player.Paused+Player.DisplayAfterSeek]]</visible>
@@ -218,7 +225,7 @@
                         <height>87</height>
                         <texture>osd/osd_progress_bar_back.png</texture>
                     </control>
-                    <control type="progress">
+                    <control type="progress" id="20">
                         <posx>645</posx>
                         <posy>57</posy>
                         <width>630</width>
@@ -229,7 +236,7 @@
                         <righttexture border="1">osd/seek/progresscache_right.png</righttexture>
                         <info>Player.ProgressCache</info>
                     </control>
-                    <control type="progress" id="23">
+                    <control type="progress" id="20">
                         <posx>645</posx>
                         <posy>57</posy>
                         <width>630</width>
@@ -241,33 +248,33 @@
                         <info>Player.Progress</info>
                     </control>
                     <control type="label">
-                        <posx>340</posx>
+                        <posx>630</posx>
                         <posy>45</posy>
                         <width>300</width>
                         <height>42</height>
-                        <font>Font_Reg19</font>
-                        <textcolor>osdseek</textcolor>
-                        <label>$INFO[Player.Time]</label>
                         <align>right</align>
+                        <label>$INFO[Player.Time]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>osdseek</textcolor>
                     </control>
                     <control type="label">
                         <posx>1290</posx>
                         <posy>45</posy>
                         <width>300</width>
                         <height>42</height>
-                        <font>Font_Reg19</font>
-                        <textcolor>osdseek</textcolor>
                         <label>$INFO[Player.Duration]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>osdseek</textcolor>
                         <visible>!Skin.HasSetting(PreferRemaining)</visible>
                     </control>
                     <control type="label">
-                        <posx>1275</posx>
+                        <posx>1281</posx>
                         <posy>45</posy>
                         <width>300</width>
                         <height>42</height>
-                        <font>Font_Reg19</font>
-                        <textcolor>osdseek</textcolor>
                         <label>$INFO[Player.TimeRemaining,- ]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>osdseek</textcolor>
                         <visible>Skin.HasSetting(PreferRemaining)</visible>
                     </control>
                 </control>
@@ -324,14 +331,14 @@
                         <texture>osd/osd_bottom_bar.png</texture>
                     </control>
                     <control type="label" id="1">
-                        <posx>-150</posx>
+                        <posx>668</posx>
                         <width>748</width>
                         <height>42</height>
                         <align>right</align>
-                        <font>Font_Reg22_Caps</font>
-                        <textcolor>FF363636</textcolor>
-                        <shadowcolor>88e5e5e5</shadowcolor>
                         <label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
+                        <font>Font_Reg33_Caps</font>
+                        <shadowcolor>88e5e5e5</shadowcolor>
+                        <textcolor>FF363636</textcolor>
                         <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                     </control>
                 </control>
@@ -443,20 +450,20 @@
                     <height>68</height>
                     <align>center</align>
                     <aligny>top</aligny>
-                    <font>Font_Reg19</font>
-                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[VideoPlayerSubTitleVar]</label>
+                    <font>Font_Reg30_2</font>
+                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <scroll>true</scroll>
                 </control>
                 <control type="image">
                     <posx>15</posx>
-                    <posy>30</posy>
+                    <posy>12</posy>
                     <texture fallback="flags/source/defaultsource.png">$VAR[VideoSourceFlagVar,flags/source/,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
                 <control type="group">
+                    <posy>12</posy>
                     <posx>165</posx>
-					<posy>30</posy>
                     <visible>!VideoPlayer.Content(files)</visible>
                     <control type="image" id="76">
                         <texture>$INFO[VideoPlayer.Studio,flags/studios/,.png]</texture>
@@ -468,8 +475,8 @@
                         <visible>IsEmpty(VideoPlayer.Studio)</visible>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
-                        <posy>-5</posy>
+                        <posx>-5</posx>
+                        <posy>8</posy>
                         <width>155</width>
                         <height>70</height>
                         <align>center</align>
@@ -480,36 +487,29 @@
                         <visible>IsEmpty(Control.GetLabel(76))</visible>
                     </control>
                 </control>
-                <control type="image" id="2117">
-                    <posx>325</posx>
-					<posy>30</posy>
-                    <texture>$VAR[ColorFlagsRating]rating/$VAR[VideoRatingFlagVar,,.png]</texture>
+                <control type="image">
+                    <posx>315</posx>
+                    <posy>12</posy>
+                    <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[VideoRatingFlagVar,flags/rating/,.png]</texture>
                     <include>OSDFlagVars</include>
-                    <visible>!VideoPlayer.Content(files) + !IsEmpty(VideoPlayer.mpaa)</visible>
+                    <visible>!VideoPlayer.Content(files)</visible>
                 </control>
                 <control type="image">
-                    <posx>325</posx>
-					<posy>30</posy>
-                    <texture>$VAR[ColorFlagsRating]rating/MPAA_NR_Certificate_US.png</texture>
-                    <include>OSDFlagVars</include>
-                    <visible>!VideoPlayer.Content(files) + IsEmpty(Control.GetLabel(2117))</visible>
-                </control>					
-                <control type="image">
-                    <posx>1480</posx>
-                    <posy>30</posy>
+                    <posx>1470</posx>
+                    <posy>12</posy>
                     <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
                     <include>OSDFlagVars</include>
                     <animation effect="slide" end="-1305" condition="VideoPlayer.Content(files)">Conditional</animation>
                 </control>
                 <control type="image">
-                    <posx>1600</posx>
-                    <posy>30</posy>
+                    <posx>1620</posx>
+                    <posy>12</posy>
                     <texture fallback="flags/resolution/defaultscreen.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
                 <control type="image">
-                    <posx>1745</posx>
-                    <posy>30</posy>
+                    <posx>1770</posx>
+                    <posy>12</posy>
                     <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
@@ -534,67 +534,7 @@
                     <effect type="slide" time="320" end="0,135" easing="in" tween="cubic" />
                 </animation>
                 <include>FullScreenInfoBar</include>
-				<control type="group">
-				<animation effect="slide" end="-1800,0" condition="VideoPlayer.Content(files)">Conditional</animation>
-				<visible>Skin.HasSetting(AudioSubFlag)</visible>
-			    <control type="image">
-                    <posx>1820</posx>
-                    <posy>1000</posy>
-					<width>30</width>
-					<height>30</height>
-					<aspectratio>keep</aspectratio>
-					<fadetime>IconCrossfadeTime2</fadetime>
-					<colordiffuse>white2</colordiffuse>
-					<texture fallback="">special://skin/extras/BigIcons/Subtitle.png</texture>
-					<visible>!IsEmpty(VideoPlayer.SubtitlesLanguage)</visible>
-                </control>
-                <control type="image">
-                    <posx>1820</posx>
-                    <posy>970</posy>
-					<width>30</width>
-					<height>30</height>
-					<aspectratio>keep</aspectratio>
-					<fadetime>IconCrossfadeTime2</fadetime>
-					<colordiffuse>white2</colordiffuse>
-					<texture fallback="">special://skin/extras/BigIcons/Speaker.png</texture>
-					<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
-					<visible>!Substring(VideoPlayer.AudioLanguage,und)</visible>
-                </control>				
-                <control type="image">
-                    <posx>1860</posx>
-                    <posy>970</posy>
-					<width>30</width>
-					<height>30</height>
-					<aspectratio>keep</aspectratio>
-					<fadetime>IconCrossfadeTime2</fadetime>
-					<colordiffuse>white2</colordiffuse>
-					<texture fallback="">$VAR[ColorFlagsLanguage]$INFO[VideoPlayer.AudioLanguage,,.png]</texture>
-                </control>
-                <control type="image">
-                    <posx>1860</posx>
-                    <posy>1000</posy>
-					<width>30</width>
-					<height>30</height>
-					<aspectratio>keep</aspectratio>
-					<fadetime>IconCrossfadeTime2</fadetime>
-					<colordiffuse>white2</colordiffuse>
-					<animation effect="fade" time="200">VisibleChange</animation>
-					<texture fallback="">$VAR[ColorFlagsLanguage]$INFO[VideoPlayer.SubtitlesLanguage,,.png]</texture>
-                </control>	
-			</control>	
-            </control>		
+            </control>
         </control>
-        <include>AlaskaPausedLabel</include>
-		
-		<!-- New LiveTV Infobar -->
-		<control type="group" id="0">
-			<posy>0</posy>
-			<animation effect="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
-			<animation effect="slide" time="400" start="0,0" end="0,200" easing="in" tween="cubic">WindowClose</animation>
-			<animation effect="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic">Visible</animation>
-			<animation effect="slide" time="400" start="0,0" end="0,200" easing="in" tween="cubic">Hidden</animation>
-			<visible>Player.ShowInfo + VideoPlayer.Content(LiveTV)</visible>
-			<include condition="VideoPlayer.Content(LiveTV)">FullScreenInfoBarLiveTV</include>
-		</control>
     </controls>
 </window>
