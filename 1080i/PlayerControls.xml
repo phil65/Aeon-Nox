@@ -97,35 +97,33 @@
                         <include>QuickNavContent</include>
                     </content>
                 </control>
-        <control type="radiobutton" id="9012">
+                <control type="radiobutton" id="9012">
                     <visible>!Skin.HasSetting(kioskmode)</visible>
                     <posx>1874</posx>
                     <posy>472</posy>
-            <width>60</width>
-            <height>115</height>
-            <align>center</align>
-            <radioposx>2</radioposx>
-            <radioposy>5</radioposy>
-            <radiowidth>45</radiowidth>
-            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
-            <texturenofocus border="8">-</texturenofocus>
-            <textureradioon>special://skin/extras/BigIcons/Gears.png</textureradioon>
-            <textureradiooff>special://skin/extras/BigIcons/ButtonStop.png</textureradiooff>
-            <selected>IsEmpty(Window(home).Property(quicknavsetup))</selected>
-            <label>-</label>
-            <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
-            <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
-            <onclick condition="!IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
-                        <onup>652</onup>
-                        <ondown>Dialog.Close(114)</ondown>
-                        <onright>SetFocus(9011,0)</onright>
-                        <onright>9011</onright>
-                        <onleft>SetFocus(9011,20)</onleft>
-                        <onleft>9011</onleft>
-            <visible>!Skin.HasSetting(kioskmode)</visible>
-        </control>
-                    
-                    
+                    <width>60</width>
+                    <height>115</height>
+                    <align>center</align>
+                    <radioposx>2</radioposx>
+                    <radioposy>5</radioposy>
+                    <radiowidth>45</radiowidth>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+                    <texturenofocus border="8">-</texturenofocus>
+                    <textureradioon>special://skin/extras/BigIcons/Gears.png</textureradioon>
+                    <textureradiooff>special://skin/extras/BigIcons/ButtonStop.png</textureradiooff>
+                    <selected>IsEmpty(Window(home).Property(quicknavsetup))</selected>
+                    <label>-</label>
+                    <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
+                    <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
+                    <onclick condition="!IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
+                    <onup>652</onup>
+                    <ondown>Dialog.Close(114)</ondown>
+                    <onright>SetFocus(9011,0)</onright>
+                    <onright>9011</onright>
+                    <onleft>SetFocus(9011,20)</onleft>
+                    <onleft>9011</onleft>
+                    <visible>!Skin.HasSetting(kioskmode)</visible>
+                </control>
                 <control type="button" id="810">
                     <include>HiddenObject</include>
                     <onfocus>SetFocus(9011)</onfocus>

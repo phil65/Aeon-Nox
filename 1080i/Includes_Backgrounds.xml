@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-        <include name="NodeFadeLabels">
+    <include name="NodeFadeLabels">
         <control type="fadelabel" id="4324">
             <pauseatend>7500</pauseatend>
             <width>11479</width>
@@ -30,12 +30,9 @@
             <visible>[Container.Content(tags) | Container.Content(directors) | Container.Content(actors) | Container.Content(genres) | Container.Content(studios) | Container.Content(countries) | Container.Content(years) | Container.Content(sets) | SubString(ListItem.FolderPath,videodb://movies/sets/,left)]</visible>
             <visible>!Stringcompare(ListItem.Label,..)</visible>
         </control>
-       
-        </include>
-        <include name="InteractiveNodeCases">
-
-        
-       <control type="group">
+    </include>
+    <include name="InteractiveNodeCases">
+        <control type="group">
             <animation effect="fade" time="600">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
             <visible>Skin.HasSetting(livenodecovers)</visible>
@@ -48,24 +45,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.2.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="25" end="5" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.2.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase2Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="25" end="5" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.2.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase2Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -74,24 +71,24 @@
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.3.Art(poster)))</visible>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="10" end="10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.3.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase3Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="10" end="10" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.3.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase3Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -100,24 +97,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.5.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="285" end="285" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.5.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase5Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="285" end="285" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.5.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase5Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -126,24 +123,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.6.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="75" end="75" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.6.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase6Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="75" end="75" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.6.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase6Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -152,24 +149,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.4.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="-35" end="-35" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.4.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase4Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="-35" end="-35" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.4.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase4Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -178,24 +175,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.8.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="-35" end="-35" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.8.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase8Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="-35" end="-35" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.8.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase8Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -204,24 +201,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.7.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="65" end="65" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.7.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase7Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="65" end="65" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.7.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase7Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -230,24 +227,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.9.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.9.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase9Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.9.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase9Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -256,24 +253,24 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.10.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="16" end="16" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.10.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase10Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="16" end="16" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.10.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase10Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -282,31 +279,29 @@
                     <visible>!IsEmpty(Window(home).Property(Detail.Movie.1.Art(poster)))</visible>
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <control type="group">
-                    <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="138,190" start="-65" end="-65" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.1.Art(poster))]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase1Var]p.png</texture>
-                    </control>
+                        <animation effect="zoom" start="180" end="180" center="138,190" time="0" tween="linear" condition="true">Conditional</animation>
+                        <animation effect="rotate" center="138,190" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+                        <control type="image">
+                            <posx>39</posx>
+                            <posy>9</posy>
+                            <width>223</width>
+                            <height>335</height>
+                            <fadetime>600</fadetime>
+                            <align>center</align>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Window(home).Property(Detail.Movie.1.Art(poster))]</texture>
+                        </control>
+                        <control type="image">
+                            <posy>-20</posy>
+                            <width>276</width>
+                            <height>380</height>
+                            <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase1Var]p.png</texture>
+                        </control>
                     </control>
                 </control>
             </control>
         </control>
-        
-        
-        </include>
+    </include>
     <include name="BackgroundFadeLabels">
         <control type="fadelabel" id="4324">
             <pauseatend>7500</pauseatend>
@@ -892,8 +887,6 @@
             <label>$INFO[Window(home).Property(TrendingMovies.20.Art(fanart))]</label>
             <visible>Stringcompare(Control.GetLabel(4322),trendingmovies)</visible>
         </control>
-        
-        
     </include>
     <include name="InteractiveCasesBackground">
         <control type="group">
@@ -1642,5 +1635,4 @@
             <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
         </control>
     </include>
-    
 </includes>

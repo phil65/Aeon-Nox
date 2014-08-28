@@ -289,106 +289,103 @@
         </control>
     </include>
     <include name="MovieDBLayouts">
-                <posx>177</posx>
-                <posy>145</posy>
-                <width>1200</width>
-                <height>930</height>
-                <aligny>center</aligny>
-                <scrolltime>200</scrolltime>
-                <onup>8993</onup>
-                <ondown>2020</ondown>
-                <onleft>8002</onleft>
-                <orientation>horizontal</orientation>
-                <itemlayout width="240" height="410">
-                    <control type="image">
-                        <posx>11</posx>
-                        <posy>30</posy>
-                        <width>193</width>
-                        <height>290</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                    </control>
-                    <control type="image">
-                        <posx>-8.5</posx>
-                        <posy>10.5</posy>
-                        <width>232</width>
-                        <height>328</height>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                        <bordersize>19.5</bordersize>
-                    </control>
-                    <control type="progress">
-                        <posx>15</posx>
-                        <posy>330</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="240" height="410">
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>214</width>
-                        <height>328</height>
-                        <texture border="8">views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                    <control type="progress">
-                        <posx>15</posx>
-                        <posy>330</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                    <control type="group">
-                        <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>193</width>
-                            <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>232</width>
-                            <height>328</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>214</width>
-                        <height>328</height>
-                        <texture border="6">views/addonwall_select.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                </focusedlayout>
-
-
-    
+        <posx>177</posx>
+        <posy>145</posy>
+        <width>1200</width>
+        <height>930</height>
+        <aligny>center</aligny>
+        <scrolltime>200</scrolltime>
+        <onup>8993</onup>
+        <ondown>2020</ondown>
+        <onleft>8002</onleft>
+        <orientation>horizontal</orientation>
+        <itemlayout width="240" height="410">
+            <control type="image">
+                <posx>11</posx>
+                <posy>30</posy>
+                <width>193</width>
+                <height>290</height>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                <fadetime>IconCrossfadeTime</fadetime>
+            </control>
+            <control type="image">
+                <posx>-8.5</posx>
+                <posy>10.5</posy>
+                <width>232</width>
+                <height>328</height>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
+                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                <bordersize>19.5</bordersize>
+            </control>
+            <control type="progress">
+                <posx>15</posx>
+                <posy>330</posy>
+                <width>190</width>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+                <height>13</height>
+                <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                <info>ListItem.Property(PercentPlayed)</info>
+                <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+            </control>
+        </itemlayout>
+        <focusedlayout width="240" height="410">
+            <control type="image">
+                <posy>10</posy>
+                <width>214</width>
+                <height>328</height>
+                <texture border="8">views/tripanel/listselect_fo.png</texture>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <animation effect="fade" time="280" reversible="false">Focus</animation>
+            </control>
+            <control type="progress">
+                <posx>15</posx>
+                <posy>330</posy>
+                <width>190</width>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+                <height>13</height>
+                <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                <info>ListItem.Property(PercentPlayed)</info>
+                <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+            </control>
+            <control type="group">
+                <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+                <control type="image">
+                    <posx>11</posx>
+                    <posy>30</posy>
+                    <width>193</width>
+                    <height>290</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                </control>
+                <control type="image">
+                    <posx>-8.5</posx>
+                    <posy>10.5</posy>
+                    <width>232</width>
+                    <height>328</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                    <bordersize>19.5</bordersize>
+                </control>
+            </control>
+            <control type="image">
+                <posy>10</posy>
+                <width>214</width>
+                <height>328</height>
+                <texture border="6">views/addonwall_select.png</texture>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <animation effect="fade" time="280" reversible="false">Focus</animation>
+            </control>
+        </focusedlayout>
     </include>
     <include name="Furniture_HomeNowPlayingVideo">
         <control type="group" id="8994">
@@ -2005,8 +2002,8 @@
                     <onright>8993</onright>
                     <include>NavigationWidget1</include>
                     <preloaditems>2</preloaditems>
-                            <autoscroll time="7000">!Control.HasFocus(8000)</autoscroll>
-                            <scrolltime tween="quadratic">800</scrolltime>
+                    <autoscroll time="7000">!Control.HasFocus(8000)</autoscroll>
+                    <scrolltime tween="quadratic">800</scrolltime>
                     <animation effect="fade" time="160" start="100" end="0" condition="Control.HasFocus(8020)">Conditional</animation>
                     <itemlayout height="34" width="450">
                         <control type="image">
@@ -2193,7 +2190,6 @@
         <item>
             <label>$LOCALIZE[31925]</label>
             <!--         <onclick>RunScript(script.extendedinfo,info=movielists,id=$INFO[Window(home).Property(ID)],silent=False)</onclick>-->
-
             <onclick condition="IsEmpty(Window(home).Property(DBID))">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],id=$INFO[Window(home).Property(ID)],type=movie,silent=False)</onclick>
             <onclick condition="!IsEmpty(Window(home).Property(DBID))">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],dbid=$INFO[Window(home).Property(DBID)],type=movie,silent=False)</onclick>
             <onclick>Dialog.Close(1165)</onclick>
@@ -2410,7 +2406,7 @@
                     <posy>31</posy>
                     <visible>Substring(Control.GetLabel(4321),featured)</visible>
                     <include>Animation_VisibleChange400</include>
-                        <control type="button" id="5010">
+                    <control type="button" id="5010">
                         <posx>26</posx>
                         <posy>-5</posy>
                         <width>624</width>
@@ -2418,31 +2414,31 @@
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <onleft>5012</onleft>
-                            <onright>5011</onright>
-                            <include>NavigationWidget1</include>
-                            <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,randommovies,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,randomalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5001).ListItem.Label],home)</onclick>
-                            <onclick>ActivateWindow(1140)</onclick>
-                        </control>
-                        <control type="button" id="5011">
+                        <onright>5011</onright>
+                        <include>NavigationWidget1</include>
+                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,randommovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,randomalbums,home)</onclick>
+                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5001).ListItem.Label],home)</onclick>
+                        <onclick>ActivateWindow(1140)</onclick>
+                    </control>
+                    <control type="button" id="5011">
                         <posx>650</posx>
                         <posy>-5</posy>
                         <width>350</width>
                         <height>350</height>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
-                            <onleft>5010</onleft>
-                            <onright>5012</onright>
-                            <include>NavigationWidget1</include>
-                            <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,randomtv,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5002).ListItem.Label],home)</onclick>
-                            <onclick>ActivateWindow(1140)</onclick>
-                        </control>
-                        <control type="button" id="5012">
+                        <onleft>5010</onleft>
+                        <onright>5012</onright>
+                        <include>NavigationWidget1</include>
+                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,randomtv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
+                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5002).ListItem.Label],home)</onclick>
+                        <onclick>ActivateWindow(1140)</onclick>
+                    </control>
+                    <control type="button" id="5012">
                         <posx>1001</posx>
                         <posy>-5</posy>
                         <width>624</width>
@@ -2450,15 +2446,15 @@
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            <onleft>5011</onleft>
-                            <onright>5010</onright>
-                            <include>NavigationWidget1</include>
-                            <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,recentmovies,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,recenttv,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,recentalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5003).ListItem.Label],home)</onclick>
-                            <onclick>ActivateWindow(1140)</onclick>
-                        </control>
+                        <onleft>5011</onleft>
+                        <onright>5010</onright>
+                        <include>NavigationWidget1</include>
+                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,recentmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,recenttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,recentalbums,home)</onclick>
+                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5003).ListItem.Label],home)</onclick>
+                        <onclick>ActivateWindow(1140)</onclick>
+                    </control>
                     <control type="group">
                         <posx>31</posx>
                         <control type="label">
@@ -2535,7 +2531,7 @@
                             <orientation>horizontal</orientation>
                             <focusposition>0</focusposition>
                             <autoscroll time="11500">!Control.HasFocus(5011) + !Control.HasFocus(5002)</autoscroll>
-                           <scrolltime tween="cubic" easing="inout">1200</scrolltime>
+                            <scrolltime tween="cubic" easing="inout">1200</scrolltime>
                             <preloaditems>2</preloaditems>
                             <itemlayout width="340" height="340">
                                 <include>FeaturedWidgetSquareLayout</include>
@@ -2655,7 +2651,6 @@
                             <visible>Control.HasFocus(5010) | Control.HasFocus(5011)</visible>
                         </control>
                     </control>
-
                 </control>
                 <control type="image">
                     <posx>21</posx>
@@ -2727,7 +2722,7 @@
                 <texture border="50">featured/panel_featured.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
-            <control type="group" id ="52000">
+            <control type="group" id="52000">
                 <posx>-73</posx>
                 <posy>26</posy>
                 <width>1596</width>
@@ -2846,7 +2841,6 @@
                         <!--         <onclick>RunScript(script.extendedinfo,info=movielists,id=$INFO[Window(home).Property(ID)],silent=False)</onclick>-->
                         <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similar,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],id=$INFO[Window(home).Property(ID)],type=show,silent=False)</onclick>
                         <onclick condition="!IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similar,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],dbid=$INFO[Window(home).Property(DBID)],type=show,silent=False)</onclick>
-
                         <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),movie)">RunScript(script.extendedinfo,info=similarlocal,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],id=$INFO[Window(home).Property(ID)],type=movie,silent=False)</onclick>
                         <onclick condition="!IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),movie)">RunScript(script.extendedinfo,info=similarlocal,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],dbid=$INFO[Window(home).Property(DBID)],type=movie,silent=False)</onclick>
                         <onclick>Dialog.Close(1165)</onclick>
@@ -3562,7 +3556,6 @@
                     <aspectratio align="right" aligny="top">keep</aspectratio>
                     <texture background="true">$INFO[Window(home).Property(Venue_Image)]</texture>
                 </control>
-
                 <control type="grouplist">
                     <posx>630</posx>
                     <posy>30</posy>
@@ -3632,7 +3625,6 @@
                     <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     <visible>!Stringcompare(Window(home).Property(EventName),Window(home).Property(Label))</visible>
                 </control>
-
                 <control type="grouplist" id="5080">
                     <posx>627</posx>
                     <posy>258</posy>
@@ -3720,7 +3712,7 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <focusedcolor>white3</focusedcolor>
                         <onclick>SetProperty(listcontent,$INFO[Window(home).Property(Headliner)],home)</onclick>
-                        <onclick>ActivateWindow(1168)</onclick>  
+                        <onclick>ActivateWindow(1168)</onclick>
                         <onup>11</onup>
                         <ondown>11</ondown>
                         <onleft>10</onleft>
@@ -3734,7 +3726,6 @@
                     </control>
                 </control>
             </control>
-
             <control type="image">
                 <posx>-79</posx>
                 <posy>-329</posy>
@@ -3747,50 +3738,49 @@
     </include>
     <include name="SimilarMoviesLayouts">
         <itemlayout height="460" width="367">
-                  <control type="image">
-                        <posx>153</posx>
-                        <posy>150</posy>
-                        <width>74</width>
-                        <height>74</height>
-                        <texture>loader.gif</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
-                    </control>
+            <control type="image">
+                <posx>153</posx>
+                <posy>150</posy>
+                <width>74</width>
+                <height>74</height>
+                <texture>loader.gif</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
+            </control>
             <control type="group">
                 <posx>55</posx>
                 <posy>-10</posy>
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <fadetime>0</fadetime>
-
-                            <width>247</width>
-                            <height>371</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>287</width>
-                            <height>409</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-          <control type="image">
-                <width>60</width>
-                <posx>10</posx>
-                <height>60</height>
-                <posy>30</posy>
-                <aspectratio>keep</aspectratio>
-                <texture>common/local.png</texture>
-                <visible>!IsEmpty(ListItem.Property(Path))</visible>
+                <control type="image">
+                    <posx>11</posx>
+                    <posy>30</posy>
+                    <fadetime>0</fadetime>
+                    <width>247</width>
+                    <height>371</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                </control>
+                <control type="image">
+                    <posx>-8.5</posx>
+                    <posy>10.5</posy>
+                    <width>287</width>
+                    <height>409</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                    <bordersize>19.5</bordersize>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <posx>10</posx>
+                    <height>60</height>
+                    <posy>30</posy>
+                    <aspectratio>keep</aspectratio>
+                    <texture>common/local.png</texture>
+                    <visible>!IsEmpty(ListItem.Property(Path))</visible>
+                </control>
             </control>
-                    </control>
-         <control type="image">
+            <control type="image">
                 <width>367.5</width>
                 <posx>0</posx>
                 <height>61</height>
@@ -3825,49 +3815,49 @@
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <visible>!ControlGroup(500).HasFocus</visible>
             </control>
-                  <control type="image">
-                        <posx>153</posx>
-                        <posy>150</posy>
-                        <width>74</width>
-                        <height>74</height>
-                        <texture>loader.gif</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
-                    </control>
-           <control type="group">
+            <control type="image">
+                <posx>153</posx>
+                <posy>150</posy>
+                <width>74</width>
+                <height>74</height>
+                <texture>loader.gif</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
+            </control>
+            <control type="group">
                 <posx>55</posx>
                 <posy>-10</posy>
-                        <animation effect="zoom" center="160,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>247</width>
-                            <height>371</height>
-                            <fadetime>0</fadetime>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>287</width>
-                            <height>409</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-         <control type="image">
-                <width>60</width>
-                <posx>10</posx>
-                <height>60</height>
-                <posy>30</posy>
-                <aspectratio>keep</aspectratio>
-                <texture>common/local.png</texture>
-                <visible>!IsEmpty(ListItem.Property(Path))</visible>
+                <animation effect="zoom" center="160,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+                <control type="image">
+                    <posx>11</posx>
+                    <posy>30</posy>
+                    <width>247</width>
+                    <height>371</height>
+                    <fadetime>0</fadetime>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                </control>
+                <control type="image">
+                    <posx>-8.5</posx>
+                    <posy>10.5</posy>
+                    <width>287</width>
+                    <height>409</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                    <bordersize>19.5</bordersize>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <posx>10</posx>
+                    <height>60</height>
+                    <posy>30</posy>
+                    <aspectratio>keep</aspectratio>
+                    <texture>common/local.png</texture>
+                    <visible>!IsEmpty(ListItem.Property(Path))</visible>
+                </control>
             </control>
-                    </control>
             <control type="image">
                 <width>367.5</width>
                 <posx>0</posx>
@@ -3877,7 +3867,7 @@
                 <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                 <animation effect="fade" start="100" end="80" time="40" condition="!ControlGroup(500).HasFocus">Conditional</animation>
             </control>
-             <control type="textbox">
+            <control type="textbox">
                 <width>357.5</width>
                 <posx>10</posx>
                 <height>34</height>
@@ -3904,7 +3894,6 @@
                 <visible>!ControlGroup(500).HasFocus</visible>
             </control>
         </focusedlayout>
-
     </include>
     <include name="RecentWidget2">
         <control type="group" id="7998">
@@ -4457,8 +4446,8 @@
                     <include>NavigationWidget2</include>
                     <preloaditems>2</preloaditems>
                     <animation effect="fade" time="160" start="100" end="0" condition="Control.HasFocus(7020)">Conditional</animation>
-                            <autoscroll time="7000">!Control.HasFocus(7000)</autoscroll>
-                            <scrolltime tween="quadratic">800</scrolltime>
+                    <autoscroll time="7000">!Control.HasFocus(7000)</autoscroll>
+                    <scrolltime tween="quadratic">800</scrolltime>
                     <itemlayout height="34" width="450">
                         <control type="image">
                             <posx>-15</posx>
@@ -4797,54 +4786,54 @@
                     <visible>Substring(Control.GetLabel(4325),featured)</visible>
                     <include>Animation_VisibleChange400</include>
                     <control type="button" id="6010">
-                            <posx>26</posx>
-                            <posy>-5</posy>
-                            <width>624</width>
-                            <height>350</height>
-                            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                            <texturenofocus></texturenofocus>
-                            <include>NavigationWidget2</include>
-                            <onleft>6012</onleft>
-                            <onright>6011</onright>
-                            <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,randommovies,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,randomalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6001).ListItem.Label],home)</onclick>
-                            <onclick>ActivateWindow(1140)</onclick>
-                            <visible>SubString(Control.GetLabel(4325),featured)</visible>
-                        </control>
-                        <control type="button" id="6011">
-                            <posx>650</posx>
-                            <posy>-5</posy>
-                            <width>350</width>
-                            <height>350</height>
-                            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                            <texturenofocus></texturenofocus>
-                            <onleft>6010</onleft>
-                            <onright>6012</onright>
-                            <include>NavigationWidget2</include>
-                            <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,randomtv,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6002).ListItem.Label],home)</onclick>
-                            <onclick>ActivateWindow(1140)</onclick>
-                        </control>
-                        <control type="button" id="6012">
+                        <posx>26</posx>
+                        <posy>-5</posy>
+                        <width>624</width>
+                        <height>350</height>
+                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
+                        <texturenofocus></texturenofocus>
+                        <include>NavigationWidget2</include>
+                        <onleft>6012</onleft>
+                        <onright>6011</onright>
+                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,randommovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,randomalbums,home)</onclick>
+                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6001).ListItem.Label],home)</onclick>
+                        <onclick>ActivateWindow(1140)</onclick>
+                        <visible>SubString(Control.GetLabel(4325),featured)</visible>
+                    </control>
+                    <control type="button" id="6011">
+                        <posx>650</posx>
+                        <posy>-5</posy>
+                        <width>350</width>
+                        <height>350</height>
+                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
+                        <texturenofocus></texturenofocus>
+                        <onleft>6010</onleft>
+                        <onright>6012</onright>
+                        <include>NavigationWidget2</include>
+                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,randomtv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
+                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6002).ListItem.Label],home)</onclick>
+                        <onclick>ActivateWindow(1140)</onclick>
+                    </control>
+                    <control type="button" id="6012">
                         <posx>1001</posx>
                         <posy>-5</posy>
                         <width>624</width>
                         <height>350</height>
-                            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                            <texturenofocus></texturenofocus>
-                            <onleft>6011</onleft>
-                            <onright>6010</onright>
-                            <include>NavigationWidget2</include>
-                            <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,recentmovies,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,recenttv,home)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,recentalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6003).ListItem.Label],home)</onclick>
-                            <onclick>ActivateWindow(1140)</onclick>
-                        </control>
+                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
+                        <texturenofocus></texturenofocus>
+                        <onleft>6011</onleft>
+                        <onright>6010</onright>
+                        <include>NavigationWidget2</include>
+                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,recentmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,recenttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,recentalbums,home)</onclick>
+                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6003).ListItem.Label],home)</onclick>
+                        <onclick>ActivateWindow(1140)</onclick>
+                    </control>
                     <control type="group">
                         <posx>31</posx>
                         <control type="label">
@@ -4856,7 +4845,7 @@
                             <font>Font_Reg22_Caps</font>
                             <shadowcolor>black</shadowcolor>
                             <textcolor>white3</textcolor>
-                        </control>                                           
+                        </control>
                         <control type="wraplist" id="6001">
                             <width>614</width>
                             <height>360</height>
@@ -4867,7 +4856,7 @@
                             <pagecontrol>60</pagecontrol>
                             <focusposition>0</focusposition>
                             <autoscroll time="7000">!Control.HasFocus(6010) + !Control.HasFocus(6001)</autoscroll>
-                           <scrolltime tween="cubic" easing="inout">1200</scrolltime>
+                            <scrolltime tween="cubic" easing="inout">1200</scrolltime>
                             <preloaditems>2</preloaditems>
                             <itemlayout width="614" height="340">
                                 <include>FeaturedWidgetLandscapeLayout</include>
@@ -4993,7 +4982,6 @@
                             <shadowcolor>black</shadowcolor>
                             <textcolor>white3</textcolor>
                         </control>
-
                         <control type="wraplist" id="6003">
                             <width>614</width>
                             <height>360</height>
@@ -5536,7 +5524,7 @@
         <include condition="Substring(Skin.String(widgetlist),trendingmoviespanel)">TrendingMoviesItemsskinsettings</include>
         <include condition="Substring(Skin.String(widgetlist),trendingmoviespanel)">TrendingMoviesItems</include>
         <include condition="Substring(Skin.String(widgetlist),premiereshowspanel)">PremiereShowsItemsskinsettings</include>
-        <include condition="Substring(Skin.String(widgetlist),premiereshowspanel)">PremiereShowsItems</include>          
+        <include condition="Substring(Skin.String(widgetlist),premiereshowspanel)">PremiereShowsItems</include>
         <include condition="Substring(Skin.String(widgetlist),Icon1panel)">IconPanel1Items</include>
         <include condition="Substring(Skin.String(widgetlist),Icon2panel)">IconPanel2Items</include>
         <include condition="Substring(Skin.String(widgetlist),favouriteIconpanel)">FavouritesItems</include>
@@ -5565,11 +5553,7 @@
             <onclick condition="Substring(Control.GetLabel(4321),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
             <onclick condition="!Substring(Control.GetLabel(4321),custom) + !Substring(Control.GetLabel(4321),pics)">SetProperty(SkinWidgets_RandomItems_Update,true,home)</onclick>
             <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),actors) | Substring(Control.GetLabel(4321),cyanide)</visible>
-
-
         </item>
-
-
     </include>
     <include name="5010Contentskinsettings">
         <item>
@@ -6344,7 +6328,6 @@
             <onclick>noop</onclick>
             <visible>Substring(Control.GetLabel(4321),albums)</visible>
         </item>
-
         <include condition="Library.HasContent(music)">RandomArtistsItems</include>
         <include condition="System.HasAddon(script.metadata.actors)">BornActorsItems</include>
         <include>RandomAddonsItems</include>
@@ -6369,9 +6352,6 @@
                         <visible>Control.HasFocus(5010)</visible>
                         <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
                     </item> -->
-
-
-
     </include>
     <include name="6010List">
         <control type="group">
@@ -6738,10 +6718,8 @@
                     </control>
                 </focusedlayout>
                 <content>
-
                     <include condition="!Window.IsActive(skinsettings)">6010Content</include>
                     <include condition="Window.IsActive(skinsettings)">6010Contentskinsettings</include>
-
                 </content>
             </control>
         </control>
@@ -6809,11 +6787,9 @@
         <include condition="Substring(Skin.String(widget2list),trendingshowspanel)">TrendingShowsItems2_skinsettings</include>
         <include condition="Substring(Skin.String(widget2list),trendingshowspanel)">TrendingShowsItems2</include>
         <include condition="Substring(Skin.String(widget2list),trendingmoviespanel)">TrendingMoviesItems2_skinsettings</include>
-        <include condition="Substring(Skin.String(widget2list),trendingmoviespanel)">TrendingMoviesItems2</include>  
+        <include condition="Substring(Skin.String(widget2list),trendingmoviespanel)">TrendingMoviesItems2</include>
         <include condition="Substring(Skin.String(widget2list),premiereshowspanel)">PremiereShowsItems2_skinsettings</include>
-        <include condition="Substring(Skin.String(widget2list),premiereshowspanel)">PremiereShowsItems2</include>          
-
-        
+        <include condition="Substring(Skin.String(widget2list),premiereshowspanel)">PremiereShowsItems2</include>
         <include condition="Substring(Skin.String(widget2list),Icon1panel)">IconPanel1Items2</include>
         <include condition="Substring(Skin.String(widget2list),Icon2panel)">IconPanel2Items2</include>
         <include condition="Substring(Skin.String(widget2list),favouriteIconpanel)">FavouritesItems2</include>
@@ -6836,8 +6812,6 @@
             <onclick condition="Substring(Control.GetLabel(4325),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
             <onclick condition="!Substring(Control.GetLabel(4325),custom) + !Substring(Control.GetLabel(4325),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
             <visible>Substring(Control.GetLabel(4325),random) | Substring(Control.GetLabel(4325),actors) | Substring(Control.GetLabel(4325),cyanide)</visible>
-
-
         </item>
     </include>
     <include name="6010Contentskinsettings">
@@ -7613,7 +7587,6 @@
             <onclick>noop</onclick>
             <visible>Substring(Control.GetLabel(4325),albums)</visible>
         </item>
-
         <include condition="Library.HasContent(music)">RandomArtistsItems2</include>
         <include condition="System.HasAddon(script.metadata.actors)">BornActorsItems2</include>
         <include>RandomAddonsItems2</include>
@@ -7632,7 +7605,6 @@
         <include>IconPanel1Items2</include>
         <include>IconPanel2Items2</include>
         <include>FavouritesItems2</include>
-
     </include>
     <include name="WundergroundWidget">
         <control type="group">

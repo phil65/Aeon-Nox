@@ -72,7 +72,7 @@
                         <visible>Control.HasFocus(500)</visible>
                         <texture>views/tripanel/listselect_fo.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                    </control> 
+                    </control>
                     <control type="label">
                         <width>334</width>
                         <height>74</height>
@@ -82,7 +82,6 @@
                         <textcolor>grey</textcolor>
                         <focusedcolor>white2</focusedcolor>
                         <label>$INFO[ListItem.Label]</label>
-
                     </control>
                 </focusedlayout>
                 <itemlayout width="334" height="74">
@@ -96,7 +95,6 @@
                         <focusedcolor>white2</focusedcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
-
                 </itemlayout>
                 <content>
                     <item id="510">
@@ -189,28 +187,23 @@
                         <control type="group">
                             <posy>7</posy>
                             <visible>!IsEmpty(ListItem.Property(Description))</visible>
-                             <animation effect="fade" time="280" delay="750" reversible="false">Focus</animation>
-                                              <control type="image">
-                            <width>473</width>
-                            <posx>7</posx>
-                            <height>98</height>
-                            <texture>common/bgcolor.png</texture>
-                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                            <animation effect="fade" time="280" delay="750" reversible="false">Focus</animation>
+                            <control type="image">
+                                <width>473</width>
+                                <posx>7</posx>
+                                <height>98</height>
+                                <texture>common/bgcolor.png</texture>
+                                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                            </control>
+                            <control type="textbox">
+                                <width>457</width>
+                                <posx>15</posx>
+                                <height>86</height>
+                                <align>center</align>
+                                <font>Font_Reg22</font>
+                                <label>$INFO[ListItem.Property(Description)]</label>
+                            </control>
                         </control>
-                             <control type="textbox">
-                            <width>457</width>
-                            <posx>15</posx>
-                            <height>86</height>
-                            <align>center</align>
-                            <font>Font_Reg22</font>
-                            <label>$INFO[ListItem.Property(Description)]</label>
-                        </control>
-                                       
-                        
-                        
-                        </control>
-   
-                        
                         <control type="textbox">
                             <width>457</width>
                             <posx>15</posx>
@@ -240,10 +233,8 @@
                             <visible>!ControlGroup(500).HasFocus</visible>
                         </control>
                     </focusedlayout>
-
-                    <content>plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(listcontent)]</content> 
+                    <content>plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(listcontent)]</content>
                 </control>
-
                 <control type="image">
                     <description>left Arrow</description>
                     <posx>567</posx>

@@ -8,9 +8,8 @@
     <onload condition="IsEmpty(Weather.plugin) + !IsEmpty(Window.Property(openweathersettings))">ActivateWindow(home)</onload>
     <onload condition="IsEmpty(Weather.plugin) + IsEmpty(Window.Property(openweathersettings))">ActivateWindow(MyWeatherSettings)</onload>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
-    
     <onunload>ClearProperty(FSMap,weather)</onunload>
-     <onload>SetProperty(CurrentPhaseImage,$ESCINFO[Window(Weather).Property(Current.Earth.Phase.Image)])</onload>
+    <onload>SetProperty(CurrentPhaseImage,$ESCINFO[Window(Weather).Property(Current.Earth.Phase.Image)])</onload>
     <onload>SetProperty(CurrentPhaseLabel,$LOCALIZE[31893])</onload>
     <controls>
         <control type="multiimage">
@@ -129,75 +128,74 @@
                         <textcolor>grey2</textcolor>
                         <wrapmultiline>true</wrapmultiline>
                     </control>
-            <control type="image">
-                            <posx>538</posx>
-                            <posy>313</posy>
-                <width>54</width>
-                <height>38</height>
-                <aspectratio>keep</aspectratio>
-                <texture>common/sunrise.png</texture>
-                <colordiffuse>white2</colordiffuse>
-            </control>
-            <control type="image">
-                            <posx>708</posx>
-                            <posy>313</posy>
-                <width>54</width>
-                <height>38</height>
-                <aspectratio>keep</aspectratio>
-                <texture>common/sunset.png</texture>
-                <colordiffuse>white2</colordiffuse>
-            </control>
-                        <control type="label">
-                            <posx>590</posx>
-                            <posy>306</posy>
-                            <width>450</width>
-                            <height>52</height>
-                            <font>Font_Reg32</font>
-                            <info>Window.Property(Today.Sunrise)</info>
-                        </control>
-                        <control type="label">
-                            <posx>760</posx>
-                            <posy>306</posy>
-                            <width>450</width>
-                            <height>52</height>
-                            <font>Font_Reg32</font>
-                            <info>Window.Property(Today.Sunset)</info>
-                        </control>
-                        <control type="label">
-                            <posx>760</posx>
-                            <posy>346</posy>
-                            <width>450</width>
-                            <height>52</height>
-                            <font>Font_Reg32</font>
-                            <info>Window.Property(Current.Pressure)</info>
-                        </control>
-            <control type="image">
-                            <posx>538</posx>
-                            <posy>353</posy>
-                <width>54</width>
-                <height>38</height>
-                <aspectratio>keep</aspectratio>
-                <texture>common/eye.png</texture>
-                <colordiffuse>white2</colordiffuse>
-            </control>
-            <control type="image">
-                            <posx>708</posx>
-                            <posy>353</posy>
-                <width>54</width>
-                <height>38</height>
-                <aspectratio>keep</aspectratio>
-                <texture>common/pressure.png</texture>
-                <colordiffuse>white2</colordiffuse>
-            </control>
-            
-            <control type="label">
-                            <posx>590</posx>
-                            <posy>346</posy>
-                            <width>450</width>
-                            <height>52</height>
-                            <font>Font_Reg32</font>
-                            <info>Window.Property(Current.Visibility)</info>
-                        </control>
+                    <control type="image">
+                        <posx>538</posx>
+                        <posy>313</posy>
+                        <width>54</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>common/sunrise.png</texture>
+                        <colordiffuse>white2</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>708</posx>
+                        <posy>313</posy>
+                        <width>54</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>common/sunset.png</texture>
+                        <colordiffuse>white2</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>590</posx>
+                        <posy>306</posy>
+                        <width>450</width>
+                        <height>52</height>
+                        <font>Font_Reg32</font>
+                        <info>Window.Property(Today.Sunrise)</info>
+                    </control>
+                    <control type="label">
+                        <posx>760</posx>
+                        <posy>306</posy>
+                        <width>450</width>
+                        <height>52</height>
+                        <font>Font_Reg32</font>
+                        <info>Window.Property(Today.Sunset)</info>
+                    </control>
+                    <control type="label">
+                        <posx>760</posx>
+                        <posy>346</posy>
+                        <width>450</width>
+                        <height>52</height>
+                        <font>Font_Reg32</font>
+                        <info>Window.Property(Current.Pressure)</info>
+                    </control>
+                    <control type="image">
+                        <posx>538</posx>
+                        <posy>353</posy>
+                        <width>54</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>common/eye.png</texture>
+                        <colordiffuse>white2</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>708</posx>
+                        <posy>353</posy>
+                        <width>54</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>common/pressure.png</texture>
+                        <colordiffuse>white2</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>590</posx>
+                        <posy>346</posy>
+                        <width>450</width>
+                        <height>52</height>
+                        <font>Font_Reg32</font>
+                        <info>Window.Property(Current.Visibility)</info>
+                    </control>
                     <control type="image">
                         <posx>135</posx>
                         <posy>130</posy>
@@ -273,7 +271,6 @@
                             <font>Font_Reg32</font>
                             <info>Window.Property(Current.Wind)</info>
                         </control>
-
                     </control>
                 </control>
                 <control type="group" id="7510">
@@ -2050,7 +2047,7 @@
                         <label>5</label>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>ActivateWindow(MyWeatherSettings)</onclick>
-                    </control>                  
+                    </control>
                     <control type="button" id="301">
                         <width>400</width>
                         <height>45</height>

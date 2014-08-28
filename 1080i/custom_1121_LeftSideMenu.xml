@@ -450,30 +450,30 @@
         </control>
         <control type="group">
             <posy>1035</posy>
-        <control type="radiobutton" id="9012">
-            <width>219</width>
-            <height>43</height>
-            <align>center</align>
-            <radioposx>90</radioposx>
-            <radioposy>-25</radioposy>
-            <radiowidth>45</radiowidth>
-            <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
-            <texturenofocus border="8">-</texturenofocus>
-            <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Gears.png</textureradioon>
-            <textureradiooff colordiffuse="white2">special://skin/extras/BigIcons/ButtonStop.png</textureradiooff>
-            <selected>IsEmpty(Window(home).Property(quicknavsetup))</selected>
-            <label>-</label>
-            <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
-            <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
-            <onclick condition="!IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
-            <onleft>Dialog.Close(1121)</onleft>
-            <onright>Dialog.Close(1121)</onright>
-            <onup>SetFocus(9011,20)</onup>
-            <onup>9011</onup>
-            <ondown>SetFocus(9011,0)</ondown>
-            <ondown>9011</ondown>
-            <visible>!Skin.HasSetting(kioskmode)</visible>
-        </control>
+            <control type="radiobutton" id="9012">
+                <width>219</width>
+                <height>43</height>
+                <align>center</align>
+                <radioposx>90</radioposx>
+                <radioposy>-25</radioposy>
+                <radiowidth>45</radiowidth>
+                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+                <texturenofocus border="8">-</texturenofocus>
+                <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Gears.png</textureradioon>
+                <textureradiooff colordiffuse="white2">special://skin/extras/BigIcons/ButtonStop.png</textureradiooff>
+                <selected>IsEmpty(Window(home).Property(quicknavsetup))</selected>
+                <label>-</label>
+                <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
+                <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
+                <onclick condition="!IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
+                <onleft>Dialog.Close(1121)</onleft>
+                <onright>Dialog.Close(1121)</onright>
+                <onup>SetFocus(9011,20)</onup>
+                <onup>9011</onup>
+                <ondown>SetFocus(9011,0)</ondown>
+                <ondown>9011</ondown>
+                <visible>!Skin.HasSetting(kioskmode)</visible>
+            </control>
         </control>
     </controls>
 </window>

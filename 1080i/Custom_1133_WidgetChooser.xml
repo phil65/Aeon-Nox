@@ -7,58 +7,58 @@
         <control type="group">
             <posy>30</posy>
             <include>Furniture_SettingsBackPanel</include>
-                <control type="grouplist" id="500">
-                    <posx>63</posx>
-                    <posy>180</posy>
-                    <width>326</width>
-                    <height>768</height>
-                    <onleft>5</onleft>
-                    <onright>5</onright>
-                    <onup>3</onup>
-                    <ondown>3</ondown>
-            <control type="button" id="510">
-                <width>334</width>
-                <height>74</height>
-                <textoffsetx>20</textoffsetx>
-                <textoffsety>18</textoffsety>
-                <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <font>Font_Bold34</font>
-                <textcolor>grey</textcolor>
-                <label>Database Content</label>
-                <onright>SetFocus(4)</onright>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <focusedcolor>white2</focusedcolor>
-            </control>
-            <control type="button" id="511">
-                <width>334</width>
-                <height>74</height>
-                <textoffsetx>20</textoffsetx>
-                <textoffsety>18</textoffsety>
-                <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <font>Font_Bold34</font>
-                <textcolor>grey</textcolor>
-                <label>Online Content</label>
-                <onright>SetFocus(5)</onright>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <focusedcolor>white2</focusedcolor>
-            </control>
-            <control type="button" id="512">
-                <width>334</width>
-                <height>74</height>
-                <textoffsetx>20</textoffsetx>
-                <textoffsety>18</textoffsety>
-                <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <font>Font_Bold34</font>
-                <textcolor>grey</textcolor>
-                <label>Misc</label>
-                <onright>SetFocus(6)</onright>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <focusedcolor>white2</focusedcolor>
-            </control>
+            <control type="grouplist" id="500">
+                <posx>63</posx>
+                <posy>180</posy>
+                <width>326</width>
+                <height>768</height>
+                <onleft>5</onleft>
+                <onright>5</onright>
+                <onup>3</onup>
+                <ondown>3</ondown>
+                <control type="button" id="510">
+                    <width>334</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <label>Database Content</label>
+                    <onright>SetFocus(4)</onright>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <focusedcolor>white2</focusedcolor>
                 </control>
+                <control type="button" id="511">
+                    <width>334</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <label>Online Content</label>
+                    <onright>SetFocus(5)</onright>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="512">
+                    <width>334</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <label>Misc</label>
+                    <onright>SetFocus(6)</onright>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+            </control>
             <include>Animation_OpenCloseZoom</include>
             <control type="group">
                 <posy>-100</posy>
@@ -132,7 +132,6 @@
                             <onclick>Skin.Reset(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                         </item>
-
                         <item>
                             <label>$LOCALIZE[31323]</label>
                             <onclick>SetProperty(CustomYesNoDialog,recentmovies,skinsettings)</onclick>
@@ -377,8 +376,8 @@
                             <visible>!IsEmpty(Skin.String(SmartPlaylist12.Path))</visible>
                             <visible>Stringcompare(Window(skinsettings).Property(WidgetSelection),Widget2)</visible>
                         </item>
-</content>
-</control>
+                    </content>
+                </control>
                 <control type="panel" id="5">
                     <visible>ControlGroup(500).HasFocus(511)</visible>
                     <posx>387</posx>
@@ -443,12 +442,6 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        
-                        
-
-
-
-
                         <item>
                             <label>$LOCALIZE[31883]</label>
                             <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
@@ -528,9 +521,8 @@
                             <onclick>Dialog.Close(1133)</onclick>
                             <onclick>ActivateWindow(1162)</onclick>
                         </item>
-
-</content>
-</control>
+                    </content>
+                </control>
                 <control type="panel" id="6">
                     <visible>ControlGroup(500).HasFocus(512)</visible>
                     <posx>387</posx>
@@ -595,8 +587,6 @@
                         </control>
                     </focusedlayout>
                     <content>
-
-
                         <item>
                             <label>$LOCALIZE[31070]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randomaddons,skinsettings)</onclick>
@@ -665,10 +655,7 @@
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>System.HasAddon(script.games.rom.collection.browser)</visible>
                         </item>
-
-
-
-                        </content>
+                    </content>
                 </control>
                 <control type="image">
                     <description>left Arrow</description>

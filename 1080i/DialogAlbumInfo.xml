@@ -6,7 +6,7 @@
     <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
-           <control type="button" id="9023">
+        <control type="button" id="9023">
             <include>HiddenObject</include>
             <onfocus>SetProperty(Label,$ESCINFO[Container(8010).ListItem.Label],home)</onfocus>
             <onfocus>SetProperty(Label2,$ESCINFO[Container(8010).ListItem.Label2],home)</onfocus>
@@ -43,7 +43,6 @@
             <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
             <visible>Control.HasFocus(10003)</visible>
         </control>
-        
         <control type="button" id="5014">
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
@@ -265,7 +264,7 @@
                     <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                 </control>
-               <control type="image">
+                <control type="image">
                     <posx>1295</posx>
                     <posy>-200</posy>
                     <width>570</width>
@@ -675,7 +674,7 @@
                             <onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
                             <onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
                             <include>Objects_MediaMenuButtonIcons</include>
-                            <onclick>ActivateWindow(1168)</onclick>   
+                            <onclick>ActivateWindow(1168)</onclick>
                             <visible>Container.Content(artists) | Container.Content(albums)</visible>
                         </control>
                         <control type="radiobutton" id="6">

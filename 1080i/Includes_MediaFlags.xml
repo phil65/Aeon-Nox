@@ -233,40 +233,40 @@
         <animation effect="fade" time="200">VisibleChange</animation>
     </include>
     <include name="FloorLanguageFlags">
-                   <control type="grouplist">
-                        <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
-                        <orientation>vertical</orientation>
-                        <control type="image">
-                            <width>26</width>
-                            <height>22</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
-                            <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-                            <include>Animation_VisibleChange200</include>
-                            <fadetime>400</fadetime>
-                        </control>
-                        <control type="image">
-                            <width>26</width>
-                            <height>22</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
-                            <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.2))</visible>
-                            <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
-                            <include>Animation_VisibleChange200</include>
-                            <fadetime>400</fadetime>
-                        </control>
-                        <control type="image">
-                            <width>26</width>
-                            <height>22</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture>$INFO[Window(movieinformation).Property(AudioLanguage.3),flags/language/,.png]</texture>
-                            <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.3))</visible>
-                            <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.3))</visible>
-                            <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
-                            <include>Animation_VisibleChange200</include>
-                            <fadetime>400</fadetime>
-                        </control>
-                    </control>    
+        <control type="grouplist">
+            <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
+            <orientation>vertical</orientation>
+            <control type="image">
+                <width>26</width>
+                <height>22</height>
+                <aspectratio>scale</aspectratio>
+                <texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
+                <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+                <include>Animation_VisibleChange200</include>
+                <fadetime>400</fadetime>
+            </control>
+            <control type="image">
+                <width>26</width>
+                <height>22</height>
+                <aspectratio>scale</aspectratio>
+                <texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
+                <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.2))</visible>
+                <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
+                <include>Animation_VisibleChange200</include>
+                <fadetime>400</fadetime>
+            </control>
+            <control type="image">
+                <width>26</width>
+                <height>22</height>
+                <aspectratio>scale</aspectratio>
+                <texture>$INFO[Window(movieinformation).Property(AudioLanguage.3),flags/language/,.png]</texture>
+                <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.3))</visible>
+                <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.3))</visible>
+                <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
+                <include>Animation_VisibleChange200</include>
+                <fadetime>400</fadetime>
+            </control>
+        </control>
     </include>
     <include name="FloorFlags">
         <control type="group">
@@ -331,28 +331,27 @@
                 <control type="group">
                     <!--right part -->
                     <animation effect="slide" end="-930" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
-                        <control type="image">
-                            <!--AspectRatio logo-->
-                            <posx>1483</posx>
-                            <texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-                            <include>AudioFlagsVars</include>
-                        </control>
-                        <control type="image">
-                            <!--Resolution logo-->
-                            <posx>1606</posx>
-                            <texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
-                            <include>AudioFlagsVars</include>
-                        </control>
-                        <control type="image">
-                            <posx>1750</posx>
-                            <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
-                            <!--Audio logo-->
-                            <include>AudioFlagsVars</include>
-                        </control>
+                    <control type="image">
+                        <!--AspectRatio logo-->
+                        <posx>1483</posx>
+                        <texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+                        <include>AudioFlagsVars</include>
+                    </control>
+                    <control type="image">
+                        <!--Resolution logo-->
+                        <posx>1606</posx>
+                        <texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+                        <include>AudioFlagsVars</include>
+                    </control>
+                    <control type="image">
+                        <posx>1750</posx>
+                        <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                        <!--Audio logo-->
+                        <include>AudioFlagsVars</include>
+                    </control>
                     <control type="group">
-                                            <posx>1881</posx>
-                    <include>FloorLanguageFlags</include>
-
+                        <posx>1881</posx>
+                        <include>FloorLanguageFlags</include>
                     </control>
                 </control>
             </control>
@@ -590,7 +589,6 @@
                 </control>
             </control>
         </control>
-        
     </include>
     <include name="MusicMediaFlags">
         <control type="group">
@@ -601,54 +599,53 @@
                 <visible>Container.Content(artists) + !IsEmpty(ListItem.DBID)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
-                                    <animation effect="slide" end="30,-20" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50)">Conditional</animation>
+                <animation effect="slide" end="30,-20" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50)">Conditional</animation>
                 <control type="group">
-                                    <animation effect="slide" end="1190" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
-                <control type="group">
-                    <!--totals-->
-                    <posx>150</posx>
-                    <control type="label">
-                        <width>135</width>
-                        <height>60</height>
-                        <align>center</align>
-                        <label>$INFO[Window(home).Property(Artist.Albums.Count)]</label>
-                        <font>Font_Bold40</font>
-                        <textcolor>floor</textcolor>
+                    <animation effect="slide" end="1190" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
+                    <control type="group">
+                        <!--totals-->
+                        <posx>150</posx>
+                        <control type="label">
+                            <width>135</width>
+                            <height>60</height>
+                            <align>center</align>
+                            <label>$INFO[Window(home).Property(Artist.Albums.Count)]</label>
+                            <font>Font_Bold40</font>
+                            <textcolor>floor</textcolor>
+                        </control>
+                        <control type="label">
+                            <posy>42</posy>
+                            <width>135</width>
+                            <height>30</height>
+                            <align>center</align>
+                            <label>$LOCALIZE[132]</label>
+                            <font>Font_Reg19_Caps</font>
+                            <textcolor>floor</textcolor>
+                        </control>
                     </control>
-                    <control type="label">
-                        <posy>42</posy>
-                        <width>135</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <label>$LOCALIZE[132]</label>
-                        <font>Font_Reg19_Caps</font>
-                        <textcolor>floor</textcolor>
+                    <control type="group">
+                        <!--playcount-->
+                        <posx>15</posx>
+                        <visible>!Control.IsVisible(53)</visible>
+                        <control type="label">
+                            <width>135</width>
+                            <height>60</height>
+                            <align>center</align>
+                            <label>$INFO[Window(home).Property(Artist.Albums.Playcount)]</label>
+                            <font>Font_Bold40</font>
+                            <textcolor>floor</textcolor>
+                        </control>
+                        <control type="label">
+                            <posy>42</posy>
+                            <width>135</width>
+                            <height>30</height>
+                            <align>center</align>
+                            <label>567</label>
+                            <font>Font_Reg19_Caps</font>
+                            <textcolor>floor</textcolor>
+                        </control>
                     </control>
                 </control>
-                <control type="group">
-                    <!--playcount-->
-                    <posx>15</posx>
-                    <visible>!Control.IsVisible(53)</visible>
-                    <control type="label">
-                        <width>135</width>
-                        <height>60</height>
-                        <align>center</align>
-                        <label>$INFO[Window(home).Property(Artist.Albums.Playcount)]</label>
-                        <font>Font_Bold40</font>
-                        <textcolor>floor</textcolor>
-                    </control>
-                    <control type="label">
-                        <posy>42</posy>
-                        <width>135</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <label>567</label>
-                        <font>Font_Reg19_Caps</font>
-                        <textcolor>floor</textcolor>
-                    </control>
-                </control>
-                </control>
-
                 <control type="group">
                     <!--artist newest/oldest-->
                     <posx>1500</posx>
@@ -698,128 +695,128 @@
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <animation effect="slide" end="5,-30" time="0" condition="Control.IsVisible(50)">Conditional</animation>
-                                    <animation effect="slide" end="100,0" time="0" condition="Control.IsVisible(53)">Conditional</animation>
+                <animation effect="slide" end="100,0" time="0" condition="Control.IsVisible(53)">Conditional</animation>
                 <!-- Rating -->
                 <control type="group">
-                                    <animation effect="slide" end="1210,0" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
-                <control type="image">
-                    <posx>0</posx>
-                    <width>135</width>
-                    <height>88</height>
-                    <texture fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
-                    <fadetime>IconCrossfadeTime2</fadetime>
-                    <colordiffuse>floor</colordiffuse>
-                    <visible>![Control.IsVisible(53) | Control.IsVisible(50)]</visible>
-                </control>
-                <control type="image">
-                    <posx>130</posx>
-                    <posy>12</posy>
-                    <texture>$INFO[Window(home).Property(Album.Song.1.FileExtension),flags/audio/,.png]</texture>
-                    <include>AudioFlagsVars</include>
-                </control>
-                <control type="group">
-                    <!-- Year -->
-                    <posx>285</posx>
-                    <visible>!Control.IsVisible(50) + !Control.IsVisible(53)</visible>
-                    <control type="label">
+                    <animation effect="slide" end="1210,0" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
+                    <control type="image">
+                        <posx>0</posx>
                         <width>135</width>
-                        <height>65</height>
-                        <align>center</align>
-                        <label fallback="N / A">$INFO[ListItem.Year]</label>
-                        <font>Font_Bold40</font>
-                        <textcolor>floor</textcolor>
-                    </control>
-                    <control type="label">
-                        <posy>42</posy>
-                        <width>135</width>
-                        <height>35</height>
-                        <align>center</align>
-                        <label>$LOCALIZE[345]</label>
-                        <font>Font_Reg19_Caps</font>
-                        <textcolor>floor</textcolor>
-                    </control>
-                </control>
-                </control>
-                <control type="group">
-               <animation effect="slide" end="-1080,0" time="0" condition="Control.IsVisible(514)">Conditional</animation>
-               <!-- Label -->
-                <control type="group">
-                    <posx>1500</posx>
-                    <posy>11</posy>
-                    <visible>!Control.IsVisible(57)</visible>
-                    <control type="image" id="76">
-                        <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                        <include>AudioFlagsVars</include>
+                        <height>88</height>
+                        <texture fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
+                        <fadetime>IconCrossfadeTime2</fadetime>
+                        <colordiffuse>floor</colordiffuse>
+                        <visible>![Control.IsVisible(53) | Control.IsVisible(50)]</visible>
                     </control>
                     <control type="image">
-                        <texture>flags/studios/default-studio.png</texture>
+                        <posx>130</posx>
+                        <posy>12</posy>
+                        <texture>$INFO[Window(home).Property(Album.Song.1.FileExtension),flags/audio/,.png]</texture>
                         <include>AudioFlagsVars</include>
-                        <visible>IsEmpty(ListItem.Property(Album_Label))</visible>
                     </control>
-                    <control type="label">
-                        <posx>-5</posx>
-                        <posy>0</posy>
-                        <width>155</width>
-                        <height>70</height>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Property(Album_Label)]</label>
-                        <font>Font_Reg22_Caps</font>
-                        <textcolor>grey</textcolor>
-                        <wrapmultiline>true</wrapmultiline>
-                        <visible>IsEmpty(Control.GetLabel(76))</visible>
+                    <control type="group">
+                        <!-- Year -->
+                        <posx>285</posx>
+                        <visible>!Control.IsVisible(50) + !Control.IsVisible(53)</visible>
+                        <control type="label">
+                            <width>135</width>
+                            <height>65</height>
+                            <align>center</align>
+                            <label fallback="N / A">$INFO[ListItem.Year]</label>
+                            <font>Font_Bold40</font>
+                            <textcolor>floor</textcolor>
+                        </control>
+                        <control type="label">
+                            <posy>42</posy>
+                            <width>135</width>
+                            <height>35</height>
+                            <align>center</align>
+                            <label>$LOCALIZE[345]</label>
+                            <font>Font_Reg19_Caps</font>
+                            <textcolor>floor</textcolor>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
-                    <!--totals-->
-                    <posx>1630</posx>
-                    <control type="label">
-                        <width>135</width>
-                        <height>65</height>
-                        <align>center</align>
-                        <label>$INFO[Window(home).Property(Album.Songs.Count)]</label>
-                        <font>Font_Bold40</font>
-                        <textcolor>floor</textcolor>
+                    <animation effect="slide" end="-1080,0" time="0" condition="Control.IsVisible(514)">Conditional</animation>
+                    <!-- Label -->
+                    <control type="group">
+                        <posx>1500</posx>
+                        <posy>11</posy>
+                        <visible>!Control.IsVisible(57)</visible>
+                        <control type="image" id="76">
+                            <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
+                            <include>AudioFlagsVars</include>
+                        </control>
+                        <control type="image">
+                            <texture>flags/studios/default-studio.png</texture>
+                            <include>AudioFlagsVars</include>
+                            <visible>IsEmpty(ListItem.Property(Album_Label))</visible>
+                        </control>
+                        <control type="label">
+                            <posx>-5</posx>
+                            <posy>0</posy>
+                            <width>155</width>
+                            <height>70</height>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Property(Album_Label)]</label>
+                            <font>Font_Reg22_Caps</font>
+                            <textcolor>grey</textcolor>
+                            <wrapmultiline>true</wrapmultiline>
+                            <visible>IsEmpty(Control.GetLabel(76))</visible>
+                        </control>
                     </control>
-                    <control type="label">
-                        <posy>42</posy>
-                        <width>135</width>
-                        <height>35</height>
-                        <align>center</align>
-                        <label>$LOCALIZE[134]</label>
-                        <font>Font_Reg19_Caps</font>
-                        <textcolor>floor</textcolor>
+                    <control type="group">
+                        <!--totals-->
+                        <posx>1630</posx>
+                        <control type="label">
+                            <width>135</width>
+                            <height>65</height>
+                            <align>center</align>
+                            <label>$INFO[Window(home).Property(Album.Songs.Count)]</label>
+                            <font>Font_Bold40</font>
+                            <textcolor>floor</textcolor>
+                        </control>
+                        <control type="label">
+                            <posy>42</posy>
+                            <width>135</width>
+                            <height>35</height>
+                            <align>center</align>
+                            <label>$LOCALIZE[134]</label>
+                            <font>Font_Reg19_Caps</font>
+                            <textcolor>floor</textcolor>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <!-- Genre -->
+                        <include>Animation_VisibleChange200</include>
+                        <visible>!Control.IsVisible(53)</visible>
+                        <control type="image">
+                            <posx>1795</posx>
+                            <width>175</width>
+                            <height>88</height>
+                            <texture>flags/music/genre/genre.png</texture>
+                            <colordiffuse>floor</colordiffuse>
+                            <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
+                        </control>
+                        <control type="label">
+                            <posx>1768</posx>
+                            <posy>0</posy>
+                            <width>135</width>
+                            <height>88</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <wrapmultiline>true</wrapmultiline>
+                            <label fallback="N / A">$INFO[ListItem.Genre]</label>
+                            <font>Font_Reg19_Caps</font>
+                            <textcolor>floor</textcolor>
+                        </control>
                     </control>
                 </control>
-            <control type="group">
-                <!-- Genre -->
-                <include>Animation_VisibleChange200</include>
-                <visible>!Control.IsVisible(53)</visible>
-                <control type="image">
-                    <posx>1795</posx>
-                    <width>175</width>
-                    <height>88</height>
-                    <texture>flags/music/genre/genre.png</texture>
-                    <colordiffuse>floor</colordiffuse>
-                    <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posx>1768</posx>
-                    <posy>0</posy>
-                    <width>135</width>
-                    <height>88</height>
-                    <aligny>center</aligny>
-                    <align>center</align>
-                    <wrapmultiline>true</wrapmultiline>
-                    <label fallback="N / A">$INFO[ListItem.Genre]</label>
-                    <font>Font_Reg19_Caps</font>
-                    <textcolor>floor</textcolor>
-                </control>
-            </control>
-            </control>
             </control>
             <control type="group">
                 <visible>Container.Content(songs)</visible>
-               <animation effect="slide" end="-1340,0" time="0" condition="Control.IsVisible(514)">Conditional</animation>
+                <animation effect="slide" end="-1340,0" time="0" condition="Control.IsVisible(514)">Conditional</animation>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <!-- Rating -->
@@ -861,31 +858,31 @@
                     <include>AudioFlagsVars</include>
                     <visible>Container.Content(Songs)</visible>
                 </control>
-            <control type="group">
-                <!-- Genre -->
-                <visible>!IsEmpty(ListItem.Genre)</visible>
-                <include>Animation_VisibleChange200</include>
+                <control type="group">
+                    <!-- Genre -->
+                    <visible>!IsEmpty(ListItem.Genre)</visible>
+                    <include>Animation_VisibleChange200</include>
                     <posx>1705</posx>
-                <control type="image">
-                    <width>175</width>
-                    <height>88</height>
-                    <texture>flags/music/genre/genre.png</texture>
-                    <colordiffuse>floor</colordiffuse>
-                    <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
+                    <control type="image">
+                        <width>175</width>
+                        <height>88</height>
+                        <texture>flags/music/genre/genre.png</texture>
+                        <colordiffuse>floor</colordiffuse>
+                        <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <posx>-27</posx>
+                        <posy>0</posy>
+                        <width>135</width>
+                        <height>88</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <wrapmultiline>true</wrapmultiline>
+                        <label>$INFO[ListItem.Genre]</label>
+                        <font>Font_Reg19_Caps</font>
+                        <textcolor>floor</textcolor>
+                    </control>
                 </control>
-                <control type="label">
-                    <posx>-27</posx>
-                    <posy>0</posy>
-                    <width>135</width>
-                    <height>88</height>
-                    <aligny>center</aligny>
-                    <align>center</align>
-                    <wrapmultiline>true</wrapmultiline>
-                    <label>$INFO[ListItem.Genre]</label>
-                    <font>Font_Reg19_Caps</font>
-                    <textcolor>floor</textcolor>
-                </control>
-            </control>
             </control>
         </control>
     </include>

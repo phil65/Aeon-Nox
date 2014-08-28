@@ -56,7 +56,7 @@
                 <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
                 <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),dailybabe)</visible>
-            </control>        
+            </control>
             <control type="image">
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(LiveBG)]</texture>
@@ -563,18 +563,18 @@
                         </control>
                     </control>
                 </control>
-                    <control type="label">
-                        <posx>1860</posx>
-                        <posy>111</posy>
-                        <width>400</width>
-                        <height>75</height>
-                        <align>right</align>
-                        <aligny>bottom</aligny>
-                        <label>$VAR[PlayerTimeLabelVar]</label>
-                        <font>Font_MainClassic2</font>
-                        <shadowcolor>black</shadowcolor>
-                        <textcolor>white3</textcolor>
-                    </control>
+                <control type="label">
+                    <posx>1860</posx>
+                    <posy>111</posy>
+                    <width>400</width>
+                    <height>75</height>
+                    <align>right</align>
+                    <aligny>bottom</aligny>
+                    <label>$VAR[PlayerTimeLabelVar]</label>
+                    <font>Font_MainClassic2</font>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white3</textcolor>
+                </control>
                 <control type="progress" id="23">
                     <posx>1538</posx>
                     <posy>208</posy>
@@ -850,8 +850,8 @@
                         <orientation>vertical</orientation>
                         <pagecontrol>60</pagecontrol>
                         <focusposition>0</focusposition>
-                            <autoscroll time="4000">!Control.HasFocus(5222)</autoscroll>
-                            <scrolltime tween="quadratic">800</scrolltime>
+                        <autoscroll time="4000">!Control.HasFocus(5222)</autoscroll>
+                        <scrolltime tween="quadratic">800</scrolltime>
                         <preloaditems>2</preloaditems>
                         <itemlayout width="614" height="30">
                             <control type="label">

@@ -27,7 +27,7 @@
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
             <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
-<!--             <onfocus>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[Container.ListItem.Property(Headliner)],return)</onfocus>-->
+            <!--             <onfocus>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[Container.ListItem.Property(Headliner)],return)</onfocus>-->
             <onfocus>SetProperty(Label,$ESCINFO[Container(5051).ListItem.Label],home)</onfocus>
             <onfocus>SetProperty(Label2,$ESCINFO[Container(5051).ListItem.Label2],home)</onfocus>
             <onfocus>SetProperty(Thumb,$ESCINFO[Container(5051).ListItem.Thumb],home)</onfocus>
@@ -67,7 +67,7 @@
             <onfocus>SetProperty(WidgetType,concert,home)</onfocus>
             <onfocus>SetFocus(5055)</onfocus>
             <visible>Stringcompare(Window(home).Property(WidgetPosition),Widget2)</visible>
-        </control>       
+        </control>
         <control type="button" id="9004">
             <include>HiddenObject</include>
             <onfocus condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
@@ -358,7 +358,7 @@
                 <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
             </control>
         </control>
-        <control type="group"> 
+        <control type="group">
             <visible>![Window.IsActive(1159) + IsEmpty(Window(home).Property(ShowMainMenu))]</visible>
             <include>Animation_VisibleChange400</include>
             <control type="group">
@@ -690,6 +690,5 @@
                 </control>
             </control>
         </control>
-
     </controls>
 </window>

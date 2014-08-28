@@ -2,7 +2,6 @@
 <includes>
     <include name="MainMenuCustomizer">
         <include>MainMenuCommonContent</include>
-
         <control type="group">
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
             <include>InvisibleIncludeLabels</include>
@@ -232,112 +231,112 @@
                     <height>348</height>
                     <preloaditems>2</preloaditems>
                     <scrolltime>200</scrolltime>
-                        <itemlayout height="174" width="399">
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">common/bgcolor.png</texture>
-                                <aspectratio>scale</aspectratio>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">$INFO[ListItem.Thumb]</texture>
-                                <aspectratio aligny="top">scale</aspectratio>
-                                <colordiffuse>77FFFFFF</colordiffuse>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">button-nofocus.png</texture>
-                            </control>
-                            <control type="textbox">
-                                <posx>12</posx>
-                                <width>375</width>
-                                <height>66</height>
-                                <align>left</align>
-                                <font>Font_Reg30</font>
-                                <shadowcolor>black</shadowcolor>
-                                <info>ListItem.Label</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>80</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                                <info>ListItem.Label2</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>110</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout height="174" width="399">
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">common/bgcolor.png</texture>
-                                <aspectratio>scale</aspectratio>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">$INFO[ListItem.Thumb]</texture>
-                                <aspectratio aligny="top">scale</aspectratio>
-                                <colordiffuse>77FFFFFF</colordiffuse>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="3">button-nofocus.png</texture>
-                                <visible>!Control.HasFocus(5051)</visible>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="8">views/tripanel/listselect_fo.png</texture>
-                                <visible>Control.HasFocus(5051)</visible>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            </control>
-                            <control type="textbox">
-                                <posx>12</posx>
-                                <width>375</width>
-                                <height>66</height>
-                                <align>left</align>
-                                <font>Font_Reg30</font>
-                                <shadowcolor>black</shadowcolor>
-                                <info>ListItem.Label</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>80</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                                <info>ListItem.Label2</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>110</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                            </control>
-                        </focusedlayout>
+                    <itemlayout height="174" width="399">
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">common/bgcolor.png</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">$INFO[ListItem.Thumb]</texture>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <colordiffuse>77FFFFFF</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">button-nofocus.png</texture>
+                        </control>
+                        <control type="textbox">
+                            <posx>12</posx>
+                            <width>375</width>
+                            <height>66</height>
+                            <align>left</align>
+                            <font>Font_Reg30</font>
+                            <shadowcolor>black</shadowcolor>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>80</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                            <info>ListItem.Label2</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>110</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="174" width="399">
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">common/bgcolor.png</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">$INFO[ListItem.Thumb]</texture>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <colordiffuse>77FFFFFF</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="3">button-nofocus.png</texture>
+                            <visible>!Control.HasFocus(5051)</visible>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
+                            <visible>Control.HasFocus(5051)</visible>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        </control>
+                        <control type="textbox">
+                            <posx>12</posx>
+                            <width>375</width>
+                            <height>66</height>
+                            <align>left</align>
+                            <font>Font_Reg30</font>
+                            <shadowcolor>black</shadowcolor>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>80</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                            <info>ListItem.Label2</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>110</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                        </control>
+                    </focusedlayout>
                     <content>
                         <include>ConcertsPanelContentskinsettings</include>
                     </content>
@@ -371,7 +370,7 @@
                         <pagecontrol>60</pagecontrol>
                         <focusposition>0</focusposition>
                         <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                            <autoscroll time="7000">!Control.HasFocus(5001)</autoscroll>
+                        <autoscroll time="7000">!Control.HasFocus(5001)</autoscroll>
                         <preloaditems>2</preloaditems>
                         <itemlayout width="614" height="340">
                             <include>FeaturedWidgetLandscapeLayout</include>
@@ -467,7 +466,7 @@
                         <orientation>horizontal</orientation>
                         <pagecontrol>60</pagecontrol>
                         <focusposition>0</focusposition>
-                            <autoscroll time="11500">!Control.HasFocus(5002)</autoscroll>
+                        <autoscroll time="11500">!Control.HasFocus(5002)</autoscroll>
                         <scrolltime tween="cubic" easing="inout">1200</scrolltime>
                         <preloaditems>2</preloaditems>
                         <itemlayout width="340" height="340">
@@ -570,7 +569,7 @@
                         <orientation>horizontal</orientation>
                         <pagecontrol>60</pagecontrol>
                         <focusposition>0</focusposition>
-                            <autoscroll time="9000">!Control.HasFocus(5003)</autoscroll>
+                        <autoscroll time="9000">!Control.HasFocus(5003)</autoscroll>
                         <scrolltime tween="cubic" easing="inout">1200</scrolltime>
                         <preloaditems>2</preloaditems>
                         <itemlayout width="614" height="340">
@@ -720,112 +719,112 @@
                     <height>348</height>
                     <preloaditems>2</preloaditems>
                     <scrolltime>200</scrolltime>
-                         <itemlayout height="174" width="399">
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">common/bgcolor.png</texture>
-                                <aspectratio>scale</aspectratio>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">$INFO[ListItem.Thumb]</texture>
-                                <aspectratio aligny="top">scale</aspectratio>
-                                <colordiffuse>77FFFFFF</colordiffuse>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">button-nofocus.png</texture>
-                            </control>
-                            <control type="textbox">
-                                <posx>12</posx>
-                                <width>375</width>
-                                <height>66</height>
-                                <align>left</align>
-                                <font>Font_Reg30</font>
-                                <shadowcolor>black</shadowcolor>
-                                <info>ListItem.Label</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>80</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                                <info>ListItem.Label2</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>110</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout height="174" width="399">
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">common/bgcolor.png</texture>
-                                <aspectratio>scale</aspectratio>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="6">$INFO[ListItem.Thumb]</texture>
-                                <aspectratio aligny="top">scale</aspectratio>
-                                <colordiffuse>77FFFFFF</colordiffuse>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="3">button-nofocus.png</texture>
-                                <visible>!Control.HasFocus(6051)</visible>
-                            </control>
-                            <control type="image">
-                                <width>399</width>
-                                <height>174</height>
-                                <texture border="8">views/tripanel/listselect_fo.png</texture>
-                                <visible>Control.HasFocus(6051)</visible>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            </control>
-                            <control type="textbox">
-                                <posx>12</posx>
-                                <width>375</width>
-                                <height>66</height>
-                                <align>left</align>
-                                <font>Font_Reg30</font>
-                                <shadowcolor>black</shadowcolor>
-                                <info>ListItem.Label</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>80</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                                <info>ListItem.Label2</info>
-                            </control>
-                            <control type="label">
-                                <posx>12</posx>
-                                <posy>110</posy>
-                                <width>375</width>
-                                <height>40</height>
-                                <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
-                                <font>Font_Reg26</font>
-                                <shadowcolor>black</shadowcolor>
-                                <textcolor>grey</textcolor>
-                            </control>
-                        </focusedlayout>
+                    <itemlayout height="174" width="399">
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">common/bgcolor.png</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">$INFO[ListItem.Thumb]</texture>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <colordiffuse>77FFFFFF</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">button-nofocus.png</texture>
+                        </control>
+                        <control type="textbox">
+                            <posx>12</posx>
+                            <width>375</width>
+                            <height>66</height>
+                            <align>left</align>
+                            <font>Font_Reg30</font>
+                            <shadowcolor>black</shadowcolor>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>80</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                            <info>ListItem.Label2</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>110</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="174" width="399">
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">common/bgcolor.png</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="6">$INFO[ListItem.Thumb]</texture>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <colordiffuse>77FFFFFF</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="3">button-nofocus.png</texture>
+                            <visible>!Control.HasFocus(6051)</visible>
+                        </control>
+                        <control type="image">
+                            <width>399</width>
+                            <height>174</height>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
+                            <visible>Control.HasFocus(6051)</visible>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        </control>
+                        <control type="textbox">
+                            <posx>12</posx>
+                            <width>375</width>
+                            <height>66</height>
+                            <align>left</align>
+                            <font>Font_Reg30</font>
+                            <shadowcolor>black</shadowcolor>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>80</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                            <info>ListItem.Label2</info>
+                        </control>
+                        <control type="label">
+                            <posx>12</posx>
+                            <posy>110</posy>
+                            <width>375</width>
+                            <height>40</height>
+                            <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
+                            <font>Font_Reg26</font>
+                            <shadowcolor>black</shadowcolor>
+                            <textcolor>grey</textcolor>
+                        </control>
+                    </focusedlayout>
                     <content>
                         <include>ConcertsPanelContentskinsettings</include>
                     </content>
@@ -954,7 +953,7 @@
                         <pagecontrol>60</pagecontrol>
                         <focusposition>0</focusposition>
                         <autoscroll time="11500">!Control.HasFocus(6002)</autoscroll>
-                       <scrolltime tween="cubic" easing="inout">1200</scrolltime>
+                        <scrolltime tween="cubic" easing="inout">1200</scrolltime>
                         <preloaditems>2</preloaditems>
                         <itemlayout width="340" height="340">
                             <include>FeaturedWidgetSquareLayout</include>
@@ -1298,8 +1297,8 @@
                     <width>450</width>
                     <height>280</height>
                     <preloaditems>2</preloaditems>
-                            <autoscroll time="7000">!Control.HasFocus(8000)</autoscroll>
-                            <scrolltime tween="quadratic">800</scrolltime>
+                    <autoscroll time="7000">!Control.HasFocus(8000)</autoscroll>
+                    <scrolltime tween="quadratic">800</scrolltime>
                     <itemlayout height="34" width="450" />
                     <focusedlayout height="34" width="450" />
                     <content>
@@ -1721,8 +1720,8 @@
                     <width>450</width>
                     <height>280</height>
                     <preloaditems>2</preloaditems>
-                            <autoscroll time="7000">!Control.HasFocus(7000)</autoscroll>
-                            <scrolltime tween="quadratic">800</scrolltime>
+                    <autoscroll time="7000">!Control.HasFocus(7000)</autoscroll>
+                    <scrolltime tween="quadratic">800</scrolltime>
                     <itemlayout height="34" width="450" />
                     <focusedlayout height="34" width="450" />
                     <content>
@@ -2223,8 +2222,7 @@
             </control>
         </focusedlayout>
         <content>
-                        <include>skinshortcuts-submenu</include>
-
+            <include>skinshortcuts-submenu</include>
         </content>
     </include>
 </includes>

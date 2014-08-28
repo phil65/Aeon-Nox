@@ -6,7 +6,6 @@
     <onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
     <onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload>ClearProperty(BrowseActors,home)</onload>
-    
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <allowoverlay>no</allowoverlay>
     <views>50,52,53,57,500,501,503,550,508,509,510,511,512,514,516,518</views>
@@ -46,7 +45,6 @@
             <label>$INFO[Window(home).Property(Set.Movie.9.Art(clearlogo))]</label>
             <label>$INFO[Window(home).Property(Set.Movie.10.Art(clearlogo))]</label>
         </control>
-    
         <control type="button" id="9900">
             <!-- no info-->
             <include>HiddenObject</include>
@@ -86,7 +84,7 @@
                 <animation effect="fade" start="100" end="50" time="640">Hidden</animation>
                 <visible>Container.Content(movies) | Container.Content(sets)</visible>
             </control>
-             <control type="multiimage" id="4200">
+            <control type="multiimage" id="4200">
                 <imagepath background="true" fallback="special://skin/backgrounds/tvshows/">$VAR[TVShowFanartVar]</imagepath>
                 <fadetime>FanartCrossfadeTime</fadetime>
                 <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
@@ -102,10 +100,8 @@
                 <visible>[Container.Content(musicvideos) + Skin.HasSetting(extrafanartmusicvideos)] | [Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)] | [Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)]</visible>
                 <visible>!SubString(ListItem.Label,*,left) + [Substring(Container.FolderPath,videodb://,left) | Substring(Container.FolderPath,special://profile/playlist,left)]</visible>
             </control>
-            
-         <include>InteractiveNodeCases</include>
-         <include>NodeFadeLabels</include>
-
+            <include>InteractiveNodeCases</include>
+            <include>NodeFadeLabels</include>
         </control>
         <!-- view id = 516-->
         <include condition="!Skin.HasSetting(DisableBigFanVL)">BigFan</include>
@@ -216,7 +212,7 @@
                     </animation>
                 </control>
             </control>
-                <include>FloorSetDiscArt</include>
+            <include>FloorSetDiscArt</include>
             <control type="group">
                 <control type="button" id="7000">
                     <include>HiddenObject</include>

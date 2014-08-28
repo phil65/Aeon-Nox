@@ -3,7 +3,7 @@
     <defaultcontrol always="true">10000</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
-        <onload>SetProperty(MenuName,MenuItem,home)</onload>
+    <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>Skin.SetString(widgetlist,$INFO[Control.GetLabel(11111)])</onunload>
     <onunload>Skin.SetString(widget2list,$INFO[Control.GetLabel(11112)])</onunload>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
@@ -16,7 +16,7 @@
         <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
     </animation>
     <controls>
-                <control type="button" id="9006">
+        <control type="button" id="9006">
             <include>HiddenObject</include>
             <onfocus>Skin.Setstring(ItemToEdit.Label,$ESCINFO[Container(9000).ListItem.Label])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$ESCINFO[Container(9000).ListItem.Icon])</onfocus>
@@ -104,7 +104,7 @@
                 <posy>90</posy>
                 <width>1491</width>
                 <align>center</align>
-				<aligny>top</aligny>
+                <aligny>top</aligny>
                 <label>$LOCALIZE[20077] - $INFO[Container(10000).ListItem.Label] $INFO[Container(10000).ListItem.Label2]</label>
                 <font>Font_ShowcaseMainLabel2</font>
                 <shadowcolor>black</shadowcolor>
@@ -415,7 +415,7 @@
                     </control>
                 </control>
                 <control type="group" id="10011">
-                 <visible>Container(10000).Hasfocus(3) | Window.IsActive(1122)</visible>
+                    <visible>Container(10000).Hasfocus(3) | Window.IsActive(1122)</visible>
                     <posx>384</posx>
                     <posy>160</posy>
                     <width>1469</width>

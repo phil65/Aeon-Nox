@@ -123,162 +123,158 @@
         <include>Dialogs_LabelVars</include>
     </include>
     <include name="ConcertLayouts">
-                   <itemlayout height="280" width="700">
-                        <control type="image">
-                            <width>670</width>
-                            <height>250</height>
-                            <texture border="6">common/bgcolor.png</texture>
-                            <aspectratio>scale</aspectratio>
-                        </control>
-                        <control type="image">
-                            <width>670</width>
-                            <height>250</height>
-                            <texture border="6">button-nofocus.png</texture>
-                        </control>
-                        <control type="image">
-                            <width>230</width>
-                            <height>250</height>
-                            <texture border="6" fallback="DefaultArtist.png">$INFO[ListItem.Thumb]</texture>
-                            <aspectratio aligny="top" align="center">scale</aspectratio>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                        </control>
-                        <control type="group">
-                        <posx>235</posx>
-                       <control type="image">
-                            <posx>-3</posx>
-                            <posy>1</posy>
-                            <width>438</width>
-                            <height>247</height>
-                            <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
-                            <aspectratio aligny="center" align="center">scale</aspectratio>
-                            <colordiffuse>FF555555</colordiffuse>
-                        </control>
-                        <control type="textbox">
-                            <posy>0</posy>
-                            <width>420</width>
-                            <height>70</height>
-                            <font>Font_Bold28</font>
-                            <align>left</align>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white2</textcolor>
-                            <label>$INFO[ListItem.Property(EventName)]</label>
-                        </control>
-                        <control type="textbox">
-                            <posy>70</posy>
-                            <width>420</width>
-                            <height>92</height>
-                            <align>left</align>
-                            <font>Font_Reg22</font>
-                            <shadowcolor>black</shadowcolor>
-                            <info>ListItem.Label</info>
-                        </control>
-                        <control type="label">
-                            <posy>185</posy>
-                            <width>400</width>
-                            <height>40</height>
-                            <font>Font_Reg25</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white2</textcolor>
-                            <info>ListItem.Label2</info>
-                        </control>
-                        <control type="label">
-                            <posy>210</posy>
-                            <width>400</width>
-                            <height>40</height>
-                            <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
-                            <font>Font_Reg25</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white2</textcolor>
-                        </control>
-                    </control>
-
-                    </itemlayout>
-                    <focusedlayout height="280" width="700">
-                        <control type="image">
-                            <width>670</width>
-                            <height>250</height>
-                            <texture border="6">common/bgcolor.png</texture>
-                            <aspectratio>scale</aspectratio>
-                        </control>
-                       <control type="image">
-                            <posx>232</posx>
-                            <posy>1</posy>
-                            <width>438</width>
-                            <height>247</height>
-                            <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
-                            <aspectratio aligny="center" align="center">scale</aspectratio>
-                            <colordiffuse>FF555555</colordiffuse>
-                        </control>
-                        <control type="image">
-                            <width>670</width>
-                            <height>250</height>
-                            <texture border="8">views/tripanel/listselect_fo.png</texture>
-                            <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        </control>
-                        <control type="image">
-                            <width>670</width>
-                            <height>250</height>
-                            <texture border="6">button-nofocus.png</texture>
-                        </control>
-                        <control type="image">
-                            <width>230</width>
-                            <height>250</height>
-                            <texture border="6" fallback="DefaultArtist.png">$INFO[ListItem.Thumb]</texture>
-                            <aspectratio aligny="top" align="center">scale</aspectratio>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                        </control>
-                        <control type="group">
-                        <posx>235</posx>
-                        <control type="textbox">
-                            <posy>0</posy>
-                            <width>420</width>
-                            <height>70</height>
-                            <font>Font_Bold28</font>
-                            <align>left</align>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white2</textcolor>
-                            <label>$INFO[ListItem.Property(EventName)]</label>
-                        </control>
-                        <control type="textbox">
-                            <posy>70</posy>
-                            <width>420</width>
-                            <height>92</height>
-                            <align>left</align>
-                            <font>Font_Reg22</font>
-                            <shadowcolor>black</shadowcolor>
-                            <info>ListItem.Label</info>
-                        </control>
-                        <control type="label">
-                            <posy>185</posy>
-                            <width>400</width>
-                            <height>40</height>
-                            <font>Font_Reg25</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white2</textcolor>
-                            <info>ListItem.Label2</info>
-                        </control>
-                        <control type="label">
-                            <posy>210</posy>
-                            <width>400</width>
-                            <height>40</height>
-                            <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
-                            <font>Font_Reg25</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white2</textcolor>
-                        </control>
-                        </control>
-                        <control type="image">
-                            <width>670</width>
-                            <height>250</height>
-                            <texture border="6">views/addonwall_select.png</texture>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                             <animation effect="fade" time="0" reversible="false">Focus</animation>
-                        </control>
-                    </focusedlayout>
- 
-    
-    
+        <itemlayout height="280" width="700">
+            <control type="image">
+                <width>670</width>
+                <height>250</height>
+                <texture border="6">common/bgcolor.png</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+            <control type="image">
+                <width>670</width>
+                <height>250</height>
+                <texture border="6">button-nofocus.png</texture>
+            </control>
+            <control type="image">
+                <width>230</width>
+                <height>250</height>
+                <texture border="6" fallback="DefaultArtist.png">$INFO[ListItem.Thumb]</texture>
+                <aspectratio aligny="top" align="center">scale</aspectratio>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+            <control type="group">
+                <posx>235</posx>
+                <control type="image">
+                    <posx>-3</posx>
+                    <posy>1</posy>
+                    <width>438</width>
+                    <height>247</height>
+                    <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
+                    <aspectratio aligny="center" align="center">scale</aspectratio>
+                    <colordiffuse>FF555555</colordiffuse>
+                </control>
+                <control type="textbox">
+                    <posy>0</posy>
+                    <width>420</width>
+                    <height>70</height>
+                    <font>Font_Bold28</font>
+                    <align>left</align>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white2</textcolor>
+                    <label>$INFO[ListItem.Property(EventName)]</label>
+                </control>
+                <control type="textbox">
+                    <posy>70</posy>
+                    <width>420</width>
+                    <height>92</height>
+                    <align>left</align>
+                    <font>Font_Reg22</font>
+                    <shadowcolor>black</shadowcolor>
+                    <info>ListItem.Label</info>
+                </control>
+                <control type="label">
+                    <posy>185</posy>
+                    <width>400</width>
+                    <height>40</height>
+                    <font>Font_Reg25</font>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white2</textcolor>
+                    <info>ListItem.Label2</info>
+                </control>
+                <control type="label">
+                    <posy>210</posy>
+                    <width>400</width>
+                    <height>40</height>
+                    <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
+                    <font>Font_Reg25</font>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white2</textcolor>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout height="280" width="700">
+            <control type="image">
+                <width>670</width>
+                <height>250</height>
+                <texture border="6">common/bgcolor.png</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+            <control type="image">
+                <posx>232</posx>
+                <posy>1</posy>
+                <width>438</width>
+                <height>247</height>
+                <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
+                <aspectratio aligny="center" align="center">scale</aspectratio>
+                <colordiffuse>FF555555</colordiffuse>
+            </control>
+            <control type="image">
+                <width>670</width>
+                <height>250</height>
+                <texture border="8">views/tripanel/listselect_fo.png</texture>
+                <animation effect="fade" time="280" reversible="false">Focus</animation>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <width>670</width>
+                <height>250</height>
+                <texture border="6">button-nofocus.png</texture>
+            </control>
+            <control type="image">
+                <width>230</width>
+                <height>250</height>
+                <texture border="6" fallback="DefaultArtist.png">$INFO[ListItem.Thumb]</texture>
+                <aspectratio aligny="top" align="center">scale</aspectratio>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+            <control type="group">
+                <posx>235</posx>
+                <control type="textbox">
+                    <posy>0</posy>
+                    <width>420</width>
+                    <height>70</height>
+                    <font>Font_Bold28</font>
+                    <align>left</align>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white2</textcolor>
+                    <label>$INFO[ListItem.Property(EventName)]</label>
+                </control>
+                <control type="textbox">
+                    <posy>70</posy>
+                    <width>420</width>
+                    <height>92</height>
+                    <align>left</align>
+                    <font>Font_Reg22</font>
+                    <shadowcolor>black</shadowcolor>
+                    <info>ListItem.Label</info>
+                </control>
+                <control type="label">
+                    <posy>185</posy>
+                    <width>400</width>
+                    <height>40</height>
+                    <font>Font_Reg25</font>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white2</textcolor>
+                    <info>ListItem.Label2</info>
+                </control>
+                <control type="label">
+                    <posy>210</posy>
+                    <width>400</width>
+                    <height>40</height>
+                    <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
+                    <font>Font_Reg25</font>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white2</textcolor>
+                </control>
+            </control>
+            <control type="image">
+                <width>670</width>
+                <height>250</height>
+                <texture border="6">views/addonwall_select.png</texture>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <animation effect="fade" time="0" reversible="false">Focus</animation>
+            </control>
+        </focusedlayout>
     </include>
     <include name="Objects_MediaMenuButtonAlt">
         <width>400</width>
@@ -312,7 +308,8 @@
         <focusedcolor>white6</focusedcolor>
         <onleft condition="Skin.HasSetting(quicknav)">ClearProperty(viewtypeselect,home)</onleft>
         <onleft condition="Skin.HasSetting(quicknav)">ActivateWindow(1121)</onleft>
-        <onleft condition="!Skin.HasSetting(quicknav) + !Window.IsActive(musicinformation) + !Window.IsActive(PVR)">SetFocus(50)</onleft><!--window.ismedia does not work-->
+        <onleft condition="!Skin.HasSetting(quicknav) + !Window.IsActive(musicinformation) + !Window.IsActive(PVR)">SetFocus(50)</onleft>
+        <!--window.ismedia does not work-->
         <radiowidth>65</radiowidth>
         <radioposx>8</radioposx>
         <radioposy>4</radioposy>
@@ -742,8 +739,6 @@
         <onload>Skin.SetString(font_musicplaylist,FF6db9e5)</onload>
         <onload>Skin.SetString(font_videoplaylist,FF6db9e5)</onload>
         <onload>Skin.SetString(font_weather,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_featured,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_settings,FF6db9e5)</onload>
         <onload>Skin.SetString(font_PVR,FF6db9e5)</onload>
         <onload>Skin.SetString(BackgroundDarkness,80FFFFFF)</onload>
         <onload>Skin.SetString(LibraryStructure,2)</onload>
@@ -2228,7 +2223,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Book.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Book.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Book.png</texturenofocus>
                     <label>298</label>
                     <font>-</font>
                     <onclick>ActivateWindow(videobookmarks)</onclick>
@@ -2237,7 +2232,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Speaker.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Speaker.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Speaker.png</texturenofocus>
                     <label>13396</label>
                     <font>-</font>
                     <onclick>ActivateWindow(osdaudiosettings)</onclick>
@@ -2246,7 +2241,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Camcorder.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Camcorder.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Camcorder.png</texturenofocus>
                     <label>13395</label>
                     <font>-</font>
                     <onclick>ActivateWindow(osdvideosettings)</onclick>
@@ -2270,7 +2265,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonFirst.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFirst.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFirst.png</texturenofocus>
                     <label>210</label>
                     <font>-</font>
                     <onclick>PlayerControl(Previous)</onclick>
@@ -2279,7 +2274,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
                     <label>31354</label>
                     <font>-</font>
                     <onclick>PlayerControl(Rewind)</onclick>
@@ -2288,7 +2283,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
                     <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
                     <alttexturenofocus>-</alttexturenofocus>
                     <label>31351</label>
@@ -2301,7 +2296,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
                     <label>31352</label>
                     <font>-</font>
                     <onclick>PlayerControl(Stop)</onclick>
@@ -2310,7 +2305,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
                     <label>31353</label>
                     <font>-</font>
                     <onclick>PlayerControl(Forward)</onclick>
@@ -2319,7 +2314,7 @@
                     <width>100</width>
                     <height>100</height>
                     <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonEnd.png</texturefocus>
-                        <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonEnd.png</texturenofocus>
+                    <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonEnd.png</texturenofocus>
                     <label>209</label>
                     <font>-</font>
                     <onclick>PlayerControl(Next)</onclick>
