@@ -1,6 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="HomePanelWidget_1124">
+    <include name="MainMenuCustomizer">
+        <include>MainMenuCommonContent</include>
+
+        <control type="group">
+            <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
+            <include>InvisibleIncludeLabels</include>
+        </control>
+        <control type="multiimage">
+            <aspectratio align="center" aligny="top">scale</aspectratio>
+            <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <visible>!Substring(Control.GetLabel(4322),case) + !Substring(Control.GetLabel(4322),wall)</visible>
+        </control>
+        <include>cdwall-musicvisualisation</include>
+        <include>MovieWall</include>
+        <control type="image">
+            <aspectratio align="center" aligny="top">scale</aspectratio>
+            <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(LiveBG)]</texture>
+            <fadetime>600</fadetime>
+            <include>FullscreenDimensions</include>
+            <include>Animation_WindowFade200</include>
+            <animation effect="fade" time="480">Visible</animation>
+            <animation effect="fade" time="480">Hidden</animation>
+            <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),case)</visible>
+        </control>
+        <include>InteractiveCasesBackground</include>
+        <include>LiveCDCasesbackground</include>
+        <include>LiveNoCasesbackground</include>
+        <control type="image">
+            <texture>common/bgcolor.png</texture>
+            <include>FullscreenDimensions</include>
+            <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+            <include>Animation_VisibleChange400</include>
+        </control>
+        <control type="image">
+            <posy>-150</posy>
+            <width>1920</width>
+            <height>608</height>
+            <texture flipy="true">views/showcase_glow.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
+            <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
+            <include>Animation_VisibleChange400</include>
+            <include>Animation_WindowFade200</include>
+        </control>
+        <control type="image">
+            <posy>622</posy>
+            <width>1920</width>
+            <height>608</height>
+            <texture>views/showcase_glow.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
+            <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
+            <include>Animation_VisibleChange400</include>
+            <include>Animation_WindowFade200</include>
+        </control>
+        <control type="group">
+            <visible>!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(DisableGlowbar)</visible>
+            <include>Animation_VisibleChangeDelayed</include>
+            <control type="image">
+                <posy>360</posy>
+                <width>1920</width>
+                <height>945</height>
+                <texture>home/nowplaying_shadow.png</texture>
+                <visible>!ControlGroup(5000).HasFocus</visible>
+                <visible>Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
+                <include>Animation_VisibleChangeDelayed</include>
+                <animation effect="slide" time="320" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            </control>
+            <control type="image">
+                <width>1920</width>
+                <height>945</height>
+                <texture flipy="true">home/nowplaying_shadow.png</texture>
+                <include>Animation_VisibleChangeDelayed</include>
+                <visible>Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)</visible>
+                <animation effect="slide" time="320" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            </control>
+        </control>
+        <control type="group">
+            <visible>Skin.HasSetting(lowermainmenu) + Skin.HasSetting(DisableGlowbar)</visible>
+            <include>Animation_VisibleChangeDelayed</include>
+            <control type="image">
+                <posy>160</posy>
+                <width>1920</width>
+                <height>694</height>
+                <texture>home/nowplaying_shadow.png</texture>
+                <visible>!ControlGroup(5000).HasFocus</visible>
+                <visible>Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
+                <include>Animation_VisibleChangeDelayed</include>
+            </control>
+            <control type="image">
+                <width>1920</width>
+                <height>545</height>
+                <texture flipy="true">home/nowplaying_shadow.png</texture>
+                <include>Animation_VisibleChangeDelayed</include>
+                <visible>Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)</visible>
+            </control>
+        </control>
+        <include>HomePanelWidget_skinsettings</include>
+        <include>HomePanelWidget2_skinsettings</include>
+        <!-- Alternate Stats + Time -->
+        <control type="group" id="8996">
+            <posy>472</posy>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="200" tween="quadratic" />
+                <effect type="slide" end="0,45" time="200" tween="quadratic" />
+            </animation>
+            <animation type="WindowOpen" condition="!Skin.HasSetting(AlternateTimeStats) + ![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">
+                <effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
+                <effect type="fade" start="50" end="100" time="240" />
+            </animation>
+            <animation effect="slide" start="-1860,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="Skin.HasSetting(AlternateTimeStats) + ![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">WindowOpen</animation>
+            <animation effect="slide" start="-1260,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="[Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">WindowOpen</animation>
+            <control type="image">
+                <posy>-46</posy>
+                <width>1920</width>
+                <height>87</height>
+                <texture>$VAR[NavBarImageVar]</texture>
+                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+            </control>
+            <control type="grouplist" id="8992">
+                <posx>704</posx>
+                <width>513</width>
+                <height>58</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <itemgap>10</itemgap>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <scrolltime tween="quadratic">200</scrolltime>
+                <control type="image">
+                    <posy>2</posy>
+                    <width>35</width>
+                    <height>35</height>
+                    <texture>defaulticons/DefaultFolderBack.png</texture>
+                    <animation effect="rotate" end="-90" center="auto" time="0" condition="true">Conditional</animation>
+                    <colordiffuse>$VAR[HomeMenuWidgetTextVar]</colordiffuse>
+                </control>
+                <control type="label">
+                    <width min="15" max="1920">auto</width>
+                    <height>36</height>
+                    <label>$LOCALIZE[31176]</label>
+                    <font>Font_Reg28_Caps</font>
+                    <textcolor>grey</textcolor>
+                </control>
+            </control>
+        </control>
+        <control type="group">
+            <posy>472</posy>
+            <include>LibraryStats</include>
+            <include>TimePanel</include>
+            <include>AlternateTimeAndStats</include>
+        </control>
+        <control type="group">
+            <include>Animation_OpenCloseZoom</include>
+            <include>RecentWidget_skinsettings</include>
+            <include>RecentWidget2_skinsettings</include>
+            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget</include>
+            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget2</include>
+        </control>
+        <!--Main Menu-->
+        <control type="group">
+            <include>FullscreenDimensions</include>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <include>Animation_OpenCloseZoom</include>
+            <!-- Home Menu Bar -->
+            <control type="image">
+                <posy>453</posy>
+                <width>1920</width>
+                <height>225</height>
+                <texture>$VAR[HomeMenuBackVar]</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            </control>
+            <!-- Home Menu -->
+            <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
+            <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
+            <control type="group">
+                <include>Furniture_ClassicHomeGradient</include>
+                <include>Neon_Home</include>
+            </control>
+        </control>
+    </include>
+    <include name="HomePanelWidget_skinsettings">
         <control type="group" id="5000">
             <posx>135</posx>
             <posy>674</posy>
@@ -154,7 +339,7 @@
                             </control>
                         </focusedlayout>
                     <content>
-                        <include>ConcertsPanelContent1124</include>
+                        <include>ConcertsPanelContentskinsettings</include>
                     </content>
                 </control>
             </control>
@@ -489,7 +674,7 @@
             </control>
         </control>
     </include>
-    <include name="HomePanelWidget2_1124">
+    <include name="HomePanelWidget2_skinsettings">
         <control type="group" id="6000">
             <posx>135</posx>
             <posy>-7</posy>
@@ -642,7 +827,7 @@
                             </control>
                         </focusedlayout>
                     <content>
-                        <include>ConcertsPanelContent1124</include>
+                        <include>ConcertsPanelContentskinsettings</include>
                     </content>
                 </control>
             </control>
@@ -971,7 +1156,7 @@
             </control>
         </control>
     </include>
-    <include name="RecentWidget_1124">
+    <include name="RecentWidget_skinsettings">
         <control type="group" id="8998">
             <posx>1542</posx>
             <posy>678</posy>
@@ -1395,7 +1580,7 @@
             </control>
         </control>
     </include>
-    <include name="RecentWidget2_1124">
+    <include name="RecentWidget2_skinsettings">
         <control type="group" id="7998">
             <posx>1542</posx>
             <posy>13</posy>
@@ -1838,31 +2023,31 @@
         <include>FavoritesMainMenu</include>
         <include>WeatherMainMenu</include>
     </include>
-    <include name="MainMenuListContent1124">
-        <posx>-338</posx>
+    <include name="MainMenuListContentskinsettings">
+        <posx>0</posx>
         <posy>450</posy>
-        <width>3069</width>
+        <width>1920</width>
         <height>225</height>
         <hitrect x="-238" y="475" w="2400" h="130" />
         <onleft>9000</onleft>
         <onright>9000</onright>
-        <onup>ActivateWindow(1120)</onup>
-        <ondown>9010</ondown>
+        <onup>10000</onup>
+        <ondown>10000</ondown>
         <scrolltime tween="quadratic">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
         <orientation>horizontal</orientation>
         <animation effect="slide" end="-302,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(biggergap)">Conditional</animation>
         <animation effect="fade" start="100" end="30" time="160" condition="Window.IsVisible(1113) | ControlGroup(9001).HasFocus">conditional</animation>
-        <itemlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
+        <itemlayout height="225" width="475" condition="!Skin.HasSetting(mainmenuicons)">
             <control type="label">
-                <posx>260</posx>
-                <width>519</width>
+                <posx>0</posx>
+                <width>639</width>
                 <textcolor>white5</textcolor>
                 <include>MainMenuLabels</include>
             </control>
             <control type="image">
-                <posx>214</posx>
+                <posx>0</posx>
                 <posy>68</posy>
                 <width>90</width>
                 <height>90</height>
@@ -1870,15 +2055,15 @@
                 <visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
             </control>
         </itemlayout>
-        <focusedlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
+        <focusedlayout height="225" width="475" condition="!Skin.HasSetting(mainmenuicons)">
             <control type="label">
-                <posx>260</posx>
-                <width>519</width>
+                <posx>0</posx>
+                <width>639</width>
                 <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
                 <include>MainMenuLabels</include>
             </control>
             <control type="image">
-                <posx>214</posx>
+                <posx>0</posx>
                 <posy>68</posy>
                 <width>90</width>
                 <height>90</height>
@@ -1886,41 +2071,9 @@
                 <visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
             </control>
         </focusedlayout>
-        <itemlayout height="225" width="639" condition="Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
-            <control type="label">
-                <posx>260</posx>
-                <width>639</width>
-                <textcolor>white5</textcolor>
-                <include>MainMenuLabels</include>
-            </control>
+        <itemlayout height="225" width="225" condition="Skin.HasSetting(mainmenuicons)">
             <control type="image">
-                <posx>274</posx>
-                <posy>68</posy>
-                <width>90</width>
-                <height>90</height>
-                <texture>close.png</texture>
-                <visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
-            </control>
-        </itemlayout>
-        <focusedlayout height="225" width="639" condition="Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
-            <control type="label">
-                <posx>320</posx>
-                <width>639</width>
-                <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
-                <include>MainMenuLabels</include>
-            </control>
-            <control type="image">
-                <posx>274</posx>
-                <posy>68</posy>
-                <width>90</width>
-                <height>90</height>
-                <texture>close.png</texture>
-                <visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
-            </control>
-        </focusedlayout>
-        <itemlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
-            <control type="image">
-                <posx>252</posx>
+                <posx>20</posx>
                 <posy>64</posy>
                 <width>88</width>
                 <height>88</height>
@@ -1929,7 +2082,7 @@
                 <visible>SubString(ListItem.Property(BigIcon),/BigIcons/)</visible>
             </control>
             <control type="image">
-                <posx>252</posx>
+                <posx>20</posx>
                 <posy>66</posy>
                 <width>88</width>
                 <height>60</height>
@@ -1939,7 +2092,7 @@
                 <visible>!SubString(ListItem.Property(BigIcon),/BigIcons/)</visible>
             </control>
             <control type="label">
-                <posx>297</posx>
+                <posx>65</posx>
                 <posy>29</posy>
                 <width>250</width>
                 <height>225</height>
@@ -1949,7 +2102,7 @@
                 <textcolor>white4</textcolor>
             </control>
             <control type="image">
-                <posx>266</posx>
+                <posx>34</posx>
                 <posy>67</posy>
                 <width>60</width>
                 <height>60</height>
@@ -1957,11 +2110,11 @@
                 <visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
             </control>
         </itemlayout>
-        <focusedlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
+        <focusedlayout height="225" width="225" condition="Skin.HasSetting(mainmenuicons)">
             <control type="group">
-                <animation effect="zoom" start="80" end="100" center="296,108" delay="160" tween="back" time="240">Focus</animation>
+                <animation effect="zoom" start="80" end="100" center="65,108" delay="160" tween="back" time="240">Focus</animation>
                 <control type="image">
-                    <posx>252</posx>
+                    <posx>20</posx>
                     <posy>64</posy>
                     <width>88</width>
                     <height>88</height>
@@ -1970,7 +2123,7 @@
                     <visible>SubString(ListItem.Property(BigIcon),/BigIcons/)</visible>
                 </control>
                 <control type="image">
-                    <posx>252</posx>
+                    <posx>20</posx>
                     <posy>66</posy>
                     <width>88</width>
                     <height>60</height>
@@ -1981,7 +2134,7 @@
                 </control>
             </control>
             <control type="label">
-                <posx>297</posx>
+                <posx>65</posx>
                 <posy>29</posy>
                 <width>250</width>
                 <height>225</height>
@@ -1991,7 +2144,7 @@
                 <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
             </control>
             <control type="image">
-                <posx>266</posx>
+                <posx>34</posx>
                 <posy>67</posy>
                 <width>60</width>
                 <height>60</height>
@@ -2003,7 +2156,7 @@
             <include>CustomizerMenuItems</include>
         </content>
     </include>
-    <include name="SubMenuListContent1124">
+    <include name="SubMenuListContentskinsettings">
         <posx>145</posx>
         <posy>-2</posy>
         <width>1150</width>

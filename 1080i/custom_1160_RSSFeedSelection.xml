@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1160">
     <defaultcontrol always="true">451</defaultcontrol>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget1)">Skin.SetString(CustomHomeFeedURL1,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget2)">Skin.SetString(CustomHomeFeedURL2,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget3)">Skin.SetString(CustomHomeFeedURL3,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget1)">Skin.SetString(CustomHomeFeedTitle1,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget2)">Skin.SetString(CustomHomeFeedTitle2,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget3)">Skin.SetString(CustomHomeFeedTitle3,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
-    <onunload>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)]Title,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget1)">RunScript(script.extendedinfo,info=json,feed=$INFO[Skin.String(RSSWidgetFeed)],prefix=RSS1)</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget2)">RunScript(script.extendedinfo,info=json,feed=$INFO[Skin.String(RSSWidgetFeed)],prefix=RSS2)</onunload>
-    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget3)">RunScript(script.extendedinfo,info=json,feed=$INFO[Skin.String(RSSWidgetFeed)],prefix=RSS3)</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget1)">Skin.SetString(CustomHomeFeedURL1,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget2)">Skin.SetString(CustomHomeFeedURL2,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget3)">Skin.SetString(CustomHomeFeedURL3,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget1)">Skin.SetString(CustomHomeFeedTitle1,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget2)">Skin.SetString(CustomHomeFeedTitle2,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget3)">Skin.SetString(CustomHomeFeedTitle3,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
+    <onunload>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$ESCINFO[Skin.String(RSSWidgetTitle)])</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget1)">RunScript(script.extendedinfo,info=json,feed=$INFO[Skin.String(RSSWidgetFeed)],prefix=RSS1)</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget2)">RunScript(script.extendedinfo,info=json,feed=$INFO[Skin.String(RSSWidgetFeed)],prefix=RSS2)</onunload>
+    <onunload condition="StringCompare(Window(skinsettings).Property(RSSWidget),RSSWidget3)">RunScript(script.extendedinfo,info=json,feed=$INFO[Skin.String(RSSWidgetFeed)],prefix=RSS3)</onunload>
     <onunload>Skin.Reset(RSSWidgetFeed)</onunload>
-    <onunload condition="IsEmpty(Window(1124).Property(NoStyleSelect))">ActivateWindow(1137)</onunload>
-    <onunload>ClearProperty(NoStyleSelect,1124)</onunload>
+    <onunload condition="IsEmpty(Window(skinsettings).Property(NoStyleSelect))">ActivateWindow(1137)</onunload>
+    <onunload>ClearProperty(NoStyleSelect,skinsettings)</onunload>
     <allowoverlay>no</allowoverlay>
     <controls>
         <control type="button" id="451">
@@ -57,7 +57,7 @@
                 <scrolltime tween="sine">200</scrolltime>
                 <orientation>vertical</orientation>
                 <onright>20</onright>
-                <onback>SetProperty(NoStyleSelect,true,1124)</onback>
+                <onback>SetProperty(NoStyleSelect,true,skinsettings)</onback>
                 <itemlayout height="60" width="450">
                     <control type="image">
                         <width>450</width>
@@ -371,7 +371,7 @@
                     <item>
                         <label>31630</label>
                         <onclick>RunScript(script.rss.editor)</onclick>
-                        <onclick>SetProperty(NoStyleSelect,true,1124)</onclick>
+                        <onclick>SetProperty(NoStyleSelect,true,skinsettings)</onclick>
                         <visible>System.HasAddon(script.rss.editor)</visible>
                     </item>
                     <item>

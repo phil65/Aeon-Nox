@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <defaultcontrol always="true">9000</defaultcontrol>
+    <defaultcontrol always="true">10000</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
+        <onload>SetProperty(MenuName,MenuItem,home)</onload>
+    <onunload>Skin.SetString(widgetlist,$INFO[Control.GetLabel(11111)])</onunload>
+    <onunload>Skin.SetString(widget2list,$INFO[Control.GetLabel(11112)])</onunload>
+    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(1116) | Window.Previous(settings)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
         <effect type="fade" end="100" time="240" />
@@ -12,21 +16,39 @@
         <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
     </animation>
     <controls>
+                <control type="button" id="9006">
+            <include>HiddenObject</include>
+            <onfocus>Skin.Setstring(ItemToEdit.Label,$ESCINFO[Container(9000).ListItem.Label])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$ESCINFO[Container(9000).ListItem.Icon])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Icon,$ESCINFO[Container(9000).ListItem.Property(BigIcon)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Widget,$INFO[Container(9000).ListItem.Property(Widget)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Widget2,$INFO[Container(9000).ListItem.Property(Widget2)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.WidgetTitle,$ESCINFO[Container(9000).ListItem.Property(WidgetTitle)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Widget2Title,$ESCINFO[Container(9000).ListItem.Property(Widget2Title)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.InfoLine,$INFO[Container(9000).ListItem.Property(InfoLine)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.SubMenu,$INFO[Container(9000).ListItem.Property(submenuVisibility)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(9000).ListItem.Property(DisableIcon)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Type,$INFO[Container(9000).ListItem.Property(Type)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Path,$ESCINFO[Container(9000).ListItem.Property(Path)])</onfocus>
+            <onfocus>SetFocus(9000)</onfocus>
+            <onfocus>ActivateWindow(1122)</onfocus>
+        </control>
         <include>CommonSettingsBackground</include>
         <include>CommonMediaPlayingBackground</include>
         <include>Furniture_SettingsFloor</include>
         <control type="group">
             <animation effect="zoom" end="91" center="960,360" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
             <include>Furniture_SettingsBackPanel</include>
-            <control type="list" id="9000">
+            <control type="list" id="10000">
                 <posx>63</posx>
                 <posy>194</posy>
                 <width>750</width>
                 <height>768</height>
                 <onleft>ActivateWindow(1121)</onleft>
-                <onright>9010</onright>
-                <onup>9000</onup>
-                <ondown>9000</ondown>
+                <onright condition="Container(10000).HasFocus(3)">9000</onright>
+                <onright condition="!Container(10000).HasFocus(3)">10010</onright>
+                <onup>10000</onup>
+                <ondown>10000</ondown>
                 <scrolltime tween="sine">300</scrolltime>
                 <itemlayout height="74" width="570">
                     <control type="label">
@@ -43,7 +65,7 @@
                         <width>324</width>
                         <height>74</height>
                         <texture border="8">views/tripanel/listselect_fo.png</texture>
-                        <animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
+                        <animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(10000)">Conditional</animation>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     </control>
                     <control type="label">
@@ -63,6 +85,10 @@
                         <label>31682</label>
                         <onclick>noop</onclick>
                     </item>
+                    <item id="3">
+                        <label>Main Menu</label>
+                        <onclick>noop</onclick>
+                    </item>
                     <item id="8">
                         <label>10043</label>
                         <onclick>noop</onclick>
@@ -75,28 +101,28 @@
             </control>
             <control type="label">
                 <posx>358</posx>
-                <posy>120</posy>
+                <posy>90</posy>
                 <width>1491</width>
                 <align>center</align>
 				<aligny>top</aligny>
-                <label>$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label] $INFO[Container(9000).ListItem.Label2]</label>
+                <label>$LOCALIZE[20077] - $INFO[Container(10000).ListItem.Label] $INFO[Container(10000).ListItem.Label2]</label>
                 <font>Font_ShowcaseMainLabel2</font>
                 <shadowcolor>black</shadowcolor>
-                <visible>!Container(9000).Hasfocus(5)</visible>
+                <visible>!Container(10000).Hasfocus(5)</visible>
             </control>
-            <control type="group" id="9010">
-                <control type="grouplist" id="9001">
+            <control type="group" id="10010">
+                <control type="grouplist" id="10001">
                     <posx>387</posx>
                     <posy>195</posy>
                     <width>1469</width>
                     <height>732</height>
-                    <visible>Container(9000).Hasfocus(1)</visible>
+                    <visible>Container(10000).Hasfocus(1)</visible>
                     <itemgap>-1</itemgap>
                     <pagecontrol>60</pagecontrol>
-                    <onleft>9000</onleft>
+                    <onleft>10000</onleft>
                     <onright>60</onright>
-                    <onup>9001</onup>
-                    <ondown>9001</ondown>
+                    <onup>10001</onup>
+                    <ondown>10001</ondown>
                     <control type="radiobutton" id="101">
                         <label>20189</label>
                         <include>Default_SettingRadioButton</include>
@@ -168,28 +194,23 @@
                         <onclick condition="Stringcompare(Skin.String(LibraryStructure),1)">Skin.SetString(LibraryStructure,2)</onclick>
                     </control>
                 </control>
-                <control type="grouplist" id="9002">
+                <control type="grouplist" id="10002">
                     <posx>387</posx>
                     <posy>195</posy>
                     <width>1469</width>
                     <height>732</height>
-                    <visible>Container(9000).Hasfocus(2)</visible>
+                    <visible>Container(10000).Hasfocus(2)</visible>
                     <itemgap>-1</itemgap>
                     <pagecontrol>60</pagecontrol>
-                    <onleft>9000</onleft>
+                    <onleft>10000</onleft>
                     <onright>60</onright>
-                    <onup>9002</onup>
-                    <ondown>9002</ondown>
+                    <onup>10002</onup>
+                    <ondown>10002</ondown>
                     <control type="button" id="452">
                         <label>$LOCALIZE[31643]</label>
                         <include>Default_SettingButton</include>
                         <onclick>ActivateWindow(home)</onclick>
                         <onclick>ActivateWindow(1131)</onclick>
-                    </control>
-                    <control type="button" id="514">
-                        <label>$LOCALIZE[31600]</label>
-                        <include>Default_SettingButton</include>
-                        <onclick>ActivateWindow(1124)</onclick>
                     </control>
                     <control type="button" id="526">
                         <label>$LOCALIZE[31010]</label>
@@ -209,31 +230,10 @@
                         <onclick>ActivateWindow(home)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
-                    <control type="button" id="455">
-                        <label>$LOCALIZE[31961]</label>
-                        <include>Default_SettingButton</include>
-                        <onclick>SetProperty(FeaturedSetup,true,home)</onclick>
-                        <onclick>ActivateWindow(1147)</onclick>
-                    </control>
-                    <control type="button" id="454">
-                        <label>$LOCALIZE[31962]</label>
-                        <include>Default_SettingButton</include>
-                        <onclick>ActivateWindow(1128)</onclick>
-                    </control>
                     <control type="button" id="516">
                         <label>31675</label>
                         <include>Default_SettingButton</include>
                         <onclick>ActivateWindow(1116)</onclick>
-                    </control>
-                    <control type="button" id="517">
-                        <label>$LOCALIZE[31809]</label>
-                        <include>Default_SettingButton</include>
-                        <onclick>ActivateWindow(1117)</onclick>
-                    </control>
-                    <control type="button" id="518">
-                        <label>$LOCALIZE[31637]</label>
-                        <include>Default_SettingButton</include>
-                        <onclick>ActivateWindow(1118)</onclick>
                     </control>
                 </control>
                 <control type="button" id="450">
@@ -247,26 +247,26 @@
                     <label>31869</label>
                     <font>Font_Reg34_Caps</font>
                     <textcolor>grey2</textcolor>
-                    <onup>9009</onup>
-                    <ondown>9004</ondown>
-                    <onleft>9000</onleft>
-                    <onright>9000</onright>
+                    <onup>10009</onup>
+                    <ondown>10004</ondown>
+                    <onleft>10000</onleft>
+                    <onright>10000</onright>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search="Aeon Nox 3.5 Tutorial",return)</onclick>
-                    <visible>Container(9000).Hasfocus(8)</visible>
+                    <visible>Container(10000).Hasfocus(8)</visible>
                 </control>
-                <control type="grouplist" id="9004">
+                <control type="grouplist" id="10004">
                     <posx>387</posx>
                     <posy>275</posy>
                     <width>1469</width>
                     <height>732</height>
-                    <visible>Container(9000).Hasfocus(8)</visible>
+                    <visible>Container(10000).Hasfocus(8)</visible>
                     <itemgap>-1</itemgap>
                     <pagecontrol>60</pagecontrol>
-                    <onleft>9000</onleft>
+                    <onleft>10000</onleft>
                     <onup>450</onup>
                     <ondown>450</ondown>
-                    <onright>9009</onright>
+                    <onright>10009</onright>
                     <control type="radiobutton" id="402">
                         <label>script.color.picker $INFO[System.AddonVersion(script.color.picker)]</label>
                         <include>Default_SettingRadioButtonShort</include>
@@ -305,15 +305,15 @@
                         <selected>System.HasAddon(script.tv.show.next.aired)</selected>
                     </control>
                 </control>
-                <control type="grouplist" id="9009">
+                <control type="grouplist" id="10009">
                     <posx>1121</posx>
                     <posy>275</posy>
                     <width>734</width>
                     <height>732</height>
-                    <visible>Container(9000).Hasfocus(8)</visible>
+                    <visible>Container(10000).Hasfocus(8)</visible>
                     <itemgap>-1</itemgap>
                     <pagecontrol>61</pagecontrol>
-                    <onleft>9004</onleft>
+                    <onleft>10004</onleft>
                     <onright>61</onright>
                     <onup>450</onup>
                     <ondown>450</ondown>
@@ -354,18 +354,18 @@
                         <selected>System.HasAddon(script.artwork.downloader)</selected>
                     </control>
                 </control>
-                <control type="grouplist" id="9005">
+                <control type="grouplist" id="10005">
                     <posx>387</posx>
                     <posy>160</posy>
                     <width>1469</width>
                     <height>900</height>
-                    <visible>Container(9000).Hasfocus(9)</visible>
+                    <visible>Container(10000).Hasfocus(9)</visible>
                     <itemgap>-1</itemgap>
                     <pagecontrol>60</pagecontrol>
-                    <onleft>9000</onleft>
+                    <onleft>10000</onleft>
                     <onright>60</onright>
-                    <onup>9001</onup>
-                    <ondown>9001</ondown>
+                    <onup>10001</onup>
+                    <ondown>10001</ondown>
                     <control type="label">
                         <width>1469</width>
                         <height>74</height>
@@ -414,11 +414,20 @@
                         <include>Default_SettingRadioButton</include>
                     </control>
                 </control>
+                <control type="group" id="10011">
+                 <visible>Container(10000).Hasfocus(3) | Window.IsActive(1122)</visible>
+                    <posx>384</posx>
+                    <posy>160</posy>
+                    <width>1469</width>
+                    <height>900</height>
+                    <animation effect="zoom" start="100" end="76.5" center="400,180" time="640" easing="inout" tween="circle" condition="true">Conditional</animation>
+                    <include>MainMenuCustomizer</include>
+                </control>
             </control>
             <control type="group">
                 <posx>620</posx>
                 <posy>840</posy>
-                <visible>Container(9000).Hasfocus(9)</visible>
+                <visible>Container(10000).Hasfocus(9)</visible>
                 <control type="image">
                     <posy>30</posy>
                     <width>400</width>

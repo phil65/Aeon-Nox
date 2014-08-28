@@ -2,12 +2,10 @@
 <window id="1115" type="dialog">
     <defaultcontrol>40</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
-    <onload condition="!IsEmpty(Window(home).Property(FeaturedSetup))">ActivateWindow(1128)</onload>
     <onload condition="Window.Previous(home)">SetFocus(5012)</onload>
     <onload>SetFocus(9000)</onload>
     <onload>SetProperty(DisableWidgets,true,home)</onload>
     <onunload>ClearProperty(DisableWidgets,home)</onunload>
-    <onunload>ClearProperty(FeaturedSetup,home)</onunload>
     <onunload>ClearProperty(PanelWidgetInfo,Home)</onunload>
     <onunload condition="Window.IsActive(1147)">Action(PreviousMenu)</onunload>
     <coordinates>

@@ -310,14 +310,14 @@
                         <label>$LOCALIZE[31102]:</label>
                         <label2>[COLOR white]$VAR[CustomItemFanartLabelVar][/COLOR]</label2>
                         <include>Objects_CustomizerInfoButton</include>
-                        <visible>Window.IsActive(1124)</visible>
+                        <visible>Window.IsActive(skinsettings)</visible>
                     </control>
                     <control type="button">
                         <label>$LOCALIZE[31098]:</label>
                         <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.MultiFanart)][/COLOR]</label2>
                         <include>Objects_CustomizerInfoButton</include>
                         <visible>![Substring(Skin.String(ItemToEdit.MultiFanart),recent,left) | Substring(Skin.String(ItemToEdit.MultiFanart),widgetfanart,left) | Substring(Skin.String(ItemToEdit.MultiFanart),random,left) | Substring(Skin.String(ItemToEdit.MultiFanart),dvdcase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),nocase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),case,left) | Substring(Skin.String(ItemToEdit.MultiFanart),watchlist,left) | IsEmpty(Skin.String(ItemToEdit.MultiFanart))]</visible>
-                        <visible>Window.IsActive(1124)</visible>
+                        <visible>Window.IsActive(skinsettings)</visible>
                     </control>
                     <control type="image">
                         <posx>100</posx>
@@ -363,13 +363,13 @@
                             <label>$LOCALIZE[31680]</label>
                             <include>Objects_CustomizerSettingsButton</include>
                             <onclick>ActivateWindow(1134)</onclick>
-                            <visible>Window.IsActive(1124)</visible>
+                            <visible>Window.IsActive(skinsettings)</visible>
                         </control>
                         <control type="button" id="2144">
                             <label>31807</label>
                             <include>Objects_CustomizerSettingsButton</include>
                             <onclick>Skin.SetFile(ItemToEdit.MultiFanArt,.png|.bmp|.gif|.jpg|.jpeg|.ico,special://skin/extras/BigIcons)</onclick>
-                            <visible>!Window.IsActive(1124)</visible>
+                            <visible>!Window.IsActive(skinsettings)</visible>
                         </control>
                         <control type="button" id="2145">
                             <label>$LOCALIZE[31027]</label>

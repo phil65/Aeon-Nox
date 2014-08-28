@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="1146" type="dialog">
     <defaultcontrol>5400</defaultcontrol>
-    <onunload>ClearProperty(CustomYesNoDialog,1124)</onunload>
-    <onunload>ClearProperty(WidgetType,1124)</onunload>
-    <onunload>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)]Title)</onunload>
+    <onunload>ClearProperty(CustomYesNoDialog,skinsettings)</onunload>
+    <onunload>ClearProperty(WidgetType,skinsettings)</onunload>
+    <onunload>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title)</onunload>
     <onload>Dialog.Close(1133)</onload>
     <zorder>4</zorder>
     <coordinates>
@@ -14,14 +14,14 @@
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="label" id="12112">
-            <label>$INFO[Window(1124).Property(CustomYesNoDialog)]$INFO[Window(1124).Property(WidgetType)]$INFO[Window(1124).Property(Transparency)] </label>
+            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(skinsettings).Property(Transparency)] </label>
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
         <control type="group">
             <posx>570</posx>
             <posy>37</posy>
             <control type="group">
-                <animation effect="zoom" end="100,130" center="960,0" time="0" condition="SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)">Conditional</animation>
+                <animation effect="zoom" end="100,130" center="960,0" time="0" condition="SubString(Window(skinsettings).Property(CustomYesNoDialog),movie) | SubString(Window(skinsettings).Property(CustomYesNoDialog),tv)">Conditional</animation>
                 <control type="image">
                     <width>780</width>
                     <height>330</height>
@@ -71,8 +71,8 @@
                     <textcolor>grey2</textcolor>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <focusedcolor>white3</focusedcolor>
-                    <onfocus>SetProperty(Transparency,glass,1124)</onfocus>
-                    <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                    <onfocus>SetProperty(Transparency,glass,skinsettings)</onfocus>
+                    <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                     <onclick>Dialog.Close(1146)</onclick>
                 </control>
                 <control type="button" id="12">
@@ -84,8 +84,8 @@
                     <textcolor>grey2</textcolor>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <focusedcolor>white3</focusedcolor>
-                    <onfocus>SetProperty(Transparency,default,1124)</onfocus>
-                    <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                    <onfocus>SetProperty(Transparency,default,skinsettings)</onfocus>
+                    <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                     <onclick>Dialog.Close(1146)</onclick>
                 </control>
                 <control type="button" id="13">
@@ -97,8 +97,8 @@
                     <textcolor>grey2</textcolor>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <focusedcolor>white3</focusedcolor>
-                    <onfocus>ClearProperty(Transparency,1124)</onfocus>
-                    <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                    <onfocus>ClearProperty(Transparency,skinsettings)</onfocus>
+                    <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                     <onclick>Dialog.Close(1146)</onclick>
                 </control>
             </control>
