@@ -108,7 +108,9 @@
         </control>
         <control type="group">
             <left>100</left>
-            <top>135</top>
+            <top>120</top>
+			<width>840</width>
+			<height>460</height>
             <visible>Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
             <include>Animation_VisibleChange200</include>
             <include>Animation_OpenCloseZoom_New</include>
@@ -204,7 +206,7 @@
 						<description>Epg timeline channel list</description>
 						<textwidth>352</textwidth>
 						<include>Objects_MediaMenuButtonAlt</include>
-						<label>EPG channels</label>
+						<label>          Timeline:</label>
 						<label2>[COLOR labelheader]$VAR[LiveTvModOptionsLabelVar][/COLOR]</label2>
 						<onclick>$VAR[LiveTvModOptionsClickVar]</onclick>
 					</control>
@@ -232,7 +234,8 @@
                         <selected>!Skin.HasSetting(smalltvlist)</selected>
                     </control>
 					<control type="radiobutton" id="327">
-						<label>Extended Channel OSD</label>
+						<label>Ext. Channel OSD</label>
+						<textwidth>330</textwidth>
 						<onclick>Skin.ToggleSetting(alternatetvosd)</onclick>
 						<selected>Skin.HasSetting(alternatetvosd)</selected>
 						<include>Objects_MediaMenuButtonIcons</include>
@@ -240,6 +243,7 @@
                 </control>
                 <control type="grouplist">
                     <top>15</top>
+					<height>1080</height>
                     <orientation>vertical</orientation>
                     <itemgap>20</itemgap>
                     <visible>ControlGroup(9003).HasFocus</visible>
@@ -266,7 +270,7 @@
                         <include>MediaMenuIcons</include>
                     </control>
 					<control type="image">
-                        <texture>-</texture>
+                        <texture>noop</texture>
 						<height>40</height>
                         <include>MediaMenuIcons</include>
                     </control>

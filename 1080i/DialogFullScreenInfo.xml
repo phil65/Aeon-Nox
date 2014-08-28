@@ -165,7 +165,6 @@
                 <effect type="fade" time="320" start="100" end="0" />
                 <effect type="slide" time="320" end="0,135" easing="in" tween="cubic" />
             </animation>
-            <include condition="VideoPlayer.Content(livetv)">FullScreenInfoBarLiveTV</include>
             <include condition="!VideoPlayer.Content(livetv)">FullScreenInfoBar</include>
             <control type="group">
 				<animation effect="slide" end="-1800,0" condition="VideoPlayer.Content(files)">Conditional</animation>
@@ -216,7 +215,6 @@
                 </control>	
 			</control>									
         </control>
-        <include>AlaskaPausedLabel</include>
         <control type="group" id="9004">
             <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" end="-729,0" time="320" tween="quadratic">WindowClose</animation>
@@ -1105,7 +1103,7 @@
                         <posy>135</posy>
                         <width>1000</width>
                         <height>445</height>
-                        <label fallback="31006">$INFO[VideoPlayer.Plot]</label>
+                        <label>$INFO[VideoPlayer.Plot]</label>
                         <font>Font_Reg35</font>
                         <pagecontrol>60</pagecontrol>
                         <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
@@ -1142,7 +1140,7 @@
                         <posy>310</posy>
                         <width>1320</width>
                         <height>350</height>
-                        <label fallback="31006">$INFO[VideoPlayer.NextPlot]</label>
+                        <label>$INFO[VideoPlayer.NextPlot]</label>
                         <font>Font_Reg35</font>
                         <pagecontrol>60</pagecontrol>
                         <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
