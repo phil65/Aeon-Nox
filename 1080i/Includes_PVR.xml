@@ -8,7 +8,9 @@
             <include>Animation_VisibleChange200</include>
             <control type="group">
                 <left>105</left>
-                <top>460</top>
+                <top>470</top>
+				<height>100</height>
+				<width>840</width>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <visible>!IsEmpty(Container(11).ListItem.Title)</visible>
@@ -74,13 +76,14 @@
             </control>
             <control type="group">
                 <left>100</left>
-                <top>565</top>
+                <top>600</top>
+				<width>840</width>
+				<height>400</height>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <control type="textbox">
-                    <top>10</top>
                     <width>800</width>
-                    <height>330</height>
+                    <height>320</height>
                     <label>$INFO[Container(11).ListItem.Plot]</label>
                     <font>Font_Reg30_2</font>
                     <shadowcolor>black</shadowcolor>
@@ -89,9 +92,8 @@
 					<visible>!Control.IsVisible(55)</visible>
                 </control>
 				<control type="textbox">
-                    <top>10</top>
                     <width>550</width>
-                    <height>330</height>
+                    <height>320</height>
                     <label>$INFO[Container(11).ListItem.Plot]</label>
                     <font>Font_Reg30_2</font>
                     <shadowcolor>black</shadowcolor>
@@ -125,7 +127,9 @@
             <include>Animation_VisibleChange200</include>
             <control type="group">
                 <left>105</left>
-                <top>460</top>
+                <top>470</top>
+				<height>100</height>
+				<width>840</width>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <visible>!IsEmpty(Container(12).ListItem.Title)</visible>
@@ -191,7 +195,9 @@
             </control>
             <control type="group">
                 <left>100</left>
-                <top>565</top>
+                <top>600</top>
+				<width>840</width>
+				<height>400</height>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <control type="textbox">
@@ -737,15 +743,16 @@
 				<height>40</height>
 				<align>right</align>
 				<textcolor>grey</textcolor>
+				<selectedcolor>white</selectedcolor>
 				<font>Font_Bold20_Caps</font>
 				<info>ListItem.ChannelNumber</info>
 			</control>
 			<control type="image">
 				<visible>!StringCompare(ListItem.Icon,DefaultVideo.png)</visible>
 				<left>65</left>
-				<top>0</top>
+				<top>7</top>
 				<width>60</width>
-				<height>60</height>
+				<height>45</height>
 				<aspectratio>keep</aspectratio>
 				<texture>$INFO[ListItem.Icon]</texture>
 			</control>
@@ -771,6 +778,7 @@
 				<left>240</left>
 				<top>0</top>
 				<textcolor>$VAR[FontColorVar]</textcolor>
+				<selectedcolor>white</selectedcolor>
 				<font>Font_Bold19</font>
 				<width>700</width>
 				<label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B] $INFO[ListItem.Title, - ]</label>
@@ -801,15 +809,16 @@
 				<height>40</height>
 				<align>right</align>
 				<textcolor>grey</textcolor>
+				<selectedcolor>white</selectedcolor>
 				<font>Font_Bold20_Caps</font>
 				<info>ListItem.ChannelNumber</info>
 			</control>
 			<control type="image">
 				<visible>!StringCompare(ListItem.Icon,DefaultVideo.png)</visible>
 				<left>65</left>
-				<top>0</top>
+				<top>7</top>
 				<width>60</width>
-				<height>60</height>
+				<height>45</height>
 				<aspectratio>keep</aspectratio>
 				<texture>$INFO[ListItem.Icon]</texture>
 			</control>
@@ -830,11 +839,14 @@
 				<info>ListItem.Progress</info>
 				<visible>!StringCompare(ListItem.Title,)</visible>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+				<texturebg border="2">dialogs/progress/progress_back.png</texturebg>
+                <midtexture border="2">dialogs/progress/progress_mid.png</midtexture>
 			</control>
 			<control type="label">
 				<left>240</left>
 				<top>0</top>
 				<textcolor>$VAR[FontColorVar]</textcolor>
+				<selectedcolor>white</selectedcolor>
 				<font>Font_Bold19</font>
 				<width>700</width>
 				<label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B] $INFO[ListItem.Title, - ]</label>
@@ -1118,7 +1130,7 @@
                 <height>646</height>
                 <pagecontrol>10</pagecontrol>
                 <scrolltime>350</scrolltime>
-                <timeblocks>20</timeblocks>
+                <timeblocks>40</timeblocks>
                 <rulerunit>6</rulerunit>
                 <onleft>10</onleft>
                 <onright>10</onright>
@@ -1402,9 +1414,9 @@
                 <visible>Control.IsVisible(10)</visible>
                 <left>108</left>
                 <top>722</top>
+				<height>227</height>
+				<width>1500</width>
                 <control type="image">
-                    <left>0</left>
-                    <top>0</top>
                     <width>200</width>
                     <height>200</height>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
@@ -1420,8 +1432,9 @@
                 </control>
                 <control type="label">
                     <left>280</left>
-                    <top>-300</top>
+                    <top>0</top>
 					<width>1200</width>
+					<height>30</height>
                     <textcolor>$VAR[FontColorVar]</textcolor>
                     <font>Font_Bold18</font>
                     <label>$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime]  |  $INFO[ListItem.Title]  |  $INFO[ListItem.Genre]</label>
@@ -1432,7 +1445,7 @@
                     <width>1450</width>
                     <height>145</height>
                     <font>Font_Reg20</font>
-                    <label fallback="31006">$INFO[ListItem.Plot]</label>
+                    <label>$INFO[ListItem.Plot]</label>
                     <autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!Control.IsVisible(55)</visible>
                 </control>
@@ -1442,7 +1455,7 @@
                     <width>1200</width>
                     <height>145</height>
                     <font>Font_Reg20</font>
-                    <label fallback="31006">$INFO[ListItem.Plot]</label>
+                    <label>$INFO[ListItem.Plot]</label>
                     <autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>Control.IsVisible(55)</visible>
                 </control>
@@ -2076,11 +2089,13 @@
 
 	<include name="LiveTVTimersView">
         <control type="group">
+			<left>120</left>
+            <top>90</top>
+			<height>750</height>
+			<width>1740</width>
             <visible>Control.IsVisible(14)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <left>120</left>
-                <top>90</top>
                 <control type="label">
                     <left>3</left>
                     <top>15</top>
@@ -2301,11 +2316,13 @@
     </include>
     <include name="LiveTVSearchView">
         <control type="group">
+			<left>120</left>
+            <top>90</top>
+			<height>750</height>
+			<width>1740</width>
             <visible>Control.IsVisible(17)</visible>
             <include>Animation_VisibleChange200</include>
-            <control type="group">
-                <left>120</left>
-                <top>90</top>
+            <control type="group">    
                 <control type="label">
                     <left>3</left>
                     <top>15</top>
@@ -2579,13 +2596,13 @@
 		<!-- Channel logo -->
         <control type="group" id="1">
             <posx>0</posx>
-			<animation effect="slide" time="400" start="-300,0" delay="300" easing="out" tween="back">WindowOpen</animation>
-			<animation effect="slide" time="400" end="-300,0" easing="in" tween="back">WindowClose</animation>
+			<animation effect="slide" time="400" start="-400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
+			<animation effect="slide" time="400" end="-400,0" easing="in" tween="back">WindowClose</animation>
             <control type="image"> <!-- Logo background -->
 				<left>67</left>
 				<top>805</top>
-				<width>290</width>
-				<height>200</height>
+				<width>200</width>
+				<height>180</height>
 				<texture>pvr/bg_channel_icon.png</texture>
 				<align>center</align>
 				<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
@@ -2860,51 +2877,52 @@
 		
 		<!-- Media flags -->
         <control type="group" id="1">
-			<animation effect="slide" time="400" start="345,0" delay="300" easing="out" tween="back">WindowOpen</animation>
-			<animation effect="slide" time="400" end="345,0" easing="in" tween="back">WindowClose</animation>
+			<animation effect="slide" time="400" start="400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
+			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">WindowClose</animation>
             <posx>1550</posx>
             <posy>900</posy>
+			<height>140</height>
+			<width>200</width>
 			<control type="image" id="1">
-                <posx>-5</posx>
-                <posy>20</posy>
-                <width>110</width>
-                <height>80</height>
+                <posx>25</posx>
+                <posy>-7</posy>
+                <width>65</width>
+                <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
-                <texture>$INFO[VideoPlayer.VideoAspect,new_pvr/flags/aspectratio/,.png]</texture>
+                <texture>$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+            </control>
+            <control type="image" id="1">
+                <posx>120</posx>
+                <posy>-7</posy>
+                <width>65</width>
+                <height>65</height>
+                <aspectratio align="center">keep</aspectratio>
+                <texture>$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+            </control>
+            <control type="image" id="1">
+                <posx>215</posx>
+                <posy>-13</posy>
+                <width>75</width>
+                <height>75</height>
+                <aspectratio align="center">keep</aspectratio>
+                <texture>$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
             </control>
 			
             <control type="image" id="1">
-                <posx>85</posx>
-                <posy>-20</posy>
-                <width>110</width>
-                <height>80</height>
+                <posx>50</posx>
+                <posy>52</posy>
+                <width>100</width>
+                <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
-                <texture>$INFO[VideoPlayer.VideoResolution,new_pvr/flags/resolution/,.png]</texture>
-            </control>
-            <control type="image" id="1">
-                <posx>200</posx>
-                <posy>-20</posy>
-                <width>110</width>
-                <height>80</height>
-                <aspectratio align="center">keep</aspectratio>
-                <texture>$INFO[VideoPlayer.VideoCodec,new_pvr/flags/videocodec/,.png]</texture>
-            </control>
-			
-            <control type="image" id="1">
-                <posx>85</posx>
-                <posy>40</posy>
-                <width>110</width>
-                <height>80</height>
-                <aspectratio align="center">keep</aspectratio>
-                <texture>$INFO[VideoPlayer.AudioCodec,new_pvr/flags/audiocodec/,.png]</texture>
+                <texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
             </control>
             <control type="image" id="1">
                 <posx>200</posx>
                 <posy>40</posy>
-                <width>110</width>
-                <height>80</height>
+                <width>65</width>
+                <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
-                <texture>$INFO[VideoPlayer.AudioChannels,new_pvr/flags/audiochannels/,ch.png]</texture>
+                <texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,ch.png]</texture>
             </control>
         </control>
         
@@ -3192,7 +3210,9 @@
 	<!-- Large channel list OSD (extended) -->
 	<include name="ChannelOSDExtended">
 		<left>60</left>
-		<top>90</top>
+		<top>75</top>
+		<width>1800</width>
+		<height>1060</height>
 		<control type="image">
 			<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
 			<width>1800</width>
@@ -3264,16 +3284,6 @@
 					<top>0</top>
 					<width>975</width>
 					<height>60</height>
-					<texture>new_pvr/selected.png</texture>
-					<colordiffuse>30FFFFFF</colordiffuse>
-					<aspectratio aligny="top">left</aspectratio>
-					<visible>ListItem.IsPlaying</visible>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>975</width>
-					<height>60</height>
 					<texture>new_pvr/separator2.png</texture>
 					<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 				</control>
@@ -3284,15 +3294,16 @@
 					<height>40</height>
 					<align>right</align>
 					<textcolor>grey</textcolor>
+					<selectedcolor>white</selectedcolor>
 					<font>Font_Bold20_Caps</font>
 					<info>ListItem.ChannelNumber</info>
 				</control>
 				<control type="image">
 					<visible>true</visible>
 					<left>65</left>
-					<top>0</top>
+					<top>7</top>
 					<width>60</width>
-					<height>60</height>
+					<height>45</height>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.Icon]</texture>
 				</control>
@@ -3313,6 +3324,7 @@
 					<left>240</left>
 					<top>0</top>
 					<textcolor>$VAR[FontColorVar]</textcolor>
+					<selectedcolor>white</selectedcolor>
 					<font>Font_Bold19</font>
 					<width>700</width>
 					<label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B] $INFO[ListItem.Title, - ]</label>
@@ -3336,16 +3348,6 @@
 					<texture>views/tripanel/listselect_fo.png</texture>
 					<colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
 				</control>
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>975</width>
-					<height>60</height>
-					<texture>new_pvr/selected.png</texture>
-					<colordiffuse>20FFFFFF</colordiffuse>
-					<aspectratio aligny="top">left</aspectratio>
-					<visible>ListItem.IsPlaying</visible>
-				</control>
 				<control type="label">
 					<left>55</left>
 					<top>10</top>
@@ -3353,15 +3355,16 @@
 					<height>40</height>
 					<align>right</align>
 					<textcolor>grey</textcolor>
+					<selectedcolor>white</selectedcolor>
 					<font>Font_Bold20_Caps</font>
 					<info>ListItem.ChannelNumber</info>
 				</control>
 				<control type="image">
 					<visible>true</visible>
 					<left>65</left>
-					<top>0</top>
+					<top>7</top>
 					<width>60</width>
-					<height>60</height>
+					<height>45</height>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.Icon]</texture>
 				</control>
@@ -3378,6 +3381,7 @@
 					<left>240</left>
 					<top>0</top>
 					<textcolor>$VAR[FontColorVar]</textcolor>
+					<selectedcolor>white</selectedcolor>
 					<font>Font_Bold19</font>
 					<width>700</width>
 					<label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B] $INFO[ListItem.Title, - ]</label>
@@ -3400,6 +3404,8 @@
 		<control type="group">
 			<left>40</left>
 			<top>50</top>
+			<height>826</height>
+			<width>825</width>
 			<visible>true</visible>
 			<control type="label"> <!-- Channel name -->
 			  <left></left>
@@ -3439,7 +3445,7 @@
 				<left>540</left>
 				<top>20</top>
 				<width>200</width>
-				<height>200</height>
+				<height>160</height>
 				<texture fallback="new_pvr/tv.png">$INFO[Container(11).ListItem.Icon]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
@@ -3520,6 +3526,8 @@
 	<!-- Standard channel list OSD -->
 	<include name="ChannelOSDStandard">
             <left>1225</left>
+			<width>725</width>
+			<height>1080</height>
             <control type="image">
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <width>725</width>
@@ -3529,6 +3537,8 @@
             <control type="group">
                 <left>55</left>
                 <top>30</top>
+				<height>40</height>
+				<width>725</width>
                 <control type="label">
                     <width>705</width>
                     <height>40</height>

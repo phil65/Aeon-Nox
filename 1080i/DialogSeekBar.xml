@@ -4,9 +4,9 @@
     <visible>[Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(videoosd) | Window.IsVisible(fullscreeninfo) | Window.IsActive(script-XBMC-Subtitles-main.xml)] + Window.IsVisible(fullscreenvideo)</visible>
 	<!--<visible>[Window.IsVisible(fullscreenvideo) + !Window.IsVisible(fullscreeninfo)] + [Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(videoosd) | Window.IsActive(script-XBMC-Subtitles-main.xml)]</visible>-->
     <coordinates>
-        <posx>0</posx>
-        <posy>0</posy>
         <system>1</system>
+        <left>0</left>
+        <top>0</top>
     </coordinates>
     <controls>
         <control type="group">
@@ -16,41 +16,41 @@
                 <visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(movies)</visible>
                 <include>Animation_CommonFade</include>
                 <control type="image">
-                    <posx>1470</posx>
-                    <posy>826</posy>
+                    <left>1470</left>
+                    <top>826</top>
                     <width>450</width>
                     <height>254</height>
-                    <aspectratio aligny="bottom">keep</aspectratio>
                     <texture background="true">$VAR[PlayerArtworkVar]</texture>
+                    <aspectratio aligny="bottom">keep</aspectratio>
                 </control>
             </control>
             <control type="group">
                 <animation type="WindowOpen">
-                    <effect type="fade" time="160" end="100" />
-                    <effect type="slide" time="160" start="0,-98" end="0,0" tween="cubic" />
+                    <effect type="fade" time="200" end="100" />
+                    <effect type="slide" time="200" start="0,-98" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="fade" time="160" start="100" end="0" />
-                    <effect type="slide" time="160" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="fade" time="200" start="100" end="0" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <animation type="Visible">
-                    <effect type="fade" time="160" end="100" />
-                    <effect type="slide" time="160" start="0,-98" end="0,0" tween="cubic" />
+                    <effect type="fade" time="200" end="100" />
+                    <effect type="slide" time="200" start="0,-98" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
-                    <effect type="fade" time="160" start="100" end="0" />
-                    <effect type="slide" time="160" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="fade" time="200" start="100" end="0" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <visible>![Player.Forwarding|Player.Seeking]</visible>
                 <control type="image">
-                    <posx>704</posx>
+                    <left>704</left>
                     <width>513</width>
                     <height>87</height>
                     <texture flipy="true">osd/osd_top_bar.png</texture>
                     <visible>[[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek] | [[Player.Paused + Player.Caching] + !Player.Seeking] | Player.Seeking|[Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)]</visible>
                 </control>
                 <control type="label">
-                    <posx>750</posx>
+                    <left>750</left>
                     <width>420</width>
                     <height>42</height>
                     <align>center</align>
@@ -61,47 +61,47 @@
                 </control>
             </control>
             <control type="group">
-                <posy>993</posy>
+                <top>993</top>
                 <decscription>bottom bar</decscription>
                 <animation type="Visible">
-                    <effect type="fade" time="160" end="100" />
-                    <effect type="slide" time="160" start="0,98" end="0,0" tween="cubic" />
+                    <effect type="fade" time="200" end="100" />
+                    <effect type="slide" time="200" start="0,98" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
-                    <effect type="fade" time="160" start="100" end="0" />
-                    <effect type="slide" time="160" end="0,98" easing="in" tween="cubic" />
+                    <effect type="fade" time="200" start="100" end="0" />
+                    <effect type="slide" time="200" end="0,98" easing="in" tween="cubic" />
                 </animation>
                 <animation type="WindowOpen">
-                    <effect type="fade" time="160" end="100" />
-                    <effect type="slide" time="160" start="0,98" end="0,0" tween="cubic" />
+                    <effect type="fade" time="200" end="100" />
+                    <effect type="slide" time="200" start="0,98" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="fade" time="160" start="100" end="0" />
-                    <effect type="slide" time="160" end="0,98" easing="in" tween="cubic" />
+                    <effect type="fade" time="200" start="100" end="0" />
+                    <effect type="slide" time="200" end="0,98" easing="in" tween="cubic" />
                 </animation>
                 <control type="image">
-                    <posx>442</posx>
+                    <left>442</left>
                     <width>1035</width>
                     <height>87</height>
                     <texture>osd/osd_progress_bar_back.png</texture>
                 </control>
                 <control type="progress">
-                    <posx>645</posx>
-                    <posy>57</posy>
+                    <left>645</left>
+                    <top>57</top>
                     <width>630</width>
                     <height>20</height>
                     <info>Player.ProgressCache</info>
                 </control>
                 <control type="progress" id="23">
-                    <posx>645</posx>
-                    <posy>57</posy>
+                    <left>645</left>
+                    <top>57</top>
                     <width>630</width>
                     <height>20</height>
                     <info>Player.Progress</info>
-                </control>
+                </control>			
                 <control type="label">
-                    <posx>340</posx>
-                    <posy>45</posy>
+                    <left>340</left>
+                    <top>45</top>
                     <width>300</width>
                     <height>42</height>
                     <font>Font_Reg19</font>
@@ -110,8 +110,8 @@
                     <align>right</align>
                 </control>
                 <control type="label">
-                    <posx>1290</posx>
-                    <posy>45</posy>
+                    <left>1290</left>
+                    <top>45</top>
                     <width>300</width>
                     <height>42</height>
                     <font>Font_Reg19</font>
@@ -120,8 +120,8 @@
                     <visible>!Skin.HasSetting(PreferRemaining)</visible>
                 </control>
                 <control type="label">
-                    <posx>1275</posx>
-                    <posy>45</posy>
+                    <left>1275</left>
+                    <top>45</top>
                     <width>300</width>
                     <height>42</height>
                     <font>Font_Reg19</font>
@@ -131,8 +131,8 @@
                 </control>
             </control>
             <control type="grouplist">
-                <posx>30</posx>
-                <posy>945</posy>
+                <left>30</left>
+                <top>945</top>
                 <width>748</width>
                 <height>150</height>
                 <itemgap>10</itemgap>
@@ -141,49 +141,49 @@
                 <include>Animation_CommonFade</include>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="image">
-                    <posy>3</posy>
                     <width>90</width>
                     <height>87</height>
                     <aspectratio>keep</aspectratio>
-                    <texture flipx="true">osd/ff.png</texture>
                     <colordiffuse>FFe5e5e5</colordiffuse>
-                    <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
+                    <texture flipx="true">osd/ff.png</texture>
+                    <animation effect="fade" start="100" end="60" time="1000" pulse="true" condition="true">Conditional</animation>
+                    <top>3</top>
                     <visible>Player.Rewinding</visible>
                 </control>
                 <control type="label">
-                    <label>$VAR[VideoPlayerForwardRewindVar]</label>
                     <include>Objects_OSDSeekForward</include>
+                    <label>$VAR[VideoPlayerForwardRewindVar]</label>
                 </control>
                 <control type="image">
-                    <posy>3</posy>
                     <width>90</width>
                     <height>87</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>osd/ff.png</texture>
                     <colordiffuse>FFe5e5e5</colordiffuse>
-                    <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
+                    <texture>osd/ff.png</texture>
+                    <animation effect="fade" start="100" end="60" time="1000" pulse="true" condition="true">Conditional</animation>
+                    <top>3</top>
                     <visible>Player.Forwarding</visible>
                 </control>
             </control>
             <control type="group">
-                <posx>-390</posx>
-                <posy>1038</posy>
+                <left>-390</left>
+                <top>1038</top>
                 <width>748</width>
                 <height>42</height>
-                <animation effect="slide" start="-225,0" end="0,0" time="160">WindowOpen</animation>
-                <animation effect="slide" end="-225,0" time="160">WindowClose</animation>
-                <animation effect="slide" start="-225,0" end="0,0" time="160">Visible</animation>
-                <animation effect="slide" end="-225,0" time="160">Hidden</animation>
+                <animation effect="slide" start="-225,0" end="0,0" time="200">WindowOpen</animation>
+                <animation effect="slide" end="-225,0" time="200">WindowClose</animation>
+                <animation effect="slide" start="-225,0" end="0,0" time="200">Visible</animation>
+                <animation effect="slide" end="-225,0" time="200">Hidden</animation>
                 <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                 <control type="image">
-                    <posx>240</posx>
-                    <posy>-45</posy>
+                    <left>240</left>
+                    <top>-45</top>
                     <width>513</width>
                     <height>87</height>
                     <texture>osd/osd_bottom_bar.png</texture>
                 </control>
 				<control type="label" id="1">
-					<posx>-150</posx>
+					<left>-150</left>
 					<width>748</width>
 					<height>42</height>
 					<align>right</align>
@@ -202,47 +202,39 @@
                 <visible>[Player.Seeking | [Player.DisplayAfterSeek + [!IsEmpty(Player.SeekOffset) | !IsEmpty(Player.Chapter)]] | Player.Forwarding | Player.Rewinding] + ![Player.Paused|[Player.Paused+Player.Seeking] | [Player.Paused+Player.DisplayAfterSeek]]</visible>
                 <visible>!Control.IsVisible(4003) + !Control.IsVisible(4004)</visible>
                 <control type="group">
-                    <posy>993</posy>
+                    <top>993</top>
                     <decscription>bottom bar</decscription>
                     <animation type="WindowOpen">
-                        <effect type="fade" time="160" end="100" />
-                        <effect type="slide" time="160" start="0,98" end="0,0" tween="cubic" />
+                        <effect type="fade" time="200" end="100" />
+                        <effect type="slide" time="200" start="0,98" end="0,0" tween="cubic" />
                     </animation>
                     <animation type="WindowClose">
-                        <effect type="fade" time="160" start="100" end="0" />
-                        <effect type="slide" time="160" end="0,98" easing="in" tween="cubic" />
+                        <effect type="fade" time="200" start="100" end="0" />
+                        <effect type="slide" time="200" end="0,98" easing="in" tween="cubic" />
                     </animation>
                     <control type="image">
-                        <posx>450</posx>
+                        <left>450</left>
                         <width>1020</width>
                         <height>87</height>
                         <texture>osd/osd_progress_bar_back.png</texture>
                     </control>
                     <control type="progress">
-                        <posx>645</posx>
-                        <posy>57</posy>
+                        <left>645</left>
+                        <top>57</top>
                         <width>630</width>
                         <height>20</height>
-                        <texturebg>osd/seek/progress_back.png</texturebg>
-                        <lefttexture border="1">osd/seek/progresscache_left.png</lefttexture>
-                        <midtexture border="1">osd/seek/progresscache_mid.png</midtexture>
-                        <righttexture border="1">osd/seek/progresscache_right.png</righttexture>
                         <info>Player.ProgressCache</info>
                     </control>
                     <control type="progress" id="23">
-                        <posx>645</posx>
-                        <posy>57</posy>
+                        <left>645</left>
+                        <top>57</top>
                         <width>630</width>
                         <height>20</height>
-                        <texturebg>osd/seek/progresscache_back.png</texturebg>
-                        <lefttexture border="1">osd/seek/progress_left.png</lefttexture>
-                        <midtexture border="1">osd/seek/progress_mid.png</midtexture>
-                        <righttexture border="1">osd/seek/progress_right.png</righttexture>
                         <info>Player.Progress</info>
                     </control>
                     <control type="label">
-                        <posx>340</posx>
-                        <posy>45</posy>
+                        <left>340</left>
+                        <top>45</top>
                         <width>300</width>
                         <height>42</height>
                         <font>Font_Reg19</font>
@@ -251,8 +243,8 @@
                         <align>right</align>
                     </control>
                     <control type="label">
-                        <posx>1290</posx>
-                        <posy>45</posy>
+                        <left>1290</left>
+                        <top>45</top>
                         <width>300</width>
                         <height>42</height>
                         <font>Font_Reg19</font>
@@ -261,8 +253,8 @@
                         <visible>!Skin.HasSetting(PreferRemaining)</visible>
                     </control>
                     <control type="label">
-                        <posx>1275</posx>
-                        <posy>45</posy>
+                        <left>1275</left>
+                        <top>45</top>
                         <width>300</width>
                         <height>42</height>
                         <font>Font_Reg19</font>
@@ -272,8 +264,8 @@
                     </control>
                 </control>
                 <control type="grouplist">
-                    <posx>30</posx>
-                    <posy>945</posy>
+                    <left>30</left>
+                    <top>945</top>
                     <width>748</width>
                     <height>150</height>
                     <itemgap>10</itemgap>
@@ -282,49 +274,49 @@
                     <usecontrolcoords>true</usecontrolcoords>
                     <include>Animation_CommonFade</include>
                     <control type="image">
-                        <posy>3</posy>
                         <width>90</width>
                         <height>87</height>
                         <aspectratio>keep</aspectratio>
-                        <texture flipx="true">osd/ff.png</texture>
                         <colordiffuse>FFe5e5e5</colordiffuse>
-                        <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
+                        <texture flipx="true">osd/ff.png</texture>
+                        <animation effect="fade" start="100" end="60" time="1000" pulse="true" condition="true">Conditional</animation>
+                        <top>3</top>
                         <visible>Player.Rewinding</visible>
                     </control>
                     <control type="label">
-                        <label>$VAR[VideoPlayerForwardRewindVar]</label>
                         <include>Objects_OSDSeekForward</include>
+                        <label>$VAR[VideoPlayerForwardRewindVar]</label>
                     </control>
                     <control type="image">
-                        <posy>3</posy>
                         <width>90</width>
                         <height>87</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>osd/ff.png</texture>
                         <colordiffuse>FFe5e5e5</colordiffuse>
-                        <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
+                        <texture>osd/ff.png</texture>
+                        <animation effect="fade" start="100" end="60" time="1000" pulse="true" condition="true">Conditional</animation>
+                        <top>3</top>
                         <visible>Player.Forwarding</visible>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>-390</posx>
-                    <posy>1038</posy>
+                    <left>-390</left>
+                    <top>1038</top>
                     <width>748</width>
                     <height>42</height>
-                    <animation effect="slide" start="-225,0" end="0,0" time="160">WindowOpen</animation>
-                    <animation effect="slide" end="-225,0" time="160">WindowClose</animation>
-                    <animation effect="slide" start="-225,0" end="0,0" time="160">Visible</animation>
-                    <animation effect="slide" end="-225,0" time="160">Hidden</animation>
+                    <animation effect="slide" start="-225,0" end="0,0" time="200">WindowOpen</animation>
+                    <animation effect="slide" end="-225,0" time="200">WindowClose</animation>
+                    <animation effect="slide" start="-225,0" end="0,0" time="200">Visible</animation>
+                    <animation effect="slide" end="-225,0" time="200">Hidden</animation>
                     <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                     <control type="image">
-                        <posx>240</posx>
-                        <posy>-45</posy>
+                        <left>240</left>
+                        <top>-45</top>
                         <width>513</width>
                         <height>87</height>
                         <texture>osd/osd_bottom_bar.png</texture>
                     </control>
                     <control type="label" id="1">
-                        <posx>-150</posx>
+                        <left>-150</left>
                         <width>748</width>
                         <height>42</height>
                         <align>right</align>
@@ -338,40 +330,40 @@
             </control>
             <control type="group" id="4002">
                 <animation type="WindowOpen">
-                    <effect type="fade" time="160" end="100" />
-                    <effect type="slide" time="160" start="0,-98" end="0,0" tween="cubic" />
+                    <effect type="fade" time="200" end="100" />
+                    <effect type="slide" time="200" start="0,-98" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="fade" time="160" start="100" end="0" />
-                    <effect type="slide" time="160" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="fade" time="200" start="100" end="0" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <animation type="Visible">
-                    <effect type="fade" time="160" end="100" />
-                    <effect type="slide" time="160" start="0,-98" end="0,0" tween="cubic" />
+                    <effect type="fade" time="200" end="100" />
+                    <effect type="slide" time="200" start="0,-98" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
-                    <effect type="fade" time="160" start="100" end="0" />
-                    <effect type="slide" time="160" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="fade" time="200" start="100" end="0" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <visible>[Player.Seeking | [Player.DisplayAfterSeek + [!IsEmpty(Player.SeekOffset) | !IsEmpty(Player.Chapter)]] | Player.Forwarding | Player.Rewinding] + ![Player.Paused|[Player.Paused+Player.Seeking] | [Player.Paused+Player.DisplayAfterSeek]]</visible>
                 <visible>!Control.IsVisible(4003) + !Control.IsVisible(4004)</visible>
                 <control type="group">
                     <control type="image">
-                        <posx>704</posx>
+                        <left>704</left>
                         <width>513</width>
                         <height>87</height>
                         <texture flipy="true">osd/osd_top_bar.png</texture>
                         <visible>[[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek] | [[Player.Paused + Player.Caching] + !Player.Seeking] | Player.Seeking|[Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)]</visible>
                     </control>
                     <control type="label">
-                        <posx>750</posx>
+                        <left>750</left>
                         <width>420</width>
                         <height>42</height>
                         <align>center</align>
-                        <label>$VAR[VideoPlayerSeekVar]</label>
                         <font>Font_Reg33_Caps</font>
-                        <shadowcolor>88e5e5e5</shadowcolor>
                         <textcolor>FF363636</textcolor>
+                        <shadowcolor>88e5e5e5</shadowcolor>
+                        <label>$VAR[VideoPlayerSeekVar]</label>
                     </control>
                 </control>
             </control>
@@ -380,65 +372,66 @@
                 <visible>Player.Paused|[Player.Paused+Player.Seeking] | [Player.Paused+Player.DisplayAfterSeek]</visible>
                 <visible>!Control.IsVisible(4001) + !Control.IsVisible(4002)</visible>
                 <animation type="Visible">
-                    <effect type="fade" time="320" end="100" />
-                    <effect type="slide" time="320" start="0,-135" end="0,0" tween="cubic" />
+                    <effect type="fade" time="400" end="100" />
+                    <effect type="slide" time="400" start="0,-135" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
-                    <effect type="fade" time="320" start="100" end="0" />
-                    <effect type="slide" time="320" end="0,-135" easing="in" tween="cubic" />
+                    <effect type="fade" time="400" start="100" end="0" />
+                    <effect type="slide" time="400" end="0,-135" easing="in" tween="cubic" />
                 </animation>
                 <animation type="WindowOpen">
-                    <effect type="fade" time="320" end="100" />
-                    <effect type="slide" time="320" start="0,-135" end="0,0" tween="cubic" />
+                    <effect type="fade" time="400" end="100" />
+                    <effect type="slide" time="400" start="0,-135" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="fade" time="320" start="100" end="0" />
-                    <effect type="slide" time="320" end="0,-135" easing="in" tween="cubic" />
+                    <effect type="fade" time="400" start="100" end="0" />
+                    <effect type="slide" time="400" end="0,-135" easing="in" tween="cubic" />
                 </animation>
                 <control type="group">
-                    <posy>128</posy>
+                    <top>128</top>
+                    <visible>!Skin.HasSetting(AlaskaPausedLabel)</visible>
                     <control type="image">
-                        <posx>704</posx>
+                        <left>704</left>
                         <width>513</width>
                         <height>87</height>
                         <texture flipy="true">osd/osd_top_bar.png</texture>
                     </control>
                     <control type="label">
-                        <posx>750</posx>
+                        <left>750</left>
                         <width>420</width>
                         <height>42</height>
                         <align>center</align>
-                        <label>$VAR[VideoPlayerSeekVar]</label>
                         <font>Font_Reg33_Caps</font>
-                        <shadowcolor>88e5e5e5</shadowcolor>
                         <textcolor>FF363636</textcolor>
+                        <shadowcolor>88e5e5e5</shadowcolor>
+                        <label>$VAR[VideoPlayerSeekVar]</label>
                     </control>
                 </control>
                 <control type="image">
                     <width>1920</width>
                     <height>135</height>
-                    <texture flipy="true">osd/osd_back.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+					<texture flipy="true">osd/osd_back.png</texture>
+					<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
                 <control type="group">
-                    <posy>84</posy>
+                    <top>84</top>
                     <include>Neon_Topbar</include>
                 </control>
                 <control type="label">
-                    <posx>510</posx>
-                    <posy>18</posy>
+                    <left>510</left>
+                    <top>18</top>
                     <width>900</width>
                     <height>68</height>
                     <align>center</align>
                     <aligny>bottom</aligny>
-                    <label>$INFO[VideoPlayer.Title]</label>
                     <font>Font_ShowcaseMainLabel2_Caps</font>
+                    <label>$INFO[VideoPlayer.Title]</label>
                     <scroll>true</scroll>
                     <animation effect="slide" start="0,15" end="0,15" time="0" condition="[IsEmpty(Player.ChapterName) | SubString(Player.ChapterName,0,left)] + [[IsEmpty(VideoPlayer.Tagline) + VideoPlayer.Content(movies)] | [IsEmpty(VideoPlayer.Artist) + VideoPlayer.Content(musicvideos)]] | VideoPlayer.Content(files)">Conditional</animation>
                 </control>
                 <control type="label">
-                    <posx>510</posx>
-                    <posy>78</posy>
+                    <left>510</left>
+                    <top>78</top>
                     <width>900</width>
                     <height>68</height>
                     <align>center</align>
@@ -449,27 +442,27 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="image">
-                    <posx>15</posx>
-                    <posy>30</posy>
-                    <texture fallback="flags/source/defaultsource.png">$VAR[VideoSourceFlagVar,flags/source/,.png]</texture>
+                    <left>15</left>
+                    <top>30</top>
                     <include>OSDFlagVars</include>
+                    <texture fallback="flags/source/defaultsource.png">$VAR[ColorFlagsSource]Source/$VAR[VideoSourceFlagVar,,.png]</texture>
                 </control>
                 <control type="group">
-                    <posx>165</posx>
-					<posy>30</posy>
+                    <left>165</left>
+					<top>30</top>
                     <visible>!VideoPlayer.Content(files)</visible>
                     <control type="image" id="76">
-                        <texture>$INFO[VideoPlayer.Studio,flags/studios/,.png]</texture>
+                        <texture>$VAR[ColorFlagsStudio]$INFO[VideoPlayer.Studio,,.png]</texture>
                         <include>OSDFlagVars</include>
                     </control>
                     <control type="image">
-                        <texture>flags/studios/default-studio.png</texture>
+                        <texture>$VAR[ColorFlagsStudio]default-studio.png</texture>
                         <include>OSDFlagVars</include>
                         <visible>IsEmpty(VideoPlayer.Studio)</visible>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
-                        <posy>-5</posy>
+                        <left>0</left>
+                        <top>-5</top>
                         <width>155</width>
                         <height>70</height>
                         <align>center</align>
@@ -481,65 +474,65 @@
                     </control>
                 </control>
                 <control type="image" id="2117">
-                    <posx>325</posx>
-					<posy>30</posy>
+                    <left>325</left>
+					<top>30</top>
                     <texture>$VAR[ColorFlagsRating]rating/$VAR[VideoRatingFlagVar,,.png]</texture>
                     <include>OSDFlagVars</include>
                     <visible>!VideoPlayer.Content(files) + !IsEmpty(VideoPlayer.mpaa)</visible>
                 </control>
                 <control type="image">
-                    <posx>325</posx>
-					<posy>30</posy>
+                    <left>325</left>
+					<top>30</top>
                     <texture>$VAR[ColorFlagsRating]rating/MPAA_NR_Certificate_US.png</texture>
                     <include>OSDFlagVars</include>
                     <visible>!VideoPlayer.Content(files) + IsEmpty(Control.GetLabel(2117))</visible>
                 </control>					
                 <control type="image">
-                    <posx>1480</posx>
-                    <posy>30</posy>
-                    <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+                    <left>1480</left>
+                    <top>30</top>
                     <include>OSDFlagVars</include>
+                    <texture>$VAR[ColorFlagsAspectRatio]aspectratio/$INFO[VideoPlayer.VideoAspect,,.png]</texture>
                     <animation effect="slide" end="-1305" condition="VideoPlayer.Content(files)">Conditional</animation>
                 </control>
                 <control type="image">
-                    <posx>1600</posx>
-                    <posy>30</posy>
-                    <texture fallback="flags/resolution/defaultscreen.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+                    <left>1600</left>
+                    <top>30</top>
                     <include>OSDFlagVars</include>
+                    <texture fallback="flags/resolution/defaultscreen.png">$VAR[ColorFlagsResolution]resolution/$INFO[VideoPlayer.VideoResolution,,.png]</texture>
                 </control>
                 <control type="image">
-                    <posx>1745</posx>
-                    <posy>30</posy>
-                    <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+                    <left>1745</left>
+                    <top>30</top>
                     <include>OSDFlagVars</include>
-                </control>
+					<texture fallback="flags/audio/defaultsound.png">$VAR[ColorFlagsAudio]audio/$INFO[VideoPlayer.AudioCodec]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+                </control>										
             </control>
             <control type="group" id="4004">
                 <visible>Player.Paused|[Player.Paused + Player.Seeking] | [Player.Paused + Player.DisplayAfterSeek]</visible>
                 <visible>!Control.IsVisible(4001) + !Control.IsVisible(4002)</visible>
                 <animation type="Visible">
-                    <effect type="fade" time="320" end="100" />
-                    <effect type="slide" time="320" start="0,135" end="0,0" tween="cubic" />
+                    <effect type="fade" time="400" end="100" />
+                    <effect type="slide" time="400" start="0,135" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
-                    <effect type="fade" time="320" start="100" end="0" />
-                    <effect type="slide" time="320" end="0,135" easing="in" tween="cubic" />
+                    <effect type="fade" time="400" start="100" end="0" />
+                    <effect type="slide" time="400" end="0,135" easing="in" tween="cubic" />
                 </animation>
                 <animation type="WindowOpen">
-                    <effect type="fade" time="320" end="100" />
-                    <effect type="slide" time="320" start="0,135" end="0,0" tween="cubic" />
+                    <effect type="fade" time="400" end="100" />
+                    <effect type="slide" time="400" start="0,135" end="0,0" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="fade" time="320" start="100" end="0" />
-                    <effect type="slide" time="320" end="0,135" easing="in" tween="cubic" />
+                    <effect type="fade" time="400" start="100" end="0" />
+                    <effect type="slide" time="400" end="0,135" easing="in" tween="cubic" />
                 </animation>
                 <include>FullScreenInfoBar</include>
 				<control type="group">
 				<animation effect="slide" end="-1800,0" condition="VideoPlayer.Content(files)">Conditional</animation>
 				<visible>Skin.HasSetting(AudioSubFlag)</visible>
 			    <control type="image">
-                    <posx>1820</posx>
-                    <posy>1000</posy>
+                    <left>1820</left>
+                    <top>1000</top>
 					<width>30</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
@@ -549,8 +542,8 @@
 					<visible>!IsEmpty(VideoPlayer.SubtitlesLanguage)</visible>
                 </control>
                 <control type="image">
-                    <posx>1820</posx>
-                    <posy>970</posy>
+                    <left>1820</left>
+                    <top>970</top>
 					<width>30</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
@@ -561,8 +554,8 @@
 					<visible>!Substring(VideoPlayer.AudioLanguage,und)</visible>
                 </control>				
                 <control type="image">
-                    <posx>1860</posx>
-                    <posy>970</posy>
+                    <left>1860</left>
+                    <top>970</top>
 					<width>30</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
@@ -571,8 +564,8 @@
 					<texture fallback="">$VAR[ColorFlagsLanguage]$INFO[VideoPlayer.AudioLanguage,,.png]</texture>
                 </control>
                 <control type="image">
-                    <posx>1860</posx>
-                    <posy>1000</posy>
+                    <left>1860</left>
+                    <top>1000</top>
 					<width>30</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
