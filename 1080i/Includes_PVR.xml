@@ -76,7 +76,7 @@
             </control>
             <control type="group">
                 <left>100</left>
-                <top>600</top>
+                <top>580</top>
 				<width>840</width>
 				<height>400</height>
                 <include>Animation_OpenCloseZoom_New</include>
@@ -89,7 +89,7 @@
                     <shadowcolor>black</shadowcolor>
                     <textcolor>white6</textcolor>
                     <autoscroll time="5000" delay="2000" repeat="5000">true</autoscroll>
-					<visible>!Control.IsVisible(55)</visible>
+					<visible>!Control.IsVisible(56)</visible>
                 </control>
 				<control type="textbox">
                     <width>550</width>
@@ -99,13 +99,13 @@
                     <shadowcolor>black</shadowcolor>
                     <textcolor>white6</textcolor>
                     <autoscroll time="5000" delay="2000" repeat="5000">true</autoscroll>
-					<visible>Control.IsVisible(55)</visible>
+					<visible>Control.IsVisible(56)</visible>
                 </control>
-				<control type="image" id="55"> <!-- Show\Movie poster -->
+				<control type="image" id="56"> <!-- Show\Movie poster -->
 					<left>555</left>
 					<top>10</top>
 					<width>250</width>
-					<height>340</height>
+					<height>320</height>
 					<align>center</align>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[Container(11).ListItem.PlotOutline]</texture>
@@ -1149,7 +1149,7 @@
                         <textoffsetx>10</textoffsetx>
                     </control>
                 </rulerlayout>
-                <channellayout height="60" width="320">                  
+                <channellayout height="60" width="400">                  
 					<control type="label">
                         <left>30</left>
                         <top>-2</top>
@@ -1173,7 +1173,6 @@
                     </control>
 					<control type="image">
                         <left>60</left>
-                        <top>0</top>
 						<width>250</width>
                         <height>60</height>
                         <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -1184,7 +1183,7 @@
                     <control type="label">
                         <left>65</left>
                         <top>-2</top>
-                        <width>300</width>
+                        <width>350</width>
                         <height>60</height>
                         <font>Font_Reg20</font>
                         <textcolor>white</textcolor>
@@ -1197,7 +1196,7 @@
 					<control type="label">
                         <left>125</left>
                         <top>-2</top>
-                        <width>240</width>
+                        <width>300</width>
                         <height>60</height>
                         <font>Font_Reg20</font>
                         <textcolor>white</textcolor>
@@ -1208,11 +1207,9 @@
 						<visible>StringCompare(Skin.String(LiveTV.EpgViewChannels),2) + !IsEmpty(ListItem.Icon)</visible>
                     </control>
                 </channellayout>
-                <focusedchannellayout height="60" width="320">
+                <focusedchannellayout height="60" width="400">
                     <control type="image">
-                        <left>-20</left>
-                        <top>0</top>
-                        <width>395</width>
+                        <width>400</width>
                         <height>60</height>
 						<texture border="8">views/tripanel/listselect_fo.png</texture>
                         <colordiffuse>$VAR[FontColorVar]</colordiffuse>
@@ -1240,7 +1237,6 @@
                     </control>
 					<control type="image">
                         <left>60</left>
-                        <top>0</top>
 						<width>250</width>
                         <height>60</height>
                         <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -1251,7 +1247,7 @@
                     <control type="label">
                         <left>65</left>
                         <top>-2</top>
-                        <width>300</width>
+                        <width>350</width>
                         <height>60</height>
                         <font>Font_Reg20</font>
                         <textcolor>white</textcolor>
@@ -1264,7 +1260,7 @@
 					<control type="label">
                         <left>125</left>
                         <top>-2</top>
-                        <width>240</width>
+                        <width>300</width>
                         <height>60</height>
                         <font>Font_Reg20</font>
                         <textcolor>white</textcolor>
@@ -1279,9 +1275,8 @@
 					<control type="image" id="12">
                         <width>60</width>
                         <height>60</height>
-                        <top>0</top>
 						<aspectratio>stretch</aspectratio>
-						<texture border="3">$INFO[ListItem.Property(GenreType),new_pvr/epg-genres/,.png]</texture>
+						<texture border="3" fallback="epg-genres/0.png">$INFO[ListItem.Genre,epg-genres/,.png]</texture>
                     </control>
 					<control type="image" id="11">
                         <width>60</width>
@@ -1330,11 +1325,9 @@
                     <control type="image" id="14">
                         <width>60</width>
                         <height>60</height>
-                        <top>0</top>
 						<aspectratio>stretch</aspectratio>
                         <colordiffuse>$VAR[FontColorVar]</colordiffuse>
-						<texture border="4">new_pvr/border_focus.png</texture>
-                        <!--<texture border="20">views/tripanel/listselect_fo.png</texture>-->
+                        <texture border="20">views/tripanel/listselect_fo.png</texture>
                     </control>
                     <control type="image" id="2">
                         <width>60</width>
@@ -1348,7 +1341,6 @@
                         <height>50</height>
                         <font>Font_Reg32</font>
                         <info>ListItem.Label</info>
-						<textcolor>$VAR[FontColorVar]</textcolor>
                         <visible>!ListItem.HasTimer + !ListItem.IsRecording</visible>
                     </control>
                     <control type="label" id="1">
@@ -1358,7 +1350,6 @@
                         <height>50</height>
                         <font>Font_Reg32</font>
                         <info>ListItem.Label</info>
-						<textcolor>$VAR[FontColorVar]</textcolor>
                         <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
@@ -1380,10 +1371,10 @@
                 </focusedlayout>
             </control>
 			<control type="image">
-				<left>378</left>
+				<left>457</left>
 				<top>95</top>
 				<width>2</width>
-				<height>602</height>
+				<height>601</height>
 				<texture>new_pvr/separator3.png</texture>
 			</control>
 			<control type="image">
@@ -1394,55 +1385,48 @@
 				<texture>new_pvr/separator2.png</texture>
 			</control>
             <control type="group">
-				<visible>Player.HasVideo</visible>
 				<left>58</left>
                 <top>698</top>
 				<height>227</height>
-				<width>318</width>
+				<width>400</width>
 				<control type="image">
-					<width>318</width>
+					<visible>Player.HasVideo</visible>
+					<width>400</width>
 					<height>227</height>
 					<aspectratio>strech</aspectratio>
 					<texture border="0">new_pvr/black-back.png</texture>
 				</control>
 				<control type="videowindow">
-					<width>318</width>
+					<visible>Player.HasVideo</visible>
+					<width>400</width>
 					<height>227</height>
 				</control>
-			</control>
-			<control type="group">
-                <visible>Control.IsVisible(10)</visible>
-                <left>108</left>
-                <top>722</top>
-				<height>227</height>
-				<width>1500</width>
-                <control type="image">
-                    <width>200</width>
-                    <height>200</height>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
-                <control type="image">
+				<control type="image">
 					<visible>!Player.HasVideo</visible>
-                    <left>10</left>
-                    <top>-10</top>
+                    <left>100</left>
+                    <top>14</top>
                     <width>200</width>
                     <height>200</height>
                     <aspectratio>keep</aspectratio>
                     <texture>$INFO[Container(10).ListItem.Icon]</texture>
                 </control>
+			</control>
+			<control type="group">
+                <visible>Control.IsVisible(10)</visible>
+                <left>480</left>
+                <top>722</top>
+				<height>227</height>
+				<width>1500</width>
                 <control type="label">
-                    <left>280</left>
-                    <top>0</top>
-					<width>1200</width>
+					<width>1350</width>
 					<height>30</height>
                     <textcolor>$VAR[FontColorVar]</textcolor>
                     <font>Font_Bold18</font>
-                    <label>$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime]  |  $INFO[ListItem.Title]  |  $INFO[ListItem.Genre]</label>
+                    <label>$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime]  |  [COLOR grey]$INFO[ListItem.Title][/COLOR]  |   $INFO[ListItem.Genre,[COLOR grey]$LOCALIZE[515]:[/COLOR] ,]</label>
                 </control>
 				<control type="textbox">
-                    <left>280</left>
                     <top>40</top>
-                    <width>1450</width>
+                    <width>1350</width>
                     <height>145</height>
                     <font>Font_Reg20</font>
                     <label>$INFO[ListItem.Plot]</label>
@@ -1450,9 +1434,8 @@
 					<visible>!Control.IsVisible(55)</visible>
                 </control>
                 <control type="textbox">
-                    <left>280</left>
                     <top>40</top>
-                    <width>1200</width>
+                    <width>1150</width>
                     <height>145</height>
                     <font>Font_Reg20</font>
                     <label>$INFO[ListItem.Plot]</label>
@@ -1460,9 +1443,9 @@
 					<visible>Control.IsVisible(55)</visible>
                 </control>
 				<control type="image" id="55">
-                    <left>1500</left>
+                    <left>1180</left>
                     <top>-10</top>
-                    <width>250</width>
+                    <width>200</width>
                     <height>200</height>
                     <aspectratio>keep</aspectratio>
                     <texture>$INFO[ListItem.PlotOutline]</texture>
@@ -1476,6 +1459,8 @@
             <visible>Control.IsVisible(15)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
+				<width>1740</width>
+				<height>750</height>
                 <left>120</left>
                 <top>90</top>
                 <control type="label">
@@ -1665,11 +1650,13 @@
     </include>
     <include name="LiveTVGuideNowNextView">
         <control type="group">
+			<left>120</left>
+            <top>36</top>
+			<width>1740</width>
+			<height>600</height>
             <visible>Control.IsVisible(16)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <left>120</left>
-                <top>36</top>
                 <control type="list" id="16">
                     <top>60</top>
                     <width>1740</width>
@@ -1865,41 +1852,74 @@
             </control>
         </control>
         <control type="group">
-            <visible>Control.IsVisible(16)</visible>
-            <left>108</left>
-            <top>722</top>
-            <control type="image">
-                <left>30</left>
-                <top>5</top>
-                <width>170</width>
-                <height>170</height>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-            </control>
-            <control type="image">
-                <left>30</left>
-                <top>28</top>
-                <width>170</width>
-                <height>127</height>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
-            </control>
-            <control type="label">
-                <left>230</left>
-                <top>-300</top>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <font>Font_Bold18</font>
-                <label>$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime]  |  $INFO[ListItem.Title]  |  $INFO[ListItem.Genre]</label>
-            </control>
-            <control type="textbox">
-                <left>230</left>
-                <top>47</top>
-                <width>1400</width>
-                <height>118</height>
-                <font>Font_Reg20</font>
-                <label fallback="31006">$INFO[ListItem.Plot]</label>
-                <autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
-            </control>
-        </control>
+			<left>58</left>
+			<top>698</top>
+			<height>227</height>
+			<width>400</width>
+			<visible>Control.IsVisible(16)</visible>
+			<control type="image">
+				<visible>Player.HasVideo</visible>
+				<width>400</width>
+				<height>227</height>
+				<aspectratio>strech</aspectratio>
+				<texture border="0">new_pvr/black-back.png</texture>
+			</control>
+			<control type="videowindow">
+				<visible>Player.HasVideo</visible>
+				<width>400</width>
+				<height>227</height>
+			</control>
+			<control type="image">
+				<visible>!Player.HasVideo</visible>
+				<left>100</left>
+				<top>14</top>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[Container(16).ListItem.Icon]</texture>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(16)</visible>
+			<left>480</left>
+			<top>722</top>
+			<height>227</height>
+			<width>1500</width>
+			<control type="label">
+				<width>1350</width>
+				<height>30</height>
+				<textcolor>$VAR[FontColorVar]</textcolor>
+				<font>Font_Bold18</font>
+				<label>$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime]  |  [COLOR grey]$INFO[ListItem.Title][/COLOR]  |   $INFO[ListItem.Genre,[COLOR grey]$LOCALIZE[515]:[/COLOR] ,]</label>
+			</control>
+			<control type="textbox">
+				<top>40</top>
+				<width>1350</width>
+				<height>145</height>
+				<font>Font_Reg20</font>
+				<label>$INFO[ListItem.Plot]</label>
+				<autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<visible>!Control.IsVisible(55)</visible>
+			</control>
+			<control type="textbox">
+				<top>40</top>
+				<width>1150</width>
+				<height>145</height>
+				<font>Font_Reg20</font>
+				<label>$INFO[ListItem.Plot]</label>
+				<autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<visible>Control.IsVisible(55)</visible>
+			</control>
+			<control type="image" id="55">
+				<left>1180</left>
+				<top>-10</top>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.PlotOutline]</texture>
+				<visible>SubString(ListItem.PlotOutline,"http://",Left) | SubString(ListItem.PlotOutline,"https://",Left)</visible>
+			</control>
+		</control>
     </include>
     <include name="LiveTVItemInfo">
         <include>DialogBackFade</include>
@@ -3784,7 +3804,6 @@
         <focusedcolor>white6</focusedcolor>
         <onleft>ClearProperty(viewtypeselect,home)</onleft>
         <onleft>ActivateWindow(1121)</onleft>
-        <radiowidth>65</radiowidth>
         <radiowidth>98</radiowidth>
         <radioposx>308</radioposx>
     </include>	
