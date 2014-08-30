@@ -70,13 +70,6 @@
                     <selected>Skin.HasSetting(DisableTimePanel)</selected>
                     <visible>Stringcompare(Window.Property(actualItem),TimePanel)</visible>
                 </control>
-                <control type="radiobutton" id="461">
-                    <label>$LOCALIZE[31689]</label>
-                    <include>Objects_CommonSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(DisableLibraryStats)</onclick>
-                    <selected>Skin.HasSetting(DisableLibraryStats)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),LibraryStats)</visible>
-                </control>
                 <control type="radiobutton" id="462">
                     <label>$LOCALIZE[31690]</label>
                     <include>Objects_CommonSettingsButton</include>
@@ -96,14 +89,13 @@
                     <label>$LOCALIZE[31691]</label>
                     <label2>[COLOR $VAR[FontColorVar]] $LOCALIZE[31628]: $VAR[FurniturePositionVar][/COLOR]</label2>
                     <include>Objects_CommonSettingsButton</include>
-                    <enable>!Skin.HasSetting(DisableLibraryStats)</enable>
                     <onclick>Skin.ToggleSetting(totalshomehigh)</onclick>
                     <visible>Stringcompare(Window.Property(actualItem),LibraryStats)</visible>
                 </control>
                 <control type="radiobutton" id="464">
                     <label>$LOCALIZE[31692]</label>
                     <include>Objects_CommonSettingsButton</include>
-                    <enable>!Skin.HasSetting(AlternateTimeStats) + [[!Skin.HasSetting(DisableTimePanel) + Stringcompare(Window.Property(actualItem),TimePanel)] | [!Skin.HasSetting(DisableLibraryStats) + Stringcompare(Window.Property(actualItem),LibraryStats)]]</enable>
+                    <enable>!Skin.HasSetting(AlternateTimeStats) + [[!Skin.HasSetting(DisableTimePanel) + Stringcompare(Window.Property(actualItem),TimePanel)] | Stringcompare(Window.Property(actualItem),LibraryStats)]</enable>
                     <onclick>Skin.ToggleSetting(shorterhomebars)</onclick>
                     <selected>Skin.HasSetting(shorterhomebars)</selected>
                     <visible>Stringcompare(Window.Property(actualItem),TimePanel) | Stringcompare(Window.Property(actualItem),LibraryStats)</visible>
@@ -182,7 +174,7 @@
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(AlternateTimeStats)</onclick>
                     <selected>Skin.HasSetting(AlternateTimeStats)</selected>
-                    <enable>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(DisableTimePanel)</enable>
+                    <enable>!Skin.HasSetting(DisableTimePanel)</enable>
                     <visible>Stringcompare(Window.Property(actualItem),LibraryStats) | Stringcompare(Window.Property(actualItem),TimePanel)</visible>
                 </control>
                 <control type="button" id="473">

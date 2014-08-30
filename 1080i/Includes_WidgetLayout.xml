@@ -2,9 +2,9 @@
 <includes>
     <include name="AlternateTimeAndStats">
         <control type="group">
-            <visible>Skin.HasSetting(AlternateTimeStats) + [!Skin.HasSetting(DisableLibraryStats) | !Skin.HasSetting(DisableTimePanel)]</visible>
+            <visible>Skin.HasSetting(AlternateTimeStats) | Window.IsActive(skinsettings)</visible>
             <animation effect="slide" end="-1920,0" time="240">WindowClose</animation>
-            <animation effect="slide" start="-1920,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" start="-1920,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup) + !Window.IsActive(skinsettings)">WindowOpen</animation>
             <animation effect="slide" start="-1920" end="0" time="240">VisibleChange</animation>
             <animation effect="slide" start="-1920,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + ![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
@@ -34,29 +34,6 @@
                 <font>Font_Reg28_Caps</font>
                 <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                 <scroll>true</scroll>
-                <visible>!Skin.HasSetting(DisableLibraryStats) + !StringCompare(Control.GetLabel(4326),mixed)</visible>
-            </control>
-            <control type="fadelabel">
-                <posx>15</posx>
-                <posy>-1</posy>
-                <width>880</width>
-                <height>36</height>
-                <label>$INFO[System.memory(used.percent),[COLOR grey]$LOCALIZE[31309][/COLOR] ]$INFO[System.CPUUsage,[COLOR grey] • $LOCALIZE[13271][/COLOR] ]</label>
-                <label>$INFO[Window(Home).Property(favourite.count),[COLOR grey]$LOCALIZE[1036]:[/COLOR] ]</label>
-                <label>$INFO[Window(Home).Property(RandomAddon.Count),[COLOR grey]$LOCALIZE[20161] $LOCALIZE[24001]:[/COLOR] ]</label>
-                <label>$INFO[Window(Weather).Property(Location),[COLOR grey], • $LOCALIZE[402]: [/COLOR]]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits,,[COLOR grey] • $LOCALIZE[406]:[/COLOR] ]$INFO[Window(weather).Property(Current.Humidity)]</label>
-                <label>$INFO[PVR.NextRecordingDateTime,$LOCALIZE[19157]  [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] -  • ]$INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</label>
-                <label>$INFO[PVR.NowRecordingDateTime,$LOCALIZE[19158]  [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ]$INFO[PVR.NowRecordingTitle, • [B][COLOR=FF48D1CC],[/COLOR][/B] ]$INFO[PVR.NowRecordingChannel,[B][COLOR=white]( ,)[/COLOR][/B]]</label>
-                <label>$INFO[Window(Home).Property(MyPicsDBLatest.Categories),[COLOR grey]$LOCALIZE[31892]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBLatest.Collections),[COLOR grey]  •  $LOCALIZE[31890]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBLatest.Folders),[COLOR grey]  •  $LOCALIZE[31891]:[/COLOR] ]</label>
-                <label>$INFO[Window(Home).Property(MyPicsDBRandom.Categories),[COLOR grey]$LOCALIZE[31892]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBRandom.Collections),[COLOR grey]  •  $LOCALIZE[31890]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBRandom.Folders),[COLOR grey]  •  $LOCALIZE[31891]:[/COLOR] ]</label>
-                <label>[COLOR grey]$LOCALIZE[133]:[/COLOR] $INFO[Window(Home).Property(Music.ArtistsCount)][COLOR grey]  •  $LOCALIZE[132]:[/COLOR] $INFO[Window(Home).Property(Music.AlbumsCount)][COLOR grey]  •  $LOCALIZE[134]:[/COLOR] $INFO[Window(Home).Property(Music.SongsCount)]</label>
-                <label>[COLOR grey]$LOCALIZE[20343]:[/COLOR] $INFO[Window(Home).Property(TVShows.Count)][COLOR grey]  •  $LOCALIZE[20360]:[/COLOR] $INFO[Window(Home).Property(Episodes.Count)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Episodes.UnWatched)]</label>
-                <label>$INFO[Window(Home).Property(Movies.Count),[COLOR grey]$LOCALIZE[342]:[/COLOR] ,[COLOR grey]  •  $LOCALIZE[16102]:[/COLOR] ]$INFO[Window(Home).Property(Movies.Watched),,[COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] ]$INFO[Window(Home).Property(Movies.UnWatched)]</label>
-                <font>Font_Reg28_Caps</font>
-                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <pauseatend>10000</pauseatend>
-                <resetonlabelchange>false</resetonlabelchange>
-                <visible>!Skin.HasSetting(DisableLibraryStats) + StringCompare(Control.GetLabel(4326),mixed)</visible>
             </control>
             <control type="label">
                 <posx>1776</posx>
@@ -74,7 +51,7 @@
     </include>
     <include name="LibraryStats">
         <control type="group">
-            <visible>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(AlternateTimeStats)</visible>
+            <visible>!Skin.HasSetting(AlternateTimeStats)</visible>
             <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
             <animation effect="slide" end="-750,0" time="240">WindowClose</animation>
             <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -746,7 +723,7 @@
             <animation effect="slide" end="0,390" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" end="0,210" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + Skin.HasSetting(lowermainmenu) + Window.IsActive(1158)">Conditional</animation>
             <animation effect="slide" end="0,600" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,11" time="320" tween="cubic" easing="inout" condition="[[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]] + Window.IsActive(home)">Conditional</animation>
+            <animation effect="slide" end="0,11" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]] + Window.IsActive(home)">Conditional</animation>
             <control type="group" id="8995">
                 <posx>22</posx>
                 <posy>-650</posy>
@@ -2218,7 +2195,7 @@
                 <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
             </animation>
             <animation effect="slide" end="0,-285" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
             <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
             <control type="group">
                 <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
@@ -3902,7 +3879,7 @@
             <animation effect="slide" end="0,40" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <visible>Substring(Control.GetLabel(4325),classic) + !Window.IsActive(1120)</visible>
-            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="[[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
             <visible>![IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4325),nextairedtv)]</visible>
             <visible>![IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + Substring(Control.GetLabel(4325),watchlistmovies)]</visible>
             <visible>![IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + Substring(Control.GetLabel(4325),watchlisttv)]</visible>
@@ -4591,7 +4568,7 @@
             <width>1920</width>
             <height>825</height>
             <animation effect="slide" end="0,35" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="[[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]">Conditional</animation>
             <visible>[Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel)]</visible>
             <visible>![IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4325),nextairedtv)]</visible>
             <visible>![IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + Substring(Control.GetLabel(4325),watchlistmovies,left)]</visible>
