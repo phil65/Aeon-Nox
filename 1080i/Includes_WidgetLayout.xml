@@ -65,7 +65,6 @@
                 <height>87</height>
                 <texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                <animation effect="slide" end="-200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
                 <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
             </control>
             <control type="label">
@@ -76,18 +75,6 @@
                 <font>Font_Reg28_Caps</font>
                 <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                 <scroll>true</scroll>
-                <visible>!Skin.HasSetting(shorterhomebars)</visible>
-            </control>
-            <control type="label">
-                <posx>15</posx>
-                <posy>-1</posy>
-                <width>503</width>
-                <height>36</height>
-                <label>$VAR[ShortLibraryStatsVar]</label>
-                <font>Font_Reg28_Caps</font>
-                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <scroll>true</scroll>
-                <visible>Skin.HasSetting(shorterhomebars)</visible>
             </control>
         </control>
     </include>
@@ -108,7 +95,6 @@
                 <height>87</height>
                 <texture>$VAR[TimePanelImageVar]</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                <animation effect="slide" end="200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
                 <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
             </control>
             <control type="label">
@@ -122,7 +108,7 @@
             </control>
             <control type="grouplist">
                 <posx>30</posx>
-                <visible>Weather.IsFetched + !Skin.HasSetting(shorterhomebars)</visible>
+                <visible>Weather.IsFetched</visible>
                 <include>Animation_VisibleChange400</include>
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
