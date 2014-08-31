@@ -96,6 +96,11 @@
                         <label2>[COLOR white]$VAR[CustomItemSubmenuLabelVar] $VAR[CustomSubMenuItemsVar][/COLOR]</label2>
                         <include>Objects_CustomizerInfoButton</include>
                     </control>
+                    <control type="button">
+                        <label>Startup Focus Item: </label>
+                        <label2>[COLOR white]$INFO[Skin.String(CustomFocusOffset)][/COLOR]</label2>
+                        <include>Objects_CustomizerInfoButton</include>
+                    </control>
                     <control type="image">
                         <posx>100</posx>
                         <width>600</width>
@@ -178,6 +183,12 @@
                         <label>31807</label>
                         <include>Objects_CustomizerSettingsButton</include>
                         <onclick>Skin.SetFile(ItemToEdit.Icon,.png|.bmp|.gif|.jpg|.jpeg|.ico,special://skin/extras/BigIcons)</onclick>
+                    </control>
+                    <control type="button" id="35">
+                        <label>Focus Item on Startup</label>
+                        <include>Objects_CustomizerSettingsButton</include>
+                        <enable>!Stringcompare(Skin.String(CustomFocusOffset),Skin.String(ItemToEdit.Label))</enable>
+                          <onclick>Skin.SetString(CustomFocusOffset,$INFO[Skin.String(ItemToEdit.Label)])</onclick>
                     </control>
                     <control type="button" id="30">
                         <label>31808</label>

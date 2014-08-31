@@ -9,10 +9,42 @@
         <control type="multiimage">
             <aspectratio align="center" aligny="top">scale</aspectratio>
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
-            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbghome) + !Window.IsActive(skinsettings)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbghome) + !Window.IsActive(skinsettings)">Conditional</animation>
             <visible>!Substring(Control.GetLabel(4322),case) + !Substring(Control.GetLabel(4322),wall)</visible>
         </control>
+   <!--   <control type="list" id="40000">
+            <width>1920</width>
+            <height>1080</height>
+                  <orientation>vertical</orientation>
+            <onleft>Dialog.CLose(1121)</onleft>
+            <onup>9011</onup>
+            <ondown>9012</ondown>
+            <onright>Dialog.CLose(1121)</onright>
+            <focusedlayout height="1000" width="1000">
+        <control type="image">
+            <aspectratio align="center" aligny="top">scale</aspectratio>
+            <texture flipy="true">views/showcase_glow.png</texture>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+        </control>
+            </focusedlayout>
+             <itemlayout height="1000" width="1000">
+        <control type="multiimage">
+            <aspectratio align="center" aligny="top">scale</aspectratio>
+            <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+        </control>
+            </itemlayout>
+            <content>
+                <item id="400001">
+                    <label>-</label>
+                    <onclick>-</onclick>
+                </item>
+            </content>
+            </control> -->
+
         <include>cdwall-musicvisualisation</include>
         <include>MovieWall</include>
         <control type="image">
@@ -107,6 +139,8 @@
             <include condition="!Skin.HasSetting(AlternateTimeStats) + !Window.IsActive(skinsettings)">TimePanel</include>
             <include condition="[Window.IsActive(home) + Skin.HasSetting(AlternateTimeStats)] | Window.IsActive(skinsettings)">AlternateTimeAndStats</include>
         </control>
+                    <include>RSSPanel</include>
+
         <control type="group">
             <include>Animation_OpenCloseZoom</include>
             <include>RecentWidget_skinsettings</include>
@@ -149,7 +183,7 @@
                 <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
             </animation>
             <animation effect="slide" end="0,-285" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
             <control type="group">
                 <include>Animation_VisibleChange200</include>
@@ -632,7 +666,7 @@
             <width>1920</width>
             <height>825</height>
             <animation effect="slide" end="0,35" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]">Conditional</animation>
+            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <visible>[Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel)] + !Window.IsActive(1120)</visible>
             <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
@@ -1536,7 +1570,7 @@
             <posx>1542</posx>
             <posy>13</posy>
             <animation effect="slide" end="0,40" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]">Conditional</animation>
+            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <visible>Substring(Control.GetLabel(4325),classic) + !Window.IsActive(1120)</visible>
             <include>Animation_Widgets</include>
             <!--Unfocused widget-->
@@ -1982,8 +2016,8 @@
         <hitrect x="-238" y="475" w="2400" h="130" />
         <onleft>9000</onleft>
         <onright>9000</onright>
-        <onup>10000</onup>
-        <ondown>10000</ondown>
+        <onup>10105</onup>
+        <ondown>10105</ondown>
         <scrolltime tween="quadratic">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>

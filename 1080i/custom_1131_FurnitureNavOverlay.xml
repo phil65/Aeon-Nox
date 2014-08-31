@@ -9,16 +9,19 @@
     </coordinates>
     <include>Animation_DialogPopupOpenClose</include>
     <onload>Notification($LOCALIZE[31902],$LOCALIZE[31913])</onload>
-    <onunload>ActivateWindow(skinsettings)</onunload>
     <controls>
         <control type="group">
+                                <posx>384</posx>
+                    <posy>200</posy>
+                    <animation effect="zoom" start="100,100" end="76.5,70" center="400,180" time="640" easing="inout" tween="circle" condition="true">Conditional</animation>
 
             <control type="button" id="11">
+            <posx>50</posx>
             <posy>460</posy>
-            <width>748</width>
+            <width>1790</width>
             <height>60</height>
-            <texturefocus>home/settings_furniture_timepanel.png</texturefocus>
-            <texturenofocus>home/settings_furniture_timepanel.png</texturenofocus>
+            <texturefocus border="20">home/settings_furniture_timepanel.png</texturefocus>
+            <texturenofocus border="20">home/settings_furniture_timepanel.png</texturenofocus>
             <include>Animation_VisibleChange200</include>
             <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(11)">Conditional</animation>
             <animation effect="fade" start="100" end="25" time="320" condition="Window.IsActive(1130)">Conditional</animation>
@@ -34,8 +37,9 @@
                 <onclick>ActivateWindow(1130)</onclick>
             </control>
             <control type="button" id="12">
+            <posx>50</posx>
             <posy>505</posy>
-            <width>1920</width>
+            <width>1790</width>
             <height>115</height>
             <texturefocus border="20">home/settings_furniture_timepanel.png</texturefocus>
             <texturenofocus border="20">home/settings_furniture_timepanel.png</texturenofocus>
@@ -53,8 +57,9 @@
                 <onback>Dialog.Close(1131)</onback>
             </control>
             <control type="button" id="13">
+            <posx>50</posx>
             <posy>604</posy>
-            <width>1920</width>
+            <width>1790</width>
             <height>60</height>
             <texturefocus border="20">home/settings_furniture_timepanel.png</texturefocus>
             <texturenofocus border="20">home/settings_furniture_timepanel.png</texturenofocus>
@@ -73,25 +78,5 @@
                 <onclick>ActivateWindow(1130)</onclick>
             </control>
         </control>
-            <control type="button" id="10">
-            <posx>748r</posx>
-            <posy>460</posy>
-            <width>748</width>
-            <height>60</height>
-            <texturefocus>home/settings_furniture_timepanel.png</texturefocus>
-            <texturenofocus>home/settings_furniture_timepanel.png</texturenofocus>
-            <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(10)">Conditional</animation>
-            <animation effect="fade" start="100" end="25" time="320" condition="Window.IsActive(1130)">Conditional</animation>
-            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,-474" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,-812" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
-                <onleft>11</onleft>
-                <onright>11</onright>
-                <onup>13</onup>
-                <ondown>12</ondown>
-                <onback>Dialog.Close(1131)</onback>
-                <onclick>SetProperty(actualItem,TimePanel,1130)</onclick>
-                <onclick>ActivateWindow(1130)</onclick>
-            </control>
     </controls>
 </window>

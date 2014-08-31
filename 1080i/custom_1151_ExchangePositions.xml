@@ -3,7 +3,7 @@
     <defaultcontrol always="true">4</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>ClearProperty(Exchange,home)</onload>
-    <onload condition="IsEmpty(Window(home).Property(StartupFocus))">SetProperty(MenuName,Exchange,home)</onload>
+    <onload>SetProperty(MenuName,Exchange,home)</onload>
     <onunload>ClearProperty(StartupFocus,home)</onunload>
     <onunload>SetProperty(MenuName,MenuItem,home)</onunload>
     <include>Animation_DialogPopupOpenClose</include>
@@ -119,13 +119,6 @@
                 <onfocus>Skin.SetString(ItemToEdit.InfoLine,$INFO[Window(home).Property(TempItemToEdit.InfoLine)])</onfocus>
                 <onfocus>Skin.SetString(ItemToEdit.SubMenu,$INFO[Window(home).Property(TempItemToEdit.SubMenu)])</onfocus>
                 <onfocus>Dialog.Close(1151)</onfocus>
-                <visible>IsEmpty(Window(home).Property(StartupFocus))</visible>
-            </control>
-            <control type="button" id="9006">
-                <include>HiddenObject</include>
-                <onfocus>Skin.SetString(CustomFocusOffset,$ESCINFO[Container(4).ListItem.Label])</onfocus>
-                <onfocus>Dialog.Close(1151)</onfocus>
-                <visible>!IsEmpty(Window(home).Property(StartupFocus))</visible>
             </control>
         </control>
     </controls>

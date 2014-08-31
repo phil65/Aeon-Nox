@@ -4,21 +4,21 @@
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),random) | Substring(Skin.String(widget2list),random) | Substring(Skin.String(backgroundlist),random)]">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist1.Call),random)">$INFO[Skin.String(SmartPlaylist1.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist2.Call),random)">$INFO[Skin.String(SmartPlaylist2.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist3.Call),random)">$INFO[Skin.String(SmartPlaylist3.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist4.Call),random)">$INFO[Skin.String(SmartPlaylist4.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist5.Call),random)">$INFO[Skin.String(SmartPlaylist5.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist6.Call),random)">$INFO[Skin.String(SmartPlaylist6.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist7.Call),random)">$INFO[Skin.String(SmartPlaylist7.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist8.Call),random)">$INFO[Skin.String(SmartPlaylist8.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist9.Call),random)">$INFO[Skin.String(SmartPlaylist9.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist10.Call),random)">$INFO[Skin.String(SmartPlaylist10.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist11.Call),random)">$INFO[Skin.String(SmartPlaylist11.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist12.Call),random)">$INFO[Skin.String(SmartPlaylist12.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + [Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
+    <onload condition="!Window.Previous(startup) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
+    <onload condition="!Window.Previous(startup) + [Substring(Skin.String(widgetlist),random) | Substring(Skin.String(widget2list),random) | Substring(Skin.String(backgroundlist),random)]">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist1.Call),random)">$INFO[Skin.String(SmartPlaylist1.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist2.Call),random)">$INFO[Skin.String(SmartPlaylist2.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist3.Call),random)">$INFO[Skin.String(SmartPlaylist3.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist4.Call),random)">$INFO[Skin.String(SmartPlaylist4.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist5.Call),random)">$INFO[Skin.String(SmartPlaylist5.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist6.Call),random)">$INFO[Skin.String(SmartPlaylist6.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist7.Call),random)">$INFO[Skin.String(SmartPlaylist7.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist8.Call),random)">$INFO[Skin.String(SmartPlaylist8.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist9.Call),random)">$INFO[Skin.String(SmartPlaylist9.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist10.Call),random)">$INFO[Skin.String(SmartPlaylist10.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist11.Call),random)">$INFO[Skin.String(SmartPlaylist11.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Substring(Skin.String(SmartPlaylist12.Call),random)">$INFO[Skin.String(SmartPlaylist12.Call)]</onload>
     <onunload>ClearProperty(PanelWidgetInfo,Home)</onunload>
     <onunload>ClearProperty(PanelWidget2Info,Home)</onunload>
     <allowoverlay>yes</allowoverlay>
@@ -394,7 +394,6 @@
                     <include>TimePanel</include>
                     <include>AlternateTimeAndStats</include>
                 </control>
-                <!-- RSS -->
                 <control type="group">
                     <include>FullscreenDimensions</include>
                     <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
@@ -562,7 +561,7 @@
                     <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
                 </animation>
                 <animation effect="slide" end="0,285" time="0" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Stringcompare(Window(home).Property(WidgetPosition),Widget1)">Conditional</animation>
-                <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [Skin.HasSetting(totalshomehigh) | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+                <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [Skin.HasSetting(totalshomehigh)]">Conditional</animation>
                 <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
                 <visible>!IsEmpty(Window(home).Property(WidgetType))</visible>
                 <visible>[!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
