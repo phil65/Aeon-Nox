@@ -3,7 +3,6 @@
     <defaultcontrol>10</defaultcontrol>
     <include condition="!Substring(Skin.CurrentTheme,whit)">ColorConfigDefaultTheme</include>
     <include condition="Substring(Skin.CurrentTheme,whit)">ColorConfigWhiteTheme</include>
-    <onunload condition="Window.IsActive(home)">ActivateWindow(skinsettings)</onunload>
     <onunload condition="!IsEmpty(Window(skinsettings).Property(ColorPicker)) + [Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)]">Skin.SetString(diffuse_music,$INFO[Skin.String(diffuse_color)])</onunload>
     <onunload condition="!IsEmpty(Window(skinsettings).Property(ColorPicker)) + [Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)]">Skin.SetString(diffuse_videolibrary,$INFO[Skin.String(diffuse_color)])</onunload>
     <onunload condition="!IsEmpty(Window(skinsettings).Property(ColorPicker)) + Window.IsActive(PVR)">Skin.SetString(diffuse_PVR,$INFO[Skin.String(diffuse_color)])</onunload>
