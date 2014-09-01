@@ -48,15 +48,17 @@
             <include>Objects_MediaMenuButtonIcons</include>
             <!-- to-do                                <texture>$VAR[RepeatImageVar]</texture>
  -->
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/tf.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/tf.png</textureradiooff>
-            <selected>Control.HasFocus(26)</selected>
+             <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonReload.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonReload.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonRepeatOff.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonRepeatOff.png</textureradiooffnofocus>    
+            <selected>Playlist.IsRepeat | Playlist.IsRepeatOne</selected>
             <visible>Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)</visible>
         </control>
         <control type="radiobutton" id="21">
             <label>190</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/tf.png</textureradioon>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/flpp.png</textureradioon>
             <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/flpp.png</textureradiooff>
             <selected>Control.HasFocus(21)</selected>
             <visible>Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)</visible>
