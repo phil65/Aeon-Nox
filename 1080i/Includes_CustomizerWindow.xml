@@ -67,28 +67,6 @@
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChange400</include>
         </control>
-        <control type="image">
-            <posy>-150</posy>
-            <width>1920</width>
-            <height>608</height>
-            <texture flipy="true">views/showcase_glow.png</texture>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
-            <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
-            <include>Animation_VisibleChange400</include>
-            <include>Animation_WindowFade200</include>
-        </control>
-        <control type="image">
-            <posy>622</posy>
-            <width>1920</width>
-            <height>608</height>
-            <texture>views/showcase_glow.png</texture>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
-            <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
-            <include>Animation_VisibleChange400</include>
-            <include>Animation_WindowFade200</include>
-        </control>
         <control type="group">
             <visible>!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChangeDelayed</include>
