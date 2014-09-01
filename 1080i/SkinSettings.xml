@@ -394,14 +394,14 @@
                     <posx>387</posx>
                     <posy>170</posy>
                     <width>1469</width>
-                                            <orientation>horizontal</orientation>
+                 <orientation>horizontal</orientation>
                         <onup>9000</onup>
                         <ondown>9000</ondown>
                         <onleft>10000</onleft>
                         <onright>10000</onright>
                     <control type="button" id="452">
                         <label>Appearance</label>
-                       <width>489</width>
+                       <width>367</width>
                         <height>74</height>
                         <textoffsetx>30</textoffsetx>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
@@ -412,7 +412,7 @@
                     </control>
                     <control type="button" id="526">
                         <label>General</label>
-                       <width>489</width>
+                       <width>367</width>
                         <height>74</height>
                         <textoffsetx>30</textoffsetx>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
@@ -423,7 +423,7 @@
                     </control>
                     <control type="button" id="453">
                         <label>Color Settings</label>
-                       <width>489</width>
+                       <width>367</width>
                         <height>74</height>
                         <textoffsetx>30</textoffsetx>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
@@ -434,7 +434,7 @@
                     </control>
                                         <control type="button" id="457">
                         <label>31877</label>
-                       <width>489</width>
+                       <width>367</width>
                         <height>74</height>
                         <textoffsetx>30</textoffsetx>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
@@ -445,12 +445,35 @@
                     </control>
                 </control>
                 <control type="group" id="10011">
-                    <visible>Container(10000).Hasfocus(3) | Window.IsActive(1122) | Window.IsActive(1131) | Window.IsActive(1128) | Window.IsActive(1120)</visible>
+                    <visible>Container(10000).Hasfocus(3) | Window.IsActive(1122) | Window.IsActive(1131) | Window.IsActive(1128) | Window.IsActive(1120) | Window.IsActive(1158)</visible>
+                    <include>Animation_VisibleChange200</include>
                     <posx>384</posx>
                     <posy>265</posy>
                     <animation effect="zoom" start="100,100" end="76.5,70" center="400,180" time="640" easing="inout" tween="circle" condition="true">Conditional</animation>
-
                     <include>MainMenuCustomizer</include>
+                    <control type="group">
+                        <visible>Window.IsActive(1158)</visible>
+                       <control type="group">
+                            <control type="multiimage">
+                                <aspectratio align="center" aligny="top">keep</aspectratio>
+                                <imagepath background="true">$VAR[NowPlayingBackGroundVar]</imagepath>
+                                <fadetime>600</fadetime>
+                            </control>
+                            <control type="image">
+                                <texture background="true">$INFO[Player.Art(fanart)]</texture>
+                                <include>FullscreenDimensions</include>
+                                <include>Animation_VisibleChangeDelayed</include>
+                                <visible>Player.HasAudio + Skin.HasSetting(musicfanarthome)</visible>
+                            </control>
+                            <include>cdwall-musicvisualisation</include>
+                            <include>MusicExtraFanartHome</include>
+                            <include>MusicArtistSlideshowHome</include>
+                        </control>
+                        <include>CommonMediaPlayingBackground</include>
+                        <!-- NowPlaying Info -->
+                        <include>Furniture_HomeNowPlaying</include>
+                    </control>
+
                 </control>
             </control>
             <control type="group">
