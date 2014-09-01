@@ -376,6 +376,14 @@
                     <visible>Control.IsEnabled(20) + Control.IsVisible(20)</visible>
                 </control>
                 <control type="label">
+                    <label>$INFO[Control.GetLabel(200)]</label>
+                    <font>Font_Reg33_Caps</font>
+                    <shadowcolor>black</shadowcolor>
+                    <include>BreadcrumbsLabel</include>
+                    <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(200)">Conditional</animation>
+                    <visible>Control.IsEnabled(200) + Control.IsVisible(200)</visible>
+                </control>
+                <control type="label">
                     <label>$INFO[Control.GetLabel(12)]</label>
                     <font>Font_Reg33_Caps</font>
                     <shadowcolor>black</shadowcolor>
@@ -396,6 +404,12 @@
                     <include>HiddenObject</include>
                     <onclick>RunScript(script.playalbum,songid=$INFO[ListItem.DBID])</onclick>
                     <visible>System.HasAddon(script.playalbum)</visible>
+                </control>
+                <control type="button" id="200">
+                    <label>$LOCALIZE[31096]</label>
+                    <include>HiddenObject</include>
+                <onclick>SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Label],home)</onclick>
+                <onclick>ActivateWindow(1168)</onclick>
                 </control>
                 <control type="button" id="12">
                     <label>$LOCALIZE[13351]</label>
