@@ -9,6 +9,7 @@
         <effect type="fade" start="100" end="0" time="240" />
         <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
     </animation>
+    <onload>ClearProperty(summary,home)</onload>
     <onload>RunScript(script.extendedinfo,info=trackinfo,artistname=$INFO[ListItem.Artist],trackname=$INFO[ListItem.Title])</onload>
     <controls>
         <control type="group">
