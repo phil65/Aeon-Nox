@@ -153,19 +153,6 @@
                         <onclick condition="Skin.HasSetting(hideoptions)">Skin.Reset(hideoptions)</onclick>
                         <onclick condition="Skin.HasSetting(kioskmode)">Skin.Reset(kioskmode)</onclick>
                     </control>
-                    <control type="radiobutton" id="107">
-                        <label>21398</label>
-                        <include>Default_SettingRadioButton</include>
-                        <onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
-                        <selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
-                    </control>
-                    <control type="button" id="108">
-                        <label>- $LOCALIZE[559]:</label>
-                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(Startup_Playlist_Path)][/COLOR]</label2>
-                        <include>Default_SettingRadioButton</include>
-                        <onclick>Skin.SetFile(Startup_Playlist_Path,.m3u|.xsp,special://profile/playlists/music/)</onclick>
-                        <enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
-                    </control>
                     <control type="button" id="303">
                         <label>$LOCALIZE[31678]</label>
                         <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(WeatherFanartDir)][/COLOR]</label2>
