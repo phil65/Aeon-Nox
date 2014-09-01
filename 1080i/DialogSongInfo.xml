@@ -147,7 +147,7 @@
                     <control type="group">
                         <control type="grouplist">
                             <posx>500</posx>
-                            <posy>-32</posy>
+                            <posy>-62</posy>
                             <width>778</width>
                             <itemgap>10</itemgap>
                             <orientation>horizontal</orientation>
@@ -171,7 +171,7 @@
                         </control>
                         <control type="grouplist">
                             <posx>500</posx>
-                            <posy>16</posy>
+                            <posy>-14</posy>
                             <width>778</width>
                             <itemgap>10</itemgap>
                             <orientation>horizontal</orientation>
@@ -195,7 +195,7 @@
                         </control>
                         <control type="grouplist">
                             <posx>500</posx>
-                            <posy>64</posy>
+                            <posy>34</posy>
                             <width>778</width>
                             <itemgap>10</itemgap>
                             <orientation>horizontal</orientation>
@@ -289,7 +289,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <posx>930</posx>
+                        <posx>950</posx>
                     <control type="image" id="8669">
                         <posx>5</posx>
                         <posy>70</posy>
@@ -311,29 +311,35 @@
                         <visible>IsEmpty(Control.GetLabel(8669))</visible>
                     </control>
                 </control>
-                    <control type="group">
-                        <visible>!IsEmpty(ListItem.Genre)</visible>
+                <control type="group">
+                    <!-- Genre -->
+                    <visible>!IsEmpty(ListItem.Genre)</visible>
                         <animation effect="slide" end="-120,0" time="0" condition="IsEmpty(ListItem.Property(Album_Label))">Conditional</animation>
-                        <posx>1070</posx>
-                        <control type="image">
+                    <include>Animation_VisibleChange200</include>
+                        <posx>1110</posx>
+                    <control type="image">
+                            <posx>30</posx>
                             <posy>75</posy>
-                            <width>80</width>
-                            <height>80</height>
-                            <aspectratio>keep</aspectratio>
-                            <texture>defaulticons/DefaultAddonMusic.png</texture>
-                        </control>
-                        <control type="label">
-                            <posx>75</posx>
-                            <posy>73</posy>
-                            <width>160</width>
-                            <height>86</height>
-                            <label>[COLOR=white3]$INFO[ListItem.Genre][/COLOR]</label>
-                            <font>Font_Bold22_Caps</font>
-                            <shadowcolor>black</shadowcolor>
-                            <scroll>false</scroll>
-                            <wrapmultiline>true</wrapmultiline>
-                        </control>
+                        <width>175</width>
+                        <height>88</height>
+                        <texture>flags/music/genre/genre.png</texture>
+                        <colordiffuse>floor</colordiffuse>
+                        <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
                     </control>
+                    <control type="label">
+                            <posy>73</posy>
+                        <width>135</width>
+                        <height>88</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <wrapmultiline>true</wrapmultiline>
+                        <label>$INFO[ListItem.Genre]</label>
+                        <font>Font_Reg19_Caps</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+                </control>
+
+
                 </control>
                     <control type="textbox">
                         <posx>1300</posx>
