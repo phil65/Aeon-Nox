@@ -229,7 +229,7 @@
             <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
             <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
             <include>Animation_VisibleChange400</include>
-            <visible>[Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)] + ![Control.IsVisible(518) + Skin.HasSetting(infopanelbackground)]</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar) + ![Control.IsVisible(518) + Skin.HasSetting(infopanelbackground)]</visible>
         </control>
     </include>
     <include name="WallPanel">
@@ -1100,7 +1100,7 @@
     </include>
     <include name="Neon_Floor">
         <control type="group">
-            <visible>!Skin.HasSetting(DisableGlowbar) | [Skin.HasSetting(DisableGlowbar) + Skin.HasSetting(ExtendedGlowMode)]</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <control type="image">
                 <posy>854</posy>
                 <texture>common/topbar_left.png</texture>

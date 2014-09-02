@@ -28,7 +28,7 @@
             <width>764</width>
             <animation effect="fade" start="100" end="0" time="160" condition="Window.IsActive(1138) | Window.IsActive(1127)">Conditional</animation>
             <control type="group">
-                <animation effect="zoom" end="100,110" center="960,0" time="0" condition="Window.IsActive(skinsettings) | Window.IsActive(1115) | Window.IsActive(weather) | Window.IsActive(PVR)">Conditional</animation>
+                <animation effect="zoom" end="100,110" center="960,0" time="0" condition="Window.IsActive(skinsettings) | Window.IsActive(weather) | Window.IsActive(PVR)">Conditional</animation>
                 <control type="image">
                     <posx>-4</posx>
                     <posy>-24</posy>
@@ -68,14 +68,11 @@
                     <include>Animation_CommonFade</include>
                     <enable>no</enable>
                 </control>
-                <control type="button" id="13">
+                <control type="radiobutton" id="13">
                     <label>$LOCALIZE[31181]</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$VAR[GlowModeLabelVar][/COLOR]</label2>
                     <include>ColorChooserButton</include>
-                    <onclick condition="Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)">Skin.Reset(DisableGlowbar)</onclick>
-                    <onclick condition="!Skin.HasSetting(DisableGlowbar)">Skin.SetBool(ExtendedGlowMode)</onclick>
-                    <onclick condition="Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)">Skin.SetBool(DisableGlowbar)</onclick>
-                    <onclick condition="Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(DisableGlowbar)">Skin.Reset(ExtendedGlowMode)</onclick>
+                    <onclick>Skin.ToggleSetting(DisableGlowbar)</onclick>
+                    <selected>!Skin.HasSetting(DisableGlowbar)</selected>
                 </control>
                 <control type="radiobutton" id="10">
                     <label>$LOCALIZE[31177]</label>
@@ -145,7 +142,7 @@
                     <label>$LOCALIZE[31708]</label>
                     <include>ColorChooserButton</include>
                     <onclick>ActivateWindow(1127)</onclick>
-                    <visible>Window.IsActive(skinsettings) | Window.IsActive(1115) | Window.IsActive(weather) | Window.IsActive(PVR)</visible>
+                    <visible>Window.IsActive(skinsettings) | Window.IsActive(weather) | Window.IsActive(PVR)</visible>
                 </control>
             </control>
             <control type="image">
