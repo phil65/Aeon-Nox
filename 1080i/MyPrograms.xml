@@ -31,6 +31,7 @@
             <include>HiddenObject</include>
             <visible>[!Container.OnNext + !Container.OnPrevious + [Window.IsActive(programs) + !Container.Content(addons)] + Skin.HasSetting(infopaneautolauncher)] | [!Skin.HasSetting(infopaneautolauncher) + [Window.IsActive(programs) + !Container.Content(addons)]]</visible>
             <include>DelayAnimations</include>
+            <visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
         </control>
         <control type="group">
             <animation effect="slide" end="0,650" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
@@ -59,6 +60,7 @@
                 <ondown>50</ondown>
                 <onback>50</onback>
                 <visible>!Container.Content() + !Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+                <visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
             </control>
             <include>FloorLabels</include>
             <include>Furniture_DarkGradient</include>
