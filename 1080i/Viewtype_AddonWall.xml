@@ -37,16 +37,8 @@
                             <height>261</height>
                             <aspectratio>keep</aspectratio>
                             <texture background="true">$VAR[ThumbnailVar]</texture>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <bordertexture border="6">views/addonwall_select.png</bordertexture>
+                            <bordertexture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</bordertexture>
                             <bordersize>6</bordersize>
-                        </control>
-                        <control type="image">
-                            <width>261</width>
-                            <height>261</height>
-                            <aspectratio>keep</aspectratio>
-                            <texture background="true">$VAR[ThumbnailVar]</texture>
-                            <bordersize>5</bordersize>
                         </control>
                     </focusedlayout>
                     <itemlayout height="268" width="189" condition="[Container.Content(movies) + !Skin.HasSetting(usecasesinfowall)] | [Container.Content(tvshows) + ![Skin.HasSetting(TVInfoWallLandscape) | Skin.HasSetting(TVInfoWallBanner) | Skin.HasSetting(TVInfoWallLogo)]] | [[Window.IsActive(programs) + !Container.Content(addons)] + !Skin.HasSetting(InfoWallSquare)] | Container.Content(sets) | Container.Content(seasons)">
