@@ -19,14 +19,6 @@
                     <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                     <control type="group">
                         <visible>Container.Content(movies) + [Skin.HasSetting(lowlisttagline) | Control.HasFocus(7002)] + !IsEmpty(ListItem.Tagline)</visible>
-                        <!--                         <animation type="Visible">
-                            <effect type="slide" start="0,50" end="0,0" time="400" easing="in" tween="cubic" />
-                            <effect type="fade" end="100" time="300" />
-                        </animation>
-                        <animation type="Hidden">
-                            <effect type="slide" end="0,50" time="400" tween="cubic" />
-                            <effect type="fade" start="100" end="0" time="200" />
-                        </animation> -->
                         <animation type="Visible">
                             <effect type="zoom" end="100,100" start="100,0" time="320" easing="in" tween="cubic" center="960,755" />
                         </animation>
@@ -109,9 +101,9 @@
                     <visible allowhiddenfocus="true">Control.HasFocus(7002)</visible>
                 </control>
                 <control type="group">
+                    <posx>450</posx>
                     <visible>Control.HasFocus(7002)</visible>
                     <control type="image">
-                        <posx>450</posx>
                         <posy>600</posy>
                         <width>1440</width>
                         <height>1</height>
@@ -119,7 +111,6 @@
                         <colordiffuse>66FFFFFF</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>450</posx>
                         <posy>975</posy>
                         <width>1440</width>
                         <height>1</height>
@@ -127,7 +118,6 @@
                         <colordiffuse>66FFFFFF</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>450</posx>
                         <posy>675</posy>
                         <width>398</width>
                         <height>1</height>
@@ -135,7 +125,6 @@
                         <colordiffuse>66FFFFFF</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>450</posx>
                         <posy>750</posy>
                         <width>398</width>
                         <height>1</height>
@@ -143,7 +132,6 @@
                         <colordiffuse>66FFFFFF</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>450</posx>
                         <posy>825</posy>
                         <width>398</width>
                         <height>1</height>
@@ -151,7 +139,6 @@
                         <colordiffuse>66FFFFFF</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>450</posx>
                         <posy>900</posy>
                         <width>398</width>
                         <height>1</height>
@@ -161,7 +148,7 @@
                     <control type="group">
                         <visible>!Container.Content(episodes)</visible>
                         <control type="image">
-                            <posx>855</posx>
+                            <posx>405</posx>
                             <posy>607</posy>
                             <width>628</width>
                             <height>360</height>
@@ -172,7 +159,7 @@
                             <bordersize>7</bordersize>
                         </control>
                         <control type="multiimage">
-                            <posx>862</posx>
+                            <posx>412</posx>
                             <posy>614</posy>
                             <width>614</width>
                             <height>346</height>
@@ -183,7 +170,7 @@
                         </control>
                     </control>
                     <control type="image">
-                        <posx>855</posx>
+                        <posx>405</posx>
                         <posy>607</posy>
                         <width>628</width>
                         <height>360</height>
@@ -195,7 +182,7 @@
                         <visible>Container.Content(episodes)</visible>
                     </control>
                     <control type="fadelabel">
-                        <posx>460</posx>
+                        <posx>10</posx>
                         <posy>540</posy>
                         <width>1390</width>
                         <height>60</height>
@@ -205,7 +192,7 @@
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>600</posy>
                         <width>398</width>
                         <height>38</height>
@@ -214,7 +201,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>638</posy>
                         <width>398</width>
                         <height>38</height>
@@ -224,7 +211,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>675</posy>
                         <width>398</width>
                         <height>38</height>
@@ -233,7 +220,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>712</posy>
                         <width>398</width>
                         <height>38</height>
@@ -243,7 +230,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>750</posy>
                         <width>398</width>
                         <height>38</height>
@@ -252,7 +239,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>788</posy>
                         <width>398</width>
                         <height>38</height>
@@ -263,7 +250,7 @@
                         <visible>IsEmpty(ListItem.Top250)</visible>
                     </control>
                     <control type="fadelabel">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>788</posy>
                         <width>398</width>
                         <height>38</height>
@@ -274,7 +261,7 @@
                         <visible>!IsEmpty(ListItem.Top250)</visible>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>825</posy>
                         <width>398</width>
                         <height>38</height>
@@ -283,7 +270,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>862</posy>
                         <width>398</width>
                         <height>38</height>
@@ -293,7 +280,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>900</posy>
                         <width>398</width>
                         <height>38</height>
@@ -302,7 +289,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
-                        <posx>450</posx>
+                        <posx>10</posx>
                         <posy>938</posy>
                         <width>398</width>
                         <height>38</height>
@@ -312,7 +299,7 @@
                         <scroll>true</scroll>
                     </control>
                     <control type="textbox">
-                        <posx>1500</posx>
+                        <posx>1050</posx>
                         <posy>606</posy>
                         <width>405</width>
                         <height>367</height>
