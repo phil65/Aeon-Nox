@@ -536,21 +536,23 @@
                         <visible>!IsEmpty(MusicPlayer.Genre)</visible>
                         <posx>160</posx>
                         <control type="image">
-                            <posx>1080</posx>
-                            <posy>75</posy>
-                            <width>80</width>
-                            <height>80</height>
+                            <posx>1090</posx>
+                            <posy>65</posy>
+                            <width>110</width>
+                            <height>110</height>
                             <aspectratio>keep</aspectratio>
+                            <animation effect="fade" start="100" end="50" time="40" condition="true">Conditional</animation>
                             <texture>defaulticons/DefaultAddonMusic.png</texture>
-                            <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                        <colordiffuse>white3</colordiffuse>
                         </control>
                         <control type="label">
-                            <posx>1155</posx>
+                            <posx>1095</posx>
                             <posy>73</posy>
                             <width>210</width>
                             <height>86</height>
-                            <label>[COLOR=white3]$INFO[MusicPlayer.Genre][/COLOR]</label>
-                            <font>Font_Bold22_Caps</font>
+                            <label>$INFO[MusicPlayer.Genre]</label>
+                            <textcolor>white3</textcolor>
+                           <font>Font_Reg19_Caps</font>
                             <shadowcolor>black</shadowcolor>
                             <scroll>false</scroll>
                             <wrapmultiline>true</wrapmultiline>
