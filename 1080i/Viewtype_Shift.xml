@@ -275,6 +275,19 @@
                 <control type="label">
                     <posx>195</posx>
                     <posy>995</posy>
+                    <width>1030</width>
+                    <aligny>top</aligny>
+                    <label>$VAR[FirstLabelVar]</label>
+                    <font>Font_ShowcaseMainLabel2_Caps</font>
+                    <shadowcolor>floorshadow</shadowcolor>
+                    <textcolor>floor</textcolor>
+                    <scroll>true</scroll>
+                    <scrollspeed>30</scrollspeed>
+                    <visible>Container.Content(albums)</visible>
+                </control>
+                <control type="label">
+                    <posx>195</posx>
+                    <posy>995</posy>
                     <width>1245</width>
                     <aligny>top</aligny>
                     <label>$VAR[FirstLabelVar]</label>
@@ -283,6 +296,7 @@
                     <textcolor>floor</textcolor>
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
+                    <visible>!Container.Content(albums)</visible>
                 </control>
             </control>
         </control>
