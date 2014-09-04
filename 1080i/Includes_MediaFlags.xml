@@ -741,7 +741,7 @@
                     <animation effect="slide" end="-1080,0" time="0" condition="Control.IsVisible(514)">Conditional</animation>
                     <!-- Label -->
                     <control type="group">
-                        <posx>1500</posx>
+                        <posx>1480</posx>
                         <posy>11</posy>
                         <visible>!Control.IsVisible(57)</visible>
                         <control type="image" id="76">
@@ -768,13 +768,13 @@
                     </control>
                     <control type="group">
                         <!--totals-->
-                        <posx>1630</posx>
+                        <posx>1625</posx>
                         <control type="label">
                             <width>135</width>
                             <height>65</height>
                             <align>center</align>
-                            <label>$INFO[Window(home).Property(Album.Songs.Count)]</label>
-                            <font>Font_Bold40</font>
+                            <label>$INFO[Window(home).Property(Album.Songs.Duration)]</label>
+                            <font>Font_Bold37_Caps</font>
                             <textcolor>floor</textcolor>
                         </control>
                         <control type="label">
@@ -782,17 +782,17 @@
                             <width>135</width>
                             <height>35</height>
                             <align>center</align>
-                            <label>$LOCALIZE[134]</label>
+                            <label>$INFO[Window(home).Property(Album.Songs.Count)] $LOCALIZE[134]</label>
                             <font>Font_Reg19_Caps</font>
                             <textcolor>floor</textcolor>
                         </control>
                     </control>
                     <control type="group">
                         <!-- Genre -->
+                            <posx>1743</posx>
                         <include>Animation_VisibleChange200</include>
                         <visible>!Control.IsVisible(53)</visible>
                         <control type="image">
-                            <posx>1740</posx>
                             <posy>6</posy>
                             <width>175</width>
                             <height>88</height>
@@ -802,7 +802,7 @@
                             <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
                         </control>
                         <control type="label">
-                            <posx>1768</posx>
+                            <posx>28</posx>
                             <posy>0</posy>
                             <width>135</width>
                             <height>88</height>
