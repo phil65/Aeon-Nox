@@ -296,54 +296,7 @@
                     <animation effect="fade" time="320">VisibleChange</animation>
                     <visible>Container.Content(albums)</visible>
                     <control type="grouplist">
-                        <posx>500</posx>
                         <posy>-80</posy>
-                        <width>778</width>
-                        <itemgap>10</itemgap>
-                        <orientation>horizontal</orientation>
-                        <control type="label">
-                            <width min="50" max="400">auto</width>
-                            <aligny>bottom</aligny>
-                            <label>$LOCALIZE[515]:</label>
-                            <font>Font_Reg30_2</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                        </control>
-                        <control type="fadelabel">
-                            <width>671</width>
-                            <aligny>bottom</aligny>
-                            <label fallback="N/A">$INFO[ListItem.Genre]</label>
-                            <font>Font_Reg30_2</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white3</textcolor>
-                            <pauseatend>1000</pauseatend>
-                        </control>
-                    </control>
-                    <control type="grouplist">
-                        <posx>500</posx>
-                        <posy>-40</posy>
-                        <width>778</width>
-                        <itemgap>10</itemgap>
-                        <orientation>horizontal</orientation>
-                        <control type="label">
-                            <width min="50" max="400">auto</width>
-                            <aligny>bottom</aligny>
-                            <label>$LOCALIZE[21899]:</label>
-                            <font>Font_Reg30_2</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                        </control>
-                        <control type="fadelabel">
-                            <width>671</width>
-                            <aligny>bottom</aligny>
-                            <label fallback="N/A">$INFO[ListItem.Property(Album_Label)]</label>
-                            <font>Font_Reg30_2</font>
-                            <shadowcolor>black</shadowcolor>
-                            <textcolor>white3</textcolor>
-                            <pauseatend>1000</pauseatend>
-                        </control>
-                    </control>
-                    <control type="grouplist">
                         <posx>500</posx>
                         <width>778</width>
                         <itemgap>10</itemgap>
@@ -368,7 +321,7 @@
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
-                        <posy>40</posy>
+                        <posy>-40</posy>
                         <width>778</width>
                         <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
@@ -392,7 +345,7 @@
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
-                        <posy>80</posy>
+                        <posy>0</posy>
                         <width>778</width>
                         <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
@@ -615,26 +568,98 @@
                 </control>
             </control>
         </control>
-        <!-- Artist Logo / Record Label flag-->
-        <!--<control type="image">
-      <posx>1271</posx>
-      <posy>720</posy>
-      <width>149</width>
-      <height>88</height>
-      <aspectratio>keep</aspectratio>
-      <fadetime>400</fadetime>
-      <texture background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
-      <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-    </control>-->
-        <control type="image">
-            <posx>1285</posx>
-            <posy>972</posy>
-            <width>135</width>
-            <height>88</height>
-            <aspectratio>keep</aspectratio>
-            <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-            <colordiffuse>white3</colordiffuse>
-        </control>
+    <control type="group">
+                    <posy>900</posy>
+                            <control type="label">
+                        <posx>500</posx>
+                        <posy>76</posy>
+                                <width>671</width>
+                                <aligny>bottom</aligny>
+                                <label fallback="N/A">$INFO[Window(home).Property(Album.Songs.Duration)]</label>
+                                <font>Font_OSDTitle2</font>
+                                <shadowcolor>black</shadowcolor>
+                                <textcolor>white3</textcolor>
+                            </control>
+                            <control type="group">
+                        <posx>648</posx>
+                    <control type="image" id="8309">
+                        <posx>3</posx>
+                        <posy>66</posy>
+                        <width>150</width>
+                        <height>99</height>
+                        <texture fallback="empty.png">$INFO[Window(home).Property(Album.Song.1.FileExtension),flags/audio/,.png]</texture>
+                        <colordiffuse>white3</colordiffuse>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+                    <control type="label">
+                        <posy>69</posy>
+                        <width>210</width>
+                        <height>86</height>
+                        <align>center</align>
+                        <label>[COLOR=white3]$INFO[ListItem.FileExtension][/COLOR]</label>
+                        <font>Font_MainClassic4</font>
+                        <shadowcolor>black</shadowcolor>
+                        <scroll>false</scroll>
+                        <wrapmultiline>true</wrapmultiline>
+                        <visible>StringCompare(Control.GetLabel(8309),empty.png)</visible>
+                    </control>
+</control>
+
+                    <control type="group">
+                        <posx>950</posx>
+                    <control type="image" id="8669">
+                        <posx>5</posx>
+                        <posy>70</posy>
+                        <width>150</width>
+                        <height>90</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
+                        <colordiffuse>white3</colordiffuse>
+                    </control>
+                    <control type="label" id="8670">
+                        <posy>73</posy>
+                        <width>155</width>
+                        <height>70</height>
+                        <align>center</align>
+                        <label>$INFO[ListItem.Property(Album_Label)]</label>
+                        <font>Font_Reg22_Caps</font>
+                        <textcolor>grey</textcolor>
+                        <wrapmultiline>true</wrapmultiline>
+                        <visible>IsEmpty(Control.GetLabel(8669))</visible>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- Genre -->
+                    <visible>!IsEmpty(ListItem.Genre)</visible>
+                        <animation effect="slide" end="-120,0" time="0" condition="IsEmpty(ListItem.Property(Album_Label))">Conditional</animation>
+                    <include>Animation_VisibleChange200</include>
+                        <posx>1110</posx>
+                    <control type="image">
+                            <posx>-20</posx>
+                            <posy>70</posy>
+                        <width>175</width>
+                        <height>105</height>
+                            <posy>6</posy>
+                            <texture>defaulticons/DefaultAddonMusic.png</texture>
+                            <aspectratio>keep</aspectratio>
+                        <colordiffuse>floor</colordiffuse>
+                        <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
+                    </control>
+                    <control type="label">
+                            <posy>73</posy>
+                        <width>135</width>
+                        <height>88</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <wrapmultiline>true</wrapmultiline>
+                        <label>$INFO[ListItem.Genre]</label>
+                        <font>Font_Reg19_Caps</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+                </control>
+
+
+                </control>
         <include>AlbumInfoMusicPanels</include>
         <control type="group">
             <include>Media_Menu_Furniture</include>
