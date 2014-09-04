@@ -769,10 +769,12 @@
 				<left>140</left>
 				<top>22</top>
 				<width>90</width>
-				<height>16</height>
+				<height>18</height>
 				<info>ListItem.Progress</info>
 				<visible>!StringCompare(ListItem.Title,)</visible>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+				<texturebg border="2">dialogs/progress/progress_back.png</texturebg>
+                <midtexture border="2">dialogs/progress/progress_mid.png</midtexture>
 			</control>
 			<control type="label">
 				<left>240</left>
@@ -835,7 +837,7 @@
 				<left>140</left>
 				<top>22</top>
 				<width>90</width>
-				<height>16</height>
+				<height>18</height>
 				<info>ListItem.Progress</info>
 				<visible>!StringCompare(ListItem.Title,)</visible>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
@@ -2603,21 +2605,46 @@
 	<include name="FullScreenInfoBarLiveTV">
         <animation effect="slide" time="400" start="0,200" easing="out" tween="back">WindowOpen</animation>
 		<animation effect="slide" time="400" end="0,200" delay="300" easing="in" tween="back">WindowClose</animation>
+		<animation effect="slide" time="400" start="0,200" easing="out" tween="back">Visible</animation>
+		<animation effect="slide" time="400" end="0,200" delay="300" easing="in" tween="back">Hidden</animation>
 		
 		<!-- Main background -->
-		<control type="image" id="1">
-            <posy>785</posy>
-            <width>1920</width>
-            <height>280</height>
-            <texture>new_pvr/osd_back_pvr.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-        </control>
+		<control type="group" id="1">
+			<top>785</top>
+			<height>300</height>
+			<width>1920</width>
+			<control type="image" id="1">
+				<top>-10</top>
+				<width>1920</width>
+				<height>300</height>
+				<texture border="35">osd/osd_settings_back.png</texture>
+			</control>
+			<control type="image" id="1">
+				<top>96</top>
+				<left>380</left>
+				<width>1480</width>
+				<height>3</height>
+				<texture border="0">new_pvr/osd_line_white.png</texture>
+				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+			</control>
+			<control type="image" id="1">
+				<top>228</top>
+				<left>60</left>
+				<width>1805</width>
+				<height>3</height>
+				<texture border="0">new_pvr/osd_line_white.png</texture>
+				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+			</control>
+		</control>
+		
 		
 		<!-- Channel logo -->
         <control type="group" id="1">
-            <posx>0</posx>
+			<animation effect="slide" time="400" start="-400,0" delay="300" easing="out" tween="back">Visible</animation>
+			<animation effect="slide" time="400" end="-400,0" easing="in" tween="back">Hidden</animation>
 			<animation effect="slide" time="400" start="-400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
 			<animation effect="slide" time="400" end="-400,0" easing="in" tween="back">WindowClose</animation>
+			
             <control type="image"> <!-- Logo background -->
 				<left>67</left>
 				<top>805</top>
@@ -2629,9 +2656,9 @@
 				<visible>false</visible>
             </control>
 			<control type="image" id="1">
-                <posx>67</posx>
+                <posx>77</posx>
                 <posy>805</posy>
-                <width>290</width>
+                <width>250</width>
                 <height>200</height>
 				<align>center</align>
                 <texture>$INFO[VideoPlayer.Cover]</texture>
@@ -2897,8 +2924,11 @@
 		
 		<!-- Media flags -->
         <control type="group" id="1">
+			<animation effect="slide" time="400" start="400,0" delay="300" easing="out" tween="back">Visible</animation>
+			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">Hidden</animation>
 			<animation effect="slide" time="400" start="400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
 			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">WindowClose</animation>
+			
             <posx>1550</posx>
             <posy>900</posy>
 			<height>140</height>
@@ -2910,6 +2940,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
             <control type="image" id="1">
                 <posx>120</posx>
@@ -2918,6 +2949,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
             <control type="image" id="1">
                 <posx>215</posx>
@@ -2926,6 +2958,7 @@
                 <height>75</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
 			
             <control type="image" id="1">
@@ -2935,6 +2968,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
             <control type="image" id="1">
                 <posx>200</posx>
@@ -2943,6 +2977,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,ch.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
         </control>
         
