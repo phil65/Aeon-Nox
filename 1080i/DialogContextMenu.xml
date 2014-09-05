@@ -174,6 +174,21 @@
                 <visible>!IsEmpty(ListItem.PictureGPSLon)</visible>
                 <onclick>RunScript(script.maps.browser,location=geocode,lat=$INFO[ListItem.PictureGPSLat],lon=$INFO[ListItem.PictureGPSLon])</onclick>
             </control>
+            <control type="button" id="2071">
+                <width>462</width>
+                <height>58</height>
+                <textoffsety>12</textoffsety>
+                <align>center</align>
+                <texturefocus>dialogs/context_highlight.png</texturefocus>
+                <texturenofocus>dialogs/context_nofocus.png</texturenofocus>
+                <label>Search for Concerts</label>
+                <font>Font_Reg30_2</font>
+                <textcolor>context</textcolor>
+                <focusedcolor>white2</focusedcolor>
+                <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+                <visible>Container.Content(artists)</visible>
+                <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
+            </control>
         </control>
         <control type="image" id="997">
             <posy>-39</posy>
