@@ -4,14 +4,6 @@
     <constant name="IconCrossfadeTime">400</constant>
     <constant name="IconCrossfadeTime2">250</constant>
     <constant name="WidgetSlideDelay">300</constant>
-    <variable name="DayTimeColorVar">
-        <value condition="Substring(System.Time(mm),0,left)">FF69f5ee</value>
-        <value condition="Substring(System.Time(mm),1,left)">FFF3F781</value>
-        <value condition="Substring(System.Time(mm),2,left)">FF69f5ee</value>
-        <value condition="Substring(System.Time(mm),3,left)">FFF3F781</value>
-        <value condition="Substring(System.Time(mm),4,left)">FF69f5ee</value>
-        <value condition="Substring(System.Time(mm),5,left)">FFF3F781</value>
-    </variable>
     <variable name="NewsFeedVar">
         <value condition="Stringcompare(System.Language,German)">http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=json&amp;youtubeid=tagesschau</value>
         <!--       <value condition="Stringcompare(System.Language,Australia)">http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=rss&amp;youtubeid=7NEWS</value> -->
@@ -102,7 +94,6 @@
         <value>$VAR[ColorDiffuseVar]</value>
     </variable>
     <variable name="ColorDiffuseVar">
-        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
         <value>$VAR[AreaColorVar]</value>
     </variable>
     <variable name="DialogColorVar">
@@ -112,8 +103,7 @@
     </variable>
     <variable name="ExtendedColorDiffuseVar">
         <value condition="Substring(Skin.CurrentTheme,whit)">FFFFFFFF</value>
-        <value condition="!Skin.HasSetting(randomcolor) + ![Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)]">$VAR[AreaColorVar]</value>
-        <value condition="Skin.HasSetting(randomcolor) + ![Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)]">$VAR[DayTimeColorVar]</value>
+        <value condition="!Skin.HasSetting(DisableGlowbar)">$VAR[AreaColorVar]</value>
         <value>white</value>
     </variable>
     <variable name="HomeMenuTextFocusVar">
@@ -146,12 +136,6 @@
     <variable name="QuickNavButtonLabelVar">
         <value condition="IsEmpty(Window(home).Property(quicknavsetup))">$LOCALIZE[31860]</value>
         <value>$LOCALIZE[13009]</value>
-    </variable>
-    <variable name="GlowModeLabelVar">
-        <value condition="!Skin.HasSetting(DisableGlowbar) + Skin.HasSetting(ExtendedGlowMode)">$LOCALIZE[31082]</value>
-        <value condition="!Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)">$LOCALIZE[630]</value>
-        <value condition="Skin.HasSetting(DisableGlowbar) + Skin.HasSetting(ExtendedGlowMode)">$LOCALIZE[31085]</value>
-        <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="SourceFlagVar">
         <value condition="[SubString(ListItem.filename,PDTV) | SubString(ListItem.filename,sdtv) | SubString(ListItem.filename,sd tv)]">sdtv</value>
