@@ -7,15 +7,15 @@
             <visible>Control.IsVisible(11)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <left>105</left>
-                <top>470</top>
+                <left>100</left>
+                <top>467</top>
 				<height>100</height>
-				<width>840</width>
+				<width>846</width>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <visible>!IsEmpty(Container(11).ListItem.Title)</visible>
                 <control type="image">
-                    <width>804</width>
+                    <width>813</width>
                     <height>100</height>
                     <texture>common/black.png</texture>
                     <animation effect="fade" end="60" condition="true">conditional</animation>
@@ -37,6 +37,7 @@
                     <height>30</height>
                     <align>center</align>
                     <label>$LOCALIZE[19031]: $INFO[Container(11).ListItem.NextTitle]</label>
+					<textcolor>$VAR[DialogColorVar]</textcolor>
                     <font>Font_Reg26</font>
                     <scroll>yes</scroll>
                     <visible>!IsEmpty(Container(11).ListItem.NextTitle)</visible>
@@ -48,7 +49,7 @@
                     <height>30</height>
                     <label>$INFO[Container(11).ListItem.StartTime]</label>
                     <font>Font_Reg25</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[DialogColorVar]</textcolor>
                     <visible>Container(11).ListItem.HasEpg</visible>
                 </control>
                 <control type="progress">
@@ -70,7 +71,7 @@
                     <height>30</height>
                     <label>$INFO[Container(11).ListItem.EndTime]</label>
                     <font>Font_Reg25</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[DialogColorVar]</textcolor>
                     <visible>Container(11).ListItem.HasEpg</visible>
                 </control>
             </control>
@@ -727,12 +728,12 @@
                 </control>
             </control>
         </focusedlayout>
-        <itemlayout condition="Skin.HasSetting(smalltvlist)" height="60" width="924">
+        <itemlayout condition="Skin.HasSetting(smalltvlist)" height="59" width="924">
             <control type="image">
-				<left>-20</left>
-				<top>0</top>
-				<width>986</width>
-				<height>60</height>
+				<left>-10</left>
+				<top>3</top>
+				<width>934</width>
+				<height>59</height>
 				<texture>osd/osd_settings_buttonnf.png</texture>
 				<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 			</control>
@@ -769,12 +770,14 @@
 				<left>140</left>
 				<top>22</top>
 				<width>90</width>
-				<height>18</height>
+				<height>16</height>
 				<info>ListItem.Progress</info>
 				<visible>!StringCompare(ListItem.Title,)</visible>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
-				<texturebg border="2">dialogs/progress/progress_back.png</texturebg>
-                <midtexture border="2">dialogs/progress/progress_mid.png</midtexture>
+				<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+                <midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+				<lefttexture>noop</lefttexture>
+				<righttexture>noop</righttexture>
 			</control>
 			<control type="label">
 				<left>240</left>
@@ -795,11 +798,9 @@
 				<visible>ListItem.IsRecording</visible>
 			</control>
         </itemlayout>
-        <focusedlayout condition="Skin.HasSetting(smalltvlist)" height="60" width="924">
+        <focusedlayout condition="Skin.HasSetting(smalltvlist)" height="59" width="924">
             <control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>975</width>
+				<width>924</width>
 				<height>60</height>
 				<texture>views/tripanel/listselect_fo.png</texture>
 				<colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
@@ -837,12 +838,14 @@
 				<left>140</left>
 				<top>22</top>
 				<width>90</width>
-				<height>18</height>
+				<height>16</height>
 				<info>ListItem.Progress</info>
 				<visible>!StringCompare(ListItem.Title,)</visible>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
-				<texturebg border="2">dialogs/progress/progress_back.png</texturebg>
-                <midtexture border="2">dialogs/progress/progress_mid.png</midtexture>
+				<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+                <midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+				<lefttexture>noop</lefttexture>
+				<righttexture>noop</righttexture>
 			</control>
 			<control type="label">
 				<left>240</left>
@@ -3333,13 +3336,13 @@
 			<ondown>11</ondown>
 			<pagecontrol>-</pagecontrol>
 			<scrolltime tween="quadratic">200</scrolltime>
-			<itemlayout height="60" width="975">
+			<itemlayout height="59" width="975">
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
+					<left>-10</left>
+					<top>3</top>
 					<width>975</width>
-					<height>60</height>
-					<texture>new_pvr/separator2.png</texture>
+					<height>59</height>
+					<texture>osd/osd_settings_buttonnf.png</texture>
 					<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 				</control>
 				<control type="label">
@@ -3370,10 +3373,10 @@
 					<info>ListItem.Progress</info>
 					<visible>!StringCompare(ListItem.Title,)</visible>
 					<colordiffuse>$VAR[FontColorVar]</colordiffuse>
-					<!--<texturebg border="2">new_pvr/texturebg2.png</texturebg>
-					<midtexture>new_pvr/midtexture_cache.png</midtexture>
-					<lefttexture></lefttexture>
-					<righttexture></righttexture>-->
+					<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+					<midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+					<lefttexture>noop</lefttexture>
+					<righttexture>noop</righttexture>
 				</control>
 				<control type="label">
 					<left>240</left>
@@ -3394,10 +3397,8 @@
 					<visible>ListItem.IsRecording</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout height="60" width="975">
+			<focusedlayout height="59" width="975">
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
 					<width>975</width>
 					<height>60</height>
 					<texture>views/tripanel/listselect_fo.png</texture>
@@ -3431,6 +3432,10 @@
 					<info>ListItem.Progress</info>
 					<visible>!StringCompare(ListItem.Title,)</visible>
 					<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+					<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+					<midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+					<lefttexture>noop</lefttexture>
+					<righttexture>noop</righttexture>
 				</control>
 				<control type="label">
 					<left>240</left>
@@ -3486,6 +3491,10 @@
 				<height>20</height>
 				<info>Container(11).ListItem.Progress</info>
 				<colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
+				<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+				<midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+				<lefttexture>noop</lefttexture>
+				<righttexture>noop</righttexture>
 			</control>
 			<control type="label"> <!-- Current epg title -->
 				<left>0</left>
