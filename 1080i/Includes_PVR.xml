@@ -15,7 +15,8 @@
                 <include>Animation_VisibleChange200</include>
                 <visible>!IsEmpty(Container(11).ListItem.Title)</visible>
                 <control type="image">
-                    <width>813</width>
+					<left>3</left>
+                    <width>808</width>
                     <height>100</height>
                     <texture>common/black.png</texture>
                     <animation effect="fade" end="60" condition="true">conditional</animation>
@@ -56,11 +57,11 @@
                     <left>115</left>
                     <top>72</top>
                     <width>575</width>
-                    <height>21</height>
-                    <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                    <height>18</height>
+                    <midtexture border="0">new_pvr/texturebg_white.png</midtexture>
+					<texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
+					<lefttexture>noop</lefttexture>
+					<righttexture>noop</righttexture>
                     <visible>Container(11).ListItem.HasEpg</visible>
                     <info>Container(11).ListItem.Progress</info>
                 </control>
@@ -127,15 +128,16 @@
             <visible>Control.IsVisible(12)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <left>105</left>
-                <top>470</top>
+                <left>100</left>
+                <top>467</top>
 				<height>100</height>
-				<width>840</width>
+				<width>846</width>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <visible>!IsEmpty(Container(12).ListItem.Title)</visible>
                 <control type="image">
-                    <width>804</width>
+                    <left>3</left>
+                    <width>808</width>
                     <height>100</height>
                     <texture>common/darkgrey.png</texture>
                     <animation effect="fade" end="60" condition="true">conditional</animation>
@@ -175,11 +177,11 @@
                     <left>115</left>
                     <top>72</top>
                     <width>575</width>
-                    <height>21</height>
-                    <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                    <height>18</height>
+                    <midtexture border="0">new_pvr/texturebg_white.png</midtexture>
+					<texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
+					<lefttexture>noop</lefttexture>
+					<righttexture>noop</righttexture>
                     <visible>Container(12).ListItem.HasEpg</visible>
                     <info>Container(12).ListItem.Progress</info>
                 </control>
@@ -2788,9 +2790,9 @@
                 <visible>!IsEmpty(VideoPlayer.Title)</visible>
                 <visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
             </control>
-            <control type="group"> <!-- Recording logo and labels -->
+            <control type="group" id="1"> <!-- Recording logo and labels -->
                 <visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
-                <control type="image">
+                <control type="image" id="1">
                     <posx>499</posx>
                     <posy>896</posy>
                     <width>40</width>
@@ -2822,7 +2824,7 @@
 				<label>$INFO[VideoPlayer.TimeRemaining(hh:mm)]</label>
                 <visible>!IsEmpty(VideoPlayer.Title)</visible>
             </control>
-            <control type="label">
+            <control type="label" id="1">
                 <posx>380</posx>
                 <posy>965</posy>
                 <width>150</width>
@@ -2859,13 +2861,13 @@
 			<control type="progress" id="1">
                 <posx>380</posx>
                 <posy>940</posy>
-                <width>1180</width>
+                <width>1175</width>
                 <height>16</height>
                 <info>Player.Progress</info>
-                <texturebg>osd/info/osd_progress_back.png</texturebg>
-                <lefttexture>osd/info/osd_progress_left.png</lefttexture>
-                <midtexture>osd/info/osd_progress_mid.png</midtexture>
-                <righttexture>osd/info/osd_progress_right.png</righttexture>
+				<midtexture border="0">new_pvr/texturebg_white.png</midtexture>
+				<texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
+                <lefttexture>noop</lefttexture>
+                <righttexture>noop</righttexture>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
             </control>
 		</control>
@@ -2887,7 +2889,7 @@
 		
 		<!-- Bottom right Info (Stream status, SNR & Signal, Time-shift) -->
 		<control type="group" id="1">
-			<control type="group">
+			<control type="group" id="1">
 				<visible>!substring(PVR.ActStreamStatus,TIMESHIFT)</visible>
 				<control type="label" id="1">
 					<posx>1570</posx>
@@ -2910,7 +2912,7 @@
 					<label>AGC: $INFO[PVR.ActStreamSignal]</label>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group" id="1">
                 <visible>substring(PVR.ActStreamStatus,TIMESHIFT)</visible>
                 <control type="label" id="1">
                     <posx>1660</posx>
@@ -2933,7 +2935,7 @@
 			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">WindowClose</animation>
 			
             <posx>1550</posx>
-            <posy>900</posy>
+            <posy>895</posy>
 			<height>140</height>
 			<width>200</width>
 			<control type="image" id="1">
@@ -3168,7 +3170,7 @@
                 <label>FTA</label>
                 <visible>substring(PVR.ActStreamEncryptionName,(0000)) + !substring(Window(Home).Property(PVR_ECM_caid),0x)</visible>
             </control>
-            <control type="group"> <!-- Tuner info -->
+            <control type="group" id="1"> <!-- Tuner info -->
                 <posx>1094</posx>
                 <control type="label" id="1">
                     <posx>200</posx>
