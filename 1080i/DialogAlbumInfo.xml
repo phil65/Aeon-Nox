@@ -3,7 +3,7 @@
     <defaultcontrol always="true">9012</defaultcontrol>
     <onload>ClearProperty(logo,home)</onload>
     <onload>ClearProperty(Banner,home)</onload>
-    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
+    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=mostlovedtracks,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
     <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
@@ -135,7 +135,7 @@
         </control>
         <control type="image">
             <posy>404</posy>
-            <width>1923</width>
+            <width>2220</width>
             <height>780</height>
             <colordiffuse>black</colordiffuse>
             <texture>home/nowplaying_shadow.png</texture>
