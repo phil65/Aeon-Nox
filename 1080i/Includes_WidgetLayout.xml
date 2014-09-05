@@ -3657,8 +3657,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <focusedcolor>white3</focusedcolor>
                         <onclick>Dialog.Close(all,true)</onclick>
-                        <onclick condition="!IsEmpty(Window(home).Property(Street))">RunScript(script.maps.browser,location=$INFO[Window(home).Property(City)] $INFO[Window(home).Property(Street)])</onclick>
-                        <onclick condition="IsEmpty(Window(home).Property(Street))">RunScript(script.maps.browser,location=$INFO[Window(home).Property(City)] $INFO[Window(home).Property(Name)])</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(Street))">RunScript(script.maps.browser,location=$INFO[Window(home).Property(City)] $INFO[Window(home).Property(Street)],artist=$INFO[Window(home).Property(Headliner)])</onclick>
+                        <onclick condition="IsEmpty(Window(home).Property(Street))">RunScript(script.maps.browser,location=$INFO[Window(home).Property(City)] $INFO[Window(home).Property(Name)],artist=$INFO[Window(home).Property(Headliner)])</onclick>
                         <onup>11</onup>
                         <ondown>11</ondown>
                         <onleft>10</onleft>
