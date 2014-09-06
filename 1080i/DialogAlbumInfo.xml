@@ -664,8 +664,8 @@
                                 <ondown>9012</ondown>
                                 <onleft>8010</onleft>
                                 <onright>10010</onright>
-                                <onclick>SetFocus(9010)</onclick>
-                                <visible>false</visible>
+                                <onfocus>SetFocus(50)</onfocus>
+                                <visible>Container.Content(albums)</visible>
                             </control>
                             <control type="image">
                                 <posx>21</posx>
@@ -752,10 +752,90 @@
                                     <scroll>true</scroll>
                                     <visible>Container.Content(albums)</visible>
                                 </control>
+                                <control id="50" type="list">
+                                    <posx>550</posx>
+                                    <posy>75</posy>
+                                    <width>650</width>
+                                    <height>300</height>
+                                    <onup>9012</onup>
+                                    <ondown>9012</ondown>
+                                    <onleft>8010</onleft>
+                                    <onright>10010</onright>
+                                    <orientation>vertical</orientation>
+                                    <focusposition>0</focusposition>
+                                    <itemgap>0</itemgap>
+                                    <scrolltime tween="quadratic">200</scrolltime>
+                                    <preloaditems>2</preloaditems>
+                             <itemlayout height="50" width="650">
+                                        <control type="image">
+                                            <posx>15</posx>
+                                            <posy>0</posy>
+                                            <width>620</width>
+                                            <height>50</height>
+                                            <texture border="3">osd/osd_settings_buttonnf.png</texture>
+                                        </control>
+                                        <control type="label">
+                                            <posx>645</posx>
+                                            <posy>0</posy>
+                                            <width>300</width>
+                                            <height>48</height>
+                                            <align>right</align>
+                                            <label>$INFO[ListItem.Duration]</label>
+                                            <font>Font_Reg26</font>
+                                            <textcolor>$VAR[TitleColorVar]</textcolor>
+                                        </control>
+                                        <control type="label">
+                                            <posx>45</posx>
+                                            <posy>0</posy>
+                                            <width>605</width>
+                                            <height>48</height>
+                                            <align>left</align>
+                                            <label>$INFO[ListItem.Label]</label>
+                                            <font>Font_Reg29</font>
+                                            <textcolor>white2</textcolor>
+                                        </control>
+                                    </itemlayout>
+                                    <focusedlayout height="50" width="650">
+                                        <control type="image">
+                                            <posx>15</posx>
+                                            <posy>0</posy>
+                                            <width>620</width>
+                                            <height>50</height>
+                                            <texture border="3">osd/osd_settings_buttonnf.png</texture>
+                                        </control>
+                                        <control type="image">
+                                            <width>650</width>
+                                            <height>50</height>
+                                            <texture border="8">views/tripanel/listselect_fo.png</texture>
+                                            <visible>Control.HasFocus(50)</visible>
+                                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                        </control>
+                                        <control type="label">
+                                            <posx>645</posx>
+                                            <posy>0</posy>
+                                            <width>300</width>
+                                            <height>48</height>
+                                            <align>right</align>
+                                            <label>$INFO[ListItem.Duration]</label>
+                                            <font>Font_Reg26</font>
+                                            <textcolor>$VAR[TitleColorVar]</textcolor>
+                                        </control>
+                                        <control type="label">
+                                            <posx>45</posx>
+                                            <posy>0</posy>
+                                            <width>605</width>
+                                            <height>48</height>
+                                            <align>left</align>
+                                            <label>$INFO[ListItem.Label]</label>
+                                            <font>Font_Reg29</font>
+                                            <textcolor>white2</textcolor>
+                                        </control>
+                                    </focusedlayout>
+                                </control>
                                 <control type="group">
                                     <posy>330</posy>
                                     <control type="label">
-                                        <posx>500</posx>
+                                        <posx>650</posx>
                                         <posy>86</posy>
                                         <width>135</width>
                                         <aligny>bottom</aligny>
@@ -766,7 +846,7 @@
                                         <textcolor>white2</textcolor>
                                     </control>
                                     <control type="label">
-                                        <posx>500</posx>
+                                        <posx>650</posx>
                                         <posy>118</posy>
                                         <width>135</width>
                                         <height>35</height>
@@ -776,7 +856,7 @@
                                         <textcolor>white2</textcolor>
                                     </control>
                                     <control type="group">
-                                        <posx>668</posx>
+                                        <posx>785</posx>
                                         <control id="8309" type="image">
                                             <posx>3</posx>
                                             <posy>86</posy>
@@ -800,7 +880,7 @@
                                         </control>
                                     </control>
                                     <control type="image">
-                                        <posx>870</posx>
+                                        <posx>950</posx>
                                         <posy>76</posy>
                                         <width>135</width>
                                         <height>88</height>
@@ -809,10 +889,10 @@
                                         <colordiffuse>white2</colordiffuse>
                                     </control>
                                     <control type="group">
-                                        <posx>1050</posx>
+                                        <posx>480</posx>
                                         <control id="8669" type="image">
                                             <posx>5</posx>
-                                            <posy>-320</posy>
+                                            <posy>75</posy>
                                             <width>150</width>
                                             <height>90</height>
                                             <aspectratio>keep</aspectratio>
@@ -820,7 +900,7 @@
                                             <colordiffuse>white2</colordiffuse>
                                         </control>
                                         <control id="8670" type="label">
-                                            <posy>-317</posy>
+                                            <posy>83</posy>
                                             <width>155</width>
                                             <height>70</height>
                                             <align>center</align>
@@ -836,7 +916,7 @@
                                         <visible>!IsEmpty(ListItem.Genre)</visible>
                                         <!--                     <animation condition="IsEmpty(ListItem.Property(Album_Label))" effect="slide" end="-120,0" time="0">Conditional</animation>-->
                                         <include>Animation_VisibleChange200</include>
-                                        <posx>1040</posx>
+                                        <posx>1060</posx>
                                         <control type="image">
                                             <posx>0</posx>
                                             <posy>70</posy>
@@ -883,7 +963,7 @@
                                     <ondown>9012</ondown>
                                     <onleft>8010</onleft>
                                     <onright>10010</onright>
-                                    <visible>true</visible>
+                                    <visible>Container.content(artists)</visible>
                                     <orientation>vertical</orientation>
                                     <focusposition>0</focusposition>
                                     <scrolltime easing="inout" tween="cubic">400</scrolltime>
