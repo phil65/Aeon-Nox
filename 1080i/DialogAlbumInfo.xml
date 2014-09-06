@@ -4,7 +4,7 @@
     <onload>ClearProperty(logo,home)</onload>
     <onload>ClearProperty(Banner,home)</onload>
     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=mostlovedtracks,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=shouts,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
         <control id="9023" type="button">
@@ -149,7 +149,7 @@
         <control type="group">
             <control type="group">
                 <posx>500</posx>
-                <posy>0</posy>
+                <posy>50</posy>
                 <control id="8308" type="image">
                     <width>920</width>
                     <height>360</height>
@@ -183,9 +183,7 @@
                 <scroll>true</scroll>
                 <visible>Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(home).Property(Logo))</visible>
             </control>
-            <!--     <control type="group"><animation effect="fade" time="320">VisibleChange</animation><visible>Container.Content(albums)</visible><control type="grouplist"><posy>-80</posy><posx>500</posx><width>778</width><itemgap>10</itemgap><orientation>horizontal</orientation><control type="label"><width max="400" min="50">auto</width><aligny>bottom</aligny><label>$LOCALIZE[467]:</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>$VAR[SubTitleColorVar]</textcolor></control><control type="fadelabel"><width>671</width><aligny>bottom</aligny><label fallback="N/A">$INFO[ListItem.Property(Album_Type)]</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>white3</textcolor><pauseatend>1000</pauseatend></control></control><control type="grouplist"><posx>500</posx><posy>-40</posy><width>778</width><itemgap>10</itemgap><orientation>horizontal</orientation><control type="label"><width max="400" min="50">auto</width><aligny>bottom</aligny><label>$LOCALIZE[176]:</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>$VAR[SubTitleColorVar]</textcolor></control><control type="fadelabel"><width>671</width><aligny>bottom</aligny><label fallback="N/A">$INFO[ListItem.Property(Album_Style)]</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>white3</textcolor><pauseatend>1000</pauseatend></control></control><control type="grouplist"><posx>500</posx><posy>0</posy><width>778</width><itemgap>10</itemgap><orientation>horizontal</orientation><control type="label"><width max="400" min="50">auto</width><aligny>bottom</aligny><label>$LOCALIZE[175]:</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>$VAR[SubTitleColorVar]</textcolor></control><control type="fadelabel"><width>671</width><aligny>bottom</aligny><label fallback="N/A">$INFO[ListItem.Property(Album_Mood)]</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>white3</textcolor><pauseatend>1000</pauseatend></control></control></control><control type="group"><visible>Container.Content(artists)</visible><control type="grouplist"><posx>500</posx><posy>-80</posy><width>778</width><itemgap>10</itemgap><orientation>horizontal</orientation><control type="label"><width max="400" min="50">auto</width><aligny>bottom</aligny><label>$LOCALIZE[21898]:</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>$VAR[SubTitleColorVar]</textcolor></control><control type="fadelabel"><width>671</width><aligny>bottom</aligny><label fallback="N/A">$INFO[ListItem.Property(Artist_YearsActive)]</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>white3</textcolor><pauseatend>1000</pauseatend></control></control><control type="grouplist"><posx>500</posx><posy>-40</posy><width>778</width><itemgap>10</itemgap><orientation>horizontal</orientation><control type="label"><width max="400" min="50">auto</width><aligny>bottom</aligny><label>$LOCALIZE[21892]:</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>$VAR[SubTitleColorVar]</textcolor></control><control type="fadelabel"><width>671</width><aligny>bottom</aligny><label fallback="N/A">$INFO[ListItem.Property(Artist_Instrument)]</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>white3</textcolor><pauseatend>1000</pauseatend></control></control><control type="grouplist"><posx>500</posx><width>778</width><itemgap>10</itemgap><orientation>horizontal</orientation><control type="label"><width max="400" min="50">auto</width><aligny>bottom</aligny><label>$LOCALIZE[176]:</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>$VAR[SubTitleColorVar]</textcolor></control><control type="fadelabel"><width>671</width><aligny>bottom</aligny><label fallback="N/A">$INFO[ListItem.Property(Artist_Style)]</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>white3</textcolor><pauseatend>1000</pauseatend></control></control><control type="grouplist"><posx>500</posx><posy>40</posy><width>778</width><orientation>horizontal</orientation><itemgap>10</itemgap><control type="label"><width max="400" min="50">auto</width><aligny>bottom</aligny><label>$LOCALIZE[175]:</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>$VAR[SubTitleColorVar]</textcolor></control><control type="fadelabel"><width>671</width><aligny>bottom</aligny><label fallback="N/A">$INFO[ListItem.Property(Artist_Mood)]</label><font>Font_Reg30_2</font><shadowcolor>black</shadowcolor><textcolor>white3</textcolor><pauseatend>1000</pauseatend></control></control></control>-->
         </control>
-        <!-- Album Info -->
         <!-- Main Group -->
         <control type="group">
             <control id="40" type="grouplist">
@@ -620,7 +618,7 @@
                                 <content>
                                     <include>ArtistEventItems</include>
                                     <item id="100">
-                                        <property name="City">Show more in Maps Browser</property>
+                                        <property name="City">Show concerts in maps browser</property>
                                         <onclick>Action(Close)</onclick>
                                         <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
                                         <property name="GoogleMap">$INFO[System.AddonIcon(script.maps.browser)]</property>
@@ -1271,11 +1269,10 @@
                         </control>
                     </control>
                 </control>
-                <!-- Shouts -->
+                <!-- Artwork -->
                 <control id="11000" type="group">
                     <width>2325</width>
                     <height>825</height>
-                    <visible>IntegerGreaterThan(Window(home).Property(Shout.Count),0)</visible>
                     <animation condition="![ControlGroup(11000).HasFocus | Control.HasFocus(11012)]" type="Conditional">
                         <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
                         <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
@@ -1316,75 +1313,30 @@
                                 <focusposition>0</focusposition>
                                 <scrolltime easing="inout" tween="cubic">400</scrolltime>
                                 <preloaditems>2</preloaditems>
-                                <itemlayout height="68" width="1300">
+                                <itemlayout height="240" width="266">
+                                    <include>MusicVisPanelLayout</include>
                                     <control type="image">
-                                        <posx>15</posx>
-                                        <posy>0</posy>
-                                        <width>1270</width>
-                                        <height>68</height>
-                                        <texture border="3">osd/osd_settings_buttonnf.png</texture>
-                                    </control>
-                                    <control type="label">
-                                        <posx>1265</posx>
-                                        <posy>0</posy>
-                                        <width>400</width>
-                                        <height>68</height>
-                                        <align>right</align>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posx>45</posx>
-                                        <posy>0</posy>
-                                        <width>1265</width>
-                                        <height>68</height>
-                                        <align>left</align>
-                                        <label>[COLOR white2]$INFO[ListItem.Property(Premiered)]: [/COLOR]$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg29</font>
-                                        <textcolor>grey2</textcolor>
+                                        <posy>10</posy>
+                                        <width>240</width>
+                                        <height>240</height>
+                                        <texture border="6">common/bgcolor.png</texture>
+                                        <visible>Control.HasFocus(10010)</visible>
+                                        <include>Animation_VisibleChange400</include>
+                                        <colordiffuse>55FFFFFF</colordiffuse>
                                     </control>
                                 </itemlayout>
-                                <focusedlayout height="68" width="1300">
+                                <focusedlayout height="240" width="266">
+                                    <include>MusicVisPanelLayout</include>
                                     <control type="image">
-                                        <width>1290</width>
-                                        <posx>10</posx>
-                                        <height>68</height>
-                                        <texture border="8">views/tripanel/listselect_fo.png</texture>
-                                        <visible>Control.HasFocus(11010)</visible>
+                                        <posy>10</posy>
+                                        <width>236</width>
+                                        <height>238</height>
+                                        <texture border="6">views/addonwall_select.png</texture>
+                                        <visible>Control.HasFocus(10010)</visible>
                                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
-                                    <control type="image">
-                                        <posx>15</posx>
-                                        <posy>0</posy>
-                                        <width>1270</width>
-                                        <height>68</height>
-                                        <texture border="3">osd/osd_settings_buttonnf.png</texture>
-                                    </control>
-                                    <control type="label">
-                                        <posx>1265</posx>
-                                        <posy>0</posy>
-                                        <width>400</width>
-                                        <height>68</height>
-                                        <align>right</align>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posx>45</posx>
-                                        <posy>0</posy>
-                                        <width>1265</width>
-                                        <height>68</height>
-                                        <align>left</align>
-                                        <label>[COLOR white2]$INFO[ListItem.Property(Premiered)]: [/COLOR]$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg29</font>
-                                        <textcolor>grey2</textcolor>
-                                    </control>
                                 </focusedlayout>
-                                <content>
-                                    <include>ShoutsItems</include>
-                                </content>
+                                <content type="url">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</content>
                             </control>
                             <!--content-->
                         </control>
@@ -1468,11 +1420,10 @@
                     <animation center="auto" condition="ControlGroup(10000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
                 </control>
                 <control type="label">
-                    <label>Shouts</label>
+                    <label>Artwork</label>
                     <include>FeaturedTopLabel</include>
                     <animation condition="!Control.HasFocus(11012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
                     <animation center="auto" condition="ControlGroup(11000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
-                    <visible>IntegerGreaterThan(Window(home).Property(Shout.Count),0)</visible>
                 </control>
             </control>
         </control>
