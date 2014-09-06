@@ -11,7 +11,7 @@
     </variable>
     <variable name="YouTubeContentVar">
         <value condition="Container.Content(albums)">plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Artist] $INFO[ListItem.Album]</value>
-        <value>plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[ListItem.Artist]</value>
+        <value>plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[ListItem.Artist] Music</value>
     </variable>
     <variable name="InfoWidgetPlayOnclickVar">
         <value condition="Substring(Window(home).Property(WidgetType),trendingmovies)">$INFO[Window(home).Property(Path)]</value>
