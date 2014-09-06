@@ -751,8 +751,8 @@
         <value>$LOCALIZE[17]$INFO[Container(206).NumItems, (,)]</value>
     </variable>
     <variable name="HomeMenuBackVar">
-        <value condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">home/homemenu_back_glass.png</value>
-        <value condition="Skin.HasSetting(classichome) + ![Player.HasMedia + System.IdleTime(8)]">home/homemenu_back.png</value>
+        <value condition="Skin.HasSetting(glasshome)">home/homemenu_back_glass.png</value>
+        <value condition="Skin.HasSetting(classichome)">home/homemenu_back.png</value>
         <value>home/homemenu_back_nox.png</value>
     </variable>
     <variable name="HomeOSDLabelVar">
@@ -1684,6 +1684,10 @@
         <value condition="Skin.HasSetting(TVInfoWallLogo)">$LOCALIZE[31059]</value>
         <value condition="Skin.HasSetting(TVInfoWallLandscape)">$LOCALIZE[31150]</value>
         <value>$LOCALIZE[31060]</value>
+    </variable>
+    <variable name="DialogAlbumInfoTopLabelVar">
+        <value condition="Container.Content(artists)">$INFO[ListItem.Artist]</value>
+        <value>[COLOR white2]$INFO[ListItem.Album][/COLOR]$INFO[ListItem.Year, [,] ]</value>
     </variable>
     <variable name="EpisodeTVShowVar">
         <value condition="Skin.HasSetting(episodebanner)">$LOCALIZE[31058]</value>
