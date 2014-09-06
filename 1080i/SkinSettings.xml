@@ -4,6 +4,7 @@
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
     <onload>SetProperty(MenuName,MenuItem,home)</onload>
+    <onload>ClearProperty(FocusOnCustomizer)</onload>
     <onunload>Skin.SetString(widgetlist,$INFO[Control.GetLabel(11111)])</onunload>
     <onunload>Skin.SetString(widget2list,$INFO[Control.GetLabel(11112)])</onunload>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
