@@ -161,41 +161,25 @@
                     <include>Animation_OpenCloseZoom_New</include>
                     <animation effect="fade" delay="240" time="240" reversible="false">Hidden</animation>
                     <animation effect="fade" delay="160" end="100" time="240" condition="!Stringcompare(Control.GetLabel(8822),empty.png)">Conditional</animation>
-                    <visible>Control.IsVisible(503) + Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]</visible>
+                    <visible>Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]</visible>
                     <visible>![Container.OnNext | Container.OnPrevious]</visible>
                 </control>
-                <control type="label">
-                    <posx>510</posx>
-                    <posy>1012</posy>
-                    <width>900</width>
-                    <align>center</align>
-                    <label>$INFO[ListItem.Label]</label>
-                    <font>Font_ShowcaseMainLabel2_Caps</font>
-                    <shadowcolor>floorshadow</shadowcolor>
-                    <textcolor>floor</textcolor>
-                    <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61)">Conditional</animation>
-                    <include>Animation_VisibleChange200</include>
-                    <scroll>true</scroll>
-                    <scrollspeed>30</scrollspeed>
-                    <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
-                    <visible>!Container.Content(episodes)</visible>
-                </control>
-                <control type="label">
-                    <posx>510</posx>
-                    <posy>1012</posy>
-                    <width>900</width>
-                    <align>center</align>
-                    <label>$INFO[ListItem.Title]</label>
-                    <font>Font_ShowcaseMainLabel2_Caps</font>
-                    <shadowcolor>floorshadow</shadowcolor>
-                    <textcolor>floor</textcolor>
-                    <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61)">Conditional</animation>
-                    <include>Animation_VisibleChange200</include>
-                    <scroll>true</scroll>
-                    <scrollspeed>30</scrollspeed>
-                    <visible>Container.Content(episodes)</visible>
-                    <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
-                </control>
+                    <control type="label">
+                        <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
+                        <include>Animation_VisibleChange200</include>
+                        <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61)">Conditional</animation>
+                        <posx>510</posx>
+                        <posy>1012</posy>
+                        <width>900</width>
+                        <align>center</align>
+                        <label>$VAR[EpisodeTitleVar]</label>
+                        <font>Font_ShowcaseMainLabel2_Caps</font>
+                        <shadowcolor>floorshadow</shadowcolor>
+                        <textcolor>floor</textcolor>
+                        <include>Animation_VisibleChange200</include>
+                        <scroll>true</scroll>
+                        <scrollspeed>30</scrollspeed>
+                    </control>
                 <control type="label">
                     <posx>510</posx>
                     <posy>1030</posy>
