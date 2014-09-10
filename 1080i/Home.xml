@@ -409,25 +409,6 @@
                             <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
                             <include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
                         </control>
-                        <!-- Home OSD -->
-                        <control type="group">
-                            <posy>62</posy>
-                            <width>1920</width>
-                            <height>1080</height>
-                            <visible>Player.HasMedia + System.IdleTime(8)</visible>
-                            <animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                            <animation effect="fade" end="100" time="600" condition="Player.HasAudio + System.IdleTime(8)">Conditional</animation>
-                            <control type="progress">
-                                <posy>452</posy>
-                                <width>1920</width>
-                                <height>96</height>
-                                <info>Player.Progress</info>
-                                <texturebg>osd/osd_progress_clear.png</texturebg>
-                                <lefttexture>-</lefttexture>
-                                <midtexture>osd/osd_progressmid.png</midtexture>
-                                <righttexture>-</righttexture>
-                            </control>
-                        </control>
                         <!-- Home Menu Bar -->
                         <control type="image">
                             <posy>453</posy>
@@ -448,18 +429,6 @@
                             <include>PanelGlowFade</include>
                             <include>Animation_VisibleChange400</include>
                             <visible>!Skin.HasSetting(DisableGlowbar) | Skin.HasSetting(classichome)</visible>
-                        </control>
-                        <!-- Home OSD -->
-                        <control type="label">
-                            <posy>445</posy>
-                            <width>1920</width>
-                            <height>225</height>
-                            <align>center</align>
-                            <label>$VAR[HomeOSDLabelVar]</label>
-                            <font>Font_MainClassic</font>
-                            <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
-                            <visible>Player.HasMedia + System.IdleTime(8)</visible>
-                            <animation effect="fade" end="100" time="840">Visible</animation>
                         </control>
                         <!-- Home Menu -->
                         <control type="button" id="8993">
