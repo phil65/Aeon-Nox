@@ -2573,6 +2573,143 @@
         <disabledcolor>grey2</disabledcolor>
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
     </include>
+    <include name="NextAiredItemLayout">
+        <control type="group">
+            <control type="image">
+                <posx>13</posx>
+                <posy>20</posy>
+                <width>405</width>
+                <height>237</height>
+                <aspectratio aligny="top">keep</aspectratio>
+                <texture background="true">$INFO[ListItem.Property(Art(clearlogo))]$INFO[ListItem.Property(Logo)]</texture>
+            </control>
+            <control type="group">
+                <posy>-30</posy>
+                <control type="image">
+                    <posx>10</posx>
+                    <posy>290</posy>
+                    <width>411</width>
+                    <height>247</height>
+                    <aspectratio align="center">keep</aspectratio>
+                    <texture background="true">$INFO[ListItem.Property(Art(fanart))]$INFO[ListItem.Property(fanart)]</texture>
+                    <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
+                    <bordersize>7</bordersize>
+                </control>
+                <control type="image">
+                    <posx>10</posx>
+                    <posy>290</posy>
+                    <width>411</width>
+                    <height>247</height>
+                    <aspectratio align="center">keep</aspectratio>
+                    <texture background="true">$INFO[ListItem.Property(Art(landscape))]$INFO[ListItem.Property(landscape)]</texture>
+                    <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
+                    <bordersize>7</bordersize>
+                    <visible>!IsEmpty(Window(Home).property(TVGuide.PreviewThumbs))</visible>
+                </control>
+                <control type="image">
+                    <posx>17</posx>
+                    <posy>492</posy>
+                    <width>397</width>
+                    <height>34</height>
+                    <texture>common/bgcolor.png</texture>
+                    <colordiffuse>99FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>301</posx>
+                    <posy>864</posy>
+                    <width>120</width>
+                    <height>62</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>tvguide/$INFO[ListItem.Property(StatusID)].png</texture>
+                    <colordiffuse>floor</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>491</posy>
+                    <width>35</width>
+                    <height>35</height>
+                    <texture>tvguide/clock.png</texture>
+                    <colordiffuse>floor</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>215</posx>
+                    <posy>468</posy>
+                    <width>370</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label2][COLOR white2]$INFO[ListItem.Property(ShortTime)][/COLOR][COLOR grey] $INFO[ListItem.Property(Runtime),, $LOCALIZE[12391],(,))][/COLOR]</label>
+                    <font>Font_Reg28</font>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                </control>
+            </control>
+            <control type="label">
+                <posx>22</posx>
+                <posy>200</posy>
+                <width>370</width>
+                <height>30</height>
+                <label>$INFO[ListItem.Property(NextSeasonNumber),S]$INFO[ListItem.Property(NextEpisodeNumber),E]$INFO[ListItem.Property(EpisodeNumber)]</label>
+                <font>Font_Bold37</font>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+            </control>
+            <control type="label">
+                <posx>22</posx>
+                <posy>229</posy>
+                <width>415</width>
+                <height>30</height>
+                <label>$INFO[ListItem.Property(NextTitle)]</label>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <posx>22</posx>
+                <posy>538</posy>
+                <width>415</width>
+                <height>80</height>
+                <label>$LOCALIZE[31189]:[CR][COLOR white2]$INFO[ListItem.Property(LatestSeasonNumber),S]$INFO[ListItem.Property(LatestEpisodeNumber),E][COLOR grey] ($LOCALIZE[31322]: $INFO[ListItem.Property(LatestDate)])[/COLOR]:[CR] $INFO[ListItem.Property(LatestTitle)][/COLOR]</label>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+            </control>
+            <control type="label">
+                <label></label>
+                <posx>22</posx>
+                <posy>618</posy>
+                <width>415</width>
+                <height>80</height>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+            </control>
+            <control type="label">
+                <posx>22</posx>
+                <posy>638</posy>
+                <width>415</width>
+                <height>80</height>
+                <label>$LOCALIZE[515]: [CR][COLOR white2]$INFO[ListItem.Property(Genre)][/COLOR]</label>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+            </control>
+            <control type="label">
+                <posx>22</posx>
+                <posy>722</posy>
+                <width>170</width>
+                <height>80</height>
+                <label>$LOCALIZE[31005]:[CR][COLOR white2]$INFO[ListItem.Property(Premiered)][/COLOR]</label>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>822</posy>
+                <width>135</width>
+                <height>90</height>
+                <aspectratio>keep</aspectratio>
+                <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Property(Network),flags/studios/,.png]</texture>
+                <colordiffuse>floor</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>435</posx>
+                <posy>100</posy>
+                <width>2</width>
+                <height>789</height>
+                <texture>dialogs/weatherline.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+        </control>
+    </include>
     <include name="NextAiredFocusedLayout">
         <control type="image">
             <width>435</width>
