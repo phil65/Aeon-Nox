@@ -16,31 +16,7 @@
                 <posy>84</posy>
                 <include>Neon_Topbar</include>
             </control>
-            <include condition="VideoPlayer.Content(LiveTV)">LiveTVVideoOSD</include>
-            <include condition="!VideoPlayer.Content(LiveTV)">DefaultVideoOSD</include>
-            <control type="label">
-                <posx>400</posx>
-                <width>300</width>
-                <height>125</height>
-                <label>$INFO[System.CurrentControl]</label>
-                <font>Font_Reg32</font>
-                <textcolor>grey</textcolor>
-                <animation effect="slide" end="-40,-4" time="0" tween="quadratic" condition="ControlGroup(201).HasFocus | VideoPlayer.Content(LiveTV)">Conditional</animation>
-                <wrapmultiline>true</wrapmultiline>
-                <visible>ControlGroup(650).HasFocus | ControlGroup(201).HasFocus</visible>
-            </control>
-            <control type="label">
-                <posx>400r</posx>
-                <width>200</width>
-                <height>125</height>
-                <align>right</align>
-                <label>$INFO[System.CurrentControl]</label>
-                <font>Font_Reg32</font>
-                <textcolor>grey</textcolor>
-                <animation effect="slide" end="0,-4" time="0" tween="quadratic" condition="ControlGroup(201).HasFocus | VideoPlayer.Content(LiveTV)">Conditional</animation>
-                <wrapmultiline>true</wrapmultiline>
-                <visible>ControlGroup(652).HasFocus | ControlGroup(203).HasFocus</visible>
-            </control>
+            <include>VideoOSD</include>
         </control>
         <control type="group">
             <animation effect="slide" end="0,260" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1118)">Conditional</animation>
