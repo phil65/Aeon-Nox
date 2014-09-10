@@ -36,7 +36,6 @@
     <include file="Includes_Widget2.xml" />
     <include file="Includes_CustomizerWindow.xml" />
     <include file="Viewtype_FullscreenPanel.xml" />
-    <include file="Includes_NextAired.xml" />
     <constant name="AutoScrollTime">2000</constant>
     <include name="Dialogs_Group">
         <posx>579</posx>
@@ -2539,5 +2538,59 @@
                 <visible>Window.IsActive(1147)</visible>
             </control>
         </control>
+    </include>
+    <include name="TVGuideWeekdayButtonbackground">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>434</width>
+        <height>84</height>
+        <textoffsetx>30</textoffsetx>
+        <align>left</align>
+        <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
+        <texturenofocus>views/tripanel/listselect_fo.png</texturenofocus>
+        <alttexturefocus>-</alttexturefocus>
+        <alttexturenofocus>-</alttexturenofocus>
+        <font>Font-Condensed-S34</font>
+        <shadowcolor>22000000</shadowcolor>
+        <textcolor>white</textcolor>
+        <disabledcolor>grey2</disabledcolor>
+        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+    </include>
+    <include name="TVGuideWeekdayButton">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>434</width>
+        <height>84</height>
+        <textoffsetx>30</textoffsetx>
+        <align>left</align>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <alttexturefocus>-</alttexturefocus>
+        <alttexturenofocus>-</alttexturenofocus>
+        <font>Font-Condensed-S34</font>
+        <shadowcolor>22000000</shadowcolor>
+        <textcolor>white</textcolor>
+        <disabledcolor>grey2</disabledcolor>
+        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+    </include>
+    <include name="NextAiredFocusedLayout">
+        <control type="image">
+            <width>435</width>
+            <height>955</height>
+            <texture border="8">views/tripanel/listselect_fo.png</texture>
+            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+        </control>
+        <include>NextAiredItemLayout</include>
+    </include>
+    <include name="NextAiredListVars">
+        <posx>495</posx>
+        <posy>61</posy>
+        <width>1305</width>
+        <height>978</height>
+        <itemgap>0</itemgap>
+        <orientation>horizontal</orientation>
+        <scrolltime tween="sine">200</scrolltime>
+        <animation effect="fade" start="100" end="0" time="240" tween="sine" easing="inout">Hidden</animation>
+        <animation effect="fade" start="0" end="100" time="240" tween="sine" easing="inout">Visible</animation>
     </include>
 </includes>
