@@ -3643,29 +3643,29 @@
                 <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
                 <onleft>708</onleft>
                 <onright>600</onright>
-                <control type="button" id="700">
-                    <texturefocus>osd/buttons/OSDPlaylistFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDPlaylistNF.png</texturenofocus>
+                <control type="radiobutton" id="700">
+                    <textureradioon>osd/buttons/OSDPlaylistNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDPlaylistNF.png</textureradiooff>
                     <label>10517</label>
                     <include>ClassicOSDButton</include>
                     <onclick>ActivateWindow(MusicPlaylist)</onclick>
                 </control>
-                <control type="button" id="500">
-                    <texturefocus>osd/buttons/OSDVizFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDVizNF.png</texturenofocus>
+                <control type="radiobutton" id="500">
+                    <textureradioon>osd/buttons/OSDVizNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDVizNF.png</textureradiooff>
                     <label>12006</label>
                     <include>ClassicOSDButton</include>
                 </control>
-                <control type="button" id="701">
-                    <texturefocus>osd/buttons/OSDSettingsFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDSettingsNF.png</texturenofocus>
+                <control type="radiobutton" id="701">
+                    <textureradioon>osd/buttons/OSDSettingsNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDSettingsNF.png</textureradiooff>
                     <label>$LOCALIZE[250] $LOCALIZE[21417]</label>
                     <include>ClassicOSDButton</include>
                     <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
                 </control>
-                <control type="button" id="702">
-                    <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
+                <control type="radiobutton" id="702">
+                    <textureradioon>osd/buttons/OSDVideoNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDVideoNF.png</textureradiooff>
                     <label>31048</label>
                     <include>ClassicOSDButton</include>
                     <onclick>ActivateWindow(122)</onclick>
@@ -3685,55 +3685,53 @@
                 <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
                 <onleft>801</onleft>
                 <onright>703</onright>
-                <control type="button" id="600">
-                    <texturefocus>osd/buttons/OSDPrevTrackFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
+                <control type="radiobutton" id="600">
+                    <textureradioon>osd/buttons/OSDPrevTrackNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDPrevTrackNF.png</textureradiooff>
                     <label>210</label>
                     <include>ClassicOSDButton</include>
                     <onclick>PlayerControl(Previous)</onclick>
                 </control>
-                <control type="button" id="601">
-                    <texturefocus>osd/buttons/OSDRewindFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDRewindNF.png</texturenofocus>
+                <control type="radiobutton" id="601">
+                    <textureradioon>osd/buttons/OSDRewindNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDRewindNF.png</textureradiooff>
                     <label>31354</label>
                     <include>ClassicOSDButton</include>
                     <onclick>PlayerControl(Rewind)</onclick>
                 </control>
-                <control type="togglebutton" id="602">
-                    <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
-                    <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
-                    <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
+                <control type="radiobutton" id="602">
+                    <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
+                    <textureradioon>osd/buttons/OSDPlayNF.png</textureradioon>
                     <label>31351</label>
                     <altlabel>208</altlabel>
                     <include>ClassicOSDButton</include>
                     <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
                     <onclick>PlayerControl(Play)</onclick>
                 </control>
-                <control type="button" id="603">
-                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
+                <control type="radiobutton" id="603">
+                    <textureradioon>osd/buttons/OSDStopNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDStopNF.png</textureradiooff>
                     <label>31352</label>
                     <include>ClassicOSDButton</include>
                     <onclick>PlayerControl(Stop)</onclick>
                 </control>
-                <control type="button" id="604">
-                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
+                <control type="radiobutton" id="604">
+                    <textureradioon>osd/buttons/OSDForwardNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDForwardNF.png</textureradiooff>
                     <label>31353</label>
                     <include>ClassicOSDButton</include>
                     <onclick>PlayerControl(Forward)</onclick>
                 </control>
-                <control type="button" id="605">
-                    <texturefocus>osd/buttons/OSDNextTrackFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDNextTrackNF.png</texturenofocus>
+                <control type="radiobutton" id="605">
+                    <textureradioon>osd/buttons/OSDNextTrackNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDNextTrackNF.png</textureradiooff>
                     <label>209</label>
                     <include>ClassicOSDButton</include>
                     <onclick>PlayerControl(Next)</onclick>
                 </control>
-                <control type="button" id="716">
-                    <texturefocus>osd/buttons/OSDRecordFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDRecordNF.png</texturenofocus>
+                <control type="radiobutton" id="716">
+                    <textureradioon>osd/buttons/OSDRecordNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDRecordNF.png</textureradiooff>
                     <label>264</label>
                     <include>ClassicOSDButton</include>
                     <onclick>PlayerControl(record)</onclick>
@@ -3754,11 +3752,9 @@
                 <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
                 <onleft>716</onleft>
                 <onright>700</onright>
-                <control type="togglebutton" id="703">
-                    <texturefocus>osd/buttons/OSDLyricsFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDLyricsNF.png</texturenofocus>
-                    <alttexturefocus>osd/buttons/OSDLyricsFO.png</alttexturefocus>
-                    <alttexturenofocus>osd/buttons/OSDLyricsNF.png</alttexturenofocus>
+                <control type="radiobutton" id="703">
+                    <textureradiooff>osd/buttons/OSDLyricsNF.png</textureradiooff>
+                    <textureradioon>osd/buttons/OSDLyricsNF.png</textureradioon>
                     <label>24013</label>
                     <include>ClassicOSDButton</include>
                     <onclick>Close</onclick>
@@ -3771,8 +3767,8 @@
                 <control type="button" id="704">
                     <width>25</width>
                     <height>25</height>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
+                    <textureradioon>-</textureradioon>
+                    <textureradiooff>-</textureradiooff>
                     <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
                     <font>-</font>
                     <onclick>PlayerControl(Repeat)</onclick>
@@ -3781,233 +3777,22 @@
                     <texture>$VAR[MusicOSDRepeatClassicButtonVar]</texture>
                     <include>ClassicOSDButton</include>
                 </control>
-                <control type="togglebutton" id="714">
-                    <texturefocus>osd/buttons/OSDRandomOffFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDRandomOffNF.png</texturenofocus>
-                    <alttexturefocus>osd/buttons/OSDRandomOnFO.png</alttexturefocus>
-                    <alttexturenofocus>osd/buttons/OSDRandomOnNF.png</alttexturenofocus>
+                <control type="radiobutton" id="714">
+                    <textureradiooff>osd/buttons/OSDRandomOffNF.png</textureradiooff>
+                    <textureradioon>osd/buttons/OSDRandomOnNF.png</textureradioon>
                     <label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
                     <include>ClassicOSDButton</include>
                     <usealttexture>Playlist.IsRandom</usealttexture>
                     <onclick>PlayerControl(Random)</onclick>
                 </control>
-                <control type="button" id="708">
-                    <texturefocus>osd/buttons/OSDSkinFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDSkinNF.png</texturenofocus>
+                <control type="radiobutton" id="708">
+                    <textureradioon>osd/buttons/OSDSkinNF.png</textureradioon>
+                    <textureradiooff>osd/buttons/OSDSkinNF.png</textureradiooff>
                     <label>31026</label>
                     <include>ClassicOSDButton</include>
                     <onclick>Dialog.Close(musicosd)</onclick>
                     <onclick>ActivateWindow(1117)</onclick>
                 </control>
-            </control>
-        </control>
-    </include>
-    <include name="DefaultMusicOSD">
-        <control type="grouplist" id="650">
-            <posy>21</posy>
-            <width>960</width>
-            <height>135</height>
-            <itemgap>7</itemgap>
-            <scrolltime tween="sine">200</scrolltime>
-            <orientation>horizontal</orientation>
-            <onup>Dialog.Close(musicosd)</onup>
-            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-            <onleft>707</onleft>
-            <onright>600</onright>
-            <control type="button" id="700">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Format.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Format.png</texturenofocus>
-                <label>10517</label>
-                <font>-</font>
-                <onclick>ActivateWindow(MusicPlaylist)</onclick>
-            </control>
-            <control type="button" id="500">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Oscilloscope.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Oscilloscope.png</texturenofocus>
-                <label>12006</label>
-                <font>-</font>
-            </control>
-            <control type="button" id="701">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Controlpanel.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Controlpanel.png</texturenofocus>
-                <label>$LOCALIZE[250] $LOCALIZE[21417]</label>
-                <font>-</font>
-                <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
-            </control>
-            <control type="button" id="702">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Pin.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Pin.png</texturenofocus>
-                <label>31048</label>
-                <font>-</font>
-                <onclick>ActivateWindow(122)</onclick>
-            </control>
-        </control>
-        <control type="grouplist" id="652">
-            <posx>480</posx>
-            <posy>21</posy>
-            <width>960</width>
-            <height>135</height>
-            <align>center</align>
-            <scrolltime tween="sine">200</scrolltime>
-            <orientation>horizontal</orientation>
-            <onup>Dialog.Close(musicosd)</onup>
-            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-            <onleft>702</onleft>
-            <onright>703</onright>
-            <control type="button" id="600">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonFirst.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFirst.png</texturenofocus>
-                <label>210</label>
-                <font>-</font>
-                <onclick>PlayerControl(Previous)</onclick>
-            </control>
-            <control type="button" id="601">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
-                <label>31354</label>
-                <font>-</font>
-                <onclick>PlayerControl(Rewind)</onclick>
-            </control>
-            <control type="togglebutton" id="602">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                <alttexturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                <label>31351</label>
-                <altlabel>208</altlabel>
-                <font>-</font>
-                <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                <onclick>PlayerControl(Play)</onclick>
-            </control>
-            <control type="button" id="603">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
-                <label>31352</label>
-                <font>-</font>
-                <onclick>down</onclick>
-                <onclick>PlayerControl(Stop)</onclick>
-            </control>
-            <control type="button" id="604">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
-                <label>31353</label>
-                <font>-</font>
-                <onclick>PlayerControl(Forward)</onclick>
-            </control>
-            <control type="button" id="605">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonEnd.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonEnd.png</texturenofocus>
-                <label>209</label>
-                <font>-</font>
-                <onclick>PlayerControl(Next)</onclick>
-            </control>
-            <control type="button" id="706">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Microphone.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Microphone.png</texturenofocus>
-                <label>264</label>
-                <font>-</font>
-                <onclick>PlayerControl(record)</onclick>
-                <visible>Player.CanRecord</visible>
-            </control>
-        </control>
-        <control type="grouplist" id="651">
-            <posx>960</posx>
-            <posy>21</posy>
-            <width>960</width>
-            <height>135</height>
-            <align>right</align>
-            <itemgap>7</itemgap>
-            <scrolltime tween="sine">200</scrolltime>
-            <orientation>horizontal</orientation>
-            <onup>Dialog.Close(musicosd)</onup>
-            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-            <onleft>605</onleft>
-            <onright>700</onright>
-            <control type="togglebutton" id="703">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Lyrics.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Lyrics.png</texturenofocus>
-                <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Lyrics.png</alttexturefocus>
-                <alttexturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Lyrics.png</alttexturenofocus>
-                <label>24013</label>
-                <font>-</font>
-                <onclick>Close</onclick>
-                <onclick>RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
-                <altclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</altclick>
-                <altclick>Close</altclick>
-                <altclick>RunScript($INFO[Skin.String(LyricScript_Path)])</altclick>
-                <usealttexture>IsEmpty(Skin.String(LyricScript_Path))</usealttexture>
-            </control>
-            <control type="button" id="704">
-                <width>1</width>
-                <height>1</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">-</texturefocus>
-                <texturenofocus colordiffuse="grey">-</texturenofocus>
-                <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
-                <font>-</font>
-                <onclick>PlayerControl(Repeat)</onclick>
-            </control>
-            <control type="image" id="708">
-                <width>100</width>
-                <height>100</height>
-                <texture>$VAR[MusicOSDRepeatButtonVar]</texture>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <visible>Control.HasFocus(704)</visible>
-            </control>
-            <control type="image" id="709">
-                <width>100</width>
-                <height>100</height>
-                <texture>$VAR[MusicOSDRepeatButtonVar]</texture>
-                <colordiffuse>grey</colordiffuse>
-                <visible>!Control.HasFocus(704)</visible>
-            </control>
-            <control type="togglebutton" id="705">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ArrowRight.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/ArrowRight.png</texturenofocus>
-                <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonShuffle.png</alttexturefocus>
-                <alttexturenofocus>special://skin/extras/BigIcons/ButtonShuffle.png</alttexturenofocus>
-                <label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
-                <font>-</font>
-                <usealttexture>Playlist.IsRandom</usealttexture>
-                <onclick>PlayerControl(Random)</onclick>
-            </control>
-            <control type="button" id="707">
-                <width>100</width>
-                <height>100</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Gears.png</texturefocus>
-                <texturenofocus colordiffuse="grey">special://skin/extras/BigIcons/Gears.png</texturenofocus>
-                <label>31026</label>
-                <font>-</font>
-                <onclick>Dialog.Close(musicosd)</onclick>
-                <onclick>ActivateWindow(1117)</onclick>
             </control>
         </control>
     </include>
