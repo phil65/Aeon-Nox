@@ -897,18 +897,10 @@
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
         <value>$INFO[Container(9000).ListItem.Property(Widget2Title)]</value>
     </variable>
-    <variable name="MusicOSDRepeatButtonVar">
-        <value condition="Playlist.IsRepeatOne">special://skin/extras/BigIcons/ButtonRepeatOne.png</value>
-        <value condition="Playlist.IsRepeat">special://skin/extras/BigIcons/ButtonReload.png</value>
-        <value>special://skin/extras/BigIcons/ButtonRepeatOff.png</value>
-    </variable>
     <variable name="MusicOSDRepeatClassicButtonVar">
-        <value condition="[!Playlist.IsRepeat + !Playlist.IsRepeatOne] + !Control.HasFocus(704)">osd/buttons/OSDRepeatNF.png</value>
-        <value condition="Playlist.IsRepeatOne+!Control.HasFocus(704)">osd/buttons/OSDRepeatOneNF.png</value>
-        <value condition="Playlist.IsRepeat+!Control.HasFocus(704)">osd/buttons/OSDRepeatAllNF.png</value>
-        <value condition="[!Playlist.IsRepeat + !Playlist.IsRepeatOne] + Control.HasFocus(704)">osd/buttons/OSDRepeatFO.png</value>
-        <value condition="Playlist.IsRepeatOne+ Control.HasFocus(704)">osd/buttons/OSDRepeatOneFO.png</value>
-        <value condition="Playlist.IsRepeat+ Control.HasFocus(704)">osd/buttons/OSDRepeatAllFO.png</value>
+        <value condition="[!Playlist.IsRepeat + !Playlist.IsRepeatOne]">osd/buttons/OSDRepeatNF.png</value>
+        <value condition="Playlist.IsRepeatOne">osd/buttons/OSDRepeatOneNF.png</value>
+        <value condition="Playlist.IsRepeat">osd/buttons/OSDRepeatAllNF.png</value>
     </variable>
     <variable name="OneOrMoreSeasonsVar">
         <value condition="StringCompare(ListItem.Property(TotalSeasons),1)">$LOCALIZE[20373]</value>
@@ -2490,7 +2482,7 @@
 		<value>Name only</value>
 	</variable>
 
-    
+
     <variable name="PlayerArtworkVar">
         <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>
