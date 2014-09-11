@@ -292,8 +292,8 @@
         <control type="radiobutton" id="1665">
             <label>$LOCALIZE[31171]</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Controlpanel.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Controlpanel.png</textureradiooff>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Paintbucket.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Paintbucket.png</textureradiooff>
             <selected>Control.HasFocus(1665)</selected>
             <onclick condition="Control.IsVisible(50)">SetProperty(actualViewtype,List,home)</onclick>
             <onclick condition="Control.IsVisible(52)">SetProperty(actualViewtype,Tripanel,home)</onclick>
@@ -323,6 +323,26 @@
             <onclick condition="Container.Content(artists)">SetProperty(Area,Artists,home)</onclick>
             <onclick condition="Container.Content(addons)">SetProperty(Area,Addons,home)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
+        </control>
+    </include>
+    <include name="GeneralSettingsButton">
+        <control type="radiobutton" id="1667">
+            <label>Video Settings</label>
+            <include>Objects_MediaMenuButtonIcons</include>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Controlpanel.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Controlpanel.png</textureradiooff>
+            <selected>Control.HasFocus(1667)</selected>
+            <onclick>ActivateWindow(videossettings)</onclick>
+            <visible>Window.IsActive(videos)</visible>
+        </control>
+        <control type="radiobutton" id="1667">
+            <label>Music Settings</label>
+            <include>Objects_MediaMenuButtonIcons</include>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Controlpanel.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Controlpanel.png</textureradiooff>
+            <selected>Control.HasFocus(1667)</selected>
+            <onclick>ActivateWindow(musicsettings)</onclick>
+            <visible>Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)</visible>
         </control>
     </include>
     <include name="Media_Menu_Tooltip">
@@ -497,6 +517,7 @@
                     <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,silent=true,extrafanart,poster,fanart,banner,clearlogo,clearart,landscape,discart,extrathumbs)</onclick>
                 </control>
                 <include condition="!Skin.HasSetting(hideoptions)">ViewtypeSettingsButton</include>
+                <include condition="!Skin.HasSetting(hideoptions) + [Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(videos)]">GeneralSettingsButton</include>
                 <control type="radiobutton" id="612" description="GoToPlaylist">
                     <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/playlist.png</textureradioon>
                     <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/playlist.png</textureradiooff>
