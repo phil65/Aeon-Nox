@@ -315,25 +315,9 @@
                 <visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
             </control>
         </control>
-        <control type="group" id="1">
-            <visible>[Player.ShowInfo] + ![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
+        <control type="group" id="2">
+			<visible>[Player.ShowInfo|Player.Forwarding|Player.Seeking] + ![Window.IsVisible(fullscreeninfo) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.ChannelName)</visible>
-            <animation type="Visible">
-                <effect type="fade" time="320" end="100" />
-                <effect type="slide" time="320" start="0,135" end="0,0" tween="cubic" />
-            </animation>
-            <animation type="Hidden">
-                <effect type="fade" time="320" start="100" end="0" />
-                <effect type="slide" time="320" end="0,135" easing="in" tween="cubic" />
-            </animation>
-            <animation type="WindowOpen">
-                <effect type="fade" time="320" end="100" />
-                <effect type="slide" time="320" start="0,135" end="0,0" tween="cubic" />
-            </animation>
-            <animation type="WindowClose">
-                <effect type="fade" time="320" start="100" end="0" />
-                <effect type="slide" time="320" end="0,135" easing="in" tween="cubic" />
-            </animation>
             <include>FullScreenInfoBarLiveTV</include>
         </control>
     </controls>

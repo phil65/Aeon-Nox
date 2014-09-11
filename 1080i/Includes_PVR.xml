@@ -7,15 +7,16 @@
             <visible>Control.IsVisible(11)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <left>105</left>
-                <top>470</top>
+                <left>100</left>
+                <top>467</top>
 				<height>100</height>
-				<width>840</width>
+				<width>846</width>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <visible>!IsEmpty(Container(11).ListItem.Title)</visible>
                 <control type="image">
-                    <width>804</width>
+					<left>3</left>
+                    <width>808</width>
                     <height>100</height>
                     <texture>common/black.png</texture>
                     <animation effect="fade" end="60" condition="true">conditional</animation>
@@ -37,6 +38,7 @@
                     <height>30</height>
                     <align>center</align>
                     <label>$LOCALIZE[19031]: $INFO[Container(11).ListItem.NextTitle]</label>
+					<textcolor>d0FFFFFF</textcolor>
                     <font>Font_Reg26</font>
                     <scroll>yes</scroll>
                     <visible>!IsEmpty(Container(11).ListItem.NextTitle)</visible>
@@ -48,18 +50,18 @@
                     <height>30</height>
                     <label>$INFO[Container(11).ListItem.StartTime]</label>
                     <font>Font_Reg25</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>d0FFFFFF</textcolor>
                     <visible>Container(11).ListItem.HasEpg</visible>
                 </control>
                 <control type="progress">
                     <left>115</left>
                     <top>72</top>
                     <width>575</width>
-                    <height>21</height>
-                    <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                    <height>18</height>
+                    <midtexture border="0">new_pvr/texturebg_white.png</midtexture>
+					<texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
+					<lefttexture>-</lefttexture>
+					<righttexture>-</righttexture>
                     <visible>Container(11).ListItem.HasEpg</visible>
                     <info>Container(11).ListItem.Progress</info>
                 </control>
@@ -70,7 +72,7 @@
                     <height>30</height>
                     <label>$INFO[Container(11).ListItem.EndTime]</label>
                     <font>Font_Reg25</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>d0FFFFFF</textcolor>
                     <visible>Container(11).ListItem.HasEpg</visible>
                 </control>
             </control>
@@ -126,15 +128,16 @@
             <visible>Control.IsVisible(12)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <left>105</left>
-                <top>470</top>
+                <left>100</left>
+                <top>467</top>
 				<height>100</height>
-				<width>840</width>
+				<width>846</width>
                 <include>Animation_OpenCloseZoom_New</include>
                 <include>Animation_VisibleChange200</include>
                 <visible>!IsEmpty(Container(12).ListItem.Title)</visible>
                 <control type="image">
-                    <width>804</width>
+                    <left>3</left>
+                    <width>808</width>
                     <height>100</height>
                     <texture>common/darkgrey.png</texture>
                     <animation effect="fade" end="60" condition="true">conditional</animation>
@@ -174,11 +177,11 @@
                     <left>115</left>
                     <top>72</top>
                     <width>575</width>
-                    <height>21</height>
-                    <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                    <height>18</height>
+                    <midtexture border="0">new_pvr/texturebg_white.png</midtexture>
+					<texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
+					<lefttexture>-</lefttexture>
+					<righttexture>-</righttexture>
                     <visible>Container(12).ListItem.HasEpg</visible>
                     <info>Container(12).ListItem.Progress</info>
                 </control>
@@ -727,12 +730,12 @@
                 </control>
             </control>
         </focusedlayout>
-        <itemlayout condition="Skin.HasSetting(smalltvlist)" height="60" width="924">
+        <itemlayout condition="Skin.HasSetting(smalltvlist)" height="59" width="924">
             <control type="image">
-				<left>-20</left>
-				<top>0</top>
-				<width>986</width>
-				<height>60</height>
+				<left>-10</left>
+				<top>3</top>
+				<width>934</width>
+				<height>59</height>
 				<texture>osd/osd_settings_buttonnf.png</texture>
 				<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 			</control>
@@ -773,6 +776,10 @@
 				<info>ListItem.Progress</info>
 				<visible>!StringCompare(ListItem.Title,)</visible>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+				<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+                <midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+				<lefttexture>-</lefttexture>
+				<righttexture>-</righttexture>
 			</control>
 			<control type="label">
 				<left>240</left>
@@ -793,11 +800,9 @@
 				<visible>ListItem.IsRecording</visible>
 			</control>
         </itemlayout>
-        <focusedlayout condition="Skin.HasSetting(smalltvlist)" height="60" width="924">
+        <focusedlayout condition="Skin.HasSetting(smalltvlist)" height="59" width="924">
             <control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>975</width>
+				<width>924</width>
 				<height>60</height>
 				<texture>views/tripanel/listselect_fo.png</texture>
 				<colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
@@ -839,8 +844,10 @@
 				<info>ListItem.Progress</info>
 				<visible>!StringCompare(ListItem.Title,)</visible>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
-				<texturebg border="2">dialogs/progress/progress_back.png</texturebg>
-                <midtexture border="2">dialogs/progress/progress_mid.png</midtexture>
+				<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+                <midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+				<lefttexture>-</lefttexture>
+				<righttexture>-</righttexture>
 			</control>
 			<control type="label">
 				<left>240</left>
@@ -1272,19 +1279,18 @@
                     </control>
                 </focusedchannellayout>
                 <itemlayout height="60" width="60">
-					<control type="image" id="12">
+					<control type="image" id="2">
                         <width>60</width>
                         <height>60</height>
 						<aspectratio>stretch</aspectratio>
-						<texture border="3" fallback="epg-genres/0.png">$INFO[ListItem.Genre,epg-genres/,.png]</texture>
+						<texture border="3">$INFO[ListItem.Genre,epg-genres/,.png]</texture>
                     </control>
-					<control type="image" id="11">
+					<control type="image" id="3">
                         <width>60</width>
                         <height>60</height>
-                        <top>0</top>
 						<aspectratio>stretch</aspectratio>
-						<texture border="3" fallback="new_pvr/epg-genres/0.png">new_pvr/epg-genres/$INFO[ListItem.Genre].png</texture>
-                        <visible>!Control.IsVisible(12)</visible>
+						<texture border="3" fallback="epg-genres/0.png">$INFO[ListItem.Property(GenreType),epg-genres/,.png]</texture>
+                        <visible>!Control.IsVisible(2)</visible>
                     </control>
                     <control type="label" id="1">
                         <left>9</left>
@@ -2603,21 +2609,46 @@
 	<include name="FullScreenInfoBarLiveTV">
         <animation effect="slide" time="400" start="0,200" easing="out" tween="back">WindowOpen</animation>
 		<animation effect="slide" time="400" end="0,200" delay="300" easing="in" tween="back">WindowClose</animation>
+		<animation effect="slide" time="400" start="0,200" easing="out" tween="back">Visible</animation>
+		<animation effect="slide" time="400" end="0,200" delay="300" easing="in" tween="back">Hidden</animation>
 		
 		<!-- Main background -->
-		<control type="image" id="1">
-            <posy>785</posy>
-            <width>1920</width>
-            <height>280</height>
-            <texture>new_pvr/osd_back_pvr.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-        </control>
+		<control type="group" id="1">
+			<top>785</top>
+			<height>300</height>
+			<width>1920</width>
+			<control type="image" id="1">
+				<top>-10</top>
+				<width>1920</width>
+				<height>300</height>
+				<texture border="35">osd/osd_settings_back.png</texture>
+			</control>
+			<control type="image" id="1">
+				<top>96</top>
+				<left>380</left>
+				<width>1480</width>
+				<height>3</height>
+				<texture border="0">new_pvr/osd_line_white.png</texture>
+				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+			</control>
+			<control type="image" id="1">
+				<top>228</top>
+				<left>60</left>
+				<width>1805</width>
+				<height>3</height>
+				<texture border="0">new_pvr/osd_line_white.png</texture>
+				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+			</control>
+		</control>
+		
 		
 		<!-- Channel logo -->
         <control type="group" id="1">
-            <posx>0</posx>
+			<animation effect="slide" time="400" start="-400,0" delay="300" easing="out" tween="back">Visible</animation>
+			<animation effect="slide" time="400" end="-400,0" easing="in" tween="back">Hidden</animation>
 			<animation effect="slide" time="400" start="-400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
 			<animation effect="slide" time="400" end="-400,0" easing="in" tween="back">WindowClose</animation>
+			
             <control type="image"> <!-- Logo background -->
 				<left>67</left>
 				<top>805</top>
@@ -2629,9 +2660,9 @@
 				<visible>false</visible>
             </control>
 			<control type="image" id="1">
-                <posx>67</posx>
+                <posx>77</posx>
                 <posy>805</posy>
-                <width>290</width>
+                <width>250</width>
                 <height>200</height>
 				<align>center</align>
                 <texture>$INFO[VideoPlayer.Cover]</texture>
@@ -2758,9 +2789,9 @@
                 <visible>!IsEmpty(VideoPlayer.Title)</visible>
                 <visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
             </control>
-            <control type="group"> <!-- Recording logo and labels -->
+            <control type="group" id="1"> <!-- Recording logo and labels -->
                 <visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
-                <control type="image">
+                <control type="image" id="1">
                     <posx>499</posx>
                     <posy>896</posy>
                     <width>40</width>
@@ -2792,7 +2823,7 @@
 				<label>$INFO[VideoPlayer.TimeRemaining(hh:mm)]</label>
                 <visible>!IsEmpty(VideoPlayer.Title)</visible>
             </control>
-            <control type="label">
+            <control type="label" id="1">
                 <posx>380</posx>
                 <posy>965</posy>
                 <width>150</width>
@@ -2829,13 +2860,13 @@
 			<control type="progress" id="1">
                 <posx>380</posx>
                 <posy>940</posy>
-                <width>1180</width>
+                <width>1175</width>
                 <height>16</height>
                 <info>Player.Progress</info>
-                <texturebg>osd/info/osd_progress_back.png</texturebg>
-                <lefttexture>osd/info/osd_progress_left.png</lefttexture>
-                <midtexture>osd/info/osd_progress_mid.png</midtexture>
-                <righttexture>osd/info/osd_progress_right.png</righttexture>
+				<midtexture border="0">new_pvr/texturebg_white.png</midtexture>
+				<texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
+                <lefttexture>-</lefttexture>
+                <righttexture>-</righttexture>
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
             </control>
 		</control>
@@ -2857,7 +2888,7 @@
 		
 		<!-- Bottom right Info (Stream status, SNR & Signal, Time-shift) -->
 		<control type="group" id="1">
-			<control type="group">
+			<control type="group" id="1">
 				<visible>!substring(PVR.ActStreamStatus,TIMESHIFT)</visible>
 				<control type="label" id="1">
 					<posx>1570</posx>
@@ -2880,7 +2911,7 @@
 					<label>AGC: $INFO[PVR.ActStreamSignal]</label>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group" id="1">
                 <visible>substring(PVR.ActStreamStatus,TIMESHIFT)</visible>
                 <control type="label" id="1">
                     <posx>1660</posx>
@@ -2897,10 +2928,13 @@
 		
 		<!-- Media flags -->
         <control type="group" id="1">
+			<animation effect="slide" time="400" start="400,0" delay="300" easing="out" tween="back">Visible</animation>
+			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">Hidden</animation>
 			<animation effect="slide" time="400" start="400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
 			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">WindowClose</animation>
+			
             <posx>1550</posx>
-            <posy>900</posy>
+            <posy>895</posy>
 			<height>140</height>
 			<width>200</width>
 			<control type="image" id="1">
@@ -2910,6 +2944,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
             <control type="image" id="1">
                 <posx>120</posx>
@@ -2918,6 +2953,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
             <control type="image" id="1">
                 <posx>215</posx>
@@ -2926,6 +2962,7 @@
                 <height>75</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
 			
             <control type="image" id="1">
@@ -2935,6 +2972,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
             <control type="image" id="1">
                 <posx>200</posx>
@@ -2943,6 +2981,7 @@
                 <height>65</height>
                 <aspectratio align="center">keep</aspectratio>
                 <texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,ch.png]</texture>
+				<colordiffuse>white</colordiffuse>
             </control>
         </control>
         
@@ -3130,7 +3169,7 @@
                 <label>FTA</label>
                 <visible>substring(PVR.ActStreamEncryptionName,(0000)) + !substring(Window(Home).Property(PVR_ECM_caid),0x)</visible>
             </control>
-            <control type="group"> <!-- Tuner info -->
+            <control type="group" id="1"> <!-- Tuner info -->
                 <posx>1094</posx>
                 <control type="label" id="1">
                     <posx>200</posx>
@@ -3298,13 +3337,13 @@
 			<ondown>11</ondown>
 			<pagecontrol>-</pagecontrol>
 			<scrolltime tween="quadratic">200</scrolltime>
-			<itemlayout height="60" width="975">
+			<itemlayout height="59" width="975">
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
+					<left>-10</left>
+					<top>3</top>
 					<width>975</width>
-					<height>60</height>
-					<texture>new_pvr/separator2.png</texture>
+					<height>59</height>
+					<texture>osd/osd_settings_buttonnf.png</texture>
 					<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 				</control>
 				<control type="label">
@@ -3335,10 +3374,10 @@
 					<info>ListItem.Progress</info>
 					<visible>!StringCompare(ListItem.Title,)</visible>
 					<colordiffuse>$VAR[FontColorVar]</colordiffuse>
-					<!--<texturebg border="2">new_pvr/texturebg2.png</texturebg>
-					<midtexture>new_pvr/midtexture_cache.png</midtexture>
-					<lefttexture></lefttexture>
-					<righttexture></righttexture>-->
+					<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+					<midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+					<lefttexture>-</lefttexture>
+					<righttexture>-</righttexture>
 				</control>
 				<control type="label">
 					<left>240</left>
@@ -3359,10 +3398,8 @@
 					<visible>ListItem.IsRecording</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout height="60" width="975">
+			<focusedlayout height="59" width="975">
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
 					<width>975</width>
 					<height>60</height>
 					<texture>views/tripanel/listselect_fo.png</texture>
@@ -3396,6 +3433,10 @@
 					<info>ListItem.Progress</info>
 					<visible>!StringCompare(ListItem.Title,)</visible>
 					<colordiffuse>$VAR[FontColorVar]</colordiffuse>
+					<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+					<midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+					<lefttexture>-</lefttexture>
+					<righttexture>-</righttexture>
 				</control>
 				<control type="label">
 					<left>240</left>
@@ -3451,6 +3492,10 @@
 				<height>20</height>
 				<info>Container(11).ListItem.Progress</info>
 				<colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
+				<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
+				<midtexture border="3">new_pvr/texturebg_white.png</midtexture>
+				<lefttexture>-</lefttexture>
+				<righttexture>-</righttexture>
 			</control>
 			<control type="label"> <!-- Current epg title -->
 				<left>0</left>
