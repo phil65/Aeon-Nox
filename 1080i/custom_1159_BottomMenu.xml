@@ -3,8 +3,9 @@
     <defaultcontrol always="true">2020</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.extendedinfo,info=upcoming,info=incinema,info=toprated,info=popular,info=premiereshows,info=youtubeusersearch,id=TheNewYorkTimes,silent=False)</onload>
-    <!--     <onload condition="Player.HasAudio">RunScript(script.extendedinfo,artistname=$INFO[MusicPlayer.Artist],albumname=$ESCINFO[MusicPlayer.Album])</onload>
- -->    <onload>RunScript(script.extendedinfo,info=topartists,silent=False)</onload>
+    <!--
+    <onload condition="Player.HasAudio">RunScript(script.extendedinfo,artistname=$INFO[MusicPlayer.Artist],albumname=$ESCINFO[MusicPlayer.Album])</onload>-->
+    <onload>RunScript(script.extendedinfo,info=topartists,silent=False)</onload>
     <controls>
         <control type="button" id="5014">
             <include>HiddenObject</include>
@@ -84,283 +85,79 @@
             <onfocus condition="Container(2020).HasFocus(9)">Runscript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(8001).ListItem.Property(Id)],silent=False)</onfocus>
             <onfocus>SetFocus(8001)</onfocus>
             <onfocus>ActivateWindow(1165)</onfocus>
-        <visible>Container(2020).HasFocus(9)</visible>
-    </control>
-    <control type="button" id="9022">
-        <include>HiddenObject</include>
-        <onfocus>SetProperty(Label,$ESCINFO[Container(5052).ListItem.Label],home)</onfocus>
-        <onfocus>SetProperty(Label2,$ESCINFO[Container(5052).ListItem.Label2],home)</onfocus>
-        <onfocus>SetProperty(Thumb,$ESCINFO[Container(5052).ListItem.Thumb],home)</onfocus>
-        <onfocus>SetProperty(City,$ESCINFO[Container(5052).ListItem.Property(City)],home)</onfocus>
-        <onfocus>SetProperty(Street,$ESCINFO[Container(5052).ListItem.Property(Street)],home)</onfocus>
-        <onfocus>SetProperty(ID,$ESCINFO[Container(5052).ListItem.Property(ID)],home)</onfocus>
-        <onfocus>SetProperty(Name,$ESCINFO[Container(5052).ListItem.Property(Name)],home)</onfocus>
-        <onfocus>SetProperty(EventName,$ESCINFO[Container(5052).ListItem.Property(EventName)],home)</onfocus>
-        <onfocus>SetProperty(Website,$ESCINFO[Container(5052).ListItem.Property(Website)],home)</onfocus>
-        <onfocus>SetProperty(TicketURL,$ESCINFO[Container(5052).ListItem.Property(TicketURL)],home)</onfocus>
-        <onfocus>SetProperty(Description,$ESCINFO[Container(5052).ListItem.Property(Description)],home)</onfocus>
-        <onfocus>SetProperty(Headliner,$ESCINFO[Container(5052).ListItem.Property(Headliner)],home)</onfocus>
-        <onfocus>SetProperty(Venue_Image,$ESCINFO[Container(5052).ListItem.Property(Venue_Image)],home)</onfocus>
-        <onfocus>SetProperty(GoogleMap,$ESCINFO[Container(5052).ListItem.Property(GoogleMap)],home)</onfocus>
-        <onfocus>SetProperty(WidgetType,concert,home)</onfocus>
-        <onfocus>SetFocus(5052)</onfocus>
-        <onfocus>ActivateWindow(1165)</onfocus>
-    </control>
-    <control type="button" id="9023">
-        <include>HiddenObject</include>        
-        <onfocus>SetProperty(Label,$ESCINFO[Container(5051).ListItem.Label],home)</onfocus>
-        <onfocus>SetProperty(Label2,$ESCINFO[Container(5051).ListItem.Label2],home)</onfocus>
-        <onfocus>SetProperty(Thumb,$ESCINFO[Container(5051).ListItem.Thumb],home)</onfocus>
-        <onfocus>SetProperty(City,$ESCINFO[Container(5051).ListItem.Property(City)],home)</onfocus>
-        <onfocus>SetProperty(Street,$ESCINFO[Container(5051).ListItem.Property(Street)],home)</onfocus>
-        <onfocus>SetProperty(ID,$ESCINFO[Container(5051).ListItem.Property(ID)],home)</onfocus>
-        <onfocus>SetProperty(Name,$ESCINFO[Container(5051).ListItem.Property(Name)],home)</onfocus>
-        <onfocus>SetProperty(EventName,$ESCINFO[Container(5051).ListItem.Property(EventName)],home)</onfocus>
-        <onfocus>SetProperty(Website,$ESCINFO[Container(5051).ListItem.Property(Website)],home)</onfocus>
-        <onfocus>SetProperty(TicketURL,$ESCINFO[Container(5051).ListItem.Property(TicketURL)],home)</onfocus>
-        <onfocus>SetProperty(Description,$ESCINFO[Container(5051).ListItem.Property(Description)],home)</onfocus>
-        <onfocus>SetProperty(Headliner,$ESCINFO[Container(5051).ListItem.Property(Headliner)],home)</onfocus>
-        <onfocus>SetProperty(Venue_Image,$ESCINFO[Container(5051).ListItem.Property(Venue_Image)],home)</onfocus>
-        <onfocus>SetProperty(GoogleMap,$ESCINFO[Container(5051).ListItem.Property(GoogleMap)],home)</onfocus>
-        <onfocus>SetProperty(WidgetType,concert,home)</onfocus>
-        <onfocus>SetFocus(5051)</onfocus>
-        <onfocus>ActivateWindow(1165)</onfocus>
-    </control>
-    <control type="label" id="4321">
-        <label>nextairedtvwatchlistmoviesconcertrssnewstrendingshowswatchlisttvpremiereshows</label>
-        <include>HiddenObject</include>
-    </control>
-    <control type="label" id="4322">
-        <label>$INFO[Container(2020).ListItem.Property(Fanart)]</label>
-        <include>HiddenObject</include>
-    </control>
-    <control type="image">
-        <texture>diffuseoverlay.png</texture>
-        <include>FullscreenDimensions</include>
-        <animation effect="fade" time="200">WindowOpen</animation>
-        <animation effect="fade" time="200">WindowClose</animation>
-        <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
-        <visible>IsEmpty(Window(home).Property(ShowMainMenu))</visible>
-    </control>
-    <control type="group">
-        <include>Animation_HideBreadCrumbs</include>
-		<visible>IntegerGreaterThan(Window(weather).Property(Alerts.Count),0)</visible>
+            <visible>Container(2020).HasFocus(9)</visible>
+        </control>
+        <control type="button" id="9022">
+            <include>HiddenObject</include>
+            <onfocus>SetProperty(Label,$ESCINFO[Container(5052).ListItem.Label],home)</onfocus>
+            <onfocus>SetProperty(Label2,$ESCINFO[Container(5052).ListItem.Label2],home)</onfocus>
+            <onfocus>SetProperty(Thumb,$ESCINFO[Container(5052).ListItem.Thumb],home)</onfocus>
+            <onfocus>SetProperty(City,$ESCINFO[Container(5052).ListItem.Property(City)],home)</onfocus>
+            <onfocus>SetProperty(Street,$ESCINFO[Container(5052).ListItem.Property(Street)],home)</onfocus>
+            <onfocus>SetProperty(ID,$ESCINFO[Container(5052).ListItem.Property(ID)],home)</onfocus>
+            <onfocus>SetProperty(Name,$ESCINFO[Container(5052).ListItem.Property(Name)],home)</onfocus>
+            <onfocus>SetProperty(EventName,$ESCINFO[Container(5052).ListItem.Property(EventName)],home)</onfocus>
+            <onfocus>SetProperty(Website,$ESCINFO[Container(5052).ListItem.Property(Website)],home)</onfocus>
+            <onfocus>SetProperty(TicketURL,$ESCINFO[Container(5052).ListItem.Property(TicketURL)],home)</onfocus>
+            <onfocus>SetProperty(Description,$ESCINFO[Container(5052).ListItem.Property(Description)],home)</onfocus>
+            <onfocus>SetProperty(Headliner,$ESCINFO[Container(5052).ListItem.Property(Headliner)],home)</onfocus>
+            <onfocus>SetProperty(Venue_Image,$ESCINFO[Container(5052).ListItem.Property(Venue_Image)],home)</onfocus>
+            <onfocus>SetProperty(GoogleMap,$ESCINFO[Container(5052).ListItem.Property(GoogleMap)],home)</onfocus>
+            <onfocus>SetProperty(WidgetType,concert,home)</onfocus>
+            <onfocus>SetFocus(5052)</onfocus>
+            <onfocus>ActivateWindow(1165)</onfocus>
+        </control>
+        <control type="button" id="9023">
+            <include>HiddenObject</include>
+            <onfocus>SetProperty(Label,$ESCINFO[Container(5051).ListItem.Label],home)</onfocus>
+            <onfocus>SetProperty(Label2,$ESCINFO[Container(5051).ListItem.Label2],home)</onfocus>
+            <onfocus>SetProperty(Thumb,$ESCINFO[Container(5051).ListItem.Thumb],home)</onfocus>
+            <onfocus>SetProperty(City,$ESCINFO[Container(5051).ListItem.Property(City)],home)</onfocus>
+            <onfocus>SetProperty(Street,$ESCINFO[Container(5051).ListItem.Property(Street)],home)</onfocus>
+            <onfocus>SetProperty(ID,$ESCINFO[Container(5051).ListItem.Property(ID)],home)</onfocus>
+            <onfocus>SetProperty(Name,$ESCINFO[Container(5051).ListItem.Property(Name)],home)</onfocus>
+            <onfocus>SetProperty(EventName,$ESCINFO[Container(5051).ListItem.Property(EventName)],home)</onfocus>
+            <onfocus>SetProperty(Website,$ESCINFO[Container(5051).ListItem.Property(Website)],home)</onfocus>
+            <onfocus>SetProperty(TicketURL,$ESCINFO[Container(5051).ListItem.Property(TicketURL)],home)</onfocus>
+            <onfocus>SetProperty(Description,$ESCINFO[Container(5051).ListItem.Property(Description)],home)</onfocus>
+            <onfocus>SetProperty(Headliner,$ESCINFO[Container(5051).ListItem.Property(Headliner)],home)</onfocus>
+            <onfocus>SetProperty(Venue_Image,$ESCINFO[Container(5051).ListItem.Property(Venue_Image)],home)</onfocus>
+            <onfocus>SetProperty(GoogleMap,$ESCINFO[Container(5051).ListItem.Property(GoogleMap)],home)</onfocus>
+            <onfocus>SetProperty(WidgetType,concert,home)</onfocus>
+            <onfocus>SetFocus(5051)</onfocus>
+            <onfocus>ActivateWindow(1165)</onfocus>
+        </control>
+        <control type="label" id="4321">
+            <label>nextairedtvwatchlistmoviesconcertrssnewstrendingshowswatchlisttvpremiereshows</label>
+            <include>HiddenObject</include>
+        </control>
+        <control type="label" id="4322">
+            <label>$INFO[Container(2020).ListItem.Property(Fanart)]</label>
+            <include>HiddenObject</include>
+        </control>
         <control type="image">
-            <posy>-40</posy>
-            <width>1920</width>
-            <height>115</height>
-            <texture>views/logo_tagline_gradient.png</texture>
-        </control>
-        <control type="label">
-            <posy>3</posy>
-            <width>1920</width>
-            <height>40</height>
-            <textoffsetx>5</textoffsetx>
-            <label>$INFO[Window(weather).Property(Alerts.Count)]$INFO[Window(weather).Property(Alerts.1.Description)]</label>
-            <font>Font_Reg26</font>
-            <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-            <scroll>true</scroll>
-            <wrapmultiline>false</wrapmultiline>
-            <scrollspeed>40</scrollspeed>
-        </control>
-    </control>
-    <control type="group">
-        <posx>1910</posx>
-        <posy>-70</posy>
-        <animation effect="slide" start="0,-400" end="0,0" delay="1000" time="520" tween="quadratic" easing="out">WindowOpen</animation>
-        <animation effect="slide" start="0,0" end="0,-400" time="320" tween="quadratic">WindowClose</animation>
-    <control type="image">
-        <posy>-130</posy>
-        <posx>-210</posx>
-        <width>400</width>
-        <height>400</height>
-        <colordiffuse>FFBBBBBB</colordiffuse>
-        <aspectratio>keep</aspectratio>
-        <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
-    </control>
-        <control type="label">
-            <posy>55</posy>
-            <width>825</width>
-            <height>172</height>
-            <align>right</align>
-            <shadowcolor>black</shadowcolor>
-            <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-            <font>Font_MainMenu</font>
-        </control>
-        <control type="label">
-            <posy>125</posy>
-            <width>412</width>
-            <height>135</height>
-            <align>right</align>
-            <label>$INFO[Window(weather).Property(Current.Condition)]</label>
-            <font>Font_Reg40</font>
-            <textcolor>grey2</textcolor>
-            <wrapmultiline>true</wrapmultiline>
-        </control>
-        <control type="label">
-            <posy>160</posy>
-            <width>825</width>
-            <height>135</height>
-            <align>right</align>
-            <label>$INFO[Window(weather).Property(Location)]</label>
-            <font>Font_Reg40</font>
-            <wrapmultiline>true</wrapmultiline>
-        </control>
-    </control>
-    <control type="group">
-        <animation effect="slide" start="0,100" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
-        <animation effect="slide" start="0,0" end="0,100" time="320" tween="quadratic">WindowClose</animation>
- 
-        <control type="group">
-            <control type="image">
-                <posy>978</posy>
-                <width>1920</width>
-                <height>630</height>
-                <texture>views/lowlist_panelback.png</texture>
-            </control>
-            <control type="button" id="2019">
-                <posy>1020</posy>
-                <width>60</width>
-                <height>60</height>
-                <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <onup>Action(Close)</onup>
-                <ondown>Action(Close)</ondown>
-                <onright>2020</onright>
-                <onleft>SetFocus(2020,20)</onleft>
-                <onleft>2020</onleft>
-                <onfocus>SetProperty(ShowMainMenu,true,home)</onfocus>
-                <onunfocus>ClearProperty(ShowMainMenu,home)</onunfocus>
-                <onclick condition="IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,true,home)</onclick>
-                <onclick condition="!IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onclick>
-            </control>
-            <control type="image" id="2016">
-                <posy>1025</posy>
-                <width>60</width>
-                <height>60</height>
-                <texture>$VAR[WidgetModeIconVar]</texture>
-            </control>
-            <control type="list" id="2020">
-                <posx>60</posx>
-                <posy>1020</posy>
-                <width>1920</width>
-                <height>135</height>
-                <orientation>horizontal</orientation>
-                <onleft>2019</onleft>
-                <onup condition="Control.IsVisible(8001)">8001</onup>
-                <ondown>Action(Close)</ondown>
-                <onright>2020</onright>
-                <focusposition>4</focusposition>
-                <itemlayout height="60" width="270">
-                    <control type="image">
-                        <posy>7</posy>
-                        <width>62</width>
-                        <height>52</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>$INFO[ListItem.Thumb]</texture>
-                        <colordiffuse>grey</colordiffuse>
-                    </control>
-                    <control type="label">
-                        <posx>58</posx>
-                        <posy>12</posy>
-                        <width>210</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg28_Caps</font>
-                        <textcolor>white2</textcolor>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="60" width="270">
-                    <control type="image">
-                        <width>270</width>
-                        <height>60</height>
-                        <texture border="8">views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" start="50" end="100" time="280" reversible="false">Focus</animation>
-                        <visible>!Control.HasFocus(2019)</visible>
-                    </control>
-                    <control type="image">
-                        <posy>7</posy>
-                        <width>62</width>
-                        <height>52</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture>$INFO[ListItem.Thumb]</texture>
-                        <colordiffuse>white2</colordiffuse>
-                    </control>
-                    <control type="label">
-                        <posx>58</posx>
-                        <posy>12</posy>
-                        <width>210</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg28_Caps</font>
-                    </control>
-                </focusedlayout>
-                <content>
-                    <item id="1">
-                        <label>$LOCALIZE[575]</label>
-                        <thumb>dialogs/circle/70.png</thumb>
-                        <onclick>Dialog.Close(1159)</onclick>
-                        <property name="Fanart">watchlistmovies</property>
-                        <onclick>ActivateWindow(videos,special://skin/extras/playlists/MoviesInProgress.xsp,return)</onclick>
-                        <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
-                    </item>
-                    <item id="2">
-                        <label>$LOCALIZE[31831]</label>
-                        <thumb>special://skin/extras/BigIcons/CD-DVD.png</thumb>
-                        <property name="Fanart">watchlistmovies</property>
-                        <visible>System.HasMediadvd</visible>
-                        <onclick>Dialog.Close(1159)</onclick>
-                        <onclick>PlayDVD()</onclick>
-                    </item>
-                    <item id="3">
-                        <label>31172</label>
-                        <thumb>special://skin/extras/BigIcons/Headphone.png</thumb>
-                        <property name="Fanart">randomartists</property>
-                        <onclick>Dialog.Close(1159)</onclick>
-                        <onclick condition ="Player.HasAudio">ActivateWindow(1154)</onclick>
-                    </item>
-                    <item id="4">
-                        <label>31819</label>
-                        <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Window(Home).Property(NextAired.1.Art(clearlogo))]</thumb>
-                        <property name="Fanart">randomartists</property>
-                        <onclick>Dialog.Close(1159)</onclick>
-                        <onclick>RunAddon(script.tv.show.next.aired)</onclick>
-                    </item>
-                    <item id="5">
-                        <label>31199</label>
-                        <property name="Fanart">randomartists</property>
-                        <thumb>special://skin/extras/BigIcons/Web.png</thumb>
-                        <onclick>Dialog.Close(1159)</onclick>
-                        <onclick>SetProperty(Featured,rssnews,home)</onclick>
-                        <onclick>ActivateWindow(1140)</onclick>
-                    </item>
-                </content>
-            </control>
-        </control>
-    </control>
-    <control type="group">
-        <visible>IsEmpty(Window(home).Property(ShowMainMenu))</visible>
-        <include>Animation_Widgets</include>
-        <control type="label">
-            <posx>357</posx>
-            <posy>35</posy>
-            <width>800</width>
-            <height>60</height>
-            <textoffsety>10</textoffsety>
-            <align>center</align>
-            <label>$INFO[Container(2021).ListItem.Label2]</label>
-            <font>Font_MainMenu</font>
-            <textcolor>white</textcolor>
+            <texture>diffuseoverlay.png</texture>
+            <include>FullscreenDimensions</include>
+            <animation effect="fade" time="200">WindowOpen</animation>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <visible>IsEmpty(Window(home).Property(ShowMainMenu))</visible>
         </control>
         <control type="group">
+            <visible>IsEmpty(Window(home).Property(ShowMainMenu))</visible>
+            <include>Animation_Widgets</include>
+            <control type="label">
+                <posx>357</posx>
+                <posy>35</posy>
+                <width>800</width>
+                <height>60</height>
+                <textoffsety>10</textoffsety>
+                <align>center</align>
+                <label>$INFO[Container(2021).ListItem.Label2]</label>
+                <font>Font_MainMenu</font>
+                <textcolor>white</textcolor>
+            </control>
             <control type="panel" id="8001">
-                <visible>Container(2020).HasFocus(5)</visible>
-                <visible>Container(2021).HasFocus(40)</visible>
-                <include>Animation_VisibleChange400</include>
                 <posx>177</posx>
                 <posy>175</posy>
                 <width>1200</width>
@@ -451,82 +248,23 @@
                     <include>NewsWidgetContentskinsettings</include>
                     <include>NewsWidgetContent</include>
                 </content>
-            </control>            
-        </control>
-        <control type="group">
-            <control type="panel" id="8001">
-                <posx>177</posx>
-                <visible>Container(2020).HasFocus(1)</visible>
-                <visible>Container(2021).HasFocus(1)</visible>
-                <include>Animation_VisibleChange400</include>
-                <posy>115</posy>
-                <width>1600</width>
-                <height>930</height>
-                <aligny>center</aligny>
-                <scrolltime>200</scrolltime>
-                <onup>8993</onup>
-                <ondown>2020</ondown>
-                <onleft>8002</onleft>
-                <orientation>horizontal</orientation>
-
-                <itemlayout width="400" height="410">
-                    <control type="image">
-                        <posx>11</posx>
-                        <posy>30</posy>
-                        <width>233</width>
-                        <height>350</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                    </control>
-                    <control type="image">
-                        <posx>-8.5</posx>
-                        <posy>10.5</posy>
-                        <width>273</width>
-                        <height>388</height>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                        <bordersize>19.5</bordersize>
-                    </control>
-                    <control type="progress">
-                        <posx>35</posx>
-                        <posy>379</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="400" height="410">
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>255</width>
-                        <height>387</height>
-                        <texture border="8">views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                    <control type="progress">
-                        <posx>35</posx>
-                        <posy>379</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                    <control type="group">
-                        <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+            </control>
+            <control type="group">
+                <control type="panel" id="8001">
+                    <posx>177</posx>
+                    <visible>Container(2020).HasFocus(1)</visible>
+                    <visible>Container(2021).HasFocus(1)</visible>
+                    <include>Animation_VisibleChange400</include>
+                    <posy>115</posy>
+                    <width>1600</width>
+                    <height>930</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8993</onup>
+                    <ondown>2020</ondown>
+                    <onleft>8002</onleft>
+                    <orientation>horizontal</orientation>
+                    <itemlayout width="400" height="410">
                         <control type="image">
                             <posx>11</posx>
                             <posy>30</posy>
@@ -546,95 +284,92 @@
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
-                    </control>
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>255</width>
-                        <height>387</height>
-                        <texture border="6">views/addonwall_select.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                </focusedlayout>
-
-
-                <content>
-                    <include>WatchlistMoviesItems</include>
-                </content>
-            </control>
-            <control type="panel" id="8001">
-                <posx>177</posx>
-                <visible>Container(2020).HasFocus(1)</visible>
-                <visible>Container(2021).HasFocus(2)</visible>
-                <include>Animation_VisibleChange400</include>
-                <posy>145</posy>
-                <width>1200</width>
-                <height>930</height>
-                <aligny>center</aligny>
-                <scrolltime>200</scrolltime>
-                <onup>8993</onup>
-                <ondown>2020</ondown>
-                <onleft>8002</onleft>
-                <orientation>horizontal</orientation>
-
-                <itemlayout width="240" height="410">
-                    <control type="image">
-                        <posx>11</posx>
-                        <posy>30</posy>
-                        <width>193</width>
-                        <height>290</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                    </control>
-                    <control type="image">
-                        <posx>-8.5</posx>
-                        <posy>10.5</posy>
-                        <width>232</width>
-                        <height>328</height>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                        <bordersize>19.5</bordersize>
-                    </control>
-                    <control type="progress">
-                        <posx>15</posx>
-                        <posy>330</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="240" height="410">
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>214</width>
-                        <height>328</height>
-                        <texture border="8">views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                    <control type="progress">
-                        <posx>15</posx>
-                        <posy>330</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                    <control type="group">
-                        <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+                        <control type="progress">
+                            <posx>35</posx>
+                            <posy>379</posy>
+                            <width>190</width>
+                            <colordiffuse>FFFFFFFF</colordiffuse>
+                            <height>13</height>
+                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                            <info>ListItem.Property(PercentPlayed)</info>
+                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="400" height="410">
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>255</width>
+                            <height>387</height>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <animation effect="fade" time="280" reversible="false">Focus</animation>
+                        </control>
+                        <control type="progress">
+                            <posx>35</posx>
+                            <posy>379</posy>
+                            <width>190</width>
+                            <colordiffuse>FFFFFFFF</colordiffuse>
+                            <height>13</height>
+                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                            <info>ListItem.Property(PercentPlayed)</info>
+                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                        </control>
+                        <control type="group">
+                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+                            <control type="image">
+                                <posx>11</posx>
+                                <posy>30</posy>
+                                <width>233</width>
+                                <height>350</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                            </control>
+                            <control type="image">
+                                <posx>-8.5</posx>
+                                <posy>10.5</posy>
+                                <width>273</width>
+                                <height>388</height>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                                <bordersize>19.5</bordersize>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>255</width>
+                            <height>387</height>
+                            <texture border="6">views/addonwall_select.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <animation effect="fade" time="280" reversible="false">Focus</animation>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <include>WatchlistMoviesItems</include>
+                    </content>
+                </control>
+                <control type="panel" id="8001">
+                    <posx>177</posx>
+                    <visible>Container(2020).HasFocus(1)</visible>
+                    <visible>Container(2021).HasFocus(2)</visible>
+                    <include>Animation_VisibleChange400</include>
+                    <posy>145</posy>
+                    <width>1200</width>
+                    <height>930</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8993</onup>
+                    <ondown>2020</ondown>
+                    <onleft>8002</onleft>
+                    <orientation>horizontal</orientation>
+                    <itemlayout width="240" height="410">
                         <control type="image">
                             <posx>11</posx>
                             <posy>30</posy>
@@ -654,96 +389,93 @@
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
-                    </control>
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>214</width>
-                        <height>328</height>
-                        <texture border="6">views/addonwall_select.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                </focusedlayout>
-
-
-                <content>
-                    <include>WatchListTVItems</include>
-                    <include>WatchListTVItemsHome</include>
-                </content>
-            </control>
-            <control type="panel" id="8001">
-                <posx>177</posx>
-                <visible>Container(2020).HasFocus(1)</visible>
-                <visible>Container(2021).HasFocus(3)</visible>
-                <include>Animation_VisibleChange400</include>
-                <posy>145</posy>
-                <width>1200</width>
-                <height>930</height>
-                <aligny>center</aligny>
-                <scrolltime>200</scrolltime>
-                <onup>8993</onup>
-                <ondown>2020</ondown>
-                <onleft>8002</onleft>
-                <orientation>horizontal</orientation>
-
-                <itemlayout width="240" height="410">
-                    <control type="image">
-                        <posx>11</posx>
-                        <posy>30</posy>
-                        <width>193</width>
-                        <height>290</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                    </control>
-                    <control type="image">
-                        <posx>-8.5</posx>
-                        <posy>10.5</posy>
-                        <width>232</width>
-                        <height>328</height>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                        <bordersize>19.5</bordersize>
-                    </control>
-                    <control type="progress">
-                        <posx>15</posx>
-                        <posy>330</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="240" height="410">
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>214</width>
-                        <height>328</height>
-                        <texture border="8">views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                    <control type="progress">
-                        <posx>15</posx>
-                        <posy>330</posy>
-                        <width>190</width>
-                        <colordiffuse>FFFFFFFF</colordiffuse>
-                        <height>13</height>
-                        <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                        <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                        <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                        <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                        <info>ListItem.Property(PercentPlayed)</info>
-                        <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                    </control>
-                    <control type="group">
-                        <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+                        <control type="progress">
+                            <posx>15</posx>
+                            <posy>330</posy>
+                            <width>190</width>
+                            <colordiffuse>FFFFFFFF</colordiffuse>
+                            <height>13</height>
+                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                            <info>ListItem.Property(PercentPlayed)</info>
+                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="240" height="410">
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>214</width>
+                            <height>328</height>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <animation effect="fade" time="280" reversible="false">Focus</animation>
+                        </control>
+                        <control type="progress">
+                            <posx>15</posx>
+                            <posy>330</posy>
+                            <width>190</width>
+                            <colordiffuse>FFFFFFFF</colordiffuse>
+                            <height>13</height>
+                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                            <info>ListItem.Property(PercentPlayed)</info>
+                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                        </control>
+                        <control type="group">
+                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+                            <control type="image">
+                                <posx>11</posx>
+                                <posy>30</posy>
+                                <width>193</width>
+                                <height>290</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                            </control>
+                            <control type="image">
+                                <posx>-8.5</posx>
+                                <posy>10.5</posy>
+                                <width>232</width>
+                                <height>328</height>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                                <bordersize>19.5</bordersize>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>214</width>
+                            <height>328</height>
+                            <texture border="6">views/addonwall_select.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <animation effect="fade" time="280" reversible="false">Focus</animation>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <include>WatchListTVItems</include>
+                        <include>WatchListTVItemsHome</include>
+                    </content>
+                </control>
+                <control type="panel" id="8001">
+                    <posx>177</posx>
+                    <visible>Container(2020).HasFocus(1)</visible>
+                    <visible>Container(2021).HasFocus(3)</visible>
+                    <include>Animation_VisibleChange400</include>
+                    <posy>145</posy>
+                    <width>1200</width>
+                    <height>930</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8993</onup>
+                    <ondown>2020</ondown>
+                    <onleft>8002</onleft>
+                    <orientation>horizontal</orientation>
+                    <itemlayout width="240" height="410">
                         <control type="image">
                             <posx>11</posx>
                             <posy>30</posy>
@@ -763,68 +495,86 @@
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
-                    </control>
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>214</width>
-                        <height>328</height>
-                        <texture border="6">views/addonwall_select.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <animation effect="fade" time="280" reversible="false">Focus</animation>
-                    </control>
-                </focusedlayout>
-
-
-                <content>
-                    <include>PremiereShowsItemsskinsettings</include>
-                    <include>PremiereShowsItems</include>
-                </content>
+                        <control type="progress">
+                            <posx>15</posx>
+                            <posy>330</posy>
+                            <width>190</width>
+                            <colordiffuse>FFFFFFFF</colordiffuse>
+                            <height>13</height>
+                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                            <info>ListItem.Property(PercentPlayed)</info>
+                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="240" height="410">
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>214</width>
+                            <height>328</height>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <animation effect="fade" time="280" reversible="false">Focus</animation>
+                        </control>
+                        <control type="progress">
+                            <posx>15</posx>
+                            <posy>330</posy>
+                            <width>190</width>
+                            <colordiffuse>FFFFFFFF</colordiffuse>
+                            <height>13</height>
+                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
+                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
+                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
+                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+                            <info>ListItem.Property(PercentPlayed)</info>
+                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+                        </control>
+                        <control type="group">
+                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
+                            <control type="image">
+                                <posx>11</posx>
+                                <posy>30</posy>
+                                <width>193</width>
+                                <height>290</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                            </control>
+                            <control type="image">
+                                <posx>-8.5</posx>
+                                <posy>10.5</posy>
+                                <width>232</width>
+                                <height>328</height>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                                <bordersize>19.5</bordersize>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>214</width>
+                            <height>328</height>
+                            <texture border="6">views/addonwall_select.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <animation effect="fade" time="280" reversible="false">Focus</animation>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <include>PremiereShowsItemsskinsettings</include>
+                        <include>PremiereShowsItems</include>
+                    </content>
+                </control>
             </control>
-
-        </control>
-
-
-        <control type="group">
-
             <control type="panel" id="8001">
-                <visible>Container(2020).HasFocus(9)</visible>
-                <visible>Container(2021).HasFocus(90)</visible>
                 <include>Animation_VisibleChange400</include>
                 <include>MovieDBLayouts</include>
                 <content>
                     <include>UpcomingMoviesItems</include>
                 </content>
             </control>
-            <control type="panel" id="8001">
-                <visible>Container(2020).HasFocus(9)</visible>
-                <visible>Container(2021).HasFocus(91)</visible>
-                <include>Animation_VisibleChange400</include>
-                   <include>MovieDBLayouts</include>
-                <content>
-                    <include>PopularMoviesItems</include>
-                </content>
-            </control>
-            <control type="panel" id="8001">
-                <visible>Container(2020).HasFocus(9)</visible>
-                <visible>Container(2021).HasFocus(93)</visible>
-                <include>Animation_VisibleChange400</include>
-                <include>MovieDBLayouts</include>
-                <content>
-                    <include>InCinemaMoviesItems</include>
-                </content>
-            </control>       
-            <control type="panel" id="8001">
-                <visible>Container(2020).HasFocus(9)</visible>
-                <visible>Container(2021).HasFocus(92)</visible>
-                <include>Animation_VisibleChange400</include>
-                <include>MovieDBLayouts</include>
-                <content>
-                    <include>TopRatedMoviesItems</include>
-                </content>
-            </control>
-        </control>
-        <control type="group">
-
             <control type="panel" id="8001">
                 <visible>Container(2020).HasFocus(4)</visible>
                 <include>Animation_VisibleChange400</include>
@@ -849,17 +599,12 @@
                     <include>NextAiredWidgetContent</include>
                 </content>
             </control>
-        </control>
-        <control type="group" id="5050">
-            <visible>Container(2020).HasFocus(3)</visible>
-            <include>Animation_VisibleChange400</include>
-            <control type="group">
-                <visible>Container(2021).HasFocus(5)</visible>
+            <control type="group" id="5050">
                 <control type="panel" id="5051">
                     <posx>80</posx>
                     <posy>110</posy>
                     <width>1400</width>
-                    <height>840</height>
+                    <height>280</height>
                     <orientation>horizontal</orientation>
                     <onleft>5051</onleft>
                     <onright>5051</onright>
@@ -872,14 +617,11 @@
                         <include>ConcertsPanelContent</include>
                     </content>
                 </control>
-            </control>
-            <control type="group">
-                <visible>Container(2021).HasFocus(6)</visible>
                 <control type="panel" id="5052">
                     <posx>80</posx>
                     <posy>110</posy>
                     <width>1400</width>
-                    <height>840</height>
+                    <height>280</height>
                     <orientation>horizontal</orientation>
                     <onleft>5052</onleft>
                     <onright>5052</onright>
@@ -890,12 +632,8 @@
                     <include>ConcertLayouts</include>
                     <content>
                         <include>FestivalPanelContentskinsettings</include>
-                        <include>FestivalPanelContent</include>
                     </content>
                 </control>
-            </control>
-            <control type="group">
-                <visible>Container(2021).HasFocus(8)</visible>
                 <control type="wraplist" id="5002">
                     <posx>-10</posx>
                     <animation effect="zoom" start="100" end="85" center="auto" time="0" condition="true">Conditional</animation>
@@ -965,9 +703,7 @@
                         <include>TopArtistsItems</include>
                     </content>
                 </control>
-
             </control>
         </control>
-    </control>
-</controls>
+    </controls>
 </window>
