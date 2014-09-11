@@ -54,9 +54,12 @@
             <animation effect="fade" time="480">Hidden</animation>
             <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),case)</visible>
         </control>
+        <control type="group">
+            <animation effect="zoom" end="65,60" center="960,360" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
         <include>InteractiveCasesBackground</include>
         <include>LiveCDCasesbackground</include>
         <include>LiveNoCasesbackground</include>
+    </control>
         <control type="image">
             <texture>common/bgcolor.png</texture>
             <include>FullscreenDimensions</include>
