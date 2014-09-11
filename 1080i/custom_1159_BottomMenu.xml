@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1159">
-    <defaultcontrol always="true">2020</defaultcontrol>
+    <defaultcontrol always="true">8002</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.extendedinfo,info=upcoming,info=incinema,info=toprated,info=popular,info=premiereshows,info=youtubeusersearch,id=TheNewYorkTimes,silent=False)</onload>
     <!--
@@ -131,145 +131,146 @@
             <label>nextairedtvwatchlistmoviesconcertrssnewstrendingshowswatchlisttvpremiereshows</label>
             <include>HiddenObject</include>
         </control>
-        <control type="label" id="4322">
-            <label>$INFO[Container(2020).ListItem.Property(Fanart)]</label>
-            <include>HiddenObject</include>
-        </control>
         <control type="image">
             <texture>diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
             <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
-            <visible>IsEmpty(Window(home).Property(ShowMainMenu))</visible>
         </control>
         <control type="group">
-            <visible>IsEmpty(Window(home).Property(ShowMainMenu))</visible>
-            <include>Animation_Widgets</include>
-            <control type="label">
-                <posx>357</posx>
-                <posy>35</posy>
-                <width>800</width>
-                <height>60</height>
-                <textoffsety>10</textoffsety>
-                <align>center</align>
-                <label>$INFO[Container(2021).ListItem.Label2]</label>
-                <font>Font_MainMenu</font>
-                <textcolor>white</textcolor>
+            <animation effect="slide" start="1242,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="1242,0" time="320" tween="quadratic">WindowClose</animation>
+            <posx>729</posx>
+            <control type="image">
+                <width>1192</width>
+                <height>1080</height>
+                <texture>info/info_rightpanelbottom.png</texture>
+                <visible>IsEmpty(ListItem.Art(fanart))</visible>
             </control>
-            <control type="panel" id="8001">
-                <posx>177</posx>
-                <posy>175</posy>
-                <width>1200</width>
-                <height>820</height>
-                <aligny>center</aligny>
-                <scrolltime>200</scrolltime>
-                <onup>8993</onup>
-                <ondown>2020</ondown>
-                <onleft>8002</onleft>
-                <orientation>horizontal</orientation>
-                <itemlayout width="400" height="390">
-                    <control type="image">
-                        <posx>5</posx>
-                        <posy>5</posy>
-                        <width>390</width>
-                        <height>250</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>5</posx>
-                        <posy>5</posy>
-                        <width>390</width>
-                        <height>250</height>
-                        <texture>common/bgcolor.png</texture>
-                        <colordiffuse>99FFFFFF</colordiffuse>
-                        <include>Animation_VisibleChange400</include>
-                        <visible>Control.HasFocus(8001)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>5</posx>
-                        <posy>255</posy>
-                        <width>390</width>
-                        <height>60</height>
-                        <texture>common/bgcolor.png</texture>
-                        <colordiffuse>CCFFFFFF</colordiffuse>
-                    </control>
-                    <control type="textbox">
-                        <posx>5</posx>
-                        <posy>250</posy>
-                        <width>380</width>
-                        <height>65</height>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg28</font>
-                        <textcolor>grey</textcolor>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="400" height="390">
-                    <control type="image">
-                        <posx>5</posx>
-                        <posy>5</posy>
-                        <width>390</width>
-                        <height>250</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>5</posx>
-                        <posy>255</posy>
-                        <width>390</width>
-                        <height>60</height>
-                        <texture>common/bgcolor.png</texture>
-                        <colordiffuse>BBFFFFFF</colordiffuse>
-                    </control>
-                    <control type="textbox">
-                        <posx>5</posx>
-                        <posy>250</posy>
-                        <width>380</width>
-                        <height>65</height>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg28</font>
-                        <textcolor>grey</textcolor>
-                    </control>
-                    <control type="image">
-                        <width>400</width>
-                        <height>320</height>
-                        <texture border="6">views/addonwall_select.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <include>Animation_VisibleChange200</include>
-                        <visible>Control.HasFocus(8001)</visible>
-                    </control>
-                </focusedlayout>
-                <content>
-                    <include>NewsWidgetContentskinsettings</include>
-                    <include>NewsWidgetContent</include>
-                </content>
+            <control type="image">
+                <width>1192</width>
+                <height>1080</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture background="true">$VAR[DialogVideoInfoFanartVar]</texture>
+            </control>
+            <control type="image">
+                <width>1192</width>
+                <height>1080</height>
+                <texture>info/info_rightpaneltop.png</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
             <control type="group">
-                <control type="panel" id="8001">
-                    <posx>177</posx>
-                    <visible>Container(2020).HasFocus(1)</visible>
-                    <visible>Container(2021).HasFocus(1)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <posy>115</posy>
-                    <width>1600</width>
-                    <height>930</height>
+<!--                 <animation effect="slide" start="0,0" end="0,-720" time="720" tween="quadratic" easing="inout" condition="Control.HasFocus(8002)" reversible="true">Conditional</animation>
+ -->                <control type="panel" id="8001">
+                    <posy>0</posy>
+                    <width>1150</width>
+                    <height>360</height>
                     <aligny>center</aligny>
                     <scrolltime>200</scrolltime>
-                    <onup>8993</onup>
-                    <ondown>2020</ondown>
-                    <onleft>8002</onleft>
+                    <onup>8010</onup>
+                    <ondown>8002</ondown>
+                    <onleft>8001</onleft>
+                    <onright>8001</onright>
                     <orientation>horizontal</orientation>
-                    <itemlayout width="400" height="410">
+                    <itemlayout width="400" height="390">
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>390</width>
+                            <height>250</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>390</width>
+                            <height>250</height>
+                            <texture>common/bgcolor.png</texture>
+                            <colordiffuse>99FFFFFF</colordiffuse>
+                            <include>Animation_VisibleChange400</include>
+                            <visible>Control.HasFocus(8001)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>255</posy>
+                            <width>390</width>
+                            <height>60</height>
+                            <texture>common/bgcolor.png</texture>
+                            <colordiffuse>CCFFFFFF</colordiffuse>
+                        </control>
+                        <control type="textbox">
+                            <posx>5</posx>
+                            <posy>250</posy>
+                            <width>380</width>
+                            <height>65</height>
+                            <textoffsetx>15</textoffsetx>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg28</font>
+                            <textcolor>grey</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="400" height="390">
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>390</width>
+                            <height>250</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>255</posy>
+                            <width>390</width>
+                            <height>60</height>
+                            <texture>common/bgcolor.png</texture>
+                            <colordiffuse>BBFFFFFF</colordiffuse>
+                        </control>
+                        <control type="textbox">
+                            <posx>5</posx>
+                            <posy>250</posy>
+                            <width>380</width>
+                            <height>65</height>
+                            <textoffsetx>15</textoffsetx>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg28</font>
+                            <textcolor>grey</textcolor>
+                        </control>
+                        <control type="image">
+                            <width>400</width>
+                            <height>320</height>
+                            <texture border="6">views/addonwall_select.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <include>Animation_VisibleChange200</include>
+                            <visible>Control.HasFocus(8001)</visible>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <include>NewsWidgetContentskinsettings</include>
+                        <include>NewsWidgetContent</include>
+                    </content>
+                </control>
+                <control type="panel" id="8002">
+                    <posy>360</posy>
+                    <width>1600</width>
+                    <height>360</height>
+                    <aligny>center</aligny>
+                    <scrolltime>200</scrolltime>
+                    <onup>8001</onup>
+                    <ondown>8003</ondown>
+                    <onleft>8002</onleft>
+                    <onright>8002</onright>
+                    <orientation>horizontal</orientation>
+                    <itemlayout width="240" height="410">
                         <control type="image">
                             <posx>11</posx>
                             <posy>30</posy>
-                            <width>233</width>
-                            <height>350</height>
+                            <width>193</width>
+                            <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
@@ -277,16 +278,16 @@
                         <control type="image">
                             <posx>-8.5</posx>
                             <posy>10.5</posy>
-                            <width>273</width>
-                            <height>388</height>
+                            <width>232</width>
+                            <height>328</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
                         <control type="progress">
-                            <posx>35</posx>
-                            <posy>379</posy>
+                            <posx>15</posx>
+                            <posy>330</posy>
                             <width>190</width>
                             <colordiffuse>FFFFFFFF</colordiffuse>
                             <height>13</height>
@@ -298,18 +299,18 @@
                             <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="400" height="410">
+                    <focusedlayout width="240" height="410">
                         <control type="image">
                             <posy>10</posy>
-                            <width>255</width>
-                            <height>387</height>
+                            <width>214</width>
+                            <height>328</height>
                             <texture border="8">views/tripanel/listselect_fo.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <animation effect="fade" time="280" reversible="false">Focus</animation>
                         </control>
                         <control type="progress">
-                            <posx>35</posx>
-                            <posy>379</posy>
+                            <posx>15</posx>
+                            <posy>330</posy>
                             <width>190</width>
                             <colordiffuse>FFFFFFFF</colordiffuse>
                             <height>13</height>
@@ -325,8 +326,8 @@
                             <control type="image">
                                 <posx>11</posx>
                                 <posy>30</posy>
-                                <width>233</width>
-                                <height>350</height>
+                                <width>193</width>
+                                <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
                                 <fadetime>IconCrossfadeTime</fadetime>
@@ -334,8 +335,8 @@
                             <control type="image">
                                 <posx>-8.5</posx>
                                 <posy>10.5</posy>
-                                <width>273</width>
-                                <height>388</height>
+                                <width>232</width>
+                                <height>328</height>
                                 <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                                 <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
@@ -344,8 +345,8 @@
                         </control>
                         <control type="image">
                             <posy>10</posy>
-                            <width>255</width>
-                            <height>387</height>
+                            <width>214</width>
+                            <height>328</height>
                             <texture border="6">views/addonwall_select.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <animation effect="fade" time="280" reversible="false">Focus</animation>
@@ -355,19 +356,16 @@
                         <include>WatchlistMoviesItems</include>
                     </content>
                 </control>
-                <control type="panel" id="8001">
-                    <posx>177</posx>
-                    <visible>Container(2020).HasFocus(1)</visible>
-                    <visible>Container(2021).HasFocus(2)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <posy>145</posy>
+                <control type="panel" id="8003">
+                    <posy>720</posy>
                     <width>1200</width>
-                    <height>930</height>
+                    <height>360</height>
                     <aligny>center</aligny>
                     <scrolltime>200</scrolltime>
-                    <onup>8993</onup>
-                    <ondown>2020</ondown>
-                    <onleft>8002</onleft>
+                    <onup>8002</onup>
+                    <ondown>8004</ondown>
+                    <onleft>8003</onleft>
+                    <onright>8003</onright>
                     <orientation>horizontal</orientation>
                     <itemlayout width="240" height="410">
                         <control type="image">
@@ -461,14 +459,10 @@
                         <include>WatchListTVItemsHome</include>
                     </content>
                 </control>
-                <control type="panel" id="8001">
-                    <posx>177</posx>
-                    <visible>Container(2020).HasFocus(1)</visible>
-                    <visible>Container(2021).HasFocus(3)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <posy>145</posy>
+                <control type="panel" id="8004">
+                    <posy>1080</posy>
                     <width>1200</width>
-                    <height>930</height>
+                    <height>360</height>
                     <aligny>center</aligny>
                     <scrolltime>200</scrolltime>
                     <onup>8993</onup>
@@ -567,142 +561,161 @@
                         <include>PremiereShowsItems</include>
                     </content>
                 </control>
-            </control>
-            <control type="panel" id="8001">
-                <include>Animation_VisibleChange400</include>
-                <include>MovieDBLayouts</include>
-                <content>
-                    <include>UpcomingMoviesItems</include>
-                </content>
-            </control>
-            <control type="panel" id="8001">
-                <visible>Container(2020).HasFocus(4)</visible>
-                <include>Animation_VisibleChange400</include>
-                <posx>127</posx>
-                <posy>30</posy>
-                <width>1300</width>
-                <height>930</height>
-                <aligny>center</aligny>
-                <scrolltime>200</scrolltime>
-                <onup>8993</onup>
-                <ondown>2020</ondown>
-                <onleft>8002</onleft>
-                <orientation>horizontal</orientation>
-                <itemlayout width="435" height="930">
-                    <include>NextAiredItemLayout</include>
-                </itemlayout>
-                <focusedlayout width="435" height="930">
-                    <include>NextAiredFocusedLayout</include>
-                </focusedlayout>
-                <content>
-                    <include>NextAiredWidgetContentskinsettings</include>
-                    <include>NextAiredWidgetContent</include>
-                </content>
-            </control>
-            <control type="group" id="5050">
-                <control type="panel" id="5051">
-                    <posx>80</posx>
-                    <posy>110</posy>
-                    <width>1400</width>
-                    <height>280</height>
-                    <orientation>horizontal</orientation>
-                    <onleft>5051</onleft>
-                    <onright>5051</onright>
-                    <preloaditems>2</preloaditems>
-                    <scrolltime>200</scrolltime>
-                    <ondown>5052</ondown>
-                    <onup>2020</onup>
-                    <include>ConcertLayouts</include>
+                <!--
+                <control type="panel" id="8001">
+                    <include>MovieDBLayouts</include>
                     <content>
-                        <include>ConcertsPanelContent</include>
+                        <include>UpcomingMoviesItems</include>
                     </content>
-                </control>
-                <control type="panel" id="5052">
-                    <posx>80</posx>
-                    <posy>110</posy>
-                    <width>1400</width>
-                    <height>280</height>
-                    <orientation>horizontal</orientation>
-                    <onleft>5052</onleft>
-                    <onright>5052</onright>
-                    <onup>5051</onup>
-                    <preloaditems>2</preloaditems>
+                </control>-->
+                <control type="panel" id="8005">
+                    <posy>1440</posy>
+                    <width>1300</width>
+                    <height>930</height>
+                    <aligny>center</aligny>
                     <scrolltime>200</scrolltime>
+                    <onup>8993</onup>
                     <ondown>2020</ondown>
-                    <include>ConcertLayouts</include>
-                    <content>
-                        <include>FestivalPanelContentskinsettings</include>
-                    </content>
-                </control>
-                <control type="wraplist" id="5002">
-                    <posx>-10</posx>
-                    <animation effect="zoom" start="100" end="85" center="auto" time="0" condition="true">Conditional</animation>
-                    <posy>600</posy>
-                    <width>494</width>
-                    <height>380</height>
-                    <onup>5011</onup>
-                    <ondown>8993</ondown>
-                    <onback>8993</onback>
+                    <onleft>8002</onleft>
                     <orientation>horizontal</orientation>
-                    <pagecontrol>60</pagecontrol>
-                    <focusposition>0</focusposition>
-                    <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout width="494" height="380">
-                        <control type="group">
-                            <visible>IsEmpty(ListItem.Property(Landscape))</visible>
-                            <control type="image">
-                                <width>494</width>
-                                <height>380</height>
-                                <aspectratio aligny="top">scale</aspectratio>
-                                <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
-                            </control>
-                        </control>
-                        <control type="image">
-                            <posy>340</posy>
-                            <width>494</width>
-                            <height>40</height>
-                            <texture>common/bgcolor.png</texture>
-                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                        </control>
-                        <control type="label">
-                            <posx>257</posx>
-                            <posy>340</posy>
-                            <height>30</height>
-                            <width>494</width>
-                            <align>center</align>
-                            <label>$INFO[ListItem.Label]</label>
-                        </control>
+                    <itemlayout width="435" height="930">
+                        <include>NextAiredItemLayout</include>
                     </itemlayout>
-                    <focusedlayout width="494" height="380">
-                        <control type="group">
-                            <control type="image">
-                                <width>494</width>
-                                <height>380</height>
-                                <aspectratio aligny="top">scale</aspectratio>
-                                <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
-                            </control>
-                        </control>
-                        <control type="image">
-                            <posy>340</posy>
-                            <width>494</width>
-                            <height>40</height>
-                            <texture>common/bgcolor.png</texture>
-                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                        </control>
-                        <control type="label">
-                            <posx>257</posx>
-                            <posy>340</posy>
-                            <height>30</height>
-                            <width>494</width>
-                            <label>$INFO[ListItem.Label]</label>
-                            <align>center</align>
-                        </control>
+                    <focusedlayout width="435" height="930">
+                        <include>NextAiredFocusedLayout</include>
                     </focusedlayout>
                     <content>
-                        <include>TopArtistsItems</include>
+                        <include>NextAiredWidgetContentskinsettings</include>
+                        <include>NextAiredWidgetContent</include>
                     </content>
                 </control>
+                <control type="group" id="5050">
+                    <visible>false</visible>
+                    <control type="panel" id="5051">
+                        <posx>80</posx>
+                        <posy>110</posy>
+                        <width>1400</width>
+                        <height>280</height>
+                        <orientation>horizontal</orientation>
+                        <onleft>5051</onleft>
+                        <onright>5051</onright>
+                        <preloaditems>2</preloaditems>
+                        <scrolltime>200</scrolltime>
+                        <ondown>5052</ondown>
+                        <onup>2020</onup>
+                        <include>ConcertLayouts</include>
+                        <content>
+                            <include>ConcertsPanelContent</include>
+                        </content>
+                    </control>
+                    <control type="panel" id="5052">
+                        <posx>80</posx>
+                        <posy>110</posy>
+                        <width>1400</width>
+                        <height>280</height>
+                        <orientation>horizontal</orientation>
+                        <onleft>5052</onleft>
+                        <onright>5052</onright>
+                        <onup>5051</onup>
+                        <preloaditems>2</preloaditems>
+                        <scrolltime>200</scrolltime>
+                        <ondown>2020</ondown>
+                        <include>ConcertLayouts</include>
+                        <content>
+                            <include>FestivalPanelContentskinsettings</include>
+                        </content>
+                    </control>
+                    <control type="wraplist" id="5002">
+                        <posx>-10</posx>
+                        <animation effect="zoom" start="100" end="85" center="auto" time="0" condition="true">Conditional</animation>
+                        <posy>600</posy>
+                        <width>494</width>
+                        <height>380</height>
+                        <onup>5011</onup>
+                        <ondown>8993</ondown>
+                        <onback>8993</onback>
+                        <orientation>horizontal</orientation>
+                        <pagecontrol>60</pagecontrol>
+                        <focusposition>0</focusposition>
+                        <scrolltime tween="cubic" easing="inout">1200</scrolltime>
+                        <preloaditems>2</preloaditems>
+                        <itemlayout width="494" height="380">
+                            <control type="group">
+                                <visible>IsEmpty(ListItem.Property(Landscape))</visible>
+                                <control type="image">
+                                    <width>494</width>
+                                    <height>380</height>
+                                    <aspectratio aligny="top">scale</aspectratio>
+                                    <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <posy>340</posy>
+                                <width>494</width>
+                                <height>40</height>
+                                <texture>common/bgcolor.png</texture>
+                                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                            </control>
+                            <control type="label">
+                                <posx>257</posx>
+                                <posy>340</posy>
+                                <height>30</height>
+                                <width>494</width>
+                                <align>center</align>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="494" height="380">
+                            <control type="group">
+                                <control type="image">
+                                    <width>494</width>
+                                    <height>380</height>
+                                    <aspectratio aligny="top">scale</aspectratio>
+                                    <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <posy>340</posy>
+                                <width>494</width>
+                                <height>40</height>
+                                <texture>common/bgcolor.png</texture>
+                                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                            </control>
+                            <control type="label">
+                                <posx>257</posx>
+                                <posy>340</posy>
+                                <height>30</height>
+                                <width>494</width>
+                                <label>$INFO[ListItem.Label]</label>
+                                <align>center</align>
+                            </control>
+                        </focusedlayout>
+                        <content>
+                            <include>TopArtistsItems</include>
+                        </content>
+                    </control>
+                </control>
+            </control>
+        </control>
+        <control type="group">
+            <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="-729,0" time="320" tween="quadratic">WindowClose</animation>
+            <control type="image">
+                <width>729</width>
+                <height>1080</height>
+                <aspectratio aligny="top">scale</aspectratio>
+                <texture background="true" fallback="info/movieinfogradient.png">$VAR[VideoInfoPosterVar]</texture>
+            </control>
+            <control type="image">
+                <posx>709</posx>
+                <width>40</width>
+                <height>1080</height>
+                <texture>common/topbar_down.png</texture>
+                <animation effect="fade" time="320" delay="408">Visible</animation>
+                <animation effect="fade" time="80">Hidden</animation>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <include>TopbarPulseAnimationRight</include>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             </control>
         </control>
     </controls>
