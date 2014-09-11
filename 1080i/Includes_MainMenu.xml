@@ -424,7 +424,6 @@
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
         <orientation>horizontal</orientation>
-        <animation effect="slide" end="-302,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(biggergap)">Conditional</animation>
         <animation effect="fade" end="100" time="160">Visible</animation>
         <animation effect="fade" start="100" end="30" time="160" condition="[Window.IsVisible(1113) | ControlGroup(9001).HasFocus | Control.HasFocus(8000) | Control.HasFocus(7000) | ControlGroup(6000).HasFocus | ControlGroup(5000).HasFocus]">conditional</animation>
         <itemlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
@@ -492,7 +491,7 @@
                 <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
             </control>
         </focusedlayout>
-        <itemlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
+        <itemlayout height="225" width="519" condition="!Skin.HasSetting(mainmenuicons)">
             <control type="label">
                 <posx>260</posx>
                 <width>519</width>
@@ -500,26 +499,10 @@
                 <include>MainMenuLabels</include>
             </control>
         </itemlayout>
-        <focusedlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
+        <focusedlayout height="225" width="519" condition="!Skin.HasSetting(mainmenuicons)">
             <control type="label">
                 <posx>260</posx>
                 <width>519</width>
-                <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
-                <include>MainMenuLabels</include>
-            </control>
-        </focusedlayout>
-        <itemlayout height="225" width="639" condition="Skin.HasSetting(biggergap)">
-            <control type="label">
-                <posx>320</posx>
-                <width>639</width>
-                <textcolor>white5</textcolor>
-                <include>MainMenuLabels</include>
-            </control>
-        </itemlayout>
-        <focusedlayout height="225" width="639" condition="Skin.HasSetting(biggergap)">
-            <control type="label">
-                <posx>320</posx>
-                <width>639</width>
                 <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
                 <include>MainMenuLabels</include>
             </control>
