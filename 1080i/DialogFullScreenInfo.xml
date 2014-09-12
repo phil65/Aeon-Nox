@@ -702,13 +702,11 @@
                 <textoffsety>4</textoffsety>
                 <align>center</align>
                 <aligny>top</aligny>
-                <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>dialogs/context_nofocus.png</texturenofocus>
                 <label>$LOCALIZE[31064]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>grey</textcolor>
                 <focusedcolor>white2</focusedcolor>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <onclick condition="IsEmpty(Window(home).Property(morefullscreeninfo))">SetProperty(morefullscreeninfo,1,home)</onclick>
                 <onclick condition="!IsEmpty(Window(home).Property(morefullscreeninfo))">ClearProperty(morefullscreeninfo,home)</onclick>
                 <onleft>StepBack</onleft>

@@ -60,10 +60,8 @@
                     <posy>284</posy>
                     <width>854</width>
                     <height>42</height>
-                    <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>-</label>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <ondown>600</ondown>
                     <visible>!IsEmpty(ListItem.Director)</visible>
                 </control>
@@ -83,13 +81,11 @@
                         <posy>242</posy>
                         <width>960</width>
                         <height>42</height>
-                        <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <label>-</label>
                         <onclick>SetProperty(ListType,Director,home)</onclick>
                         <onfocus>SetProperty(ContainerTitle,$INFO[ListItem.Director],home)</onfocus>
                         <onclick>SetFocus(601)</onclick>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <ondown>131</ondown>
                         <visible>!IsEmpty(ListItem.Director)</visible>
                     </control>
@@ -98,13 +94,11 @@
                         <posy>283</posy>
                         <width>960</width>
                         <height>42</height>
-                        <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <label>-</label>
                         <onclick>SetProperty(ListType,Writer,home)</onclick>
                         <onfocus>SetProperty(ContainerTitle,$INFO[ListItem.Writer],home)</onfocus>
                         <onclick>SetFocus(601)</onclick>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <ondown>600</ondown>
                         <onup>130</onup>
                         <enable>!IsEmpty(ListItem.Writer)</enable>
