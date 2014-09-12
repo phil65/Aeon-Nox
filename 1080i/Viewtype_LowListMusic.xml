@@ -27,8 +27,8 @@
                         <height>651</height>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture>views/lowlist_panelback.png</texture>
-                        <animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
-                    </control>
+                            <animation effect="fade" start="100" end="80" time="40" condition="!Skin.HasSetting(musiclistpanelthin)">Conditional</animation>
+                            <animation effect="fade" start="100" end="35" time="40" condition="Skin.HasSetting(musiclistpanelthin)">Conditional</animation>                    </control>
                     <include>Neon_LowList</include>
                     <control type="image">
                         <posx>465</posx>
