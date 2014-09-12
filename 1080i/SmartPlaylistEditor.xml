@@ -15,7 +15,7 @@
                 <onleft>10</onleft>
                 <onright>9001</onright>
                 <onup>9000</onup>
-                <ondown>9000</ondown>
+                <ondown>16</ondown>
                 <control type="button" id="13">
                     <posx>3</posx>
                     <posy>4</posy>
@@ -66,13 +66,12 @@
                     <posx>387</posx>
                     <posy>180</posy>
                     <width>1469</width>
-                    <textoffsetx>75</textoffsetx>
                     <label>467</label>
                     <onleft>9002</onleft>
                     <onright>9002</onright>
                     <onup>18</onup>
                     <ondown>12</ondown>
-                    <include>Default_SettingButton</include>
+                    <include>Default_SettingSpinControlButton</include>
                     <spinposx>-2</spinposx>
                 </control>
                 <control type="edit" id="12">
@@ -84,13 +83,12 @@
                     <onup>22</onup>
                     <ondown>10</ondown>
                     <include>Default_SettingButton</include>
-                    <hinttext>21433</hinttext>
+                    <hinttext>$LOCALIZE[21433]</hinttext>
                     <ondown>SetFocus(10)</ondown>
                 </control>
-                <control type="button" id="101">
+                <control type="label" id="101">
                     <posx>387</posx>
                     <posy>327</posy>
-                    <texturenofocus>settings/settings_separator.png</texturenofocus>
                     <label>21434</label>
                     <font>Font_Bold34</font>
                     <disabledcolor>white2</disabledcolor>
@@ -106,15 +104,14 @@
                     <onleft>9002</onleft>
                     <onright>9000</onright>
                     <ondown>16</ondown>
-                    <itemlayout width="840" height="74">
+                    <itemlayout width="1104" height="74">
                         <control type="image">
-                            <width>1469</width>
+                            <width>1104</width>
                             <height>74</height>
-                            <texture>settings/settings_radiobuttonoff.png</texture>
+        <texture>osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="label">
-                            <posx>30</posx>
-                            <width>795</width>
+                            <width>1000</width>
                             <height>60</height>
                             <textoffsetx>40</textoffsetx>
                             <font>Font_Reg32</font>
@@ -122,18 +119,16 @@
                             <info>ListItem.Label</info>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="840" height="74">
+                    <focusedlayout width="1104" height="74">
                         <control type="group">
                             <visible>Control.HasFocus(10)</visible>
                             <control type="image">
                                 <width>1104</width>
                                 <height>74</height>
-                                <texture border="8">views/tripanel/listselect_fo.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             </control>
                             <control type="label">
-                                <posx>30</posx>
-                                <width>795</width>
+                                <width>1000</width>
                                 <height>60</height>
                                 <textoffsetx>40</textoffsetx>
                                 <font>Font_Reg32</font>
@@ -145,10 +140,9 @@
                             <control type="image">
                                 <width>1104</width>
                                 <height>74</height>
-                                <texture>settings/settings_radiobuttonoff3.png</texture>
+        <texture>osd/osd_settings_buttonnf.png</texture>
                             </control>
                             <control type="label">
-                                <posx>30</posx>
                                 <width>795</width>
                                 <height>60</height>
                                 <textoffsetx>40</textoffsetx>
@@ -159,10 +153,9 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="button" id="102">
+                <control type="label" id="102">
                     <posx>387</posx>
                     <posy>621</posy>
-                    <texturenofocus>settings/settings_separator.png</texturenofocus>
                     <label>31325</label>
                     <font>Font_Bold34</font>
                     <disabledcolor>white2</disabledcolor>
@@ -172,40 +165,33 @@
                 <control type="spincontrolex" id="16">
                     <posx>387</posx>
                     <posy>694</posy>
-                    <textoffsetx>75</textoffsetx>
                     <label>21424</label>
                     <onleft>9002</onleft>
                     <onright>9002</onright>
                     <onup>10</onup>
                     <ondown>17</ondown>
-                    <include>Default_SettingButton</include>
-                    <spinposx>-2</spinposx>
+                    <include>Default_SettingSpinControlButton</include>
                 </control>
                 <control type="spincontrolex" id="17">
                     <posx>387</posx>
                     <posy>768</posy>
-                    <textoffsetx>75</textoffsetx>
                     <label>21427</label>
                     <onleft>9002</onleft>
                     <onright>9002</onright>
                     <onup>16</onup>
                     <ondown>18</ondown>
-                    <include>Default_SettingButton</include>
-                    <spinposx>-2</spinposx>
+                    <include>Default_SettingSpinControlButton</include>
                 </control>
                 <control type="spincontrolex" id="18">
                     <posx>387</posx>
                     <posy>842</posy>
                     <width>1104</width>
-                    <textoffsetx>75</textoffsetx>
-                    <texturenofocus>settings/settings_radiobuttonoff2.png</texturenofocus>
                     <label>21429</label>
                     <onleft>9002</onleft>
                     <onright>19</onright>
                     <onup>17</onup>
                     <ondown>23</ondown>
-                    <include>Default_SettingButton</include>
-                    <spinposx>-2</spinposx>
+                    <include>Default_SettingSpinControlButton</include>
                 </control>
                 <control type="togglebutton" id="19">
                     <posx>1491</posx>
@@ -228,15 +214,12 @@
                     <posx>387</posx>
                     <posy>916</posy>
                     <width>1104</width>
-                    <textoffsetx>75</textoffsetx>
                     <label>21458</label>
                     <onleft>24</onleft>
-                    <texturenofocus>settings/settings_radiobuttonoff2.png</texturenofocus>
                     <onright>24</onright>
                     <onup>18</onup>
                     <ondown>22</ondown>
-                    <include>Default_SettingButton</include>
-                    <spinposx>-2</spinposx>
+                    <include>Default_SettingSpinControlButton</include>
                 </control>
                 <control type="radiobutton" id="24">
                     <posx>1491</posx>
@@ -252,7 +235,7 @@
                     <ondown>22</ondown>
                     <height>74</height>
                     <textoffsetx>30</textoffsetx>
-                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <font>Font_Reg32</font>
                     <textcolor>grey2</textcolor>
@@ -275,7 +258,7 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>186</label>
                     <font>Font_Bold34</font>
@@ -287,7 +270,7 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <label>222</label>
                     <font>Font_Bold34</font>
