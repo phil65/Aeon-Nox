@@ -245,6 +245,7 @@
             </control>
             <control type="group">
                 <include>Animation_OpenCloseZoom</include>
+                <animation effect="fade" start="100" end="0" time="0" condition="Control.IsVisible(506)">Conditional</animation>
                 <visible>[Control.IsVisible(8822) + !Container.OnScrollNext + !Container.OnScrollPrevious] | !Control.IsVisible(8822)</visible>
                 <visible>![[[Skin.HasSetting(movielogosfloor) + Container.Content(movies)] | [Skin.HasSetting(artistslogosfloor) + Container.Content(artists)] | [[Skin.HasSetting(tvshowlogosfloor) | Skin.HasSetting(tvshowbannersfloor)] + Container.Content(tvshows)]] + !Stringcompare(Control.GetLabel(8822),empty.png)]</visible>
                 <animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview)">Conditional</animation>
