@@ -34,7 +34,7 @@
                 <texture>info/info_rightpaneltop.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
-            <!-- Buttons -->
+            <!--Buttons-->
             <control type="group">
                 <posx>-40</posx>
                 <control type="button" id="13">
@@ -82,7 +82,7 @@
                         <enable>!IsEmpty(ListItem.Writer)</enable>
                     </control>
                 </control>
-                <!-- Movie info -->
+                <!--Movie info-->
                 <control type="group">
                     <posx>825</posx>
                     <posy>68</posy>
@@ -215,7 +215,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- First Row -->
+                    <!--First Row-->
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
@@ -395,7 +395,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Horizontal Info Labels -->
+                    <!--Horizontal Info Labels-->
                     <control type="grouplist">
                         <orientation>vertical</orientation>
                         <posy>169</posy>
@@ -408,14 +408,15 @@
                             <height>43</height>
                             <visible>Container.Content(tvshows)</visible>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <!--                             <control type="label">
+                            <!--
+                            <control type="label">
                                 <posx>4</posx>
                                 <width>165</width>
                                 <height>44</height>
                                 <label>$LOCALIZE[31005]:</label>
                                 <font>Font_Reg28_2</font>
                                 <textcolor>grey</textcolor>
-                            </control> -->
+                            </control>-->
                             <control type="image">
                                 <width>50</width>
                                 <height>45</height>
@@ -431,7 +432,7 @@
                                 <font>Font_Reg28_2</font>
                             </control>
                         </control>
-                        <!-- Third Row -->
+                        <!--Third Row-->
                         <control type="grouplist">
                             <!--Director-->
                             <posy>210</posy>
@@ -463,14 +464,15 @@
                             <visible>Container.Content(tvshows)</visible>
                             <orientation>horizontal</orientation>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <!--                             <control type="label">
+                            <!--
+                            <control type="label">
                                 <posx>4</posx>
                                 <width>165</width>
                                 <height>44</height>
                                 <label>$LOCALIZE[210]</label>
                                 <font>Font_Reg28_2</font>
                                 <textcolor>grey</textcolor>
-                            </control> -->
+                            </control>-->
                             <control type="image">
                                 <width>50</width>
                                 <posy>2</posy>
@@ -486,7 +488,7 @@
                                 <font>Font_Reg28_2</font>
                             </control>
                         </control>
-                        <!-- Fourth Row Left-->
+                        <!--Fourth Row Left-->
                         <control type="grouplist">
                             <orientation>horizontal</orientation>
                             <itemgap>12</itemgap>
@@ -562,15 +564,16 @@
                                 <texture background="true">$VAR[CharacterArtVar]</texture>
                             </control>
                             <control type="image">
-                                <!--            <posx>825</posx>
-                    <posy>68</posy> -->
+                                <!--
+                                <posx>825</posx>
+                                <posy>68</posy>-->
                                 <posx>785</posx>
                                 <posy>592</posy>
                                 <width>300</width>
                                 <height>300</height>
                                 <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                                <!--                 <visible>!ControlGroup(6000).HasFocus</visible>
- -->
+                                <!--
+                                <visible>!ControlGroup(6000).HasFocus</visible>-->
                                 <animation type="WindowOpen" reversible="false">
                                     <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
                                     <effect type="rotate" start="0" center="935,742" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
@@ -701,7 +704,7 @@
                                 <colordiffuse>white2</colordiffuse>
                                 <visible>!IsEmpty(ListItem.SubtitleLanguage) + IsEmpty(Window.Property(SubtitleLanguage.1))</visible>
                             </control>
-                            <!-- Language flags -->
+                            <!--Language flags-->
                             <control type="grouplist">
                                 <orientation>vertical</orientation>
                                 <usecontrolcoords>true</usecontrolcoords>
@@ -719,12 +722,12 @@
                                         <height>24</height>
                                         <align>right</align>
                                         <posy>3</posy>
-                                        <label>$LOCALIZE[445]: </label>
+                                        <label>$LOCALIZE[445]:</label>
                                         <font>Font_Reg19_Caps</font>
                                     </control>
                                     <include>LanguageFlags</include>
                                 </control>
-                                <!-- Subtitle flags -->
+                                <!--Subtitle flags-->
                                 <control type="grouplist" id="12000">
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                     <width>600</width>
@@ -739,7 +742,7 @@
                                         <height>24</height>
                                         <align>right</align>
                                         <aligny>bottom</aligny>
-                                        <label>$LOCALIZE[287]: </label>
+                                        <label>$LOCALIZE[287]:</label>
                                         <font>Font_Reg19_Caps</font>
                                     </control>
                                     <control type="label">
@@ -927,8 +930,7 @@
                             <control type="image">
                                 <width>555</width>
                                 <height>37</height>
-                                <texture border="8">views/tripanel/listselect_fo.png</texture>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                 <visible>Control.HasFocus(601)</visible>
                             </control>
                             <control type="label">
@@ -1016,8 +1018,7 @@
                         <control type="image">
                             <width>190</width>
                             <height>217</height>
-                            <texture border="8">views/tripanel/listselect_fo.png</texture>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             <visible>Control.HasFocus(600)</visible>
                         </control>
                         <control type="image">
