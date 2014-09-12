@@ -773,11 +773,6 @@
         <value condition="Skin.HasSetting(classichome)">$LOCALIZE[31685]</value>
         <value>$LOCALIZE[31686]</value>
     </variable>
-    <variable name="MainMenuTypeVar">
-        <value condition="Skin.HasSetting(mainmenuicons)">$LOCALIZE[536]</value>
-        <value condition="Skin.HasSetting(biggergap)">$LOCALIZE[31861]</value>
-        <value>$LOCALIZE[31061]</value>
-    </variable>
     <variable name="LibraryStatsVar">
         <value condition="Stringcompare(Control.GetLabel(4326),movies)">[COLOR grey]$LOCALIZE[342]:[/COLOR] $INFO[Window(Home).Property(Movies.Count)][COLOR grey]  •  $LOCALIZE[16102]:[/COLOR] $INFO[Window(Home).Property(Movies.Watched)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Movies.UnWatched)]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),tvshows)">[COLOR grey]$LOCALIZE[20343]:[/COLOR] $INFO[Window(Home).Property(TVShows.Count)][COLOR grey]  •  $LOCALIZE[20360]:[/COLOR] $INFO[Window(Home).Property(Episodes.Count)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Episodes.UnWatched)]</value>
@@ -955,7 +950,8 @@
         <value>special://skin/extras/BigIcons/ButtonAdd.png</value>
     </variable>
     <variable name="LibraryScanLabelVar">
-        <value condition="library.isscanningvideo">$LOCALIZE[13353]</value>
+        <value condition="Window.IsActive(videos) + library.IsScanningVideo">$LOCALIZE[13353]</value>
+        <value condition="Window.IsActive(musiclibrary) + library.IsScanningMusic">$LOCALIZE[13353]</value>
         <value>$LOCALIZE[653]</value>
     </variable>
     <variable name="MultiFanartVar">
@@ -1714,9 +1710,9 @@
         <value>$LOCALIZE[31172]</value>
     </variable>
     <variable name="KioskModeLabelVar">
-        <value condition="Skin.HasSetting(kioskmode)">$LOCALIZE[31179]      </value>
-        <value condition="Skin.HasSetting(hideoptions)">$LOCALIZE[31180]      </value>
-        <value>$LOCALIZE[106]     </value>
+        <value condition="Skin.HasSetting(kioskmode)">$LOCALIZE[31179]</value>
+        <value condition="Skin.HasSetting(hideoptions)">$LOCALIZE[31180]</value>
+        <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="MusicFanArtLabelVar">
         <value condition="Skin.HasSetting(musicextrafanart)">$LOCALIZE[31047]</value>

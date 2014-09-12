@@ -154,6 +154,16 @@
             <onclick>ActivateWindow(1148)</onclick>
             <visible>SubString(Container.FolderPath,special://musicplaylists/,left)</visible>
         </control>
+        <control type="radiobutton" id="20">
+            <description>Update library</description>
+            <include>Objects_MediaMenuButtonIcons</include>
+            <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonStop.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonStop.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Information.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/Information.png</textureradiooffnofocus>
+            <selected>library.IsScanningMusic</selected>
+            <label>$VAR[LibraryScanLabelVar]</label>
+        </control>
     </include>
     <include name="VideoLibraryButtons">
         <control type="radiobutton" id="16">
