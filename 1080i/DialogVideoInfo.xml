@@ -2,8 +2,10 @@
 <window>
     <defaultcontrol always="true">8</defaultcontrol>
     <onload>ClearProperty(Budget,home)</onload>
+    <onload>ClearProperty(SeasonDescription,home)</onload>
     <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=similarmovies,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID],silent=True)</onload>
-    <onload condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=similar,type=tvshow,dbid=$INFO[ListItem.DBID],silent=True)</onload>
+<!--     <onload condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=similar,type=tvshow,dbid=$INFO[ListItem.DBID],silent=True)</onload>
+ -->    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(FanartZoom,movieinformation)</onunload>
     <allowoverlay>no</allowoverlay>
@@ -131,6 +133,15 @@
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(movies) | Container.Content(tvshows)] + IsEmpty(ListItem.Genre)">Conditional</animation>
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(musicvideos) + IsEmpty(ListItem.Artist)]">Conditional</animation>
                                 <scroll>true</scroll>
+                                <visible>!Control.IsVisible(13000)</visible>
+                            </control>
+                            <control type="label" id="13000">
+                                <width>1018</width>
+                                <height>50</height>
+                                <label>Season $INFO[Window(home).Property(Season)]</label>
+                                <font>Font_Reg57_Caps</font>
+                                <scroll>true</scroll>
+                                <visible>!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
                             </control>
                             <control type="grouplist">
                                 <posx>0</posx>
@@ -533,7 +544,7 @@
                                     <width>1016</width>
                                     <height>325</height>
                                     <align>left</align>
-                                    <label fallback="31003">$INFO[ListItem.Plot]</label>
+                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR]]$INFO[ListItem.Plot,[B]Show Info:[/B][CR]]</label>
                                     <font>Font_Reg28_2</font>
                                     <pagecontrol>60</pagecontrol>
                                     <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
@@ -542,7 +553,7 @@
                                 <control type="textbox" description="narrow_textbox">
                                     <width>746</width>
                                     <height>325</height>
-                                    <label fallback="31003">$INFO[ListItem.Plot]</label>
+                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR]]$INFO[ListItem.Plot,[B]Show Info:[/B][CR]]</label>
                                     <font>Font_Reg28_2</font>
                                     <pagecontrol>60</pagecontrol>
                                     <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
