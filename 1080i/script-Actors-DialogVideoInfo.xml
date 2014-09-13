@@ -8,29 +8,29 @@
         <control type="group">
             <animation effect="slide" start="1242,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" end="1242,0" time="320" tween="quadratic">WindowClose</animation>
-                    <control type="list" id="50">
-            <width>1</width>
-            <height>1</height>
-            <onleft>9000</onleft>
-            <onright>9000</onright>
-            <onup>9000</onup>
-            <ondown>9000</ondown>
-            <itemlayout height="1" width="1" />
-            <focusedlayout height="1" width="1" />
-        </control>
-        <control type="togglebutton" id="5">
-            <onfocus>SetFocus(6)</onfocus>
-            <include>HiddenObject</include>
-        </control>
-        <control type="button" id="5055">
-            <include>HiddenObject</include>
-            <onclick condition="IsEmpty(Window(Home).Property(ActorFanartZoom))">SetProperty(ActorFanartZoom,True,Home)</onclick>
-            <onclick condition="!IsEmpty(Window(Home).Property(ActorFanartZoom))">ClearProperty(ActorFanartZoom,Home)</onclick>
-            <onleft>9000</onleft>
-            <onright>9000</onright>
-            <onup>9000</onup>
-            <ondown>9000</ondown>
-        </control>
+            <control type="list" id="50">
+                <width>1</width>
+                <height>1</height>
+                <onleft>9000</onleft>
+                <onright>9000</onright>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <itemlayout height="1" width="1" />
+                <focusedlayout height="1" width="1" />
+            </control>
+            <control type="togglebutton" id="5">
+                <onfocus>SetFocus(6)</onfocus>
+                <include>HiddenObject</include>
+            </control>
+            <control type="button" id="5055">
+                <include>HiddenObject</include>
+                <onclick condition="IsEmpty(Window(Home).Property(ActorFanartZoom))">SetProperty(ActorFanartZoom,True,Home)</onclick>
+                <onclick condition="!IsEmpty(Window(Home).Property(ActorFanartZoom))">ClearProperty(ActorFanartZoom,Home)</onclick>
+                <onleft>9000</onleft>
+                <onright>9000</onright>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+            </control>
             <control type="image">
                 <posx>729</posx>
                 <width>1192</width>
@@ -52,7 +52,7 @@
                 <texture>info/info_rightpaneltop.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
-            <!-- Buttons -->
+            <!--Buttons-->
             <control type="group">
                 <posx>-40</posx>
                 <control type="button" id="13">
@@ -104,7 +104,7 @@
                         <enable>!IsEmpty(ListItem.Writer)</enable>
                     </control>
                 </control>
-                <!-- Movie info -->
+                <!--Movie info-->
                 <control type="group">
                     <posx>825</posx>
                     <posy>68</posy>
@@ -237,7 +237,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- First Row -->
+                    <!--First Row-->
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
@@ -417,7 +417,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Horizontal Info Labels -->
+                    <!--Horizontal Info Labels-->
                     <control type="grouplist">
                         <orientation>vertical</orientation>
                         <posy>169</posy>
@@ -430,14 +430,15 @@
                             <height>43</height>
                             <visible>Container.Content(tvshows)</visible>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <!--                             <control type="label">
+                            <!--
+                            <control type="label">
                                 <posx>4</posx>
                                 <width>165</width>
                                 <height>44</height>
                                 <label>$LOCALIZE[31005]:</label>
                                 <font>Font_Reg28_2</font>
                                 <textcolor>grey</textcolor>
-                            </control> -->
+                            </control>-->
                             <control type="image">
                                 <width>50</width>
                                 <height>45</height>
@@ -453,7 +454,7 @@
                                 <font>Font_Reg28_2</font>
                             </control>
                         </control>
-                        <!-- Third Row -->
+                        <!--Third Row-->
                         <control type="grouplist">
                             <!--Director-->
                             <posy>210</posy>
@@ -485,14 +486,15 @@
                             <visible>Container.Content(tvshows)</visible>
                             <orientation>horizontal</orientation>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <!--                             <control type="label">
+                            <!--
+                            <control type="label">
                                 <posx>4</posx>
                                 <width>165</width>
                                 <height>44</height>
                                 <label>$LOCALIZE[210]</label>
                                 <font>Font_Reg28_2</font>
                                 <textcolor>grey</textcolor>
-                            </control> -->
+                            </control>-->
                             <control type="image">
                                 <width>50</width>
                                 <posy>2</posy>
@@ -508,7 +510,7 @@
                                 <font>Font_Reg28_2</font>
                             </control>
                         </control>
-                        <!-- Fourth Row Left-->
+                        <!--Fourth Row Left-->
                         <control type="grouplist">
                             <orientation>horizontal</orientation>
                             <itemgap>12</itemgap>
@@ -584,15 +586,16 @@
                                 <texture background="true">$VAR[CharacterArtVar]</texture>
                             </control>
                             <control type="image">
-                                <!--            <posx>825</posx>
-                    <posy>68</posy> -->
+                                <!--
+                                <posx>825</posx>
+                                <posy>68</posy>-->
                                 <posx>785</posx>
                                 <posy>592</posy>
                                 <width>300</width>
                                 <height>300</height>
                                 <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                                <!--                 <visible>!ControlGroup(6000).HasFocus</visible>
- -->
+                                <!--
+                                <visible>!ControlGroup(6000).HasFocus</visible>-->
                                 <animation type="WindowOpen" reversible="false">
                                     <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
                                     <effect type="rotate" start="0" center="935,742" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
@@ -724,7 +727,7 @@
                                 <colordiffuse>white2</colordiffuse>
                                 <visible>!IsEmpty(ListItem.SubtitleLanguage) + IsEmpty(Window.Property(SubtitleLanguage.1))</visible>
                             </control>
-                            <!-- Language flags -->
+                            <!--Language flags-->
                             <control type="grouplist">
                                 <orientation>vertical</orientation>
                                 <usecontrolcoords>true</usecontrolcoords>
@@ -742,12 +745,12 @@
                                         <height>24</height>
                                         <align>right</align>
                                         <posy>3</posy>
-                                        <label>$LOCALIZE[445]: </label>
+                                        <label>$LOCALIZE[445]:</label>
                                         <font>Font_Reg19_Caps</font>
                                     </control>
                                     <include>LanguageFlags</include>
                                 </control>
-                                <!-- Subtitle flags -->
+                                <!--Subtitle flags-->
                                 <control type="grouplist" id="12000">
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                     <width>600</width>
@@ -762,7 +765,7 @@
                                         <height>24</height>
                                         <align>right</align>
                                         <aligny>bottom</aligny>
-                                        <label>$LOCALIZE[287]: </label>
+                                        <label>$LOCALIZE[287]:</label>
                                         <font>Font_Reg19_Caps</font>
                                     </control>
                                     <control type="label">
@@ -950,7 +953,7 @@
                             <control type="image">
                                 <width>555</width>
                                 <height>37</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                 <visible>Control.HasFocus(601)</visible>
                             </control>
                             <control type="label">
@@ -1029,7 +1032,7 @@
                         <control type="image">
                             <width>190</width>
                             <height>217</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             <visible>Control.HasFocus(600)</visible>
                         </control>
                         <control type="image">
@@ -1081,29 +1084,28 @@
                     <ondown condition="ControlGroup(5000).HasFocus(111)">700</ondown>
                     <orientation>horizontal</orientation>
                     <scrolltime tween="quadratic">200</scrolltime>
-                 <control type="button" id="8">
-                    <label>208</label>
-                    <onfocus condition="IsEmpty(ListItem.FilenameAndPath)">SetFocus(5)</onfocus>
-                    <onclick condition="!IsEmpty(ListItem.FilenameAndPath)">PlayMedia($ESCINFO[ListItem.FilenameAndPath])</onclick>
-                    <onclick condition="!IsEmpty(ListItem.FilenameAndPath)">PreviousMenu</onclick>
-                    <!-- cancel all parent dir of add-on -->
-                    <onclick condition="!IsEmpty(ListItem.FilenameAndPath)">Dialog.Close(all,true)</onclick>
-                    <include>DialogVideoInfoButton</include>
+                    <control type="button" id="8">
+                        <label>208</label>
+                        <onclick>PlayMedia($ESCINFO[ListItem.FilenameAndPath])</onclick>
+                        <onclick>PreviousMenu</onclick>
+                        <!--cancel all parent dir of add-on-->
+                        <onclick>Dialog.Close(all,true)</onclick>
+                        <include>DialogVideoInfoButton</include>
+                        <visible>!IsEmpty(ListItem.FilenameAndPath)</visible>
+                    </control>
+                    <control type="button" id="15">
+                        <label>20410</label>
+                        <onclick>PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
+                        <visible>!IsEmpty(ListItem.Trailer)</visible>
+                        <include>DialogVideoInfoButton</include>
+                    </control>
+                    <control type="button" id="22">
+                        <label>$LOCALIZE[31096]</label>
+                        <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[ListItem.Title],return)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
+                        <include>DialogVideoInfoButton</include>
+                    </control>
                 </control>
-                <control type="button" id="15">
-                    <label>20410</label>
-                    <onclick>PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
-                    <visible>!IsEmpty(ListItem.Trailer)</visible>
-                    <include>DialogVideoInfoButton</include>
-                </control>
-                <control type="button" id="22">
-                    <label>$LOCALIZE[31096]</label>
-                    <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[ListItem.Title],return)</onclick>
-                    <onclick>Dialog.Close(all,true)</onclick>
-                    <include>DialogVideoInfoButton</include>
-                </control>
-            </control>
-
                 <control type="label">
                     <posx>825</posx>
                     <posy>1056</posy>
