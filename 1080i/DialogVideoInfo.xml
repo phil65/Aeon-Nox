@@ -141,7 +141,7 @@
                                 <label>Season $INFO[Window(home).Property(SeasonNumber)]</label>
                                 <font>Font_Reg57_Caps</font>
                                 <scroll>true</scroll>
-                                <visible>!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
+                                <visible>!Container.Content(movies) + !Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
                             </control>
                             <control type="grouplist">
                                 <posx>0</posx>
@@ -544,7 +544,7 @@
                                     <width>1016</width>
                                     <height>325</height>
                                     <align>left</align>
-                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR]]$INFO[ListItem.Plot,[B]Show Info:[/B][CR]]</label>
+                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$INFO[ListItem.Plot]</label>
                                     <font>Font_Reg28_2</font>
                                     <pagecontrol>60</pagecontrol>
                                     <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
@@ -553,7 +553,7 @@
                                 <control type="textbox" description="narrow_textbox">
                                     <width>746</width>
                                     <height>325</height>
-                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR]]$INFO[ListItem.Plot,[B]Show Info:[/B][CR]]</label>
+                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$INFO[ListItem.Plot]</label>
                                     <font>Font_Reg28_2</font>
                                     <pagecontrol>60</pagecontrol>
                                     <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
