@@ -585,6 +585,16 @@
                         <align>left</align>
                         <font>Font_Reg22</font>
                         <label>$LOCALIZE[209]: [B]$VAR[NextEpisodeVar][/B]</label>
+                        <visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)</visible>
+                    </control>
+                    <control type="label">
+                        <posy>0</posy>
+                        <width>330</width>
+                        <height>90</height>
+                        <align>left</align>
+                        <font>Font_Reg22</font>
+                        <label>$INFO[Window(Home).Property(NextAired.Status)]</label>
+                        <visible>IsEmpty(Window(Home).Property(NextAired.NextDate)</visible>
                     </control>
                 </control>
             </control>
