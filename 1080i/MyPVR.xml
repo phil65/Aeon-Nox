@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+    <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol>32</defaultcontrol>
     <allowoverlay>no</allowoverlay>
@@ -190,30 +190,38 @@
                     <onright>50</onright>
                     <onup>9003</onup>
                     <ondown>9003</ondown>
-                    <control type="button" id="32">
+                    <control type="radiobutton" id="32">
                         <label>19023</label>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                       <textureradioon>special://skin/extras/BigIcons/Television.png</textureradioon>
+                       <textureradiooff>special://skin/extras/BigIcons/Television.png</textureradiooff>
+                        <include>Objects_MediaMenuButtonIcons</include>
                     </control>
-                    <control type="button" id="33">
+                    <control type="radiobutton" id="33">
                         <top>38</top>
                         <label>19024</label>
                         <visible>!Skin.HasSetting(noradio)</visible>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                         <textureradioon>special://skin/extras/BigIcons/Microphone.png</textureradioon>
+                         <textureradiooff>special://skin/extras/BigIcons/Microphone.png</textureradiooff>
+                       <include>Objects_MediaMenuButtonIcons</include>
                     </control>
-                    <control type="button" id="34">
+                    <control type="radiobutton" id="34">
                         <top>112</top>
+                        <textureradioon>special://skin/extras/BigIcons/ButtonRecord.png</textureradioon>
+                        <textureradiooff>special://skin/extras/BigIcons/ButtonRecord.png</textureradiooff>
                         <label>19163</label>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                        <include>Objects_MediaMenuButtonIcons</include>
                     </control>
-                    <control type="button" id="31">
+                    <control type="radiobutton" id="31">
                         <top>38</top>
                         <label>-</label>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                        <textureradioon>special://skin/extras/BigIcons/ButtonEPG.png</textureradioon>
+                        <textureradiooff>special://skin/extras/BigIcons/ButtonEPG.png</textureradiooff>
+                        <include>Objects_MediaMenuButtonIcons</include>
                         <label>-</label>
                         <onclick condition="Substring(Control.GetLabel(31),TERAZ)">SetProperty(EpgNow,true)</onclick>
                         <onclick condition="!Substring(Control.GetLabel(31),TERAZ)">ClearProperty(EpgNow)</onclick>
                     </control>
-					<control type="button" id="328">
+					<control type="radiobutton" id="328">
 						<description>Epg timeline channel list</description>
 						<textwidth>352</textwidth>
 						<include>Objects_MediaMenuButtonAlt</include>
@@ -221,95 +229,46 @@
 						<label2>[COLOR labelheader]$VAR[LiveTvModOptionsLabelVar][/COLOR]</label2>
 						<onclick>$VAR[LiveTvModOptionsClickVar]</onclick>
 					</control>
-                    <control type="button" id="35">
+                    <control type="radiobutton" id="35">
                         <top>150</top>
+                        <textureradioon>special://skin/extras/BigIcons/AlarmClock.png</textureradioon>
+                        <textureradiooff>special://skin/extras/BigIcons/AlarmClock.png</textureradiooff>
                         <label>19040</label>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                        <include>Objects_MediaMenuButtonIcons</include>
                     </control>
-                    <control type="button" id="36">
+                    <control type="radiobutton" id="36">
                         <top>188</top>
+                        <textureradioon>special://skin/extras/BigIcons/Search.png</textureradioon>
+                        <textureradiooff>special://skin/extras/BigIcons/Search.png</textureradiooff>
                         <label>137</label>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                        <include>Objects_MediaMenuButtonIcons</include>
                     </control>
-                    <control type="button" id="1664">
+                    <control type="radiobutton" id="1664">
                         <label>31876</label>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                        <textureradioon>special://skin/extras/BigIcons/Controlpanel.png</textureradioon>
+                        <textureradiooff>special://skin/extras/BigIcons/Controlpanel.png</textureradiooff>
+                        <include>Objects_MediaMenuButtonIcons</include>
                         <onclick>SetFocus(50)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
 					<control type="radiobutton" id="326">
                         <top>188</top>
+                        <textureradioon>special://skin/extras/BigIcons/Formatbullets.png</textureradioon>
+                        <textureradiooff>special://skin/extras/BigIcons/Formatbullets.png</textureradiooff>
                         <label>31175</label>
                         <onclick>Skin.ToggleSetting(smalltvlist)</onclick>
-                        <include>Objects_MediaMenuButtonIconsPVR</include>
+                        <include>Objects_MediaMenuButtonIcons</include>
                         <selected>!Skin.HasSetting(smalltvlist)</selected>
                     </control>
 					<control type="radiobutton" id="327">
 						<label>Ext. Channel OSD</label>
+                        <textureradioon>special://skin/extras/BigIcons/Formatbullets.png</textureradioon>
+                        <textureradiooff>special://skin/extras/BigIcons/Formatbullets.png</textureradiooff>
 						<textwidth>330</textwidth>
 						<onclick>Skin.ToggleSetting(alternatetvosd)</onclick>
 						<selected>Skin.HasSetting(alternatetvosd)</selected>
-						<include>Objects_MediaMenuButtonIconsPVR</include>
+						<include>Objects_MediaMenuButtonIcons</include>
 					</control>
-                </control>
-                <control type="grouplist">
-                    <top>15</top>
-					<height>1080</height>
-                    <orientation>vertical</orientation>
-                    <itemgap>20</itemgap>
-                    <visible>ControlGroup(9003).HasFocus</visible>
-                    <animation effect="fade" time="220">Visible</animation>
-                    <animation effect="fade" time="160" delay="1000">Hidden</animation>
-                    <control type="image">
-                        <texture>special://skin/extras/BigIcons/Television.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(32)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-                    <control type="image">
-                        <texture>special://skin/extras/BigIcons/Microphone.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(33)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-                    <control type="image">
-                        <texture>special://skin/extras/BigIcons/ButtonRecord.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(34)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-                    <control type="image">
-                        <texture>special://skin/extras/BigIcons/ButtonEPG.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(31)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-					<control type="image">
-                        <texture>noop</texture>
-						<height>40</height>
-                        <include>MediaMenuIcons</include>
-                    </control>
-                    <control type="image">
-                        <texture>special://skin/extras/BigIcons/AlarmClock.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(35)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-                    <control type="image">
-                        <texture>special://skin/extras/BigIcons/Search.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(36)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-                    <control type="image">
-                        <texture>special://skin/extras/BigIcons/Controlpanel.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1664)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-					<control type="image">
-                        <texture>special://skin/extras/BigIcons/Formatbullets.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(326)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
-					<control type="image">
-                        <texture>special://skin/extras/BigIcons/Formatbullets.png</texture>
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(327)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                    </control>
                 </control>
             </control>
         </control>
