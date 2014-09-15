@@ -1016,15 +1016,27 @@
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
-                <height>540</height>
+                <height>480</height>
                 <width>1200</width>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>
             </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>100</posy>
+                <width>1200</width>
+                <height>38</height>
+                <align>center</align>
+                <label>$VAR[1159TitleVar]</label>
+                <font>Font_MainClassic</font>
+                <shadowcolor>black</shadowcolor>
+                <textcolor>white3</textcolor>
+                <scroll>true</scroll>
+            </control>
             <control type="image">
                 <posx>0</posx>
-                <posy>540</posy>
-                <height>540</height>
+                <posy>600</posy>
+                <height>480</height>
                 <width>1200</width>
                 <texture>home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>
@@ -1044,8 +1056,6 @@
                 <width>40</width>
                 <height>1080</height>
                 <texture>common/topbar_down.png</texture>
-                <animation effect="fade" time="320" delay="408">Visible</animation>
-                <animation effect="fade" time="80">Hidden</animation>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <include>TopbarPulseAnimationRight</include>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>

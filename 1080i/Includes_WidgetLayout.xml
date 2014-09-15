@@ -3616,7 +3616,6 @@
                         <textcolor>grey2</textcolor>
                         <label>Show artist tour on map</label>
                         <focusedcolor>white3</focusedcolor>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="!IsEmpty(Window(home).Property(Street))">RunScript(script.maps.browser,location=$INFO[Window(home).Property(City)] $INFO[Window(home).Property(Street)],artist=$INFO[Window(home).Property(Headliner)])</onclick>
                         <onclick condition="IsEmpty(Window(home).Property(Street))">RunScript(script.maps.browser,location=$INFO[Window(home).Property(City)] $INFO[Window(home).Property(Name)],artist=$INFO[Window(home).Property(Headliner)])</onclick>
@@ -3630,10 +3629,8 @@
                         <label>Venue schedule</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <onclick>Dialog.Close(1165)</onclick>
-                        <onclick>RunScript(script.extendedinfo,info=venueevents,id=$INFO[Window(home).Property(ID)],silent=False)</onclick>
-                        <onclick>ActivateWindow(1139)</onclick>
+                        <onclick>RunScript(script.maps.browser,venueid=$INFO[Window(home).Property(ID)])</onclick>
                     </control>
                     <control type="button" id="5088">
                         <width>330</width>
@@ -3643,7 +3640,6 @@
                         <label>$LOCALIZE[31927]</label>
                         <textcolor>grey2</textcolor>
                         <font>Font_Reg28</font>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <focusedcolor>white3</focusedcolor>
                         <onclick>SetProperty(listcontent,$INFO[Window(home).Property(Headliner)],home)</onclick>
                         <onclick>ActivateWindow(1168)</onclick>
