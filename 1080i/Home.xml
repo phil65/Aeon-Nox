@@ -3,7 +3,9 @@
     <defaultcontrol always="true">9004</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
-    <onload>RunScript(script.home)</onload>
+    <onload condition="System.HasAddon(script.home)">RunScript(script.home)</onload>
+    <onload condition="!System.HasAddon(script.home)">ActivateWindow(settings)</onload>
+    <onload condition="!System.HasAddon(script.home)">Notification("Error","Missing script.home")</onload>
     <controls>
     </controls>
 </window>
