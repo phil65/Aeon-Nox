@@ -418,8 +418,6 @@
         <onup condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4445)">SetFocus(9000)</onup>
         <ondown>9010</ondown>
         <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
-        <onback condition="!Skin.HasSetting(DisableWidgetToggle) + IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,1,home)</onback>
-        <onback condition="!Skin.HasSetting(DisableWidgetToggle) + !IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onback>
         <scrolltime tween="quadratic">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
