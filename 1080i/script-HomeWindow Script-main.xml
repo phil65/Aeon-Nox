@@ -144,7 +144,7 @@
             <control type="image">
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChange400</include>
-            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + !Control.IsVisible(8995)]</visible>
+            <visible>IsEmpty(Window(home).Property(DisableWidgets)) | Control.IsVisible(8995)</visible>
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)]</visible>
                  <texture>common/bgcolor.png</texture>
                 <include>FullscreenDimensions</include>
@@ -371,7 +371,7 @@
                     <width>65</width>
                     <height>49</height>
                     <aspectratio aligny="top">scale</aspectratio>
-                    <texture>special://skin/extras/BigIcons/ButtonBack.png</texture>
+                    <texture>special://skin/extras/BigIcons/Information.png</texture>
                     <animation effect="zoom" start="80" end="85" delay="400" time="840" center="auto" tween="cubic" easing="out" pulse="true" condition="true">Conditional</animation>
                     <colordiffuse>white</colordiffuse>
                 </control>

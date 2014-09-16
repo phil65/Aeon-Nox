@@ -3,11 +3,11 @@
     <zorder>5</zorder>
     <visible>Window.IsVisible(mutebug) | Window.IsVisible(volumebar)</visible>
     <animation type="WindowOpen" reversible="false">
-        <effect type="zoom" start="80" end="100" center="960,540" delay="160" tween="back" time="240" />
+        <effect type="zoom" start="80" end="100" center="1920,0" delay="160" tween="back" time="240" />
         <effect type="fade" delay="160" end="100" time="240" />
     </animation>
     <animation type="WindowClose" reversible="false">
-        <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
+        <effect type="zoom" start="100" end="80" center="1920,0" easing="in" tween="back" time="240" />
         <effect type="fade" start="100" end="0" time="240" />
     </animation>
     <controls>
@@ -39,6 +39,7 @@
                 <width>100</width>
                 <height>200</height>
                 <align>center</align>
+                <shadowcolor>black</shadowcolor>
                 <label>$VAR[VolumeLabelVar]</label>
                 <font>Font_Bold22_Caps</font>
                 <scroll>true</scroll>
