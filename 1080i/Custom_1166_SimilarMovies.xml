@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1166">
     <onload>ClearProperty(NoStyleSelect)</onload>
-    <onunload condition="!IsEmpty(Window(home).Property(PanelWidget2Info)) + Window.IsActive(home)">SetFocus(6014)</onunload>
-    <onunload condition="IsEmpty(Window(home).Property(PanelWidget2Info)) + Window.IsActive(home)">SetFocus(5014)</onunload>
+    <onunload condition="!IsEmpty(Window(home).Property(PanelWidget2Info)) + Window.IsActive(script-HomeWindow Script-main.xml)">SetFocus(6014)</onunload>
+    <onunload condition="IsEmpty(Window(home).Property(PanelWidget2Info)) + Window.IsActive(script-HomeWindow Script-main.xml)">SetFocus(5014)</onunload>
     <defaultcontrol always="true">500</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <controls>

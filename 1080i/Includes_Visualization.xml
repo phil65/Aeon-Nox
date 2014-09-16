@@ -17,9 +17,9 @@
             <!--         <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="true">Conditional</animation>
         <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
         <animation effect="rotatex" start="" end="15" time="0" condition="true">Conditional</animation> -->
-            <visible>[Window.IsActive(visualisation) + StringCompare(Skin.String(MusicViz.MultiFanart),cd-wall)] | [Player.HasAudio + [Window.IsActive(home) | Window.IsActive(1158)] + Skin.HasSetting(homecdwall)] | Stringcompare(Control.GetLabel(4322),cdwall)</visible>
-            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
+            <visible>[Window.IsActive(visualisation) + StringCompare(Skin.String(MusicViz.MultiFanart),cd-wall)] | [Player.HasAudio + [Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(1158)] + Skin.HasSetting(homecdwall)] | Stringcompare(Control.GetLabel(4322),cdwall)</visible>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
             <include>Animation_WindowFade200</include>
             <include>Animation_VisibleChange400</include>
             <control type="panel" id="9032">
@@ -62,8 +62,8 @@
         <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
         <animation effect="rotatex" start="" end="15" time="0" condition="true">Conditional</animation> -->
             <visible>SubString(Control.GetLabel(4322),moviewall)</visible>
-            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(home) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbghome)]">Conditional</animation>
             <include>Animation_WindowFade200</include>
             <include>Animation_VisibleChange400</include>
             <control type="panel" id="9032">

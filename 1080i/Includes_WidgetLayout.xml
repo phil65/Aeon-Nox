@@ -708,7 +708,7 @@
             <animation effect="slide" end="0,390" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" end="0,210" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + Skin.HasSetting(lowermainmenu) + Window.IsActive(1158)">Conditional</animation>
             <animation effect="slide" end="0,600" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,11" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) + Window.IsActive(home)">Conditional</animation>
+            <animation effect="slide" end="0,11" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) + Window.IsActive(script-HomeWindow Script-main.xml)">Conditional</animation>
             <control type="group" id="8995">
                 <posx>22</posx>
                 <posy>-650</posy>
@@ -972,7 +972,7 @@
             <animation effect="slide" end="0,-250" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <include>Animation_Widgets</include>
             <visible>!IsEmpty(Weather.Plugin)</visible>
-            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(home)]</visible>
+            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(script-HomeWindow Script-main.xml)]</visible>
             <control type="group">
                 <posx>75</posx>
                 <control type="group">
