@@ -181,14 +181,6 @@
                     <enable>![stringcompare(Window(home).Property(actualViewtype),wall) + Skin.HasSetting(wallfullscreen)]</enable>
                     <visible>![stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Episode) | Substring(Window(home).Property(actualViewtype),LowList) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | [Substring(Window(home).Property(actualViewtype),TriPanel) + !Window.IsActive(videolibrary)]] + Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
-                <control type="radiobutton" id="1703">
-                    <label>$LOCALIZE[31375]</label>
-                    <include>Objects_MediaBackgroundsButton</include>
-                    <onclick>Skin.ToggleSetting(animatedbg)</onclick>
-                    <selected>Skin.HasSetting(animatedbg)</selected>
-                    <visible>!Skin.HasSetting(hideoptions)</visible>
-                    <enable>!stringcompare(Window(home).Property(actualViewtype),BigFan)</enable>
-                </control>
                 <control type="button" id="1601">
                     <label>31963</label>
                     <include>Objects_MediaMenuLabelAlt2</include>
