@@ -2124,8 +2124,7 @@
         </item>
         <item>
             <label>$LOCALIZE[20410]</label>
-            <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)],1)</onclick>
-            <onclick condition="Player.HasVideo">ActivateWindow(1167)</onclick>
+            <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)])</onclick>
             <visible>!IsEmpty(Window(home).Property(Trailer))</visible>
         </item>
         <item>
@@ -2780,8 +2779,7 @@
                     </control>
                     <control type="button" id="5016">
                         <label>$LOCALIZE[20410]</label>
-                        <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)],1)</onclick>
-                        <onclick condition="Player.HasVideo">ActivateWindow(1167)</onclick>
+                        <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)])</onclick>
                         <include>WidgetMenuLabel</include>
                         <include>Animation_VisibleChange400</include>
                         <visible>!IsEmpty(Window(home).Property(Trailer))</visible>
