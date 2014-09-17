@@ -94,7 +94,7 @@
         <control type="button" id="9011">
             <include>HiddenObject</include>
             <onfocus>SetFocus(9000)</onfocus>
-            <onfocus>ActivateWindow(1159)</onfocus>
+            <onfocus>RunScript(script.home,window=trailers)</onfocus>
         </control>
         <include>MainMenuCommonContent</include>
         <!-- Fanart -->
@@ -179,9 +179,8 @@
             <include>RSSPanel</include>
             <include>MainMenuBottomBar</include>
             <control type="group">
-                <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info)) + !Window.IsActive(1115)">Conditional</animation>
-                <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo)) + !Window.IsActive(1115)">Conditional</animation>
-                <animation effect="slide" end="0,330" time="480" tween="cubic" delay="160" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + [Window.IsActive(1115) | Window.IsActive(1154)]">Conditional</animation>
+                <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
+                <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
                 <control type="group">
                     <posy>472</posy>
                     <include>LibraryStats</include>
@@ -328,7 +327,7 @@
                 <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
                 <visible>!IsEmpty(Window(home).Property(WidgetType))</visible>
                 <visible>[!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
-                <visible>!Window.IsActive(1115) + !Window.IsActive(1165) + !Window.IsActive(1166)</visible>
+                <visible>!Window.IsActive(1165) + !Window.IsActive(1166)</visible>
                 <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">
                     <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp1</include>
                     <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown1</include>
@@ -346,7 +345,7 @@
             <control type="group">
                 <posx>0</posx>
                 <posy>20</posy>
-                <visible>!IsEmpty(Window(home).Property(DisableWidgets)) + !Player.HasMedia + !Window.IsActive(1115) + !Window.IsActive(1154)</visible>
+                <visible>!IsEmpty(Window(home).Property(DisableWidgets)) + !Player.HasMedia + !Window.IsActive(1154)</visible>
                 <include>Animation_WindowFade200</include>
                 <animation type="Visible">
                     <effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />

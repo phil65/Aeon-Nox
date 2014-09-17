@@ -345,68 +345,7 @@
                         <focusedlayout width="614" height="340">
                             <include>FeaturedWidgetLandscapeLayout</include>
                         </focusedlayout>
-                        <content>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedEpisode.1.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedEpisode.1.Art(thumb))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedEpisode.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedEpisode.2.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedEpisode.2.Art(thumb))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
-                                <property name="Logo">$INFO[Window(Home).Property(RandomMovie.1.Art(clearlogo))]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RandomMovie.1.Year)]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
-                                <property name="Logo">$INFO[Window(Home).Property(RandomMovie.2.Art(clearlogo))]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RandomMovie.2.Year)]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.1.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Art(fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.2.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Art(fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
-                            </item>
-                        </content>
+                        <content>$VAR[FeaturedWidgetLeftContentVar]</content>
                     </control>
                     <control type="label">
                         <posy>300</posy>
@@ -422,7 +361,7 @@
                         <posy>315</posy>
                         <width>138</width>
                         <height>12</height>
-                        <texture>$INFO[Container(5001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        <texture>$INFO[Container(5001).CurrentPage,featured/panel_mid/item,.png]</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -442,62 +381,7 @@
                         <focusedlayout width="340" height="340">
                             <include>FeaturedWidgetSquareLayout</include>
                         </focusedlayout>
-                        <content>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedAlbum.1.Artist)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.1.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.1.Year)]</property>
-                                <property name="NavItem">item1.png</property>
-                                <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedAlbum.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedAlbum.2.Artist)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.2.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.2.Year)]</property>
-                                <property name="NavItem">item2.png</property>
-                                <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomEpisode.1.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.poster))]</icon>
-                                <onclick>$INFO[Window(Home).Property(RandomEpisode.1.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.poster))]</icon>
-                                <onclick>$INFO[Window(Home).Property(RandomEpisode.2.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedMovie.1.Title)]</label>
-                                <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.1.Art(clearlogo))]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</icon>
-                                <onclick>$INFO[Window(Home).Property(RecommendedMovie.1.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedMovie.2.Title)]</label>
-                                <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.2.Art(clearlogo))]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</icon>
-                                <onclick>$INFO[Window(Home).Property(RecommendedMovie.2.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
-                            </item>
-                        </content>
+                        <content>$VAR[FeaturedWidgetMiddleContentVar]</content>
                     </control>
                     <control type="label">
                         <posy>300</posy>
@@ -513,7 +397,7 @@
                         <posy>315</posy>
                         <width>84</width>
                         <height>12</height>
-                        <texture>$INFO[Container(5002).ListItem.Property(NavItem),featured/panel_right/]</texture>
+                        <texture>$INFO[Container(5002).CurrentPage,featured/panel_right/item,.png]</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -545,70 +429,7 @@
                         <focusedlayout width="614" height="340">
                             <include>FeaturedWidgetLandscapeLayout</include>
                         </focusedlayout>
-                        <content>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentMovie.1.Title)]</label>
-                                <property name="Logo">$INFO[Window(Home).Property(RecentMovie.1.Art(clearlogo))]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecentMovie.1.Year)]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentMovie.2.Title)]</label>
-                                <property name="Logo">$INFO[Window(Home).Property(RecentMovie.2.Art(clearlogo))]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecentMovie.2.Year)]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentEpisode.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentEpisode.2.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.2.Art(thumb))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentAlbum.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RecentAlbum.1.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.1.Art(fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.1.Art(fanart))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentAlbum.1.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentAlbum.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentAlbum.2.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RecentAlbum.2.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.2.Art(fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.2.Art(fanart))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentAlbum.2.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
-                            </item>
-                        </content>
+                        <content>$VAR[FeaturedWidgetRightContentVar]</content>
                     </control>
                     <control type="label">
                         <posy>300</posy>
@@ -624,7 +445,7 @@
                         <posy>315</posy>
                         <width>138</width>
                         <height>12</height>
-                        <texture>$INFO[Container(5003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        <texture>$INFO[Container(5003).CurrentPage,featured/panel_mid/item,.png]</texture>
                     </control>
                 </control>
             </control>
@@ -832,66 +653,7 @@
                         <focusedlayout width="614" height="340">
                             <include>FeaturedWidgetLandscapeLayout</include>
                         </focusedlayout>
-                        <content>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedEpisode.1.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedEpisode.1.Art(thumb))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedEpisode.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedEpisode.2.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedEpisode.2.Art(thumb))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RandomMovie.1.Year)]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.1.Art(poster))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RandomMovie.2.Year)]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.2.Art(poster))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.1.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Art(fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.2.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Art(fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmusic)</visible>
-                            </item>
-                        </content>
+                        <content>$VAR[FeaturedWidget2LeftContentVar]</content>
                     </control>
                     <control type="label">
                         <posy>300</posy>
@@ -907,7 +669,7 @@
                         <posy>315</posy>
                         <width>138</width>
                         <height>12</height>
-                        <texture>$INFO[Container(6001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        <texture>$INFO[Container(6001).CurrentPage,featured/panel_mid/item,.png]</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -927,60 +689,7 @@
                         <focusedlayout width="340" height="340">
                             <include>FeaturedWidgetSquareLayout</include>
                         </focusedlayout>
-                        <content>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedAlbum.1.Artist)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.1.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.1.Year)]</property>
-                                <property name="NavItem">item1.png</property>
-                                <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedAlbum.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecommendedAlbum.2.Artist)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.2.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.2.Year)]</property>
-                                <property name="NavItem">item2.png</property>
-                                <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedMovie.1.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <thumb fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.1.Art(poster))]</thumb>
-                                <onclick>$INFO[Window(Home).Property(RecommendedMovie.1.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecommendedMovie.2.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <thumb fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.2.Art(poster))]</thumb>
-                                <onclick>$INFO[Window(Home).Property(RecommendedMovie.2.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomEpisode.1.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <thumb fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.poster))]</thumb>
-                                <onclick>$INFO[Window(Home).Property(RandomEpisode.1.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <thumb fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.poster))]</thumb>
-                                <onclick>$INFO[Window(Home).Property(RandomEpisode.2.Play)]</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredtv)</visible>
-                            </item>
-                        </content>
+                        <content>$VAR[FeaturedWidget2MiddleContentVar]</content>
                     </control>
                     <control type="label">
                         <posy>300</posy>
@@ -996,7 +705,7 @@
                         <posy>315</posy>
                         <width>84</width>
                         <height>12</height>
-                        <texture>$INFO[Container(6002).ListItem.Property(NavItem),featured/panel_right/]</texture>
+                        <texture>$INFO[Container(6002).CurrentPage,featured/panel_right/item,.png]</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1028,68 +737,7 @@
                         <focusedlayout width="614" height="340">
                             <include>FeaturedWidgetLandscapeLayout</include>
                         </focusedlayout>
-                        <content>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentMovie.1.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecentMovie.1.Year)]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentMovie.1.Art(poster))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentMovie.2.Title)]</label>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</property>
-                                <property name="Year">$INFO[Window(Home).Property(RecentMovie.2.Year)]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentMovie.2.Art(poster))]</icon>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentEpisode.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentEpisode.2.EpisodeNo)]</label2>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.2.Art(thumb))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredtv)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentAlbum.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RecentAlbum.1.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.1.Art(fanart))]</property>
-                                <property name="NavItem">item1.png</property>
-                                <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.1.Art(fanart))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentAlbum.1.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmusic)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Window(Home).Property(RecentAlbum.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RecentAlbum.2.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RecentAlbum.2.Play)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.2.Art(fanart))]</property>
-                                <property name="NavItem">item2.png</property>
-                                <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.2.Art(fanart))]</icon>
-                                <thumb>$INFO[Window(Home).Property(RecentAlbum.2.Art(thumb))]</thumb>
-                                <onclick>noop</onclick>
-                                <visible>Substring(Control.GetLabel(4325),featuredmusic)</visible>
-                            </item>
-                        </content>
+                        <content>$VAR[FeaturedWidget2RightContentVar]</content>
                     </control>
                     <control type="label">
                         <posy>300</posy>
@@ -1105,7 +753,7 @@
                         <posy>315</posy>
                         <width>138</width>
                         <height>12</height>
-                        <texture>$INFO[Container(6003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        <texture>$INFO[Container(6003).CurrentPage,featured/panel_mid/item,.png]</texture>
                     </control>
                 </control>
             </control>

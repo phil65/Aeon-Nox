@@ -1488,7 +1488,7 @@
         <onload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(font_color,$INFO[Skin.String(font_programs)])</onload>
         <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(font_color,$INFO[Skin.String(font_musicplaylist)])</onload>
         <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(font_videoplaylist)])</onload>
-        <onload condition="Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(1130) | Window.IsActive(skinsettings) | Window.IsActive(1115)">Skin.SetString(font_color,$INFO[Skin.String(font_mainmenu)])</onload>
+        <onload condition="Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(1130) | Window.IsActive(skinsettings) | Window.IsActive(script-HomeWindow Script-featured.xml)">Skin.SetString(font_color,$INFO[Skin.String(font_mainmenu)])</onload>
         <onload condition="Window.IsActive(weather)">Skin.SetString(font_color,$INFO[Skin.String(font_weather)])</onload>
     </include>
     <include name="ColorConfigWhiteTheme">
@@ -2037,7 +2037,7 @@
     </include>
     <include name="FeaturedPanel">
         <control type="group">
-            <animation effect="zoom" end="100,90" center="960,400" time="0" condition="!Window.IsActive(1115)">Conditional</animation>
+            <animation effect="zoom" end="100,90" center="960,400" time="0" condition="!Window.IsActive(script-HomeWindow Script-featured.xml)">Conditional</animation>
             <control type="image">
                 <width>1332</width>
                 <height>612</height>
@@ -2059,7 +2059,7 @@
                 <width>1290</width>
                 <height>119</height>
                 <texture>featured/panel_featured_reflect.png</texture>
-                <visible>Window.IsActive(1147)</visible>
+                <visible>Window.IsActive(script-HomeWindow Script-featured.xml)</visible>
             </control>
         </control>
     </include>

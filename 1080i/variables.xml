@@ -960,7 +960,6 @@
         <value></value>
     </variable>
     <variable name="HomeMainFanartVar">
-        <value condition="Window.IsActive(1115)">special://skin/backgrounds/featured/</value>
         <value condition="Control.IsVisible(8998) + !IsEmpty(Container(8000).ListItem.Property(Fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
         <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
         <value>$VAR[MultiFanartVar]</value>
@@ -1485,7 +1484,36 @@
         <value condition="Control.HasFocus(8003)">In Progress TV Shows</value>
         <value condition="Control.HasFocus(8004)">Upcoming Movies</value>
     </variable>
-
+    <variable name="FeaturedWidgetLeftContentVar">
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">special://skin/extras/playlists/randommovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/playlists/recommendedepisodes8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">special://skin/extras/playlists/randomalbums8.xsp</value>
+    </variable>
+    <variable name="FeaturedWidgetMiddleContentVar">
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">special://skin/extras/playlists/recommendedmovies5.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/playlists/randomepisodes5.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">special://skin/extras/playlists/mostplayedalbums5.xsp</value>
+    </variable>
+    <variable name="FeaturedWidgetRightContentVar">
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">special://skin/extras/playlists/recentmovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/playlists/recentepisodes8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">special://skin/extras/playlists/randomalbums8.xsp</value>
+    </variable>
+    <variable name="FeaturedWidget2LeftContentVar">
+        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">special://skin/extras/playlists/randommovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredtv)">special://skin/extras/playlists/recommendedepisodes8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/playlists/randomalbums8.xsp</value>
+    </variable>
+    <variable name="FeaturedWidget2MiddleContentVar">
+        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">special://skin/extras/playlists/recommendedmovies5.xsp</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredtv)">special://skin/extras/playlists/randomepisodes5.xsp</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/playlists/mostplayedalbums5.xsp</value>
+    </variable>
+    <variable name="FeaturedWidget2RightContentVar">
+        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">special://skin/extras/playlists/recentmovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredtv)">special://skin/extras/playlists/recentepisodes8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/playlists/randomalbums8.xsp</value>
+    </variable>
     <variable name="PosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>

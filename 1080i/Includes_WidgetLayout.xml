@@ -134,8 +134,8 @@
         <control type="group">
             <posy>610</posy>
             <visible>[system.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)] + !Skin.HasSetting(DisableRSS)</visible>
-            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info)) + !Window.IsActive(1115)">Conditional</animation>
-            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo)) + !Window.IsActive(1115)">Conditional</animation>
+            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
+            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
             <animation effect="slide" end="1920,0" time="240" condition="!Window.IsActive(skinsettings)">WindowClose</animation>
             <animation effect="slide" start="1880,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup) + !Window.IsActive(skinsettings)">WindowOpen</animation>
             <animation effect="slide" start="1880,0" end="0,0" delay="2000" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
@@ -152,15 +152,15 @@
             <visible>[!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]] | Skin.HasSetting(rsshomelow)</visible>
             <control type="group">
                 <visible>Skin.HasSetting(alternativerss)</visible>
-                <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+                <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <control type="image">
                     <posy>2</posy>
                     <width>1920</width>
                     <height>87</height>
                     <texture flipy="true">$VAR[NavBarImageVar]</texture>
                     <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
-                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+                    <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
                 <control type="group">
                     <control type="label">
@@ -194,14 +194,14 @@
             </control>
             <control type="group">
                 <visible>!Skin.HasSetting(alternativerss)</visible>
-                <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+                <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <control type="image">
                     <posx>81</posx>
                     <width>1880</width>
                     <height>87</height>
                     <texture>home/rssbar_mid.png</texture>
                     <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
                 <control type="label">
                     <posx>165</posx>
@@ -700,7 +700,7 @@
     <include name="Furniture_HomeNowPlaying">
         <control type="group">
             <posy>14</posy>
-            <visible>!Window.IsActive(1115) + !Window.IsActive(1154)</visible>
+            <visible>!Window.IsActive(1154)</visible>
             <visible>IsEmpty(Window(home).Property(PanelWidgetInfo)) + IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
             <visible>[IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(movenowplayingwidget)] | [IsEmpty(Control.GetLabel(4321)) + Skin.HasSetting(movenowplayingwidget)] | !IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <animation effect="slide" end="0,35" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
@@ -2438,11 +2438,7 @@
                             <focusedlayout width="614" height="340">
                                 <include>FeaturedWidgetLandscapeLayout</include>
                             </focusedlayout>
-                            <content>
-                                <include condition="Substring(Skin.String(widgetlist),featuredmovies)">FeaturedWidgetLeftMovies</include>
-                                <include condition="Substring(Skin.String(widgetlist),featuredtv)">FeaturedWidgetLeftTV</include>
-                                <include condition="Substring(Skin.String(widgetlist),featuredmusic)">FeaturedWidgetLeftMusic</include>
-                            </content>
+                            <content>$VAR[FeaturedWidgetLeftContentVar]</content>
                         </control>
                         <control type="label">
                             <posy>300</posy>
@@ -2469,7 +2465,7 @@
                             <posy>315</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(5001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <texture>$INFO[Container(5001).CurrentPage,featured/panel_mid/item,.png]</texture>
                         </control>
                         <control type="image">
                             <width>614</width>
@@ -2496,11 +2492,7 @@
                             <focusedlayout width="340" height="340">
                                 <include>FeaturedWidgetSquareLayout</include>
                             </focusedlayout>
-                            <content>
-                                <include condition="Substring(Skin.String(widgetlist),featuredmovies)">FeaturedWidgetMiddleMovies</include>
-                                <include condition="Substring(Skin.String(widgetlist),featuredtv)">FeaturedWidgetMiddleTV</include>
-                                <include condition="Substring(Skin.String(widgetlist),featuredmusic)">FeaturedWidgetMiddleMusic</include>
-                            </content>
+                            <content>$VAR[FeaturedWidgetMiddleContentVar]</content>
                         </control>
                         <control type="label">
                             <posy>300</posy>
@@ -2527,7 +2519,7 @@
                             <posy>315</posy>
                             <width>84</width>
                             <height>12</height>
-                            <texture>$INFO[Container(5002).ListItem.Property(NavItem),featured/panel_right/]</texture>
+                            <texture>$INFO[Container(5002).CurrentPage,featured/panel_right/item,.png]</texture>
                         </control>
                         <control type="image">
                             <width>340</width>
@@ -2566,11 +2558,7 @@
                             <focusedlayout width="614" height="340">
                                 <include>FeaturedWidgetLandscapeLayout</include>
                             </focusedlayout>
-                            <content>
-                                <include condition="Substring(Skin.String(widgetlist),featuredmovies)">FeaturedWidgetRightMovies</include>
-                                <include condition="Substring(Skin.String(widgetlist),featuredtv)">FeaturedWidgetRightTV</include>
-                                <include condition="Substring(Skin.String(widgetlist),featuredmusic)">FeaturedWidgetRightMusic</include>
-                            </content>
+                            <content>$VAR[FeaturedWidgetRightContentVar]</content>
                         </control>
                         <control type="label">
                             <posy>300</posy>
@@ -2597,7 +2585,7 @@
                             <posy>315</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(5003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <texture>$INFO[Container(5003).CurrentPage,featured/panel_mid/item,.png]</texture>
                         </control>
                         <control type="image">
                             <width>614</width>
@@ -2801,16 +2789,6 @@
                         <onclick>Dialog.Close(1165)</onclick>
                         <onclick>ActivateWindow(1166)</onclick>
                         <visible>Substring(Window(home).Property(WidgetType),movie) | Substring(Window(home).Property(WidgetType),tv)</visible>
-                    </control>
-                    <control type="button" id="5013">
-                        <label>$LOCALIZE[31066]</label>
-                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onclick>
-                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onclick>
-                        <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
-                        <onclick>ClearProperty(PanelWidget2Info,Home)</onclick>
-                        <onclick>SetProperty(WidgetType,onlinemovie,home)</onclick>
-                        <onclick>Dialog.Close(1165)</onclick>
-                        <include>WidgetMenuLabel</include>
                     </control>
                     <control type="spincontrol" id="5019">
                         <posx>0</posx>
@@ -3464,15 +3442,6 @@
                         <onclick condition="Substring(Window(home).Property(WidgetType),artist)">SetProperty(listcontent,$INFO[Window(home).Property(Label)],home)</onclick>
                         <onclick condition="Substring(Window(home).Property(WidgetType),album)">SetProperty(listcontent,$INFO[Window(home).Property(Label)] $INFO[Window(home).Property(Label2)],home)</onclick>
                         <onclick>ActivateWindow(1168)</onclick>
-                        <include>WidgetMenuLabel</include>
-                    </control>
-                    <control type="button" id="5033">
-                        <label>$LOCALIZE[31066]</label>
-                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onclick>
-                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onclick>
-                        <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
-                        <onclick>ClearProperty(PanelWidget2Info,Home)</onclick>
-                        <onclick>Dialog.Close(1165)</onclick>
                         <include>WidgetMenuLabel</include>
                     </control>
                     <control type="spincontrol" id="5034">
@@ -4617,9 +4586,7 @@
                                 <include>FeaturedWidgetLandscapeLayout</include>
                             </focusedlayout>
                             <content>
-                                <include condition="Substring(Skin.String(widget2list),featuredmovies)">FeaturedWidget2LeftMovies</include>
-                                <include condition="Substring(Skin.String(widget2list),featuredtv)">FeaturedWidget2LeftTV</include>
-                                <include condition="Substring(Skin.String(widget2list),featuredmusic)">FeaturedWidget2LeftMusic</include>
+                               <content>$VAR[FeaturedWidget2LeftContentVar]</content>
                             </content>
                         </control>
                         <control type="label">
@@ -4647,7 +4614,7 @@
                             <posy>315</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(6001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <texture>$INFO[Container(6001).CurrentPage,featured/panel_mid/item,.png]</texture>
                         </control>
                         <control type="image">
                             <width>614</width>
@@ -4679,9 +4646,7 @@
                                 <include>FeaturedWidgetSquareLayout</include>
                             </focusedlayout>
                             <content>
-                                <include condition="Substring(Skin.String(widget2list),featuredmovies)">FeaturedWidget2MiddleMovies</include>
-                                <include condition="Substring(Skin.String(widget2list),featuredtv)">FeaturedWidget2MiddleTV</include>
-                                <include condition="Substring(Skin.String(widget2list),featuredmusic)">FeaturedWidget2MiddleMusic</include>
+                               <content>$VAR[FeaturedWidget2MiddleContentVar]</content>
                             </content>
                         </control>
                         <control type="label">
@@ -4709,7 +4674,7 @@
                             <posy>315</posy>
                             <width>84</width>
                             <height>12</height>
-                            <texture>$INFO[Container(6002).ListItem.Property(NavItem),featured/panel_right/]</texture>
+                            <texture>$INFO[Container(6002).CurrentPage,featured/panel_right/item,.png]</texture>
                         </control>
                         <control type="image">
                             <width>340</width>
@@ -4753,9 +4718,7 @@
                                 <include>FeaturedWidgetLandscapeLayout</include>
                             </focusedlayout>
                             <content>
-                                <include condition="Substring(Skin.String(widget2list),featuredmovies)">FeaturedWidget2RightMovies</include>
-                                <include condition="Substring(Skin.String(widget2list),featuredtv)">FeaturedWidget2RightTV</include>
-                                <include condition="Substring(Skin.String(widget2list),featuredmusic)">FeaturedWidget2RightMusic</include>
+                               <content>$VAR[FeaturedWidget2RightContentVar]</content>
                             </content>
                         </control>
                         <control type="label">
@@ -4783,7 +4746,7 @@
                             <posy>315</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(6003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <texture>$INFO[Container(6003).CurrentPage,featured/panel_mid/item,.png]</texture>
                         </control>
                         <control type="image">
                             <width>614</width>

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<window id="1115" type="dialog">
+<window>
     <defaultcontrol>40</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <onload condition="Window.Previous(home)">SetFocus(5012)</onload>
-    <onload>SetFocus(9000)</onload>
     <onload>SetProperty(DisableWidgets,true,home)</onload>
     <onunload>ClearProperty(DisableWidgets,home)</onunload>
     <onunload>ClearProperty(PanelWidgetInfo,Home)</onunload>
     <onload>SetProperty(WidgetPosition,Widget1,home)</onload>
-    <onunload condition="Window.IsActive(1147)">Action(PreviousMenu)</onunload>
     <coordinates>
         <posx>0</posx>
         <posy>0</posy>
         <system>1</system>
     </coordinates>
     <controls>
-        <control type="label" id="4321">
+       <control type="label" id="4321">
             <label>watchlisttv watchlistmovies recentmovies randommovies recenttv randomtv randomalbums randomartists watchlistalbums recentalbums</label>
             <include>HiddenObject</include>
         </control>
@@ -106,15 +104,87 @@
             <onfocus condition="Stringcompare(Window(home).Property(WidgetType),randomalbums)">SetFocus(8010)</onfocus>
             <onfocus condition="Stringcompare(Window(home).Property(WidgetType),randomartists)">SetFocus(9010)</onfocus>
             <onfocus condition="Stringcompare(Window(home).Property(WidgetType),recentalbums)">SetFocus(9003)</onfocus>
-            <visible>true</visible>
         </control>
-        <!-- Main Group -->
+        <!-- Fanart -->
+        <control type="multiimage">
+            <aspectratio align="center" aligny="top">scale</aspectratio>
+            <imagepath background="true">special://skin/backgrounds/featured/</imagepath>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+        </control>
+        <include>CommonMediaPlayingBackground</include>
+        <control type="image">
+            <texture>common/bgcolor.png</texture>
+            <include>FullscreenDimensions</include>
+            <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+            <include>Animation_VisibleChange400</include>
+        </control>
+        <control type="image">
+            <posy>-150</posy>
+            <width>1920</width>
+            <height>608</height>
+            <texture flipy="true">views/showcase_glow.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+            <include>Animation_VisibleChange400</include>
+            <include>Animation_WindowFade200</include>
+            <animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
+        </control>
+        <!-- Furniture -->
+        <control type="group">
+            <include>Animation_OpenClose_Furniture</include>
+            <control type="image">
+                <posy>472</posy>
+                <width>1920</width>
+                <height>608</height>
+                <texture>views/showcase_floor.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>-340</posx>
+                <posy>874</posy>
+                <width>2490</width>
+                <height>226</height>
+                <texture>views/showcase_spot.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <posy>1012</posy>
+                <width>1920</width>
+                <height>72</height>
+                <texture>views/showcase_gradient.png</texture>
+                <include>Animation_CommonFade</include>
+            </control>
+            <control type="image">
+                <width>696</width>
+                <height>1080</height>
+                <texture>views/showcase_vignette.png</texture>
+                <colordiffuse>vignette</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>1224</posx>
+                <width>696</width>
+                <height>1080</height>
+                <texture flipx="true">views/showcase_vignette.png</texture>
+                <colordiffuse>vignette</colordiffuse>
+            </control>
+            <control type="image">
+                <posy>874</posy>
+                <width>2020</width>
+                <height>206</height>
+                <texture>views/panel_spot.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+            <include>Neon_Floor</include>
+        </control>
+       <!-- Main Group -->
         <control type="grouplist" id="40">
             <posx>-135</posx>
-            <posy>105</posy>
+            <posy>405</posy>
             <width>2325</width>
             <height>780</height>
-            <animation effect="slide" end="0,300" time="0" condition="Window.IsActive(1147)">Conditional</animation>
             <scrolltime tween="cubic" easing="inout">500</scrolltime>
             <orientation>horizontal</orientation>
             <itemgap>-1060</itemgap>
@@ -136,7 +206,6 @@
                 </animation>
                 <control type="button" id="3012">
                     <include>HiddenObject</include>
-                    <onup>Dialog.Close(1115)</onup>
                     <ondown>3001</ondown>
                     <onright>5012</onright>
                     <onleft>9012</onleft>
@@ -248,7 +317,6 @@
                 </animation>
                 <control type="button" id="5012">
                     <include>HiddenObject</include>
-                    <onup>Dialog.Close(1115)</onup>
                     <ondown>5001</ondown>
                     <onright>6012</onright>
                     <onleft>3012</onleft>
@@ -452,7 +520,6 @@
                 </animation>
                 <control type="button" id="6012">
                     <include>HiddenObject</include>
-                    <onup>Dialog.Close(1115)</onup>
                     <ondown>6001</ondown>
                     <onright>7012</onright>
                     <onleft>5012</onleft>
@@ -653,7 +720,6 @@
                 </animation>
                 <control type="button" id="7012">
                     <include>HiddenObject</include>
-                    <onup>Dialog.Close(1115)</onup>
                     <ondown>7001</ondown>
                     <onright>8012</onright>
                     <onleft>6012</onleft>
@@ -898,7 +964,6 @@
                 </animation>
                 <control type="button" id="8012">
                     <include>HiddenObject</include>
-                    <onup>Dialog.Close(1115)</onup>
                     <ondown>8001</ondown>
                     <onright>9012</onright>
                     <onleft>7012</onleft>
@@ -1143,7 +1208,6 @@
                 </animation>
                 <control type="button" id="9012">
                     <include>HiddenObject</include>
-                    <onup>Dialog.Close(1115)</onup>
                     <ondown>9001</ondown>
                     <onright>3012</onright>
                     <onleft>8012</onleft>
@@ -1375,11 +1439,10 @@
         </control>
         <control type="group">
             <posx>135</posx>
-            <posy>405</posy>
+            <posy>605</posy>
             <animation type="Conditional" condition="true">
                 <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
             </animation>
-            <animation effect="slide" end="0,200" time="0" condition="Window.IsActive(1147)">Conditional</animation>
             <visible>!IsEmpty(Window(home).Property(WidgetType)) + [!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
             <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">
                 <include>Animation_LargePanelFlipUp1</include>
