@@ -2373,11 +2373,11 @@
                         <onleft>5012</onleft>
                         <onright>5011</onright>
                         <include>NavigationWidget1</include>
-                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,randommovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,randomalbums,home)</onclick>
-                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5001).ListItem.Label],home)</onclick>
-                        <onclick>ActivateWindow(1140)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=5001,focuscontrol=5055)</onclick>
                     </control>
                     <control type="button" id="5011">
                         <posx>650</posx>
@@ -2389,11 +2389,11 @@
                         <onleft>5010</onleft>
                         <onright>5012</onright>
                         <include>NavigationWidget1</include>
-                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,randomtv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
-                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5002).ListItem.Label],home)</onclick>
-                        <onclick>ActivateWindow(1140)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,randomtv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,watchlistmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=5002,focuscontrol=5055)</onclick>
                     </control>
                     <control type="button" id="5012">
                         <posx>1001</posx>
@@ -2406,11 +2406,11 @@
                         <onleft>5011</onleft>
                         <onright>5010</onright>
                         <include>NavigationWidget1</include>
-                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,recentmovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,recenttv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,recentalbums,home)</onclick>
-                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5003).ListItem.Label],home)</onclick>
-                        <onclick>ActivateWindow(1140)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,recentmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,recenttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=5003,focuscontrol=5055)</onclick>
                     </control>
                     <control type="group">
                         <posx>31</posx>
@@ -4516,12 +4516,11 @@
                         <include>NavigationWidget2</include>
                         <onleft>6012</onleft>
                         <onright>6011</onright>
-                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,randommovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,randomalbums,home)</onclick>
-                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6001).ListItem.Label],home)</onclick>
-                        <onclick>ActivateWindow(1140)</onclick>
-                        <visible>SubString(Control.GetLabel(4325),featured)</visible>
+                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=6001,focuscontrol=5055)</onclick>
                     </control>
                     <control type="button" id="6011">
                         <posx>650</posx>
@@ -4533,11 +4532,11 @@
                         <onleft>6010</onleft>
                         <onright>6012</onright>
                         <include>NavigationWidget2</include>
-                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,randomtv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
-                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6002).ListItem.Label],home)</onclick>
-                        <onclick>ActivateWindow(1140)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,randomtv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,watchlistmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=6002,focuscontrol=5055)</onclick>
                     </control>
                     <control type="button" id="6012">
                         <posx>1001</posx>
@@ -4549,11 +4548,11 @@
                         <onleft>6011</onleft>
                         <onright>6010</onright>
                         <include>NavigationWidget2</include>
-                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,recentmovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,recenttv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,recentalbums,home)</onclick>
-                        <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6003).ListItem.Label],home)</onclick>
-                        <onclick>ActivateWindow(1140)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,recentmovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,recenttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=6003,focuscontrol=5055)</onclick>
                     </control>
                     <control type="group">
                         <posx>31</posx>
