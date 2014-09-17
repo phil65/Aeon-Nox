@@ -24,6 +24,11 @@
             <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
             <visible>Control.HasFocus(5009)</visible>
         </control>
+        <control type="button" id="123">
+            <include>HiddenObject</include>
+            <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
+            <visible>ControlGroup(5020).HasFocus | ControlGroup(5030).HasFocus</visible>
+        </control>
         <control type="button" id="5014">
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
