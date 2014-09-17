@@ -2835,7 +2835,7 @@
                         <height>36</height>
                         <orientation>horizontal</orientation>
                         <itemgap>15</itemgap>
-                        <visible>!IsEmpty(Window(home).Property(Genre))</visible>
+                        <visible>!IsEmpty(Window(home).Property(Genre)) | !IsEmpty(Window(home).Property(Year)) | !IsEmpty(Window(home).Property(Country))</visible>
                         <control type="image" id="12020">
                             <posx>15</posx>
                             <posy>3</posy>
@@ -2853,7 +2853,7 @@
                             <label>$INFO[Window(home).Property(Year),• , •]</label>
                             <font>Font_Reg30_2</font>
                             <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Control.GetLabel(12020))</visible>
+                            <visible>!IsEmpty(Control.GetLabel(12020)) + !IsEmpty(Window(home).Property(Year))(</visible>
                         </control>
                         <control type="label">
                             <width min="15" max="500">auto</width>
@@ -2861,22 +2861,23 @@
                             <label>$INFO[Window(home).Property(Year),, •]</label>
                             <font>Font_Reg30_2</font>
                             <textcolor>grey2</textcolor>
-                            <visible>IsEmpty(Control.GetLabel(12020))</visible>
+                            <visible>IsEmpty(Control.GetLabel(12020)) + !IsEmpty(Window(home).Property(Year))</visible>
                         </control>
                         <control type="label">
                             <width>600</width>
                             <height>36</height>
-                            <label>$INFO[Window(home).Property(Genre)]</label>
+                            <label>$INFO[Window(home).Property(Genre)]$INFO[Window(home).Property(TVShowTitle)]</label>
                             <font>Font_Reg30_2</font>
-                            <textcolor>white3</textcolor>
+                            <visible>!IsEmpty(Window(home).Property(TVShowTitle)) | !IsEmpty(Window(home).Property(Genre))</visible>
                             <visible>!IsEmpty(Window(home).Property(Logo))</visible>
                         </control>
                         <control type="label">
                             <width>1000</width>
                             <height>36</height>
-                            <label>$INFO[Window(home).Property(Genre)]</label>
+                            <label>$INFO[Window(home).Property(Genre)]$INFO[Window(home).Property(TVShowTitle)]</label>
                             <font>Font_Reg30_2</font>
                             <textcolor>white3</textcolor>
+                            <visible>!IsEmpty(Window(home).Property(TVShowTitle)) | !IsEmpty(Window(home).Property(Genre))</visible>
                             <visible>IsEmpty(Window(home).Property(Logo))</visible>
                         </control>
                     </control>
@@ -2887,7 +2888,7 @@
                         <label>$INFO[Window(home).Property(Label2)]</label>
                         <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
-                        <visible>Substring(Window(home).Property(WidgetType),tv)</visible>
+                        <visible>!IsEmpty(Window(home).Property(Label2))</visible>
                     </control>
                     <control type="label">
                         <width>986</width>
@@ -2896,7 +2897,7 @@
                         <label>$INFO[Window(home).Property(EpisodeNumber),[UPPERCASE],[/UPPERCASE]]$INFO[Window(home).Property(NextTitle),:  ]</label>
                         <font>Font_Reg30_2</font>
                         <textcolor>white2</textcolor>
-                        <visible>Substring(Window(home).Property(WidgetType),tv)</visible>
+                        <visible>!IsEmpty(Window(home).Property(EpisodeNumber)) | !IsEmpty(Window(home).Property(NextTitle))</visible>
                     </control>
                     <!--                         <control type="image">
                             <posy>-3</posy>
@@ -5733,7 +5734,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.1.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.1.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.1.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.1.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.1.Play)]</property>
@@ -5759,7 +5760,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.2.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.2.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.2.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.2.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.2.Play)]</property>
@@ -5785,7 +5786,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.3.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.3.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.3.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.3.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.3.Play)]</property>
@@ -5811,7 +5812,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.4.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.4.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.4.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.4.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.4.Play)]</property>
@@ -5837,7 +5838,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.5.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.5.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.5.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.5.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.5.Play)]</property>
@@ -5863,7 +5864,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.6.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.6.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.6.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.6.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.6.Play)]</property>
@@ -5889,7 +5890,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.7.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.7.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.7.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.7.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.7.Play)]</property>
@@ -5915,7 +5916,7 @@
         </item>
         <item>
             <label>$LOCALIZE[31928]</label>
-            <label2>$INFO[Window(Home).Property(RandomEpisode.8.TVshowTitle)]</label2>
+            <property name="TVShowTitle">$INFO[Window(Home).Property(RandomEpisode.8.TVshowTitle)]</property>
             <property name="Premiered">$INFO[Window(Home).Property(RandomEpisode.8.Premiered)]</property>
             <property name="Duration">$INFO[Window(Home).Property(RandomEpisode.8.Runtime)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.8.Play)]</property>
