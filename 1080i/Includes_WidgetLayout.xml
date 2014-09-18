@@ -2800,12 +2800,12 @@
                     <width>530</width>
                     <height>260</height>
                     <aspectratio>keep</aspectratio>
-                    <texture background="true">$INFO[Window(home).Property(Logo)]</texture>
+                    <texture background="true">$INFO[Window(home).Property(clearlogo)]</texture>
                     <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
                         <effect type="fade" start="0" end="100" delay="960" time="960" tween="cubic" />
                         <effect type="zoom" start="0" end="100" delay="960" time="960" center="auto" tween="cubic" />
                     </animation>
-                    <visible>!IsEmpty(Window(home).Property(Logo))</visible>
+                    <visible>!IsEmpty(Window(home).Property(clearlogo))</visible>
                 </control>
                 <control type="grouplist">
                     <posx>470</posx>
@@ -2819,7 +2819,7 @@
                         <textoffsetx>15</textoffsetx>
                         <label>$INFO[Window(home).Property(Label)]</label>
                         <font>Font_MainClassic3</font>
-                        <visible>!IsEmpty(Window(home).Property(Logo))</visible>
+                        <visible>!IsEmpty(Window(home).Property(clearlogo))</visible>
                     </control>
                     <control type="label">
                         <width>1100</width>
@@ -2827,7 +2827,7 @@
                         <textoffsetx>15</textoffsetx>
                         <label>$INFO[Window(home).Property(Label)]</label>
                         <font>Font_MainClassic3</font>
-                        <visible>IsEmpty(Window(home).Property(Logo))</visible>
+                        <visible>IsEmpty(Window(home).Property(clearlogo))</visible>
                     </control>
                     <control type="grouplist">
                         <posx>15</posx>
@@ -2869,7 +2869,7 @@
                             <label>$INFO[Window(home).Property(Genre)]$INFO[Window(home).Property(TVShowTitle)]</label>
                             <font>Font_Reg30_2</font>
                             <visible>!IsEmpty(Window(home).Property(TVShowTitle)) | !IsEmpty(Window(home).Property(Genre))</visible>
-                            <visible>!IsEmpty(Window(home).Property(Logo))</visible>
+                            <visible>!IsEmpty(Window(home).Property(clearlogo))</visible>
                         </control>
                         <control type="label">
                             <width>1000</width>
@@ -2878,7 +2878,7 @@
                             <font>Font_Reg30_2</font>
                             <textcolor>white3</textcolor>
                             <visible>!IsEmpty(Window(home).Property(TVShowTitle)) | !IsEmpty(Window(home).Property(Genre))</visible>
-                            <visible>IsEmpty(Window(home).Property(Logo))</visible>
+                            <visible>IsEmpty(Window(home).Property(clearlogo))</visible>
                         </control>
                     </control>
                     <control type="label">
@@ -5280,7 +5280,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.1.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.1.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.1.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.1.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.1.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.1.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.1.OriginalTitle)]</property>
@@ -5317,7 +5317,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.2.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.2.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.2.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.2.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.2.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.2.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.2.OriginalTitle)]</property>
@@ -5354,7 +5354,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.3.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.3.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.3.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.3.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.3.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.3.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.3.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.3.OriginalTitle)]</property>
@@ -5391,7 +5391,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.4.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.4.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.4.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.4.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.4.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.4.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.4.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.4.OriginalTitle)]</property>
@@ -5428,7 +5428,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.5.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.5.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.5.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.5.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.5.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.5.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.5.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.5.OriginalTitle)]</property>
@@ -5465,7 +5465,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.6.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.6.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.6.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.6.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.6.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.6.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.6.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.6.OriginalTitle)]</property>
@@ -5502,7 +5502,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.7.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.7.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.7.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.7.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.7.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.7.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.7.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.7.OriginalTitle)]</property>
@@ -5539,7 +5539,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.8.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.8.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.8.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.8.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.8.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.8.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.8.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.8.OriginalTitle)]</property>
@@ -5740,7 +5740,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.1.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
@@ -5766,7 +5766,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.2.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
@@ -5792,7 +5792,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.3.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.fanart))]</property>
@@ -5818,7 +5818,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.4.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.fanart))]</property>
@@ -5844,7 +5844,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.5.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.fanart))]</property>
@@ -5870,7 +5870,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.6.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.fanart))]</property>
@@ -5896,7 +5896,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.7.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.fanart))]</property>
@@ -5922,7 +5922,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.8.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.fanart))]</property>
@@ -6539,7 +6539,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.1.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.1.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.1.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.1.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.1.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.1.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.1.OriginalTitle)]</property>
@@ -6576,7 +6576,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.2.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.2.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.2.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.2.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.2.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.2.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.2.OriginalTitle)]</property>
@@ -6613,7 +6613,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.3.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.3.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.3.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.3.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.3.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.3.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.3.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.3.OriginalTitle)]</property>
@@ -6650,7 +6650,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.4.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.4.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.4.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.4.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.4.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.4.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.4.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.4.OriginalTitle)]</property>
@@ -6687,7 +6687,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.5.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.5.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.5.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.5.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.5.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.5.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.5.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.5.OriginalTitle)]</property>
@@ -6724,7 +6724,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.6.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.6.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.6.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.6.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.6.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.6.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.6.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.6.OriginalTitle)]</property>
@@ -6761,7 +6761,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.7.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.7.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.7.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.7.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.7.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.7.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.7.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.7.OriginalTitle)]</property>
@@ -6798,7 +6798,7 @@
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.8.Art(banner))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.8.Art(landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.8.Art(clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.8.Art(clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomMovie.8.Art(clearlogo))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.8.Art(fanart))]</property>
             <property name="Tagline">$INFO[Window(Home).Property(RandomMovie.8.Tagline)]</property>
             <property name="OriginalTitle">$INFO[Window(Home).Property(RandomMovie.8.OriginalTitle)]</property>
@@ -6999,7 +6999,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.1.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
@@ -7025,7 +7025,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.2.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
@@ -7051,7 +7051,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.3.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.fanart))]</property>
@@ -7077,7 +7077,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.4.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.fanart))]</property>
@@ -7103,7 +7103,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.5.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.fanart))]</property>
@@ -7129,7 +7129,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.6.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.6.Art(tvshow.fanart))]</property>
@@ -7155,7 +7155,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.7.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.7.Art(tvshow.fanart))]</property>
@@ -7181,7 +7181,7 @@
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomEpisode.8.PercentPlayed)]</property>
             <property name="Landscape">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.landscape))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.clearart))]</property>
-            <property name="Logo">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.clearlogo))]</property>
+            <property name="Clearlogo">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.clearlogo))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.banner))]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.poster))]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.8.Art(tvshow.fanart))]</property>
@@ -7679,10 +7679,10 @@
                 <width>532</width>
                 <height>340</height>
                 <aspectratio align="center">keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Property(Logo)]</texture>
+                <texture background="true">$INFO[ListItem.Property(clearlogo)]</texture>
             </control>
             <control type="group">
-                <visible>IsEmpty(ListItem.Property(Logo)) + IsEmpty(ListItem.Property(EpisodeNumber))</visible>
+                <visible>IsEmpty(ListItem.Property(clearlogo)) + IsEmpty(ListItem.Property(EpisodeNumber))</visible>
                 <control type="image">
                     <posy>300</posy>
                     <width>532</width>
@@ -7749,7 +7749,7 @@
                     <width>300</width>
                     <height>140</height>
                     <aspectratio scalediffuse="false">keep</aspectratio>
-                    <texture>$INFO[ListItem.Property(Logo)]</texture>
+                    <texture>$INFO[ListItem.Property(clearlogo)]</texture>
                 </control>
                 <control type="label">
                     <posx>399</posx>
@@ -7760,7 +7760,7 @@
                     <label>$INFO[ListItem.Label]</label>
                     <font>Font_Bold40</font>
                     <shadowcolor>black</shadowcolor>
-                    <visible>IsEmpty(ListItem.Property(Banner)) + IsEmpty(ListItem.Property(Logo)) + IsEmpty(ListItem.Property(EpisodeNumber))</visible>
+                    <visible>IsEmpty(ListItem.Property(Banner)) + IsEmpty(ListItem.Property(clearlogo)) + IsEmpty(ListItem.Property(EpisodeNumber))</visible>
                 </control>
             </control>
             <control type="image">
@@ -7827,8 +7827,8 @@
             <width>512</width>
             <height>340</height>
             <aspectratio align="center">keep</aspectratio>
-            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Logo)]</texture>
-            <visible>!IsEmpty(ListItem.Property(Logo))</visible>
+            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(clearlogo)]</texture>
+            <visible>!IsEmpty(ListItem.Property(clearlogo))</visible>
         </control>
         <control type="image">
             <posx>10</posx>
@@ -7837,7 +7837,7 @@
             <height>340</height>
             <aspectratio align="center">keep</aspectratio>
             <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Fanart)]</texture>
-            <visible>IsEmpty(ListItem.Property(Logo))</visible>
+            <visible>IsEmpty(ListItem.Property(clearlogo))</visible>
         </control>
         <control type="label">
             <posx>266</posx>
@@ -7869,8 +7869,8 @@
             <width>512</width>
             <height>340</height>
             <aspectratio align="center">keep</aspectratio>
-            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Logo)]</texture>
-            <visible>IsEmpty(ListItem.Property(ClearArt)) + !IsEmpty(ListItem.Property(Logo))</visible>
+            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(clearlogo)]</texture>
+            <visible>IsEmpty(ListItem.Property(ClearArt)) + !IsEmpty(ListItem.Property(clearlogo))</visible>
         </control>
         <control type="image">
             <posx>16</posx>
@@ -7888,7 +7888,7 @@
             <height>340</height>
             <aspectratio align="center">keep</aspectratio>
             <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Fanart)]</texture>
-            <visible>IsEmpty(ListItem.Property(Logo)) + IsEmpty(ListItem.Property(ClearArt))</visible>
+            <visible>IsEmpty(ListItem.Property(clearlogo)) + IsEmpty(ListItem.Property(ClearArt))</visible>
         </control>
         <control type="label">
             <posx>266</posx>
