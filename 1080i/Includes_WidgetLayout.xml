@@ -2359,6 +2359,45 @@
                     <onclick condition="Substring(Control.GetLabel(4321),wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
                     <visible>SubString(Control.GetLabel(4321),wunderground)</visible>
                 </control>
+                <include>FeaturedWidget</include>
+                <control type="image">
+                    <posx>21</posx>
+                    <posy>21</posy>
+                    <width>1608</width>
+                    <height>360</height>
+                    <texture border="50">featured/panel_featured_overlay.png</texture>
+                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <include>Animation_VisibleChange200</include>
+                    <visible>Substring(Control.GetLabel(4321),default)</visible>
+                </control>
+                <control type="button">
+                    <description>left Arrow</description>
+                    <posx>-40</posx>
+                    <posy>180</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texturefocus flipx="true">arrowright.png</texturefocus>
+                    <texturenofocus flipx="true">arrowright.png</texturenofocus>
+                    <onclick>Control.Move(5010,-1)</onclick>
+                    <visible>Control.HasFocus(5010) + Container(5010).HasPrevious</visible>
+                    <include>Animation_DialogPopupVisibleChange</include>
+                </control>
+                <control type="button">
+                    <description>right Arrow</description>
+                    <posx>1650</posx>
+                    <posy>180</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texturefocus>arrowright.png</texturefocus>
+                    <texturenofocus>arrowright.png</texturenofocus>
+                    <onclick>Control.Move(5010,1)</onclick>
+                    <visible>Control.HasFocus(5010) + Container(5010).HasNext</visible>
+                    <include>Animation_DialogPopupVisibleChange</include>
+                </control>
+            </control>
+        </control>
+    </include>
+    <include name="FeaturedWidget">
                 <control type="group">
                     <posy>31</posy>
                     <visible>Substring(Control.GetLabel(4321),featured)</visible>
@@ -2603,42 +2642,6 @@
                         </control>
                     </control>
                 </control>
-                <control type="image">
-                    <posx>21</posx>
-                    <posy>21</posy>
-                    <width>1608</width>
-                    <height>360</height>
-                    <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange200</include>
-                    <visible>Substring(Control.GetLabel(4321),default)</visible>
-                </control>
-                <control type="button">
-                    <description>left Arrow</description>
-                    <posx>-40</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus flipx="true">arrowright.png</texturefocus>
-                    <texturenofocus flipx="true">arrowright.png</texturenofocus>
-                    <onclick>Control.Move(5010,-1)</onclick>
-                    <visible>Control.HasFocus(5010) + Container(5010).HasPrevious</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
-                </control>
-                <control type="button">
-                    <description>right Arrow</description>
-                    <posx>1650</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus>arrowright.png</texturefocus>
-                    <texturenofocus>arrowright.png</texturenofocus>
-                    <onclick>Control.Move(5010,1)</onclick>
-                    <visible>Control.HasFocus(5010) + Container(5010).HasNext</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
-                </control>
-            </control>
-        </control>
     </include>
     <include name="WidgetInfoPanel">
         <control type="group">
@@ -4506,7 +4509,46 @@
                     <onclick condition="Substring(Control.GetLabel(4325),wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
                     <visible>SubString(Control.GetLabel(4325),wunderground)</visible>
                 </control>
-                <control type="group">
+                <include>FeaturedWidget2</include>
+                <control type="image">
+                    <posx>21</posx>
+                    <posy>21</posy>
+                    <width>1608</width>
+                    <height>360</height>
+                    <texture border="50">featured/panel_featured_overlay.png</texture>
+                    <include>Animation_VisibleChange200</include>
+                    <visible>Substring(Control.GetLabel(4325),default)</visible>
+                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                </control>
+                <control type="button">
+                    <description>left Arrow</description>
+                    <posx>-40</posx>
+                    <posy>180</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texturefocus flipx="true">arrowright.png</texturefocus>
+                    <texturenofocus flipx="true">arrowright.png</texturenofocus>
+                    <onclick>Control.Move(6010,-1)</onclick>
+                    <visible>Control.HasFocus(6010) + Container(6010).HasPrevious</visible>
+                    <include>Animation_DialogPopupVisibleChange</include>
+                </control>
+                <control type="button">
+                    <description>right Arrow</description>
+                    <posx>1650</posx>
+                    <posy>180</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texturefocus>arrowright.png</texturefocus>
+                    <texturenofocus>arrowright.png</texturenofocus>
+                    <onclick>Control.Move(6010,1)</onclick>
+                    <visible>Control.HasFocus(6010) + Container(6010).HasNext</visible>
+                    <include>Animation_DialogPopupVisibleChange</include>
+                </control>
+            </control>
+        </control>
+    </include>
+    <include name="FeaturedWidget2">
+                        <control type="group">
                     <posy>31</posy>
                     <visible>Substring(Control.GetLabel(4325),featured)</visible>
                     <include>Animation_VisibleChange400</include>
@@ -4678,7 +4720,7 @@
                             <align>right</align>
                             <font>Font_Reg22</font>
                             <label>$INFO[Container(6002).CurrentPage] / $INFO[Container(6002).NumItems]</label>
-                        </control>
+                        </control>i
                         <control type="image">
                             <width>340</width>
                             <height>340</height>
@@ -4761,43 +4803,10 @@
                         </control>
                     </control>
                 </control>
-                <control type="image">
-                    <posx>21</posx>
-                    <posy>21</posy>
-                    <width>1608</width>
-                    <height>360</height>
-                    <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <include>Animation_VisibleChange200</include>
-                    <visible>Substring(Control.GetLabel(4325),default)</visible>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
-                <control type="button">
-                    <description>left Arrow</description>
-                    <posx>-40</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus flipx="true">arrowright.png</texturefocus>
-                    <texturenofocus flipx="true">arrowright.png</texturenofocus>
-                    <onclick>Control.Move(6010,-1)</onclick>
-                    <visible>Control.HasFocus(6010) + Container(6010).HasPrevious</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
-                </control>
-                <control type="button">
-                    <description>right Arrow</description>
-                    <posx>1650</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus>arrowright.png</texturefocus>
-                    <texturenofocus>arrowright.png</texturenofocus>
-                    <onclick>Control.Move(6010,1)</onclick>
-                    <visible>Control.HasFocus(6010) + Container(6010).HasNext</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
-                </control>
-            </control>
-        </control>
     </include>
+
+
+
     <include name="5010List">
         <control type="group">
             <visible>!Substring(Control.GetLabel(4321),concerts) + !Substring(Control.GetLabel(4321),weather)</visible>
