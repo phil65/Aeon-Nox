@@ -298,43 +298,6 @@
             <selected>Control.HasFocus(1688)</selected>
         </control>
     </include>
-    <include name="ViewtypeSettingsButton">
-        <control type="radiobutton" id="1665">
-            <label>$LOCALIZE[31171]</label>
-            <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Paintbucket.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Paintbucket.png</textureradiooff>
-            <selected>Control.HasFocus(1665)</selected>
-            <onclick condition="Control.IsVisible(50)">SetProperty(actualViewtype,List,home)</onclick>
-            <onclick condition="Control.IsVisible(52)">SetProperty(actualViewtype,Tripanel,home)</onclick>
-            <onclick condition="Control.IsVisible(53)">SetProperty(actualViewtype,TripanelSquare,home)</onclick>
-            <onclick condition="Control.IsVisible(57)">SetProperty(actualViewtype,Shift,home)</onclick>
-            <onclick condition="Control.IsVisible(500)">SetProperty(actualViewtype,Wall,home)</onclick>
-            <onclick condition="Control.IsVisible(501)">SetProperty(actualViewtype,ShowcaseMovies,home)</onclick>
-            <onclick condition="Control.IsVisible(503)">SetProperty(actualViewtype,Landscape,home)</onclick>
-            <onclick condition="Control.IsVisible(506)">SetProperty(actualViewtype,LowlistMusic,home)</onclick>
-            <onclick condition="Control.IsVisible(508)">SetProperty(actualViewtype,Banners,home)</onclick>
-            <onclick condition="Control.IsVisible(509)">SetProperty(actualViewtype,showcaseSquare,home)</onclick>
-            <onclick condition="Control.IsVisible(510)">SetProperty(actualViewtype,Posters,home)</onclick>
-            <onclick condition="Control.IsVisible(511)">SetProperty(actualViewtype,Lowlist,home)</onclick>
-            <onclick condition="Control.IsVisible(512)">SetProperty(actualViewtype,AddonWall,home)</onclick>
-            <onclick condition="Control.IsVisible(514)">SetProperty(actualViewtype,Episode,home)</onclick>
-            <onclick condition="Control.IsVisible(516)">SetProperty(actualViewtype,BigFan,home)</onclick>
-            <onclick condition="Control.IsVisible(517)">SetProperty(actualViewtype,Stripshow,home)</onclick>
-            <onclick condition="Control.IsVisible(518)">SetProperty(actualViewtype,InfoPanel,home)</onclick>
-            <onclick condition="Control.IsVisible(550)">SetProperty(actualViewtype,Panel,home)</onclick>
-            <onclick condition="Container.Content(episodes)">SetProperty(Area,Episodes,home)</onclick>
-            <onclick condition="Container.Content(movies)">SetProperty(Area,Movies,home)</onclick>
-            <onclick condition="Container.Content(sets)">SetProperty(Area,Sets,home)</onclick>
-            <onclick condition="Container.Content(TVShows)">SetProperty(Area,TVShows,home)</onclick>
-            <onclick condition="Container.Content(seasons)">SetProperty(Area,Seasons,home)</onclick>
-            <onclick condition="Container.Content(musicvideos)">SetProperty(Area,MusicVideos,home)</onclick>
-            <onclick condition="Container.Content(albums)">SetProperty(Area,Albums,home)</onclick>
-            <onclick condition="Container.Content(artists)">SetProperty(Area,Artists,home)</onclick>
-            <onclick condition="Container.Content(addons)">SetProperty(Area,Addons,home)</onclick>
-            <onclick>ActivateWindow(1126)</onclick>
-        </control>
-    </include>
     <include name="GeneralSettingsButton">
         <control type="radiobutton" id="1667">
             <label>Video Settings</label>
@@ -523,7 +486,42 @@
                     <onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader,mode=custom,mediatype=musicvideo,silent=true,poster,clearlogo,fanart,extrafanart)</onclick>
                     <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,silent=true,extrafanart,poster,fanart,banner,clearlogo,clearart,landscape,discart,extrathumbs)</onclick>
                 </control>
-                <include condition="!Skin.HasSetting(hideoptions)">ViewtypeSettingsButton</include>
+                <control type="radiobutton" id="1665">
+                    <label>$LOCALIZE[31171]</label>
+                    <include>Objects_MediaMenuButtonIcons</include>
+                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Paintbucket.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Paintbucket.png</textureradiooff>
+                    <selected>Control.HasFocus(1665)</selected>
+                    <onclick condition="Control.IsVisible(50)">SetProperty(actualViewtype,List,home)</onclick>
+                    <onclick condition="Control.IsVisible(52)">SetProperty(actualViewtype,Tripanel,home)</onclick>
+                    <onclick condition="Control.IsVisible(53)">SetProperty(actualViewtype,TripanelSquare,home)</onclick>
+                    <onclick condition="Control.IsVisible(57)">SetProperty(actualViewtype,Shift,home)</onclick>
+                    <onclick condition="Control.IsVisible(500)">SetProperty(actualViewtype,Wall,home)</onclick>
+                    <onclick condition="Control.IsVisible(501)">SetProperty(actualViewtype,ShowcaseMovies,home)</onclick>
+                    <onclick condition="Control.IsVisible(503)">SetProperty(actualViewtype,Landscape,home)</onclick>
+                    <onclick condition="Control.IsVisible(506)">SetProperty(actualViewtype,LowlistMusic,home)</onclick>
+                    <onclick condition="Control.IsVisible(508)">SetProperty(actualViewtype,Banners,home)</onclick>
+                    <onclick condition="Control.IsVisible(509)">SetProperty(actualViewtype,showcaseSquare,home)</onclick>
+                    <onclick condition="Control.IsVisible(510)">SetProperty(actualViewtype,Posters,home)</onclick>
+                    <onclick condition="Control.IsVisible(511)">SetProperty(actualViewtype,Lowlist,home)</onclick>
+                    <onclick condition="Control.IsVisible(512)">SetProperty(actualViewtype,AddonWall,home)</onclick>
+                    <onclick condition="Control.IsVisible(514)">SetProperty(actualViewtype,Episode,home)</onclick>
+                    <onclick condition="Control.IsVisible(516)">SetProperty(actualViewtype,BigFan,home)</onclick>
+                    <onclick condition="Control.IsVisible(517)">SetProperty(actualViewtype,Stripshow,home)</onclick>
+                    <onclick condition="Control.IsVisible(518)">SetProperty(actualViewtype,InfoPanel,home)</onclick>
+                    <onclick condition="Control.IsVisible(550)">SetProperty(actualViewtype,Panel,home)</onclick>
+                    <onclick condition="Container.Content(episodes)">SetProperty(Area,Episodes,home)</onclick>
+                    <onclick condition="Container.Content(movies)">SetProperty(Area,Movies,home)</onclick>
+                    <onclick condition="Container.Content(sets)">SetProperty(Area,Sets,home)</onclick>
+                    <onclick condition="Container.Content(TVShows)">SetProperty(Area,TVShows,home)</onclick>
+                    <onclick condition="Container.Content(seasons)">SetProperty(Area,Seasons,home)</onclick>
+                    <onclick condition="Container.Content(musicvideos)">SetProperty(Area,MusicVideos,home)</onclick>
+                    <onclick condition="Container.Content(albums)">SetProperty(Area,Albums,home)</onclick>
+                    <onclick condition="Container.Content(artists)">SetProperty(Area,Artists,home)</onclick>
+                    <onclick condition="Container.Content(addons)">SetProperty(Area,Addons,home)</onclick>
+                    <onclick>ActivateWindow(1126)</onclick>
+                    <visible>!Skin.HasSetting(hideoptions)</visible>
+                </control>
                 <include condition="!Skin.HasSetting(hideoptions) + [Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(videos)]">GeneralSettingsButton</include>
                 <control type="radiobutton" id="612" description="GoToPlaylist">
                     <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/playlist.png</textureradioon>
