@@ -6,8 +6,34 @@
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="group">
-            <posy>30</posy>
-            <include>Furniture_SettingsBackPanel</include>
+            <posy>200</posy>
+        <control type="image">
+            <posx>36</posx>
+            <posy>36</posy>
+            <width>1846</width>
+            <height>700</height>
+            <texture>settings/settings_panelback_shadow.png</texture>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <include>Animation_VisibleChange400</include>
+        </control>
+        <control type="image">
+            <posx>34</posx>
+            <posy>34</posy>
+            <width>1850</width>
+            <height>708</height>
+            <texture>settings/settings_panelback.png</texture>
+            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+        </control>
+        <control type="image">
+            <posx>50</posx>
+            <posy>37</posy>
+            <width>360</width>
+            <height>178</height>
+            <aspectratio>keep</aspectratio>
+            <texture>XBMC_Logo.png</texture>
+            <colordiffuse>white</colordiffuse>
+        </control>
             <control type="grouplist" id="500">
                 <posx>63</posx>
                 <posy>180</posy>
