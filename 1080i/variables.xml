@@ -1018,6 +1018,7 @@
         <value>-</value>
     </variable>
     <variable name="MusicFanartVar">
+        <value condition="!Skin.HasSetting(NoMusicLibraryFanart) + [Container.Content(genres) | Container.Content(years)]">$INFO[Control.GetLabel(4324)]</value>
         <value condition="!Skin.HasSetting(NoMusicLibraryFanart) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="IsEmpty(Skin.String(MusicBackground))">special://skin/backgrounds/music/</value>
         <value>$INFO[Skin.String(MusicBackground)]</value>
