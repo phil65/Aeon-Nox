@@ -132,7 +132,13 @@
             </control>
             <!-- Music ExtraFanart -->
             <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
-            <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
+        <control type="multiimage">
+            <aspectratio align="center" aligny="top">scale</aspectratio>
+            <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+            <fadetime>600</fadetime>
+            <visible>Player.HasAudio + Skin.HasSetting(artistslideshowhome)</visible>
+            <include>Animation_VisibleChange400</include>
+        </control>
                     </control>
 
 
