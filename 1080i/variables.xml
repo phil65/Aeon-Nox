@@ -960,6 +960,8 @@
         <value></value>
     </variable>
     <variable name="HomeMainFanartVar">
+        <value condition="Substring(Control.GetLabel(4322),case) + !IsEmpty(Skin.String(LiveBG))">$INFO[Skin.String(LiveBG)]</value>
+        <value condition="Substring(Control.GetLabel(4322),case)">special://skin/backgrounds/speakergrill.jpg</value>
         <value condition="Control.IsVisible(8998) + !IsEmpty(Container(8000).ListItem.Property(Fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
         <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
         <value>$VAR[MultiFanartVar]</value>
