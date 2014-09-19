@@ -580,7 +580,11 @@
             </control>
         </focusedlayout>
         <content>
-        <include>PicturesMainMenu</include>
+            <include>MainMenuItems</include>
+        </content>
+    </include>
+    <include name="MainMenuItems">
+                <include>PicturesMainMenu</include>
         <include>MusicMainMenu</include>
         <include>MoviesMainMenu</include>
         <include>MusicVideosMainMenu</include>
@@ -601,7 +605,6 @@
         <include>ShutdownMainMenu</include>
         <include>FavoritesMainMenu</include>
         <include>WeatherMainMenu</include>
-        </content>
     </include>
     <include name="SubMenuListContent">
         <posx>145</posx>
@@ -664,26 +667,22 @@
     </include>
     <include name="MainMenuFixedList">
         <control type="fixedlist" id="9000">
-            <include condition="Window.IsActive(script-HomeWindow Script-main.xml)">MainMenuListContent</include>
-            <include condition="Window.IsActive(skinsettings)">MainMenuListContentskinsettings</include>
+            <include>MainMenuListContent</include>
         </control>
     </include>
     <include name="MainMenuWrapList">
         <control type="wraplist" id="9000">
-            <include condition="Window.IsActive(script-HomeWindow Script-main.xml)">MainMenuListContent</include>
-            <include condition="Window.IsActive(skinsettings)">MainMenuListContentskinsettings</include>
+            <include>MainMenuListContent</include>
         </control>
     </include>
     <include name="SubMenuFixedList">
         <control type="fixedlist" id="9010">
-            <include condition="Window.IsActive(script-HomeWindow Script-main.xml)">SubMenuListContent</include>
-            <include condition="Window.IsActive(skinsettings)">SubMenuListContentskinsettings</include>
+            <include>SubMenuListContent</include>
         </control>
     </include>
     <include name="SubMenuWrapList">
         <control type="wraplist" id="9010">
-            <include condition="Window.IsActive(script-HomeWindow Script-main.xml)">SubMenuListContent</include>
-            <include condition="Window.IsActive(skinsettings)">SubMenuListContentskinsettings</include>
+            <include>SubMenuListContent</include>
         </control>
     </include>
     <include name="MainMenuCommonContent">
