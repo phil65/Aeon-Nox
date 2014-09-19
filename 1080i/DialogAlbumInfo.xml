@@ -9,8 +9,7 @@
     <controls>
         <control id="9023" type="button">
             <include>HiddenObject</include>
-            <onfocus>RunScript(script.home,container=8010,focuscontrol=8010)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
+            <onfocus>RunScript(script.home,container=8010,focuscontrol=5015)</onfocus>
         </control>
         <control id="5014" type="button">
             <include>HiddenObject</include>
@@ -34,10 +33,13 @@
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
             <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
             <onfocus>SetProperty(WidgetType,artists,home)</onfocus>
-            <onfocus>RunScript(script.home,container=5010,focuscontrol=5010)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
+            <onfocus>RunScript(script.home,container=5010,focuscontrol=5015)</onfocus>
             <animation delay="140" effect="fade" reversible="false" time="1">Hidden</animation>
             <visible>Control.HasFocus(5010)</visible>
+        </control>
+        <control id="5015" type="button">
+            <include>HiddenObject</include>
+            <onfocus>ActivateWindow(1165)</onfocus>
         </control>
         <control id="9025" type="button">
             <include>HiddenObject</include>
