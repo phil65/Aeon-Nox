@@ -108,14 +108,16 @@
         <control type="group">
             <!--              <visible>![[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis)]]</visible>
  -->
+            <control type="group">
+                <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+                <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+
             <control type="multiimage">
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <imagepath background="true" fallback="special://skin/backgrounds/videos">$VAR[HomeMainFanartVar]</imagepath>
                 <fadetime>600</fadetime>
                 <animation effect="fade" time="480">Visible</animation>
                 <animation effect="fade" time="480">Hidden</animation>
-                <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <visible>!Substring(Control.GetLabel(4322),wall)</visible>
             </control>
             <include>InteractiveCasesBackground</include>
@@ -123,6 +125,8 @@
             <include>LiveNoCasesbackground</include>
             <include>cdwall-musicvisualisation</include>
             <include>MovieWall</include>
+        </control>
+
             <control type="image">
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
