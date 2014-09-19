@@ -2787,8 +2787,8 @@
                         <include>WidgetMenuLabel</include>
                         <label>$LOCALIZE[31925]</label>
                         <!--         <onclick>RunScript(script.extendedinfo,info=movielists,id=$INFO[Window(home).Property(ID)],silent=False)</onclick>-->
-                        <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similartvshowstrakt,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],id=$INFO[Window(home).Property(ID)],silent=False)</onclick>
-                        <onclick condition="!IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similartvshowstrakt,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],dbid=$INFO[Window(home).Property(DBID)],silent=False)</onclick>
+                        <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=studio,info=similartvshowstrakt,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],id=$INFO[Window(home).Property(ID)],silent=False)</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=studio,info=similartvshowstrakt,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],dbid=$INFO[Window(home).Property(DBID)],silent=False)</onclick>
                         <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),movie)">RunScript(script.extendedinfo,info=similarlocal,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],id=$INFO[Window(home).Property(ID)],type=movie,silent=False)</onclick>
                         <onclick condition="!IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),movie)">RunScript(script.extendedinfo,info=similarlocal,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],dbid=$INFO[Window(home).Property(DBID)],type=movie,silent=False)</onclick>
                         <onclick>Dialog.Close(1165)</onclick>
@@ -2861,7 +2861,7 @@
                             <label>$INFO[Window(home).Property(Year),• , •]</label>
                             <font>Font_Reg30_2</font>
                             <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Control.GetLabel(12020)) + !IsEmpty(Window(home).Property(Year))(</visible>
+                            <visible>!IsEmpty(Control.GetLabel(12020)) + !IsEmpty(Window(home).Property(Year))</visible>
                         </control>
                         <control type="label">
                             <width min="15" max="500">auto</width>
