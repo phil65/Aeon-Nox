@@ -17,7 +17,7 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].SubMenu,$INFO[Skin.String(ItemToEdit.SubMenu)])</onunload>
     <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>SetProperty(activewindow,home,home)</onunload>
-    <onunload>ActivateWindow(1141)</onunload>
+    <onunload condition="!IsEmpty(Window(skinsettings).Property(WidgetSelection))">ActivateWindow(1141)</onunload>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
