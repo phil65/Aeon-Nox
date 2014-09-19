@@ -124,19 +124,18 @@
             <include>LiveNoCasesbackground</include>
             <include>cdwall-musicvisualisation</include>
             <include>MovieWall</include>
-        </control>
-
             <control type="image">
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
-                <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             </control>
             <!-- Music ExtraFanart -->
             <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
             <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
+                    </control>
+
+
             <include>CommonMediaPlayingBackground</include>
         </control>
         <!-- Home Fullscreen Video -->
