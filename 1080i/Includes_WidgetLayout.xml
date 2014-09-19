@@ -2,9 +2,9 @@
 <includes>
     <include name="AlternateTimeAndStats">
         <control type="group">
-            <visible>Skin.HasSetting(AlternateTimeStats) | Window.IsActive(skinsettings)</visible>
-            <animation effect="slide" end="-1920,0" time="240" condition="!Window.IsActive(skinsettings)">WindowClose</animation>
-            <animation effect="slide" start="-1920,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup) + !Window.IsActive(skinsettings)">WindowOpen</animation>
+            <visible>Skin.HasSetting(AlternateTimeStats) | Window.IsActive(1122)</visible>
+            <animation effect="slide" end="-1920,0" time="240" condition="!Window.IsActive(1122)">WindowClose</animation>
+            <animation effect="slide" start="-1920,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup) + !Window.IsActive(1122)">WindowOpen</animation>
             <animation effect="slide" start="-1920" end="0" time="240">VisibleChange</animation>
             <animation effect="slide" start="-1920,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
@@ -136,8 +136,8 @@
             <visible>[system.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)] + !Skin.HasSetting(DisableRSS)</visible>
             <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
             <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
-            <animation effect="slide" end="1920,0" time="240" condition="!Window.IsActive(skinsettings)">WindowClose</animation>
-            <animation effect="slide" start="1880,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup) + !Window.IsActive(skinsettings)">WindowOpen</animation>
+            <animation effect="slide" end="1920,0" time="240" condition="!Window.IsActive(1122)">WindowClose</animation>
+            <animation effect="slide" start="1880,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup) + !Window.IsActive(1122)">WindowOpen</animation>
             <animation effect="slide" start="1880,0" end="0,0" delay="2000" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
@@ -5180,8 +5180,8 @@
                     </control>
                 </focusedlayout>
                 <content>
-                    <include condition="!Window.IsActive(skinsettings)">5010Content</include>
-                    <include condition="Window.IsActive(skinsettings)">5010Contentskinsettings</include>
+                    <include condition="!Window.IsActive(1122)">5010Content</include>
+                    <include condition="Window.IsActive(1122)">5010Contentskinsettings</include>
                 </content>
             </control>
         </control>
@@ -5232,7 +5232,7 @@
         <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),4custompanel)">Custom4Widget</include>
         <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),5custompanel)">Custom5Widget</include>
         <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),6custompanel)">Custom6Widget</include>
-        <include condition="Window.IsActive(skinsettings) | Substring(Skin.String(widgetlist),babe)">DailyBabesContent</include>
+        <include condition="Window.IsActive(1122) | Substring(Skin.String(widgetlist),babe)">DailyBabesContent</include>
         <include condition="Substring(Skin.String(widgetlist),thebigpicture) + System.HasAddon(service.skin.widgets_bigpictures)">TheBigPictureContent</include>
         <include condition="Substring(Skin.String(widgetlist),xkcd)">XKCDContent</include>
         <include condition="Substring(Skin.String(widgetlist),cyanide)">CyanideContent</include>
@@ -5276,10 +5276,11 @@
             <onclick condition="SubString(Control.GetLabel(4321),11custom)">$INFO[Skin.String(SmartPlaylist11.Call)]</onclick>
             <onclick condition="SubString(Control.GetLabel(4321),12custom)">$INFO[Skin.String(SmartPlaylist12.Call)]</onclick>
             <onclick condition="SubString(Control.GetLabel(4321),cyanide)">RunScript(script.extendedinfo,info=cyanide)</onclick>
+            <onclick condition="SubString(Control.GetLabel(4321),xkcd)">RunScript(script.extendedinfo,info=xkcd)</onclick>
             <onclick condition="Substring(Control.GetLabel(4321),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
             <onclick condition="Substring(Control.GetLabel(4321),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
             <onclick condition="!Substring(Control.GetLabel(4321),custom) + !Substring(Control.GetLabel(4321),pics)">SetProperty(SkinWidgets_RandomItems_Update,true,home)</onclick>
-            <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),actors) | Substring(Control.GetLabel(4321),cyanide)</visible>
+            <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),actors) | Substring(Control.GetLabel(4321),cyanide) | Substring(Control.GetLabel(4321),xkcd)</visible>
         </item>
     </include>
     <include name="5010Contentskinsettings">
@@ -6098,7 +6099,7 @@
                 <preloaditems>1</preloaditems>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
-                    <include condition="Substring(Skin.String(widget2list),landscape) | Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),landscape) | Window.IsActive(1122)">WidgetLandscapeLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -6108,10 +6109,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
-                    <include condition="Substring(Skin.String(widget2list),landscape) | Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),landscape) | Window.IsActive(1122)">WidgetLandscapeLayout</include>
                 </itemlayout>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),keepar)">
-                    <include condition="Substring(Skin.String(widget2list),keepar) | Window.IsActive(skinsettings)">WidgetRCBLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),keepar) | Window.IsActive(1122)">WidgetRCBLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -6121,10 +6122,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),keepar)">
-                    <include condition="Substring(Skin.String(widget2list),keepar) | Window.IsActive(skinsettings)">WidgetRCBLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),keepar) | Window.IsActive(1122)">WidgetRCBLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),bannerlayout)">
-                    <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(skinsettings)">WidgetBannerLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(1122)">WidgetBannerLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>180</height>
@@ -6134,7 +6135,7 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),bannerlayout)">
-                    <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(skinsettings)">WidgetBannerLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(1122)">WidgetBannerLayout</include>
                 </itemlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),logolayout)">
                     <include>WidgetLogoLayout</include>
@@ -6405,10 +6406,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
-                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(skinsettings)">Panel2WidgetPosterLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1122)">Panel2WidgetPosterLayout</include>
                 </itemlayout>
                 <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
-                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(skinsettings)">Panel2WidgetPosterLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1122)">Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posy>10</posy>
                         <width>532</width>
@@ -6419,10 +6420,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
-                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(skinsettings)">Panel2WidgetEpisodeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1122)">Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
-                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(skinsettings)">Panel2WidgetEpisodeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1122)">Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
@@ -6432,10 +6433,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
-                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(skinsettings)">Panel2WidgetSquareLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1122)">Panel2WidgetSquareLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
-                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(skinsettings)">Panel2WidgetSquareLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1122)">Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
@@ -6445,8 +6446,8 @@
                     </control>
                 </focusedlayout>
                 <content>
-                    <include condition="!Window.IsActive(skinsettings)">6010Content</include>
-                    <include condition="Window.IsActive(skinsettings)">6010Contentskinsettings</include>
+                    <include condition="!Window.IsActive(1122)">6010Content</include>
+                    <include condition="Window.IsActive(1122)">6010Contentskinsettings</include>
                 </content>
             </control>
         </control>
@@ -6497,7 +6498,7 @@
         <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),10custompanel)">Custom4Widget2</include>
         <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),11custompanel)">Custom5Widget2</include>
         <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),12custompanel)">Custom6Widget2</include>
-        <include condition="Window.IsActive(skinsettings) | Substring(Skin.String(widget2list),babe)">DailyBabesContent2</include>
+        <include condition="Window.IsActive(1122) | Substring(Skin.String(widget2list),babe)">DailyBabesContent2</include>
         <include condition="Substring(Skin.String(widget2list),thebigpicture) + System.HasAddon(service.skin.widgets_bigpictures)">TheBigPictureContent2</include>
         <include condition="Substring(Skin.String(widget2list),xkcd)">XKCDContent2</include>
         <include condition="Substring(Skin.String(widget2list),cyanide)">CyanideContent2</include>
@@ -6536,9 +6537,10 @@
             <onclick condition="SubString(Control.GetLabel(4325),12custom)">$INFO[Skin.String(SmartPlaylist12.Call)]</onclick>
             <onclick condition="Substring(Control.GetLabel(4325),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
             <onclick condition="SubString(Control.GetLabel(4325),cyanide)">RunScript(script.extendedinfo,info=cyanide)</onclick>
+            <onclick condition="SubString(Control.GetLabel(4325),xkcd)">RunScript(script.extendedinfo,info=xkcd)</onclick>
             <onclick condition="Substring(Control.GetLabel(4325),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
             <onclick condition="!Substring(Control.GetLabel(4325),custom) + !Substring(Control.GetLabel(4325),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
-            <visible>Substring(Control.GetLabel(4325),random) | Substring(Control.GetLabel(4325),actors) | Substring(Control.GetLabel(4325),cyanide)</visible>
+            <visible>Substring(Control.GetLabel(4325),random) | Substring(Control.GetLabel(4325),actors) | Substring(Control.GetLabel(4325),cyanide) | Substring(Control.GetLabel(4325),xkcd)</visible>
         </item>
     </include>
     <include name="6010Contentskinsettings">

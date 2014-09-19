@@ -2,6 +2,7 @@
 <window type="dialog" id="1122">
     <defaultcontrol always="true">4</defaultcontrol>
     <allowoverlay>no</allowoverlay>
+    <onunload>SetProperty(SettingsFocusOffset,$INFO[Skin.String(ItemToEdit.Label)],home)</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].MultiFanart,$ESCINFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Label,$ESCINFO[Skin.String(ItemToEdit.Label)])</onunload>
@@ -14,8 +15,22 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Icon,$ESCINFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].SubMenu,$INFO[Skin.String(ItemToEdit.SubMenu)])</onunload>
+    <onload>SetProperty(MenuName,MenuItem,home)</onload>
+    <onunload>SetProperty(activewindow,home,home)</onunload>
+    <onunload>ActivateWindow(1141)</onunload>
+    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
+             <include>MainMenuCommonContent</include>
+        <include>HomePanelWidget_skinsettings</include>
+        <include>HomePanelWidget2_skinsettings</include>
+        <control type="group">
+            <include>Animation_OpenCloseZoom</include>
+            <include>RecentWidget_skinsettings</include>
+            <include>RecentWidget2_skinsettings</include>
+            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget</include>
+            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget2</include>
+        </control>
         <control type="group">
             <posy>-40</posy>
             <visible>!Window.IsActive(script-RSS_Editor-rssEditor.xml) + !Window.IsActive(1137) + !Window.IsActive(1160) + !Window.IsActive(1162) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1144) + !Window.IsActive(1146) + !Window.IsActive(1155) + !Window.IsVisible(DialogKeyboard.xml)</visible>

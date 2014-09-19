@@ -3,12 +3,7 @@
     <defaultcontrol always="true">10000</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
-    <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onload>ClearProperty(FocusOnCustomizer)</onload>
-    <onunload>Skin.SetString(widgetlist,$INFO[Control.GetLabel(11111)])</onunload>
-    <onunload>Skin.SetString(widget2list,$INFO[Control.GetLabel(11112)])</onunload>
-    <onunload>Skin.SetString(backgroundlist,$INFO[Control.GetLabel(11113)])</onunload>
-    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(1116) | Window.Previous(settings)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
         <effect type="fade" end="100" time="240" />
@@ -18,23 +13,6 @@
         <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
     </animation>
     <controls>
-        <control type="button" id="9006">
-            <include>HiddenObject</include>
-            <onfocus>Skin.Setstring(ItemToEdit.Label,$ESCINFO[Container(9000).ListItem.Label])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$ESCINFO[Container(9000).ListItem.Icon])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.Icon,$ESCINFO[Container(9000).ListItem.Property(BigIcon)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.Widget,$INFO[Container(9000).ListItem.Property(Widget)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.Widget2,$INFO[Container(9000).ListItem.Property(Widget2)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.WidgetTitle,$ESCINFO[Container(9000).ListItem.Property(WidgetTitle)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.Widget2Title,$ESCINFO[Container(9000).ListItem.Property(Widget2Title)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.InfoLine,$INFO[Container(9000).ListItem.Property(InfoLine)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.SubMenu,$INFO[Container(9000).ListItem.Property(submenuVisibility)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(9000).ListItem.Property(DisableIcon)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.Type,$INFO[Container(9000).ListItem.Property(Type)])</onfocus>
-            <onfocus>Skin.Setstring(ItemToEdit.Path,$ESCINFO[Container(9000).ListItem.Property(Path)])</onfocus>
-            <onfocus>SetFocus(9000)</onfocus>
-            <onfocus>ActivateWindow(1122)</onfocus>
-        </control>
         <include>CommonSettingsBackground</include>
         <include>CommonMediaPlayingBackground</include>
         <include>Furniture_SettingsFloor</include>
@@ -81,10 +59,6 @@
                 <content>
                     <item id="1">
                         <label>128</label>
-                        <onclick>noop</onclick>
-                    </item>
-                    <item id="3">
-                        <label>Main Menu</label>
                         <onclick>noop</onclick>
                     </item>
                     <item id="8">
@@ -392,16 +366,6 @@
                         <label>31715</label>
                         <onclick>ActivateWindow(1148)</onclick>
                     </control>
-                    <control type="button" id="453">
-                        <label>Color Settings</label>
-                       <width>367</width>
-                        <height>74</height>
-                        <textoffsetx>30</textoffsetx>
-<texturenofocus>button-nofocus.png</texturenofocus>
-                        <font>Font_Reg32</font>
-                        <textcolor>grey2</textcolor>
-                        <onclick>ActivateWindow(1128)</onclick>
-                    </control>
                                         <control type="button" id="457">
                         <label>31877</label>
                        <width>367</width>
@@ -418,10 +382,7 @@
                     <posx>384</posx>
                     <posy>265</posy>
                     <animation effect="zoom" start="100,100" end="76.5,70" center="400,180" time="640" easing="inout" tween="circle" condition="true">Conditional</animation>
-                    <include>MainMenuCustomizer</include>
                     <control type="group">
-                        <visible>Window.IsActive(1158)</visible>
-                        <include>Animation_VisibleChange200</include>
                        <control type="group">
                             <control type="multiimage">
                                 <aspectratio align="center" aligny="top">keep</aspectratio>
