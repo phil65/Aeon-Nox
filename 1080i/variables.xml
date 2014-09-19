@@ -406,9 +406,9 @@
         <value>$LOCALIZE[31025]</value>
     </variable>
     <variable name="VideoFanartVar">
-        <value condition="Container.Content(movies) | Container.Content(sets) | Stringcompare(Container.FolderPath,library://video/movies/)">$VAR[MovieFanartVar]</value>
-        <value condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Stringcompare(Container.FolderPath,library://video/tvshows/)">$VAR[TVShowFanartVar]</value>
         <value condition="!Skin.HasSetting(NoVideoLibraryFanart) + [Container.Content(tags) | Container.Content(directors) | Container.Content(actors) | Container.Content(genres) | Container.Content(studios) | Container.Content(countries) | Container.Content(years)]">$INFO[Control.GetLabel(4324)]</value>
+        <value condition="Container.Content(movies) | Container.Content(sets) | SubString(Container.FolderPath,library://video/movies/,left)">$VAR[MovieFanartVar]</value>
+        <value condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | SubString(Container.FolderPath,library://video/tvshows/,left)">$VAR[TVShowFanartVar]</value>
         <value condition="[Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)]">$VAR[MusicVideosFanartVar]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart) + !IsEmpty(Skin.String(VideosBackground))">$INFO[Skin.String(VideosBackground)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart)">special://skin/backgrounds/videos/</value>
