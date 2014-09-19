@@ -97,8 +97,7 @@
         <value>$VAR[AreaColorVar]</value>
     </variable>
     <variable name="DialogColorVar">
-        <value condition="Substring(Skin.CurrentTheme,whit)">FFFFFFFF</value>
-        <value condition="Skin.HasSetting(colordialogs)">$VAR[ColorDiffuseVar]</value>
+        <value condition="Skin.HasSetting(colordialogs) + !Substring(Skin.CurrentTheme,whit)">$VAR[ColorDiffuseVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="ExtendedColorDiffuseVar">
