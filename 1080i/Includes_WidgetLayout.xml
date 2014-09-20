@@ -2,7 +2,6 @@
 <includes>
     <include name="LibraryStats">
         <control type="group">
-            <visible>!Skin.HasSetting(AlternateTimeStats)</visible>
             <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
             <animation effect="slide" end="-750,0" time="240">WindowClose</animation>
             <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -201,104 +200,6 @@
                 </control>
             </control>
         </control>
-    </include>
-    <include name="MovieDBLayouts">
-        <posx>177</posx>
-        <posy>145</posy>
-        <width>1200</width>
-        <height>930</height>
-        <aligny>center</aligny>
-        <scrolltime>200</scrolltime>
-        <onup>8993</onup>
-        <ondown>2020</ondown>
-        <onleft>8002</onleft>
-        <orientation>horizontal</orientation>
-        <itemlayout width="240" height="410">
-            <control type="image">
-                <posx>11</posx>
-                <posy>30</posy>
-                <width>193</width>
-                <height>290</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                <fadetime>IconCrossfadeTime</fadetime>
-            </control>
-            <control type="image">
-                <posx>-8.5</posx>
-                <posy>10.5</posy>
-                <width>232</width>
-                <height>328</height>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                <bordersize>19.5</bordersize>
-            </control>
-            <control type="progress">
-                <posx>15</posx>
-                <posy>330</posy>
-                <width>190</width>
-                <colordiffuse>FFFFFFFF</colordiffuse>
-                <height>13</height>
-                <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                <info>ListItem.Property(PercentPlayed)</info>
-                <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-            </control>
-        </itemlayout>
-        <focusedlayout width="240" height="410">
-            <control type="image">
-                <posy>10</posy>
-                <width>214</width>
-                <height>328</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                <animation effect="fade" time="280" reversible="false">Focus</animation>
-            </control>
-            <control type="progress">
-                <posx>15</posx>
-                <posy>330</posy>
-                <width>190</width>
-                <colordiffuse>FFFFFFFF</colordiffuse>
-                <height>13</height>
-                <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                <info>ListItem.Property(PercentPlayed)</info>
-                <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-            </control>
-            <control type="group">
-                <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                <control type="image">
-                    <posx>11</posx>
-                    <posy>30</posy>
-                    <width>193</width>
-                    <height>290</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
-                    <fadetime>IconCrossfadeTime</fadetime>
-                </control>
-                <control type="image">
-                    <posx>-8.5</posx>
-                    <posy>10.5</posy>
-                    <width>232</width>
-                    <height>328</height>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                    <bordersize>19.5</bordersize>
-                </control>
-            </control>
-            <control type="image">
-                <posy>10</posy>
-                <width>214</width>
-                <height>328</height>
-                <texture border="6">views/addonwall_select.png</texture>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <animation effect="fade" time="280" reversible="false">Focus</animation>
-            </control>
-        </focusedlayout>
     </include>
     <include name="Furniture_HomeNowPlayingVideo">
         <control type="group" id="8994">
@@ -7969,6 +7870,12 @@
             <aspectratio>scale</aspectratio>
             <texture background="true">$INFO[ListItem.Property(InProgress)]</texture>
         </control>
+    </include>
+    <include name="FeaturedWidgetLandscapeLayout">
+        <control type="image">
+            <width>614</width>
+            <height>340</height>
+            <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
             <aspectratio align="center">scale</aspectratio>
         </control>
         <control type="group">
