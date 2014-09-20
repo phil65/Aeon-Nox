@@ -3,6 +3,9 @@
     <defaultcontrol always="true">9012</defaultcontrol>
     <onload>ClearProperty(logo,home)</onload>
     <onload>ClearProperty(Banner,home)</onload>
+    <onload>ClearProperty(Fanart,home)</onload>
+    <onload>ClearProperty(Fanart2,home)</onload>
+    <onload>ClearProperty(Fanart3,home)</onload>
     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=mostlovedtracks,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
     <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
@@ -50,9 +53,20 @@
             <onfocus>SetFocus(6010)</onfocus>
             <onfocus>ActivateWindow(1165)</onfocus>
         </control>
+        <control type="fadelabel" id="4324">
+            <pauseatend>7500</pauseatend>
+            <width>11479</width>
+            <height>118</height>
+            <font>Font_Reg22_Caps</font>
+            <textcolor>00FFFFFF</textcolor>
+            <label>$INFO[ListItem.Art(fanart)]</label>
+            <label>$INFO[Window(Home).Property(Fanart)]</label>
+            <label>$INFO[Window(Home).Property(Fanart2)]</label>
+            <label>$INFO[Window(Home).Property(Fanart3)]</label>
+        </control>
         <control type="image">
             <aspectratio>scale</aspectratio>
-            <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Art(fanart)]</texture>
+            <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[Control.GetLabel(4324)]</texture>
             <include>FullscreenDimensions</include>
         </control>
         <control type="multiimage">
