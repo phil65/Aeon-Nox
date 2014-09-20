@@ -2401,22 +2401,6 @@
                     <posy>31</posy>
                     <visible>Substring(Control.GetLabel(4321),featured)</visible>
                     <include>Animation_VisibleChange400</include>
-                    <control type="button" id="5010">
-                        <posx>26</posx>
-                        <posy>-5</posy>
-                        <width>624</width>
-                        <height>350</height>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                        <texturenofocus>-</texturenofocus>
-                        <onleft>5012</onleft>
-                        <onright>5011</onright>
-                        <include>NavigationWidget1</include>
-                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
-                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                        <onclick>RunScript(script.home,container=5001,focuscontrol=5055)</onclick>
-                    </control>
                     <control type="button" id="5011">
                         <posx>650</posx>
                         <posy>-5</posy>
@@ -2432,6 +2416,22 @@
                         <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
                         <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
                         <onclick>RunScript(script.home,container=5002,focuscontrol=5055)</onclick>
+                    </control>
+                    <control type="button" id="5010">
+                        <posx>26</posx>
+                        <posy>-5</posy>
+                        <width>624</width>
+                        <height>350</height>
+                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onleft>5012</onleft>
+                        <onright>5011</onright>
+                        <include>NavigationWidget1</include>
+                        <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=5001,focuscontrol=5055)</onclick>
                     </control>
                     <control type="button" id="5012">
                         <posx>1001</posx>
@@ -4572,22 +4572,6 @@
                     <posy>31</posy>
                     <visible>Substring(Control.GetLabel(4325),featured)</visible>
                     <include>Animation_VisibleChange400</include>
-                    <control type="button" id="6010">
-                        <posx>26</posx>
-                        <posy>-5</posy>
-                        <width>624</width>
-                        <height>350</height>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                        <texturenofocus></texturenofocus>
-                        <include>NavigationWidget2</include>
-                        <onleft>6012</onleft>
-                        <onright>6011</onright>
-                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
-                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
-                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                        <onclick>RunScript(script.home,container=6001,focuscontrol=5055)</onclick>
-                    </control>
                     <control type="button" id="6011">
                         <posx>650</posx>
                         <posy>-5</posy>
@@ -4603,6 +4587,22 @@
                         <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
                         <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
                         <onclick>RunScript(script.home,container=6002,focuscontrol=5055)</onclick>
+                    </control>
+                    <control type="button" id="6010">
+                        <posx>26</posx>
+                        <posy>-5</posy>
+                        <width>624</width>
+                        <height>350</height>
+                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
+                        <texturenofocus></texturenofocus>
+                        <include>NavigationWidget2</include>
+                        <onleft>6012</onleft>
+                        <onright>6011</onright>
+                        <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
+                        <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
+                        <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
+                        <onclick>RunScript(script.home,container=6001,focuscontrol=5055)</onclick>
                     </control>
                     <control type="button" id="6012">
                         <posx>1001</posx>
@@ -4854,6 +4854,9 @@
             <include>Animation_VisibleChange400</include>
             <control type="panel" id="5010">
                 <posx>27</posx>
+                            <visible>!Substring(Control.GetLabel(4321),featured)</visible>
+            <include>Animation_VisibleChange400</include>
+
                 <posy>26</posy>
                 <width>1596</width>
                 <height>360</height>
@@ -6127,6 +6130,8 @@
             <visible>!Substring(Control.GetLabel(4325),concerts) + !Substring(Control.GetLabel(4325),weather)</visible>
             <include>Animation_VisibleChange400</include>
             <control type="panel" id="6010">
+                <visible>!Substring(Control.GetLabel(4325),featured)</visible>
+                <include>Animation_VisibleChange400</include>
                 <posx>27</posx>
                 <posy>26</posy>
                 <width>1596</width>
@@ -8013,12 +8018,6 @@
             <aspectratio>scale</aspectratio>
             <texture background="true">$INFO[ListItem.Property(InProgress)]</texture>
         </control>
-    </include>
-    <include name="FeaturedWidgetLandscapeLayout">
-        <control type="image">
-            <width>614</width>
-            <height>340</height>
-            <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
             <aspectratio align="center">scale</aspectratio>
         </control>
         <control type="group">
@@ -8027,7 +8026,8 @@
                 <width>614</width>
                 <height>340</height>
                 <aspectratio align="center">scale</aspectratio>
-                <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Art(fanart)]</texture>
+                <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                <visible>!IsEmpty(ListItem.Art(fanart))</visible>
                 <!--             <visible>IsEmpty(ListItem.Property(Fanart))</visible>
  -->
             </control>
@@ -8041,6 +8041,12 @@
                 <!--             <visible>IsEmpty(ListItem.Property(Fanart))</visible>
  -->
             </control>
+        </control>
+        <control type="image">
+            <width>614</width>
+            <height>340</height>
+            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Thumb]</texture>
+            <aspectratio align="center">scale</aspectratio>
         </control>
     </include>
     <include name="weatherwidgetback">
