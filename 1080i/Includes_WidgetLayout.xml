@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="AlternateTimeAndStats">
-        <control type="group">
-            <visible>Skin.HasSetting(AlternateTimeStats) | Window.IsActive(1122)</visible>
-            <animation effect="slide" end="-1920,0" time="240" condition="!Window.IsActive(1122)">WindowClose</animation>
-            <animation effect="slide" start="-1920,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup) + !Window.IsActive(1122)">WindowOpen</animation>
-            <animation effect="slide" start="-1920" end="0" time="240">VisibleChange</animation>
-            <animation effect="slide" start="-1920,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
-            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <control type="image">
-                <width>1860</width>
-                <height>87</height>
-                <texture flipy="true" flipx="true" border="0,0,80,0">$VAR[TimePanelImageVar]</texture>
-                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                <visible>!Skin.HasSetting(alternativerss)</visible>
-            </control>
-            <control type="image">
-                <width>1920</width>
-                <height>87</height>
-                <texture flipy="true" flipx="true">$VAR[NavBarImageVar]</texture>
-                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                <visible>Skin.HasSetting(alternativerss)</visible>
-            </control>
-            <control type="label">
-                <posx>15</posx>
-                <posy>-1</posy>
-                <width>880</width>
-                <height>36</height>
-                <label>$VAR[LibraryStatsVar]</label>
-                <font>Font_Reg28_Caps</font>
-                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <scroll>true</scroll>
-            </control>
-            <control type="label">
-                <posx>1776</posx>
-                <posy>-1</posy>
-                <width>1000</width>
-                <height>36</height>
-                <align>right</align>
-                <label>$VAR[AlternateTimeAndStatsLabelVar]</label>
-                <font>Font_Reg28_Caps</font>
-                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <visible>!Skin.HasSetting(DisableTimePanel)</visible>
-                <animation effect="slide" start="0" end="130" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(alternativerss)">Conditional</animation>
-            </control>
-        </control>
-    </include>
     <include name="LibraryStats">
         <control type="group">
-            <visible>!Skin.HasSetting(AlternateTimeStats)</visible>
             <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
             <animation effect="slide" end="-750,0" time="240">WindowClose</animation>
             <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -81,7 +31,7 @@
     <include name="TimePanel">
         <control type="group">
             <posx>748r</posx>
-            <visible>!Skin.HasSetting(DisableTimePanel) + !Skin.HasSetting(AlternateTimeStats)</visible>
+            <visible>!Skin.HasSetting(DisableTimePanel)</visible>
             <animation effect="slide" end="750,0" time="240">WindowClose</animation>
             <animation effect="slide" start="750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" start="750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
