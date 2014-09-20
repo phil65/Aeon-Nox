@@ -355,16 +355,8 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true">DefaultTVShows.png</texture>
+                                    <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Art(tvshow.fanart)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
-                                    <info>ListItem.Property(Fanart)</info>
-                                </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>894</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="894" height="550">
@@ -372,10 +364,12 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true">DefaultTVShows.png</texture>
+                                    <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Art(tvshow.fanart)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
-                                    <info>ListItem.Property(Fanart)</info>
                                 </control>
+                            </focusedlayout>
+                                <content>special://skin/extras/playlists/recommendedepisodes8.xsp</content>
+                        </control>
                                 <control type="image">
                                     <posy>510</posy>
                                     <width>894</width>
@@ -383,12 +377,6 @@
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
-                            </focusedlayout>
-                            <content>
-                                <include>WatchListTVItems</include>
-                                <include>WatchListTVItemsHome</include>
-                            </content>
-                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>746</width>
@@ -397,12 +385,14 @@
                             <label>$INFO[Container(5002).ListItem.Label2,,: ]$INFO[Container(5002).ListItem.Property(EpisodeNo),, - ]$INFO[Container(5002).ListItem.Label]</label>
                             <font>Font_Reg26</font>
                         </control>
-                        <control type="image">
-                            <posx>746</posx>
+                        <control type="label">
+                            <posx>880</posx>
                             <posy>525</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(5002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <align>right</align>
+                            <font>Font_Reg22</font>
+                            <label>$INFO[Container(5002).CurrentPage] / $INFO[Container(5002).NumPages]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -430,15 +420,8 @@
                                     <width>366</width>
                                     <height>550</height>
                                     <aspectratio>scale</aspectratio>
-                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Property(Poster)]</texture>
+                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Art(poster)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
-                                </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>366</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="366" height="550">
@@ -446,9 +429,12 @@
                                     <width>366</width>
                                     <height>550</height>
                                     <aspectratio>scale</aspectratio>
-                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Property(Poster)]</texture>
+                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Art(poster)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
+                            </focusedlayout>
+                            <content>special://skin/extras/playlists/recommendedmovies5.xsp</content>
+                        </control>
                                 <control type="image">
                                     <posy>510</posy>
                                     <width>366</width>
@@ -456,11 +442,6 @@
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
-                            </focusedlayout>
-                            <content>
-                                <include>WatchlistMoviesItems</include>
-                            </content>
-                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>272</width>
@@ -469,12 +450,14 @@
                             <label>$INFO[Container(5003).ListItem.Label]</label>
                             <font>Font_Reg26</font>
                         </control>
-                        <control type="image">
-                            <posx>272</posx>
+                        <control type="label">
+                            <posx>350</posx>
                             <posy>525</posy>
                             <width>84</width>
                             <height>12</height>
-                            <texture>$INFO[Container(5003).ListItem.Property(NavItem),featured/panel_right/]</texture>
+                            <align>right</align>
+                            <font>Font_Reg22</font>
+                            <label>$INFO[Container(6003).CurrentPage] / $INFO[Container(6003).NumPages]</label>
                         </control>
                     </control>
                     <control type="image">
@@ -557,15 +540,8 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
-                                </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>894</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="894" height="550">
@@ -573,9 +549,12 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
+                            </focusedlayout>
+                            <content>special://skin/extras/playlists/recentmovies8.xsp</content>
+                        </control>
                                 <control type="image">
                                     <posy>510</posy>
                                     <width>894</width>
@@ -583,11 +562,6 @@
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
-                            </focusedlayout>
-                            <content>
-                                <include>LatestMoviesItems</include>
-                            </content>
-                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>746</width>
@@ -596,12 +570,14 @@
                             <label>$INFO[Container(6002).ListItem.Label]</label>
                             <font>Font_Reg26</font>
                         </control>
-                        <control type="image">
-                            <posx>746</posx>
+                        <control type="label">
+                            <posx>880</posx>
                             <posy>525</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(6002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <align>right</align>
+                            <font>Font_Reg22</font>
+                            <label>$INFO[Container(6002).CurrentPage] / $INFO[Container(6002).NumPages]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -629,15 +605,8 @@
                                     <width>366</width>
                                     <height>550</height>
                                     <aspectratio>scale</aspectratio>
-                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Property(Poster)]</texture>
+                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Art(poster)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
-                                </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>366</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="366" height="550">
@@ -645,9 +614,12 @@
                                     <width>366</width>
                                     <height>550</height>
                                     <aspectratio>scale</aspectratio>
-                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Property(Poster)]</texture>
+                                    <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Art(poster)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
+                            </focusedlayout>
+                            <content>special://skin/extras/playlists/randommovies8.xsp</content>
+                        </control>
                                 <control type="image">
                                     <posy>510</posy>
                                     <width>366</width>
@@ -655,11 +627,6 @@
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
-                            </focusedlayout>
-                            <content>
-                                <include>RandomMoviesItems</include>
-                            </content>
-                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>272</width>
@@ -668,12 +635,14 @@
                             <label>$INFO[Container(6003).ListItem.Label]</label>
                             <font>Font_Reg26</font>
                         </control>
-                        <control type="image">
-                            <posx>272</posx>
+                        <control type="label">
+                            <posx>350</posx>
                             <posy>525</posy>
                             <width>84</width>
                             <height>12</height>
-                            <texture>$INFO[Container(6003).ListItem.Property(NavItem),featured/panel_right/]</texture>
+                            <align>right</align>
+                            <font>Font_Reg22</font>
+                            <label>$INFO[Container(6003).CurrentPage] / $INFO[Container(6003).NumPages]</label>
                         </control>
                     </control>
                     <control type="image">
@@ -756,15 +725,8 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
-                                </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>894</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="894" height="550">
@@ -772,9 +734,12 @@
                                     <width>894</width>
                                     <height>550</height>
                                     <aspectratio align="center">scale</aspectratio>
-                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                                    <texture background="true" fallback="DefaulTVShows.png">$INFO[ListItem.Art(fanart)]</texture>
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
+                            </focusedlayout>
+                                <content>special://skin/extras/playlists/recentepisodes8.xsp</content>
+                        </control>
                                 <control type="image">
                                     <posy>510</posy>
                                     <width>894</width>
@@ -782,12 +747,6 @@
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
-                            </focusedlayout>
-                            <content>
-                                <include>LatestEpisodesItems</include>
-                                <include>LatestEpisodesItemsHome</include>
-                            </content>
-                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>746</width>
@@ -796,12 +755,14 @@
                             <label>$INFO[Container(7002).ListItem.Property(TvShowTitle),,: ]$INFO[Container(7002).ListItem.Property(EpisodeNumber),, - ]$INFO[Container(7002).ListItem.Label]</label>
                             <font>Font_Reg26</font>
                         </control>
-                        <control type="image">
-                            <posx>746</posx>
+                        <control type="label">
+                            <posx>880</posx>
                             <posy>525</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(7002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <align>right</align>
+                            <font>Font_Reg22</font>
+                            <label>$INFO[Container(7002).CurrentPage] / $INFO[Container(7002).NumPages]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -1003,13 +964,6 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                     <info>ListItem.Icon</info>
                                 </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>550</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
                             </itemlayout>
                             <focusedlayout width="550" height="550">
                                 <control type="image">
@@ -1020,6 +974,9 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                     <info>ListItem.Icon</info>
                                 </control>
+                            </focusedlayout>
+                            <content>special://skin/extras/playlists/randomalbums8.xsp</content>
+                        </control>
                                 <control type="image">
                                     <posy>510</posy>
                                     <width>550</width>
@@ -1027,13 +984,7 @@
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
-                            </focusedlayout>
-                            <content>
-                                <include>RandomAlbumsItems</include>
-                                <include>RandomAlbumsItemsHome</include>
-                            </content>
-                        </control>
-                        <control type="label">
+                                                        <control type="label">
                             <posy>510</posy>
                             <width>402</width>
                             <height>40</height>
@@ -1041,12 +992,14 @@
                             <label>$INFO[Container(8002).ListItem.Label]</label>
                             <font>Font_Reg26</font>
                         </control>
-                        <control type="image">
-                            <posx>402</posx>
+                        <control type="label">
+                            <posx>532</posx>
                             <posy>525</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(8002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <align>right</align>
+                            <font>Font_Reg22</font>
+                            <label>$INFO[Container(8002).CurrentPage] / $INFO[Container(8002).NumPages]</label>
                         </control>
                     </control>
                     <control type="group">
@@ -1246,13 +1199,6 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                     <info>ListItem.Icon</info>
                                 </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>550</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
                             </itemlayout>
                             <focusedlayout width="550" height="550">
                                 <control type="image">
@@ -1263,19 +1209,16 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                     <info>ListItem.Icon</info>
                                 </control>
+                            </focusedlayout>
+                            <content>special://skin/extras/playlists/randomartists8.xsp</content>
+                        </control>
                                 <control type="image">
                                     <posy>510</posy>
                                     <width>550</width>
                                     <height>40</height>
                                     <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" end="80" start="100" time="40" condition="true">Conditional</animation>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
-                            </focusedlayout>
-                            <content>
-                                <include>RandomArtistsItems</include>
-                                <include>RandomArtistsItemsHome</include>
-                            </content>
-                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>402</width>
@@ -1284,12 +1227,14 @@
                             <label>$INFO[Container(9002).ListItem.Label]</label>
                             <font>Font_Reg26</font>
                         </control>
-                        <control type="image">
-                            <posx>402</posx>
+                        <control type="label">
+                            <posx>532</posx>
                             <posy>525</posy>
                             <width>138</width>
                             <height>12</height>
-                            <texture>$INFO[Container(9002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                            <align>right</align>
+                            <font>Font_Reg22</font>
+                            <label>$INFO[Container(9002).CurrentPage] / $INFO[Container(9002).NumPages]</label>
                         </control>
                     </control>
                     <control type="group">
