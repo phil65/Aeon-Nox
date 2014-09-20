@@ -31,7 +31,7 @@
         <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(diffuse_addons))">$INFO[Skin.String(diffuse_addons)]</value>
         <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(diffuse_musicplaylist))">$INFO[Skin.String(diffuse_musicplaylist)]</value>
         <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(diffuse_videoplaylist))">$INFO[Skin.String(diffuse_videoplaylist)]</value>
-        <value condition="[Window.IsActive(weather) | Window.IsActive(1153)] + !IsEmpty(Skin.String(diffuse_weather))">$INFO[Skin.String(diffuse_weather)]</value>
+        <value condition="Window.IsActive(weather) + !IsEmpty(Skin.String(diffuse_weather))">$INFO[Skin.String(diffuse_weather)]</value>
         <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(diffuse_PVR))">$INFO[Skin.String(diffuse_PVR)]</value>
         <value condition="!IsEmpty(Skin.String(diffuse_mainmenu))">$INFO[Skin.String(diffuse_mainmenu)]</value>
         <value>diffuse_white</value>
@@ -44,7 +44,7 @@
         <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(diffuse_white_addons))">$INFO[Skin.String(diffuse_white_addons)]</value>
         <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(diffuse_white_musicplaylist))">$INFO[Skin.String(diffuse_white_musicplaylist)]</value>
         <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(diffuse_white_videoplaylist))">$INFO[Skin.String(diffuse_white_videoplaylist)]</value>
-        <value condition="[Window.IsActive(weather) | Window.IsActive(1153)] + !IsEmpty(Skin.String(diffuse_white_weather))">$INFO[Skin.String(diffuse_white_weather)]</value>
+        <value condition="Window.IsActive(weather) + !IsEmpty(Skin.String(diffuse_white_weather))">$INFO[Skin.String(diffuse_white_weather)]</value>
         <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(diffuse_white_PVR))">$INFO[Skin.String(diffuse_white_PVR)]</value>
          <value condition="!IsEmpty(Skin.String(diffuse_white_mainmenu))">$INFO[Skin.String(diffuse_white_mainmenu)]</value>
        <value>FFAAAAAA</value>
@@ -62,7 +62,7 @@
         <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(font_addons))">$INFO[Skin.String(font_addons)]</value>
         <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(font_musicplaylist))">$INFO[Skin.String(font_musicplaylist)]</value>
         <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(font_videoplaylist))">$INFO[Skin.String(font_videoplaylist)]</value>
-        <value condition="[Window.IsActive(weather) | Window.IsActive(1153)] + !IsEmpty(Skin.String(font_weather))">$INFO[Skin.String(font_weather)]</value>
+        <value condition="Window.IsActive(weather) + !IsEmpty(Skin.String(font_weather))">$INFO[Skin.String(font_weather)]</value>
         <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(font_PVR))">$INFO[Skin.String(font_PVR)]</value>
         <value condition="!IsEmpty(Skin.String(font_mainmenu))">$INFO[Skin.String(font_mainmenu)]</value>
         <value>white2</value>
@@ -75,7 +75,7 @@
         <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(white_font_addons))">$INFO[Skin.String(white_font_addons)]</value>
         <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(white_font_musicplaylist))">$INFO[Skin.String(white_font_musicplaylist)]</value>
         <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(white_font_videoplaylist))">$INFO[Skin.String(white_font_videoplaylist)]</value>
-        <value condition="[Window.IsActive(weather) | Window.IsActive(1153)] + !IsEmpty(Skin.String(white_font_weather))">$INFO[Skin.String(white_font_weather)]</value>
+        <value condition="Window.IsActive(weather) + !IsEmpty(Skin.String(white_font_weather))">$INFO[Skin.String(white_font_weather)]</value>
         <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(white_font_PVR))">$INFO[Skin.String(white_font_PVR)]</value>
         <value condition="!IsEmpty(Skin.String(white_font_mainmenu))">$INFO[Skin.String(white_font_mainmenu)]</value>
         <value>white2</value>
@@ -1444,7 +1444,7 @@
         <value condition="Window.IsActive(profilesettings)">$LOCALIZE[5] / $LOCALIZE[13200]</value>
         <value condition="Window.IsActive(SettingsCategory.xml)">$LOCALIZE[5]$INFO[Control.GetLabel(2), / ]</value>
         <value condition="Window.IsActive(loginscreen)">$INFO[Control.GetLabel(2)]</value>
-        <value condition="Window.IsActive(weather) | Window.IsActive(1153)">$LOCALIZE[8]</value>
+        <value condition="Window.IsActive(weather)">$LOCALIZE[8]</value>
         <value condition="Window.IsActive(pictures)">$LOCALIZE[1213]</value>
         <value condition="Window.IsActive(filemanager)">$LOCALIZE[10003]</value>
         <value condition="Window.IsActive(PVR)">$LOCALIZE[31017]$INFO[Control.GetLabel(29), / ]$INFO[Control.GetLabel(30), / ]</value>
@@ -1461,7 +1461,7 @@
         <value condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">common/logo_games.png</value>
         <value condition="Window.IsActive(filemanager)">common/logo_playlist.png</value>
         <value condition="Window.IsActive(settings) | Window.IsActive(skinsettings) | Window.IsActive(systeminfo) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(profilesettings) | Window.IsActive(loginscreen)">common/settings_logo.png</value>
-        <value condition="Window.IsActive(pictures) | Window.IsActive(1153)">common/logo_pics.png</value>
+        <value condition="Window.IsActive(pictures)">common/logo_pics.png</value>
         <value condition="Window.IsActive(weather)">common/weather.png</value>
         <value condition="Window.IsActive(script-globalsearch-main.xml)">common/DefaultSearch.png</value>
         <value condition="Window.IsActive(PVR)">pvr/TVIcon.png</value>
