@@ -80,6 +80,7 @@
             <onfocus condition="!Substring(Control.GetLabel(4321),images)">SetProperty(PanelWidgetInfo,true,home)</onfocus>
             <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
             <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4321)],home)</onfocus>
+            <onfocus>RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(5010).ListItem.Property(ID)])</onfocus>
             <onfocus>RunScript(script.home,container=5010,focuscontrol=5055)</onfocus>
             <visible>!Substring(Control.GetLabel(4321),classic)</visible>
         </control>
@@ -95,6 +96,7 @@
             <onfocus condition="!Substring(Control.GetLabel(4325),images)">SetProperty(PanelWidget2Info,true,home)</onfocus>
             <onfocus>SetProperty(WidgetPosition,Widget2,home)</onfocus>
             <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4325)],home)</onfocus>
+            <onfocus>RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6010).ListItem.Property(ID)])</onfocus>
             <onfocus>RunScript(script.home,container=6010,focuscontrol=5055)</onfocus>
             <visible>!Substring(Control.GetLabel(4325),classic)</visible>
         </control>
@@ -290,7 +292,7 @@
             </control>
             <!-- Featured widget -->
             <control type="group">
-                <visible>IsEmpty(Window(home).Property(PanelWidget2Info)) + !Window.IsActive(1122)</visible>
+                <visible>IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
                 <animation type="Visible">
                     <effect type="zoom" delay="400" start="150" end="100" center="960,540" time="400" tween="cubic" />
                     <effect type="fade" delay="400" end="100" time="240" />
@@ -304,7 +306,7 @@
                 <include>RecentWidget</include>
             </control>
             <control type="group">
-                <visible>IsEmpty(Window(home).Property(PanelWidgetInfo)) + !Window.IsActive(1122)</visible>
+                <visible>IsEmpty(Window(home).Property(PanelWidgetInfo))</visible>
                 <animation type="Visible">
                     <effect type="zoom" delay="400" start="150" end="100" center="960,540" time="400" tween="cubic" />
                     <effect type="fade" delay="400" end="100" time="240" />
