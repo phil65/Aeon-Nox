@@ -902,14 +902,14 @@
         <value>$LOCALIZE[20360]</value>
     </variable>
     <variable name="HomeWidgetFanartVar">
-        <value condition="[Control.HasFocus(8000) | Control.HasFocus(8020)] + !IsEmpty(Container(8000).ListItem.Property(Fanart))">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
-        <value condition="[Control.HasFocus(7000) | Control.HasFocus(7020)] + !IsEmpty(Container(7000).ListItem.Property(Fanart))">$INFO[Container(7000).ListItem.Property(Fanart)]</value>
+        <value condition="[Control.HasFocus(8000) | Control.HasFocus(8020)] + !IsEmpty(Container(8000).ListItem.Art(fanart))">$INFO[Container(8000).ListItem.Art(fanart)]</value>
+        <value condition="[Control.HasFocus(7000) | Control.HasFocus(7020)] + !IsEmpty(Container(7000).ListItem.Art(fanart))">$INFO[Container(7000).ListItem.Art(fanart)]</value>
         <value condition="[ControlGroup(5020).HasFocus | ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
-        <value condition="Control.HasFocus(5010) + !IsEmpty(Container(5010).ListItem.Property(Fanart))">$INFO[Container(5010).ListItem.Property(Fanart)]</value>
+        <value condition="Control.HasFocus(5010) + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5010) + Substring(Container(9000).ListItem.Property(Widget),featured) + !IsEmpty(Container(5001).ListItem.Art(fanart))">$INFO[Container(5001).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5012) + !IsEmpty(Container(5003).ListItem.Art(fanart))">$INFO[Container(5003).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5011) + !IsEmpty(Container(5002).ListItem.Art(fanart))">$INFO[Container(5002).ListItem.Art(fanart)]</value>
-        <value condition="[Control.HasFocus(6010) | ControlGroup(6014).HasFocus] + !IsEmpty(Container(6010).ListItem.Property(Fanart))">$INFO[Container(6010).ListItem.Property(Fanart)]</value>
+        <value condition="[Control.HasFocus(6010) | ControlGroup(6014).HasFocus] + !IsEmpty(Container(6010).ListItem.Art(fanart))">$INFO[Container(6010).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(6010) + Substring(Container(9000).ListItem.Property(Widget2),featured) + !IsEmpty(Container(6001).ListItem.Art(fanart))">$INFO[Container(6001).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(6012) + !IsEmpty(Container(6003).ListItem.Art(fanart))">$INFO[Container(6003).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(6011) + !IsEmpty(Container(6002).ListItem.Art(fanart))">$INFO[Container(6002).ListItem.Art(fanart)]</value>
@@ -959,7 +959,7 @@
         <value condition="Substring(Control.GetLabel(4322),case) + !IsEmpty(Skin.String(LiveBG))">$INFO[Skin.String(LiveBG)]</value>
         <value condition="Substring(Control.GetLabel(4322),case)">special://skin/backgrounds/speakergrill.jpg</value>
         <value condition="Substring(Control.GetLabel(4322),wall)">common/bgcolor.png</value>
-        <value condition="Control.IsVisible(8998) + !IsEmpty(Container(8000).ListItem.Property(Fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
+        <value condition="Control.IsVisible(8998) + !IsEmpty(Container(8000).ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(8000).ListItem.Art(fanart)]</value>
         <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
         <value>$VAR[MultiFanartVar]</value>
     </variable>
@@ -1815,7 +1815,7 @@
         <value>$LOCALIZE[16039]</value>
     </variable>
     <variable name="Widget1ContentVar">
-        <value condition="Substring(Control.GetLabel(4321),randomartists)">bla</value>
+        <value condition="Substring(Control.GetLabel(4321),randomartists)">special://skin/extras/playlists/randomartists8.xsp</value>
         <value condition="Substring(Control.GetLabel(4321),randomalbums)">plugin://service.library.data.provider?type=randomalbums&reload=10</value>
         <value condition="Substring(Control.GetLabel(4321),recentalbums)">plugin://service.library.data.provider?type=recentalbums&reload=10</value>
         <value condition="Substring(Control.GetLabel(4321),watchlistalbums)">plugin://service.library.data.provider?type=recommendedalbums&reload=10</value>
@@ -2055,6 +2055,8 @@
     <variable name="WidgetTextboxVar">
         <value condition="Substring(Window(home).Property(WidgetType),pics)">$INFO[Window(home).Property(Fanart)]</value>
         <value condition="!IsEmpty(Window(home).Property(Plot))">$INFO[Window(home).Property(Plot)]</value>
+        <value condition="!IsEmpty(Window(home).Property(Album_Description))">$INFO[Window(home).Property(Album_Description)]</value>
+        <value condition="!IsEmpty(Window(home).Property(Artist_Description))">$INFO[Window(home).Property(Artist_Description)]</value>
         <value>$INFO[Window(home).Property(Description)]</value>
     </variable>
     <!-- Cases Background Vars-->

@@ -1909,7 +1909,7 @@
     <include name="ClassicWidgetPlayItems">
         <item>
             <label>$LOCALIZE[208]</label>
-            <onclick condition="Substring(Window(home).Property(WidgetType),artist)">ActivateWindow(musiclibrary,$ESCINFO[Window(home).Property(Path)],return)</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),artist)">ActivateWindow(musiclibrary,musicdb://artists/$INFO[Window(home).Property(DBID)]/,return)</onclick>
             <onclick condition="Substring(Window(home).Property(WidgetType),album)">Playlist.Clear</onclick>
             <onclick condition="Substring(Window(home).Property(WidgetType),movies)">Runscript(service.skin.widgets,movieid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
             <onclick condition="Substring(Window(home).Property(WidgetType),tv)">Runscript(service.skin.widgets,episodeid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
