@@ -3193,10 +3193,10 @@
                             <width>1251</width>
                             <height>28</height>
                             <textoffsetx>0</textoffsetx>
-                            <label>$INFO[Window(home).Property(Theme)]</label>
+                            <label>$INFO[Window(home).Property(Album_Theme)]</label>
                             <font>Font_Reg22_Caps</font>
                             <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Window(home).Property(Theme))</visible>
+                            <visible>!IsEmpty(Window(home).Property(Album_Theme))</visible>
                         </control>
                         <control type="label">
                             <width>1251</width>
@@ -3211,19 +3211,19 @@
                             <width>1251</width>
                             <height>28</height>
                             <textoffsetx>0</textoffsetx>
-                            <label>$INFO[Window(home).Property(Style)]</label>
+                            <label>$INFO[Window(home).Property(Artist_Style)]$INFO[Window(home).Property(Album_Style)]</label>
                             <font>Font_Reg22_Caps</font>
                             <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Window(home).Property(Style))</visible>
+                            <visible>!IsEmpty(Window(home).Property(Artist_Style)) | !IsEmpty(Window(home).Property(Album_Style))</visible>
                         </control>
                         <control type="label">
                             <width>1251</width>
                             <height>28</height>
                             <textoffsetx>0</textoffsetx>
-                            <label>$INFO[Window(home).Property(Mood)]</label>
+                            <label>$INFO[Window(home).Property(Artist_Mood)]$INFO[Window(home).Property(Album_Mood)]</label>
                             <font>Font_Reg22_Caps</font>
                             <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Window(home).Property(Mood))</visible>
+                            <visible>!IsEmpty(Window(home).Property(Artist_Mood)) | !IsEmpty(Window(home).Property(Album_Mood))</visible>
                         </control>
                     </control>
                 </control>
