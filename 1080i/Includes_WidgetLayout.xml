@@ -5871,7 +5871,7 @@
             <width>512</width>
             <height>340</height>
             <aspectratio align="center">keep</aspectratio>
-            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(Fanart)]</texture>
+            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
             <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
         </control>
         <control type="label">
@@ -5893,7 +5893,7 @@
             <height>340</height>
             <aspectratio align="center">keep</aspectratio>
             <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(clearlogo)]</texture>
-            <visible>IsEmpty(ListItem.Art(clearArt)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+            <visible>IsEmpty(ListItem.Art(clearart)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
         </control>
         <control type="image">
             <posx>16</posx>
@@ -5901,8 +5901,8 @@
             <width>500</width>
             <height>340</height>
             <aspectratio>keep</aspectratio>
-            <texture background="true">$INFO[ListItem.Art(clearArt)]</texture>
-            <visible>!IsEmpty(ListItem.Art(clearArt))</visible>
+            <texture background="true">$INFO[ListItem.Art(clearart)]</texture>
+            <visible>!IsEmpty(ListItem.Art(clearart))</visible>
         </control>
         <control type="image">
             <posx>10</posx>
@@ -5911,7 +5911,7 @@
             <height>340</height>
             <aspectratio align="center">keep</aspectratio>
             <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
-            <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearArt))</visible>
+            <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearart))</visible>
         </control>
         <control type="label">
             <posx>266</posx>
