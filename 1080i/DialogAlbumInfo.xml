@@ -6,15 +6,15 @@
     <onload>ClearProperty(Fanart,home)</onload>
     <onload>ClearProperty(Fanart2,home)</onload>
     <onload>ClearProperty(Fanart3,home)</onload>
-    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=mostlovedtracks,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistevents,info=similarartistsinlibrary,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
-    <include>Animation_OpenCloseZoom_New</include>
+<!--     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
+ -->    <include>Animation_OpenCloseZoom_New</include>
     <controls>
         <control id="9023" type="button">
             <include>HiddenObject</include>
             <onfocus>RunScript(script.home,container=8010,focuscontrol=5015)</onfocus>
         </control>
-        <control id="5014" type="button">
+        <control id="5014" typ="button">
             <include>HiddenObject</include>
             <texturenofocus>-</texturenofocus>
             <onfocus>SetProperty(WidgetType,onlinealbum,home)</onfocus>
@@ -221,9 +221,7 @@
                                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
-                                <content>
-                                    <include>SimilarArtistsItems</include>
-                                </content>
+                                    <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;artistname=$INFO[ListItem.Artist]</content>
                             </control>
                             <!--content-->
                         </control>
@@ -307,10 +305,7 @@
                                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
-                                <content>
-                                    <!--                                 <include>DiscographyItems</include>-->
-                                    <include>SlideshowDiscographyItems</include>
-                                </content>
+                                <content>plugin://script.extendedinfo?info=discography&amp;artistname=$INFO[ListItem.Artist]</content>
                             </control>
                             <!--content-->
                         </control>
@@ -960,9 +955,7 @@
                                             <textcolor>white2</textcolor>
                                         </control>
                                     </focusedlayout>
-                                    <content>
-                                        <include>MostLovedTracksItems</include>
-                                    </content>
+                                    <content>plugin://script.extendedinfo?info=mostlovedtracks&artistname=$INFO[ListItem.Artist]</content>
                                 </control>
                             </control>
                             <control type="image">
@@ -1201,9 +1194,7 @@
                                         <visible>Control.HasFocus(10003)</visible>
                                     </control>
                                 </focusedlayout>
-                                <content>
-                                    <include>MusicVideosItems</include>
-                                </content>
+                                <content>plugin://script.extendedinfo?info=musicvideos&amp;artistname=$INFO[ListItem.Artist]</content>
                             </control>
                             <control type="group">
                                 <visible>false</visible>
