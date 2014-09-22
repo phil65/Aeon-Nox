@@ -460,12 +460,59 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <item>
+<!--                         <item>
                             <label>$LOCALIZE[31883]</label>
                             <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Trending Movies)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31883])</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(movies)</visible>
+                        </item> -->
+                        <item>
+                            <label>In Cinema</label>
+                            <onclick>SetProperty(CustomYesNoDialog,incinemasmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,In Cinema)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Upcoming Movies</label>
+                            <onclick>SetProperty(CustomYesNoDialog,upcomingmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Upcoming Movies)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>BoxOffice</label>
+                            <onclick>SetProperty(CustomYesNoDialog,boxofficemovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,BoxOffice)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>TopRentals</label>
+                            <onclick>SetProperty(CustomYesNoDialog,toprentalsmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TopRentals)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>InTheaters Movies</label>
+                            <onclick>SetProperty(CustomYesNoDialog,intheatersmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,InTheaters Movies)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Opening Movies</label>
+                            <onclick>SetProperty(CustomYesNoDialog,openingmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Opening Movies)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Upcoming Movies</label>
+                            <onclick>SetProperty(CustomYesNoDialog,upcomingmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Upcoming Movies)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Trailers</label>
+                            <onclick>SetProperty(CustomYesNoDialog,trailersmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Trailers)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31093]</label>
