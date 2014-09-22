@@ -3,7 +3,7 @@
     <defaultcontrol always="true">8</defaultcontrol>
     <onload>ClearProperty(Budget,home)</onload>
     <onload>ClearProperty(SeasonDescription,home)</onload>
-    <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=similarmovies,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID],silent=True)</onload>
+    <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID],silent=True)</onload>
 <!--     <onload condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=similar,type=tvshow,dbid=$INFO[ListItem.DBID],silent=True)</onload>
  -->    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
