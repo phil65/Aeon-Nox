@@ -1363,7 +1363,7 @@
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),systemclassic)</visible>
-                    <include condition="Substring(Skin.String(widgetlist),systemclassic)">HomeSystemWidget</include>
+                    <include>HomeSystemWidget</include>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -1931,25 +1931,6 @@
             <visible>!IsEmpty(Window(home).Property(Trailer))</visible>
         </item>
         <item>
-            <label>$LOCALIZE[13319]</label>
-            <onclick condition="SubString(Window(home).Property(WidgetType),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),7custom)">$INFO[Skin.String(SmartPlaylist7.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),8custom)">$INFO[Skin.String(SmartPlaylist8.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),9custom)">$INFO[Skin.String(SmartPlaylist9.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),10custom)">$INFO[Skin.String(SmartPlaylist10.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),11custom)">$INFO[Skin.String(SmartPlaylist11.Call)]</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),12custom)">$INFO[Skin.String(SmartPlaylist12.Call)]</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
-            <onclick condition="!Substring(Window(home).Property(WidgetType),custom) + !Substring(Window(home).Property(WidgetType),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
-            <visible>Substring(Window(home).Property(WidgetType),random) | Substring(Window(home).Property(WidgetType),actors)</visible>
-        </item>
-        <item>
             <label>$LOCALIZE[31925]</label>
             <!--         <onclick>RunScript(script.extendedinfo,info=movielists,id=$INFO[Window(home).Property(ID)],silent=False)</onclick>-->
             <onclick condition="IsEmpty(Window(home).Property(DBID))">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],id=$INFO[Window(home).Property(ID)],type=movie,silent=False)</onclick>
@@ -2135,7 +2116,7 @@
                             </control>
                         </focusedlayout>
                         <content>
-                            <include condition="Substring(Skin.String(widgetlist),concerts)">ConcertsPanelContent</include>
+                            <include>ConcertsPanelContent</include>
                         </content>
                     </control>
                 </control>
@@ -2151,7 +2132,7 @@
                         <visible>Control.HasFocus(5050)</visible>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     </control>
-                    <include condition="Substring(Skin.String(widgetlist),wunderground) + SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
+                    <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
                 </control>
                 <control type="button" id="5050">
                     <include>HiddenObject</include>
@@ -3554,7 +3535,7 @@
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),systemclassic)</visible>
-                    <include condition="Substring(Skin.String(widget2list),systemclassic)">HomeSystemWidget</include>
+                    <include>HomeSystemWidget</include>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -4258,7 +4239,7 @@
                             </control>
                         </focusedlayout>
                         <content>
-                            <include condition="Substring(Skin.String(widget2list),concerts)">ConcertsPanelContent</include>
+                            <include>ConcertsPanelContent</include>
                         </content>
                     </control>
                 </control>
@@ -4274,7 +4255,7 @@
                         <visible>Control.HasFocus(6050)</visible>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     </control>
-                    <include condition="Substring(Skin.String(widget2list),wunderground) + SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
+                    <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
                 </control>
                 <control type="button" id="6050">
                     <include>HiddenObject</include>
@@ -4623,7 +4604,7 @@
                 <include>NavigationWidget1</include>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),landscape)">
-                    <include condition="Substring(Skin.String(widgetlist),landscape) | Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
+                    <include condition="Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -4633,10 +4614,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),landscape)">
-                    <include condition="Substring(Skin.String(widgetlist),landscape) | Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
+                    <include condition="Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
                 </itemlayout>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),keepar)">
-                    <include condition="Substring(Skin.String(widgetlist),keepar) | Window.IsActive(skinsettings)">WidgetRCBLayout</include>
+                    <include>WidgetRCBLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -4646,7 +4627,7 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),keepar)">
-                    <include condition="Substring(Skin.String(widgetlist),keepar) | Window.IsActive(skinsettings)">WidgetRCBLayout</include>
+                    <include>WidgetRCBLayout</include>
                 </itemlayout>
                 <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panelcoverposter)">
                     <control type="image">
@@ -4686,10 +4667,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="170" condition="Substring(Control.GetLabel(4321),bannerlayout)">
-                    <include condition="Substring(Skin.String(widgetlist),banner) | Window.IsActive(skinsettings)">WidgetBannerLayout</include>
+                    <include>WidgetBannerLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="170" condition="Substring(Control.GetLabel(4321),bannerlayout)">
-                    <include condition="Substring(Skin.String(widgetlist),banner) | Window.IsActive(skinsettings)">WidgetBannerLayout</include>
+                    <include>WidgetBannerLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>180</height>
@@ -4940,10 +4921,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(skinsettings)">Panel2WidgetPosterLayout</include>
+                    <include>Panel2WidgetPosterLayout</include>
                 </itemlayout>
                 <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(skinsettings)">Panel2WidgetPosterLayout</include>
+                    <include>Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posy>10</posy>
                         <width>532</width>
@@ -4954,10 +4935,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(skinsettings)">Panel2WidgetEpisodeLayout</include>
+                    <include>Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(skinsettings)">Panel2WidgetEpisodeLayout</include>
+                    <include>Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
@@ -4967,10 +4948,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(skinsettings)">Panel2WidgetSquareLayout</include>
+                    <include>Panel2WidgetSquareLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(skinsettings)">Panel2WidgetSquareLayout</include>
+                    <include>Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
@@ -5014,7 +4995,7 @@
                 <preloaditems>1</preloaditems>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
-                    <include condition="Substring(Skin.String(widget2list),landscape)">WidgetLandscapeLayout</include>
+                    <include>WidgetLandscapeLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -5024,10 +5005,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
-                    <include condition="Substring(Skin.String(widget2list),landscape)">WidgetLandscapeLayout</include>
+                    <include>WidgetLandscapeLayout</include>
                 </itemlayout>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),keepar)">
-                    <include condition="Substring(Skin.String(widget2list),keepar)">WidgetRCBLayout</include>
+                    <include>WidgetRCBLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -5037,10 +5018,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),keepar)">
-                    <include condition="Substring(Skin.String(widget2list),keepar)">WidgetRCBLayout</include>
+                    <include>WidgetRCBLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),bannerlayout)">
-                    <include condition="Substring(Skin.String(widget2list),banner)">WidgetBannerLayout</include>
+                    <include>WidgetBannerLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>180</height>
@@ -5050,7 +5031,7 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),bannerlayout)">
-                    <include condition="Substring(Skin.String(widget2list),banner)">WidgetBannerLayout</include>
+                    <include>WidgetBannerLayout</include>
                 </itemlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),logolayout)">
                     <include>WidgetLogoLayout</include>
@@ -5321,10 +5302,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
-                    <include condition="Substring(Skin.String(widget2list),panel2)">Panel2WidgetPosterLayout</include>
+                    <include>Panel2WidgetPosterLayout</include>
                 </itemlayout>
                 <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
-                    <include condition="Substring(Skin.String(widget2list),panel2)">Panel2WidgetPosterLayout</include>
+                    <include>Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posy>10</posy>
                         <width>532</width>
@@ -5335,10 +5316,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
-                    <include condition="Substring(Skin.String(widget2list),panel2)">Panel2WidgetEpisodeLayout</include>
+                    <include>Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
-                    <include condition="Substring(Skin.String(widget2list),panel2)">Panel2WidgetEpisodeLayout</include>
+                    <include>Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
@@ -5348,10 +5329,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
-                    <include condition="Substring(Skin.String(widget2list),panel2)">Panel2WidgetSquareLayout</include>
+                    <include>Panel2WidgetSquareLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
-                    <include condition="Substring(Skin.String(widget2list),panel2)">Panel2WidgetSquareLayout</include>
+                    <include>Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
