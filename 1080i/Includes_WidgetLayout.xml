@@ -5946,6 +5946,12 @@
         <control type="image">
             <width>614</width>
             <height>340</height>
+            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Thumb]</texture>
+            <aspectratio align="center">scale</aspectratio>
+        </control>
+        <control type="image">
+            <width>614</width>
+            <height>340</height>
             <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
             <aspectratio align="center">scale</aspectratio>
         </control>
@@ -5970,12 +5976,6 @@
                 <!--             <visible>IsEmpty(ListItem.Property(Fanart))</visible>
  -->
             </control>
-        </control>
-        <control type="image">
-            <width>614</width>
-            <height>340</height>
-            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Thumb]</texture>
-            <aspectratio align="center">scale</aspectratio>
         </control>
     </include>
     <include name="weatherwidgetback">
