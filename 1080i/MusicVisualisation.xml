@@ -625,13 +625,13 @@
             <control type="group" id="8995">
                 <posx>22</posx>
                 <posy>-597</posy>
-                <animation type="Conditional" condition="Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))" reversible="false">
+                <animation type="Conditional" condition="Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation)" reversible="false">
                     <effect type="rotatex" center="251" end="90" time="440" tween="cubic" easing="in" />
                     <effect type="rotatex" center="251" start="90" end="-90" time="0" delay="440" />
                     <effect type="fade" start="100" end="0" time="0" delay="440" />
                     <effect type="rotatex" center="251" start="-90" end="0" time="440" delay="440" tween="cubic" />
                 </animation>
-                <animation type="Conditional" condition="!Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))" reversible="false">
+                <animation type="Conditional" condition="!Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation)" reversible="false">
                     <effect type="rotatex" center="251" end="-90" time="440" tween="cubic" easing="in" />
                     <effect type="rotatex" center="251" start="-90" end="90" time="0" delay="440" />
                     <effect type="fade" end="100" time="0" delay="440" />
@@ -747,7 +747,7 @@
             <control type="group">
                 <posx>22</posx>
                 <posy>-597</posy>
-                <visible>Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))</visible>
+                <visible>Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation)</visible>
                 <animation effect="fade" time="400">WindowOpen</animation>
                 <animation effect="fade" time="160">WindowClose</animation>
                 <animation type="Visible" reversible="false">
