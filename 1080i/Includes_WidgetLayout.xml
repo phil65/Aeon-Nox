@@ -565,10 +565,10 @@
                 <posy>-650</posy>
                 <width>1920</width>
                 <height>1080</height>
-                <animation type="Conditional" condition="Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))" reversible="false">
+                <animation type="Conditional" condition="Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel)" reversible="false">
                     <include>Animation_PanelFlipUp2</include>
                 </animation>
-                <animation type="Conditional" condition="!Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))" reversible="false">
+                <animation type="Conditional" condition="!Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel)" reversible="false">
                     <include>Animation_PanelFlipUp1</include>
                 </animation>
                 <animation type="Visible">
@@ -686,7 +686,7 @@
             <control type="group">
                 <posx>22</posx>
                 <posy>-680</posy>
-                <visible>Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))</visible>
+                <visible>Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel)</visible>
                 <visible>[!Skin.HasSetting(nohomepageMusicinfo) + Player.HasAudio] | [!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo]</visible>
                 <animation effect="fade" time="400">WindowOpen</animation>
                 <animation effect="fade" time="160">WindowClose</animation>
