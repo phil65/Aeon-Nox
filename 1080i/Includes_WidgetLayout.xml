@@ -1327,7 +1327,6 @@
                     <font>Font_Reg33_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <include>Animation_HomeWidget</include>
-                    <visible>!SubString(Control.GetLabel(4321),panel)</visible>
                 </control>
                 <control type="image">
                     <posx>105</posx>
@@ -1351,12 +1350,12 @@
                     <scrollspeed>30</scrollspeed>
                     <scroll>true</scroll>
                     <include>Animation_HomeWidget</include>
-                    <visible>Substring(Control.GetLabel(4321),tv) + !Substring(Control.GetLabel(4321),featured) + !Substring(Control.GetLabel(4321),panel)</visible>
+                    <visible>Substring(Control.GetLabel(4321),tv)</visible>
                 </control>
                 <control type="group">
                     <posx>7</posx>
                     <posy>63</posy>
-                    <control type="image">
+                    <control type="image" id="80100">
                         <width>345</width>
                         <height>240</height>
                         <aspectratio aligny="top" align="center">keep</aspectratio>
@@ -1376,7 +1375,7 @@
                         <bordersize>7</bordersize>
                         <animation effect="fade" time="240">Visible</animation>
                         <animation effect="fade" time="40">Hidden</animation>
-                        <visible>Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),rss) | Substring(Control.GetLabel(4321),musicvideo)</visible>
+                        <visible>!Control.IsVisible(80100)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1394,7 +1393,6 @@
                     <textcolor>grey</textcolor>
                     <scrollspeed>30</scrollspeed>
                     <scroll>true</scroll>
-                    <visible>!Substring(Control.GetLabel(4321),panel)</visible>
                 </control>
             </control>
             <!--Button to set focus to classic widget with mouse
@@ -1785,7 +1783,6 @@
                     <font>Font_Reg33_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <include>Animation_HomeWidget</include>
-                    <visible>!SubString(Control.GetLabel(4321),panel)</visible>
                 </control>
                 <control type="image">
                     <posx>116</posx>
@@ -3230,7 +3227,6 @@
                     <font>Font_Reg33_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <include>Animation_HomeWidget</include>
-                    <visible>!SubString(Control.GetLabel(4325),panel)</visible>
                 </control>
                 <control type="image">
                     <posx>105</posx>
@@ -3254,9 +3250,9 @@
                     <scrollspeed>30</scrollspeed>
                     <scroll>true</scroll>
                     <include>Animation_HomeWidget</include>
-                    <visible>Substring(Control.GetLabel(4325),tv) + !Substring(Control.GetLabel(4325),featured) + !Substring(Control.GetLabel(4325),panel)</visible>
+                    <visible>Substring(Control.GetLabel(4325),tv)</visible>
                 </control>
-                <control type="image">
+                <control type="image" id="70100">
                     <posx>7</posx>
                     <posy>63</posy>
                     <width>345</width>
@@ -3280,7 +3276,7 @@
                     <bordersize>7</bordersize>
                     <animation effect="fade" time="240">Visible</animation>
                     <animation effect="fade" time="40">Hidden</animation>
-                    <visible>Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),rss) | Substring(Control.GetLabel(4325),musicvideo)</visible>
+                    <visible>!Control.IsVisible(70100)</visible>
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),systemclassic)</visible>
@@ -3297,7 +3293,6 @@
                     <textcolor>grey</textcolor>
                     <scrollspeed>30</scrollspeed>
                     <scroll>true</scroll>
-                    <visible>!Substring(Control.GetLabel(4325),panel)</visible>
                 </control>
             </control>
             <!--Button to set focus to classic widget with mouse
@@ -3682,7 +3677,6 @@
                     <font>Font_Reg33_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <include>Animation_HomeWidget</include>
-                    <visible>!SubString(Control.GetLabel(4325),panel)</visible>
                 </control>
                 <control type="image">
                     <posx>116</posx>
