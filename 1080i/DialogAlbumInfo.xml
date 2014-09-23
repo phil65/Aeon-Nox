@@ -6,9 +6,10 @@
     <onload>ClearProperty(Fanart,home)</onload>
     <onload>ClearProperty(Fanart2,home)</onload>
     <onload>ClearProperty(Fanart3,home)</onload>
-<!--     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
- -->    <include>Animation_OpenCloseZoom_New</include>
+    <!--
+    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>-->
+    <include>Animation_OpenCloseZoom_New</include>
     <controls>
         <control id="9023" type="button">
             <include>HiddenObject</include>
@@ -125,7 +126,7 @@
                 <visible>[Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(home).Property(Logo))] | Container.Content(albums)</visible>
             </control>
         </control>
-        <!-- Main Group -->
+        <!--Main Group-->
         <control type="group">
             <control id="40" type="grouplist">
                 <posx>-135</posx>
@@ -133,8 +134,8 @@
                 <width>2325</width>
                 <height>780</height>
                 <animation reversible="false" type="WindowOpen">
-                    <effect center="960,540" end="100" start="80" time="240" tween="back" type="zoom" delay="2000"/>
-                    <effect end="100" time="240" type="fade" delay="2000"/>
+                    <effect center="960,540" end="100" start="80" time="800" tween="back" type="zoom" delay="1200"/>
+                    <effect end="100" time="800" type="fade" delay="1200"/>
                 </animation>
                 <animation reversible="false" type="Visible">
                     <effect center="960,540" delay="560" end="100" start="20" time="740" tween="back" type="zoom"/>
@@ -144,7 +145,7 @@
                     <effect center="960,540" delay="560" end="40" start="100" time="740" tween="back" type="zoom"/>
                     <effect delay="560" end="0" start="100" time="440" type="fade"/>
                 </animation>
-                <visible>IsEmpty(Window(home).Property(extendedinfo_running)) + !Window.IsActive(1165)</visible>
+                <visible>!Window.IsActive(1165)</visible>
                 <scrolltime easing="inout" tween="cubic">500</scrolltime>
                 <orientation>horizontal</orientation>
                 <itemgap>-1060</itemgap>
@@ -152,7 +153,7 @@
                     <effect end="0" start="100" time="240" type="fade"/>
                     <effect center="960,540" easing="in" end="130" start="100" time="240" tween="cubic" type="zoom"/>
                 </animation>
-                <!-- Similar Artists -->
+                <!--Similar Artists-->
                 <control id="5000" type="group">
                     <width>2325</width>
                     <height>825</height>
@@ -175,7 +176,7 @@
                         <control type="group">
                             <posx>131</posx>
                             <posy>91</posy>
-                                                        <control type="multiimage">
+                            <control type="multiimage">
                                 <posx>-95</posx>
                                 <posy>-31</posy>
                                 <width>510</width>
@@ -221,10 +222,9 @@
                                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
-                                    <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+                                <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
                             </control>
-                            <!--content-->
-                        </control>
+                            <!--content--></control>
                         <control type="image">
                             <posx>21</posx>
                             <posy>59</posy>
@@ -235,7 +235,7 @@
                         </control>
                     </control>
                 </control>
-                <!-- Discography -->
+                <!--Discography-->
                 <control id="6000" type="group">
                     <width>2325</width>
                     <height>825</height>
@@ -307,8 +307,7 @@
                                 </focusedlayout>
                                 <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
                             </control>
-                            <!--content-->
-                        </control>
+                            <!--content--></control>
                         <control type="image">
                             <posx>21</posx>
                             <posy>59</posy>
@@ -319,7 +318,7 @@
                         </control>
                     </control>
                 </control>
-                <!-- Bio -->
+                <!--Bio-->
                 <control id="7000" type="group">
                     <width>2325</width>
                     <height>825</height>
@@ -404,7 +403,7 @@
                         </control>
                     </control>
                 </control>
-                <!-- Playlist -->
+                <!--Playlist-->
                 <control id="8000" type="group">
                     <width>2325</width>
                     <height>825</height>
@@ -501,14 +500,24 @@
                                         <font>Font_Reg29</font>
                                         <textcolor>grey2</textcolor>
                                     </control>
-                                    <!--                 <control type="label"><posy>10</posy><posx>235</posx><width>660</width><height>60</height><textcolor>grey2</textcolor><align>right</align><number>yes</number><font>Font_Reg29</font><label>$INFO[ListItem.Property(Number)]</label></control>-->
-                                </itemlayout>
+                                    <!--
+                                    <control type="label">
+                                        <posy>10</posy>
+                                        <posx>235</posx>
+                                        <width>660</width>
+                                        <height>60</height>
+                                        <textcolor>grey2</textcolor>
+                                        <align>right</align>
+                                        <number>yes</number>
+                                        <font>Font_Reg29</font>
+                                        <label>$INFO[ListItem.Property(Number)]</label>
+                                    </control>--></itemlayout>
                                 <focusedlayout height="70" width="800">
                                     <control type="image">
                                         <posx>34</posx>
                                         <width>766</width>
                                         <height>70</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                         <visible>Control.HasFocus(8010)</visible>
                                     </control>
                                     <control type="image">
@@ -570,7 +579,7 @@
                         </control>
                     </control>
                 </control>
-                <!-- Fanart -->
+                <!--Fanart-->
                 <control id="2000" type="group">
                     <width>2325</width>
                     <height>825</height>
@@ -592,7 +601,7 @@
                         <control type="group">
                             <posx>31</posx>
                             <posy>31</posy>
-                             <control id="9010" type="button">
+                            <control id="9010" type="button">
                                 <include>HiddenObject</include>
                                 <onup>9012</onup>
                                 <ondown>9012</ondown>
@@ -639,8 +648,6 @@
                                     <texture background="true" fallback="common/cdart/default.png">$INFO[ListItem.FileNameAndPath,,/cdart.png]</texture>
                                     <fadetime>300</fadetime>
                                 </control>
-
-
                                 <control id="50" type="list">
                                     <posx>550</posx>
                                     <posy>75</posy>
@@ -655,7 +662,7 @@
                                     <itemgap>0</itemgap>
                                     <scrolltime tween="quadratic">200</scrolltime>
                                     <preloaditems>2</preloaditems>
-                             <itemlayout height="50" width="650">
+                                    <itemlayout height="50" width="650">
                                         <control type="image">
                                             <posx>15</posx>
                                             <posy>0</posy>
@@ -695,7 +702,7 @@
                                         <control type="image">
                                             <width>650</width>
                                             <height>48</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                             <visible>Control.HasFocus(50)</visible>
                                         </control>
                                         <control type="label">
@@ -800,9 +807,10 @@
                                         </control>
                                     </control>
                                     <control type="group">
-                                        <!-- Genre -->
+                                        <!--Genre-->
                                         <visible>!IsEmpty(ListItem.Genre)</visible>
-                                        <!--                     <animation condition="IsEmpty(ListItem.Property(Album_Label))" effect="slide" end="-120,0" time="0">Conditional</animation>-->
+                                        <!--
+                                        <animation condition="IsEmpty(ListItem.Property(Album_Label))" effect="slide" end="-120,0" time="0">Conditional</animation>-->
                                         <include>Animation_VisibleChange200</include>
                                         <posx>1060</posx>
                                         <control type="image">
@@ -931,7 +939,7 @@
                                         <control type="image">
                                             <width>800</width>
                                             <height>50</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                             <visible>Control.HasFocus(9010)</visible>
                                         </control>
                                         <control type="label">
@@ -1023,7 +1031,7 @@
                         </control>
                     </control>
                 </control>
-                <!-- MusicVideos -->
+                <!--MusicVideos-->
                 <control id="10000" type="group">
                     <width>2325</width>
                     <height>825</height>
@@ -1053,7 +1061,7 @@
                         <control id="10001" type="group">
                             <posx>131</posx>
                             <posy>91</posy>
-                          <control type="multiimage">
+                            <control type="multiimage">
                                 <posx>-95</posx>
                                 <posy>-31</posy>
                                 <width>510</width>
@@ -1268,8 +1276,7 @@
                                 </focusedlayout>
                                 <content>$VAR[YouTubeContentVar]</content>
                             </control>
-                            <!--content-->
-                        </control>
+                            <!--content--></control>
                         <control type="image">
                             <posx>21</posx>
                             <posy>59</posy>
@@ -1280,7 +1287,7 @@
                         </control>
                     </control>
                 </control>
-                <!-- Artwork -->
+                <!--Artwork-->
                 <control id="11000" type="group">
                     <width>2325</width>
                     <height>825</height>
@@ -1349,8 +1356,7 @@
                                 </focusedlayout>
                                 <content target="pictures">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</content>
                             </control>
-                            <!--content-->
-                        </control>
+                            <!--content--></control>
                         <control type="image">
                             <posx>21</posx>
                             <posy>59</posy>
@@ -1373,10 +1379,10 @@
                     <effect delay="300" easing="out" end="0,0" start="0,52" time="340" tween="cubic" type="slide"/>
                 </animation>
                 <animation reversible="false" type="WindowOpen">
-                    <effect center="960,540" end="100" start="80" time="240" tween="back" type="zoom" delay="2000"/>
-                    <effect  end="100" time="240" type="fade" delay="2000"/>
+                    <effect center="960,540" end="100" start="80" time="240" tween="back" type="zoom" delay="500"/>
+                    <effect  end="100" time="240" type="fade" delay="500"/>
                 </animation>
-                <visible>!Window.IsActive(busydialog) + !Window.IsActive(1165)</visible>
+                <visible>!Window.IsActive(1165)</visible>
                 <visible>!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus</visible>
                 <posx>0</posx>
                 <posy>1020</posy>
