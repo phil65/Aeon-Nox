@@ -2,33 +2,19 @@
 <window type="window">
     <defaultcontrol always="true">8002</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <onload>RunScript(script.extendedinfo,info=upcoming,info=incinema,info=toprated,info=popular,info=premiereshows,info=youtubeusersearch,id=TheNewYorkTimes)</onload>
+    <onload>RunScript(script.extendedinfo,info=incinemas,info=toprated,info=popular,info=premiereshows,info=youtubeusersearch,id=TheNewYorkTimes)</onload>
     <controls>
-        <control type="button" id="5014">
+        <control type="button" id="5016">
             <include>HiddenObject</include>
+            <texturenofocus>-</texturenofocus>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-            <onfocus>RunScript(script.home,container=8001,focuscontrol=8001)</onfocus>
+            <onfocus>SetProperty(WidgetType,onlinemovie,home)</onfocus>
+            <onfocus>SetFocus(8002)</onfocus>
             <onfocus>ActivateWindow(1165)</onfocus>
-            <visible>!Container(2020).HasFocus(9)</visible>
         </control>
         <control type="button" id="5014">
             <include>HiddenObject</include>
             <texturenofocus>-</texturenofocus>
-            <onfocus>SetProperty(WidgetType,onlinemovie,home)</onfocus>
-            <onfocus condition="Container(2020).HasFocus(9)">Runscript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(8001).ListItem.Property(Id)],silent=False)</onfocus>
-            <onfocus>SetFocus(8001)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-            <visible>Container(2020).HasFocus(9)</visible>
-        </control>
-        <control type="button" id="9022">
-            <include>HiddenObject</include>
-            <onfocus>RunScript(script.home,container=5052,focuscontrol=5052)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-        </control>
-        <control type="button" id="9023">
-            <include>HiddenObject</include>
-            <onfocus>RunScript(script.home,container=5051,focuscontrol=5051)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
         </control>
         <control type="label" id="4321">
             <label>nextairedtvwatchlistmoviesconcertrssnewstrendingshowswatchlisttvpremiereshows</label>
@@ -72,12 +58,13 @@
                         </control>
             <control type="group">
                 <posy>360</posy>
-                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8007)" reversible="true">Conditional</animation>
-                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8007) | Control.HasFocus(8006)" reversible="true">Conditional</animation>
-                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005)" reversible="true">Conditional</animation>
-                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004)" reversible="true">Conditional</animation>
-                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004) | Control.HasFocus(8003)" reversible="true">Conditional</animation>
-                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004) | Control.HasFocus(8003) | Control.HasFocus(8002)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004) | Control.HasFocus(8003)" reversible="true">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008) | Control.HasFocus(8007) | Control.HasFocus(8006) | Control.HasFocus(8005) | Control.HasFocus(8004) | Control.HasFocus(8003) | Control.HasFocus(8002)" reversible="true">Conditional</animation>
                 <control type="wraplist" id="8001">
                     <posy>0</posy>
                     <focusposition>2</focusposition>
@@ -182,7 +169,7 @@
                             <width>193</width>
                             <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                         </control>
                         <control type="image">
@@ -231,7 +218,7 @@
                                 <width>193</width>
                                 <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                                 <fadetime>IconCrossfadeTime</fadetime>
                             </control>
                             <control type="image">
@@ -247,7 +234,7 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <include>WatchlistMoviesItems</include>
+                        <include>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</include>
                     </content>
                 </control>
                 <control type="wraplist" id="8003">
@@ -269,7 +256,7 @@
                             <width>193</width>
                             <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                         </control>
                         <control type="image">
@@ -318,7 +305,7 @@
                                 <width>193</width>
                                 <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                                 <fadetime>IconCrossfadeTime</fadetime>
                             </control>
                             <control type="image">
@@ -333,10 +320,7 @@
                             </control>
                         </control>
                     </focusedlayout>
-                    <content>
-                        <include>WatchListTVItems</include>
-                        <include>WatchListTVItemsHome</include>
-                    </content>
+                    <content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</content>
                 </control>
                 <control type="wraplist" id="8004">
                     <posy>1080</posy>
@@ -356,7 +340,7 @@
                             <width>193</width>
                             <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                         </control>
                         <control type="image">
@@ -405,7 +389,7 @@
                                 <width>193</width>
                                 <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                                 <fadetime>IconCrossfadeTime</fadetime>
                             </control>
                             <control type="image">
@@ -420,10 +404,7 @@
                             </control>
                         </control>
                     </focusedlayout>
-                    <content>
-                        <include>PremiereShowsItemsskinsettings</include>
-                        <include>PremiereShowsItems</include>
-                    </content>
+                    <content>plugin://script.extendedinfo?info=popularmovies</content>
                 </control>
                 <control type="wraplist" id="8005">
                     <posy>1440</posy>
@@ -443,7 +424,7 @@
                             <width>193</width>
                             <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                         </control>
                         <control type="image">
@@ -492,7 +473,7 @@
                                 <width>193</width>
                                 <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                                 <fadetime>IconCrossfadeTime</fadetime>
                             </control>
                             <control type="image">
@@ -524,14 +505,14 @@
                     <scrolltime>200</scrolltime>
                     <ondown>8007</ondown>
                     <onup>8005</onup>
-                               <itemlayout width="240" height="410">
+                    <itemlayout width="240" height="410">
                         <control type="image">
                             <posx>11</posx>
                             <posy>30</posy>
                             <width>193</width>
                             <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                         </control>
                         <control type="image">
@@ -580,7 +561,7 @@
                                 <width>193</width>
                                 <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                                 <fadetime>IconCrossfadeTime</fadetime>
                             </control>
                             <control type="image">
@@ -596,7 +577,7 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <include>UpcomingMoviesItems</include>
+                    <content>plugin://script.extendedinfo?info=upcoming</content>
                     </content>
                 </control>
                 <control type="wraplist" id="8007">
@@ -618,7 +599,7 @@
                             <width>193</width>
                             <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                         </control>
                         <control type="image">
@@ -667,7 +648,7 @@
                                 <width>193</width>
                                 <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                                 <fadetime>IconCrossfadeTime</fadetime>
                             </control>
                             <control type="image">
@@ -682,9 +663,7 @@
                             </control>
                         </control>
                     </focusedlayout>
-                    <content>
-                        <include>InCinemaMoviesItems</include>
-                    </content>
+                    <content>plugin://script.extendedinfo?info=incinemas</content>
                 </control>
             </control>
             <control type="image">
