@@ -284,8 +284,8 @@
                     <effect type="fade" start="100" end="0" time="240" />
                     <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
                 </animation>
-                <include condition="Substring(Skin.String(widgetlist),featured) | Substring(Skin.String(widgetlist),panel)">HomePanelWidget</include>
-                <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widgetlist),weather)">Weather_Widget</include>
+                <include>HomePanelWidget</include>
+                <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget</include>
                 <include>RecentWidget</include>
             </control>
             <control type="group">
