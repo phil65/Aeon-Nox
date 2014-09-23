@@ -1841,6 +1841,7 @@
         <value condition="Substring(Control.GetLabel(4321),premiereshows)">plugin://script.extendedinfo?info=premiereshows</value>
         <value condition="Substring(Control.GetLabel(4321),xkcd)">plugin://script.extendedinfo?info=xkcd</value>
         <value condition="Substring(Control.GetLabel(4321),cyanide)">plugin://script.extendedinfo?info=cyanide</value>
+        <value condition="Substring(Control.GetLabel(4321),concerts)">plugin://script.extendedinfo?info=nearevents</value>
         <value condition="Substring(Control.GetLabel(4321),rss1)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL1)]</value>
         <value condition="Substring(Control.GetLabel(4321),rss2)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL2)]</value>
         <value condition="Substring(Control.GetLabel(4321),rss3)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL3)]</value>
@@ -1891,6 +1892,7 @@
         <value condition="Substring(Control.GetLabel(4325),trailersmovies)">plugin://plugin.video.the.trailers/apple/movies/</value>
         <value condition="Substring(Control.GetLabel(4325),xkcd)">plugin://script.extendedinfo?info=xkcd</value>
         <value condition="Substring(Control.GetLabel(4325),cyanide)">plugin://script.extendedinfo?info=cyanide</value>
+        <value condition="Substring(Control.GetLabel(4325),concerts)">plugin://script.extendedinfo?info=nearevents</value>
         <value condition="Substring(Control.GetLabel(4325),rss1)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL1)]</value>
         <value condition="Substring(Control.GetLabel(4325),rss2)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL2)]</value>
         <value condition="Substring(Control.GetLabel(4325),rss3)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL3)]</value>
@@ -1910,6 +1912,54 @@
         <value condition="Substring(Control.GetLabel(4325),favourite)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),babesimagespanel)">plugin://script.extendedinfo?info=dailybabes</value>
         <value condition="Substring(Control.GetLabel(4325),babeimagespanel)">plugin://script.extendedinfo?info=dailybabe</value>
+    </variable>
+    <variable name="BackgroundContentVar">
+        <value condition="Substring(Control.GetLabel(4322),randomartists)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),randomalbums)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),recentalbums)">plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),watchlistalbums)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),recentmovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),randommovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),watchlistmovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),recentmusicvideos)">special://skin/extras/playlists/recentmusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),randommusicvideos)">special://skin/extras/playlists/randommusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),watchlistmusicvideos)">special://skin/extras/playlists/recommendedmusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),randomtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),recentvideos)">plugin://service.library.data.provider?type=recentvideos&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),recenttv)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),watchlisttv)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),randomaddons)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),comingsoonmovies)">plugin://script.extendedinfo?info=comingsoon</value>
+        <value condition="Substring(Control.GetLabel(4322),intheatersmovies)">plugin://script.extendedinfo?info=intheaters</value>
+        <value condition="Substring(Control.GetLabel(4322),boxofficemovies)">plugin://script.extendedinfo?info=boxoffice</value>
+        <value condition="Substring(Control.GetLabel(4322),toprentalsmovies)">plugin://script.extendedinfo?info=toprentals</value>
+        <value condition="Substring(Control.GetLabel(4322),openingmovies)">plugin://script.extendedinfo?info=opening</value>
+        <value condition="Substring(Control.GetLabel(4322),trendingshows)">plugin://script.extendedinfo?info=trendingshows</value>
+        <value condition="Substring(Control.GetLabel(4322),trendingmovies)">plugin://script.extendedinfo?info=trendingmovies</value>
+        <value condition="Substring(Control.GetLabel(4322),incinemasmovies)">plugin://script.extendedinfo?info=incinemas</value>
+        <value condition="Substring(Control.GetLabel(4322),upcomingmovies)">plugin://script.extendedinfo?info=upcoming</value>
+        <value condition="Substring(Control.GetLabel(4322),premiereshows)">plugin://script.extendedinfo?info=premiereshows</value>
+        <value condition="Substring(Control.GetLabel(4322),trailersmovies)">plugin://plugin.video.the.trailers/apple/movies/</value>
+        <value condition="Substring(Control.GetLabel(4322),xkcd)">plugin://script.extendedinfo?info=xkcd</value>
+        <value condition="Substring(Control.GetLabel(4322),cyanide)">plugin://script.extendedinfo?info=cyanide</value>
+        <value condition="Substring(Control.GetLabel(4322),rss1)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL1)]</value>
+        <value condition="Substring(Control.GetLabel(4322),rss2)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL2)]</value>
+        <value condition="Substring(Control.GetLabel(4322),rss3)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL3)]</value>
+        <value condition="Substring(Control.GetLabel(4322),://)">$INFO[Control.GetLabel(4322)]</value>
+        <value condition="Substring(Control.GetLabel(4322),randompics)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),recentpics)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),thebigpicture)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),mostplayedroms)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),actors)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),rss1)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),rss2)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),rss3)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),nextaired)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),Icon1)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),Icon2)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),favourite)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),babesimagespanel)">plugin://script.extendedinfo?info=dailybabes</value>
+        <value condition="Substring(Control.GetLabel(4322),babeimagespanel)">plugin://script.extendedinfo?info=dailybabe</value>
     </variable>
     <variable name="CDArtLabelVar">
         <value condition="Skin.HasSetting(vinylart)">$LOCALIZE[31227]</value>
