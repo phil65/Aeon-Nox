@@ -556,7 +556,26 @@
             <visible>IsEmpty(Window(home).Property(PanelWidgetInfo)) + IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
             <visible>[IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(movenowplayingwidget)] | [IsEmpty(Control.GetLabel(4321)) + Skin.HasSetting(movenowplayingwidget)] | !IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <animation effect="slide" end="0,35" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <include>Animation_Widgets</include>
+        <animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
+            <effect type="zoom" start="150" end="100" center="960,540" delay="2000" time="800" tween="cubic" />
+            <effect type="fade" delay="2000" start="50" end="100" time="240" />
+        </animation>
+        <animation type="WindowOpen" reversible="false" condition="!Window.Previous(Startup)">
+            <effect type="zoom" delay="640" start="150" end="100" center="960,540" time="640" tween="cubic" />
+            <effect type="fade" delay="640" start="50" end="100" time="640" />
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="240" />
+            <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+        </animation>
+        <animation type="Visible">
+            <effect type="zoom" start="150" delay="1100" end="100" center="960,540" time="400" tween="cubic" />
+            <effect type="fade" end="100" delay="1100" time="240" />
+        </animation>
+        <animation type="Hidden">
+            <effect type="fade" start="100" end="0" time="240" />
+            <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+        </animation>
             <animation effect="slide" end="0,390" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" end="0,600" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" end="0,11" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) + Window.IsActive(script-HomeWindow Script-main.xml)">Conditional</animation>
@@ -3574,7 +3593,7 @@
                         <posy>330</posy>
                         <width>900</width>
                         <height>38</height>
-                        <label>$INFO[Container(7000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(7000).ListItem.Property(Year), [,]][/COLOR]</label>
+                        <label>$INFO[Container(7000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(7000).ListItem.Year, [,]][/COLOR]</label>
                         <font>Font_Reg37_Caps</font>
                         <textcolor>white3</textcolor>
                     </control>
@@ -3582,7 +3601,7 @@
                         <posy>125</posy>
                         <width>800</width>
                         <height>38</height>
-                        <label>$INFO[Container(7000).ListItem.Property(Genre)]</label>
+                        <label>$INFO[Container(7000).ListItem.Property(Album_Genre)]$INFO[Container(7000).ListItem.Property(Artist_Genre)]</label>
                         <font>Font_Reg34_Caps</font>
                         <textcolor>white3</textcolor>
                         <wrapmultiline>true</wrapmultiline>
@@ -3592,9 +3611,9 @@
                         <width>688</width>
                         <height>200</height>
                         <aligny>top</aligny>
-                        <label fallback="-">$INFO[Container(7000).ListItem.Property(Description)]</label>
+                        <label fallback="-">$INFO[Container(7000).ListItem.Property(Addon.Description)]$INFO[Container(7000).ListItem.Property(Artist_Description)]$INFO[Container(7000).ListItem.Property(Album_Description)]</label>
                         <textcolor>white3</textcolor>
-                        <visible>IsEmpty(Container(7000).ListItem.Property(Genre))</visible>
+                        <visible>IsEmpty(Container(7000).ListItem.Property(Artist_Genre)) + IsEmpty(Container(7000).ListItem.Property(Album_Genre))</visible>
                         <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
