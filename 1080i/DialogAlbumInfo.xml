@@ -28,9 +28,9 @@
         <control id="3334" type="button">
             <include>HiddenObject</include>
             <texturenofocus>-</texturenofocus>
-            <onfocus>PlayMedia($INFO[Container(10003).ListItem.Property(Path)])</onfocus>
+            <onfocus>PlayMedia($INFO[Container(10010).ListItem.Property(Path)])</onfocus>
             <animation delay="140" effect="fade" reversible="false" time="1">Hidden</animation>
-            <visible>Control.HasFocus(10003)</visible>
+            <visible>Control.HasFocus(10010)</visible>
         </control>
         <control id="5014" type="button">
             <include>HiddenObject</include>
@@ -153,432 +153,6 @@
                     <effect end="0" start="100" time="240" type="fade"/>
                     <effect center="960,540" easing="in" end="130" start="100" time="240" tween="cubic" type="zoom"/>
                 </animation>
-                <!--Similar Artists-->
-                <control id="5000" type="group">
-                    <width>2325</width>
-                    <height>825</height>
-                    <animation condition="![ControlGroup(5000).HasFocus | Control.HasFocus(5012)]" type="Conditional">
-                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
-                        <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
-                    </animation>
-                    <control id="5012" type="button">
-                        <include>HiddenObject</include>
-                        <onup>5001</onup>
-                        <ondown>9000</ondown>
-                        <onright>6012</onright>
-                        <onleft>11012</onleft>
-                        <ondown>5001</ondown>
-                        <onclick>SetFocus(5001)</onclick>
-                    </control>
-                    <control id="5001" type="group">
-                        <posx>450</posx>
-                        <include>FeaturedPanel</include>
-                        <control type="group">
-                            <posx>131</posx>
-                            <posy>91</posy>
-                            <control type="multiimage">
-                                <posx>-95</posx>
-                                <posy>-31</posy>
-                                <width>510</width>
-                                <height>510</height>
-                                <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[Container(5010).ListItem.Icon]</imagepath>
-                                <fadetime>750</fadetime>
-                                <timeperimage>5000</timeperimage>
-                            </control>
-                            <control id="5010" type="panel">
-                                <posx>430</posx>
-                                <posy>-22</posy>
-                                <width>800</width>
-                                <height>490</height>
-                                <onup>5012</onup>
-                                <ondown>5012</ondown>
-                                <onright>6010</onright>
-                                <onleft>9010</onleft>
-                                <orientation>vertical</orientation>
-                                <focusposition>0</focusposition>
-                                <scrolltime easing="inout" tween="cubic">400</scrolltime>
-                                <preloaditems>2</preloaditems>
-                                <itemlayout height="240" width="245">
-                                    <include>MusicVisPanelLayout</include>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>240</width>
-                                        <height>240</height>
-                                        <texture border="6">common/bgcolor.png</texture>
-                                        <visible>Control.HasFocus(5010)</visible>
-                                        <include>Animation_VisibleChange400</include>
-                                        <colordiffuse>55FFFFFF</colordiffuse>
-                                    </control>
-                                </itemlayout>
-                                <focusedlayout height="240" width="245">
-                                    <include>MusicVisPanelLayout</include>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>236</width>
-                                        <height>238</height>
-                                        <texture border="6">views/addonwall_select.png</texture>
-                                        <visible>Control.HasFocus(5010)</visible>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                                    </control>
-                                </focusedlayout>
-                                <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
-                            </control>
-                            <!--content--></control>
-                        <control type="image">
-                            <posx>21</posx>
-                            <posy>59</posy>
-                            <width>1290</width>
-                            <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                        </control>
-                    </control>
-                </control>
-                <!--Discography-->
-                <control id="6000" type="group">
-                    <width>2325</width>
-                    <height>825</height>
-                    <animation condition="![ControlGroup(6000).HasFocus | Control.HasFocus(6012)]" type="Conditional">
-                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
-                        <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
-                    </animation>
-                    <control id="6012" type="button">
-                        <include>HiddenObject</include>
-                        <onup>6001</onup>
-                        <ondown>9000</ondown>
-                        <onright>7012</onright>
-                        <onleft>5012</onleft>
-                        <ondown>6001</ondown>
-                        <onclick>Action(Close)</onclick>
-                        <onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-                    </control>
-                    <control type="group">
-                        <posx>450</posx>
-                        <include>FeaturedPanel</include>
-                        <control id="6001" type="group">
-                            <posx>131</posx>
-                            <posy>91</posy>
-                            <control type="multiimage">
-                                <posx>-95</posx>
-                                <posy>-31</posy>
-                                <width>510</width>
-                                <height>510</height>
-                                <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[Container(6010).ListItem.Icon]</imagepath>
-                                <fadetime>750</fadetime>
-                                <timeperimage>5000</timeperimage>
-                            </control>
-                            <control id="6010" type="panel">
-                                <posx>430</posx>
-                                <posy>-22</posy>
-                                <width>800</width>
-                                <height>490</height>
-                                <onup>6012</onup>
-                                <ondown>6012</ondown>
-                                <onright>7010</onright>
-                                <onleft>5010</onleft>
-                                <orientation>vertical</orientation>
-                                <focusposition>0</focusposition>
-                                <scrolltime easing="inout" tween="cubic">400</scrolltime>
-                                <preloaditems>2</preloaditems>
-                                <itemlayout height="240" width="245">
-                                    <include>MusicVisPanelLayout</include>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>240</width>
-                                        <height>240</height>
-                                        <texture border="6">common/bgcolor.png</texture>
-                                        <visible>Control.HasFocus(6010)</visible>
-                                        <include>Animation_VisibleChange400</include>
-                                        <colordiffuse>55FFFFFF</colordiffuse>
-                                    </control>
-                                </itemlayout>
-                                <focusedlayout height="240" width="245">
-                                    <include>MusicVisPanelLayout</include>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>236</width>
-                                        <height>238</height>
-                                        <texture border="6">views/addonwall_select.png</texture>
-                                        <visible>Control.HasFocus(6010)</visible>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                                    </control>
-                                </focusedlayout>
-                                <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
-                            </control>
-                            <!--content--></control>
-                        <control type="image">
-                            <posx>21</posx>
-                            <posy>59</posy>
-                            <width>1290</width>
-                            <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                        </control>
-                    </control>
-                </control>
-                <!--Bio-->
-                <control id="7000" type="group">
-                    <width>2325</width>
-                    <height>825</height>
-                    <animation condition="![ControlGroup(7000).HasFocus | Control.HasFocus(7012)]" type="Conditional">
-                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
-                        <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
-                    </animation>
-                    <control id="7012" type="button">
-                        <include>HiddenObject</include>
-                        <onup>7001</onup>
-                        <ondown>9000</ondown>
-                        <onright>8012</onright>
-                        <onleft>6012</onleft>
-                        <ondown>7001</ondown>
-                        <onclick>Action(Close)</onclick>
-                    </control>
-                    <control type="group">
-                        <posx>450</posx>
-                        <include>FeaturedPanel</include>
-                        <control type="image">
-                            <posx>37</posx>
-                            <posy>60</posy>
-                            <width>1260</width>
-                            <height>506</height>
-                            <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                            <colordiffuse>44FFFFFF</colordiffuse>
-                        </control>
-                        <control id="7001" type="group">
-                            <posx>131</posx>
-                            <posy>91</posy>
-                            <control type="multiimage">
-                                <posx>-95</posx>
-                                <posy>-31</posy>
-                                <width>510</width>
-                                <height>510</height>
-                                <aligny>top</aligny>
-                                <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[ListItem.Icon]</imagepath>
-                                <fadetime>750</fadetime>
-                                <timeperimage>5000</timeperimage>
-                            </control>
-                            <control type="grouplist">
-                                <orientation>vertical</orientation>
-                                <posx>430</posx>
-                                <posy>-30</posy>
-                                <height>500</height>
-                                <control type="image">
-                                    <aspectratio>keep</aspectratio>
-                                    <width>654</width>
-                                    <height>135</height>
-                                    <texture>$INFO[Window(home).Property(Banner)]</texture>
-                                    <visible>!IsEmpty(Window(home).Property(Banner))</visible>
-                                </control>
-                                <control type="textbox">
-                                    <width>654</width>
-                                    <height max="487" min="0">auto</height>
-                                    <label>$VAR[ArtistInfoTextBoxVar]</label>
-                                    <font>Font_Reg30_2</font>
-                                    <pagecontrol>7010</pagecontrol>
-                                </control>
-                            </control>
-                            <control id="7010" type="spincontrol">
-                                <posx>1080</posx>
-                                <posy>-30</posy>
-                                <width>50</width>
-                                <height>88</height>
-                                <onup>7012</onup>
-                                <ondown>7012</ondown>
-                                <onleft>6010</onleft>
-                                <animation center="auto" condition="Control.HasFocus(7010)" effect="zoom" end="115" start="100" time="240" tween="back">Conditional</animation>
-                                <onright>8010</onright>
-                            </control>
-                        </control>
-                        <control type="image">
-                            <posx>21</posx>
-                            <posy>59</posy>
-                            <width>1290</width>
-                            <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                        </control>
-                    </control>
-                </control>
-                <!--Playlist-->
-                <control id="8000" type="group">
-                    <width>2325</width>
-                    <height>825</height>
-                    <visible>IntegerGreaterThan(Window(home).Property(ArtistEvents.Count),0)</visible>
-                    <animation condition="![ControlGroup(8000).HasFocus | Control.HasFocus(8012)]" type="Conditional">
-                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
-                        <effect center="1160,412" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
-                    </animation>
-                    <control id="8012" type="button">
-                        <include>HiddenObject</include>
-                        <onup>8001</onup>
-                        <ondown>9000</ondown>
-                        <onright>9012</onright>
-                        <onleft>7012</onleft>
-                        <onclick>SetFocus(8001)</onclick>
-                    </control>
-                    <control id="8001" type="group">
-                        <posx>450</posx>
-                        <include>FeaturedPanel</include>
-                        <control type="image">
-                            <posx>37</posx>
-                            <posy>60</posy>
-                            <width>1260</width>
-                            <height>506</height>
-                            <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                            <colordiffuse>44FFFFFF</colordiffuse>
-                        </control>
-                        <control type="group">
-                            <posx>131</posx>
-                            <posy>91</posy>
-                            <control type="group">
-                                <posx>-90</posx>
-                                <posy>27</posy>
-                                <control type="image">
-                                    <posx>-8</posx>
-                                    <posy>-58</posy>
-                                    <width>510</width>
-                                    <height>510</height>
-                                    <aspectratio>scale</aspectratio>
-                                    <texture>$INFO[Container(8010).ListItem.Property(GoogleMap)]</texture>
-                                    <fadetime>750</fadetime>
-                                    <timeperimage>5000</timeperimage>
-                                </control>
-                            </control>
-                            <control id="8010" type="panel">
-                                <posx>379</posx>
-                                <posy>-18</posy>
-                                <width>800</width>
-                                <height>480</height>
-                                <onup>8012</onup>
-                                <ondown>8012</ondown>
-                                <onleft>7010</onleft>
-                                <onright>9010</onright>
-                                <orientation>vertical</orientation>
-                                <focusposition>0</focusposition>
-                                <scrolltime easing="inout" tween="cubic">400</scrolltime>
-                                <preloaditems>2</preloaditems>
-                                <itemlayout height="70" width="800">
-                                    <control type="image">
-                                        <posx>15</posx>
-                                        <posy>0</posy>
-                                        <width>770</width>
-                                        <height>70</height>
-                                        <texture border="3">osd/osd_settings_buttonnf.png</texture>
-                                    </control>
-                                    <control type="label">
-                                        <posx>765</posx>
-                                        <posy>0</posy>
-                                        <width>300</width>
-                                        <height>48</height>
-                                        <align>right</align>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posx>45</posx>
-                                        <posy>0</posy>
-                                        <width>765</width>
-                                        <height>48</height>
-                                        <align>left</align>
-                                        <label>$INFO[ListItem.Property(City)]</label>
-                                        <font>Font_Reg29</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posx>45</posx>
-                                        <posy>30</posy>
-                                        <width>765</width>
-                                        <height>48</height>
-                                        <align>left</align>
-                                        <label>$INFO[ListItem.Property(Name)]</label>
-                                        <font>Font_Reg29</font>
-                                        <textcolor>grey2</textcolor>
-                                    </control>
-                                    <!--
-                                    <control type="label">
-                                        <posy>10</posy>
-                                        <posx>235</posx>
-                                        <width>660</width>
-                                        <height>60</height>
-                                        <textcolor>grey2</textcolor>
-                                        <align>right</align>
-                                        <number>yes</number>
-                                        <font>Font_Reg29</font>
-                                        <label>$INFO[ListItem.Property(Number)]</label>
-                                    </control>--></itemlayout>
-                                <focusedlayout height="70" width="800">
-                                    <control type="image">
-                                        <posx>34</posx>
-                                        <width>766</width>
-                                        <height>70</height>
-                                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                                        <visible>Control.HasFocus(8010)</visible>
-                                    </control>
-                                    <control type="image">
-                                        <posx>15</posx>
-                                        <posy>0</posy>
-                                        <width>370</width>
-                                        <height>70</height>
-                                        <texture border="3">osd/osd_settings_buttonnf.png</texture>
-                                    </control>
-                                    <control type="label">
-                                        <posx>765</posx>
-                                        <posy>0</posy>
-                                        <width>300</width>
-                                        <height>48</height>
-                                        <align>right</align>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posx>45</posx>
-                                        <posy>0</posy>
-                                        <width>765</width>
-                                        <height>48</height>
-                                        <align>left</align>
-                                        <label>$INFO[ListItem.Property(City)]</label>
-                                        <font>Font_Reg29</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posx>45</posx>
-                                        <posy>30</posy>
-                                        <width>765</width>
-                                        <height>48</height>
-                                        <align>left</align>
-                                        <label>$INFO[ListItem.Property(Name)]</label>
-                                        <font>Font_Reg29</font>
-                                        <textcolor>grey2</textcolor>
-                                    </control>
-                                </focusedlayout>
-                                <content>
-                                    <include>ArtistEventItems</include>
-                                    <item id="100">
-                                        <property name="City">Show concerts in maps browser</property>
-                                        <onclick>Action(Close)</onclick>
-                                        <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
-                                        <property name="GoogleMap">$INFO[System.AddonIcon(script.maps.browser)]</property>
-                                    </item>
-                                </content>
-                            </control>
-                        </control>
-                        <control type="image">
-                            <posx>21</posx>
-                            <posy>59</posy>
-                            <width>1290</width>
-                            <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                        </control>
-                    </control>
-                </control>
                 <!--Fanart-->
                 <control id="2000" type="group">
                     <width>2325</width>
@@ -591,8 +165,8 @@
                         <include>HiddenObject</include>
                         <onup>9001</onup>
                         <ondown>9000</ondown>
-                        <onright>10012</onright>
-                        <onleft>8012</onleft>
+                        <onright>6012</onright>
+                        <onleft>11012</onleft>
                         <ondown>9010</ondown>
                     </control>
                     <control id="9001" type="group">
@@ -1031,6 +605,434 @@
                         </control>
                     </control>
                 </control>
+                <!--Discography-->
+                <control id="6000" type="group">
+                    <width>2325</width>
+                    <height>825</height>
+                    <animation condition="![ControlGroup(6000).HasFocus | Control.HasFocus(6012)]" type="Conditional">
+                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
+                        <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
+                    </animation>
+                    <control id="6012" type="button">
+                        <include>HiddenObject</include>
+                        <onup>6001</onup>
+                        <ondown>9000</ondown>
+                        <onright>7012</onright>
+                        <onleft>9012</onleft>
+                        <ondown>6001</ondown>
+                        <onclick>Action(Close)</onclick>
+                        <onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+                    </control>
+                    <control type="group">
+                        <posx>450</posx>
+                        <include>FeaturedPanel</include>
+                        <control id="6001" type="group">
+                            <posx>131</posx>
+                            <posy>91</posy>
+                            <control type="multiimage">
+                                <posx>-95</posx>
+                                <posy>-31</posy>
+                                <width>510</width>
+                                <height>510</height>
+                                <aspectratio>scale</aspectratio>
+                                <imagepath background="true">$INFO[Container(6010).ListItem.Icon]</imagepath>
+                                <fadetime>750</fadetime>
+                                <timeperimage>5000</timeperimage>
+                            </control>
+                            <control id="6010" type="panel">
+                                <posx>430</posx>
+                                <posy>-22</posy>
+                                <width>800</width>
+                                <height>490</height>
+                                <onup>6012</onup>
+                                <ondown>6012</ondown>
+                                <onright>7010</onright>
+                                <onleft>9010</onleft>
+                                <orientation>vertical</orientation>
+                                <focusposition>0</focusposition>
+                                <scrolltime easing="inout" tween="cubic">400</scrolltime>
+                                <preloaditems>2</preloaditems>
+                                <itemlayout height="240" width="245">
+                                    <include>MusicVisPanelLayout</include>
+                                    <control type="image">
+                                        <posy>10</posy>
+                                        <width>240</width>
+                                        <height>240</height>
+                                        <texture border="6">common/bgcolor.png</texture>
+                                        <visible>Control.HasFocus(6010)</visible>
+                                        <include>Animation_VisibleChange400</include>
+                                        <colordiffuse>55FFFFFF</colordiffuse>
+                                    </control>
+                                </itemlayout>
+                                <focusedlayout height="240" width="245">
+                                    <include>MusicVisPanelLayout</include>
+                                    <control type="image">
+                                        <posy>10</posy>
+                                        <width>236</width>
+                                        <height>238</height>
+                                        <texture border="6">views/addonwall_select.png</texture>
+                                        <visible>Control.HasFocus(6010)</visible>
+                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                    </control>
+                                </focusedlayout>
+                                <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+                            </control>
+                            <!--content--></control>
+                        <control type="image">
+                            <posx>21</posx>
+                            <posy>59</posy>
+                            <width>1290</width>
+                            <height>516</height>
+                            <texture>featured/panel_featured_overlay.png</texture>
+                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        </control>
+                    </control>
+                </control>
+                <!--Bio-->
+                <control id="7000" type="group">
+                    <width>2325</width>
+                    <height>825</height>
+                    <animation condition="![ControlGroup(7000).HasFocus | Control.HasFocus(7012)]" type="Conditional">
+                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
+                        <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
+                    </animation>
+                    <control id="7012" type="button">
+                        <include>HiddenObject</include>
+                        <onup>7001</onup>
+                        <ondown>9000</ondown>
+                        <onright>8012</onright>
+                        <onleft>6012</onleft>
+                        <ondown>7001</ondown>
+                        <onclick>Action(Close)</onclick>
+                    </control>
+                    <control type="group">
+                        <posx>450</posx>
+                        <include>FeaturedPanel</include>
+                        <control type="image">
+                            <posx>37</posx>
+                            <posy>60</posy>
+                            <width>1260</width>
+                            <height>506</height>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <colordiffuse>44FFFFFF</colordiffuse>
+                        </control>
+                        <control id="7001" type="group">
+                            <posx>131</posx>
+                            <posy>91</posy>
+                            <control type="multiimage">
+                                <posx>-95</posx>
+                                <posy>-31</posy>
+                                <width>510</width>
+                                <height>510</height>
+                                <aligny>top</aligny>
+                                <aspectratio>scale</aspectratio>
+                                <imagepath background="true">$INFO[ListItem.Icon]</imagepath>
+                                <fadetime>750</fadetime>
+                                <timeperimage>5000</timeperimage>
+                            </control>
+                            <control type="grouplist">
+                                <orientation>vertical</orientation>
+                                <posx>430</posx>
+                                <posy>-30</posy>
+                                <height>500</height>
+                                <control type="image">
+                                    <aspectratio>keep</aspectratio>
+                                    <width>654</width>
+                                    <height>135</height>
+                                    <texture>$INFO[Window(home).Property(Banner)]</texture>
+                                    <visible>!IsEmpty(Window(home).Property(Banner))</visible>
+                                </control>
+                                <control type="textbox">
+                                    <width>654</width>
+                                    <height max="487" min="0">auto</height>
+                                    <label>$VAR[ArtistInfoTextBoxVar]</label>
+                                    <font>Font_Reg30_2</font>
+                                    <pagecontrol>7010</pagecontrol>
+                                </control>
+                            </control>
+                            <control id="7010" type="spincontrol">
+                                <posx>1080</posx>
+                                <posy>-30</posy>
+                                <width>50</width>
+                                <height>88</height>
+                                <onup>7012</onup>
+                                <ondown>7012</ondown>
+                                <onleft>6010</onleft>
+                                <animation center="auto" condition="Control.HasFocus(7010)" effect="zoom" end="115" start="100" time="240" tween="back">Conditional</animation>
+                                <onright>8010</onright>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <posx>21</posx>
+                            <posy>59</posy>
+                            <width>1290</width>
+                            <height>516</height>
+                            <texture>featured/panel_featured_overlay.png</texture>
+                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        </control>
+                    </control>
+                </control>
+                <!--Concerts-->
+                <control id="8000" type="group">
+                    <width>2325</width>
+                    <height>825</height>
+                    <visible>IntegerGreaterThan(Window(home).Property(ArtistEvents.Count),0)</visible>
+                    <animation condition="![ControlGroup(8000).HasFocus | Control.HasFocus(8012)]" type="Conditional">
+                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
+                        <effect center="1160,412" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
+                    </animation>
+                    <control id="8012" type="button">
+                        <include>HiddenObject</include>
+                        <onup>8001</onup>
+                        <ondown>9000</ondown>
+                        <onright>5012</onright>
+                        <onleft>7012</onleft>
+                        <onclick>SetFocus(8001)</onclick>
+                    </control>
+                    <control id="8001" type="group">
+                        <posx>450</posx>
+                        <include>FeaturedPanel</include>
+                        <control type="image">
+                            <posx>37</posx>
+                            <posy>60</posy>
+                            <width>1260</width>
+                            <height>506</height>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <colordiffuse>44FFFFFF</colordiffuse>
+                        </control>
+                        <control type="group">
+                            <posx>131</posx>
+                            <posy>91</posy>
+                            <control type="group">
+                                <posx>-90</posx>
+                                <posy>27</posy>
+                                <control type="image">
+                                    <posx>-8</posx>
+                                    <posy>-58</posy>
+                                    <width>510</width>
+                                    <height>510</height>
+                                    <aspectratio>scale</aspectratio>
+                                    <texture>$INFO[Container(8010).ListItem.Property(GoogleMap)]</texture>
+                                    <fadetime>750</fadetime>
+                                    <timeperimage>5000</timeperimage>
+                                </control>
+                            </control>
+                            <control id="8010" type="panel">
+                                <posx>379</posx>
+                                <posy>-18</posy>
+                                <width>800</width>
+                                <height>480</height>
+                                <onup>8012</onup>
+                                <ondown>8012</ondown>
+                                <onleft>7010</onleft>
+                                <onright>9010</onright>
+                                <orientation>vertical</orientation>
+                                <focusposition>0</focusposition>
+                                <scrolltime easing="inout" tween="cubic">400</scrolltime>
+                                <preloaditems>2</preloaditems>
+                                <itemlayout height="70" width="800">
+                                    <control type="image">
+                                        <posx>15</posx>
+                                        <posy>0</posy>
+                                        <width>770</width>
+                                        <height>70</height>
+                                        <texture border="3">osd/osd_settings_buttonnf.png</texture>
+                                    </control>
+                                    <control type="label">
+                                        <posx>765</posx>
+                                        <posy>0</posy>
+                                        <width>300</width>
+                                        <height>48</height>
+                                        <align>right</align>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posx>45</posx>
+                                        <posy>0</posy>
+                                        <width>765</width>
+                                        <height>48</height>
+                                        <align>left</align>
+                                        <label>$INFO[ListItem.Property(City)]</label>
+                                        <font>Font_Reg29</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posx>45</posx>
+                                        <posy>30</posy>
+                                        <width>765</width>
+                                        <height>48</height>
+                                        <align>left</align>
+                                        <label>$INFO[ListItem.Property(Name)]</label>
+                                        <font>Font_Reg29</font>
+                                        <textcolor>grey2</textcolor>
+                                    </control>
+                                    <!--
+                                    <control type="label">
+                                        <posy>10</posy>
+                                        <posx>235</posx>
+                                        <width>660</width>
+                                        <height>60</height>
+                                        <textcolor>grey2</textcolor>
+                                        <align>right</align>
+                                        <number>yes</number>
+                                        <font>Font_Reg29</font>
+                                        <label>$INFO[ListItem.Property(Number)]</label>
+                                    </control>--></itemlayout>
+                                <focusedlayout height="70" width="800">
+                                    <control type="image">
+                                        <posx>34</posx>
+                                        <width>766</width>
+                                        <height>70</height>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                        <visible>Control.HasFocus(8010)</visible>
+                                    </control>
+                                    <control type="image">
+                                        <posx>15</posx>
+                                        <posy>0</posy>
+                                        <width>370</width>
+                                        <height>70</height>
+                                        <texture border="3">osd/osd_settings_buttonnf.png</texture>
+                                    </control>
+                                    <control type="label">
+                                        <posx>765</posx>
+                                        <posy>0</posy>
+                                        <width>300</width>
+                                        <height>48</height>
+                                        <align>right</align>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg26</font>
+                                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posx>45</posx>
+                                        <posy>0</posy>
+                                        <width>765</width>
+                                        <height>48</height>
+                                        <align>left</align>
+                                        <label>$INFO[ListItem.Property(City)]</label>
+                                        <font>Font_Reg29</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posx>45</posx>
+                                        <posy>30</posy>
+                                        <width>765</width>
+                                        <height>48</height>
+                                        <align>left</align>
+                                        <label>$INFO[ListItem.Property(Name)]</label>
+                                        <font>Font_Reg29</font>
+                                        <textcolor>grey2</textcolor>
+                                    </control>
+                                </focusedlayout>
+                                <content>
+                                    <include>ArtistEventItems</include>
+                                    <item id="100">
+                                        <property name="City">Show concerts in maps browser</property>
+                                        <onclick>Action(Close)</onclick>
+                                        <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
+                                        <property name="GoogleMap">$INFO[System.AddonIcon(script.maps.browser)]</property>
+                                    </item>
+                                </content>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <posx>21</posx>
+                            <posy>59</posy>
+                            <width>1290</width>
+                            <height>516</height>
+                            <texture>featured/panel_featured_overlay.png</texture>
+                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        </control>
+                    </control>
+                </control>
+        <!--Similar Artists-->
+                <control id="5000" type="group">
+                    <width>2325</width>
+                    <height>825</height>
+                    <animation condition="![ControlGroup(5000).HasFocus | Control.HasFocus(5012)]" type="Conditional">
+                        <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
+                        <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
+                    </animation>
+                    <control id="5012" type="button">
+                        <include>HiddenObject</include>
+                        <onup>5001</onup>
+                        <ondown>9000</ondown>
+                        <onright>10012</onright>
+                        <onleft>8012</onleft>
+                        <ondown>5001</ondown>
+                        <onclick>SetFocus(5001)</onclick>
+                    </control>
+                    <control id="5001" type="group">
+                        <posx>450</posx>
+                        <include>FeaturedPanel</include>
+                        <control type="group">
+                            <posx>131</posx>
+                            <posy>91</posy>
+                            <control type="multiimage">
+                                <posx>-95</posx>
+                                <posy>-31</posy>
+                                <width>510</width>
+                                <height>510</height>
+                                <aspectratio>scale</aspectratio>
+                                <imagepath background="true">$INFO[Container(5010).ListItem.Icon]</imagepath>
+                                <fadetime>750</fadetime>
+                                <timeperimage>5000</timeperimage>
+                            </control>
+                            <control id="5010" type="panel">
+                                <posx>430</posx>
+                                <posy>-22</posy>
+                                <width>800</width>
+                                <height>490</height>
+                                <onup>5012</onup>
+                                <ondown>5012</ondown>
+                                <onright>10010</onright>
+                                <onleft>8010</onleft>
+                                <orientation>vertical</orientation>
+                                <focusposition>0</focusposition>
+                                <scrolltime easing="inout" tween="cubic">400</scrolltime>
+                                <preloaditems>2</preloaditems>
+                                <itemlayout height="240" width="245">
+                                    <include>MusicVisPanelLayout</include>
+                                    <control type="image">
+                                        <posy>10</posy>
+                                        <width>240</width>
+                                        <height>240</height>
+                                        <texture border="6">common/bgcolor.png</texture>
+                                        <visible>Control.HasFocus(5010)</visible>
+                                        <include>Animation_VisibleChange400</include>
+                                        <colordiffuse>55FFFFFF</colordiffuse>
+                                    </control>
+                                </itemlayout>
+                                <focusedlayout height="240" width="245">
+                                    <include>MusicVisPanelLayout</include>
+                                    <control type="image">
+                                        <posy>10</posy>
+                                        <width>236</width>
+                                        <height>238</height>
+                                        <texture border="6">views/addonwall_select.png</texture>
+                                        <visible>Control.HasFocus(5010)</visible>
+                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                    </control>
+                                </focusedlayout>
+                                <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+                            </control>
+                            <!--content--></control>
+                        <control type="image">
+                            <posx>21</posx>
+                            <posy>59</posy>
+                            <width>1290</width>
+                            <height>516</height>
+                            <texture>featured/panel_featured_overlay.png</texture>
+                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        </control>
+                    </control>
+                </control>
+
+
                 <!--MusicVideos-->
                 <control id="10000" type="group">
                     <width>2325</width>
@@ -1043,7 +1045,7 @@
                         <include>HiddenObject</include>
                         <onup>10001</onup>
                         <onright>11012</onright>
-                        <onleft>9012</onleft>
+                        <onleft>5012</onleft>
                         <ondown>10010</ondown>
                     </control>
                     <control type="group">
@@ -1084,7 +1086,7 @@
                                 <textcolor>$VAR[TitleColorVar]</textcolor>
                                 <visible>!Stringcompare(Window(home).Property(MusicVideos.Count),0)</visible>
                             </control>
-                            <control id="10003" type="list">
+                            <control id="10010" type="list">
                                 <posx>-65</posx>
                                 <posy>25</posy>
                                 <width>470</width>
@@ -1160,7 +1162,7 @@
                                     </control>
                                     <control type="group">
                                         <posy>5</posy>
-                                        <animation condition="!Control.HasFocus(10003)" effect="fade" end="80" start="100" time="0">Conditional</animation>
+                                        <animation condition="!Control.HasFocus(10010)" effect="fade" end="80" start="100" time="0">Conditional</animation>
                                         <control type="label">
                                             <posy>5</posy>
                                             <width>470</width>
@@ -1199,7 +1201,7 @@
                                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                         <bordertexture border="5">views/addonwall_select.png</bordertexture>
                                         <bordersize>5</bordersize>
-                                        <visible>Control.HasFocus(10003)</visible>
+                                        <visible>Control.HasFocus(10010)</visible>
                                     </control>
                                 </focusedlayout>
                                 <content>plugin://script.extendedinfo?info=musicvideos&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
@@ -1245,7 +1247,7 @@
                                 <onup>10012</onup>
                                 <ondown>10012</ondown>
                                 <onright>11010</onright>
-                                <onleft>10003</onleft>
+                                <onleft>10010</onleft>
                                 <orientation>vertical</orientation>
                                 <pagecontrol>60</pagecontrol>
                                 <focusposition>0</focusposition>
@@ -1298,7 +1300,7 @@
                     <control id="11012" type="button">
                         <include>HiddenObject</include>
                         <onup>11010</onup>
-                        <onright>5012</onright>
+                        <onright>9012</onright>
                         <onleft>10012</onleft>
                         <ondown>9000</ondown>
                     </control>
@@ -1324,7 +1326,7 @@
                                 <height>490</height>
                                 <onup>11012</onup>
                                 <ondown>11012</ondown>
-                                <onright>5010</onright>
+                                <onright>9010</onright>
                                 <onleft>10010</onleft>
                                 <orientation>vertical</orientation>
                                 <pagecontrol>60</pagecontrol>
@@ -1400,10 +1402,10 @@
                     <colordiffuse>$VAR[BreadCrumbsContentColorVar]</colordiffuse>
                 </control>
                 <control type="label">
-                    <label>$LOCALIZE[31635]</label>
+                    <label>INFO</label>
                     <include>FeaturedTopLabel</include>
-                    <animation condition="!Control.HasFocus(5012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
-                    <animation center="auto" condition="ControlGroup(5000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
+                    <animation condition="!Control.HasFocus(9012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
+                    <animation center="auto" condition="ControlGroup(2000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
                 </control>
                 <control type="label">
                     <label>$LOCALIZE[21888]</label>
@@ -1424,11 +1426,12 @@
                     <animation condition="!Control.HasFocus(8012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
                     <animation center="auto" condition="ControlGroup(8000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
                 </control>
+
                 <control type="label">
-                    <label>INFO</label>
+                    <label>$LOCALIZE[31635]</label>
                     <include>FeaturedTopLabel</include>
-                    <animation condition="!Control.HasFocus(9012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
-                    <animation center="auto" condition="ControlGroup(2000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
+                    <animation condition="!Control.HasFocus(5012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
+                    <animation center="auto" condition="ControlGroup(5000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
                 </control>
                 <control type="label">
                     <label>Music Videos</label>
