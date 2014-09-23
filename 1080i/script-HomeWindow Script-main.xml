@@ -16,6 +16,8 @@
             <onfocus condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
             <onfocus condition="!IsEmpty(Window(home).Property(SettingsFocusOffset))">$VAR[SettingsCustomStartupFocus]</onfocus>
             <onfocus>ClearProperty(SettingsFocusOffset,home)</onfocus>
+            <onfocus>SetProperty(Widget1Type,$INFO[Container(9000).ListItem.Property(Widget)],home)</onfocus>
+            <onfocus>SetProperty(Widget2Type,$INFO[Container(9000).ListItem.Property(Widget2)],home)</onfocus>
             <onfocus>SetFocus(9000)</onfocus>
             <onleft>SetFocus(9000)</onleft>
             <onright>SetFocus(9000)</onright>

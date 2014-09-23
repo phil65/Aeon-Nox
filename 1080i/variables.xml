@@ -966,11 +966,13 @@
     <variable name="WidgetTypeVar">
         <value condition="Window.IsActive(1154)">none</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget)]</value>
+        <value>$INFO[Window(home).Property(Widget1Type)]</value>
         <value>$INFO[Container(9000).ListItem.Property(Widget)]</value>
     </variable>
     <variable name="Widget2TypeVar">
         <value condition="Window.IsActive(1154)">none</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2)]</value>
+        <value>$INFO[Window(home).Property(Widget2Type)]</value>
         <value>$INFO[Container(9000).ListItem.Property(Widget2)]</value>
     </variable>
     <variable name="InfoLineVar">
@@ -1929,6 +1931,7 @@
         <value condition="Substring(Control.GetLabel(4322),recenttv)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4322),watchlisttv)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4322),randomaddons)">bla</value>
+        <value condition="Substring(Control.GetLabel(4322),flickr)">plugin://script.extendedinfo?info=flickr</value>
         <value condition="Substring(Control.GetLabel(4322),comingsoonmovies)">plugin://script.extendedinfo?info=comingsoon</value>
         <value condition="Substring(Control.GetLabel(4322),intheatersmovies)">plugin://script.extendedinfo?info=intheaters</value>
         <value condition="Substring(Control.GetLabel(4322),boxofficemovies)">plugin://script.extendedinfo?info=boxoffice</value>
