@@ -868,7 +868,7 @@
     </variable>
     <variable name="WidgetTypeLabelVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
-        <value>$INFO[Container(9000).ListItem.Property(WidgetTitle)]</value>
+        <value>$INFO[Window(home).Property(Widget1Title)]</value>
     </variable>
     <variable name="ClassicWidgetImageVar">
         <value condition="[Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),movie)] + !IsEmpty(Container(8000).ListItem.Property(Landscape))">$INFO[Container(8000).ListItem.Property(Landscape)]</value>
@@ -882,7 +882,7 @@
     </variable>
     <variable name="Widget2TypeLabelVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
-        <value>$INFO[Container(9000).ListItem.Property(Widget2Title)]</value>
+        <value>$INFO[Window(home).Property(Widget2Title)]</value>
     </variable>
     <variable name="MusicOSDRepeatClassicButtonVar">
         <value condition="Playlist.IsRepeatOne">osd/buttons/OSDRepeatOneNF.png</value>
@@ -967,13 +967,11 @@
         <value condition="Window.IsActive(1154)">none</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget)]</value>
         <value>$INFO[Window(home).Property(Widget1Type)]</value>
-        <value>$INFO[Container(9000).ListItem.Property(Widget)]</value>
     </variable>
     <variable name="Widget2TypeVar">
         <value condition="Window.IsActive(1154)">none</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2)]</value>
         <value>$INFO[Window(home).Property(Widget2Type)]</value>
-        <value>$INFO[Container(9000).ListItem.Property(Widget2)]</value>
     </variable>
     <variable name="InfoLineVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.InfoLine)]</value>
