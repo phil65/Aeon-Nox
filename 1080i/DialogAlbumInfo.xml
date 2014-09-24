@@ -467,7 +467,7 @@
                                     <onup>9012</onup>
                                     <ondown>9012</ondown>
                                     <onleft>8010</onleft>
-                                    <onright>10010</onright>
+                                    <onright>6010</onright>
                                     <visible>Container.content(artists)</visible>
                                     <orientation>vertical</orientation>
                                     <focusposition>0</focusposition>
@@ -827,7 +827,7 @@
                                 <onup>8012</onup>
                                 <ondown>8012</ondown>
                                 <onleft>7010</onleft>
-                                <onright>9010</onright>
+                                <onright>5010</onright>
                                 <orientation>vertical</orientation>
                                 <focusposition>0</focusposition>
                                 <scrolltime easing="inout" tween="cubic">400</scrolltime>
@@ -1070,10 +1070,10 @@
                                 <height>510</height>
                                 <aligny>top</aligny>
                                 <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[Container(10010).ListItem.Icon]</imagepath>
+                                <imagepath background="true">$INFO[Container(10011).ListItem.Icon]</imagepath>
                                 <fadetime>750</fadetime>
                                 <timeperimage>5000</timeperimage>
-                                <visible>Stringcompare(Window(home).Property(MusicVideos.Count),0)</visible>
+                                <visible>Stringcompare(Container(10010).NumItems,0)</visible>
                             </control>
                             <control type="label">
                                 <posx>-100</posx>
@@ -1094,7 +1094,7 @@
                                 <onup>10012</onup>
                                 <ondown>10012</ondown>
                                 <onleft>5010</onleft>
-                                <onright>10010</onright>
+                                <onright>10011</onright>
                                 <orientation>vertical</orientation>
                                 <focusposition>0</focusposition>
                                 <itemgap>0</itemgap>
@@ -1239,7 +1239,7 @@
                                     <texture>thumbs/boxes/cd_shadow_light.png</texture>
                                 </control>
                             </control>
-                            <control id="10010" type="panel">
+                            <control id="10011" type="panel">
                                 <posx>430</posx>
                                 <posy>-22</posy>
                                 <width>800</width>
@@ -1260,7 +1260,7 @@
                                         <width>240</width>
                                         <height>240</height>
                                         <texture border="6">common/bgcolor.png</texture>
-                                        <visible>Control.HasFocus(10010)</visible>
+                                        <visible>Control.HasFocus(10011)</visible>
                                         <include>Animation_VisibleChange400</include>
                                         <colordiffuse>55FFFFFF</colordiffuse>
                                     </control>
@@ -1272,7 +1272,7 @@
                                         <width>236</width>
                                         <height>238</height>
                                         <texture border="6">views/addonwall_select.png</texture>
-                                        <visible>Control.HasFocus(10010)</visible>
+                                        <visible>Control.HasFocus(10011)</visible>
                                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
