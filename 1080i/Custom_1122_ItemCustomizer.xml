@@ -14,6 +14,10 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Icon,$ESCINFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].SubMenu,$INFO[Skin.String(ItemToEdit.SubMenu)])</onunload>
+    <onunload>SetProperty(Widget1Type,$INFO[Skin.String(ItemToEdit.Widget)],home)</onunload>
+    <onunload>SetProperty(Widget2Type,$INFO[Skin.String(ItemToEdit.Widget)],home)</onunload>
+    <onunload>SetProperty(Widget1Title,$INFO[Skin.String(ItemToEdit.WidgetTitle)],home)</onunload>
+    <onunload>SetProperty(Widget2Title,$INFO[Skin.String(ItemToEdit.Widget2Title)],home)</onunload>
     <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>SetProperty(activewindow,home,home)</onunload>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
