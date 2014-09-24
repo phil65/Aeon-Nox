@@ -1117,7 +1117,8 @@
                         <description>Extras</description>
                         <include>DialogVideoInfoButton</include>
                         <label>$LOCALIZE[31020]</label>
-                        <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
+                        <onclick condition="!Container.Content(tvshows)">RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
+                        <onclick condition="Container.Content(tvshows)">RunScript(script.videoextras,display,"$INFO[ListItem.Path]")</onclick>
                         <visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
                     </control>
                     <control type="button" id="111">
