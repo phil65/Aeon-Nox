@@ -77,78 +77,8 @@
                     <onleft>8001</onleft>
                     <onright>8001</onright>
                     <orientation>horizontal</orientation>
-                    <itemlayout width="400" height="390">
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>390</width>
-                            <height>250</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                        </control>
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>390</width>
-                            <height>250</height>
-                            <texture>common/bgcolor.png</texture>
-                            <colordiffuse>99FFFFFF</colordiffuse>
-                            <include>Animation_VisibleChange400</include>
-                            <visible>Control.HasFocus(8001)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>255</posy>
-                            <width>390</width>
-                            <height>60</height>
-                            <texture>common/bgcolor.png</texture>
-                            <colordiffuse>CCFFFFFF</colordiffuse>
-                        </control>
-                        <control type="textbox">
-                            <posx>5</posx>
-                            <posy>250</posy>
-                            <width>380</width>
-                            <height>65</height>
-                            <textoffsetx>15</textoffsetx>
-                            <align>center</align>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Reg28</font>
-                            <textcolor>grey</textcolor>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="400" height="390">
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>390</width>
-                            <height>250</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                        </control>
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>255</posy>
-                            <width>390</width>
-                            <height>60</height>
-                            <texture>common/bgcolor.png</texture>
-                            <colordiffuse>BBFFFFFF</colordiffuse>
-                        </control>
-                        <control type="textbox">
-                            <posx>5</posx>
-                            <posy>250</posy>
-                            <width>380</width>
-                            <height>65</height>
-                            <textoffsetx>15</textoffsetx>
-                            <align>center</align>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Reg28</font>
-                            <textcolor>grey</textcolor>
-                        </control>
-                    </focusedlayout>
-                    <content>
-                        <include>NewsWidgetContentskinsettings</include>
-                        <include>NewsWidgetContent</include>
-                    </content>
+                    <include>PosterWallLayout</include>
+                        <content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</content>
                 </control>
                 <control type="wraplist" id="8002">
                     <posy>360</posy>
@@ -162,80 +92,8 @@
                     <onleft>8002</onleft>
                     <onright>8002</onright>
                     <orientation>horizontal</orientation>
-                    <itemlayout width="240" height="410">
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>193</width>
-                            <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>232</width>
-                            <height>328</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="240" height="410">
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>11</posx>
-                                <posy>30</posy>
-                                <width>193</width>
-                                <height>290</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>-8.5</posx>
-                                <posy>10.5</posy>
-                                <width>232</width>
-                                <height>328</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                    <content>
-                        <include>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</include>
-                    </content>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=upcoming</content>
                 </control>
                 <control type="wraplist" id="8003">
                     <focusposition>2</focusposition>
@@ -249,78 +107,8 @@
                     <onleft>8003</onleft>
                     <onright>8003</onright>
                     <orientation>horizontal</orientation>
-                    <itemlayout width="240" height="410">
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>193</width>
-                            <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>232</width>
-                            <height>328</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="240" height="410">
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>11</posx>
-                                <posy>30</posy>
-                                <width>193</width>
-                                <height>290</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>-8.5</posx>
-                                <posy>10.5</posy>
-                                <width>232</width>
-                                <height>328</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                    <content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</content>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=toprentals</content>
                 </control>
                 <control type="wraplist" id="8004">
                     <posy>1080</posy>
@@ -333,77 +121,7 @@
                     <ondown>8005</ondown>
                     <onleft>8002</onleft>
                     <orientation>horizontal</orientation>
-                    <itemlayout width="240" height="410">
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>193</width>
-                            <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>232</width>
-                            <height>328</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="240" height="410">
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>11</posx>
-                                <posy>30</posy>
-                                <width>193</width>
-                                <height>290</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>-8.5</posx>
-                                <posy>10.5</posy>
-                                <width>232</width>
-                                <height>328</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                            </control>
-                        </control>
-                    </focusedlayout>
+                     <include>PosterWallLayout</include>
                     <content>plugin://script.extendedinfo?info=popularmovies</content>
                 </control>
                 <control type="wraplist" id="8005">
@@ -417,81 +135,8 @@
                     <ondown>8006</ondown>
                     <onleft>8002</onleft>
                     <orientation>horizontal</orientation>
-                    <itemlayout width="240" height="410">
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>193</width>
-                            <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>232</width>
-                            <height>328</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="240" height="410">
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>11</posx>
-                                <posy>30</posy>
-                                <width>193</width>
-                                <height>290</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>-8.5</posx>
-                                <posy>10.5</posy>
-                                <width>232</width>
-                                <height>328</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                    <content>
-                        <include>NextAiredWidgetContentskinsettings</include>
-                        <include>NextAiredWidgetContent</include>
-                    </content>
+                     <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=intheaters</content>
                 </control>
                 <control type="wraplist" id="8006">
                     <posy>1800</posy>
@@ -505,80 +150,8 @@
                     <scrolltime>200</scrolltime>
                     <ondown>8007</ondown>
                     <onup>8005</onup>
-                    <itemlayout width="240" height="410">
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>193</width>
-                            <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>232</width>
-                            <height>328</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="240" height="410">
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>11</posx>
-                                <posy>30</posy>
-                                <width>193</width>
-                                <height>290</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>-8.5</posx>
-                                <posy>10.5</posy>
-                                <width>232</width>
-                                <height>328</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                    <content>
-                    <content>plugin://script.extendedinfo?info=upcoming</content>
-                    </content>
+                    <include>PosterWallLayout</include>
+                    <content>plugin://script.extendedinfo?info=topratedmovies</content>
                 </control>
                 <control type="wraplist" id="8007">
                     <posy>2160</posy>
@@ -592,84 +165,14 @@
                     <preloaditems>2</preloaditems>
                     <scrolltime>200</scrolltime>
                     <ondown>8001</ondown>
-                   <itemlayout width="240" height="410">
-                        <control type="image">
-                            <posx>11</posx>
-                            <posy>30</posy>
-                            <width>193</width>
-                            <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>-8.5</posx>
-                            <posy>10.5</posy>
-                            <width>232</width>
-                            <height>328</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                        </control>
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="240" height="410">
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>330</posy>
-                            <width>190</width>
-                            <colordiffuse>FFFFFFFF</colordiffuse>
-                            <height>13</height>
-                            <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                            <lefttexture border="0,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                            <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                            <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                            <info>ListItem.Property(PercentPlayed)</info>
-                            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
-                        </control>
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>11</posx>
-                                <posy>30</posy>
-                                <width>193</width>
-                                <height>290</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>-8.5</posx>
-                                <posy>10.5</posy>
-                                <width>232</width>
-                                <height>328</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                            </control>
-                        </control>
-                    </focusedlayout>
+                    <include>PosterWallLayout</include>
                     <content>plugin://script.extendedinfo?info=incinemas</content>
                 </control>
             </control>
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
-                <height>480</height>
+                <height>430</height>
                 <width>1200</width>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>
@@ -688,8 +191,8 @@
             </control>
             <control type="image">
                 <posx>0</posx>
-                <posy>600</posy>
-                <height>480</height>
+                <posy>650</posy>
+                <height>430</height>
                 <width>1200</width>
                 <texture>home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>

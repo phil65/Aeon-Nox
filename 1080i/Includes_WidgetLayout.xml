@@ -2333,7 +2333,7 @@
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)])</onclick>
                         <include>WidgetMenuLabel</include>
                         <include>Animation_VisibleChange400</include>
-                        <visible>!IsEmpty(Window(home).Property(Trailer))</visible>
+                        <visible>!IsEmpty(Window(home).Property(Trailer)) + !IsEmpty(Window(home).Property(DBID))</visible>
                     </control>
                     <control type="button" id="50191">
                         <include>WidgetMenuLabel</include>
