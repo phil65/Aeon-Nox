@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="window">
     <defaultcontrol always="true">8002</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
-    <onload>RunScript(script.extendedinfo,info=incinemas,info=toprated,info=popular,info=premiereshows,info=youtubeusersearch,id=TheNewYorkTimes)</onload>
     <controls>
         <control type="button" id="5016">
             <include>HiddenObject</include>
@@ -11,14 +9,6 @@
             <onfocus>SetProperty(WidgetType,onlinemovie,home)</onfocus>
             <onfocus>SetFocus(8002)</onfocus>
             <onfocus>ActivateWindow(1165)</onfocus>
-        </control>
-        <control type="button" id="5014">
-            <include>HiddenObject</include>
-            <texturenofocus>-</texturenofocus>
-        </control>
-        <control type="label" id="4321">
-            <label>nextairedtvwatchlistmoviesconcertrssnewstrendingshowswatchlisttvpremiereshows</label>
-            <include>HiddenObject</include>
         </control>
         <control type="image">
             <texture>diffuseoverlay.png</texture>
@@ -49,13 +39,13 @@
                 <texture>info/info_rightpaneltop.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
-                        <control type="image">
-                            <posx>470</posx>
-                            <posy>365</posy>
-                            <width>234</width>
-                            <height>338</height>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                        </control>
+            <control type="image">
+                <posx>470</posx>
+                <posy>365</posy>
+                <width>234</width>
+                <height>338</height>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+            </control>
             <control type="group">
                 <posy>360</posy>
                 <animation effect="slide" start="0,0" end="0,-360" time="300" tween="cubic" easing="inout" condition="Control.HasFocus(8008)" reversible="true">Conditional</animation>
@@ -78,7 +68,7 @@
                     <onright>8001</onright>
                     <orientation>horizontal</orientation>
                     <include>PosterWallLayout</include>
-                        <content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</content>
+                    <content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</content>
                 </control>
                 <control type="wraplist" id="8002">
                     <posy>360</posy>
@@ -121,21 +111,21 @@
                     <ondown>8005</ondown>
                     <onleft>8002</onleft>
                     <orientation>horizontal</orientation>
-                     <include>PosterWallLayout</include>
+                    <include>PosterWallLayout</include>
                     <content>plugin://script.extendedinfo?info=popularmovies</content>
                 </control>
                 <control type="wraplist" id="8005">
                     <posy>1440</posy>
                     <width>1300</width>
-                     <focusposition>2</focusposition>
-                   <height>360</height>
+                    <focusposition>2</focusposition>
+                    <height>360</height>
                     <aligny>center</aligny>
                     <scrolltime>200</scrolltime>
                     <onup>8004</onup>
                     <ondown>8006</ondown>
                     <onleft>8002</onleft>
                     <orientation>horizontal</orientation>
-                     <include>PosterWallLayout</include>
+                    <include>PosterWallLayout</include>
                     <content>plugin://script.extendedinfo?info=intheaters</content>
                 </control>
                 <control type="wraplist" id="8006">
@@ -197,14 +187,14 @@
                 <texture>home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>
             </control>
-                        <control type="image">
-                            <posx>470</posx>
-                            <posy>365</posy>
-                            <width>234</width>
-                            <height>338</height>
-                            <texture border="6">views/addonwall_select.png</texture>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        </control>
+            <control type="image">
+                <posx>470</posx>
+                <posy>365</posy>
+                <width>234</width>
+                <height>338</height>
+                <texture border="6">views/addonwall_select.png</texture>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+            </control>
         </control>
         <control type="group">
             <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
