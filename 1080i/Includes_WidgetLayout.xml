@@ -2322,17 +2322,11 @@
                         <include>WidgetMenuLabel</include>
                         <onclick condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onclick>
                         <onclick condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onclick>
+                        <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
+                        <onclick>ClearProperty(PanelWidget2Info,Home)</onclick>
                         <onclick>Dialog.Close(1165)</onclick>
-                        <onclick>$VAR[InfoWidgetPlayOnclickVar]</onclick>
-                        <visible>[!Substring(Window(home).Property(WidgetType),online) + !Substring(Window(home).Property(WidgetType),trending)] | !IsEmpty(Window(home).Property(Play))</visible>
-                    </control>
-                    <control type="button" id="5018">
-                        <label>$LOCALIZE[13404] $INFO[Window(home).Property(PercentPlayed),(,)]</label>
-                        <include>WidgetMenuLabel</include>
-                        <onclick>Dialog.Close(1165)</onclick>
-                        <onclick>$INFO[Window(home).Property(Path)]</onclick>
-                        <visible>!Substring(Window(home).Property(WidgetType),nextaired)</visible>
-                        <visible>!IsEmpty(Window(home).Property(DBID)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
+                        <onclick>Action(select)</onclick>
+                        <visible>[!Substring(Window(home).Property(WidgetType),online) + !Substring(Window(home).Property(WidgetType),trending)]</visible>
                     </control>
                     <control type="button" id="5016">
                         <label>$LOCALIZE[20410]</label>
@@ -2341,17 +2335,9 @@
                         <include>Animation_VisibleChange400</include>
                         <visible>!IsEmpty(Window(home).Property(Trailer))</visible>
                     </control>
-                    <control type="button" id="5017">
-                        <label>$LOCALIZE[13319]</label>
-                        <onclick>RunScript(script.metadata.actors,borntoday,10,random)</onclick>
-                        <include>WidgetMenuLabel</include>
-                        <visible>Substring(Window(home).Property(WidgetType),actors)</visible>
-                    </control>
                     <control type="button" id="50191">
                         <include>WidgetMenuLabel</include>
                         <label>$LOCALIZE[31925]</label>
-                        <!--
-                        <onclick>RunScript(script.extendedinfo,info=movielists,id=$INFO[Window(home).Property(ID)],silent=False)</onclick>-->
                         <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=studio,info=similartvshowstrakt,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],id=$INFO[Window(home).Property(ID)],silent=False)</onclick>
                         <onclick condition="!IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=studio,info=similartvshowstrakt,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],dbid=$INFO[Window(home).Property(DBID)],silent=False)</onclick>
                         <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),movie)">RunScript(script.extendedinfo,info=similarlocal,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],id=$INFO[Window(home).Property(ID)],type=movie,silent=False)</onclick>
