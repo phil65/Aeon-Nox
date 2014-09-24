@@ -1527,9 +1527,9 @@
     </variable>
     <variable name="PosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
-        <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
-        <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-        <value condition="!Container.Content(movies) + !Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !IsEmpty(Window(home).Property(SeasonPoster))">$INFO[Window(home).Property(SeasonPoster)]</value>
+        <value condition="!IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
+        <value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+        <value condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !IsEmpty(Window(home).Property(SeasonPoster))">$INFO[Window(home).Property(SeasonPoster)]</value>
         <value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
         <value>$INFO[ListItem.Art(poster)]</value>
     </variable>

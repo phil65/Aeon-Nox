@@ -1701,7 +1701,7 @@
                         <posy>330</posy>
                         <width>900</width>
                         <height>38</height>
-                        <label>$INFO[Container(8000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(8000).ListItem.Property(Year), [,]][/COLOR]</label>
+                        <label>$INFO[Container(8000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(8000).ListItem.Year, [,]][/COLOR]</label>
                         <font>Font_Reg37_Caps</font>
                         <textcolor>white3</textcolor>
                     </control>
@@ -1709,7 +1709,7 @@
                         <posy>125</posy>
                         <width>800</width>
                         <height>38</height>
-                        <label>$INFO[Container(8000).ListItem.Property(Genre)]</label>
+                        <label>$INFO[Container(8000).ListItem.Genre]</label>
                         <font>Font_Reg34_Caps</font>
                         <textcolor>white3</textcolor>
                         <wrapmultiline>true</wrapmultiline>
@@ -1721,7 +1721,6 @@
                         <aligny>top</aligny>
                         <label fallback="-">$INFO[Container(8000).ListItem.Property(Description)]</label>
                         <textcolor>white3</textcolor>
-                        <visible>IsEmpty(Container(8000).ListItem.Property(Genre))</visible>
                         <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
@@ -1797,7 +1796,7 @@
                     <width>180</width>
                     <height>45</height>
                     <aspectratio align="center">keep</aspectratio>
-                    <texture>$INFO[Container(8000).ListItem.Property(Rating),stars/,.png]</texture>
+                    <texture>$INFO[Container(8000).ListItem.Rating,stars/,.png]</texture>
                     <colordiffuse>grey</colordiffuse>
                     <animation effect="fade" end="100" time="480">WindowOpen</animation>
                     <animation effect="fade" start="100" end="0" time="160">WindowClose</animation>
@@ -1809,7 +1808,7 @@
                     <width>180</width>
                     <height>45</height>
                     <aspectratio align="center">keep</aspectratio>
-                    <texture fallback="rating0.png">$INFO[Container(8000).ListItem.Property(Rating),rating,.png]</texture>
+                    <texture fallback="rating0.png">$INFO[Container(8000).ListItem.Rating,rating,.png]</texture>
                     <colordiffuse>$VAR[HomeMenuWidgetTextVar]</colordiffuse>
                     <animation effect="fade" end="100" time="480">WindowOpen</animation>
                     <animation effect="fade" start="100" end="0" time="160">WindowClose</animation>
@@ -3042,7 +3041,7 @@
                     <width>247</width>
                     <height>371</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                     <fadetime>IconCrossfadeTime</fadetime>
                 </control>
                 <control type="image">
@@ -3089,7 +3088,7 @@
                 <posy>390</posy>
                 <align>center</align>
                 <font>Font_Reg22</font>
-                <label>$INFO[ListItem.Property(Premiered)]$INFO[ListItem.Property(Rating), - ]</label>
+                <label>$INFO[ListItem.Premiered]$INFO[ListItem.Rating, - ]</label>
             </control>
         </itemlayout>
         <focusedlayout height="460" width="367">
@@ -3119,7 +3118,7 @@
                     <height>371</height>
                     <fadetime>0</fadetime>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
                     <fadetime>IconCrossfadeTime</fadetime>
                 </control>
                 <control type="image">
@@ -3167,7 +3166,7 @@
                 <posy>390</posy>
                 <align>center</align>
                 <font>Font_Reg22</font>
-                <label>$INFO[ListItem.Property(Premiered)]$INFO[ListItem.Property(Rating), - ]</label>
+                <label>$INFO[ListItem.Premiered]$INFO[ListItem.Rating, - ]</label>
             </control>
             <control type="image">
                 <width>367.5</width>
@@ -3691,7 +3690,7 @@
                     <width>180</width>
                     <height>45</height>
                     <aspectratio align="center">keep</aspectratio>
-                    <texture>$INFO[Container(7000).ListItem.Property(Rating),stars/,.png]</texture>
+                    <texture>$INFO[Container(7000).ListItem.Rating,stars/,.png]</texture>
                     <colordiffuse>grey</colordiffuse>
                     <animation effect="fade" end="100" time="480">WindowOpen</animation>
                     <animation effect="fade" start="100" end="0" time="160">WindowClose</animation>
@@ -3703,7 +3702,7 @@
                     <width>180</width>
                     <height>45</height>
                     <aspectratio align="center">keep</aspectratio>
-                    <texture fallback="rating0.png">$INFO[Container(7000).ListItem.Property(Rating),rating,.png]</texture>
+                    <texture fallback="rating0.png">$INFO[Container(7000).ListItem.Rating,rating,.png]</texture>
                     <colordiffuse>$VAR[HomeMenuWidgetTextVar]</colordiffuse>
                     <animation effect="fade" end="100" time="480">WindowOpen</animation>
                     <animation effect="fade" start="100" end="0" time="160">WindowClose</animation>
@@ -4112,7 +4111,7 @@
                         <width>218</width>
                         <height>340</height>
                         <aspectratio align="center">scale</aspectratio>
-                        <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                        <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
                     </control>
                     <control type="image">
                         <posx>5</posx>
@@ -4132,7 +4131,7 @@
                         <width>218</width>
                         <height>340</height>
                         <aspectratio>scale</aspectratio>
-                        <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
+                        <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
                     </control>
                     <control type="image">
                         <width>228</width>
@@ -4692,7 +4691,7 @@
                             <height>30</height>
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Rating,, • ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                            <visible>!IsEmpty(ListItem.Property(Director))</visible>
+                            <visible>!IsEmpty(ListItem.Director)</visible>
                             <font>Font_Reg26</font>
                             <textcolor>white2</textcolor>
                         </control>
@@ -4969,7 +4968,6 @@
                 <height>200</height>
                 <aspectratio>keep</aspectratio>
                 <texture background="true">$INFO[ListItem.Album_Label,flags/music/recordlabel/,.png]</texture>
-                <visible>IsEmpty(ListItem.Property(Description))</visible>
             </control>
         </control>
     </include>
@@ -5100,7 +5098,7 @@
             <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
             <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
             <info>ListItem.Property(PercentPlayed)</info>
-            <visible>!IsEmpty(ListItem.Property(PercentPlayed)) + !Stringcompare(ListItem.Property(PercentPlayed),0%)</visible>
+            <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0%)</visible>
         </control>
         <control type="label">
             <posx>202</posx>
@@ -5305,7 +5303,7 @@
             <width>528</width>
             <height>105</height>
             <align>center</align>
-            <label>$INFO[ListItem.Label2] - $INFO[ListItem.Property(Year)]</label>
+            <label>$INFO[ListItem.Label2] - $INFO[ListItem.Year]</label>
             <font>Font_Reg29</font>
             <textcolor>grey</textcolor>
         </control>
