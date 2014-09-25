@@ -4948,7 +4948,7 @@
                 <width>450</width>
                 <height>30</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Label2]</label>
+                <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Artist]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>grey2</textcolor>
             </control>
@@ -4964,10 +4964,10 @@
             <control type="image">
                 <posx>445</posx>
                 <posy>124</posy>
-                <width>200</width>
-                <height>200</height>
+                <width>180</width>
+                <height>180</height>
                 <aspectratio>keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Album_Label,flags/music/recordlabel/,.png]</texture>
+                <texture background="true">$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
             </control>
         </control>
     </include>
