@@ -368,7 +368,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                                <content>special://skin/extras/playlists/recommendedepisodes8.xsp</content>
+                                <content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</content>
                         </control>
                                 <control type="image">
                                     <posy>510</posy>
@@ -433,7 +433,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                            <content>special://skin/extras/playlists/recommendedmovies5.xsp</content>
+                            <content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</content>
                         </control>
                                 <control type="image">
                                     <posy>510</posy>
@@ -553,7 +553,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                            <content>special://skin/extras/playlists/recentmovies8.xsp</content>
+                            <content>plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10</content>
                         </control>
                                 <control type="image">
                                     <posy>510</posy>
@@ -618,7 +618,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                            <content>special://skin/extras/playlists/randommovies8.xsp</content>
+                            <content>plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</content>
                         </control>
                                 <control type="image">
                                     <posy>510</posy>
@@ -738,7 +738,7 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                                <content>special://skin/extras/playlists/recentepisodes8.xsp</content>
+                                <content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</content>
                         </control>
                                 <control type="image">
                                     <posy>510</posy>
@@ -884,10 +884,7 @@
                                     <visible>Control.HasFocus(7003)</visible>
                                 </control>
                             </focusedlayout>
-                            <content>
-                                <include>RandomEpisodesItems</include>
-                                <include>RandomEpisodesItemshome</include>
-                            </content>
+                            <content>plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</content>
                         </control>
                     </control>
                     <control type="image">
@@ -975,7 +972,7 @@
                                     <info>ListItem.Icon</info>
                                 </control>
                             </focusedlayout>
-                            <content>special://skin/extras/playlists/randomalbums8.xsp</content>
+                            <content>plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</content>
                         </control>
                                 <control type="image">
                                     <posy>510</posy>
@@ -1119,10 +1116,7 @@
                                     </control>
                                 </control>
                             </focusedlayout>
-                            <content>
-                                <include>WatchlistMusicItems</include>
-                                <include>WatchlistMusicItemsHome</include>
-                            </content>
+                            <content>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10</content>
                         </control>
                     </control>
                     <control type="image">
@@ -1354,10 +1348,7 @@
                                     <visible>Control.HasFocus(9003)</visible>
                                 </control>
                             </focusedlayout>
-                            <content>
-                                <include>LatestAlbumsItems</include>
-                                <include>LatestAlbumsItemsHome</include>
-                            </content>
+                            <content>plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</content>
                         </control>
                     </control>
                     <control type="image">
