@@ -77,13 +77,10 @@
     </variable>
     <variable name="SpotColorVar2">
         <value condition="Substring(Skin.CurrentTheme,whit)">FFAAAAAA</value>
-        <value>$VAR[ColorDiffuseVar]</value>
-    </variable>
-    <variable name="ColorDiffuseVar">
         <value>$VAR[AreaColorVar]</value>
     </variable>
     <variable name="DialogColorVar">
-        <value condition="Skin.HasSetting(colordialogs) + !Substring(Skin.CurrentTheme,whit)">$VAR[ColorDiffuseVar]</value>
+        <value condition="Skin.HasSetting(colordialogs) + !Substring(Skin.CurrentTheme,whit)">$VAR[AreaColorVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="ExtendedColorDiffuseVar">
@@ -104,7 +101,7 @@
         <value>white2</value>
     </variable>
     <variable name="FocusTextureColorVar">
-        <value>$VAR[ColorDiffuseVar]</value>
+        <value>$VAR[AreaColorVar]</value>
     </variable>
     <variable name="TitleColorVar">
         <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
@@ -115,7 +112,7 @@
         <value>grey</value>
     </variable>
     <variable name="ExtendedColorVar">
-        <value condition="Skin.HasSetting(colorpanels)">$VAR[ColorDiffuseVar]</value>
+        <value condition="Skin.HasSetting(colorpanels)">$VAR[AreaColorVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="QuickNavButtonLabelVar">
@@ -153,8 +150,8 @@
     </variable>
     <variable name="VideoPlayerSeekVar">
         <value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">$LOCALIZE[31043]</value>
-        <value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$LOCALIZE[15107] $INFO[Player.CacheLevel]%</value>
         <value condition="Player.Seeking">$LOCALIZE[773]</value>
+        <value condition="[Player.Paused + Player.Caching]">$LOCALIZE[15107] $INFO[Player.CacheLevel]%</value>
         <value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">$LOCALIZE[773] $INFO[Player.SeekOffset]</value>
     </variable>
     <variable name="VideoPlayerForwardRewindVar">
@@ -329,7 +326,7 @@
         <value condition="[Container.Content(movies) + !Skin.HasSetting(wallgenre) + !ListItem.IsFolder] | [Container.Content(seasons) + IsEmpty(ListItem.TVShowTitle)]">$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.RatingAndVotes, • ]</value>
         <value condition="[Window.IsActive(programs) + !Container.Content(addons)]">$INFO[ListItem.Genre]</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.Genre]</value>
-        <value condition="[Skin.HasSetting(wallgenre) + Container.Content(movies)]">$INFO[ListItem.Genre]</value>
+        <value condition="Skin.HasSetting(wallgenre) + Container.Content(movies)">$INFO[ListItem.Genre]</value>
         <value condition="Window.IsActive(pictures) + [Control.IsVisible(501) | Control.IsVisible(500)]">$INFO[ListItem.FolderName]</value>
         <value condition="SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="Container.Content(songs)">$INFO[ListItem.Artist]$INFO[ListItem.Album, - ]</value>

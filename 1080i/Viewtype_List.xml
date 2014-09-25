@@ -101,7 +101,7 @@
                 <include>PanelGlowFade</include>
                 <include>Animation_VisibleChange400</include>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <posx>1</posx>
@@ -176,7 +176,7 @@
                 <height>623</height>
                 <texture>wall/wall_bg_glow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <include>PanelGlowFade</include>
             </control>
@@ -298,7 +298,7 @@
                     <include>PanelGlowFade</include>
                     <include>Animation_VisibleChange400</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 </control>
                 <control type="image">
                     <posy>255</posy>
@@ -351,7 +351,7 @@
                     <width>98</width>
                     <height>868</height>
                     <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums)]</visible>
                 </control>
                 <control type="image">
@@ -360,7 +360,7 @@
                     <width>170</width>
                     <height>850</height>
                     <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(albums) | Container.Content(songs) | [Container.Content(addons) + Window.IsActive(addonbrowser)] | [Container.Content(files) + Window.IsActive(musicfiles)] | Window.IsActive(pictures)</visible>
                 </control>
                 <control type="image">
@@ -369,7 +369,7 @@
                     <width>98</width>
                     <height>868</height>
                     <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>[Container.Content(addons) | Container.Content(musicvideos)] + !Window.IsActive(addonbrowser)</visible>
                 </control>
             </control>
@@ -381,7 +381,7 @@
                     <width>123</width>
                     <height>850</height>
                     <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>StringCompare(Container.SortMethod,$LOCALIZE[2050]) | StringCompare(Container.SortMethod,$LOCALIZE[180]) | [StringCompare(Container.SortMethod,$LOCALIZE[20074]) + !Container.Content(movies)]</visible>
                     <visible>Container.Content(movies) | Container.Content(albums) | Container.Content(songs) | Container.Content(episodes)</visible>
                 </control>
@@ -391,7 +391,7 @@
                     <width>183</width>
                     <height>850</height>
                     <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>Container.Content(tvshows) | Container.Content(seasons) | StringCompare(Container.SortMethod,$LOCALIZE[570])</visible>
                 </control>
                 <control type="image">
@@ -400,7 +400,7 @@
                     <width>80</width>
                     <height>850</height>
                     <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>[StringCompare(Container.SortMethod,$LOCALIZE[562]) + Container.Content(movies)] | [Container.Content(addons) + StringCompare(Container.SortMethod,$LOCALIZE[551])]</visible>
                     <visible>[Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(addons)]</visible>
                     <animation effect="slide" end="38" condition="!Window.IsActive(videolibrary) + !Container.Content(musicvideos)">Conditional</animation>
@@ -411,7 +411,7 @@
                     <width>55</width>
                     <height>850</height>
                     <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>StringCompare(Container.SortMethod,$LOCALIZE[20359]) | StringCompare(Container.SortMethod,$LOCALIZE[563]) | StringCompare(Container.SortMethod,$LOCALIZE[567]) | [StringCompare(Container.SortMethod,$LOCALIZE[369]) + Container.Content(movies)] | StringCompare(Container.SortMethod,$LOCALIZE[576]) | StringCompare(Container.SortMethod,$LOCALIZE[551])</visible>
                     <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
                 </control>
@@ -864,7 +864,7 @@
                         <width>90</width>
                         <height>90</height>
                         <texture>$VAR[SmallListIconVar]</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                 </focusedlayout>
                 <itemlayout height="61.5" condition="Skin.HasSetting(slimlist)">
@@ -978,7 +978,7 @@
                         <height>55</height>
                         <texture>$VAR[SmallListIconVar]</texture>
                         <aspectratio>keep</aspectratio>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] | Stringcompare(ListItem.Label,..)</visible>
                     </control>
                 </focusedlayout>
@@ -1024,7 +1024,7 @@
             <height>1028</height>
             <texture>wall/wall_bg_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <include>Animation_VisibleChange400</include>
             <include>PanelGlowFade</include>
         </control>

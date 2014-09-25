@@ -131,7 +131,7 @@
             <width>1920</width>
             <height>608</height>
             <texture flipy="true">views/showcase_glow.png</texture>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChange400</include>
             <include>Animation_WindowFade200</include>
@@ -145,7 +145,7 @@
                 <width>1920</width>
                 <height>608</height>
                 <texture>views/showcase_floor.png</texture>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <posx>-340</posx>
@@ -153,7 +153,7 @@
                 <width>2490</width>
                 <height>226</height>
                 <texture>views/showcase_spot.png</texture>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <posy>1012</posy>
@@ -180,7 +180,7 @@
                 <width>2020</width>
                 <height>206</height>
                 <texture>views/panel_spot.png</texture>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <include>Neon_Floor</include>
         </control>
@@ -225,7 +225,7 @@
                         <width>1332</width>
                         <height>160</height>
                         <texture border="50">featured/panel_featured_shadow.png</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <include>PanelGlowFade</include>
                     </control>
@@ -289,7 +289,7 @@
                         <ondown>3012</ondown>
                         <onright>5001</onright>
                         <onleft>4003</onleft>
-                        <texturefocus colordiffuse="$VAR[ColorDiffuseVar]" border="10">featured/search_tile_fo.png</texturefocus>
+                        <texturefocus colordiffuse="$VAR[AreaColorVar]" border="10">featured/search_tile_fo.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <onunfocus>ClearProperty(HomeSearch,Home)</onunfocus>
                         <onfocus>SetProperty(HomeSearch,1)</onfocus>
