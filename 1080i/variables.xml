@@ -4,13 +4,8 @@
     <constant name="IconCrossfadeTime">400</constant>
     <constant name="IconCrossfadeTime2">250</constant>
     <constant name="WidgetSlideDelay">300</constant>
-    <variable name="NewsFeedVar">
-        <value condition="Stringcompare(System.Language,German)">http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=json&amp;youtubeid=tagesschau</value>
-        <!--       <value condition="Stringcompare(System.Language,Australia)">http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=rss&amp;youtubeid=7NEWS</value> -->
-        <value>http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=json&amp;youtubeid=Channel4News</value>
-    </variable>
     <variable name="YouTubeContentVar">
-        <value condition="Container.Content(albums)">plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$INFO[ListItem.Artist] $INFO[ListItem.Album]</value>
+        <value condition="Container.Content(albums)">plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Album]</value>
         <value>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$ESCINFO[ListItem.Artist] Music</value>
     </variable>
     <variable name="DefaultAreaColorVar">
