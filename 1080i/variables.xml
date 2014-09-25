@@ -534,7 +534,7 @@
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)]">$VAR[NextEpisodeVar]$INFO[Window(Home).Property(NextAired.NextSeasonNumber), - S] $INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E]</value>
     </variable>
     <variable name="FanartPanelPlotVar">
-        <value condition="SubString(ListItem.FolderPath,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+        <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
         <value condition="!Skin.HasSetting(preferplot) + !IsEmpty(ListItem.PlotOutline) + Control.IsVisible(7550)">$INFO[ListItem.PlotOutline]</value>
         <value condition="Container.Content(seasons)">$INFO[Container.ShowPlot]</value>
         <value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Description)]</value>
