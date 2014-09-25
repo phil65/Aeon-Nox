@@ -13,7 +13,7 @@
         <system>1</system>
     </coordinates>
     <controls>
-       <control type="label" id="4321">
+        <control type="label" id="4321">
             <label>watchlisttv watchlistmovies recentmovies randommovies recenttv randomtv randomalbums randomartists watchlistalbums recentalbums</label>
             <include>HiddenObject</include>
         </control>
@@ -54,7 +54,7 @@
         <control type="button" id="5014">
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-             <onfocus>RunScript(script.home,container=7002,focuscontrol=5055)</onfocus>
+            <onfocus>RunScript(script.home,container=7002,focuscontrol=5055)</onfocus>
             <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
             <visible>Control.HasFocus(7010)</visible>
         </control>
@@ -62,14 +62,14 @@
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
             <onfocus>SetProperty(WidgetType,randomtv,home)</onfocus>
-             <onfocus>RunScript(script.home,container=7003,focuscontrol=5055)</onfocus>
+            <onfocus>RunScript(script.home,container=7003,focuscontrol=5055)</onfocus>
             <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
             <visible>Control.HasFocus(7003)</visible>
         </control>
         <control type="button" id="5014">
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-              <onfocus>RunScript(script.home,container=8002,focuscontrol=5055)</onfocus>
+            <onfocus>RunScript(script.home,container=8002,focuscontrol=5055)</onfocus>
             <onfocus>SetFocus(5055)</onfocus>
             <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
             <visible>Control.HasFocus(8010)</visible>
@@ -86,14 +86,14 @@
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
             <onfocus>SetProperty(WidgetType,recentalbums,home)</onfocus>
-             <onfocus>RunScript(script.home,container=9003,focuscontrol=5055)</onfocus>
+            <onfocus>RunScript(script.home,container=9003,focuscontrol=5055)</onfocus>
             <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
             <visible>Control.HasFocus(9003)</visible>
         </control>
         <control type="button" id="5014">
             <include>HiddenObject</include>
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-             <onfocus>RunScript(script.home,container=9002,focuscontrol=5055)</onfocus>
+            <onfocus>RunScript(script.home,container=9002,focuscontrol=5055)</onfocus>
             <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
             <visible>Control.HasFocus(9010)</visible>
         </control>
@@ -110,7 +110,7 @@
             <onfocus condition="Stringcompare(Window(home).Property(WidgetType),randomartists)">SetFocus(9010)</onfocus>
             <onfocus condition="Stringcompare(Window(home).Property(WidgetType),recentalbums)">SetFocus(9003)</onfocus>
         </control>
-        <!-- Fanart -->
+        <!--Fanart-->
         <control type="multiimage">
             <aspectratio align="center" aligny="top">scale</aspectratio>
             <imagepath background="true">special://skin/backgrounds/featured/</imagepath>
@@ -137,7 +137,7 @@
             <include>Animation_WindowFade200</include>
             <animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
         </control>
-        <!-- Furniture -->
+        <!--Furniture-->
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
             <control type="image">
@@ -184,7 +184,7 @@
             </control>
             <include>Neon_Floor</include>
         </control>
-       <!-- Main Group -->
+        <!--Main Group-->
         <control type="grouplist" id="40">
             <posx>-135</posx>
             <posy>405</posy>
@@ -201,7 +201,7 @@
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
-            <!-- Search -->
+            <!--Search-->
             <control type="group" id="3000">
                 <width>2325</width>
                 <height>825</height>
@@ -305,7 +305,7 @@
                     </control>
                 </control>
             </control>
-            <!-- Video overview -->
+            <!--Video overview-->
             <control type="group" id="5000">
                 <width>2325</width>
                 <height>825</height>
@@ -368,15 +368,15 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                                <content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</content>
                         </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>894</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
+                        <control type="image">
+                            <posy>510</posy>
+                            <width>894</width>
+                            <height>40</height>
+                            <texture>common/bgcolor.png</texture>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>746</width>
@@ -435,13 +435,13 @@
                             </focusedlayout>
                             <content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</content>
                         </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>366</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
+                        <control type="image">
+                            <posy>510</posy>
+                            <width>366</width>
+                            <height>40</height>
+                            <texture>common/bgcolor.png</texture>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>272</width>
@@ -490,7 +490,7 @@
                     </control>
                 </control>
             </control>
-            <!-- Movies -->
+            <!--Movies-->
             <control type="group" id="6000">
                 <width>2325</width>
                 <height>825</height>
@@ -555,13 +555,13 @@
                             </focusedlayout>
                             <content>plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10</content>
                         </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>894</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
+                        <control type="image">
+                            <posy>510</posy>
+                            <width>894</width>
+                            <height>40</height>
+                            <texture>common/bgcolor.png</texture>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>746</width>
@@ -620,13 +620,13 @@
                             </focusedlayout>
                             <content>plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</content>
                         </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>366</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
+                        <control type="image">
+                            <posy>510</posy>
+                            <width>366</width>
+                            <height>40</height>
+                            <texture>common/bgcolor.png</texture>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>272</width>
@@ -675,7 +675,7 @@
                     </control>
                 </control>
             </control>
-            <!-- TV Shows -->
+            <!--TV Shows-->
             <control type="group" id="7000">
                 <width>2325</width>
                 <height>825</height>
@@ -738,15 +738,15 @@
                                     <animation effect="fade" time="480">Focus</animation>
                                 </control>
                             </focusedlayout>
-                                <content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</content>
+                            <content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</content>
                         </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>894</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
+                        <control type="image">
+                            <posy>510</posy>
+                            <width>894</width>
+                            <height>40</height>
+                            <texture>common/bgcolor.png</texture>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>746</width>
@@ -775,108 +775,86 @@
                             <height>560</height>
                             <onup>7012</onup>
                             <onleft>7010</onleft>
-                            <onright>8001</onright>
+                            <onright>8010</onright>
                             <orientation>vertical</orientation>
                             <focusposition>0</focusposition>
                             <scrolltime tween="quadratic">200</scrolltime>
                             <preloaditems>2</preloaditems>
-                            <itemlayout width="366" height="140">
+                            <itemlayout width="366" height="190">
                                 <control type="image">
                                     <width>376</width>
-                                    <height>140</height>
+                                    <height>190</height>
                                     <aspectratio aligny="center">scale</aspectratio>
                                     <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
                                     <bordersize>5</bordersize>
                                 </control>
                                 <control type="image">
+                                    <posy>120</posy>
                                     <width>376</width>
-                                    <height>140</height>
-                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <height>70</height>
+                                    <texture>common/bgcolor.png</texture>
                                     <colordiffuse>60FFFFFF</colordiffuse>
                                 </control>
-                                <control type="group">
-                                    <posy>5</posy>
-                                    <animation effect="fade" end="80" start="100" time="0" condition="true">Conditional</animation>
-                                    <control type="label">
-                                        <posy>5</posy>
-                                        <width>360</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(TVShowTitle)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>40</posy>
-                                        <width>360</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>75</posy>
-                                        <width>360</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
+                                <control type="label">
+                                    <posy>114</posy>
+                                    <width>360</width>
+                                    <height>45</height>
+                                    <textoffsetx>15</textoffsetx>
+                                    <label>$INFO[ListItem.TVShowTitle]</label>
+                                    <font>Font_Reg25</font>
+                                    <textcolor>white</textcolor>
+                                    <scroll>true</scroll>
+                                </control>
+                                <control type="label">
+                                    <posy>143</posy>
+                                    <width>360</width>
+                                    <height>45</height>
+                                    <textoffsetx>15</textoffsetx>
+                                    <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]: $INFO[ListItem.Label]</label>
+                                    <font>Font_Reg25</font>
+                                    <textcolor>white</textcolor>
+                                    <scroll>true</scroll>
                                 </control>
                             </itemlayout>
-                            <focusedlayout width="366" height="140">
+                            <focusedlayout width="366" height="190">
                                 <control type="image">
                                     <width>376</width>
-                                    <height>140</height>
+                                    <height>190</height>
                                     <aspectratio aligny="center">scale</aspectratio>
                                     <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
                                     <bordersize>5</bordersize>
                                 </control>
                                 <control type="image">
+                                    <posy>120</posy>
                                     <width>376</width>
-                                    <height>140</height>
-                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <height>70</height>
+                                    <texture>common/bgcolor.png</texture>
                                     <colordiffuse>60FFFFFF</colordiffuse>
                                 </control>
-                                <control type="group">
-                                    <posy>5</posy>
-                                    <animation effect="fade" end="80" start="100" time="0" condition="!Control.HasFocus(7003)">Conditional</animation>
-                                    <control type="label">
-                                        <posy>5</posy>
-                                        <width>360</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(TVShowTitle)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                        <scroll>true</scroll>
-                                    </control>
-                                    <control type="label">
-                                        <posy>40</posy>
-                                        <width>360</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                        <scroll>true</scroll>
-                                    </control>
-                                    <control type="label">
-                                        <posy>75</posy>
-                                        <width>360</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
+                                <control type="label">
+                                    <posy>114</posy>
+                                    <width>360</width>
+                                    <height>45</height>
+                                    <textoffsetx>15</textoffsetx>
+                                    <label>$INFO[ListItem.TVShowTitle]</label>
+                                    <font>Font_Reg25</font>
+                                    <textcolor>white</textcolor>
+                                    <scroll>true</scroll>
+                                </control>
+                                <control type="label">
+                                    <posy>143</posy>
+                                    <width>360</width>
+                                    <height>45</height>
+                                    <textoffsetx>15</textoffsetx>
+                                    <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]: $INFO[ListItem.Label]</label>
+                                    <font>Font_Reg25</font>
+                                    <textcolor>white</textcolor>
+                                    <scroll>true</scroll>
                                 </control>
                                 <control type="image">
                                     <posy>-5</posy>
                                     <width>376</width>
-                                    <height>140</height>
+                                    <height>190</height>
                                     <texture>common/blank.png</texture>
                                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <bordertexture border="5">views/addonwall_select.png</bordertexture>
@@ -907,7 +885,7 @@
                     </control>
                 </control>
             </control>
-            <!-- Albums -->
+            <!--Albums-->
             <control type="group" id="8000">
                 <width>2325</width>
                 <height>825</height>
@@ -974,14 +952,14 @@
                             </focusedlayout>
                             <content>plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</content>
                         </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>550</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
-                                                        <control type="label">
+                        <control type="image">
+                            <posy>510</posy>
+                            <width>550</width>
+                            <height>40</height>
+                            <texture>common/bgcolor.png</texture>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
+                        <control type="label">
                             <posy>510</posy>
                             <width>402</width>
                             <height>40</height>
@@ -1002,118 +980,39 @@
                     <control type="group">
                         <posx>591</posx>
                         <posy>31</posy>
-                        <control type="list" id="8003">
-                            <posx>-5</posx>
-                            <posy>-5</posy>
-                            <width>724</width>
+                        <control type="panel" id="8003">
+                            <posx>-7</posx>
+                            <posy>-11</posy>
+                            <width>735</width>
                             <height>560</height>
-                            <onup>8012</onup>
+                            <onup>9012</onup>
                             <onleft>8010</onleft>
-                            <onright>9001</onright>
+                            <onright>9010</onright>
                             <orientation>vertical</orientation>
                             <focusposition>0</focusposition>
                             <scrolltime tween="quadratic">200</scrolltime>
                             <preloaditems>2</preloaditems>
-                            <itemlayout width="710" height="140">
+                            <itemlayout height="240" width="245">
+                                <include>MusicVisPanelLayout</include>
                                 <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <aspectratio aligny="center">scale</aspectratio>
-                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Thumb]</texture>
-                                    <bordersize>5</bordersize>
-                                </control>
-                                <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
-                                    <colordiffuse>60FFFFFF</colordiffuse>
-                                </control>
-                                <control type="group">
-                                    <posy>5</posy>
-                                    <animation effect="fade" end="80" start="100" time="0" condition="true">Conditional</animation>
-                                    <control type="label">
-                                        <posy>5</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>40</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>75</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(Year)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
+                                    <posy>10</posy>
+                                    <width>240</width>
+                                    <height>240</height>
+                                    <texture border="6">common/bgcolor.png</texture>
+                                    <visible>Control.HasFocus(5010)</visible>
+                                    <include>Animation_VisibleChange400</include>
+                                    <colordiffuse>55FFFFFF</colordiffuse>
                                 </control>
                             </itemlayout>
-                            <focusedlayout width="710" height="140">
+                            <focusedlayout height="240" width="245">
+                                <include>MusicVisPanelLayout</include>
                                 <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <aspectratio aligny="center">scale</aspectratio>
-                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Thumb]</texture>
-                                    <bordersize>5</bordersize>
-                                </control>
-                                <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
-                                    <colordiffuse>60FFFFFF</colordiffuse>
-                                </control>
-                                <control type="group">
-                                    <posy>5</posy>
-                                    <animation effect="fade" end="80" start="100" time="0" condition="!Control.HasFocus(8003)">Conditional</animation>
-                                    <control type="image">
-                                        <posy>-5</posy>
-                                        <width>720</width>
-                                        <height>140</height>
-                                        <texture>common/blank.png</texture>
-                                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                                        <bordertexture border="5">views/addonwall_select.png</bordertexture>
-                                        <bordersize>5</bordersize>
-                                        <visible>Control.HasFocus(8003)</visible>
-                                    </control>
-                                    <control type="label">
-                                        <posy>5</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>40</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>75</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(Year)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
+                                    <posy>10</posy>
+                                    <width>236</width>
+                                    <height>238</height>
+                                    <texture border="6">views/addonwall_select.png</texture>
+                                    <visible>Control.HasFocus(8003)</visible>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                 </control>
                             </focusedlayout>
                             <content>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10</content>
@@ -1139,7 +1038,7 @@
                     </control>
                 </control>
             </control>
-            <!-- Songs -->
+            <!--Songs-->
             <control type="group" id="9000">
                 <width>2325</width>
                 <height>825</height>
@@ -1206,13 +1105,13 @@
                             </focusedlayout>
                             <content>special://skin/extras/playlists/randomartists8.xsp</content>
                         </control>
-                                <control type="image">
-                                    <posy>510</posy>
-                                    <width>550</width>
-                                    <height>40</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                </control>
+                        <control type="image">
+                            <posy>510</posy>
+                            <width>550</width>
+                            <height>40</height>
+                            <texture>common/bgcolor.png</texture>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
                         <control type="label">
                             <posy>510</posy>
                             <width>402</width>
@@ -1234,10 +1133,10 @@
                     <control type="group">
                         <posx>591</posx>
                         <posy>31</posy>
-                        <control type="list" id="9003">
-                            <posx>-5</posx>
-                            <posy>-5</posy>
-                            <width>724</width>
+                        <control type="panel" id="9003">
+                            <posx>-7</posx>
+                            <posy>-11</posy>
+                            <width>735</width>
                             <height>560</height>
                             <onup>9012</onup>
                             <onleft>9010</onleft>
@@ -1246,106 +1145,27 @@
                             <focusposition>0</focusposition>
                             <scrolltime tween="quadratic">200</scrolltime>
                             <preloaditems>2</preloaditems>
-                            <itemlayout width="710" height="140">
+                            <itemlayout height="240" width="245">
+                                <include>MusicVisPanelLayout</include>
                                 <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <aspectratio aligny="center">scale</aspectratio>
-                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Thumb]</texture>
-                                    <bordersize>5</bordersize>
-                                </control>
-                                <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
-                                    <colordiffuse>60FFFFFF</colordiffuse>
-                                </control>
-                                <control type="group">
-                                    <posy>5</posy>
-                                    <animation effect="fade" end="80" start="100" time="0" condition="true">Conditional</animation>
-                                    <control type="label">
-                                        <posy>5</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>40</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>75</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(Year)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
+                                    <posy>10</posy>
+                                    <width>240</width>
+                                    <height>240</height>
+                                    <texture border="6">common/bgcolor.png</texture>
+                                    <visible>Control.HasFocus(5010)</visible>
+                                    <include>Animation_VisibleChange400</include>
+                                    <colordiffuse>55FFFFFF</colordiffuse>
                                 </control>
                             </itemlayout>
-                            <focusedlayout width="710" height="140">
+                            <focusedlayout height="240" width="245">
+                                <include>MusicVisPanelLayout</include>
                                 <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <aspectratio aligny="center">scale</aspectratio>
-                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Thumb]</texture>
-                                    <bordersize>5</bordersize>
-                                </control>
-                                <control type="image">
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
-                                    <colordiffuse>60FFFFFF</colordiffuse>
-                                </control>
-                                <control type="group">
-                                    <posy>5</posy>
-                                    <animation effect="fade" end="80" start="100" time="0" condition="!Control.HasFocus(9003)">Conditional</animation>
-                                    <control type="label">
-                                        <posy>5</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>40</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Label2]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                    <control type="label">
-                                        <posy>75</posy>
-                                        <width>710</width>
-                                        <height>45</height>
-                                        <textoffsetx>15</textoffsetx>
-                                        <label>$INFO[ListItem.Property(Year)]</label>
-                                        <font>Font_Reg26</font>
-                                        <textcolor>white2</textcolor>
-                                    </control>
-                                </control>
-                                <control type="image">
-                                    <posy>-5</posy>
-                                    <width>720</width>
-                                    <height>140</height>
-                                    <texture>common/blank.png</texture>
-                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                                    <bordertexture border="5">views/addonwall_select.png</bordertexture>
-                                    <bordersize>5</bordersize>
+                                    <posy>10</posy>
+                                    <width>236</width>
+                                    <height>238</height>
+                                    <texture border="6">views/addonwall_select.png</texture>
                                     <visible>Control.HasFocus(9003)</visible>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                 </control>
                             </focusedlayout>
                             <content>plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</content>
