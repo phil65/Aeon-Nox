@@ -421,7 +421,7 @@
     </include>
     <include name="TrailerMainMenuItem">
         <item id="105">
-            <label fallback="Trailer">$INFO[Skin.String(TrailerHomeItem.Label)]</label>
+            <label fallback="Trailers">$INFO[Skin.String(TrailerHomeItem.Label)]</label>
             <property name="Path" fallback="RunScript(script.home,window=trailers)">$INFO[Skin.String(TrailerHomeItem.Path)]</property>
             <property name="Type">$INFO[Skin.String(TrailerHomeItem.Type)]</property>
             <property name="submenuVisibility" fallback="none">$INFO[Skin.String(TrailerHomeItem.SubMenu)]</property>
@@ -437,7 +437,7 @@
             <property name="ID">TrailerHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TrailerHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/videos/">$INFO[Skin.String(TrailerHomeItem.MultiFanart)]</icon>
+            <icon fallback="special://skin/backgrounds/trailers/">$INFO[Skin.String(TrailerHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(TrailerHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
     </include>
