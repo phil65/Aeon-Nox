@@ -125,24 +125,24 @@
                 </control>
                 <control type="image">
                     <posx>325</posx>
-                    <texture>$VAR[ColorFlagsRating]rating/MPAA_NR_Certificate_US.png</texture>
+                    <texture>flags/rating/MPAA_NR_Certificate_US.png</texture>
                     <include>OSDFlagVars</include>
                     <visible>!VideoPlayer.Content(files) + IsEmpty(Control.GetLabel(2117))</visible>
                 </control>				
                 <control type="image">
                     <posx>1480</posx>
-                    <texture>$VAR[ColorFlagsAspectRatio]aspectratio/$INFO[VideoPlayer.VideoAspect,,.png]</texture>
+                    <texture>flags/aspectratio/$INFO[VideoPlayer.VideoAspect,,.png]</texture>
                     <include>OSDFlagVars</include>
                     <animation effect="slide" end="-1305" condition="VideoPlayer.Content(files)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>1600</posx>
-                    <texture fallback="flags/resolution/defaultscreen.png">$VAR[ColorFlagsResolution]resolution/$INFO[VideoPlayer.VideoResolution,,.png]</texture>
+                    <texture fallback="flags/resolution/defaultscreen.png">flags/resolution/$INFO[VideoPlayer.VideoResolution,,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
                 <control type="image">
                     <posx>1745</posx>
-                    <texture fallback="flags/audio/defaultsound.png">$VAR[ColorFlagsAudio]audio/$INFO[VideoPlayer.AudioCodec]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+                    <texture fallback="flags/audio/defaultsound.png">flags/audio/$INFO[VideoPlayer.AudioCodec]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
             </control>
@@ -200,7 +200,7 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime2</fadetime>
 					<colordiffuse>white2</colordiffuse>
-					<texture fallback="">$VAR[ColorFlagsLanguage]$INFO[VideoPlayer.AudioLanguage,,.png]</texture>
+					<texture fallback="">subtitles/flags/$INFO[VideoPlayer.AudioLanguage,,.png]</texture>
                 </control>
                 <control type="image">
                     <posx>1860</posx>
@@ -211,7 +211,7 @@
 					<fadetime>IconCrossfadeTime2</fadetime>
 					<colordiffuse>white2</colordiffuse>
 					<animation effect="fade" time="200">VisibleChange</animation>
-					<texture fallback="">$VAR[ColorFlagsLanguage]$INFO[VideoPlayer.SubtitlesLanguage,,.png]</texture>
+					<texture fallback="">subtitles/flags/$INFO[VideoPlayer.SubtitlesLanguage,,.png]</texture>
                 </control>	
 			</control>									
         </control>
