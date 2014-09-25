@@ -419,26 +419,26 @@
             <visible>IsEmpty(Skin.String(CustomHomeItem4.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
     </include>
-    <include name="CustomMainMenuItem5">
+    <include name="TrailerMainMenuItem">
         <item id="105">
-            <label fallback="CUSTOM5">$INFO[Skin.String(CustomHomeItem5.Label)]</label>
-            <property name="Path">$INFO[Skin.String(CustomHomeItem5.Path)]</property>
-            <property name="Type">$INFO[Skin.String(CustomHomeItem5.Type)]</property>
-            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(CustomHomeItem5.SubMenu)]</property>
-            <property name="InfoLine" fallback="none">$INFO[Skin.String(CustomHomeItem5.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/BigIcons/Question.png">$INFO[Skin.String(CustomHomeItem5.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(CustomHomeItem5.Disable)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(CustomHomeItem5.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(CustomHomeItem5.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(CustomHomeItem5.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(CustomHomeItem5.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(CustomHomeItem5.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(CustomHomeItem5.WidgetContent)]</property>
-            <property name="ID">CustomHomeItem5</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],CustomHomeItem5,home)</onclick>
+            <label fallback="Trailer">$INFO[Skin.String(TrailerHomeItem.Label)]</label>
+            <property name="Path" fallback="RunScript(script.home,window=trailers)">$INFO[Skin.String(TrailerHomeItem.Path)]</property>
+            <property name="Type">$INFO[Skin.String(TrailerHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(TrailerHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="none">$INFO[Skin.String(TrailerHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/BigIcons/MovieClap.png">$INFO[Skin.String(TrailerHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(TrailerHomeItem.Disable)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(TrailerHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(TrailerHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(TrailerHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(TrailerHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(TrailerHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(TrailerHomeItem.WidgetContent)]</property>
+            <property name="ID">TrailerHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TrailerHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/videos/">$INFO[Skin.String(CustomHomeItem5.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(CustomHomeItem5.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+            <icon fallback="special://skin/backgrounds/videos/">$INFO[Skin.String(TrailerHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(TrailerHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
     </include>
     <include name="MapsMainMenu">
@@ -638,7 +638,7 @@
         <include>CustomMainMenuItem2</include>
         <include>CustomMainMenuItem3</include>
         <include>CustomMainMenuItem4</include>
-        <include>CustomMainMenuItem5</include>
+        <include>TrailerMainMenuItem</include>
         <include>MapsMainMenu</include>
         <include>VideosMainMenu</include>
         <include>ProgramsMainMenu</include>
