@@ -5515,4 +5515,348 @@
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
         </include>
+    <include name="Weather_Widget2">
+        <control type="group">
+            <posy>30</posy>
+            <visible>Substring(Control.GetLabel(4325),weather) + Weather.IsFetched</visible>
+            <include>Animation_Widgets</include>
+            <visible>!IsEmpty(Weather.Plugin)</visible>
+            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(script-HomeWindow Script-main.xml)]</visible>
+            <control type="group">
+                <posx>75</posx>
+                <control type="group">
+                    <include>weatherwidget2back</include>
+                    <control type="label">
+                        <posy>310</posy>
+                        <width>284</width>
+                        <height>52</height>
+                        <align>center</align>
+                        <label>31374</label>
+                        <font>Font_Bold34</font>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>38</posx>
+                        <posy>45</posy>
+                        <width>210</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <font>Font_Info</font>
+                        <info>Window(weather).Property(Current.Condition)</info>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="image">
+                        <posx>82</posx>
+                        <posy>90</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <info>Window(weather).Property(Current.ConditionIcon)</info>
+                    </control>
+                    <control type="label">
+                        <posy>225</posy>
+                        <width>284</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Bold56</font>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Current.Temperature))</visible>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <posx>450</posx>
+                <control type="group">
+                    <include>weatherwidget2back</include>
+                    <control type="label">
+                        <posy>310</posy>
+                        <width>284</width>
+                        <height>52</height>
+                        <align>center</align>
+                        <font>Font_Bold34</font>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <info>Window(weather).Property(Day0.Title)</info>
+                    </control>
+                    <control type="label">
+                        <posx>38</posx>
+                        <posy>45</posy>
+                        <width>210</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <font>Font_Info</font>
+                        <info>Window(weather).Property(Day0.Outlook)</info>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="image">
+                        <posx>82</posx>
+                        <posy>90</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <info>Window(weather).Property(Day0.OutlookIcon)</info>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[419] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <label>$INFO[Window(weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>red</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day0.HighTemp))</visible>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>52</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[418] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>52</height>
+                        <label>$INFO[Window(weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>blue</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day0.LowTemp))</visible>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <posx>825</posx>
+                <control type="group">
+                    <include>weatherwidget2back</include>
+                    <control type="label">
+                        <posy>310</posy>
+                        <width>284</width>
+                        <height>52</height>
+                        <align>center</align>
+                        <font>Font_Bold34</font>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <info>Window(weather).Property(Day1.Title)</info>
+                    </control>
+                    <control type="label">
+                        <posx>38</posx>
+                        <posy>45</posy>
+                        <width>210</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <font>Font_Info</font>
+                        <info>Window(weather).Property(Day1.Outlook)</info>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="image">
+                        <posx>82</posx>
+                        <posy>90</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <info>Window(weather).Property(Day1.OutlookIcon)</info>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[419] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <label>$INFO[Window(weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>red</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day1.HighTemp))</visible>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>45</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[418] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>45</height>
+                        <label>$INFO[Window(weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>blue</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day1.LowTemp))</visible>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <posx>1200</posx>
+                <control type="group">
+                    <include>weatherwidget2back</include>
+                    <control type="label">
+                        <posy>310</posy>
+                        <width>284</width>
+                        <height>52</height>
+                        <align>center</align>
+                        <font>Font_Bold34</font>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <info>Window(weather).Property(Day2.Title)</info>
+                    </control>
+                    <control type="label">
+                        <posx>38</posx>
+                        <posy>45</posy>
+                        <width>210</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <font>Font_Info</font>
+                        <info>Window(weather).Property(Day2.Outlook)</info>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="image">
+                        <posx>82</posx>
+                        <posy>90</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <info>Window(weather).Property(Day2.OutlookIcon)</info>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[419] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <label>$INFO[Window(weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>red</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day2.HighTemp))</visible>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>45</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[418] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>45</height>
+                        <label>$INFO[Window(weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>blue</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day2.LowTemp))</visible>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <posx>1575</posx>
+                <control type="group">
+                    <include>weatherwidget2back</include>
+                    <control type="label">
+                        <posy>310</posy>
+                        <width>284</width>
+                        <height>52</height>
+                        <align>center</align>
+                        <font>Font_Bold34</font>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <info>Window(weather).Property(Day3.Title)</info>
+                    </control>
+                    <control type="label">
+                        <posx>38</posx>
+                        <posy>45</posy>
+                        <width>210</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <font>Font_Info</font>
+                        <info>Window(weather).Property(Day3.Outlook)</info>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="image">
+                        <posx>82</posx>
+                        <posy>90</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <info>Window(weather).Property(Day3.OutlookIcon)</info>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[419] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>221</posy>
+                        <width>142</width>
+                        <height>30</height>
+                        <label>$INFO[Window(weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>red</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day3.HighTemp))</visible>
+                    </control>
+                    <control type="label">
+                        <posx>140</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>45</height>
+                        <align>right</align>
+                        <label>$LOCALIZE[418] :</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>150</posx>
+                        <posy>255</posy>
+                        <width>142</width>
+                        <height>45</height>
+                        <label>$INFO[Window(weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label>
+                        <font>Font_Reg30_2</font>
+                        <textcolor>blue</textcolor>
+                        <visible>!IsEmpty(Window(weather).Property(Day3.LowTemp))</visible>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
     </includes>
