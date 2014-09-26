@@ -164,148 +164,148 @@
                     <content>
                         <item>
                             <label>$LOCALIZE[231]</label>
-                            <onclick>Skin.Reset(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)])</onclick>
-                            <onclick>Skin.Reset(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title)</onclick>
-                            <onclick>Skin.Reset(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content)</onclick>
+                            <onclick>Skin.Reset($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)])</onclick>
+                            <onclick>Skin.Reset($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title)</onclick>
+                            <onclick>Skin.Reset($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31323]</label>
                             <onclick>SetProperty(CustomYesNoDialog,recentmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31323])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31323])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31222]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randommovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31222])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31222])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31872]</label>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmoviesdefault)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31872])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmoviesdefault)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31872])</onclick>
                             <visible>Library.HasContent(movies)</visible>
                             <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31335]</label>
                             <onclick>SetProperty(CustomYesNoDialog,watchlistmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31335])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31335])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31324]</label>
                             <onclick>SetProperty(CustomYesNoDialog,recenttv,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31324])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31324])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31220]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randomtv,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31220])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31220])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31464]</label>
                             <onclick>SetProperty(CustomYesNoDialog,watchlisttv,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31464])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31464])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31873]</label>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],featuredtvdefault)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31873])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredtvdefault)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31873])</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
                             <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31359]</label>
                             <onclick>SetProperty(CustomYesNoDialog,recentalbums,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31359])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31359])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(music)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31068]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randomalbums,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(music)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31874]</label>
                             <visible>Library.HasContent(music)</visible>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmusicdefault)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmusicdefault)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31326]</label>
                             <visible>Library.HasContent(music)</visible>
                             <onclick>SetProperty(CustomYesNoDialog,watchlistalbums,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31326])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31326])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>31817</label>
                             <onclick>SetProperty(CustomYesNoDialog,randomartists,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31817])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomartists&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31817])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomartists&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>Popular People</label>
                             <onclick>SetProperty(CustomYesNoDialog,actors,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Popular People)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=popularpeople)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Popular People)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=popularpeople)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31081]</label>
                             <onclick>SetProperty(CustomYesNoDialog,recentmusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31081])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31081])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmusicvideos&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(MusicVideos)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31091]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randommusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31091])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31091])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommusicvideos&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(MusicVideos)</visible>
                         </item>
                         <item>
                             <label>31712</label>
                             <onclick>SetProperty(CustomYesNoDialog,watchlistmusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31712])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31712])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmusicvideos&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(MusicVideos)</visible>
                         </item>
                         <item>
                             <label>Movie Playlist</label>
                             <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
-                            <onclick>Skin.SetFile(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
+                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                     </content>
@@ -374,115 +374,115 @@
 <!--                         <item>
                             <label>$LOCALIZE[31883]</label>
                             <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31883])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31883])</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item> -->
                         <item>
                             <label>In Cinema</label>
                             <onclick>SetProperty(CustomYesNoDialog,incinemasmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,In Cinema)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=incinemas)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,In Cinema)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=incinemas)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>BoxOffice</label>
                             <onclick>SetProperty(CustomYesNoDialog,boxofficemovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,BoxOffice)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=boxoffice)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,BoxOffice)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=boxoffice)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>TopRentals</label>
                             <onclick>SetProperty(CustomYesNoDialog,toprentalsmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TopRentals)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=toprentals)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TopRentals)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=toprentals)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>InTheaters Movies</label>
                             <onclick>SetProperty(CustomYesNoDialog,intheatersmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,InTheaters Movies)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=intheaters)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,InTheaters Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=intheaters)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>Opening Movies</label>
                             <onclick>SetProperty(CustomYesNoDialog,openingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Opening Movies)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=opening)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Opening Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=opening)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>Upcoming Movies</label>
                             <onclick>SetProperty(CustomYesNoDialog,upcomingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Upcoming Movies)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=upcoming)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Upcoming Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=upcoming)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>31819</label>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31819])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nextaired)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31819])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nextaired)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,nextairedtv,skinsettings)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31884]</label>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Trending Shows)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=trendingshows)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Trending Shows)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=trendingshows)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,tvtrendingshows,skinsettings)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>TV Premieres</label>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TV Premieres)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=premiereshows)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TV Premieres)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=premiereshows)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,tvpremiereshows,skinsettings)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>31818</label>
                             <onclick>SetProperty(CustomYesNoDialog,concerts,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31818])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nearevents)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31818])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nearevents)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>31820</label>
                             <onclick>SetProperty(CustomYesNoDialog,babesimagespanelcoversquare,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31820])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabes)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31820])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabes)</onclick>
                             <onclick>ActivateWindow(1146)</onclick>
                         </item>
                         <item>
                             <label>Daily Babe</label>
                             <onclick>SetProperty(CustomYesNoDialog,babeimagespanelcoversquare,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babe)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabe)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babe)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabe)</onclick>
                             <onclick>ActivateWindow(1146)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31880]</label>
                             <onclick>SetProperty(CustomYesNoDialog,xkcdimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,XKCD)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=xkcd)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,XKCD)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=xkcd)</onclick>
                             <onclick>RunScript(script.extendedinfo,info=xkcd)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31893]</label>
                             <onclick>SetProperty(CustomYesNoDialog,cyanideimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Cyanide &amp; Happiness)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=cyanide)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Cyanide &amp; Happiness)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=cyanide)</onclick>
                             <onclick>RunScript(script.extendedinfo,info=cyanide)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>31199</label>
                             <onclick>SetProperty(CustomYesNoDialog,rssnews,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,News)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,In Cinema)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,News)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,In Cinema)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
@@ -556,58 +556,58 @@
                         <item>
                             <label>$LOCALIZE[31070]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randomaddons,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31070])</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=cyanide)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31070])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=cyanide)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>1036</label>
                             <onclick>RunScript(script.favourites)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,favouriteIcon,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[1036])</onclick>
-                             <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=favourites)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[1036])</onclick>
+                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=favourites)</onclick>
                            <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31069] 1</label>
                             <onclick>SetProperty(CustomYesNoDialog,Icon1,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Icon Panel 1)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=iconpanel1)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Icon Panel 1)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=iconpanel1)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31069] 2</label>
                             <onclick>SetProperty(CustomYesNoDialog,Icon2,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Icon Panel 2)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=iconpanel2)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Icon Panel 2)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=iconpanel2)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[12600]</label>
                             <onclick>SetProperty(CustomYesNoDialog,weather,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[12600])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[12600])</onclick>
                             <onclick>ActivateWindow(1146)</onclick>
                             <visible>!IsEmpty(Weather.Plugin)</visible>
                         </item>
                         <item>
                             <label>31183</label>
                             <onclick>SetProperty(CustomYesNoDialog,wundergroundpanel,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Weather Wunderground)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Weather Wunderground)</onclick>
                             <onclick>ActivateWindow(1146)</onclick>
                             <visible>SubString(Weather.Plugin,weather.wunderground)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[10007]</label>
                             <onclick>SetProperty(CustomYesNoDialog,systemclassic,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[138])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[138])</onclick>
                             <onclick>ActivateWindow(1146)</onclick>
                         </item>
                         <item>
                             <label>31815</label>
                             <onclick>RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,recentpicsimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31815])</onclick>
-                                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=recentmypicsdbimages)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31815])</onclick>
+                                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=recentmypicsdbimages)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
                         </item>
@@ -615,129 +615,129 @@
                             <label>31816</label>
                             <onclick>RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,randompicsimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31816])</onclick>
-                                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=randommypicsdbimages)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31816])</onclick>
+                                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=randommypicsdbimages)</onclick>
             <onclick>ActivateWindow(1137)</onclick>
                             <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
                         </item>
                         <item>
                             <label>31327</label>
                             <onclick>SetProperty(CustomYesNoDialog,mostplayedroms,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Most Played ROMs)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=mostplayedroms)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Most Played ROMs)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=mostplayedroms)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>System.HasAddon(script.games.rom.collection.browser)</visible>
                         </item>
                     <item>
                         <label>31199</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=dc88421fa0e3e928bbcbb06e9ae32010&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31199])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=dc88421fa0e3e928bbcbb06e9ae32010&amp;_render=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31199])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>31200</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=2547d7359c1c48b74498130dec548ed3&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31200])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=2547d7359c1c48b74498130dec548ed3&amp;_render=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31200])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>31201</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=83a789dbf4dd541f3c8c02270ea4f0d0&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31201])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=83a789dbf4dd541f3c8c02270ea4f0d0&amp;_render=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31201])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>31011</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=a2c0fdebd1141f006b45fa04642ddadf&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31011])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=a2c0fdebd1141f006b45fa04642ddadf&amp;_render=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31011])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>31202</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=7df4edce4cea1fd455e0289a1e9d1721&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31202])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=7df4edce4cea1fd455e0289a1e9d1721&amp;_render=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31202])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>31203</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
                         <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$INFO[Skin.String(SearchString)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31203])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$INFO[Skin.String(SearchString)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31203])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>31204</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
                         <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=6eeab87a37b2983b1f391adb753814a3&amp;_render=json&amp;youtubeid=$INFO[Skin.String(SearchString)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31204])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=6eeab87a37b2983b1f391adb753814a3&amp;_render=json&amp;youtubeid=$INFO[Skin.String(SearchString)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31204])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <!--                   <item>
                         <label>YouTube Playlist</label>
                         <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=6eeab87a37b2983b1f391adb753814a3&amp;_render=json&amp;youtubeid=$INFO[Skin.String(SearchString)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=6eeab87a37b2983b1f391adb753814a3&amp;_render=json&amp;youtubeid=$INFO[Skin.String(SearchString)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item> -->
                     <item>
                         <label>20389</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=74fc14a798efee89310bea2b56f99336&amp;_render=json&amp;n=15)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[20389])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=74fc14a798efee89310bea2b56f99336&amp;_render=json&amp;n=15)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[20389])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <!--                   <item>
                         <label>Top 10</label>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=9KUs2CRI3hGF2JCZ3rVd_w&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Top 10)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=9KUs2CRI3hGF2JCZ3rVd_w&amp;_render=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Top 10)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item> -->
                     <item>
                         <label>$LOCALIZE[31207]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/top_favorites?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31205])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/top_favorites?v=2&amp;alt=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31205])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>$LOCALIZE[31206]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/most_popular?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/most_popular?v=2&amp;alt=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206])</onclick>
                     </item>
                     <item>
                         <label>$LOCALIZE[31208]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/most_discussed?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[20169]))</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/most_discussed?v=2&amp;alt=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[20169]))</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>$LOCALIZE[31209]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[31004]))</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured?v=2&amp;alt=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[31004]))</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>$LOCALIZE[31210]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/on_the_web?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[20169]))</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/on_the_web?v=2&amp;alt=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[20169]))</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
                         <label>$LOCALIZE[31211]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[31004]))</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?v=2&amp;alt=json)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[31004]))</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <!--                  <item>
@@ -745,86 +745,86 @@
                         <onclick>Notification(,Type "web" "video" "news" "images" or "all types")</onclick>
                         <onclick>Skin.SetString(SearchType)</onclick>
                         <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=b2026f9ec8e619cfc40940382f1ddad8&amp;_render=json&amp;filterinput=$INFO[Skin.String(SearchType)]&amp;maininput=$INFO[Skin.String(SearchString)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=b2026f9ec8e619cfc40940382f1ddad8&amp;_render=json&amp;filterinput=$INFO[Skin.String(SearchType)]&amp;maininput=$INFO[Skin.String(SearchString)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item> -->
                     <item>
                         <label>$INFO[Window.Property(feeds.1.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.1.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.1.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.1.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.1.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.1.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.2.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.2.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.2.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.2.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.2.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.2.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.3.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.3.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.3.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.3.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.3.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.3.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.4.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.4.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.4.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.4.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.4.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.4.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.5.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.5.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.5.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.5.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.5.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.5.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.6.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.6.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.6.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.6.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.6.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.6.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.7.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.7.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.7.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.7.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.7.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.7.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.8.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.8.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.8.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.8.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.8.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.8.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.9.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.9.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.9.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.9.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.9.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.9.name))</visible>
                     </item>
                     <item>
                         <label>$INFO[Window.Property(feeds.10.name)]</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.10.path)])</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.10.name)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.10.path)])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.10.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.10.name))</visible>
                     </item>
@@ -894,113 +894,113 @@
                      <item>
                         <label>Channel4News</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Channel4News)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Channel4News)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Channel4News)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Channel4News)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>spiegeltv</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=spiegeltv)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,spiegeltv)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=spiegeltv)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,spiegeltv)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>AssociatedPress</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AssociatedPress)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AssociatedPress)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AssociatedPress)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AssociatedPress)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>Bloomberg</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Bloomberg)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Bloomberg)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Bloomberg)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Bloomberg)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>AFP</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AFP)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AFP)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AFP)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AFP)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>Eurogamer</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Eurogamer)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Eurogamer)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Eurogamer)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Eurogamer)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>AlJazeeraEnglish</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AlJazeeraEnglish)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AlJazeeraEnglish)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AlJazeeraEnglish)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AlJazeeraEnglish)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>31019</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=HollyscoopTV)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31019])</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=HollyscoopTV)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31019])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>tagesschau</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=tagesschau)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,tagesschau)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=tagesschau)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,tagesschau)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>news24nachrichten24</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=news24nachrichten24)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,news24nachrichten24)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=news24nachrichten24)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,news24nachrichten24)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>CNETTV</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNETTV)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNETTV)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNETTV)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNETTV)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>CNN</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNN)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNN)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNN)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNN)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>TheNewYorkTimes</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=TheNewYorkTimes)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TheNewYorkTimes)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=TheNewYorkTimes)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TheNewYorkTimes)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>focusonline</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=focusonline)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,focusonline)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=focusonline)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,focusonline)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>MobileTechReview</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=MobileTechReview)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,MobileTechReview)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=MobileTechReview)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,MobileTechReview)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                      <item>
                         <label>Engadget</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Engadget)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Engadget)</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     </content>
