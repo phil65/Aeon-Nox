@@ -59,11 +59,11 @@
         </control>
         <control type="image">
             <aspectratio>scale</aspectratio>
-            <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[Control.GetLabel(4324)]</texture>
+            <texture fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[Control.GetLabel(4324)]</texture>
             <include>FullscreenDimensions</include>
         </control>
         <control type="multiimage">
-            <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
+            <imagepath>$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
             <fadetime>FanartCrossfadeTime</fadetime>
             <visible>[Skin.HasSetting(musicextrafanart) + !IsEmpty(Skin.String(ArtistsLogosPath))]</visible>
         </control>
@@ -89,7 +89,7 @@
                     <height>320</height>
                     <aligny>bottom</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                    <texture fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
                     <fadetime>400</fadetime>
                     <animation condition="Substring(Control.GetLabel(8308),empty.png)" effect="fade" end="0" start="100" time="0">Conditional</animation>
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
@@ -99,7 +99,7 @@
                     <height>320</height>
                     <aligny>bottom</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="empty.png">$INFO[Window(home).Property(Logo)]</texture>
+                    <texture fallback="empty.png">$INFO[Window(home).Property(Logo)]</texture>
                     <fadetime>400</fadetime>
                     <visible>Substring(Control.GetLabel(8308),empty.png)</visible>
                 </control>
@@ -182,7 +182,7 @@
                                 <width>1230</width>
                                 <height>506</height>
                                 <aspectratio aligny="top">scale</aspectratio>
-                                <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Art(fanart)]</texture>
+                                <texture fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Art(fanart)]</texture>
                                 <visible>!SubString(Control.getLabel(8870),extrafanart)</visible>
                             </control>
                             <control id="8870" type="multiimage">
@@ -191,7 +191,7 @@
                                 <width>1230</width>
                                 <height>506</height>
                                 <aspectratio aligny="top">scale</aspectratio>
-                                <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
+                                <imagepath>$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
                             </control>
                             <control type="image">
                                 <posx>21</posx>
@@ -212,7 +212,7 @@
                                     <width>1</width>
                                     <height>1</height>
                                     <aspectratio>keep</aspectratio>
-                                    <texture background="true" fallback="common/cdart/default.png">$INFO[ListItem.FileNameAndPath,,/cdart.png]</texture>
+                                    <texture fallback="common/cdart/default.png">$INFO[ListItem.FileNameAndPath,,/cdart.png]</texture>
                                     <fadetime>300</fadetime>
                                 </control>
                                 <control id="50" type="list">
@@ -492,7 +492,7 @@
                                             <height>48</height>
                                             <align>right</align>
                                             <label>$INFO[ListItem.Property(Album)]</label>
-                                            <font>Font_Reg26</font>
+                                            <font>Font_Reg25</font>
                                             <textcolor>$VAR[TitleColorVar]</textcolor>
                                         </control>
                                         <control type="label">
@@ -502,7 +502,7 @@
                                             <height>48</height>
                                             <align>left</align>
                                             <label>$INFO[ListItem.Label]</label>
-                                            <font>Font_Reg29</font>
+                                            <font>Font_Reg28</font>
                                             <textcolor>white2</textcolor>
                                         </control>
                                     </itemlayout>
@@ -527,7 +527,7 @@
                                             <height>48</height>
                                             <align>right</align>
                                             <label>$INFO[ListItem.Property(Album)]</label>
-                                            <font>Font_Reg26</font>
+                                            <font>Font_Reg25</font>
                                             <textcolor>$VAR[TitleColorVar]</textcolor>
                                         </control>
                                         <control type="label">
@@ -537,7 +537,7 @@
                                             <height>48</height>
                                             <align>left</align>
                                             <label>$INFO[ListItem.Label]</label>
-                                            <font>Font_Reg29</font>
+                                            <font>Font_Reg28</font>
                                             <textcolor>white2</textcolor>
                                         </control>
                                     </focusedlayout>
@@ -634,13 +634,13 @@
                         <control id="6001" type="group">
                             <posx>131</posx>
                             <posy>91</posy>
-                            <control type="multiimage">
+                            <control type="image">
                                 <posx>-95</posx>
                                 <posy>-31</posy>
                                 <width>510</width>
                                 <height>510</height>
                                 <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[Container(6010).ListItem.Icon]</imagepath>
+                                <texture>$INFO[Container(6010).ListItem.Icon]</texture>
                                 <fadetime>750</fadetime>
                                 <timeperimage>5000</timeperimage>
                             </control>
@@ -719,7 +719,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <texture>$INFO[ListItem.Art(fanart)]</texture>
                             <colordiffuse>44FFFFFF</colordiffuse>
                         </control>
                         <control id="7001" type="group">
@@ -732,7 +732,7 @@
                                 <height>510</height>
                                 <aligny>top</aligny>
                                 <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[ListItem.Icon]</imagepath>
+                                <imagepath>$INFO[ListItem.Icon]</imagepath>
                                 <fadetime>750</fadetime>
                                 <timeperimage>5000</timeperimage>
                             </control>
@@ -804,7 +804,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <texture>$INFO[ListItem.Art(fanart)]</texture>
                             <colordiffuse>44FFFFFF</colordiffuse>
                         </control>
                         <control type="group">
@@ -975,7 +975,7 @@
                                 <width>510</width>
                                 <height>510</height>
                                 <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[Container(5010).ListItem.Icon]</imagepath>
+                                <imagepath>$INFO[Container(5010).ListItem.Icon]</imagepath>
                                 <fadetime>750</fadetime>
                                 <timeperimage>5000</timeperimage>
                             </control>
@@ -1054,7 +1054,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <texture>$INFO[ListItem.Art(fanart)]</texture>
                             <colordiffuse>44FFFFFF</colordiffuse>
                         </control>
                         <control id="10001" type="group">
@@ -1067,7 +1067,7 @@
                                 <height>510</height>
                                 <aligny>top</aligny>
                                 <aspectratio>scale</aspectratio>
-                                <imagepath background="true">$INFO[Container(10011).ListItem.Icon]</imagepath>
+                                <imagepath>$INFO[Container(10011).ListItem.Icon]</imagepath>
                                 <fadetime>750</fadetime>
                                 <timeperimage>5000</timeperimage>
                                 <visible>Stringcompare(Container(10010).NumItems,0)</visible>
@@ -1224,7 +1224,7 @@
                                     <width>420</width>
                                     <height>420</height>
                                     <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Container(10010).ListItem.Icon]</imagepath>
+                                    <imagepath diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Container(10010).ListItem.Icon]</imagepath>
                                     <fadetime>750</fadetime>
                                     <timeperimage>5000</timeperimage>
                                 </control>
@@ -1310,7 +1310,7 @@
                             <width>1260</width>
                             <height>506</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <texture>$INFO[ListItem.Art(fanart)]</texture>
                             <colordiffuse>44FFFFFF</colordiffuse>
                         </control>
                         <control id="11001" type="group">
