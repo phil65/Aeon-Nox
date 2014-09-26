@@ -84,6 +84,19 @@
                     <onright>SetFocus(6)</onright>
                     <focusedcolor>white2</focusedcolor>
                 </control>
+                <control type="button" id="513">
+                    <width>334</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                    <texturenofocus>-</texturenofocus>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <label>News</label>
+                    <onright>SetFocus(7)</onright>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
             </control>
             <include>Animation_OpenCloseZoom</include>
             <control type="group">
@@ -659,13 +672,6 @@
                         <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     <item>
-                        <label>31019</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Channel4News)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31019])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
                         <label>31204</label>
                         <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
                         <onclick>Skin.SetString(SearchString)</onclick>
@@ -821,6 +827,181 @@
                         <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.10.name)])</onclick>
                         <onclick>ActivateWindow(1137)</onclick>
                         <visible>!IsEmpty(Window.Property(feeds.10.name))</visible>
+                    </item>
+                    </content>
+                </control>
+                <control type="panel" id="7">
+                    <visible>ControlGroup(500).HasFocus(513)</visible>
+                    <posx>387</posx>
+                    <posy>180</posy>
+                    <width>1469</width>
+                    <height>641</height>
+                    <aligny>center</aligny>
+                    <scrolltime tween="sine">200</scrolltime>
+                    <onleft>500</onleft>
+                    <onup>4</onup>
+                    <ondown>4</ondown>
+                    <orientation>vertical</orientation>
+                    <itemlayout height="60" width="734">
+                        <control type="image">
+                            <width>734</width>
+                            <height>60</height>
+                            <texture>button-nofocus.png</texture>
+                        </control>
+                        <control type="label">
+                            <width>734</width>
+                            <height>60</height>
+                            <textoffsetx>10</textoffsetx>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg30_2</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="60" width="734">
+                        <control type="group">
+                            <visible>Control.HasFocus(7)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <height>60</height>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <scroll>true</scroll>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <visible>!Control.HasFocus(7)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                                <texture>button-nofocus.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <textcolor>grey2</textcolor>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                     <item>
+                        <label>Channel4News</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Channel4News)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Channel4News)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>spiegeltv</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=spiegeltv)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,spiegeltv)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>AssociatedPress</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AssociatedPress)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AssociatedPress)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>Bloomberg</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Bloomberg)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Bloomberg)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>AFP</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AFP)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AFP)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>Eurogamer</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Eurogamer)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Eurogamer)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>AlJazeeraEnglish</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AlJazeeraEnglish)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AlJazeeraEnglish)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>31019</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=HollyscoopTV)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31019])</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>tagesschau</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=tagesschau)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,tagesschau)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>news24nachrichten24</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=news24nachrichten24)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,news24nachrichten24)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>CNETTV</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNETTV)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNETTV)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>CNN</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNN)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNN)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>TheNewYorkTimes</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=TheNewYorkTimes)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TheNewYorkTimes)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>focusonline</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=focusonline)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,focusonline)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>MobileTechReview</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=MobileTechReview)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,MobileTechReview)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
+                     <item>
+                        <label>Engadget</label>
+                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Engadget)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
                     </item>
                     </content>
                 </control>
