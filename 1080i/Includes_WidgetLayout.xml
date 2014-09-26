@@ -5859,4 +5859,10 @@
             </control>
         </control>
     </include>
+    <include name="NavigationWidget2">     
+        <onup>SetFocus(9000)</onup>        
+        <ondown condition="!Skin.HasSetting(lowermainmenu) | !Control.IsVisible(4444)">9000</ondown>       
+        <ondown condition="Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>     
+        <onback>9000</onback>      
+    </include>
     </includes>
