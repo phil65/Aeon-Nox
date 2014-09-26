@@ -200,6 +200,7 @@
                                 <height>506</height>
                                 <colordiffuse>aaffffff</colordiffuse>
                                 <texture>common/bgcolor.png</texture>
+                                <visible>Container.Content(albums)</visible>
                             </control>
                             <control type="group">
                                 <visible>Container.Content(albums)</visible>
@@ -441,6 +442,17 @@
                             </control>
                             <control type="group">
                                 <visible>Container.Content(artists)</visible>
+                                <control type="group">
+                                <animation effect="fade" start="100" end="0" time="100" condition="Stringcompare(Container(9010).NumItems,0)">Conditional</animation>
+                            <control type="image">
+                                <posx>21</posx>
+                                <posy>29</posy>
+                                    <width>600</width>
+                                    <height>471</height>
+                                <texture>common/bgcolor.png</texture>
+                                <visible></visible>
+                                <animation condition="true" effect="fade" end="80" start="100" time="40">Conditional</animation>
+                            </control>
                                 <control type="label">
                                     <posx>0</posx>
                                     <posy>40</posy>
@@ -454,7 +466,7 @@
                                 <control id="9010" type="panel">
                                     <posx>-10</posx>
                                     <posy>90</posy>
-                                    <width>600</width>
+                                    <width>630</width>
                                     <height>400</height>
                                     <onup>9012</onup>
                                     <ondown>9012</ondown>
@@ -465,11 +477,11 @@
                                     <focusposition>0</focusposition>
                                     <scrolltime easing="inout" tween="cubic">400</scrolltime>
                                     <preloaditems>2</preloaditems>
-                                    <itemlayout height="50" width="600">
+                                    <itemlayout height="50" width="630">
                                         <control type="image">
                                             <posx>15</posx>
                                             <posy>0</posy>
-                                            <width>770</width>
+                                            <width>630</width>
                                             <height>50</height>
                                             <texture border="3">osd/osd_settings_buttonnf.png</texture>
                                         </control>
@@ -494,11 +506,11 @@
                                             <textcolor>white2</textcolor>
                                         </control>
                                     </itemlayout>
-                                    <focusedlayout height="50" width="600">
+                                    <focusedlayout height="50" width="630">
                                         <control type="image">
                                             <posx>15</posx>
                                             <posy>0</posy>
-                                            <width>370</width>
+                                            <width>630</width>
                                             <height>50</height>
                                             <texture border="3">osd/osd_settings_buttonnf.png</texture>
                                         </control>
@@ -532,6 +544,7 @@
                                     <content>plugin://script.extendedinfo?info=mostlovedtracks&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
                                 </control>
                             </control>
+                        </control>
                             <control type="image">
                                 <posx>21</posx>
                                 <posy>500</posy>
