@@ -10,6 +10,8 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].WidgetTitle,$ESCINFO[Skin.String(ItemToEdit.WidgetTitle)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2Title,$ESCINFO[Skin.String(ItemToEdit.Widget2Title)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].WidgetContent,$ESCINFO[Skin.String(ItemToEdit.WidgetContent)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2Content,$ESCINFO[Skin.String(ItemToEdit.Widget2Content)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Icon,$ESCINFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
@@ -18,6 +20,8 @@
     <onunload>SetProperty(Widget2Type,$INFO[Skin.String(ItemToEdit.Widget2)],home)</onunload>
     <onunload>SetProperty(Widget1Title,$INFO[Skin.String(ItemToEdit.WidgetTitle)],home)</onunload>
     <onunload>SetProperty(Widget2Title,$INFO[Skin.String(ItemToEdit.Widget2Title)],home)</onunload>
+    <onunload>SetProperty(WidgetContent,$INFO[Skin.String(ItemToEdit.WidgetContent)],home)</onunload>
+    <onunload>SetProperty(Widget2Content,$INFO[Skin.String(ItemToEdit.Widget2Content)],home)</onunload>
     <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>SetProperty(activewindow,home,home)</onunload>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music)</onunload>
@@ -206,8 +210,10 @@
                         <onclick>Skin.Reset(ItemToEdit.Path)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Widget)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.WidgetTitle)</onclick>
+                        <onclick>Skin.Reset(ItemToEdit.WidgetContent)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Widget2)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Widget2Title)</onclick>
+                        <onclick>Skin.Reset(ItemToEdit.Widget2Content)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Icon)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Disable)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.InfoLine)</onclick>
