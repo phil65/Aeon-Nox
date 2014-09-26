@@ -1011,7 +1011,6 @@
         <value>$INFO[Skin.String(PicturesBackground)]</value>
     </variable>
     <variable name="MusicExtraFanartVar">
-        <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/music/fanart/,.jpg]</value>
         <value condition="Container.Content(albums) + Substring(Container.FolderPath,musicdb://2/)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container.FolderName,,/extrafanart/]</value>
         <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</value>
     </variable>
@@ -1833,20 +1832,18 @@
         <value condition="Substring(Control.GetLabel(4321),rss2)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL2)]</value>
         <value condition="Substring(Control.GetLabel(4321),rss3)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL3)]</value>
         <value condition="Substring(Control.GetLabel(4321),://)">$INFO[Control.GetLabel(4321)]</value>
-
-
         <value condition="Substring(Control.GetLabel(4321),randompics)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),recentpics)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),thebigpicture)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),mostplayedroms)">bla</value>
-        <value condition="Substring(Control.GetLabel(4321),actors)">bla</value>
+        <value condition="Substring(Control.GetLabel(4321),actors)">plugin://script.extendedinfo?info=popularpeople</value>
         <value condition="Substring(Control.GetLabel(4321),rss1)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),rss2)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),rss3)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),nextaired)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),Icon1)">bla</value>
         <value condition="Substring(Control.GetLabel(4321),Icon2)">bla</value>
-        <value condition="Substring(Control.GetLabel(4321),favourite)">bla</value>
+        <value condition="Substring(Control.GetLabel(4321),favourite)">plugin://script.extendedinfo?info=favourites</value>
         <value condition="Substring(Control.GetLabel(4321),babesimagespanel)">plugin://script.extendedinfo?info=dailybabes</value>
         <value condition="Substring(Control.GetLabel(4321),babeimagespanel)">plugin://script.extendedinfo?info=dailybabe</value>
     </variable>
@@ -1889,14 +1886,14 @@
         <value condition="Substring(Control.GetLabel(4325),recentpics)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),thebigpicture)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),mostplayedroms)">bla</value>
-        <value condition="Substring(Control.GetLabel(4325),actors)">bla</value>
+        <value condition="Substring(Control.GetLabel(4325),actors)">plugin://script.extendedinfo?info=popularpeople</value>
         <value condition="Substring(Control.GetLabel(4325),rss1)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),rss2)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),rss3)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),nextaired)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),Icon1)">bla</value>
         <value condition="Substring(Control.GetLabel(4325),Icon2)">bla</value>
-        <value condition="Substring(Control.GetLabel(4325),favourite)">bla</value>
+        <value condition="Substring(Control.GetLabel(4325   ),favourite)">plugin://script.extendedinfo?info=favourites</value>
         <value condition="Substring(Control.GetLabel(4325),babesimagespanel)">plugin://script.extendedinfo?info=dailybabes</value>
         <value condition="Substring(Control.GetLabel(4325),babeimagespanel)">plugin://script.extendedinfo?info=dailybabe</value>
     </variable>

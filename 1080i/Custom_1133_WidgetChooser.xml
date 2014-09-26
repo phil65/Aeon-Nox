@@ -245,6 +245,12 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
+                            <label>Popular People</label>
+                            <onclick>SetProperty(CustomYesNoDialog,actors,skinsettings)</onclick>
+                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Popular People)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
                             <label>$LOCALIZE[31081]</label>
                             <onclick>SetProperty(CustomYesNoDialog,recentmusicvideos,skinsettings)</onclick>
                             <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31081])</onclick>
@@ -513,14 +519,6 @@
                             <onclick>SetProperty(CustomYesNoDialog,trailersmovies,skinsettings)</onclick>
                             <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Trailers)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31093]</label>
-                            <onclick>RunScript(script.metadata.actors,borntoday,10,random)</onclick>
-                            <onclick>SetProperty(CustomYesNoDialog,actors,skinsettings)</onclick>
-                            <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31336])</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(movies) + System.HasAddon(script.metadata.actors)</visible>
                         </item>
                         <item>
                             <label>31819</label>
