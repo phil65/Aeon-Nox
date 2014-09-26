@@ -302,9 +302,23 @@
                             <visible>Library.HasContent(MusicVideos)</visible>
                         </item>
                         <item>
-                            <label>Movie Playlist</label>
+                            <label>Movie Smart Playlist</label>
                             <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
                             <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Episode Smart Playlist</label>
+                            <onclick>SetProperty(CustomYesNoDialog,tv,skinsettings)</onclick>
+                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Albums Smart Playlist</label>
+                            <onclick>SetProperty(CustomYesNoDialog,albums,skinsettings)</onclick>
+                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://musicplaylists)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
