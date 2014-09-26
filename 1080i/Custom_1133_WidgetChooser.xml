@@ -308,6 +308,13 @@
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
+                    <item id="52">
+                        <label>Library Node</label>
+                            <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
+                        <onclick>Skin.SetPath($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,library://video/movies/)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Library Node)</onclick>
+                        <onclick>ActivateWindow(1137)</onclick>
+                    </item>
                     </content>
                 </control>
                 <control type="panel" id="5">
@@ -484,11 +491,6 @@
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,News)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,In Cinema)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[20304]</label>
-                            <onclick>Dialog.Close(1133)</onclick>
-                            <onclick>ActivateWindow(1162)</onclick>
                         </item>
                     </content>
                 </control>
