@@ -6,9 +6,8 @@
     <onload>ClearProperty(Fanart,home)</onload>
     <onload>ClearProperty(Fanart2,home)</onload>
     <onload>ClearProperty(Fanart3,home)</onload>
-    <!--
-    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistevents,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>-->
+    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
         <control id="9023" type="button">
@@ -24,13 +23,6 @@
             <onfocus>ActivateWindow(1165)</onfocus>
             <animation delay="140" effect="fade" reversible="false" time="1">Hidden</animation>
             <visible>Control.HasFocus(6010)</visible>
-        </control>
-        <control id="3334" type="button">
-            <include>HiddenObject</include>
-            <texturenofocus>-</texturenofocus>
-            <onfocus>PlayMedia($INFO[Container(10010).ListItem.Property(Path)])</onfocus>
-            <animation delay="140" effect="fade" reversible="false" time="1">Hidden</animation>
-            <visible>Control.HasFocus(10010)</visible>
         </control>
         <control id="5014" type="button">
             <include>HiddenObject</include>
@@ -777,8 +769,8 @@
                 <control id="8000" type="group">
                     <width>2325</width>
                     <height>825</height>
-                    <visible>IntegerGreaterThan(Window(home).Property(ArtistEvents.Count),0)</visible>
-                    <animation condition="![ControlGroup(8000).HasFocus | Control.HasFocus(8012)]" type="Conditional">
+<!--                     <visible>IntegerGreaterThan(Container(8010).NumItems),0)</visible>
+ -->                    <animation condition="![ControlGroup(8000).HasFocus | Control.HasFocus(8012)]" type="Conditional">
                         <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
                         <effect center="1160,412" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
                     </animation>
@@ -928,15 +920,7 @@
                                         <textcolor>grey2</textcolor>
                                     </control>
                                 </focusedlayout>
-                                <content>
-                                    <include>ArtistEventItems</include>
-                                    <item id="100">
-                                        <property name="City">Show concerts in maps browser</property>
-                                        <onclick>Action(Close)</onclick>
-                                        <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
-                                        <property name="GoogleMap">$INFO[System.AddonIcon(script.maps.browser)]</property>
-                                    </item>
-                                </content>
+                                <content>plugin://script.extendedinfo?info=artistevents&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
                             </control>
                         </control>
                         <control type="image">
@@ -1356,7 +1340,7 @@
                                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     </control>
                                 </focusedlayout>
-                                <content target="pictures">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</content>
+                                <content target="Pictures">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</content>
                             </control>
                             <!--content--></control>
                         <control type="image">
@@ -1422,8 +1406,8 @@
                 <control type="label">
                     <label>Concerts</label>
                     <include>FeaturedTopLabel</include>
-                    <visible>IntegerGreaterThan(Window(home).Property(ArtistEvents.Count),0)</visible>
-                    <animation condition="!Control.HasFocus(8012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
+<!--                     <visible>IntegerGreaterThan(Container(8010).NumItems),0)</visible>
+ -->                    <animation condition="!Control.HasFocus(8012)" easing="inout" effect="fade" end="50" start="100" time="240" tween="cubic">Conditional</animation>
                     <animation center="auto" condition="ControlGroup(8000).HasFocus" easing="inout" effect="zoom" end="120" start="100" time="240" tween="cubic">Conditional</animation>
                 </control>
 
