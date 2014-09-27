@@ -223,7 +223,7 @@
                                     <onup>9012</onup>
                                     <ondown>9012</ondown>
                                     <onleft>8010</onleft>
-                                    <onright>10010</onright>
+                                    <onright>6010</onright>
                                     <orientation>vertical</orientation>
                                     <focusposition>0</focusposition>
                                     <itemgap>0</itemgap>
@@ -640,7 +640,7 @@
                                 <width>510</width>
                                 <height>510</height>
                                 <aspectratio>scale</aspectratio>
-                                <texture>$INFO[Container(6010).ListItem.Icon]</texture>
+                                <texture fallback="DefaultAlbumCover.png">$INFO[Container(6010).ListItem.Icon]</texture>
                             </control>
                             <control type="image">
                                 <posx>-95</posx>
@@ -678,7 +678,7 @@
                                         <height>235</height>
                                         <fadetime>0</fadetime>
                                         <aspectratio>scale</aspectratio>
-                                        <texture>$INFO[Listitem.Icon]</texture>
+                                        <texture fallback="DefaultAlbumCover.png">$INFO[Listitem.Icon]</texture>
                                         <bordertexture border="5">button-nofocus.png</bordertexture>
                                         <bordersize>5</bordersize>
                                     </control>
@@ -700,7 +700,7 @@
                                         <height>235</height>
                                         <fadetime>0</fadetime>
                                         <aspectratio>scale</aspectratio>
-                                        <texture>$INFO[Listitem.Icon]</texture>
+                                        <texture fallback="DefaultAlbumCover.png">$INFO[Listitem.Icon]</texture>
                                         <bordertexture border="5">button-nofocus.png</bordertexture>
                                         <bordersize>5</bordersize>
                                     </control>
@@ -1003,13 +1003,13 @@
                         <control type="group">
                             <posx>131</posx>
                             <posy>91</posy>
-                            <control type="multiimage">
+                            <control type="image">
                                 <posx>-95</posx>
                                 <posy>-31</posy>
                                 <width>510</width>
                                 <height>510</height>
                                 <aspectratio>scale</aspectratio>
-                                <imagepath>$INFO[Container(5010).ListItem.Icon]</imagepath>
+                                <texture fallback="DefaultArtist.png">$INFO[Container(5010).ListItem.Icon]</texture>
                                 <fadetime>750</fadetime>
                                 <timeperimage>5000</timeperimage>
                             </control>
