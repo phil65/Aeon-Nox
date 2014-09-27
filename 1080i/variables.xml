@@ -1799,10 +1799,12 @@
         <value>$LOCALIZE[16039]</value>
     </variable>
     <variable name="Widget1ContentVar">
+        <value condition="!IsEmpty(Window(home).Property(update))">-</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetContent)]</value>
         <value>$INFO[Window(home).Property(Widget1Content)]</value>
     </variable>
     <variable name="Widget2ContentVar">
+        <value condition="!IsEmpty(Window(home).Property(update))">-</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Content)]</value>
         <value>$INFO[Window(home).Property(Widget2Content)]</value>
     </variable>

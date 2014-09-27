@@ -7,6 +7,8 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Label,$ESCINFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Path,$ESCINFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Icon,$ESCINFO[Skin.String(ItemToEdit.Icon)])</onunload>
+    <onunload>SetProperty(update,true,home)</onunload>
+    <onunload>AlarmClock(IconPanelUpdate,ClearProperty(update,home),00:01,silent)</onunload>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="group">
