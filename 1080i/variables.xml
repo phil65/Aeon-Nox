@@ -1823,7 +1823,6 @@
         <value condition="Substring(Control.GetLabel(4322),recentvideos)">plugin://service.library.data.provider?type=recentvideos&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4322),recenttv)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4322),watchlisttv)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),randomaddons)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),flickr)">plugin://script.extendedinfo?info=flickr</value>
         <value condition="Substring(Control.GetLabel(4322),comingsoonmovies)">plugin://script.extendedinfo?info=comingsoon</value>
         <value condition="Substring(Control.GetLabel(4322),intheatersmovies)">plugin://script.extendedinfo?info=intheaters</value>
@@ -1836,20 +1835,12 @@
         <value condition="Substring(Control.GetLabel(4322),upcomingmovies)">plugin://script.extendedinfo?info=upcoming</value>
         <value condition="Substring(Control.GetLabel(4322),premiereshows)">plugin://script.extendedinfo?info=premiereshows</value>
         <value condition="Substring(Control.GetLabel(4322),trailersmovies)">plugin://plugin.video.the.trailers/apple/movies/</value>
-        <value condition="Substring(Control.GetLabel(4322),xkcd)">plugin://script.extendedinfo?info=xkcd</value>
-        <value condition="Substring(Control.GetLabel(4322),cyanide)">plugin://script.extendedinfo?info=cyanide</value>
-        <value condition="Substring(Control.GetLabel(4322),rss1)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL1)]</value>
-        <value condition="Substring(Control.GetLabel(4322),rss2)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL2)]</value>
-        <value condition="Substring(Control.GetLabel(4322),rss3)">plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Skin.String(CustomHomeFeedURL3)]</value>
         <value condition="Substring(Control.GetLabel(4322),://)">$INFO[Control.GetLabel(4322)]</value>
         <value condition="Substring(Control.GetLabel(4322),randompics)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),recentpics)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),thebigpicture)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),mostplayedroms)">bla</value>
-        <value condition="Substring(Control.GetLabel(4322),actors)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),nextaired)">bla</value>
-        <value condition="Substring(Control.GetLabel(4322),babesimagespanel)">plugin://script.extendedinfo?info=dailybabes</value>
-        <value condition="Substring(Control.GetLabel(4322),babeimagespanel)">plugin://script.extendedinfo?info=dailybabe</value>
     </variable>
     <variable name="CDArtLabelVar">
         <value condition="Skin.HasSetting(vinylart)">$LOCALIZE[31227]</value>
@@ -2015,6 +2006,7 @@
         <value condition="!IsEmpty(Window(home).Property(Plot))">$INFO[Window(home).Property(Plot)]</value>
         <value condition="!IsEmpty(Window(home).Property(Album_Description))">$INFO[Window(home).Property(Album_Description)]</value>
         <value condition="!IsEmpty(Window(home).Property(Artist_Description))">$INFO[Window(home).Property(Artist_Description)]</value>
+        <value condition="!IsEmpty(Window(home).Property(Addon.Description))">$INFO[Window(home).Property(Addon.Description)]</value>
         <value>$INFO[Window(home).Property(Description)]</value>
     </variable>
     <!-- Cases Background Vars-->
