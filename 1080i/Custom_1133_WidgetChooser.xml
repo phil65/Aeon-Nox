@@ -303,6 +303,13 @@
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Library Node)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
+                        <item>
+                            <label>Video Addons</label>
+                            <onclick>SetProperty(CustomYesNoDialog,addons,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Video Addons)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,addons://sources/video/)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
                     </content>
                 </control>
                 <control type="panel" id="5">
@@ -431,14 +438,14 @@
                             <label>Episode Smart Playlist</label>
                             <onclick>SetProperty(CustomYesNoDialog,tv,skinsettings)</onclick>
                             <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Episode Playlist)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>31199</label>
-                            <onclick>SetProperty(CustomYesNoDialog,rssnews,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,News)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,In Cinema)</onclick>
+                            <label>Video Addons</label>
+                            <onclick>SetProperty(CustomYesNoDialog,addons,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Video Addons)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,addons://sources/video/)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                     </content>
@@ -563,7 +570,7 @@
                             <label>Albums Smart Playlist</label>
                             <onclick>SetProperty(CustomYesNoDialog,albums,skinsettings)</onclick>
                             <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://musicplaylists)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Album Playlist)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
@@ -819,6 +826,13 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
+                            <label>Program Addons</label>
+                            <onclick>SetProperty(CustomYesNoDialog,addons,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Program Addons)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,addons://sources/executable/)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
                             <label>1036</label>
                             <onclick>RunScript(script.favourites)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,favouriteIcon,skinsettings)</onclick>
@@ -968,7 +982,14 @@
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://plugin.image.mypicsdb?action='showpics'&amp;method='lastpicsshooted'&amp;name='The%2050%20latest%20pics'&amp;page='1'&amp;viewmode='view')</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
-                        </item>                    
+                        </item>  
+                        <item>
+                            <label>Picture Addons</label>
+                            <onclick>SetProperty(CustomYesNoDialog,addons,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Picture Addons)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,addons://sources/image/)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
                     </content>
                 </control>
                 <control type="image">
