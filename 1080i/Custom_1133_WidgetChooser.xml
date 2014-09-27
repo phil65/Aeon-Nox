@@ -3,42 +3,32 @@
     <onload>ClearProperty(NoStyleSelect)</onload>
     <defaultcontrol always="true">500</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-                <onload>RunScript(script.rssfeeds)</onload>
-
+    <onload>RunScript(script.rssfeeds)</onload>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="group">
             <posy>200</posy>
-        <control type="image">
-            <posx>36</posx>
-            <posy>36</posy>
-            <width>1846</width>
-            <height>700</height>
-            <texture>settings/settings_panelback_shadow.png</texture>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-            <include>Animation_VisibleChange400</include>
-        </control>
-        <control type="image">
-            <posx>34</posx>
-            <posy>34</posy>
-            <width>1850</width>
-            <height>708</height>
-            <texture>settings/settings_panelback.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-        </control>
-        <control type="image">
-            <posx>50</posx>
-            <posy>37</posy>
-            <width>360</width>
-            <height>178</height>
-            <aspectratio>keep</aspectratio>
-            <texture>XBMC_Logo.png</texture>
-            <colordiffuse>white</colordiffuse>
-        </control>
+            <control type="image">
+                <posx>36</posx>
+                <posy>36</posy>
+                <width>1846</width>
+                <height>600</height>
+                <texture>settings/settings_panelback_shadow.png</texture>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <include>Animation_VisibleChange400</include>
+            </control>
+            <control type="image">
+                <posx>34</posx>
+                <posy>34</posy>
+                <width>1850</width>
+                <height>600</height>
+                <texture>settings/settings_panelback.png</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            </control>
             <control type="grouplist" id="500">
                 <posx>63</posx>
-                <posy>180</posy>
+                <posy>80</posy>
                 <width>326</width>
                 <height>768</height>
                 <onleft>5</onleft>
@@ -54,7 +44,7 @@
                     <texturenofocus>-</texturenofocus>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <label>Database Content</label>
+                    <label>Movies</label>
                     <onright>SetFocus(4)</onright>
                     <focusedcolor>white2</focusedcolor>
                 </control>
@@ -63,11 +53,11 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                     <texturenofocus>-</texturenofocus>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <label>Online Content</label>
+                    <label>TV Shows</label>
                     <onright>SetFocus(5)</onright>
                     <focusedcolor>white2</focusedcolor>
                 </control>
@@ -76,12 +66,25 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                     <texturenofocus>-</texturenofocus>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
-                    <label>Misc</label>
+                    <label>Music &amp; Concerts</label>
                     <onright>SetFocus(6)</onright>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="515">
+                    <width>334</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                    <texturenofocus>-</texturenofocus>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <label>Images</label>
+                    <onright>SetFocus(9)</onright>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="513">
@@ -89,12 +92,25 @@
                     <height>74</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                     <texturenofocus>-</texturenofocus>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
                     <label>News</label>
                     <onright>SetFocus(7)</onright>
+                    <focusedcolor>white2</focusedcolor>
+                </control>
+                <control type="button" id="514">
+                    <width>334</width>
+                    <height>74</height>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>18</textoffsety>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                    <texturenofocus>-</texturenofocus>
+                    <font>Font_Bold34</font>
+                    <textcolor>grey</textcolor>
+                    <label>Misc</label>
+                    <onright>SetFocus(8)</onright>
                     <focusedcolor>white2</focusedcolor>
                 </control>
             </control>
@@ -134,7 +150,7 @@
                             <control type="image">
                                 <width>734</width>
                                 <height>60</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             </control>
                             <control type="label">
                                 <width>734</width>
@@ -201,204 +217,6 @@
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[31324]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,recenttv,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31324])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(tvshows)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31220]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,randomtv,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31220])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(tvshows)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31464]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,watchlisttv,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31464])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(tvshows)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31873]</label>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredtvdefault)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31873])</onclick>
-                            <visible>Library.HasContent(tvshows)</visible>
-                            <onclick>Dialog.Close(1133)</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31359]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,recentalbums,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31359])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(music)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31068]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,randomalbums,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(music)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31874]</label>
-                            <visible>Library.HasContent(music)</visible>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmusicdefault)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
-                            <onclick>Dialog.Close(1133)</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31326]</label>
-                            <visible>Library.HasContent(music)</visible>
-                            <onclick>SetProperty(CustomYesNoDialog,watchlistalbums,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31326])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <onclick>Dialog.Close(1133)</onclick>
-                        </item>
-                        <item>
-                            <label>31817</label>
-                            <onclick>SetProperty(CustomYesNoDialog,randomartists,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31817])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomartists&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>Popular People</label>
-                            <onclick>SetProperty(CustomYesNoDialog,actors,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Popular People)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=popularpeople)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31081]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,recentmusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31081])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmusicvideos&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(MusicVideos)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31091]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,randommusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31091])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommusicvideos&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(MusicVideos)</visible>
-                        </item>
-                        <item>
-                            <label>31712</label>
-                            <onclick>SetProperty(CustomYesNoDialog,watchlistmusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31712])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmusicvideos&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(MusicVideos)</visible>
-                        </item>
-                        <item>
-                            <label>Movie Smart Playlist</label>
-                            <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
-                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>Episode Smart Playlist</label>
-                            <onclick>SetProperty(CustomYesNoDialog,tv,skinsettings)</onclick>
-                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>Albums Smart Playlist</label>
-                            <onclick>SetProperty(CustomYesNoDialog,albums,skinsettings)</onclick>
-                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://musicplaylists)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                    <item id="52">
-                        <label>Library Node</label>
-                            <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
-                        <onclick>Skin.SetPath($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,library://video/movies/)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Library Node)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    </content>
-                </control>
-                <control type="panel" id="5">
-                    <visible>ControlGroup(500).HasFocus(511)</visible>
-                    <posx>387</posx>
-                    <posy>180</posy>
-                    <width>1469</width>
-                    <height>641</height>
-                    <aligny>center</aligny>
-                    <scrolltime tween="sine">200</scrolltime>
-                    <onleft>500</onleft>
-                    <onup>5</onup>
-                    <ondown>5</ondown>
-                    <orientation>vertical</orientation>
-                    <itemlayout height="60" width="734">
-                        <control type="image">
-                            <width>734</width>
-                            <height>60</height>
-                            <texture>button-nofocus.png</texture>
-                        </control>
-                        <control type="label">
-                            <width>734</width>
-                            <height>60</height>
-                            <textoffsetx>10</textoffsetx>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Reg30_2</font>
-                            <textcolor>grey2</textcolor>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout height="60" width="734">
-                        <control type="group">
-                            <visible>Control.HasFocus(5)</visible>
-                            <control type="image">
-                                <width>734</width>
-                                <height>60</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                            </control>
-                            <control type="label">
-                                <width>734</width>
-                                <height>60</height>
-                                <textoffsetx>10</textoffsetx>
-                                <label>$INFO[ListItem.Label]</label>
-                                <font>Font_Reg30_2</font>
-                                <scroll>true</scroll>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!Control.HasFocus(5)</visible>
-                            <control type="image">
-                                <width>734</width>
-                                <height>60</height>
-                                <texture>button-nofocus.png</texture>
-                            </control>
-                            <control type="label">
-                                <width>734</width>
-                                <textoffsetx>10</textoffsetx>
-                                <label>$INFO[ListItem.Label]</label>
-                                <font>Font_Reg30_2</font>
-                                <textcolor>grey2</textcolor>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                    <content>
-<!--                         <item>
-                            <label>$LOCALIZE[31883]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31883])</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item> -->
-                        <item>
                             <label>In Cinema</label>
                             <onclick>SetProperty(CustomYesNoDialog,incinemasmovies,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,In Cinema)</onclick>
@@ -441,6 +259,153 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
+                            <label>Popular People</label>
+                            <onclick>SetProperty(CustomYesNoDialog,actors,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Popular People)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=popularpeople)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31081]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,recentmusicvideos,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31081])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(MusicVideos)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31091]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,randommusicvideos,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31091])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(MusicVideos)</visible>
+                        </item>
+                        <item>
+                            <label>31712</label>
+                            <onclick>SetProperty(CustomYesNoDialog,watchlistmusicvideos,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31712])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(MusicVideos)</visible>
+                        </item>
+                        <item>
+                            <label>Movie Smart Playlist</label>
+                            <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
+                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Library Node</label>
+                            <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
+                            <onclick>Skin.SetPath($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,library://video/movies/)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Library Node)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="panel" id="5">
+                    <!--tvshows-->
+                    <visible>ControlGroup(500).HasFocus(511)</visible>
+                    <posx>387</posx>
+                    <posy>180</posy>
+                    <width>1469</width>
+                    <height>641</height>
+                    <aligny>center</aligny>
+                    <scrolltime tween="sine">200</scrolltime>
+                    <onleft>500</onleft>
+                    <onup>5</onup>
+                    <ondown>5</ondown>
+                    <orientation>vertical</orientation>
+                    <itemlayout height="60" width="734">
+                        <control type="image">
+                            <width>734</width>
+                            <height>60</height>
+                            <texture>button-nofocus.png</texture>
+                        </control>
+                        <control type="label">
+                            <width>734</width>
+                            <height>60</height>
+                            <textoffsetx>10</textoffsetx>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg30_2</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="60" width="734">
+                        <control type="group">
+                            <visible>Control.HasFocus(5)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <height>60</height>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <scroll>true</scroll>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <visible>!Control.HasFocus(5)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                                <texture>button-nofocus.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <textcolor>grey2</textcolor>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item>
+                            <label>$LOCALIZE[31324]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,recenttv,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31324])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(tvshows)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31220]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,randomtv,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31220])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(tvshows)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31464]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,watchlisttv,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31464])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(tvshows)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31873]</label>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredtvdefault)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31873])</onclick>
+                            <visible>Library.HasContent(tvshows)</visible>
+                            <onclick>Dialog.Close(1133)</onclick>
+                        </item>
+                        <!--
+                        <item>
+                            <label>$LOCALIZE[31883]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31883])</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>-->
+                        <item>
                             <label>31819</label>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31819])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nextaired)</onclick>
@@ -463,40 +428,10 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>31818</label>
-                            <onclick>SetProperty(CustomYesNoDialog,concerts,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31818])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nearevents)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>Daily Babes</label>
-                            <onclick>SetProperty(CustomYesNoDialog,babesimagespanelcoversquare,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babes)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabes)</onclick>
-                            <onclick>ActivateWindow(1146)</onclick>
-                        </item>
-                        <item>
-                            <label>Daily Babe</label>
-                            <onclick>SetProperty(CustomYesNoDialog,babeimagespanelcoversquare,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babe)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabe)</onclick>
-                            <onclick>ActivateWindow(1146)</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31880]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,xkcdimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,XKCD)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=xkcd)</onclick>
-                            <onclick>RunScript(script.extendedinfo,info=xkcd)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31893]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,cyanideimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Cyanide &amp; Happiness)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=cyanide)</onclick>
-                            <onclick>RunScript(script.extendedinfo,info=cyanide)</onclick>
+                            <label>Episode Smart Playlist</label>
+                            <onclick>SetProperty(CustomYesNoDialog,tv,skinsettings)</onclick>
+                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
@@ -541,7 +476,7 @@
                             <control type="image">
                                 <width>734</width>
                                 <height>60</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             </control>
                             <control type="label">
                                 <width>734</width>
@@ -570,6 +505,313 @@
                     </focusedlayout>
                     <content>
                         <item>
+                            <label>$LOCALIZE[31359]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,recentalbums,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31359])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(music)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31068]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,randomalbums,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(music)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31874]</label>
+                            <visible>Library.HasContent(music)</visible>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmusicdefault)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
+                            <visible>Library.HasContent(music)</visible>
+                            <onclick>Dialog.Close(1133)</onclick>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31326]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,watchlistalbums,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31326])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <onclick>Dialog.Close(1133)</onclick>
+                            <visible>Library.HasContent(music)</visible>
+                        </item>
+                        <item>
+                            <label>31817</label>
+                            <onclick>SetProperty(CustomYesNoDialog,randomartists,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31817])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomartists&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(music)</visible>
+                        </item>
+                        <item>
+                            <label>20389</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=74fc14a798efee89310bea2b56f99336&amp;_render=json&amp;n=15)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[20389])</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>31818</label>
+                            <onclick>SetProperty(CustomYesNoDialog,concerts,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31818])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nearevents)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Albums Smart Playlist</label>
+                            <onclick>SetProperty(CustomYesNoDialog,albums,skinsettings)</onclick>
+                            <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://musicplaylists)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Movie Playlist)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Music Addons</label>
+                            <onclick>SetProperty(CustomYesNoDialog,addons,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Music Addons)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,addons://sources/audio/)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="panel" id="7">
+                    <visible>ControlGroup(500).HasFocus(513)</visible>
+                    <onup>7</onup>
+                    <ondown>7</ondown>
+                    <posx>387</posx>
+                    <posy>180</posy>
+                    <width>1469</width>
+                    <height>641</height>
+                    <aligny>center</aligny>
+                    <scrolltime tween="sine">200</scrolltime>
+                    <onleft>500</onleft>
+                    <orientation>vertical</orientation>
+                    <itemlayout height="60" width="734">
+                        <control type="image">
+                            <width>734</width>
+                            <height>60</height>
+                            <texture>button-nofocus.png</texture>
+                        </control>
+                        <control type="label">
+                            <width>734</width>
+                            <height>60</height>
+                            <textoffsetx>10</textoffsetx>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg30_2</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="60" width="734">
+                        <control type="group">
+                            <visible>Control.HasFocus(7)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <height>60</height>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <scroll>true</scroll>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <visible>!Control.HasFocus(7)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                                <texture>button-nofocus.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <textcolor>grey2</textcolor>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item>
+                            <label>Channel4News</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Channel4News)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Channel4News)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>spiegeltv</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=spiegeltv)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,spiegeltv)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>AssociatedPress</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AssociatedPress)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AssociatedPress)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Bloomberg</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Bloomberg)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Bloomberg)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>AFP</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AFP)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AFP)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Eurogamer</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Eurogamer)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Eurogamer)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>AlJazeeraEnglish</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AlJazeeraEnglish)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AlJazeeraEnglish)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>31019</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=HollyscoopTV)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31019])</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>tagesschau</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=tagesschau)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,tagesschau)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>news24nachrichten24</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=news24nachrichten24)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,news24nachrichten24)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>CNETTV</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNETTV)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNETTV)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>CNN</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNN)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNN)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>TheNewYorkTimes</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=TheNewYorkTimes)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TheNewYorkTimes)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>focusonline</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=focusonline)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,focusonline)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>MobileTechReview</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=MobileTechReview)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,MobileTechReview)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Engadget</label>
+                            <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Engadget)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                    </content>
+                </control>
+                <control type="panel" id="8">
+                    <visible>ControlGroup(500).HasFocus(514)</visible>
+                    <onleft>500</onleft>
+                    <onup>8</onup>
+                    <ondown>8</ondown>
+                    <posx>387</posx>
+                    <posy>180</posy>
+                    <width>1469</width>
+                    <height>641</height>
+                    <orientation>vertical</orientation>
+                    <aligny>center</aligny>
+                    <scrolltime tween="sine">200</scrolltime>
+                    <itemlayout height="60" width="734">
+                        <control type="image">
+                            <width>734</width>
+                            <height>60</height>
+                            <texture>button-nofocus.png</texture>
+                        </control>
+                        <control type="label">
+                            <width>734</width>
+                            <height>60</height>
+                            <textoffsetx>10</textoffsetx>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg30_2</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="60" width="734">
+                        <control type="group">
+                            <visible>Control.HasFocus(8)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <height>60</height>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <scroll>true</scroll>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <visible>!Control.HasFocus(8)</visible>
+                            <control type="image">
+                                <width>734</width>
+                                <height>60</height>
+                                <texture>button-nofocus.png</texture>
+                            </control>
+                            <control type="label">
+                                <width>734</width>
+                                <textoffsetx>10</textoffsetx>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Font_Reg30_2</font>
+                                <textcolor>grey2</textcolor>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item>
                             <label>$LOCALIZE[31070]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randomaddons,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31070])</onclick>
@@ -581,8 +823,8 @@
                             <onclick>RunScript(script.favourites)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,favouriteIcon,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[1036])</onclick>
-                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=favourites)</onclick>
-                           <onclick>ActivateWindow(1137)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=favourites)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31069] 1</label>
@@ -619,24 +861,6 @@
                             <onclick>ActivateWindow(1146)</onclick>
                         </item>
                         <item>
-                            <label>31815</label>
-                            <onclick>RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onclick>
-                            <onclick>SetProperty(CustomYesNoDialog,recentpicsimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31815])</onclick>
-                                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=recentmypicsdbimages)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
-                        </item>
-                        <item>
-                            <label>31816</label>
-                            <onclick>RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
-                            <onclick>SetProperty(CustomYesNoDialog,randompicsimages,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31816])</onclick>
-                                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=randommypicsdbimages)</onclick>
-            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
-                        </item>
-                        <item>
                             <label>31327</label>
                             <onclick>SetProperty(CustomYesNoDialog,mostplayedroms,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Most Played ROMs)</onclick>
@@ -644,220 +868,20 @@
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>System.HasAddon(script.games.rom.collection.browser)</visible>
                         </item>
-                    <item>
-                        <label>31199</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=dc88421fa0e3e928bbcbb06e9ae32010&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31199])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>31200</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=2547d7359c1c48b74498130dec548ed3&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31200])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>31201</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=83a789dbf4dd541f3c8c02270ea4f0d0&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31201])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>31011</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=a2c0fdebd1141f006b45fa04642ddadf&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31011])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>31202</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=7df4edce4cea1fd455e0289a1e9d1721&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31202])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>31203</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$INFO[Skin.String(SearchString)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31203])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>31204</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=6eeab87a37b2983b1f391adb753814a3&amp;_render=json&amp;youtubeid=$INFO[Skin.String(SearchString)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31204])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <!--                   <item>
-                        <label>YouTube Playlist</label>
-                        <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=6eeab87a37b2983b1f391adb753814a3&amp;_render=json&amp;youtubeid=$INFO[Skin.String(SearchString)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item> -->
-                    <item>
-                        <label>20389</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=74fc14a798efee89310bea2b56f99336&amp;_render=json&amp;n=15)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[20389])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <!--                   <item>
-                        <label>Top 10</label>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=9KUs2CRI3hGF2JCZ3rVd_w&amp;_render=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Top 10)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item> -->
-                    <item>
-                        <label>$LOCALIZE[31207]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/top_favorites?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31205])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>$LOCALIZE[31206]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/most_popular?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206])</onclick>
-                    </item>
-                    <item>
-                        <label>$LOCALIZE[31208]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/most_discussed?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[20169]))</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>$LOCALIZE[31209]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[31004]))</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>$LOCALIZE[31210]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/on_the_web?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[20169]))</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <item>
-                        <label>$LOCALIZE[31211]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?v=2&amp;alt=json)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31206] ($LOCALIZE[31004]))</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                    <!--                  <item>
-                        <label>31207</label>
-                        <onclick>Notification(,Type "web" "video" "news" "images" or "all types")</onclick>
-                        <onclick>Skin.SetString(SearchType)</onclick>
-                        <onclick>Skin.SetString(SearchString)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=http://pipes.yahoo.com/pipes/pipe.run?_id=b2026f9ec8e619cfc40940382f1ddad8&amp;_render=json&amp;filterinput=$INFO[Skin.String(SearchType)]&amp;maininput=$INFO[Skin.String(SearchString)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item> -->
-                    <item>
-                        <label>$INFO[Window.Property(feeds.1.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.1.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.1.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.1.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.2.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.2.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.2.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.2.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.3.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.3.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.3.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.3.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.4.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.4.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.4.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.4.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.5.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.5.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.5.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.5.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.6.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.6.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.6.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.6.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.7.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.7.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.7.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.7.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.8.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.8.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.8.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.8.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.9.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.9.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.9.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.9.name))</visible>
-                    </item>
-                    <item>
-                        <label>$INFO[Window.Property(feeds.10.name)]</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=json&amp;&amp;feed=$INFO[Window.Property(feeds.10.path)])</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$INFO[Window.Property(feeds.10.name)])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                        <visible>!IsEmpty(Window.Property(feeds.10.name))</visible>
-                    </item>
                     </content>
                 </control>
-                <control type="panel" id="7">
-                    <visible>ControlGroup(500).HasFocus(513)</visible>
+                <control type="panel" id="9">
+                    <visible>ControlGroup(500).HasFocus(515)</visible>
+                    <onleft>500</onleft>
+                    <onup>9</onup>
+                    <ondown>9</ondown>
                     <posx>387</posx>
                     <posy>180</posy>
                     <width>1469</width>
                     <height>641</height>
+                    <orientation>vertical</orientation>
                     <aligny>center</aligny>
                     <scrolltime tween="sine">200</scrolltime>
-                    <onleft>500</onleft>
-                    <onup>4</onup>
-                    <ondown>4</ondown>
-                    <orientation>vertical</orientation>
                     <itemlayout height="60" width="734">
                         <control type="image">
                             <width>734</width>
@@ -875,11 +899,11 @@
                     </itemlayout>
                     <focusedlayout height="60" width="734">
                         <control type="group">
-                            <visible>Control.HasFocus(7)</visible>
+                            <visible>Control.HasFocus(8)</visible>
                             <control type="image">
                                 <width>734</width>
                                 <height>60</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             </control>
                             <control type="label">
                                 <width>734</width>
@@ -891,7 +915,7 @@
                             </control>
                         </control>
                         <control type="group">
-                            <visible>!Control.HasFocus(7)</visible>
+                            <visible>!Control.HasFocus(8)</visible>
                             <control type="image">
                                 <width>734</width>
                                 <height>60</height>
@@ -907,118 +931,44 @@
                         </control>
                     </focusedlayout>
                     <content>
-                     <item>
-                        <label>Channel4News</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Channel4News)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Channel4News)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>spiegeltv</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=spiegeltv)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,spiegeltv)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>AssociatedPress</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AssociatedPress)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AssociatedPress)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>Bloomberg</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Bloomberg)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Bloomberg)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>AFP</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AFP)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AFP)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>Eurogamer</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Eurogamer)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Eurogamer)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>AlJazeeraEnglish</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=AlJazeeraEnglish)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,AlJazeeraEnglish)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>31019</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=HollyscoopTV)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31019])</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>tagesschau</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=tagesschau)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,tagesschau)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>news24nachrichten24</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=news24nachrichten24)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,news24nachrichten24)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>CNETTV</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNETTV)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNETTV)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>CNN</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=CNN)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,CNN)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>TheNewYorkTimes</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=TheNewYorkTimes)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,TheNewYorkTimes)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>focusonline</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=focusonline)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,focusonline)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>MobileTechReview</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=MobileTechReview)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,MobileTechReview)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
-                     <item>
-                        <label>Engadget</label>
-                        <onclick>SetProperty(CustomYesNoDialog,rss,skinsettings)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Engadget)</onclick>
-                        <onclick>ActivateWindow(1137)</onclick>
-                    </item>
+                        <item>
+                            <label>Daily Babes</label>
+                            <onclick>SetProperty(CustomYesNoDialog,babesimagespanelcoversquare,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babes)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabes)</onclick>
+                            <onclick>ActivateWindow(1146)</onclick>
+                        </item>
+                        <item>
+                            <label>Daily Babe</label>
+                            <onclick>SetProperty(CustomYesNoDialog,babeimagespanelcoversquare,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babe)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabe)</onclick>
+                            <onclick>ActivateWindow(1146)</onclick>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31880]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,xkcdimages,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,XKCD)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=xkcd)</onclick>
+                            <onclick>RunScript(script.extendedinfo,info=xkcd)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31893]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,cyanideimages,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Cyanide &amp; Happiness)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=cyanide)</onclick>
+                            <onclick>RunScript(script.extendedinfo,info=cyanide)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>31815</label>
+                            <onclick>SetProperty(CustomYesNoDialog,recentpicsimages,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31815])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://plugin.image.mypicsdb?action='showpics'&amp;method='lastpicsshooted'&amp;name='The%2050%20latest%20pics'&amp;page='1'&amp;viewmode='view')</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
+                        </item>                    
                     </content>
                 </control>
                 <control type="image">
