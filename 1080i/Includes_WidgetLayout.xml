@@ -2677,16 +2677,7 @@
                     <width>460</width>
                     <height>690</height>
                     <aspectratio>scale</aspectratio>
-                    <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[Window(home).Property(Icon)]</texture>
-                    <visible>IsEmpty(Window(home).Property(Poster))</visible>
-                </control>
-                <control type="image">
-                    <posx>5</posx>
-                    <posy>-345</posy>
-                    <width>460</width>
-                    <height>690</height>
-                    <aspectratio>scale</aspectratio>
-                    <texture background="true">$INFO[Window(home).Property(Poster)]</texture>
+                    <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[HomeinfoPanelPosterVar]</texture>
                 </control>
                 <control type="grouplist" id="5020">
                     <posx>465</posx>

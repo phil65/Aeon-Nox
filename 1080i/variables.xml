@@ -1497,7 +1497,11 @@
         <value condition="Substring(Control.GetLabel(4325),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic6012Content))">$INFO[Skin.String(FeaturedMusic6012Content)]</value>
         <value condition="Substring(Control.GetLabel(4325),featuredmusic)">plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</value>
     </variable>
-
+    <variable name="HomeinfoPanelPosterVar">
+        <value condition="!IsEmpty(Window(home).Property(poster))">$INFO[Window(home).Property(poster)]</value>
+        <value condition="!IsEmpty(Window(home).Property(tvshow.poster))">$INFO[Window(home).Property(tvshow.poster)]</value>
+        <value>$INFO[Window(home).Property(Icon)]</value>        
+    </variable>
     <variable name="PosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="!IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
