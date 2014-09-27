@@ -1880,7 +1880,7 @@
                             <font>Font_Reg28_Caps</font>
                         </control>
                     </focusedlayout>
-                    <content>$VAR[Widget1ContentVar]</content>
+                    <content target="$VAR[WidgetListTargetVar]">$VAR[Widget1ContentVar]</content>
                 </control>
             </control>
         </control>
@@ -2352,7 +2352,7 @@
                         <animation effect="fade" time="280" reversible="false">Focus</animation>
                     </control>
                 </focusedlayout>
-                <content>$VAR[Widget1ContentVar]</content>
+                    <content target="$VAR[WidgetListTargetVar]">$VAR[Widget1ContentVar]</content>
             </control>
         </control>
         <control type="label">
@@ -2737,6 +2737,7 @@
                     </control>
                 </control>
                 <control type="image">
+                    <visible>!IsEmpty(Window(home).Property(clearlogo))</visible>
                     <posx>1255</posx>
                     <posy>-370</posy>
                     <width>530</width>
@@ -2747,7 +2748,6 @@
                         <effect type="fade" start="0" end="100" delay="960" time="960" tween="cubic" />
                         <effect type="zoom" start="0" end="100" delay="960" time="960" center="auto" tween="cubic" />
                     </animation>
-                    <visible>!IsEmpty(Window(home).Property(clearlogo))</visible>
                 </control>
                 <control type="grouplist">
                     <posx>470</posx>
@@ -4148,7 +4148,7 @@
                             <font>Font_Reg28_Caps</font>
                         </control>
                     </focusedlayout>
-                    <content>$VAR[Widget2ContentVar]</content>
+                    <content target="$VAR[Widget2ListTargetVar]">$VAR[Widget2ContentVar]</content>
                 </control>
             </control>
         </control>
@@ -4570,7 +4570,7 @@
                         <animation effect="fade" time="280" reversible="false">Focus</animation>
                     </control>
                 </focusedlayout>
-                <content>$VAR[Widget2ContentVar]</content>
+                    <content target="$VAR[Widget2ListTargetVar]">$VAR[Widget2ContentVar]</content>
             </control>
         </control>
         <control type="label">

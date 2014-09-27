@@ -1502,6 +1502,18 @@
         <value condition="!IsEmpty(Window(home).Property(tvshow.poster))">$INFO[Window(home).Property(tvshow.poster)]</value>
         <value>$INFO[Window(home).Property(Icon)]</value>        
     </variable>
+    <variable name="WidgetListTargetVar">
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),addon)">video</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),album)">music</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),addon)">programs</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),image)">pictures</value>
+    </variable>
+    <variable name="Widget2ListTargetVar">
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),movie)">video</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),album)">music</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),addon)">programs</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),image)">pictures</value>
+    </variable>
     <variable name="PosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="!IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
