@@ -1709,7 +1709,7 @@
                         <posy>125</posy>
                         <width>800</width>
                         <height>38</height>
-                        <label>$INFO[Container(8000).ListItem.Genre]</label>
+                        <label>$INFO[Container(8000).ListItem.Property(Artist_Genre)]$INFO[Container(8000).ListItem.Property(Album_Genre)]</label>
                         <font>Font_Reg34_Caps</font>
                         <textcolor>white3</textcolor>
                         <wrapmultiline>true</wrapmultiline>
@@ -1719,7 +1719,7 @@
                         <width>688</width>
                         <height>200</height>
                         <aligny>top</aligny>
-                        <label fallback="-">$INFO[Container(8000).ListItem.Property(Description)]</label>
+                        <label fallback="-">$INFO[Container(8000).ListItem.Property(Artist_Description)]$INFO[Container(8000).ListItem.Property(Addon.Description)]$INFO[Container(8000).ListItem.Property(Album_Description)]</label>
                         <textcolor>white3</textcolor>
                         <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
@@ -1987,7 +1987,7 @@
                 <include>NavigationWidget1</include>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),landscape)">
-                    <include condition="Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
+                    <include>WidgetLandscapeLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -1997,7 +1997,7 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),landscape)">
-                    <include condition="Window.IsActive(skinsettings)">WidgetLandscapeLayout</include>
+                    <include>WidgetLandscapeLayout</include>
                 </itemlayout>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),keepar)">
                     <include>WidgetRCBLayout</include>
