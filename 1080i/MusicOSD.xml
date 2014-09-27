@@ -7,34 +7,6 @@
             <onfocus condition="!Skin.HasSetting(musicvisinfomode)">SetFocus(602)</onfocus>
             <include>HiddenObject</include>
         </control>
-        <control type="button" id="5014">
-            <include>HiddenObject</include>
-            <texturenofocus>-</texturenofocus>
-            <onfocus>SetProperty(WidgetType,onlinealbum,home)</onfocus>
-            <onfocus>Runscript(script.extendedinfo,info=extendedalbuminfo,id=$INFO[Container(6010).ListItem.Property(Id)],silent=False)</onfocus>
-            <onfocus>SetFocus(6010)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-            <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
-            <visible>Control.HasFocus(6010)</visible>
-        </control>
-        <control type="button" id="5014">
-            <include>HiddenObject</include>
-            <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-            <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
-            <onfocus>SetProperty(WidgetType,artists,home)</onfocus>
-            <onfocus>RunScript(script.home,container=5010,focuscontrol=5010)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-            <animation effect="fade" delay="140" time="1" reversible="false">Hidden</animation>
-            <visible>Control.HasFocus(5010)</visible>
-        </control>
-        <control type="button" id="9025">
-            <include>HiddenObject</include>
-            <texturenofocus>-</texturenofocus>
-            <onfocus>SetProperty(WidgetType,onlinealbum,home)</onfocus>
-            <onfocus>Runscript(script.extendedinfo,info=albuminfo,id=$INFO[Container(6010).ListItem.Property(Id)],silent=False)</onfocus>
-            <onfocus>SetFocus(6010)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-        </control>
         <control type="group">
             <animation effect="slide" start="0,-218" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" end="0,-218" time="240" delay="120" tween="quadratic">WindowClose</animation>
