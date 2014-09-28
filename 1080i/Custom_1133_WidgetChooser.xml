@@ -266,30 +266,6 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>$LOCALIZE[31081]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,recentmusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31081])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmusicvideos&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(MusicVideos)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31091]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,randommusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31091])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommusicvideos&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(MusicVideos)</visible>
-                        </item>
-                        <item>
-                            <label>31712</label>
-                            <onclick>SetProperty(CustomYesNoDialog,watchlistmusicvideos,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31712])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmusicvideos&amp;reload=10&amp;limit=10)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(MusicVideos)</visible>
-                        </item>
-                        <item>
                             <label>Movie Smart Playlist</label>
                             <onclick>SetProperty(CustomYesNoDialog,movies,skinsettings)</onclick>
                             <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://videoplaylists)</onclick>
@@ -567,6 +543,13 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
+                            <label>Youtube Top Music Videos</label>
+                            <onclick>SetProperty(CustomYesNoDialog,musicvideos,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Youtube Top Music Videos)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeplaylist&amp;&amp;id=FgquLnL59alCl_2TQvOiD5Vgm1hCaGSI)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
                             <label>Albums Smart Playlist</label>
                             <onclick>SetProperty(CustomYesNoDialog,albums,skinsettings)</onclick>
                             <onclick>Skin.SetFile($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,.xsp,special://musicplaylists)</onclick>
@@ -579,6 +562,30 @@
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Music Addons)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,addons://sources/audio/)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                       <item>
+                            <label>$LOCALIZE[31081]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,recentmusicvideos,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31081])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recentmusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(MusicVideos)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31091]</label>
+                            <onclick>SetProperty(CustomYesNoDialog,randommusicvideos,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31091])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(MusicVideos)</visible>
+                        </item>
+                        <item>
+                            <label>31712</label>
+                            <onclick>SetProperty(CustomYesNoDialog,watchlistmusicvideos,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31712])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=recommendedmusicvideos&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(MusicVideos)</visible>
                         </item>
                     </content>
                 </control>
