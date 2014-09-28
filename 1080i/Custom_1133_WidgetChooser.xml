@@ -259,10 +259,10 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>Popular People</label>
-                            <onclick>SetProperty(CustomYesNoDialog,actors,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Popular People)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=popularpeople)</onclick>
+                            <label>Trending Movies</label>
+                            <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Trending Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=trendingmovies)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
@@ -834,7 +834,6 @@
                         </item>
                         <item>
                             <label>1036</label>
-                            <onclick>RunScript(script.favourites)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,favouriteIcon,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[1036])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=favourites)</onclick>
@@ -889,7 +888,13 @@
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=youtubeplaylist&amp;&amp;id=rEnWoR732-BHrPp_Pm8_VleD68f9s14-)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
-
+                        <item>
+                            <label>Popular People</label>
+                            <onclick>SetProperty(CustomYesNoDialog,actors,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Popular People)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=popularpeople)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
                     </content>
                 </control>
                 <control type="panel" id="9">

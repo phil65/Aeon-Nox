@@ -30,7 +30,7 @@
     <controls>
         <control type="group">
             <posy>-40</posy>
-            <visible>!Window.IsActive(script-RSS_Editor-rssEditor.xml) + !Window.IsActive(1137) + !Window.IsActive(1160) + !Window.IsActive(1162) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1146) + !Window.IsActive(1155) + !Window.IsVisible(DialogKeyboard.xml)</visible>
+            <visible>!Window.IsActive(script-RSS_Editor-rssEditor.xml) + !Window.IsActive(1137) + !Window.IsActive(1162) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1146) + !Window.IsActive(1155) + !Window.IsVisible(DialogKeyboard.xml)</visible>
             <include>Animation_DialogPopupVisibleChange</include>
             <control type="image">
                 <posx>456</posx>
@@ -41,7 +41,6 @@
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
             </control>
             <control type="image">
                 <posx>456</posx>
@@ -60,8 +59,6 @@
                     <aligny>center</aligny>
                     <scrolltime tween="sine">200</scrolltime>
                     <orientation>vertical</orientation>
-                    <visible>!Window.IsActive(1134)</visible>
-                    <include>Animation_VisibleChange200</include>
                     <control type="button">
                         <label>$LOCALIZE[467]:</label>
                         <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.Type)][/COLOR]</label2>
@@ -137,8 +134,6 @@
                     <aligny>center</aligny>
                     <scrolltime tween="sine">200</scrolltime>
                     <orientation>vertical</orientation>
-                    <visible>!Window.IsActive(1134)</visible>
-                    <include>Animation_VisibleChange200</include>
                     <control type="radiobutton" id="7">
                         <label>$LOCALIZE[24021]</label>
                         <include>Objects_CustomizerSettingsButton</include>
