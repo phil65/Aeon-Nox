@@ -415,7 +415,7 @@
         <value>special://skin/backgrounds/speakergrill.jpg</value>
     </variable>
     <variable name="MovieFanartVar">
-        <value condition="!IsEmpty(Window(Home).Property(Detail.Movie.1.Art(fanart))) + !Skin.HasSetting(NoVideoLibraryFanart) + [Container.Content(sets) | SubString(ListItem.Path,videodb://movies/sets/,left)]">$INFO[Control.GetLabel(4324)]</value>
+        <value condition="!IsEmpty(Window(Home).Property(Detail.Movie.1.Art(fanart))) + !Skin.HasSetting(NoVideoLibraryFanart) + [ListItem.IsFolder + !IsEmpty(ListItem.DBID))]">$INFO[Control.GetLabel(4324)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart) + !IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart)">special://skin/backgrounds/movies/</value>
         <value condition="!IsEmpty(ListItem.Art(extrafanart1)) + Skin.HasSetting(extrafanartmovies)">$INFO[Control.GetLabel(4325)]</value>
