@@ -5,15 +5,8 @@
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
     <onload>RunScript(script.favourites)</onload>
-    <onload>RunScript(script.extendedinfo,info=flickr)</onload>
-    <onload>RunScript(script.extendedinfo,info=NearEvents,info=incinema,info=trendingshows,info=trendingmovies,info=premiereshows)</onload>
-    <onload>RunScript(script.extendedinfo,info=NearEvents,prefix=Festivals,festivalsonly=true)</onload>
     <onload>RunScript(script.skin.info.service)</onload>
-    <onload>RunScript(script.metadata.actors,borntoday,10,random)</onload>
     <onload condition="Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onload>
-    <onload condition="System.HasAddon(plugin.image.mypicsdb)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
-    <onload condition="System.HasAddon(plugin.image.mypicsdb)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
-    <onload condition="System.HasAddon(script.games.rom.collection.browser)">RunScript(script.games.rom.collection.browser,limit=10)</onload>
     <onload condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onload>
     <animation type="WindowClose" reversible="false">
         <effect type="fade" start="100" end="0" time="640" />
