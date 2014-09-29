@@ -429,7 +429,7 @@
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(showcasecdart)</onclick>
                     <selected>Skin.HasSetting(showcasecdart)</selected>
-                    <visible>Container.Content(movies)</visible>
+                    <visible>Container.Content(movies) | Container.Content(sets)</visible>
                     <visible>[Substring(Window(home).Property(actualViewtype),Showcase) | [Stringcompare(Window(home).Property(actualViewtype),TriPanel) + !Stringcompare(Skin.String(TriPanelPosition),3)]]</visible>
                 </control>
                 <control type="radiobutton" id="16840">
