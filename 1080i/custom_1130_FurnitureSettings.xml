@@ -115,16 +115,11 @@
                     <onclick condition="Skin.HasSetting(classichome)">Skin.Reset(classichome)</onclick>
                     <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
                 </control>
-                <control type="button" id="456">
-                    <label>$LOCALIZE[31694]:</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$VAR[MainMenuFixedListVar][/COLOR]</label2>
+                <control type="radiobutton" id="456">
+                    <label>Endless List for Main Menu:</label>
                     <include>Objects_CommonSettingsButton</include>
-                    <onclick condition="!Skin.HasSetting(mainmenufixedlist) + !Skin.HasSetting(submenufixedlist)">Skin.SetBool(submenufixedlist)</onclick>
-                    <onclick condition="Skin.HasSetting(submenufixedlist)">Skin.SetBool(mainmenufixedlist)</onclick>
-                    <onclick condition="Skin.HasSetting(submenufixedlist)">Skin.Reset(submenufixedlist)</onclick>
-                    <onclick condition="Skin.HasSetting(mainmenufixedlist)">Skin.SetBool(submenufixedlist)</onclick>
-                    <onclick condition="Skin.HasSetting(mainmenufixedlist) + Skin.HasSetting(submenufixedlist)">Skin.Reset(submenufixedlist)</onclick>
-                    <onclick condition="Skin.HasSetting(mainmenufixedlist) + Skin.HasSetting(submenufixedlist)">Skin.Reset(mainmenufixedlist)</onclick>
+                    <onclick>Skin.ToggleSetting(mainmenufixedlist)</onclick>
+                    <selected>!Skin.HasSetting(mainmenufixedlist)</selected>
                     <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
                 </control>
                 <control type="radiobutton" id="457">
