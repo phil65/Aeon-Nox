@@ -69,13 +69,14 @@
         </control>
     </include>
     <include name="AddonBrowserButtons">
-        <control type="radiobutton" id="5">
-            <label>24063</label>
+        <control type="radiobutton" id="111">
+            <label>$INFO[Control.GetLabel(5)]</label>
             <include>Objects_MediaMenuButtonIcons</include>
             <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/AlarmClock.png</textureradioonfocus>
             <textureradioonnofocus colordiffuse="grey">special://skin/extras/BigIcons/AlarmClock.png</textureradioonnofocus>
-            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Lock.png</textureradioofffocus>
-            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/Lock.png</textureradiooffnofocus>
+            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/AlarmClock.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/AlarmClock.png</textureradiooffnofocus>
+            <onclick>SendClick(5)</onclick>
         </control>
         <control type="radiobutton" id="6">
             <label>25000</label>
