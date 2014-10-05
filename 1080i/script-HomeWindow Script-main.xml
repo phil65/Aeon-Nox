@@ -95,57 +95,51 @@
             <onfocus>SetFocus(9000)</onfocus>
         </control>
         <include>MainMenuCommonContent</include>
-        <!-- Fanart -->
+        <!--Fanart-->
         <control type="group">
-            <!--              <visible>![[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis)]]</visible>
- -->
+            <!--
+            <visible>![[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis)]]</visible>-->
             <control type="group">
                 <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-
-            <control type="multiimage">
-                <aspectratio align="center" aligny="top">scale</aspectratio>
-                <imagepath background="true" fallback="special://skin/backgrounds/videos">$VAR[HomeMainFanartVar]</imagepath>
-                <fadetime>600</fadetime>
-                <animation effect="fade" time="480">Visible</animation>
-                <animation effect="fade" time="480">Hidden</animation>
+                <control type="multiimage">
+                    <aspectratio align="center" aligny="top">scale</aspectratio>
+                    <imagepath background="true" fallback="special://skin/backgrounds/videos">$VAR[HomeMainFanartVar]</imagepath>
+                    <fadetime>600</fadetime>
+                    <animation effect="fade" time="480">Visible</animation>
+                    <animation effect="fade" time="480">Hidden</animation>
+                </control>
+                <include>InteractiveCasesBackground</include>
+                <include>LiveCDCasesbackground</include>
+                <include>LiveNoCasesbackground</include>
+                <include>cdwall-musicvisualisation</include>
+                <include>MovieWall</include>
+                <control type="image">
+                    <aspectratio align="center" aligny="top">scale</aspectratio>
+                    <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
+                    <fadetime>600</fadetime>
+                    <include>FullscreenDimensions</include>
+                </control>
+                <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
+                <control type="multiimage">
+                    <aspectratio align="center" aligny="top">scale</aspectratio>
+                    <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+                    <fadetime>600</fadetime>
+                    <visible>Player.HasAudio + Skin.HasSetting(artistslideshowhome)</visible>
+                    <include>Animation_VisibleChange400</include>
+                </control>
             </control>
-            <include>InteractiveCasesBackground</include>
-            <include>LiveCDCasesbackground</include>
-            <include>LiveNoCasesbackground</include>
-            <include>cdwall-musicvisualisation</include>
-            <include>MovieWall</include>
-            <control type="image">
-                <aspectratio align="center" aligny="top">scale</aspectratio>
-                <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
-                <fadetime>600</fadetime>
-                <include>FullscreenDimensions</include>
-            </control>
-            <!-- Music ExtraFanart -->
-            <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
-        <control type="multiimage">
-            <aspectratio align="center" aligny="top">scale</aspectratio>
-            <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-            <fadetime>600</fadetime>
-            <visible>Player.HasAudio + Skin.HasSetting(artistslideshowhome)</visible>
-            <include>Animation_VisibleChange400</include>
-        </control>
-                    </control>
-
-
             <include>CommonMediaPlayingBackground</include>
         </control>
-        <!-- Home Fullscreen Video -->
-
-            <control type="image">
+        <control type="image">
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChange400</include>
             <visible>IsEmpty(Window(home).Property(DisableWidgets)) | Control.IsVisible(8995)</visible>
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)]</visible>
-                 <texture>common/bgcolor.png</texture>
-                <include>FullscreenDimensions</include>
-                <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
-            </control>
+            <texture>common/bgcolor.png</texture>
+            <include>FullscreenDimensions</include>
+            <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+        </control>
         <control type="group">
             <visible>![Window.IsActive(1159) + IsEmpty(Window(home).Property(ShowMainMenu))]</visible>
             <include>Animation_VisibleChange400</include>
@@ -188,7 +182,7 @@
                     <include>Animation_OpenCloseZoom</include>
                     <control type="group">
                         <animation effect="zoom" end="80" center="960,520" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <!-- Submenu -->
+                        <!--Submenu-->
                         <control type="image">
                             <posx>935</posx>
                             <posy>613</posy>
@@ -196,8 +190,6 @@
                             <height>15</height>
                             <texture>arrowdown.png</texture>
                             <colordiffuse>white</colordiffuse>
-                            <!--                     <animation effect="slide" end="0,40" time="0" condition="[!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)]">Conditional</animation>
-     -->
                             <visible>Control.HasFocus(9000) + !Skin.HasSetting(showsubmenu) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
                             <animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                         </control>
@@ -217,7 +209,7 @@
                             </control>
                             <include>SubMenuFixedList</include>
                         </control>
-                        <!-- Home Menu Bar -->
+                        <!--Home Menu Bar-->
                         <control type="image">
                             <posy>453</posy>
                             <width>1920</width>
@@ -238,7 +230,7 @@
                             <include>Animation_VisibleChange400</include>
                             <visible>!Skin.HasSetting(DisableGlowbar) | Skin.HasSetting(classichome)</visible>
                         </control>
-                        <!-- Home Menu -->
+                        <!--Home Menu-->
                         <control type="button" id="8993">
                             <include>HiddenObject</include>
                             <onfocus>ClearProperty(PanelWidgetInfo,Home)</onfocus>
@@ -276,9 +268,8 @@
                     </control>
                 </control>
                 <!--Weather info-->
-                <!-- Music Info -->
-            </control>
-            <!-- Featured widget -->
+                <!--Music Info--></control>
+            <!--Featured widget-->
             <control type="group">
                 <visible>IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
                 <animation type="Visible">
