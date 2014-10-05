@@ -4,8 +4,7 @@
     <onload>ClearProperty(Budget,home)</onload>
     <onload>ClearProperty(SeasonDescription,home)</onload>
     <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID],silent=True)</onload>
-<!--     <onload condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=similar,type=tvshow,dbid=$INFO[ListItem.DBID],silent=True)</onload>
- -->    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
+    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(FanartZoom,movieinformation)</onunload>
     <allowoverlay>no</allowoverlay>
@@ -855,8 +854,8 @@
                                     <width>600</width>
                                     <height>30</height>
                                     <align>left</align>
-                                    <label>[COLOR white]$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E][/COLOR]$INFO[Window(Home).Property(NextAired.NextTitle),: ]</label>
-                                    <font>Font_Reg26_Caps</font>
+                                    <label>[UPPERCASE][COLOR white]$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E][/COLOR]$INFO[Window(Home).Property(NextAired.NextTitle),: ][/UPPERCASE]</label>
+                                    <font>Font_Reg26</font>
                                     <textcolor>grey</textcolor>
                                 </control>
                                 <control type="label">
@@ -865,8 +864,8 @@
                                     <width>600</width>
                                     <height>30</height>
                                     <align>left</align>
-                                    <label>$INFO[Window(Home).Property(NextAired.NextDate),[COLOR white],[/COLOR]: ]$INFO[Window(Home).Property(NextAired.ShortTime)]$INFO[Window(Home).Property(NextAired.Runtime), (, $LOCALIZE[12391])]</label>
-                                    <font>Font_Reg26_Caps</font>
+                                    <label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.NextDate),[COLOR white],[/COLOR]: ]$INFO[Window(Home).Property(NextAired.ShortTime)]$INFO[Window(Home).Property(NextAired.Runtime), (, $LOCALIZE[12391])][/UPPERCASE]</label>
+                                    <font>Font_Reg26</font>
                                     <textcolor>grey</textcolor>
                                 </control>
                             </control>
@@ -958,10 +957,10 @@
                             </item>
                             <item>
                                 <label>31172</label>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Actors)">RunScript(script.metadata.actors,$INFO[Container(50).Listitem.Label])</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">RunScript(script.metadata.actors,$INFO[ListItem.Director])</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Writer)">RunScript(script.metadata.actors,$INFO[ListItem.Writer])</onclick>
-                                <visible>System.HasAddon(script.metadata.actors)</visible>
+                                <onclick condition="Stringcopmare(Window(home).Property(ListType),Actors)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).Listitem.Label])</onclick>
+                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director])</onclick>
+                                <onclick condition="Stringcompare(Window(home).Property(ListType),Writer)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
+                                <visible>System.HasAddon(script.extendedinfo)</visible>
                                 <onclick>SetFocus(600)</onclick>
                             </item>
                             <item>
@@ -1126,7 +1125,7 @@
                         <label>$LOCALIZE[31925]</label>
                         <onclick>SetProperty(WidgetType,onlinemovie,home)</onclick>
                         <onclick condition="Container.Content(movies)">RunScript(script.extendedinfo,info=similarlocal,info=movielists,info=studio,info=set,dbid=$INFO[ListItem.DBID],studio=$INFO[ListItem.Studio],silent=False)</onclick>
-                        <onclick condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=studio,info=directormovies,info=writermovies,info=set,director=$INFO[ListItem.Director],writer=$INFO[ListItem.Writer],dbid=$INFO[ListItem.DBID],studio=$INFO[ListItem.Studio],type=show,silent=False)</onclick>
+                        <onclick condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=studio,info=directormovies,info=writermovies,director=$INFO[ListItem.Director],writer=$INFO[ListItem.Writer],dbid=$INFO[ListItem.DBID],studio=$INFO[ListItem.Studio],type=show,silent=False)</onclick>
                         <onclick>ActivateWindow(1166)</onclick>
                         <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
                     </control>
