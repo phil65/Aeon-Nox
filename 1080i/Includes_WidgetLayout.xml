@@ -2105,8 +2105,7 @@
                             <width>309</width>
                             <height>309</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">DefaultAddon.png</texture>
-                            <info>ListItem.Icon</info>
+                            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
                             <posx>159</posx>
@@ -2139,8 +2138,7 @@
                             <width>309</width>
                             <height>309</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">DefaultAddon.png</texture>
-                            <info>ListItem.Icon</info>
+                            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
                             <posx>159</posx>
@@ -4332,8 +4330,7 @@
                             <width>309</width>
                             <height>309</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">DefaultAddon.png</texture>
-                            <info>ListItem.Icon</info>
+                            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
                             <posx>159</posx>
@@ -4366,8 +4363,7 @@
                             <width>309</width>
                             <height>309</height>
                             <aspectratio aligny="top">scale</aspectratio>
-                            <texture background="true">DefaultAddon.png</texture>
-                            <info>ListItem.Icon</info>
+                            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
                             <posx>159</posx>
@@ -5541,7 +5537,7 @@
                         <height>30</height>
                         <align>center</align>
                         <font>Font_Info</font>
-                        <info>Window(weather).Property(Current.Condition)</info>
+                        <label>$INFO[Window(weather).Property(Current.Condition)]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="image">
@@ -5550,7 +5546,7 @@
                         <width>120</width>
                         <height>120</height>
                         <aspectratio align="center">keep</aspectratio>
-                        <info>Window(weather).Property(Current.ConditionIcon)</info>
+                        <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
                     </control>
                     <control type="label">
                         <posy>225</posy>
@@ -5575,7 +5571,7 @@
                         <align>center</align>
                         <font>Font_Bold34</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        <info>Window(weather).Property(Day0.Title)</info>
+                        <label>$INFO[Window(weather).Property(Day0.Title)]</label>
                     </control>
                     <control type="label">
                         <posx>38</posx>
@@ -5584,7 +5580,7 @@
                         <height>30</height>
                         <align>center</align>
                         <font>Font_Info</font>
-                        <info>Window(weather).Property(Day0.Outlook)</info>
+                        <label>$INFO[Window(weather).Property(Day0.Outlook)]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="image">
@@ -5858,10 +5854,10 @@
             </control>
         </control>
     </include>
-    <include name="NavigationWidget2">     
-        <onup>SetFocus(9000)</onup>        
-        <ondown condition="!Skin.HasSetting(lowermainmenu) | !Control.IsVisible(4444)">9000</ondown>       
-        <ondown condition="Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>     
-        <onback>9000</onback>      
+    <include name="NavigationWidget2">
+        <onup>SetFocus(9000)</onup>
+        <ondown condition="!Skin.HasSetting(lowermainmenu) | !Control.IsVisible(4444)">9000</ondown>
+        <ondown condition="Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
+        <onback>9000</onback>
     </include>
     </includes>
