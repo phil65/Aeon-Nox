@@ -19,96 +19,37 @@
             <width>462</width>
             <height max="1080">auto</height>
             <control type="button" id="2001">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>$VAR[ContextMenuLabel2001]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
                 <onclick>RunScript(script.metadata.actors,$ESCINFO[ListItem.Label])</onclick>
                 <visible>System.HasAddon(script.metadata.actors)</visible>
                 <visible>Container.Content(Actors) | Container.Content(Directors) | Container.Content(Artists)</visible>
             </control>
             <control type="button" id="2066">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>31030</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
                 <onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
                 <visible>System.HasAddon(script.libraryeditor) + !IsEmpty(ListItem.DBID) + !SubString(ListItem.Path,videodb://movies/sets)</visible>
                 <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
             </control>
             <!--            <control type="button" id="2067">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>Delete</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
-                <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
                 <onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=delete&amp;type=Song)</onclick>
                 <visible>System.HasAddon(script.libraryeditor) + !IsEmpty(ListItem.DBID)</visible>
                 <visible>Container.Content(songs)</visible>
             </control> -->
             <control type="button" id="2009">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>$LOCALIZE[31096]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
                 <visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(actors) | Container.Content(directors)</visible>
                 <onclick condition="Container.Content(albums) | Container.Content(songs)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Label],home)</onclick>
                 <onclick condition="Container.Content(artists) | Container.Content(actors) | Container.Content(directors)">SetProperty(listcontent,$INFO[ListItem.Label],home)</onclick>
                 <onclick>ActivateWindow(1168)</onclick>
             </control>
-<!--             <control type="button" id="2011">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
-                <label>31033</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
-                <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
-                <visible>Container.Content(albums) | Container.Content(songs) | Substring(ListItem.FolderPath,.xsp,right) | Substring(ListItem.FolderPath,.m3u,right)</visible>
-                <onclick condition="Container.Content(albums)">Skin.SetString(Startup_Playlist_Path,RunScript(script.playalbum,albumid=$INFO[ListItem.DBID]))</onclick>
-                <onclick condition="Container.Content(songs)">Skin.SetString(Startup_Playlist_Path,RunScript(script.playalbum,songid=$INFO[ListItem.DBID]))</onclick>
-                <onclick condition="Substring(ListItem.FolderPath,.xsp,right) | Substring(ListItem.FolderPath,.m3u,right)">Skin.SetString(Startup_Playlist_Path,$ESCINFO[ListItem.FolderPath])</onclick>
-                <onclick>Skin.SetBool(Use_Startup_Playlist)</onclick>
-            </control> -->
             <control type="button" id="2017">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>$VAR[ContextMenuTrailerButtonLabelVar]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
                 <visible>Container.Content(movies) | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]</visible>
                 <onclick condition="Container.Content(movies) + !IsEmpty(ListItem.Trailer)">Dialog.Close(106)</onclick>
                 <onclick condition="Container.Content(movies) + !IsEmpty(ListItem.Trailer)">SetFocus(7566)</onclick>
@@ -117,45 +58,21 @@
                 <onclick condition="!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)">PlayMedia($ESCINFO[Window.Property(SongToMusicVideo.Path)])</onclick>
             </control>
             <control type="button" id="2010">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>518</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
                 <visible>Window.IsActive(addonbrowser) + [Substring(ListItem.Property(Addon.ID),script.,left) | Substring(ListItem.Property(Addon.ID),plugin.,left)]</visible>
                 <onclick condition="Substring(ListItem.Property(Addon.ID),script.,left)">Runscript($INFO[ListItem.Property(Addon.ID)])</onclick>
                 <onclick condition="Substring(ListItem.Property(Addon.ID),plugin.,left)">RunAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
             </control>
             <control type="button" id="2070">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>$LOCALIZE[31941]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
                 <visible>!IsEmpty(ListItem.PictureGPSLon)</visible>
                 <onclick>RunScript(script.maps.browser,location=geocode,lat=$INFO[ListItem.PictureGPSLat],lon=$INFO[ListItem.PictureGPSLon])</onclick>
             </control>
             <control type="button" id="2071">
-                <width>462</width>
-                <height>58</height>
-                <textoffsety>12</textoffsety>
-                <align>center</align>
-                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
-                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+                <include>ContextMenuButton</include>
                 <label>Search for Concerts</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>context</textcolor>
-                <focusedcolor>white2</focusedcolor>
                 <visible>Container.Content(artists)</visible>
                 <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
             </control>
@@ -171,6 +88,9 @@
             <posy>585</posy>
             <width>462</width>
             <height>40</height>
+<!--             <animation effect="slide" start="0,0" end="0,-58" time="0" condition="!Control.IsVisible(2001)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-58" time="0" condition="!Control.IsVisible(2066)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-58" time="0" condition="!Control.IsVisible(2009)">Conditional</animation> -->
             <texture>$VAR[ContextBottomVar]</texture>
             <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
         </control>

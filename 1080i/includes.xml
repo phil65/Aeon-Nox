@@ -408,6 +408,17 @@
         <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlowAlt</include>
         <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlowAlt</include>
     </include>
+        <include name="ContextMenuButton">
+                <width>462</width>
+                <height>58</height>
+                <textoffsety>12</textoffsety>
+                <align>center</align>
+                <font>Font_Reg30_2</font>
+                <textcolor>context</textcolor>
+                <focusedcolor>white2</focusedcolor>
+                <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/context_highlight.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/context_nofocus.png</texturenofocus>
+        </include>
     <include name="Objects_ShutdownMenuButton">
         <width>550</width>
         <height>75</height>
