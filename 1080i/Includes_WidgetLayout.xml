@@ -1885,46 +1885,6 @@
             </control>
         </control>
     </include>
-    <include name="ClassicWidgetPlayItems">
-        <item>
-            <label>$LOCALIZE[208]</label>
-            <onclick condition="Substring(Window(home).Property(WidgetType),artist)">ActivateWindow(musiclibrary,musicdb://artists/$INFO[Window(home).Property(DBID)]/,return)</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),album)">Playlist.Clear</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),movies)">Runscript(service.skin.widgets,movieid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),tv)">Runscript(service.skin.widgets,episodeid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),musicvideo)">Runscript(service.skin.widgets,musicvideoid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
-            <onclick condition="!Substring(Window(home).Property(WidgetType),artist) + !Substring(Window(home).Property(WidgetType),addons) + !Substring(Window(home).Property(WidgetType),artists) + !Substring(Window(home).Property(WidgetType),rss) + !Substring(Window(home).Property(WidgetType),roms) + !Substring(Window(home).Property(WidgetType),musicvideo) + !Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),movie)">$INFO[Window(home).Property(Path)]</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),addons)">RunAddon($INFO[Window(home).Property(Path)])</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),rss)">PlayMedia($ESCINFO[Window(home).Property(Path)])</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),actor)">RunScript(script.metadata.actors,$ESCINFO[Window(home).Label])</onclick>
-            <onclick condition="Substring(Window(home).Property(WidgetType),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Window(home).Property(Id)])</onclick>
-        </item>
-        <item>
-            <label>$LOCALIZE[13404] $INFO[Window(home).Property(PercentPlayed),(,)]</label>
-            <onclick>$INFO[Window(home).Property(Path)]</onclick>
-            <visible>!IsEmpty(Window(home).Property(DBID)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
-        </item>
-        <item>
-            <label>$LOCALIZE[20410]</label>
-            <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)])</onclick>
-            <visible>!IsEmpty(Window(home).Property(Trailer))</visible>
-        </item>
-        <item>
-            <label>$LOCALIZE[31925]</label>
-            <!--
-            <onclick>RunScript(script.extendedinfo,info=movielists,id=$INFO[Window(home).Property(ID)],silent=False)</onclick>-->
-            <onclick condition="IsEmpty(Window(home).Property(DBID))">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],id=$INFO[Window(home).Property(ID)],type=movie,silent=False)</onclick>
-            <onclick condition="!IsEmpty(Window(home).Property(DBID))">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=set,info=studio,info=similarmovies,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],setid=$INFO[Window(home).Property(SetId)],dbid=$INFO[Window(home).Property(DBID)],type=movie,silent=False)</onclick>
-            <onclick>Dialog.Close(1165)</onclick>
-            <onclick>ActivateWindow(1166)</onclick>
-            <visible>Substring(Window(home).Property(WidgetType),movie)</visible>
-        </item>
-        <item>
-            <label>$LOCALIZE[31066]</label>
-            <onclick condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">SetFocus(8000)</onclick>
-            <onclick condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">SetFocus(7000)</onclick>
-        </item>
-    </include>
     <include name="HomePanelWidget">
         <control type="group" id="5000">
             <posx>135</posx>
