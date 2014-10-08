@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="114">
-    <defaultcontrol always="true">9011</defaultcontrol>
+    <defaultcontrol always="true">300</defaultcontrol>
     <onload>Dialog.Close(1121)</onload>
     <onload condition="Window.IsActive(script.pseudotv.TVOverlay.xml)">Dialog.Close(114)</onload>
-    <onunload>ClearProperty(quicknavsetup,home)</onunload>
     <controls>
         <include>DialogBackFade</include>
-        <control type="image">
-            <texture>common/bgcolor.png</texture>
-            <include>FullscreenDimensions</include>
-            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-            <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
-            <include>Animation_VisibleChange400</include>
-            <animation effect="fade" end="100" time="560">WindowOpen</animation>
-            <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
-        </control>
         <control type="group">
             <animation effect="slide" start="0,-730" end="0,-473" time="400" tween="cubic" delay="160">WindowOpen</animation>
             <animation effect="slide" end="0,-730" start="0,-473" time="400" tween="cubic" delay="160">WindowClose</animation>
-            <animation effect="slide" end="0,100" time="400" tween="cubic" delay="160" condition="Player.HasMedia">Conditional</animation>
             <animation effect="slide" end="0,-473" time="400" tween="cubic" delay="160" condition="Window.IsActive(1154)">Conditional</animation>
             <control type="group" id="300">
                 <control type="image">
@@ -28,116 +17,13 @@
                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                 </control>
                 <control type="group">
-                    <posy>355</posy>
-                    <visible>Player.HasVideo</visible>
-            <include>VideoOSD</include>
-
+                    <posy>465</posy>
+                    <include>VideoOSD</include>
                 </control>
                 <control type="group">
-                    <posy>355</posy>
+                    <posy>465</posy>
                     <visible>Player.HasAudio</visible>
                     <include>ClassicMusicOSD</include>
-                </control>
-                <control type="list" id="9011">
-                    <posy>472</posy>
-                    <width>1920</width>
-                    <height>135</height>
-                    <orientation>horizontal</orientation>
-                    <onleft>9012</onleft>
-                    <onup>652</onup>
-                    <ondown>Dialog.Close(114)</ondown>
-                    <onright>9012</onright>
-                    <focusposition>4</focusposition>
-                    <itemlayout height="225" width="208">
-                        <control type="image">
-                            <posx>63</posx>
-                            <width>88</width>
-                            <height>88</height>
-                            <texture>$INFO[ListItem.Thumb]</texture>
-                            <colordiffuse>white5</colordiffuse>
-                        </control>
-                        <control type="label">
-                            <posx>107</posx>
-                            <posy>29</posy>
-                            <width>213</width>
-                            <height>120</height>
-                            <align>center</align>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Reg30_Caps</font>
-                            <textcolor>grey2</textcolor>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout height="225" width="208">
-                        <control type="image">
-                            <width>213</width>
-                            <height>115</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                            <visible>Control.HasFocus(9011)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>63</posx>
-                            <width>88</width>
-                            <height>88</height>
-                            <texture>$INFO[ListItem.Thumb]</texture>
-                            <colordiffuse>white2</colordiffuse>
-                        </control>
-                        <control type="label">
-                            <posx>107</posx>
-                            <posy>29</posy>
-                            <width>213</width>
-                            <height>120</height>
-                            <align>center</align>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Reg30_Caps</font>
-                        </control>
-                    </focusedlayout>
-                    <content>
-                        <include>QuickNavContent</include>
-                    </content>
-                </control>
-                <control type="radiobutton" id="9012">
-                    <visible>!Skin.HasSetting(kioskmode)</visible>
-                    <posx>1874</posx>
-                    <posy>472</posy>
-                    <width>60</width>
-                    <height>115</height>
-                    <align>center</align>
-                    <radioposx>2</radioposx>
-                    <radioposy>5</radioposy>
-                    <radiowidth>45</radiowidth>
-                    <texturenofocus>-</texturenofocus>
-                    <textureradioon>special://skin/extras/BigIcons/Gears.png</textureradioon>
-                    <textureradiooff>special://skin/extras/BigIcons/ButtonStop.png</textureradiooff>
-                    <selected>IsEmpty(Window(home).Property(quicknavsetup))</selected>
-                    <label>-</label>
-                    <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
-                    <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
-                    <onclick condition="!IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
-                    <onup>652</onup>
-                    <ondown>Dialog.Close(114)</ondown>
-                    <onright>SetFocus(9011,0)</onright>
-                    <onright>9011</onright>
-                    <onleft>SetFocus(9011,20)</onleft>
-                    <onleft>9011</onleft>
-                    <visible>!Skin.HasSetting(kioskmode)</visible>
-                </control>
-                <control type="button" id="810">
-                    <include>HiddenObject</include>
-                    <onfocus>SetFocus(9011)</onfocus>
-                    <onfocus>Action(Close)</onfocus>
-                    <onfocus>$INFO[Container(9011).ListItem.Property(Path)]</onfocus>
-                    <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
-                </control>
-                <control type="button" id="810">
-                    <include>HiddenObject</include>
-                    <onfocus>SetFocus(9011)</onfocus>
-                    <onfocus>Skin.Setstring(ItemToEdit.Label,$ESCINFO[Container(9011).ListItem.Label])</onfocus>
-                    <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$ESCINFO[Container(9011).ListItem.Thumb])</onfocus>
-                    <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(9011).ListItem.Property(DisableIcon)])</onfocus>
-                    <onfocus>Skin.Setstring(ItemToEdit.Type,$INFO[Container(9011).ListItem.Property(Type)])</onfocus>
-                    <onfocus>Skin.Setstring(ItemToEdit.Path,$ESCINFO[Container(9011).ListItem.Property(Path)])</onfocus>
-                    <onfocus>ActivateWindow(1136)</onfocus>
-                    <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </control>
             </control>
         </control>
@@ -151,12 +37,12 @@
             <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
             <include>BottomProgressBar</include>
         </control>
-        <!--         <control type="group">
+        <control type="group">
             <posx>100</posx>
             <posy>-450</posy>
             <animation effect="slide" start="700,0" end="0,0" time="500" tween="cubic" delay="1000">WindowOpen</animation>
             <animation effect="slide" end="700,0" time="500" tween="cubic">WindowClose</animation>
             <include>NextTracksList</include>
-        </control> -->
+        </control>
     </controls>
 </window>
