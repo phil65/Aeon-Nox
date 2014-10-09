@@ -913,7 +913,7 @@
                             <onleft>7003</onleft>
                             <onright>8003</onright>
                             <ondown>Control.Move(8002,1)</ondown>
-                            <onclick>SendClick(8002)</onclick>
+                            <onclick>RunScript(script.maps.browser,eventid=$INFO[Container(8002).ListItem.Property(event_id)])</onclick>
                         </control>
                         <control type="wraplist" id="8002">
                             <width>550</width>
