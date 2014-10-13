@@ -30,27 +30,27 @@
             <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonShuffle.png</textureradioonfocus>
             <textureradioonnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonShuffle.png</textureradioonnofocus>
             <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonNoShuffle.png</textureradioofffocus>
-            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonNoShuffle.png</textureradiooffnofocus>    
+            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonNoShuffle.png</textureradiooffnofocus>
             <selected>Playlist.IsRandom</selected>
         </control>
-        <!--             <control type="button" id="26">
+        <!--
+        <control type="button" id="26">
             <label>$LOCALIZE[486]</label>
             <include>Objects_MediaMenuButtonIcons</include>
             <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/tf.png</textureradioon>
             <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/tf.png</textureradiooff>
-             <selected>Control.HasFocus(26)</selected>
+            <selected>Control.HasFocus(26)</selected>
             <visible>Window.IsActive(videoplaylist)</visible>
-        </control>    
-         -->
+        </control>-->
         <control type="radiobutton" id="26">
             <label>-</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <!-- to-do                                <texture>$VAR[RepeatImageVar]</texture>
- -->
-             <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonReload.png</textureradioonfocus>
+            <!--to-do
+            <texture>$VAR[RepeatImageVar]</texture>-->
+            <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonReload.png</textureradioonfocus>
             <textureradioonnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonReload.png</textureradioonnofocus>
             <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonRepeatOff.png</textureradioofffocus>
-            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonRepeatOff.png</textureradiooffnofocus>    
+            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonRepeatOff.png</textureradiooffnofocus>
             <selected>Playlist.IsRepeat | Playlist.IsRepeatOne</selected>
         </control>
         <control type="radiobutton" id="21">
@@ -161,9 +161,9 @@
             <include>Objects_MediaMenuButtonIcons</include>
             <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonCheck.png</textureradioon>
             <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/ButtonCheck.png</textureradiooff>
-            <!--             <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">$VAR[WatchedFilterImageVar]</textureradioon>
-            <textureradiooff colordiffuse="grey">$VAR[WatchedFilterImageVar]</textureradiooff>
- -->
+            <!--
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">$VAR[WatchedFilterImageVar]</textureradioon>
+            <textureradiooff colordiffuse="grey">$VAR[WatchedFilterImageVar]</textureradiooff>-->
             <selected>Control.HasFocus(10)</selected>
             <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
         </control>
@@ -173,8 +173,8 @@
             <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Key.png</textureradioon>
             <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Key.png</textureradiooff>
             <onclick>xbmc.mastermode</onclick>
-            <!--             <selected>system.ismaster</selected>
- -->
+            <!--
+            <selected>system.ismaster</selected>-->
             <selected>Control.HasFocus(11)</selected>
             <visible>system.haslocks</visible>
         </control>
@@ -295,64 +295,64 @@
             <animation type="WindowOpen">
                 <effect type="slide" start="-450" end="0" time="320" delay="800" tween="cubic" />
             </animation>
-        <control type="group">
-            <posx>-12</posx>
-            <posy>-38</posy>
-            <visible>!Skin.HasSetting(TopBarToolTip)</visible>
-            <include>Animation_VisibleChange200</include>
-            <animation effect="slide" end="-80" time="240" condition="[IsEmpty(ListItem.Trailer) + Skin.HasSetting(kioskmode)] |Control.HasFocus(109)">Conditional</animation>
-            <animation effect="slide" end="-181" time="320" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
-            <animation effect="slide" end="20" time="320" easing="in" tween="cubic" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
-            <control type="image">
-                <posx>404</posx>
-                <posy>425</posy>
-                <width>87</width>
-                <height>214</height>
-                <aspectratio>keep</aspectratio>
-                <texture>tooltip.png</texture>
-                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-            </control>
             <control type="group">
-                <animation effect="slide" end="0,-15" time="320" tween="cubic" condition="[[!IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]] + !Container.Scrolling">Conditional</animation>
+                <posx>-12</posx>
+                <posy>-38</posy>
+                <visible>!Skin.HasSetting(TopBarToolTip)</visible>
+                <include>Animation_VisibleChange200</include>
+                <animation effect="slide" end="-80" time="240" condition="[IsEmpty(ListItem.Trailer) + Skin.HasSetting(kioskmode)] |Control.HasFocus(109)">Conditional</animation>
+                <animation effect="slide" end="-181" time="320" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
+                <animation effect="slide" end="20" time="320" easing="in" tween="cubic" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
+                <control type="image">
+                    <posx>404</posx>
+                    <posy>425</posy>
+                    <width>87</width>
+                    <height>214</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>tooltip.png</texture>
+                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                </control>
+                <control type="group">
+                    <animation effect="slide" end="0,-15" time="320" tween="cubic" condition="[[!IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]] + !Container.Scrolling">Conditional</animation>
+                    <control type="image">
+                        <posx>415</posx>
+                        <posy>532</posy>
+                        <width>25</width>
+                        <height>25</height>
+                        <texture>defaulticons/DefaultFolderBack.png</texture>
+                        <animation effect="rotate" end="-90" center="auto" delay="240" time="640" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
+                        <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+                        <animation effect="rotate" start="-90" end="180" center="auto" delay="240" time="640" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
+                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                        <include>Animation_VisibleChange400</include>
+                        <visible>!ControlGroup(9000).HasFocus</visible>
+                    </control>
+                </control>
                 <control type="image">
                     <posx>415</posx>
                     <posy>532</posy>
                     <width>25</width>
                     <height>25</height>
-                    <texture>defaulticons/DefaultFolderBack.png</texture>
-                    <animation effect="rotate" end="-90" center="auto" delay="240" time="640" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
-                    <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="ControlGroup(9000).HasFocus">Conditional</animation>
-                    <animation effect="rotate" start="-90" end="180" center="auto" delay="240" time="640" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
+                    <texture flipx="true">defaulticons/DefaultFolderBack.png</texture>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <include>Animation_VisibleChange400</include>
-                    <visible>!ControlGroup(9000).HasFocus</visible>
+                    <visible>ControlGroup(9000).HasFocus</visible>
+                </control>
+                <control type="image">
+                    <posx>412</posx>
+                    <posy>550</posy>
+                    <width>32</width>
+                    <height>32</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>special://skin/extras/BigIcons/Film.png</texture>
+                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" start="100" end="60" time="1200" pulse="true" condition="true">conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" delay="400" condition="!Control.IsVisible(4051)">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="160" condition="[IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)] | [IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | Container.Scrolling">Conditional</animation>
+                    <visible>!ControlGroup(9000).HasFocus + [Window.IsActive(musiclibrary) | Window.IsActive(videos)]</visible>
                 </control>
             </control>
-            <control type="image">
-                <posx>415</posx>
-                <posy>532</posy>
-                <width>25</width>
-                <height>25</height>
-                <texture flipx="true">defaulticons/DefaultFolderBack.png</texture>
-                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
-                <visible>ControlGroup(9000).HasFocus</visible>
-            </control>
-            <control type="image">
-                <posx>412</posx>
-                <posy>550</posy>
-                <width>32</width>
-                <height>32</height>
-                <aspectratio>keep</aspectratio>
-                <texture>special://skin/extras/BigIcons/Film.png</texture>
-                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
-                <animation effect="fade" start="100" end="60" time="1200" pulse="true" condition="true">conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" delay="400" condition="!Control.IsVisible(4051)">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="160" condition="[IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)] | [IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | Container.Scrolling">Conditional</animation>
-                <visible>!ControlGroup(9000).HasFocus + [Window.IsActive(musiclibrary) | Window.IsActive(videos)]</visible>
-            </control>
-        </control>
             <control type="image">
                 <posx>-42</posx>
                 <width>462</width>
@@ -489,9 +489,10 @@
                     <label>13350</label>
                     <include>Objects_MediaMenuButtonIcons</include>
                     <selected>Control.HasFocus(612)</selected>
-                    <onclick>FullScreen</onclick>
+                    <onclick condition="Player.HasAudio">ActivateWindow(musicplaylist)</onclick>
+                    <onclick condition="Player.HasVideo">ActivateWindow(videoplaylist)</onclick>
                     <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
-                    <visible>!Window.IsVisible(MusicPlaylist) + !Window.IsVisible(VideoPlaylist)</visible>
+                    <visible>!Window.IsActive(MusicPlaylist) + !Window.IsActive(VideoPlaylist)</visible>
                 </control>
                 <control type="radiobutton" id="613" description="GoFullScreen">
                     <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Media2.png</textureradioon>
