@@ -18,6 +18,12 @@
                 </control>
                 <control type="group">
                     <posy>465</posy>
+                    <visible>VideoPlayer.Content(LiveTV)</visible>
+                    <include>FullScreenInfoBarLiveTV</include>
+                </control>
+                <control type="group">
+                    <posy>465</posy>
+                    <visible>Player.HasVideo + !VideoPlayer.Content(LiveTV)</visible>
                     <include>VideoOSD</include>
                 </control>
                 <control type="group">
