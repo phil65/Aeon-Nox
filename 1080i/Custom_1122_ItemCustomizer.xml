@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1122">
     <defaultcontrol always="true">4</defaultcontrol>
-    <onunload>SetProperty(SettingsFocusOffset,$INFO[Skin.String(ItemToEdit.Label)],home)</onunload>
+    <onunload>SetProperty(SettingsFocusOffset,$INFO[Window(home).Property(MenuItem)],home)</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].MultiFanart,$ESCINFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Label,$ESCINFO[Skin.String(ItemToEdit.Label)])</onunload>
@@ -189,8 +189,8 @@
                     <control type="button" id="35">
                         <label>Focus Item on Startup</label>
                         <include>Objects_CustomizerSettingsButton</include>
-                        <enable>!Stringcompare(Skin.String(CustomFocusOffset),Skin.String(ItemToEdit.Label))</enable>
-                          <onclick>Skin.SetString(CustomFocusOffset,$INFO[Skin.String(ItemToEdit.Label)])</onclick>
+                        <enable>!Stringcompare(Skin.String(CustomFocusOffset),Window(home).Property(MenuItem))</enable>
+                          <onclick>Skin.SetString(CustomFocusOffset,$INFO[Window(home).Property(MenuItem)])</onclick>
                     </control>
                     <control type="button" id="30">
                         <label>31808</label>
