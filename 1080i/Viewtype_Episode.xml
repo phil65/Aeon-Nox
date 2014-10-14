@@ -115,7 +115,7 @@
     <include name="EpisodeViewtypeMusicLayouts">
         <itemlayout width="950" height="90">
             <control type="label">
-                <posx>1325</posx>
+                <posx>1200</posx>
                 <posy>15</posy>
                 <width>126</width>
                 <height>90</height>
@@ -126,7 +126,7 @@
                 <visible>Container.Content(songs)</visible>
             </control>
             <control type="label">
-                <posx>1280</posx>
+                <posx>590</posx>
                 <width>690</width>
                 <height>45</height>
                 <align>right</align>
@@ -136,7 +136,7 @@
                 <textcolor>$VAR[TitleColorVar]</textcolor>
             </control>
             <control type="label">
-                <posx>1280</posx>
+                <posx>330</posx>
                 <posy>43</posy>
                 <width>950</width>
                 <height>45</height>
@@ -163,7 +163,7 @@
                     <effect type="fade" end="100" time="160" />
                 </animation>
                 <control type="label">
-                    <posx>1175</posx>
+                    <posx>1050</posx>
                     <posy>133</posy>
                     <width>126</width>
                     <height>90</height>
@@ -174,7 +174,7 @@
                     <visible>Container.Content(songs)</visible>
                 </control>
                 <control type="label">
-                    <posx>838</posx>
+                    <posx>13</posx>
                     <posy>22</posy>
                     <width>825</width>
                     <align>right</align>
@@ -186,7 +186,7 @@
                     <visible>!Container.Content(songs)</visible>
                 </control>
                 <control type="label">
-                    <posx>838</posx>
+                    <posx>13</posx>
                     <posy>22</posy>
                     <width>825</width>
                     <align>right</align>
@@ -198,7 +198,7 @@
                     <visible>Container.Content(songs)</visible>
                 </control>
                 <control type="label">
-                    <posx>838</posx>
+                    <posx>13</posx>
                     <posy>70</posy>
                     <width>825</width>
                     <height>90</height>
@@ -258,7 +258,7 @@
                 <animation effect="slide" end="0,-20" time="240" tween="cubic" easing="inout" condition="Container.Content(seasons)">Conditional</animation>
             </control>
             <control type="label">
-                <posx>1312</posx>
+                <posx>1272</posx>
                 <posy>25</posy>
                 <width>80</width>
                 <height>45</height>
@@ -453,7 +453,6 @@
                 <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
                 <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                 <bordersize>9</bordersize>
-                <visible>Container.Content(episodes)</visible>
             </control>
             <control type="image">
                 <posx>1305</posx>
@@ -463,7 +462,7 @@
                 <texture>$VAR[WatchedIconVar]</texture>
             </control>
             <control type="label">
-                <posx>1330</posx>
+                <posx>1290</posx>
                 <posy>90</posy>
                 <width>80</width>
                 <height>45</height>
@@ -471,7 +470,6 @@
                 <label>$INFO[ListItem.Episode]</label>
                 <font>Font_MainClassic4</font>
                 <textcolor>white</textcolor>
-                <visible>Container.Content(episodes)</visible>
             </control>
             <control type="group">
                 <posx>50</posx>
@@ -479,7 +477,7 @@
                     <effect type="fade" end="100" time="160" />
                 </animation>
                 <control type="label">
-                    <posx>838</posx>
+                    <posx>13</posx>
                     <posy>22</posy>
                     <width>825</width>
                     <align>right</align>
@@ -491,9 +489,9 @@
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>
                 <control type="label">
-                    <posx>838</posx>
+                    <posx>13</posx>
                     <posy>70</posy>
-                    <width>950</width>
+                    <width>825</width>
                     <height>90</height>
                     <align>right</align>
                     <aligny>bottom</aligny>
