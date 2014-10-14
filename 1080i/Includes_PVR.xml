@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="LiveTVChannelView">
-        
+
 		<!-- TV Channel View -->
         <control type="group">
             <visible>Control.IsVisible(11)</visible>
@@ -122,7 +122,7 @@
                 <include>TVViewLayout</include>
             </control>
         </control>
-     	
+
 		<!-- Radio Channel View -->
         <control type="group">
             <visible>Control.IsVisible(12)</visible>
@@ -222,7 +222,7 @@
                 <include>TVViewLayout</include>
             </control>
         </control>
-		
+
         <control type="scrollbar" id="70">
             <left>1843</left>
             <top>96</top>
@@ -235,8 +235,8 @@
             <right condition="Control.IsVisible(11)">11</right>
             <right condition="Control.IsVisible(12)">12</right>
         </control>
-    </include>	
-	
+    </include>
+
 	<!-- Small & Big Channels\Radio list -->
     <include name="TVViewLayout">
         <left>940</left>
@@ -252,7 +252,7 @@
                 <top>44</top>
                 <width>924</width>
                 <height>60</height>
-                <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                <texture border="5">osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="label">
                 <visible>stringcompare(Window(home).Property(PVR_AvailChannels),all) | stringcompare(Window(home).Property(PVR_AvailChannels),)</visible>
@@ -489,7 +489,7 @@
                 <top>44</top>
                 <width>924</width>
                 <height>60</height>
-                <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                <texture border="5">osd/osd_settings_buttonnf.png</texture>
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
@@ -868,9 +868,9 @@
 			</control>
         </focusedlayout>
     </include>
-	
-	
-	
+
+
+
     <include name="LiveTVRecordingsView">
         <control type="group">
             <visible>Control.IsVisible(13)</visible>
@@ -942,7 +942,7 @@
                         <top>44</top>
                         <width>924</width>
                         <height>60</height>
-                        <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                        <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                     <control type="image">
@@ -985,7 +985,7 @@
                         <top>44</top>
                         <width>924</width>
                         <height>60</height>
-                        <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                        <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                     <control type="image">
@@ -1034,7 +1034,7 @@
                         <top>24</top>
                         <width>924</width>
                         <height>40</height>
-                        <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                        <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                     <control type="image">
@@ -1071,7 +1071,7 @@
                         <top>24</top>
                         <width>924</width>
                         <height>40</height>
-                        <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                        <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                     <control type="image">
@@ -1121,7 +1121,7 @@
             </control>
         </control>
     </include>
-    
+
 	<!-- EPG Timeline -->
 	<include name="EPGTimelineView">
         <control type="group">
@@ -1153,7 +1153,7 @@
                         <textoffsetx>10</textoffsetx>
                     </control>
                 </rulerlayout>
-                <channellayout height="60" width="400">                  
+                <channellayout height="60" width="400">
 					<control type="label">
                         <left>30</left>
                         <top>-2</top>
@@ -1455,7 +1455,7 @@
                 </control>
             </control>
         </control>
-    </include>   
+    </include>
     <include name="LiveTVGuideChannelView">
         <control type="group">
             <visible>Control.IsVisible(15)</visible>
@@ -1496,7 +1496,7 @@
                     <left>-45</left>
                     <width>1760</width>
                     <height>60</height>
-                    <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="list" id="15">
                     <top>60</top>
@@ -1513,7 +1513,7 @@
                             <left>-45</left>
                             <width>1760</width>
                             <height>60</height>
-                            <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                            <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="label">
                             <left>3</left>
@@ -1569,7 +1569,7 @@
                             <left>-45</left>
                             <width>1760</width>
                             <height>60</height>
-                            <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                            <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="image">
                             <left>0</left>
@@ -2156,7 +2156,7 @@
                     <left>-45</left>
                     <width>1760</width>
                     <height>60</height>
-                    <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="list" id="14">
                     <top>60</top>
@@ -2173,7 +2173,7 @@
                             <left>-45</left>
                             <width>1760</width>
                             <height>60</height>
-                            <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                            <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="group">
                             <visible>IsEmpty(ListItem.Date)</visible>
@@ -2240,7 +2240,7 @@
                             <left>-45</left>
                             <width>1760</width>
                             <height>60</height>
-                            <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                            <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="image">
                             <left>0</left>
@@ -2341,7 +2341,7 @@
 			<width>1740</width>
             <visible>Control.IsVisible(17)</visible>
             <include>Animation_VisibleChange200</include>
-            <control type="group">    
+            <control type="group">
                 <control type="label">
                     <left>3</left>
                     <top>15</top>
@@ -2382,7 +2382,7 @@
                     <left>-45</left>
                     <width>1760</width>
                     <height>60</height>
-                    <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="list" id="17">
                     <top>60</top>
@@ -2399,7 +2399,7 @@
                             <left>-45</left>
                             <width>1760</width>
                             <height>60</height>
-                            <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                            <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="group">
                             <visible>IsEmpty(ListItem.Date)</visible>
@@ -2490,7 +2490,7 @@
                             <left>-45</left>
                             <width>1760</width>
                             <height>60</height>
-                            <texture border="1">osd/osd_settings_buttonnf.png</texture>
+                            <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="image">
                             <left>0</left>
@@ -2595,15 +2595,15 @@
             </control>
         </control>
     </include>
-    
-    
+
+
 	<!-- Main LiveTV Infobar -->
 	<include name="FullScreenInfoBarLiveTV">
         <animation effect="slide" time="400" start="0,200" easing="out" tween="back">WindowOpen</animation>
 		<animation effect="slide" time="400" end="0,200" delay="300" easing="in" tween="back">WindowClose</animation>
 		<animation effect="slide" time="400" start="0,200" easing="out" tween="back">Visible</animation>
 		<animation effect="slide" time="400" end="0,200" delay="300" easing="in" tween="back">Hidden</animation>
-		
+
 		<!-- Main background -->
 		<control type="group" id="1">
 			<top>785</top>
@@ -2632,15 +2632,15 @@
 				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
 			</control>
 		</control>
-		
-		
+
+
 		<!-- Channel logo -->
         <control type="group" id="1">
 			<animation effect="slide" time="400" start="-400,0" delay="300" easing="out" tween="back">Visible</animation>
 			<animation effect="slide" time="400" end="-400,0" easing="in" tween="back">Hidden</animation>
 			<animation effect="slide" time="400" start="-400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
 			<animation effect="slide" time="400" end="-400,0" easing="in" tween="back">WindowClose</animation>
-			
+
             <control type="image"> <!-- Logo background -->
 				<left>67</left>
 				<top>805</top>
@@ -2661,7 +2661,7 @@
                 <aspectratio>keep</aspectratio>
             </control>
         </control>
-		
+
 		<!-- Top Info (ChannelNr, Name, Date, Time & Back-end info) -->
         <control type="group" id="1">
             <control type="label" id="1">
@@ -2754,7 +2754,7 @@
 				</control>
 			</control>
         </control>
-        
+
 		<!-- Middle Info (Start\End times, Current\Next EPG, Progress-bar, Recording) -->
 		<control type="group" id="1">
 			<visible>VideoPlayer.HasEpg</visible>
@@ -2877,7 +2877,7 @@
                 <visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
             </control>
 		</control>
-		
+
 		<!-- Bottom right Info (Stream status, SNR & Signal, Time-shift) -->
 		<control type="group" id="1">
 			<control type="group" id="1">
@@ -2917,14 +2917,14 @@
                 </control>
             </control>
 		</control>
-		
+
 		<!-- Media flags -->
         <control type="group" id="1">
 			<animation effect="slide" time="400" start="400,0" delay="300" easing="out" tween="back">Visible</animation>
 			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">Hidden</animation>
 			<animation effect="slide" time="400" start="400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
 			<animation effect="slide" time="400" end="400,0" easing="in" tween="back">WindowClose</animation>
-			
+
             <posx>1550</posx>
             <posy>895</posy>
 			<height>140</height>
@@ -2956,7 +2956,7 @@
                 <texture>$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
 				<colordiffuse>white</colordiffuse>
             </control>
-			
+
             <control type="image" id="1">
                 <posx>50</posx>
                 <posy>52</posy>
@@ -2976,7 +2976,7 @@
 				<colordiffuse>white</colordiffuse>
             </control>
         </control>
-        
+
 		<!-- Encryption & Tuners -->
         <control type="group" id="1">
             <posx>65</posx>
@@ -3255,9 +3255,9 @@
             </control>
         </control>
     </include>
-	
-	
-	
+
+
+
 	<!-- Large channel list OSD (extended) -->
 	<include name="ChannelOSDExtended">
 		<left>60</left>
@@ -3315,7 +3315,7 @@
 		<include>ChannelInfoPanel</include>
 		<include>ChannelListLarge</include>
 	</include>
-	
+
 	<!-- Large channels list (right pane) -->
 	<include name="ChannelListLarge">
 		<control type="list" id="11">
@@ -3451,7 +3451,7 @@
 			</focusedlayout>
 		</control>
 	</include>
-	
+
 	<!-- Channel information pane (left pane) -->
 	<include name="ChannelInfoPanel">
 		<control type="group">
@@ -3579,7 +3579,7 @@
 		</control>
 	</include>
 
-	
+
 	<!-- Standard channel list OSD -->
 	<include name="ChannelOSDStandard">
             <left>1225</left>
