@@ -2016,45 +2016,30 @@
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>ClearProperty(Weather.CurrentView)</onclick>
                         <selected>IsEmpty(Window.Property(Weather.CurrentView))</selected>
-                        <animation type="VisibleChange">
-                            <effect type="fade" end="100" delay="320" time="160" />
-                        </animation>
                     </control>
                     <control type="radiobutton" id="303">
                         <label>33034</label>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>SetProperty(Weather.CurrentView,36hour)</onclick>
                         <selected>SubString(Window.Property(Weather.CurrentView),36hour)</selected>
-                        <animation type="VisibleChange">
-                            <effect type="fade" end="100" delay="320" time="160" />
-                        </animation>
                     </control>
                     <control type="radiobutton" id="304">
                         <label>33037</label>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>SetProperty(Weather.CurrentView,weekend)</onclick>
                         <selected>SubString(Window.Property(Weather.CurrentView),weekend)</selected>
-                        <animation type="VisibleChange">
-                            <effect type="fade" end="100" delay="320" time="160" />
-                        </animation>
                     </control>
                     <control type="radiobutton" id="305">
                         <label>33036</label>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>SetProperty(Weather.CurrentView,hourly)</onclick>
                         <selected>SubString(Window.Property(Weather.CurrentView),hourly)</selected>
-                        <animation type="VisibleChange">
-                            <effect type="fade" end="100" delay="320" time="160" />
-                        </animation>
                     </control>
                     <control type="radiobutton" id="306">
                         <label>$LOCALIZE[157]</label>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>SetProperty(Weather.CurrentView,videos)</onclick>
                         <selected>SubString(Window.Property(Weather.CurrentView),videos)</selected>
-                        <animation type="VisibleChange">
-                            <effect type="fade" end="100" delay="320" time="160" />
-                        </animation>
                         <visible>![IsEmpty(Window.Property(Video.1.Title)) + IsEmpty(Window.Property(Video.2.Title)) + IsEmpty(Window.Property(Video.3.Title)) + IsEmpty(Window.Property(MapList.1.MapLabel.1)) + IsEmpty(Window.Property(MapList.1.MapLabel.2)) + IsEmpty(Window.Property(MapList.1.MapLabel.3))]</visible>
                     </control>
                     <control type="radiobutton" id="308">
@@ -2062,9 +2047,6 @@
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>SetProperty(Weather.CurrentView,maps)</onclick>
                         <selected>SubString(Window.Property(Weather.CurrentView),maps)</selected>
-                        <animation type="VisibleChange">
-                            <effect type="fade" end="100" delay="320" time="160" />
-                        </animation>
                         <visible>SubString(Weather.Plugin,weather.wunderground)</visible>
                     </control>
                     <control type="button" id="1604">
