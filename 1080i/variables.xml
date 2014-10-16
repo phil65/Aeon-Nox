@@ -1378,7 +1378,7 @@
         <value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)">$INFO[ListItem.Rating,stars/,.png]</value>
     </variable>
     <variable name="BreadcrumbsLabel2Var">
-        <value condition="Stringcompare(Container.Folderpath,special://skin/extras/playlists/MoviesInProgress.xsp)"> / $LOCALIZE[31335]</value>
+        <value condition="Stringcompare(Container.Folderpath,special://skin/extras/Playlists/MoviesInProgress.xsp)"> / $LOCALIZE[31335]</value>
         <value>$INFO[Container.FolderName, / ]</value>
     </variable>
     <variable name="BreadcrumbsFilterVar">
@@ -1459,19 +1459,19 @@
     </variable>
     <variable name="FeaturedWidgetMiddleContentVar">
         <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5011.Content))">$INFO[Skin.String(FeaturedMovies5011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5011.Content))">$INFO[Skin.String(FeaturedTV5011.Content)]</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5011.Content))">$INFO[Skin.String(FeaturedMusic5011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
     </variable>
     <variable name="FeaturedWidgetRightContentVar">
         <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5012.Content))">$INFO[Skin.String(FeaturedMovies5012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">special://skin/extras/Playlists/recentmovies8.xsp</value>
         <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5012.Content))">$INFO[Skin.String(FeaturedTV5012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredtv)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
         <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5012.Content))">$INFO[Skin.String(FeaturedMusic5012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">special://skin/extras/Playlists/recentalbums8.xsp</value>
     </variable>
     <variable name="FeaturedWidget2LeftContentVar">
         <value condition="Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies6010.Content))">$INFO[Skin.String(FeaturedMovies6010.Content)]</value>
@@ -1483,19 +1483,19 @@
     </variable>
     <variable name="FeaturedWidget2MiddleContentVar">
         <value condition="Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies6011.Content))">$INFO[Skin.String(FeaturedMovies6011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
         <value condition="Substring(Control.GetLabel(4325),featuredtv) + !IsEmpty(Skin.String(FeaturedTV6011.Content))">$INFO[Skin.String(FeaturedTV6011.Content)]</value>
         <value condition="Substring(Control.GetLabel(4325),featuredtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4325),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic6011.Content))">$INFO[Skin.String(FeaturedMusic6011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
     </variable>
     <variable name="FeaturedWidget2RightContentVar">
         <value condition="Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies6012.Content))">$INFO[Skin.String(FeaturedMovies6012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">special://skin/extras/Playlists/recentmovies8.xsp</value>
         <value condition="Substring(Control.GetLabel(4325),featuredtv) + !IsEmpty(Skin.String(FeaturedTV6012.Content))">$INFO[Skin.String(FeaturedTV6012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredtv)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredtv)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
         <value condition="Substring(Control.GetLabel(4325),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic6012.Content))">$INFO[Skin.String(FeaturedMusic6012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/Playlists/recentalbums8.xsp</value>
     </variable>
     <variable name="HomeinfoPanelPosterVar">
         <value condition="!IsEmpty(Window(home).Property(poster))">$INFO[Window(home).Property(poster)]</value>
@@ -1808,17 +1808,17 @@
     <variable name="BackgroundContentVar">
         <value condition="Substring(Control.GetLabel(4322),randomartists)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),randomalbums)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),recentalbums)">plugin://service.library.data.provider?type=recentalbums&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),watchlistalbums)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),recentmovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),recentalbums)">special://skin/extras/Playlists/recentalbums8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),watchlistalbums)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),recentmovies)">special://skin/extras/Playlists/recentmovies8.xsp</value>
         <value condition="Substring(Control.GetLabel(4322),randommovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),watchlistmovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),recentmusicvideos)">special://skin/extras/playlists/recentmusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),randommusicvideos)">special://skin/extras/playlists/randommusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),watchlistmusicvideos)">special://skin/extras/playlists/recommendedmusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),watchlistmovies)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),recentmusicvideos)">special://skin/extras/Playlists/recentmusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),randommusicvideos)">special://skin/extras/Playlists/randommusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4322),watchlistmusicvideos)">special://skin/extras/Playlists/recommendedmusicvideos8.xsp</value>
         <value condition="Substring(Control.GetLabel(4322),randomtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4322),recentvideos)">plugin://service.library.data.provider?type=recentvideos&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),recenttv)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4322),recenttv)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
         <value condition="Substring(Control.GetLabel(4322),watchlisttv)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4322),flickr)">plugin://script.extendedinfo?info=flickr</value>
         <value condition="Substring(Control.GetLabel(4322),comingsoonmovies)">plugin://script.extendedinfo?info=comingsoon</value>
