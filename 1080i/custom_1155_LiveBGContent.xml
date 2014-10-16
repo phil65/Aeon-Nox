@@ -32,7 +32,7 @@
                 <height>60</height>
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
-                <label>33070</label>
+                <label>Live DVD Covers</label>
                 <font>Font_Bold33</font>
                 <disabledcolor>white2</disabledcolor>
                 <onclick>Dialog.Close(1155)</onclick>
@@ -40,7 +40,7 @@
             </control>
             <control type="button" id="7">
                 <posx>347</posx>
-                <posy>360</posy>
+                <posy>190</posy>
                 <width>1200</width>
                 <height>60</height>
                 <font>Font_Reg30_2</font>
@@ -59,7 +59,7 @@
             </control>
             <control type="radiobutton" id="8">
                 <posx>347</posx>
-                <posy>360</posy>
+                <posy>190</posy>
                 <width>1200</width>
                 <height>60</height>
                 <font>Font_Reg30_2</font>
@@ -75,7 +75,7 @@
             </control>
             <control type="panel" id="4">
                 <posx>347</posx>
-                <posy>480</posy>
+                <posy>300</posy>
                 <width>1200</width>
                 <height>900</height>
                 <aligny>center</aligny>
@@ -133,124 +133,126 @@
                 </focusedlayout>
                 <content>
                     <item>
+                        <label>Reset</label>
+                        <onclick>Skin.Reset(ItemToEdit.BackgroundOverlay)</onclick>
+                        <onclick>Dialog.Close(1155)</onclick>
+                    </item>
+                    <item>
                         <label>$LOCALIZE[31323]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserecentmovies)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(movies) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(movies)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31222]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserandommovies)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(movies) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(movies)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31335]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserecommendedmovies)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(movies) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(movies)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31464]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserecommendedtv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(tvshows) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(tvshows)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31324]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserecenttv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(tvshows) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(tvshows)</visible>
                     </item>
                     <item>
                         <label>Random Episodes</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserandomtv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(tvshows) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(tvshows)</visible>
                     </item>
                     <item>
                         <label>31081</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserecentmusicvideos)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(musicvideos) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(musicvideos)</visible>
                     </item>
                     <item>
                         <label>31091</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,dvdcaserandommusicvideos)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(musicvideos) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                        <visible>Library.HasContent(musicvideos)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31359]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,caserecentalbums)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(music) + Stringcompare(Window(Home).Property(LiveCasesType),CDs)</visible>
+                        <visible>Library.HasContent(music)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31068]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,caserandomalbums)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(music) + Stringcompare(Window(Home).Property(LiveCasesType),CDs)</visible>
+                        <visible>Library.HasContent(music)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31326]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,casemostplayedalbums)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(music) + Stringcompare(Window(Home).Property(LiveCasesType),CDs)</visible>
+                        <visible>Library.HasContent(music)</visible>
                     </item>
                     <item>
                         <label>31817</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocaserandomartists)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(music) + Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
+                        <visible>Library.HasContent(music)</visible>
                     </item>
                     <item>
                         <label>31220</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocaserandomtv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(tvshows) + Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
+                        <visible>Library.HasContent(tvshows)</visible>
                     </item>
                     <item>
                         <label>31324</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocaselatesttv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(tvshows) + Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
+                        <visible>Library.HasContent(tvshows)</visible>
                     </item>
                     <item>
                         <label>31464</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocaselatesttv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Library.HasContent(tvshows) + Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
+                        <visible>Library.HasContent(tvshows)</visible>
                     </item>
                     <item>
                         <label>31816</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocaserandompics)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>System.HasAddon(plugin.image.mypicsdb) + Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
+                        <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
                     </item>
                     <item>
                         <label>31815</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocaserecentpics)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>System.HasAddon(plugin.image.mypicsdb) + Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
+                        <visible>System.HasAddon(plugin.image.mypicsdb)</visible>
                     </item>
                     <item>
                         <label>$INFO[Window(home).Property(bigpictures.scraper.title)]</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocasethebigpicture)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
                     </item>
                     <item>
                         <label>31820</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocasedailybabes)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
                     </item>
                     <item>
                         <label>Today´s Babe</label>
                         <onclick>Skin.SetString(ItemToEdit.BackgroundOverlay,nocasedailybabes2)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
-                        <visible>Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
                     </item>
                     <item>
                         <label>Smart Playlist</label>
