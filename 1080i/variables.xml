@@ -918,8 +918,6 @@
         <value></value>
     </variable>
     <variable name="HomeMainFanartVar">
-        <value condition="Substring(Control.GetLabel(4322),case) + !IsEmpty(Skin.String(LiveBG))">$INFO[Skin.String(LiveBG)]</value>
-        <value condition="Substring(Control.GetLabel(4322),case)">special://skin/backgrounds/speakergrill.jpg</value>
         <value condition="Substring(Control.GetLabel(4322),wall)">common/bgcolor.png</value>
         <value condition="Control.IsVisible(8998) + !IsEmpty(Container(8000).ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(8000).ListItem.Art(fanart)]</value>
         <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
@@ -1805,40 +1803,44 @@
         <value condition="!IsEmpty(Window(home).Property(Widget2Content))">$INFO[Window(home).Property(Widget2Content)]</value>
         <value>plugin://script.extendedinfo?</value>
     </variable>
+    <variable name="LiveCasesVar">
+        <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.BackgroundOverlay)]</value>
+        <value condition="!IsEmpty(Container(9000).ListItem.Property(BackgroundOverlay))">$INFO[Container(9000).ListItem.Property(BackgroundOverlay)]</value>
+    </variable>
     <variable name="LiveCasesDVDContentVar">
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserandommovies,left)">plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserandomtv,left)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserecommendedmovies,left)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserecommendedtv,left)">special://skin/extras/Playlists/recommendedepisodes8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserecentmovies,left)">special://skin/extras/Playlists/recentmovies8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserecenttv,left)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserecentmusicvideos,left)">special://skin/extras/Playlists/recentmusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaserandommusicvideos,left)">special://skin/extras/Playlists/randommusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcasewatchlistmusicvideos,left)">special://skin/extras/Playlists/recommendedmusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcasecomingsoonmovies,left)">plugin://script.extendedinfo?info=comingsoon</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaseintheatersmovies,left)">plugin://script.extendedinfo?info=intheaters</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaseboxofficemovies,left)">plugin://script.extendedinfo?info=boxoffice</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcasetoprentalsmovies,left)">plugin://script.extendedinfo?info=toprentals</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaseopeningmovies,left)">plugin://script.extendedinfo?info=opening</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcasetrendingshows,left)">plugin://script.extendedinfo?info=trendingshows</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcasetrendingmovies,left)">plugin://script.extendedinfo?info=trendingmovies</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaseincinemasmovies,left)">plugin://script.extendedinfo?info=incinemas</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcaseupcomingmovies,left)">plugin://script.extendedinfo?info=upcoming</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcasepremiereshows,left)">plugin://script.extendedinfo?info=premiereshows</value>
-        <value condition="Substring(Control.GetLabel(4322),dvdcasetrailersmovies,left)">plugin://plugin.video.the.trailers/apple/movies/</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserandommovies,left)">plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserandomtv,left)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserecommendedmovies,left)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserecommendedtv,left)">special://skin/extras/Playlists/recommendedepisodes8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserecentmovies,left)">special://skin/extras/Playlists/recentmovies8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserecenttv,left)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserecentmusicvideos,left)">special://skin/extras/Playlists/recentmusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaserandommusicvideos,left)">special://skin/extras/Playlists/randommusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcasewatchlistmusicvideos,left)">special://skin/extras/Playlists/recommendedmusicvideos8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcasecomingsoonmovies,left)">plugin://script.extendedinfo?info=comingsoon</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaseintheatersmovies,left)">plugin://script.extendedinfo?info=intheaters</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaseboxofficemovies,left)">plugin://script.extendedinfo?info=boxoffice</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcasetoprentalsmovies,left)">plugin://script.extendedinfo?info=toprentals</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaseopeningmovies,left)">plugin://script.extendedinfo?info=opening</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcasetrendingshows,left)">plugin://script.extendedinfo?info=trendingshows</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcasetrendingmovies,left)">plugin://script.extendedinfo?info=trendingmovies</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaseincinemasmovies,left)">plugin://script.extendedinfo?info=incinemas</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcaseupcomingmovies,left)">plugin://script.extendedinfo?info=upcoming</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcasepremiereshows,left)">plugin://script.extendedinfo?info=premiereshows</value>
+        <value condition="Substring(Control.GetLabel(4328),dvdcasetrailersmovies,left)">plugin://plugin.video.the.trailers/apple/movies/</value>
     </variable>
     <variable name="LiveCasesKeepContentVar">
-        <value condition="SubString(Control.GetLabel(4322),nocasedailybabes2,left)">plugin://script.extendedinfo?info=dailybabe</value>
-        <value condition="SubString(Control.GetLabel(4322),nocasedailybabes,left)">plugin://script.extendedinfo?info=dailybabes</value>
-        <value condition="SubString(Control.GetLabel(4322),nocaserandomtv,left)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="SubString(Control.GetLabel(4322),nocaserecenttv,left)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="SubString(Control.GetLabel(4322),nocasewatchlisttv,left)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),nocaserandomartists,left)">special://skin/extras/Playlists/randomartists8.xsp</value>
+        <value condition="SubString(Control.GetLabel(4328),nocasedailybabes2,left)">plugin://script.extendedinfo?info=dailybabe</value>
+        <value condition="SubString(Control.GetLabel(4328),nocasedailybabes,left)">plugin://script.extendedinfo?info=dailybabes</value>
+        <value condition="SubString(Control.GetLabel(4328),nocaserandomtv,left)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="SubString(Control.GetLabel(4328),nocaserecenttv,left)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="SubString(Control.GetLabel(4328),nocasewatchlisttv,left)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4328),nocaserandomartists,left)">special://skin/extras/Playlists/randomartists8.xsp</value>
     </variable>
     <variable name="LiveCasesSquareContentVar">
-        <value condition="Substring(Control.GetLabel(4322),caserandomalbums,left)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),caserecentalbums,left)">special://skin/extras/Playlists/recentalbums8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),casewatchlistalbums,left)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),caserandomalbums,left)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
+        <value condition="Substring(Control.GetLabel(4328),caserecentalbums,left)">special://skin/extras/Playlists/recentalbums8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),casewatchlistalbums,left)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
     </variable>
     <variable name="BackgroundContentVar">
         <value condition="Substring(Control.GetLabel(4322),randomartists)">special://skin/extras/Playlists/randomartists8.xsp</value>

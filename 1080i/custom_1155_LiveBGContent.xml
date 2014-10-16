@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1155">
-    <defaultcontrol always="true">5</defaultcontrol>
+    <defaultcontrol always="true">4</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onunload>ClearProperty(LiveCasesType,Home)</onunload>
     <controls>
@@ -38,36 +38,6 @@
                 <onclick>Dialog.Close(1155)</onclick>
                 <enable>no</enable>
             </control>
-            <control type="button" id="5">
-                <posx>347</posx>
-                <posy>180</posy>
-                <width>1200</width>
-                <height>60</height>
-                <texturenofocus>button-nofocus.png</texturenofocus>
-                <label>571</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>grey2</textcolor>
-                <focusedcolor>white2</focusedcolor>
-                <onup>4</onup>
-                <ondown>6</ondown>
-                <onclick>Skin.Reset(LiveBG)</onclick>
-                <onclick>Dialog.Close(1155)</onclick>
-            </control>
-            <control type="button" id="6">
-                <posx>347</posx>
-                <posy>240</posy>
-                <width>1200</width>
-                <height>60</height>
-                <texturenofocus>button-nofocus.png</texturenofocus>
-                <label>1030</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>grey2</textcolor>
-                <focusedcolor>white2</focusedcolor>
-                <onup>5</onup>
-                <ondown>7</ondown>
-                <onclick>Skin.SetImage(LiveBG)</onclick>
-                <onclick>Dialog.Close(1155)</onclick>
-            </control>
             <control type="button" id="7">
                 <posx>347</posx>
                 <posy>360</posy>
@@ -102,34 +72,6 @@
                 <ondown>4</ondown>
                 <onclick>Skin.ToggleSetting(LiveBGCDCase)</onclick>
                 <selected>Skin.HasSetting(LiveBGCDCase)</selected>
-            </control>
-            <control type="button">
-                <posx>347</posx>
-                <posy>300</posy>
-                <width>1200</width>
-                <height>60</height>
-                <texturefocus>-</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <label>31702</label>
-                <font>Font_Bold33</font>
-                <disabledcolor>white2</disabledcolor>
-                <onclick>Skin.SetImage(LiveBG)</onclick>
-                <enable>no</enable>
-                <onclick>Dialog.Close(1155)</onclick>
-            </control>
-            <control type="button">
-                <posx>347</posx>
-                <posy>420</posy>
-                <width>1200</width>
-                <height>60</height>
-                <texturefocus>-</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <label>20333</label>
-                <font>Font_Bold33</font>
-                <disabledcolor>white2</disabledcolor>
-                <onclick>Skin.SetImage(LiveBG)</onclick>
-                <enable>no</enable>
-                <onclick>Dialog.Close(1155)</onclick>
             </control>
             <control type="panel" id="4">
                 <posx>347</posx>
@@ -311,10 +253,8 @@
                         <visible>Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
                     </item>
                     <item>
-                        <label>$INFO[Skin.String(SmartPlaylist1.Label)] ($INFO[Skin.String(SmartPlaylist1.Type)])</label>
-                        <onclick condition="IsEmpty(Window(Home).Property(LiveCasesType))">Skin.SetString(ItemToEdit.MultiFanart,dvdcasecustom1)</onclick>
-                        <onclick condition="Stringcompare(Window(Home).Property(LiveCasesType),CDs)">Skin.SetString(ItemToEdit.MultiFanart,casecustom1)</onclick>
-                        <onclick condition="Stringcompare(Window(Home).Property(LiveCasesType),Pics)">Skin.SetString(ItemToEdit.MultiFanart,nocasecustom1)</onclick>
+                        <label>Smart Playlist</label>
+                        <onclick>Skin.SetFile(ItemToEdit.BackgroundOverlay,.xsp,special://videoplaylists)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
                     </item>
                 </content>

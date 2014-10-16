@@ -12,6 +12,7 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2Title,$ESCINFO[Skin.String(ItemToEdit.Widget2Title)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].WidgetContent,$ESCINFO[Skin.String(ItemToEdit.WidgetContent)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2Content,$ESCINFO[Skin.String(ItemToEdit.Widget2Content)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].BackgroundOverlay,$ESCINFO[Skin.String(ItemToEdit.BackgroundOverlay)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Icon,$ESCINFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
@@ -22,6 +23,7 @@
     <onunload>SetProperty(Widget2Title,$INFO[Skin.String(ItemToEdit.Widget2Title)],home)</onunload>
     <onunload>SetProperty(Widget1Content,$INFO[Skin.String(ItemToEdit.WidgetContent)],home)</onunload>
     <onunload>SetProperty(Widget2Content,$INFO[Skin.String(ItemToEdit.Widget2Content)],home)</onunload>
+    <onunload>SetProperty(BackgroundOverlay,$INFO[Skin.String(ItemToEdit.BackgroundOverlay)],home)</onunload>
     <onload>SetProperty(WidgetTargetPrefix,ItemToEdit,skinsettings)</onload>
     <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>SetProperty(activewindow,home,home)</onunload>
@@ -172,32 +174,37 @@
                         <onclick>ActivateWindow(1134)</onclick>
                     </control>
                     <control type="button" id="27">
+                        <label>Background Overlay</label>
+                        <include>Objects_CustomizerSettingsButton</include>
+                        <onclick>ActivateWindow(1155)</onclick>
+                    </control>
+                    <control type="button" id="28">
                         <label>31703</label>
                         <include>Objects_CustomizerSettingsButton</include>
                         <onclick>ActivateWindow(1161)</onclick>
                     </control>
-                    <control type="button" id="270">
+                    <control type="button" id="29">
                         <label>31704</label>
                         <include>Objects_CustomizerSettingsButton</include>
                         <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=$INFO[Skin.String(ItemToEdit.SubMenu)])</onclick>
                     </control>
-                    <control type="button" id="28">
+                    <control type="button" id="30">
                         <label>31807</label>
                         <include>Objects_CustomizerSettingsButton</include>
                         <onclick>Skin.SetFile(ItemToEdit.Icon,.png|.bmp|.gif|.jpg|.jpeg|.ico,special://skin/extras/BigIcons)</onclick>
                     </control>
-                    <control type="button" id="35">
+                    <control type="button" id="31">
                         <label>Focus Item on Startup</label>
                         <include>Objects_CustomizerSettingsButton</include>
                         <enable>!Stringcompare(Skin.String(CustomFocusOffset),Window(home).Property(MenuItem))</enable>
                           <onclick>Skin.SetString(CustomFocusOffset,$INFO[Window(home).Property(MenuItem)])</onclick>
                     </control>
-                    <control type="button" id="30">
+                    <control type="button" id="32">
                         <label>31808</label>
                         <include>Objects_CustomizerSettingsButton</include>
                         <onclick>ActivateWindow(1151)</onclick>
                     </control>
-                    <control type="button" id="31">
+                    <control type="button" id="33">
                         <label>$LOCALIZE[31027]</label>
                         <include>Objects_CustomizerSettingsButton</include>
                         <onclick>Skin.Reset(ItemToEdit.Type)</onclick>
@@ -210,6 +217,7 @@
                         <onclick>Skin.Reset(ItemToEdit.Widget2)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Widget2Title)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Widget2Content)</onclick>
+                        <onclick>Skin.Reset(ItemToEdit.BackgroundOverlay)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Icon)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.Disable)</onclick>
                         <onclick>Skin.Reset(ItemToEdit.InfoLine)</onclick>
