@@ -923,7 +923,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <posx>1380</posx>
+                    <posx>1080</posx>
                     <posy>650</posy>
                     <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-35" end="-35" time="0" condition="true">Conditional</animation>
@@ -964,50 +964,6 @@
                         <width>276</width>
                         <height>380</height>
                         <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(7).VideoResolution]p.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1100</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(9).Art(poster)]$INFO[Container(30000).ListItem(9).Art(tvshow.poster)]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(9).VideoResolution]p.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>800</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="16" end="16" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>335</height>
-                        <fadetime>600</fadetime>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(10).Art(poster)]$INFO[Container(30000).ListItem(10).Art(tvshow.poster)]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-20</posy>
-                        <width>276</width>
-                        <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(10).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1276,62 +1232,6 @@
                         <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
-                <control type="group">
-                    <posx>1050</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>302</width>
-                        <height>302</height>
-                        <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(9).Thumb]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture>thumbs/boxes/cd_glass.png</texture>
-                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <texture>thumbs/boxes/cd_box_closed.png</texture>
-                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>600</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>302</width>
-                        <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30001).ListItem(10).Thumb]</texture>
-                        <fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
-                        <texture>thumbs/boxes/cd_glass.png</texture>
-                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                    <control type="image">
-                        <width>375</width>
-                        <height>342</height>
-                        <texture>thumbs/boxes/cd_box_closed.png</texture>
-                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
-                    </control>
-                </control>
             </control>
         </control>
     </include>
@@ -1468,36 +1368,6 @@
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30002).ListItem(8).Thumb]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1050</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30002).ListItem(9).Thumb]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>600</posx>
-                    <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>54</posx>
-                        <posy>17</posy>
-                        <width>400</width>
-                        <height>400</height>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30002).ListItem(10).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
