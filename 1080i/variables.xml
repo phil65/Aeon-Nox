@@ -146,7 +146,7 @@
     <variable name="VideoPlayerSeekVar">
         <value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">$LOCALIZE[31043]</value>
         <value condition="Player.Seeking">$LOCALIZE[773]</value>
-        <value condition="[Player.Paused + Player.Caching]">$LOCALIZE[15107] $INFO[Player.CacheLevel]%</value>
+        <value condition="Player.Paused + Player.Caching">$LOCALIZE[15107] $INFO[Player.CacheLevel]%</value>
         <value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">$LOCALIZE[773] $INFO[Player.SeekOffset]</value>
     </variable>
     <variable name="VideoPlayerForwardRewindVar">
@@ -2051,12 +2051,12 @@
         <value>$LOCALIZE[31043]</value>
     </variable>
     <variable name="MusicVizBackgroundVar">
-        <value condition="[Substring(Control.GetLabel(4322),recent,left) | Substring(Control.GetLabel(4322),random,left) | Substring(Control.GetLabel(4322),watchlist,left) | Substring(Control.GetLabel(4322),inprogress,left) | StringCompare(Control.GetLabel(4322),widgetfanart)]">$INFO[Control.GetLabel(4324)]</value>
+        <value condition="Substring(Control.GetLabel(4322),recent,left) | Substring(Control.GetLabel(4322),random,left) | Substring(Control.GetLabel(4322),watchlist,left) | Substring(Control.GetLabel(4322),inprogress,left) | StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Control.GetLabel(4324)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),weather)">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Weather.FanartCode]</value>
         <value>$INFO[Skin.String(MusicViz.MultiFanart)]</value>
     </variable>
     <variable name="MusicVizBackgroundVar">
-        <value condition="[Substring(Control.GetLabel(4322),recent,left) | Substring(Control.GetLabel(4322),random,left) | Substring(Control.GetLabel(4322),watchlist,left) | Substring(Control.GetLabel(4322),inprogress,left) | StringCompare(Control.GetLabel(4322),widgetfanart)]">$INFO[Control.GetLabel(4324)]</value>
+        <value condition="Substring(Control.GetLabel(4322),recent,left) | Substring(Control.GetLabel(4322),random,left) | Substring(Control.GetLabel(4322),watchlist,left) | Substring(Control.GetLabel(4322),inprogress,left) | StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Control.GetLabel(4324)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),weather)">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Weather.FanartCode]</value>
         <value>$INFO[Skin.String(MusicViz.MultiFanart)]</value>
     </variable>
