@@ -1797,11 +1797,13 @@
         <value condition="!IsEmpty(Window(home).Property(update))">-</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetContent)]</value>
         <value condition="!IsEmpty(Window(home).Property(Widget1Content))">$INFO[Window(home).Property(Widget1Content)]</value>
+        <value>plugin://script.extendedinfo?info=None</value>
     </variable>
     <variable name="Widget2ContentVar">
         <value condition="!IsEmpty(Window(home).Property(update))">-</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Content)]</value>
         <value condition="!IsEmpty(Window(home).Property(Widget2Content))">$INFO[Window(home).Property(Widget2Content)]</value>
+        <value>plugin://script.extendedinfo?info=None</value>
     </variable>
     <variable name="BackgroundContentVar">
         <value condition="Substring(Control.GetLabel(4322),randomartists)">bla</value>
@@ -2312,30 +2314,14 @@
         <value>$INFO[Skin.String(MusicViz.MultiFanart)]</value>
     </variable>
     <variable name="InfoPanelStyleVar">
-        <value condition="Control.IsVisible(501) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
-        <value condition="Control.IsVisible(503) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesLandscape)]</value>
-        <value condition="Control.IsVisible(508) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesBanners)]</value>
-        <value condition="Control.IsVisible(57) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShift)]</value>
-        <value condition="Control.IsVisible(501) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShowcaseMovies)]</value>
-        <value condition="Control.IsVisible(503) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsLandscape)]</value>
-        <value condition="Control.IsVisible(508) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsBanners)]</value>
-        <value condition="Control.IsVisible(57) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShift)]</value>
-        <value condition="Control.IsVisible(509) + Container.Content(artists)">$INFO[Skin.String(InfoPanelArtistsShowcaseSquare)]</value>
-        <value condition="Control.IsVisible(503) + Container.Content(artists)">$INFO[Skin.String(InfoPanelArtistsLandscape)]</value>
-        <value condition="Control.IsVisible(57) + Container.Content(artists)">$INFO[Skin.String(InfoPanelArtistsShift)]</value>
-        <value condition="Control.IsVisible(509) + Container.Content(albums)">$INFO[Skin.String(InfoPanelAlbumsShowcaseSquare)]</value>
-        <value condition="Control.IsVisible(503) + Container.Content(albums)">$INFO[Skin.String(InfoPanelAlbumsLandscape)]</value>
-        <value condition="Control.IsVisible(57) + Container.Content(albums)">$INFO[Skin.String(InfoPanelAlbumsShift)]</value>
+        <value condition="Container.Content(movies)">$INFO[Skin.String(InfoPanelMovies)]</value>
+        <value condition="Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShows)]</value>
+        <value condition="Container.Content(artists)">$INFO[Skin.String(InfoPanelArtists)]</value>
+        <value condition="Container.Content(albums)">$INFO[Skin.String(InfoPanelAlbums)]</value>
     </variable>
     <variable name="1112StyleVar">
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),Landscape) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesLandscape)]</value>
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),Banners) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesBanners)]</value>
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),Shift) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShift)]</value>
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShowcaseMovies)]</value>
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),Landscape) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsLandscape)]</value>
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),Banners) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsBanners)]</value>
-        <value condition="Stringcompare(Window(home).Property(actualViewtype),Shift) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShift)]</value>
+        <value condition="Container.Content(movies)">$INFO[Skin.String(InfoPanelMovies)]</value>
+        <value condition="Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShows)]</value>
     </variable>
     <variable name="LandscapeThumbSettingsVar">
         <value condition="Skin.HasSetting(LandscapeThumb)">$LOCALIZE[21371]</value>

@@ -158,6 +158,12 @@
                          <visible>SubString(Skin.String(ItemToEdit.Path),.xsp)</visible>
                          <onclick>Dialog.Close(1161)</onclick>
                     </item>
+                    <item>
+                        <label>Library Node</label>
+                        <onclick>Skin.SetString(ItemToEdit.InfoLine,custom)</onclick>
+                         <visible>SubString(Skin.String(ItemToEdit.Path),videodb://)</visible>
+                         <onclick>Dialog.Close(1161)</onclick>
+                    </item>
                 </content>
             </control>
         </control>
