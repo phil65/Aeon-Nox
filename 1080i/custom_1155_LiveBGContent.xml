@@ -192,7 +192,7 @@
                 <content>
                     <item>
                         <label>$LOCALIZE[31323]</label>
-                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcase)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaserecentmovies)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
                         <visible>Library.HasContent(movies) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
                     </item>
@@ -204,19 +204,25 @@
                     </item>
                     <item>
                         <label>$LOCALIZE[31335]</label>
-                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaseinprogress)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaserecommendedmovies)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
                         <visible>Library.HasContent(movies) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31464]</label>
-                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaserecommended)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaserecommendedtv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
                         <visible>Library.HasContent(tvshows) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[31324]</label>
-                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaseepisodes)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaserecenttv)</onclick>
+                        <onclick>Dialog.Close(1155)</onclick>
+                        <visible>Library.HasContent(tvshows) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
+                    </item>
+                    <item>
+                        <label>Random Episodes</label>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dvdcaserandomtv)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
                         <visible>Library.HasContent(tvshows) + IsEmpty(Window(Home).Property(LiveCasesType))</visible>
                     </item>
@@ -234,7 +240,7 @@
                     </item>
                     <item>
                         <label>$LOCALIZE[31359]</label>
-                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,case)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,caserecentalbums)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
                         <visible>Library.HasContent(music) + Stringcompare(Window(Home).Property(LiveCasesType),CDs)</visible>
                     </item>
@@ -252,7 +258,7 @@
                     </item>
                     <item>
                         <label>31817</label>
-                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,nocaseartists)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,nocaserandomartists)</onclick>
                         <onclick>Dialog.Close(1155)</onclick>
                         <visible>Library.HasContent(music) + Stringcompare(Window(Home).Property(LiveCasesType),Pics)</visible>
                     </item>

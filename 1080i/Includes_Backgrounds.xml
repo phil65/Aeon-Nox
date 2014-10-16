@@ -61,7 +61,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase2Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(2).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -87,7 +87,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase3Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(3).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -113,7 +113,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase5Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(5).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -139,7 +139,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase6Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(6).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -165,7 +165,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase4Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(4).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -191,7 +191,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase8Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(8).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -217,7 +217,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase7Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(7).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -243,7 +243,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase9Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(9).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -269,7 +269,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase10Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(10).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -295,7 +295,7 @@
                             <posy>-20</posy>
                             <width>276</width>
                             <height>380</height>
-                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase1Var]p.png</texture>
+                            <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(1).VideoResolution]p.png</texture>
                         </control>
                     </control>
                 </control>
@@ -905,6 +905,16 @@
         </control>
     </include>
     <include name="InteractiveCasesBackground">
+        <control type="list" id="30000">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout></focusedlayout>
+            <itemlayout></itemlayout>
+            <content>$VAR[LiveCasesDVDContentVar]</content>
+            <visible>Substring(Control.GetLabel(4322),dvdcase,left)</visible>
+        </control>
         <control type="group">
             <animation effect="fade" time="600">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
@@ -923,13 +933,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case2Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(2).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase2Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(2).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -945,13 +955,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case3Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(3).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase3Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(3).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -967,13 +977,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case5Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(5).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase5Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(5).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -989,13 +999,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case6Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(6).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase6Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(6).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1011,13 +1021,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case4Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(4).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase4Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(4).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1033,13 +1043,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case8Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(8).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase8Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(8).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1055,13 +1065,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case7Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(7).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase7Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(7).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1077,13 +1087,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case9Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(9).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase9Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(9).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1099,13 +1109,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case10Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(10).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase10Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(10).VideoResolution]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -1121,13 +1131,13 @@
                         <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[Case1Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$INFO[Container(30000).ListItem(1).Art(poster)]</texture>
                     </control>
                     <control type="image">
                         <posy>-20</posy>
                         <width>276</width>
                         <height>380</height>
-                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase1Var]p.png</texture>
+                        <texture fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$INFO[Container(30000).ListItem(1).VideoResolution]p.png</texture>
                     </control>
                 </control>
             </control>
@@ -1135,6 +1145,16 @@
     </include>
     <!-- CD Case -->
     <include name="LiveCDCasesbackground">
+        <control type="list" id="30000">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout></focusedlayout>
+            <itemlayout></itemlayout>
+            <content>$VAR[LiveCasesSquareContentVar]</content>
+            <visible>Substring(Control.GetLabel(4322),case,left)</visible>
+        </control>
         <control type="group">
             <animation effect="fade" time="600">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
@@ -1152,7 +1172,7 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase1Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(1).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -1179,7 +1199,7 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase2Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(2).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -1206,7 +1226,7 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase3Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(3).Thumb]</texture>
                         <fadetime>600</fadetime>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
@@ -1235,7 +1255,7 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase4Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(4).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -1262,7 +1282,7 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase5Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(5).Thumb]</texture>
                         <fadetime>600</fadetime>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
@@ -1291,7 +1311,7 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase6Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(6).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -1319,7 +1339,7 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase7Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(7).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -1347,7 +1367,7 @@
                         <width>302</width>
                         <fadetime>600</fadetime>
                         <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase8Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(8).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -1375,7 +1395,7 @@
                         <width>302</width>
                         <height>302</height>
                         <fadetime>600</fadetime>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase9Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(9).Thumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -1402,7 +1422,7 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase10Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(10).Thumb]</texture>
                         <fadetime>600</fadetime>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
@@ -1424,6 +1444,16 @@
         </control>
     </include>
     <include name="LiveNoCasesbackground">
+                <control type="list" id="30000">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout></focusedlayout>
+            <itemlayout></itemlayout>
+            <content>$VAR[LiveCasesKeepContentVar]</content>
+            <visible>Substring(Control.GetLabel(4322),nocase,left)</visible>
+        </control>
         <control type="group">
             <animation effect="fade" time="480">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
@@ -1441,7 +1471,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase1Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(1).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1455,7 +1485,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase2Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(2).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1470,7 +1500,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase3Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(3).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1485,7 +1515,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase4Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(4).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1500,7 +1530,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase5Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(5).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1515,7 +1545,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase6Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(6).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1530,7 +1560,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase7Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(7).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1545,7 +1575,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase8Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(8).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1560,7 +1590,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase9Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(9).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
@@ -1575,7 +1605,7 @@
                         <width>400</width>
                         <height>400</height>
                         <aspectratio scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase10Var]</texture>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$INFO[Container(30000).ListItem(10).Thumb]</texture>
                         <fadetime>600</fadetime>
                     </control>
                 </control>
