@@ -765,8 +765,9 @@
         <value condition="Stringcompare(Control.GetLabel(4326),shutdown)">[COLOR grey]$LOCALIZE[12390]:[/COLOR] $INFO[System.Uptime]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),nextaired)">[COLOR grey]$LOCALIZE[31329]:[/COLOR] $INFO[Window(Home).Property(NextAired.Total)][COLOR grey]  •  $LOCALIZE[33006]:[/COLOR] $INFO[Window(Home).Property(NextAired.TodayTotal)]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),system)">$INFO[System.memory(used.percent),[COLOR grey]$LOCALIZE[31309][/COLOR] ]$INFO[System.CPUUsage,[COLOR grey] • $LOCALIZE[13271][/COLOR] ]</value>
-        <value condition="Substring(Control.GetLabel(4326),custom,left)">[COLOR grey]$LOCALIZE[342]:[/COLOR] $INFO[Window(Home).Property(PlaylistCount)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(PlaylistUnWatched)][COLOR grey]  •  $LOCALIZE[31009]:[/COLOR] $INFO[Window(Home).Property(PlaylistInProgress)]</value>
-    </variable>
+        <value condition="Stringcompare(Control.GetLabel(4326),custommovies,left)">[COLOR grey]$LOCALIZE[342]:[/COLOR] $INFO[Window(Home).Property(PlaylistCount)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(PlaylistUnWatched)][COLOR grey]  •  $LOCALIZE[31009]:[/COLOR] $INFO[Window(Home).Property(PlaylistInProgress)]</value>
++       <value condition="StringCompare(Control.GetLabel(4326),customtv)">$INFO[Window(Home).Property(PlaylistCount),[COLOR grey]$LOCALIZE[20343]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistEpisodes),[COLOR grey]  |  $LOCALIZE[20360]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistEpisodesUnWatched),[COLOR grey]  |  $LOCALIZE[16101]:[/COLOR] ]</value>
++       <value condition="StringCompare(Control.GetLabel(4326),custommusicvideos)">$INFO[Window(Home).Property(PlaylistCount),[COLOR grey]$LOCALIZE[20389]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistWatched),[COLOR grey]  |  $LOCALIZE[16102]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistUnWatched),[COLOR grey]  |  $LOCALIZE[16101]:[/COLOR] ]$INFO[Window(Home).Property(PlaylistInProgress),[COLOR grey]  |  $LOCALIZE[575]:[/COLOR] ]</value>    </variable>
     <variable name="FurniturePositionVar">
         <value condition="Stringcompare(Window.Property(actualItem),LibraryStats) + Skin.HasSetting(totalshomehigh)">$LOCALIZE[393]</value>
         <value condition="Stringcompare(Window.Property(actualItem),MainMenu) + Skin.HasSetting(lowermainmenu)">$LOCALIZE[391]</value>
@@ -1836,7 +1837,7 @@
     <variable name="LiveCasesSquareContentVar">
         <value condition="Substring(Control.GetLabel(4328),caserandomalbums,left)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
         <value condition="Substring(Control.GetLabel(4328),caserecentalbums,left)">special://skin/extras/Playlists/recentalbums8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4328),casewatchlistalbums,left)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
+        <value condition="Substring(Control.GetLabel(4328),casemostplayedalbums,left)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
     </variable>
     <variable name="BackgroundContentVar">
         <value condition="Substring(Control.GetLabel(4322),randomartists)">special://skin/extras/Playlists/randomartists8.xsp</value>

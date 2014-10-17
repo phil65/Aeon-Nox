@@ -153,15 +153,21 @@
                         <onclick>Dialog.Close(1161)</onclick>
                     </item>
                     <item>
-                        <label>Smart Playlist</label>
-                        <onclick>Skin.SetString(ItemToEdit.InfoLine,custom)</onclick>
-                         <visible>SubString(Skin.String(ItemToEdit.Path),.xsp)</visible>
+                        <label>Movie Playlist Stats</label>
+                        <onclick>Skin.SetString(ItemToEdit.InfoLine,custommovies)</onclick>
+                         <visible>SubString(Skin.String(ItemToEdit.Path),.xsp) | SubString(Skin.String(ItemToEdit.Path),videodb://) | SubString(Skin.String(ItemToEdit.Path),library://)</visible>
                          <onclick>Dialog.Close(1161)</onclick>
                     </item>
                     <item>
-                        <label>Library Node</label>
-                        <onclick>Skin.SetString(ItemToEdit.InfoLine,custom)</onclick>
-                         <visible>SubString(Skin.String(ItemToEdit.Path),videodb://)</visible>
+                        <label>TV Show playlist stats</label>
+                        <onclick>Skin.SetString(ItemToEdit.InfoLine,customtv)</onclick>
+                         <visible>SubString(Skin.String(ItemToEdit.Path),.xsp) | SubString(Skin.String(ItemToEdit.Path),videodb://) | SubString(Skin.String(ItemToEdit.Path),library://)</visible>
+                         <onclick>Dialog.Close(1161)</onclick>
+                    </item>
+                    <item>
+                        <label>Music Video playlist stats</label>
+                        <onclick>Skin.SetString(ItemToEdit.InfoLine,custommusicvideos)</onclick>
+                         <visible>SubString(Skin.String(ItemToEdit.Path),.xsp) | SubString(Skin.String(ItemToEdit.Path),videodb://) | SubString(Skin.String(ItemToEdit.Path),library://)</visible>
                          <onclick>Dialog.Close(1161)</onclick>
                     </item>
                 </content>
