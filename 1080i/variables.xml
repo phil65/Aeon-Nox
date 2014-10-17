@@ -1379,10 +1379,6 @@
         <value condition="Stringcompare(Container.Folderpath,special://skin/extras/Playlists/MoviesInProgress.xsp)"> / $LOCALIZE[31335]</value>
         <value>$INFO[Container.FolderName, / ]</value>
     </variable>
-    <variable name="BreadcrumbsFilterVar">
-        <value condition="Container.Filtered">($LOCALIZE[587])</value>
-        <value condition="!Stringcompare(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)">$INFO[Control.GetLabel(10), (,)]</value>
-    </variable>
     <!--Breadcrumbs-->
     <variable name="BreadcrumbsVideoVar">
         <value condition="Container.Content(movies)">$LOCALIZE[20342]</value>

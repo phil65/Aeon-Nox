@@ -34,7 +34,7 @@
                 <visible>Skin.HasSetting(FadedTopBar)</visible>
             </control>
         </control>
-        <!--left widget -->
+        <!--left widget-->
         <control type="image">
             <posx>-140</posx>
             <width>794</width>
@@ -89,8 +89,14 @@
                 <visible>!Window.IsActive(PVR)</visible>
             </control>
             <control type="label">
-                <label>$VAR[BreadcrumbsFilterVar]</label>
+                <label>$INFO[Control.GetLabel(10), (,)]</label>
                 <include>BreadcrumbsLabel</include>
+                <visible>!Stringcompare(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
+            </control>
+            <control type="label">
+                <label>($LOCALIZE[587])</label>
+                <include>BreadcrumbsLabel</include>
+                <visible>Container.Filtered</visible>
             </control>
         </control>
     </include>
@@ -199,7 +205,7 @@
                 <animation effect="fade" end="100" time="0">Visible</animation>
                 <animation effect="fade" time="400">Hidden</animation>
             </control>
-            <!--right widget -->
+            <!--right widget-->
             <control type="image">
                 <posx>674r</posx>
                 <width>794</width>
@@ -253,7 +259,7 @@
                         <visible>!Stringcompare(Container.NumPages,1)</visible>
                     </control>
                     <control type="label">
-                        <label>$INFO[Container.CurrentPage]$INFO[Container.NumPages,/]       </label>
+                        <label>$INFO[Container.CurrentPage]$INFO[Container.NumPages,/]</label>
                         <include>BreadcrumbsLabel</include>
                         <visible>!Stringcompare(Container.NumPages,1)</visible>
                     </control>

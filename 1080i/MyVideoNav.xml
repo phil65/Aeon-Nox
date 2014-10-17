@@ -10,6 +10,9 @@
     <allowoverlay>no</allowoverlay>
     <views>50,52,53,57,500,501,503,550,508,509,510,511,512,514,516,518</views>
     <controls>
+        <control type="button" id="10">
+            <include>HiddenObject</include>
+        </control>
         <control type="fadelabel" id="4325">
             <posy>-10000</posy>
             <pauseatend>7500</pauseatend>
@@ -46,12 +49,13 @@
             <label>$INFO[Window(home).Property(Set.Movie.10.Art(clearlogo))]</label>
         </control>
         <control type="button" id="9900">
-            <!-- no info-->
+            <!--no info-->
             <include>HiddenObject</include>
             <visible>!Container.Content()</visible>
-            <!--             <visible>!SubString(ListItem.FolderPath,videodb://movies/sets/,left)</visible>
- -->
-            <!--             <visible>!SubString(Container.FolderPath,library://,left)</visible> -->
+            <!--
+            <visible>!SubString(ListItem.FolderPath,videodb://movies/sets/,left)</visible>-->
+            <!--
+            <visible>!SubString(Container.FolderPath,library://,left)</visible>-->
             <visible>!Stringcompare(ListItem.Label,..)</visible>
             <visible>!Container.Content(years)</visible>
             <visible>!Container.Content(genres)</visible>
@@ -77,7 +81,7 @@
             <include>InteractiveNodeCases</include>
             <include>NodeFadeLabels</include>
         </control>
-        <!-- view id = 516-->
+        <!--view id = 516-->
         <include condition="!Skin.HasSetting(DisableBigFanVL)">BigFan</include>
         <include>VideoBackground</include>
         <include condition="!Skin.HasSetting(DisableBigFanVL)">BigFanFurniture</include>
@@ -109,31 +113,31 @@
         <control type="group">
             <animation effect="slide" end="0,1045" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
             <control type="group">
-                <!-- view id = 50 -->
+                <!--view id = 50-->
                 <include>CommonRootView</include>
-                <!-- view id = 510 -->
+                <!--view id = 510-->
                 <include condition="IsEmpty(Skin.String(DisablePostersVL))">PostersViewList</include>
                 <include condition="IsEmpty(Skin.String(DisablePostersVL)) | IsEmpty(Skin.String(DisableTriPanelVL))">PostersView</include>
                 <!--view id = 52-->
                 <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanel</include>
-                <!-- view id = 53 -->
+                <!--view id = 53-->
                 <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanelSquare</include>
-                <!-- view id = 500 -->
+                <!--view id = 500-->
                 <include condition="IsEmpty(Skin.String(DisableWallVL))">Viewtype_Wall</include>
-                <!-- view id = 501 Showcase-->
+                <!--view id = 501 Showcase-->
                 <include condition="IsEmpty(Skin.String(DisableShowCaseVL))">Showcase</include>
-                <!-- view id = 508 Bannerview-->
+                <!--view id = 508 Bannerview-->
                 <include condition="IsEmpty(Skin.String(DisableBannersVL))">Banners</include>
-                <!-- view id = 503 Landscape-->
+                <!--view id = 503 Landscape-->
                 <include condition="IsEmpty(Skin.String(DisableLandscapeVL))">MediaListView3</include>
-                <!-- view id = 504 Showcase DVD-->
-                <!-- view id = 511 -->
+                <!--view id = 504 Showcase DVD-->
+                <!--view id = 511-->
                 <include condition="IsEmpty(Skin.String(DisableLowListVL))">LowList</include>
-                <!-- view id = 57-->
+                <!--view id = 57-->
                 <include condition="IsEmpty(Skin.String(DisableShiftVL))">ShiftView</include>
-                <!-- view id = 509-->
+                <!--view id = 509-->
                 <include condition="IsEmpty(Skin.String(DisableShowCaseSquareVL))">ShowcaseQuadrate</include>
-                <!-- view id = 512-->
+                <!--view id = 512-->
                 <include condition="IsEmpty(Skin.String(DisableInfoWallVL))">AddonWall</include>
                 <!--view id = 514-->
                 <include condition="IsEmpty(Skin.String(DisableEpisodeVL))">Viewtype_Episode</include>
@@ -162,7 +166,8 @@
                 <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="960,970" condition="Control.IsVisible(501) + Skin.HasSetting(showcasezoom)">Conditional</animation>
                 <animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="160,970" condition="Control.IsVisible(52) + Stringcompare(Skin.String(TriPanelPosition),2)">Conditional</animation>
                 <animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="960,970" condition="Control.IsVisible(52) + Stringcompare(Skin.String(TriPanelPosition),1)">Conditional</animation>
-                <!--             <animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="160,970" condition="Control.IsVisible(50)">Conditional</animation>-->
+                <!--
+                <animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="160,970" condition="Control.IsVisible(50)">Conditional</animation>-->
                 <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="460,985" condition="Control.IsVisible(52) + Stringcompare(Skin.String(TriPanelPosition),4)">Conditional</animation>
                 <animation type="WindowClose" reversible="false">
                     <effect type="fade" start="100" end="0" time="240" />

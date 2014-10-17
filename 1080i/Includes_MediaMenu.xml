@@ -155,8 +155,8 @@
             <selected>Control.HasFocus(16)</selected>
             <visible>Container.Content(musicvideos)</visible>
         </control>
-        <control type="radiobutton" id="10">
-            <label>-</label>
+        <control type="radiobutton" id="1330">
+            <label>$INFO[Control.GetLabel(10)]</label>
             <!--to do-->
             <include>Objects_MediaMenuButtonIcons</include>
             <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonCheck.png</textureradioon>
@@ -164,7 +164,8 @@
             <!--
             <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">$VAR[WatchedFilterImageVar]</textureradioon>
             <textureradiooff colordiffuse="grey">$VAR[WatchedFilterImageVar]</textureradiooff>-->
-            <selected>Control.HasFocus(10)</selected>
+            <onclick>SendClick(10)</onclick>
+            <selected>Control.HasFocus(1330)</selected>
             <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
         </control>
         <control type="radiobutton" id="11">
