@@ -8,7 +8,8 @@
     <onload condition="Stringcompare(Window(home).Property(activewindow),musicfiles)">ReplaceWindow(musicfiles)</onload>
     <onload condition="Stringcompare(Window(home).Property(activewindow),musicplaylist)">ReplaceWindow(musicplaylist)</onload>
     <onload condition="Stringcompare(Window(home).Property(activewindow),videoplaylist)">ReplaceWindow(videoplaylist)</onload>
-    <onload condition="Stringcompare(Window(home).Property(activewindow),home)">ReplaceWindow(home)</onload>
+    <onload condition="Stringcompare(Window(home).Property(activewindow),home)">ClearProperty(homewindowactive,home)</onload>
+    <onload condition="Stringcompare(Window(home).Property(activewindow),home)">ActivateWindow(home)</onload>
     <coordinates>
         <posx>0</posx>
         <posy>0</posy>
