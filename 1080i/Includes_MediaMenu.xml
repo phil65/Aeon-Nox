@@ -447,6 +447,27 @@
                     <onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader,mode=custom,mediatype=musicvideo,silent=true,poster,clearlogo,fanart,extrafanart)</onclick>
                     <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,silent=true,extrafanart,poster,fanart,banner,clearlogo,clearart,landscape,discart,extrathumbs)</onclick>
                 </control>
+                <control type="radiobutton" id="612" description="GoToPlaylist">
+                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/playlist.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/playlist.png</textureradiooff>
+                    <label>13350</label>
+                    <include>Objects_MediaMenuButtonIcons</include>
+                    <selected>Control.HasFocus(612)</selected>
+                    <onclick condition="Player.HasAudio">ActivateWindow(musicplaylist)</onclick>
+                    <onclick condition="Player.HasVideo">ActivateWindow(videoplaylist)</onclick>
+                    <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
+                    <visible>!Window.IsActive(MusicPlaylist) + !Window.IsActive(VideoPlaylist)</visible>
+                </control>
+                <control type="radiobutton" id="613" description="GoFullScreen">
+                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Media2.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Media2.png</textureradiooff>
+                    <label>FullScreen Media</label>
+                    <include>Objects_MediaMenuButtonIcons</include>
+                    <selected>Control.HasFocus(613)</selected>
+                    <onclick>FullScreen</onclick>
+                    <visible>Player.HasMedia</visible>
+                </control>
+                <include condition="!Skin.HasSetting(hideoptions) + [Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(videos)]">GeneralSettingsButton</include>
                 <control type="radiobutton" id="1665">
                     <label>$LOCALIZE[31171]</label>
                     <include>Objects_MediaMenuButtonIcons</include>
@@ -482,27 +503,6 @@
                     <onclick condition="Container.Content(addons)">SetProperty(Area,Addons,home)</onclick>
                     <onclick>ActivateWindow(1126)</onclick>
                     <visible>!Skin.HasSetting(hideoptions)</visible>
-                </control>
-                <include condition="!Skin.HasSetting(hideoptions) + [Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(videos)]">GeneralSettingsButton</include>
-                <control type="radiobutton" id="612" description="GoToPlaylist">
-                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/playlist.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/playlist.png</textureradiooff>
-                    <label>13350</label>
-                    <include>Objects_MediaMenuButtonIcons</include>
-                    <selected>Control.HasFocus(612)</selected>
-                    <onclick condition="Player.HasAudio">ActivateWindow(musicplaylist)</onclick>
-                    <onclick condition="Player.HasVideo">ActivateWindow(videoplaylist)</onclick>
-                    <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
-                    <visible>!Window.IsActive(MusicPlaylist) + !Window.IsActive(VideoPlaylist)</visible>
-                </control>
-                <control type="radiobutton" id="613" description="GoFullScreen">
-                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Media2.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Media2.png</textureradiooff>
-                    <label>FullScreen Media</label>
-                    <include>Objects_MediaMenuButtonIcons</include>
-                    <selected>Control.HasFocus(613)</selected>
-                    <onclick>FullScreen</onclick>
-                    <visible>Player.HasMedia</visible>
                 </control>
             </control>
             <include>QuickNavLabel</include>
