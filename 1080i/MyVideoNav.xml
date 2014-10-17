@@ -144,16 +144,17 @@
                 <include condition="IsEmpty(Skin.String(DisablePanelVL))">Panel</include>
                 <include condition="IsEmpty(Skin.String(DisableInfoPanelVL))">Viewtype_FullscreenPanel</include>
             </control>
-<!-- <control type="list" id="20000">
-             <posx>0</posx>
-            <posy>0</posy>
-            <width>1</width>
-            <height>1</height>
-            <orientation>horizontal</orientation>
-            <itemlayout></itemlayout>
-            <focusedlayout></focusedlayout>
-            <content>plugin://script.skin.info.service?dbid=$INFO[ListItem.DBID]&amp;label=$INFO[ListItem.Label]/</content>
-        </control> -->
+            <!--
+            <control type="list" id="20000">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1</width>
+                <height>1</height>
+                <orientation>horizontal</orientation>
+                <itemlayout></itemlayout>
+                <focusedlayout></focusedlayout>
+                <content>plugin://script.skin.info.service?dbid=$INFO[ListItem.DBID]&amp;label=$INFO[ListItem.Label]/</content>
+            </control>-->
             <control type="button" id="1970">
                 <include>HiddenObject</include>
                 <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
@@ -268,6 +269,41 @@
                     <visible>[[Skin.HasSetting(movielogosfloor) + Container.Content(movies)] | [Skin.HasSetting(tvshowlogosfloor) + Container.Content(tvshows)]]</visible>
                 </control>
             </control>
+<!--             <control type="grouplist" id="24000">
+                <posx>288</posx>
+                <posy>312</posy>
+                <width>1172</width>
+                <height>540</height>
+                <aligny>center</aligny>
+                <onup>440</onup>
+                <ondown>450</ondown>
+                <onright>24000</onright>
+                <onleft>24000</onleft>
+                <control type="togglebutton" id="24001">
+                    <label>A</label>
+                    <enable>Substring(Window(home).Property(LetterList),A)</enable>
+                    <include>Objects_LetterButton</include>
+                    <onclick>JumpSMS2</onclick>
+                </control>
+                <control type="togglebutton" id="24002">
+                    <label>B</label>
+                    <enable>Substring(Window(home).Property(LetterList),B)</enable>
+                    <include>Objects_LetterButton</include>
+                    <onclick>JumpSMS2</onclick>
+                </control>
+                <control type="togglebutton" id="24003">
+                    <label>C</label>
+                    <enable>Substring(Window(home).Property(LetterList),C)</enable>
+                    <include>Objects_LetterButton</include>
+                    <onclick>JumpSMS7</onclick>
+                </control>
+                <control type="togglebutton" id="24004">
+                    <label>T</label>
+                    <enable>Substring(Window(home).Property(LetterList),T)</enable>
+                    <include>Objects_LetterButton</include>
+                    <onclick>JumpSMS8</onclick>
+                </control>
+            </control> -->
             <include>Furniture_DarkGradient</include>
         </control>
         <control type="group">
