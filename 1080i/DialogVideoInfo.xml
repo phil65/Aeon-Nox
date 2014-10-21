@@ -1119,7 +1119,7 @@
                         <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
                         <visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
                     </control>
-                    <control type="button" id="111">
+<!--                     <control type="button" id="111">
                         <description>Similar Window</description>
                         <include>DialogVideoInfoButton</include>
                         <label>$LOCALIZE[31925]</label>
@@ -1128,7 +1128,7 @@
                         <onclick condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=studio,info=directormovies,info=writermovies,director=$INFO[ListItem.Director],writer=$INFO[ListItem.Writer],dbid=$INFO[ListItem.DBID],studio=$INFO[ListItem.Studio],type=show,silent=False)</onclick>
                         <onclick>ActivateWindow(1166)</onclick>
                         <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-                    </control>
+                    </control> -->
                     <control type="grouplist" id="6100">
                         <width>254.5</width>
                         <orientation>vertical</orientation>

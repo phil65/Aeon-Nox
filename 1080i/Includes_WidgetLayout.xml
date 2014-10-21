@@ -2673,7 +2673,7 @@
                         <include>Animation_VisibleChange400</include>
                         <visible>!IsEmpty(Window(home).Property(Trailer)) + !IsEmpty(Window(home).Property(DBID))</visible>
                     </control>
-                    <control type="button" id="50191">
+<!--                     <control type="button" id="50191">
                         <include>WidgetMenuLabel</include>
                         <label>$LOCALIZE[31925]</label>
                         <onclick condition="IsEmpty(Window(home).Property(DBID)) + Substring(Window(home).Property(WidgetType),tv)">RunScript(script.extendedinfo,info=directormovies,info=writermovies,info=studio,info=similartvshowstrakt,director=$INFO[Window(home).Property(Director)],writer=$INFO[Window(home).Property(Writer)],studio=$INFO[Window(home).Property(Studio)],id=$INFO[Window(home).Property(ID)],silent=False)</onclick>
@@ -2683,7 +2683,7 @@
                         <onclick>Dialog.Close(1165)</onclick>
                         <onclick>ActivateWindow(1166)</onclick>
                         <visible>Substring(Window(home).Property(WidgetType),movie) | Substring(Window(home).Property(WidgetType),tv)</visible>
-                    </control>
+                    </control> -->
                     <control type="spincontrol" id="5019">
                         <posx>0</posx>
                         <posy>-20</posy>
