@@ -809,7 +809,6 @@
         </control>
         <control type="group">
             <animation effect="fade" time="500">VisibleChange</animation>
-            <include>Animation_WindowFade200</include>
             <visible>Substring(Control.GetLabel(4328),dvdcase,left)</visible>
             <control type="group">
                 <control type="group">
@@ -1005,7 +1004,6 @@
         </control>
         <control type="group">
             <animation effect="fade" time="500">VisibleChange</animation>
-            <include>Animation_WindowFade200</include>
             <visible>Substring(Control.GetLabel(4328),case,left)</visible>
             <control type="group">
                 <posx>-200</posx>
@@ -1248,7 +1246,6 @@
         </control>
         <control type="group">
             <animation effect="fade" time="480">VisibleChange</animation>
-            <include>Animation_WindowFade200</include>
             <visible>Substring(Control.GetLabel(4328),nocase,left)</visible>
             <control type="group">
                 <posx>-200</posx>
@@ -1388,6 +1385,103 @@
             <fadetime>600</fadetime>
             <visible>Player.HasAudio + Skin.HasSetting(musicfanarthome)</visible>
             <include>Animation_VisibleChange400</include>
+        </control>
+    </include>
+    <include name="MusicVizBG">
+        <aspectratio align="center" aligny="top">scale</aspectratio>
+        <fadetime>1000</fadetime>
+        <include>FullscreenDimensions</include>
+        <include>Animation_VisibleChange400</include>
+        <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+        <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+        <timeperimage>10000</timeperimage>
+    </include>
+    <include name="cdwall-musicvisualisation">
+        <control type="group" id="2355">
+            <posx>-52</posx>
+            <posy>-22</posy>
+            <!--         <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="true">Conditional</animation>
+        <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
+        <animation effect="rotatex" start="" end="15" time="0" condition="true">Conditional</animation> -->
+            <visible>[Window.IsActive(visualisation) + StringCompare(Skin.String(MusicViz.MultiFanart),cd-wall)] | [Player.HasAudio + Window.IsActive(script-HomeWindow Script-main.xml) + Skin.HasSetting(homecdwall)] | Stringcompare(Control.GetLabel(4322),cdwall)</visible>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <include>Animation_WindowFade200</include>
+            <include>Animation_VisibleChange400</include>
+            <control type="panel" id="9032">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>1080</height>
+                <movement>6</movement>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime tween="cubic" easing="inout">600</scrolltime>
+                <orientation>vertical</orientation>
+                <preloaditems>0</preloaditems>
+                <itemlayout height="192" width="192">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>192</width>
+                        <height>192</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="192" width="192">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>192</width>
+                        <height>192</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+                <content>special://skin/extras/Playlists/albumwall.xsp</content>
+            </control>
+        </control>
+    </include>
+    <include name="MovieWall">
+        <control type="group" id="2355">
+            <!--         <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="true">Conditional</animation>
+        <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
+        <animation effect="rotatex" start="" end="15" time="0" condition="true">Conditional</animation> -->
+            <visible>SubString(Control.GetLabel(4322),moviewall)</visible>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
+            <include>Animation_VisibleChange400</include>
+            <control type="panel" id="9032">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>2120</width>
+                <height>1080</height>
+                <movement>6</movement>
+                <scrolltime tween="cubic" easing="inout">600</scrolltime>
+                <orientation>vertical</orientation>
+                <preloaditems>0</preloaditems>
+                <itemlayout height="337" width="225">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>225</width>
+                        <height>337</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="337" width="225">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>225</width>
+                        <height>337</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+                <content>special://skin/extras/Playlists/randommovies.xsp</content>
+            </control>
         </control>
     </include>
 </includes>
