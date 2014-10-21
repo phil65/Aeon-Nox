@@ -97,9 +97,8 @@
         <include>MainMenuCommonContent</include>
         <!--Fanart-->
         <control type="group">
-            <!--
-            <visible>![[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis)]]</visible>-->
             <control type="group">
+                <include>Animation_WindowFade200</include>
                 <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <control type="multiimage">
