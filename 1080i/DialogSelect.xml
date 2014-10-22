@@ -16,13 +16,13 @@
     <controls>
         <include>DialogBackFade</include>
         <control type="group">
-            <animation effect="slide" start="0,0" end="0,60" time="0" condition="!Control.IsVisible(5) + !IntegerGreaterThan(Container(3).NumItems,4)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,60" time="0" condition="!Control.IsVisible(5) + !IntegerGreaterThan(Container(3).NumItems,6)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,60" time="0" condition="!Control.IsVisible(5) + !IntegerGreaterThan(Container(3).NumItems,8)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,60" time="0" condition="Control.IsVisible(3) + !IntegerGreaterThan(Container(3).NumItems,4)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,60" time="0" condition="Control.IsVisible(3) + !IntegerGreaterThan(Container(3).NumItems,6)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,60" time="0" condition="Control.IsVisible(3) + !IntegerGreaterThan(Container(3).NumItems,8)">Conditional</animation>
             <control type="group">
-                <animation effect="zoom" end="100,87" center="0,180" time="0" condition="!Control.IsVisible(5) + !IntegerGreaterThan(Container(3).NumItems,4)">Conditional</animation>
-                <animation effect="zoom" end="100,87" center="0,180" time="0" condition="!Control.IsVisible(5) + !IntegerGreaterThan(Container(3).NumItems,6)">Conditional</animation>
-                <animation effect="zoom" end="100,87" center="0,180" time="0" condition="!Control.IsVisible(5) + !IntegerGreaterThan(Container(3).NumItems,8)">Conditional</animation>
+                <animation effect="zoom" end="100,87" center="0,180" time="0" condition="Control.IsVisible(3) + !IntegerGreaterThan(Container(3).NumItems,4)">Conditional</animation>
+                <animation effect="zoom" end="100,87" center="0,180" time="0" condition="Control.IsVisible(3) + !IntegerGreaterThan(Container(3).NumItems,6)">Conditional</animation>
+                <animation effect="zoom" end="100,87" center="0,180" time="0" condition="Control.IsVisible(3) + !IntegerGreaterThan(Container(3).NumItems,8)">Conditional</animation>
                 <control type="image">
                     <posx>356</posx>
                     <posy>180</posy>
