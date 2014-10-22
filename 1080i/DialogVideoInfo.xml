@@ -957,11 +957,10 @@
                             </item>
                             <item>
                                 <label>31172</label>
-                                <onclick condition="Stringcopmare(Window(home).Property(ListType),Actors)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).Listitem.Label])</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director])</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Writer)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
-                                <visible>System.HasAddon(script.extendedinfo)</visible>
+                                <onclick>RunScript(script.metadata.actors,$ESCINFO[Window(home).Property(ContainerTitle)])</onclick>
                                 <onclick>SetFocus(600)</onclick>
+        <!--                    <onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(ContainerTitle)])</onclick> -->
+                                <visible>System.HasAddon(script.extendedinfo)</visible>
                             </item>
                             <item>
                                 <label>31096</label>
