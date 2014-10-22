@@ -949,9 +949,8 @@
                             <item>
                                 <label>31197</label>
                                 <onclick condition="Stringcompare(Window(home).Property(ListType),Actors)">SetFocus(50)</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Actors)">Action(Select)</onclick>
                                 <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">SetFocus(13)</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">Action(Select)</onclick>
+                                <onclick>Action(Select)</onclick>
                                 <onclick>SetFocus(600)</onclick>
                                 <visible>!Stringcompare(Window(home).Property(ListType),Writer)</visible>
                             </item>
@@ -964,9 +963,7 @@
                             </item>
                             <item>
                                 <label>31096</label>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Actors)">SetProperty(listcontent,$INFO[Container(50).ListItem.Label],home)</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Writer)">SetProperty(listcontent,$INFO[ListItem.Writer],home)</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">SetProperty(listcontent,$INFO[ListItem.Director],home)</onclick>
+                                <onclick>SetProperty(listcontent,$ESCINFO[Window(home).Property(ContainerTitle)],home)</onclick>
                                 <onclick>ActivateWindow(1168)</onclick>
                             </item>
                             <item>
