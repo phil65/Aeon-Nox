@@ -201,8 +201,7 @@
                 <onright>57</onright>
                 <onup condition="!Window.IsActive(musiclibrary) | !Control.IsVisible(7000)">9000</onup>
                 <onup condition="Window.IsActive(musiclibrary) + Control.IsVisible(7000)">SetFocus(7000)</onup>
-                <ondown condition="Control.IsVisible(61)">61</ondown>
-                <ondown condition="!Control.IsVisible(61)">109</ondown>
+                <ondown>610</ondown>
                 <orientation>horizontal</orientation>
                 <viewtype label="31235">BigWrap</viewtype>
                 <pagecontrol>61</pagecontrol>
@@ -270,8 +269,9 @@
                     <font>Font_Reg28_Caps</font>
                     <shadowcolor>floorshadow</shadowcolor>
                     <textcolor>floor</textcolor>
+                    <visible>!Control.IsVisible(24000)</visible>
                     <visible>![Control.HasFocus(61) | Control.IsVisible(4050)]</visible>
-                    <include>Animation_VisibleChange200</include>
+                    <include>Animation_VisibleChange400</include>
                 </control>
                 <control type="label">
                     <posx>195</posx>
@@ -282,9 +282,11 @@
                     <font>Font_ShowcaseMainLabel2_Caps</font>
                     <shadowcolor>floorshadow</shadowcolor>
                     <textcolor>floor</textcolor>
+                    <visible>!ControlGroup(24000).HasFocus</visible>
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
                     <visible>Container.Content(albums)</visible>
+                    <include>Animation_VisibleChange400</include>
                 </control>
                 <control type="label">
                     <posx>195</posx>
@@ -292,12 +294,14 @@
                     <width>1245</width>
                     <aligny>top</aligny>
                     <label>$VAR[FirstLabelVar]</label>
+                    <visible>!ControlGroup(24000).HasFocus</visible>
                     <font>Font_ShowcaseMainLabel2_Caps</font>
                     <shadowcolor>floorshadow</shadowcolor>
                     <textcolor>floor</textcolor>
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
                     <visible>!Container.Content(albums)</visible>
+                    <include>Animation_VisibleChange400</include>
                 </control>
             </control>
         </control>

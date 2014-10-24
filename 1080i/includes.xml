@@ -710,13 +710,20 @@
         <colordiffuse></colordiffuse>
     </include>
     <include name="Objects_LetterButton">
-        <width>60</width>
-        <height>60</height>
+        <width>33</width>
+        <height>36</height>
+        <textoffsetx>0</textoffsetx>
         <textcolor>white2</textcolor>
+        <align>center</align>
+        <font>Font_Reg20</font>
         <selectedcolor>$VAR[AreaColorVar]</selectedcolor>
         <disabledcolor>grey3</disabledcolor>
         <pulseonselect>yes</pulseonselect>
-        <focusedcolor>white</focusedcolor>
+        <focusedcolor>black</focusedcolor>
+        <texturefocus>common/white.png</texturefocus>
+        <alttexturefocus>common/white.png</alttexturefocus>
+        <texturenofocus>-</texturenofocus>
+        <alttexturenofocus>-</alttexturenofocus>
     </include>
 
     <include name="Objects_CustomizerSettingsButton">
@@ -1748,15 +1755,14 @@
         <height>84</height>
         <textoffsetx>30</textoffsetx>
         <align>left</align>
-        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>views/tripanel/listselect_fo.png</texturenofocus>
+        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
+        <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturenofocus>
         <alttexturefocus>-</alttexturefocus>
         <alttexturenofocus>-</alttexturenofocus>
         <font>Font-Condensed-S34</font>
         <shadowcolor>22000000</shadowcolor>
         <textcolor>white</textcolor>
         <disabledcolor>grey2</disabledcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
     </include>
     <include name="TVGuideWeekdayButton">
         <posx>0</posx>
@@ -1767,13 +1773,10 @@
         <align>left</align>
         <texturefocus>-</texturefocus>
         <texturenofocus>-</texturenofocus>
-        <alttexturefocus>-</alttexturefocus>
-        <alttexturenofocus>-</alttexturenofocus>
         <font>Font-Condensed-S34</font>
         <shadowcolor>22000000</shadowcolor>
         <textcolor>white</textcolor>
         <disabledcolor>grey2</disabledcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
     </include>
     <include name="PosterWallLayout">
                             <itemlayout width="240" height="410">

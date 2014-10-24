@@ -38,7 +38,7 @@
                     <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <animation effect="slide" time="160" end="190" tween="cubic" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
                     <animation effect="slide" time="160" end="60" tween="cubic" condition="Control.IsVisible(50) + Window.IsActive(musiclibrary)">Conditional</animation>
-                    <visible>[Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53)]</visible>
+                    <visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53)</visible>
                     <visible>!Container.Content(years) + !Container.Content(playlists)</visible>
                 </control>
             </control>
@@ -98,21 +98,17 @@
             <animation effect="fade" end="100" time="80" delay="80" reversible="false">Visible</animation>
             <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
             <visible>[Control.IsVisible(503) + Skin.HasSetting(landscapeonelogo) + !Container.Content(episodes) + !Container.Content(seasons)] | Control.IsVisible(509) | [Control.IsVisible(500) + !StringCompare(Container.FolderName,youtube)] | Control.IsVisible(508) | Control.IsVisible(501)</visible>
-            <include>Animation_WindowFade200</include>
             <visible>[Control.IsVisible(8822) + !Container.OnNext + !Container.OnPrevious + Stringcompare(Control.GetLabel(8822),empty.png)] | !Control.IsVisible(8822) | Container.Content(seasons) | Container.Content(albums)</visible>
+            <include>Animation_WindowFade200</include>
             <posx>410</posx>
             <control type="list" id="25000">
-                <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
-                <visible>Container.Scrolling</visible>
-                <animation effect="fade" start="100" end="0" time="400" delay="400" condition="Control.IsVisible(4051) + !Skin.HasSetting(ClassicTopBar)">Conditional</animation>
-                <animation effect="fade" delay="240" time="240" reversible="false">Hidden</animation>
-                <animation effect="fade" delay="240" time="400" reversible="false">Visible</animation>
                 <posx>93</posx>
                 <posy>1037</posy>
                 <width>1920</width>
                 <height>80</height>
                 <orientation>horizontal</orientation>
                 <itemlayout width="35">
+                    <!--
                     <control type="label">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -120,9 +116,9 @@
                         <width>35</width>
                         <height>35</height>
                         <label>$INFO[ListItem.Label]</label>
-                    </control>
-                </itemlayout>
+                    </control>--></itemlayout>
                 <focusedlayout width="35">
+                    <!--
                     <control type="label">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -130,9 +126,10 @@
                         <width>35</width>
                         <height>35</height>
                         <label>$INFO[ListItem.Label]</label>
-                    </control>
-                </focusedlayout>
-                <content>plugin://script.extendedinfo?info=sortletters&amp;&amp;id=$INFO[ListItem.SortLetter]&amp;&amp;path=$INFO[Container.FolderPath]</content>
+                    </control>--></focusedlayout>
+                <!--
+                <content>plugin://script.extendedinfo?info=sortletters&amp;&amp;id=$INFO[ListItem.SortLetter]&amp;&amp;path=$INFO[Container.FolderPath]</content>-->
+                <content>plugin://script.extendedinfo?info=sortletters&amp;&amp;path=$INFO[Container.FolderPath]</content>
             </control>
             <control type="label">
                 <posy>1037</posy>
@@ -143,7 +140,7 @@
                 <font>Font_Reg28_Caps</font>
                 <shadowcolor>floorshadow</shadowcolor>
                 <textcolor>white</textcolor>
-                <visible>!Control.IsVisible(25000)</visible>
+                <visible>!Control.IsVisible(24000)</visible>
                 <visible>![Control.HasFocus(61) | Control.IsVisible(4050)]</visible>
                 <include>Animation_VisibleChange400</include>
             </control>
@@ -158,10 +155,261 @@
                 <textcolor>floor</textcolor>
                 <scroll>true</scroll>
                 <scrollspeed>30</scrollspeed>
+                <visible>!ControlGroup(24000).HasFocus</visible>
+                <include>Animation_VisibleChange400</include>
             </control>
         </control>
     </include>
     <include name="Furniture_DarkGradient">
+        <control type="grouplist" id="24000">
+            <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
+            <animation effect="slide" time="0" end="-280" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
+            <animation effect="slide" time="300" end="0,-30" tween="cubic" condition="ControlGroup(24000).HasFocus">Conditional</animation>
+            <!--
+            <animation effect="fade" start="100" end="0" time="400" delay="400" condition="Control.IsVisible(4051) + !Skin.HasSetting(ClassicTopBar)">Conditional</animation>-->
+            <animation effect="fade" delay="240" time="0" reversible="false">Hidden</animation>
+            <animation effect="fade" delay="240" time="400" reversible="false">Visible</animation>
+            <animation effect="fade" time="160">WindowClose</animation>
+            <posx>0</posx>
+            <posy>1040</posy>
+            <width>1920</width>
+            <height>540</height>
+            <onup>50</onup>
+            <ondown condition="!Control.IsVisible(500)">109</ondown>
+            <ondown condition="Control.IsVisible(500)">50</ondown>
+            <onright>24000</onright>
+            <onleft>24000</onleft>
+            <orientation>horizontal</orientation>
+            <align>center</align>
+            <control type="togglebutton" id="24030">
+                <label>0-9</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]0-9[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),0) | Substring(Window(home).Property(LetterList),1) | Substring(Window(home).Property(LetterList),2) | Substring(Window(home).Property(LetterList),3) | Substring(Window(home).Property(LetterList),4) | Substring(Window(home).Property(LetterList),5) | Substring(Window(home).Property(LetterList),6) | Substring(Window(home).Property(LetterList),7) | Substring(Window(home).Property(LetterList),8) | Substring(Window(home).Property(LetterList),9)</enable>
+                <usealttexture>Substring(ListItem.SortLetter,0) | Substring(ListItem.SortLetter,1) | Substring(ListItem.SortLetter,2) | Substring(ListItem.SortLetter,3) | Substring(ListItem.SortLetter,4) | Substring(ListItem.SortLetter,5) | Substring(ListItem.SortLetter,6) | Substring(ListItem.SortLetter,7) | Substring(ListItem.SortLetter,8) | Substring(ListItem.SortLetter,9)</usealttexture>
+                <width>55</width>
+                <height>36</height>
+                <textoffsetx>0</textoffsetx>
+                <textcolor>white2</textcolor>
+                <align>center</align>
+                <font>Font_Reg20</font>
+                <selectedcolor>$VAR[AreaColorVar]</selectedcolor>
+                <disabledcolor>grey3</disabledcolor>
+                <pulseonselect>yes</pulseonselect>
+                <focusedcolor>$VAR[FocusTextureColorVar]</focusedcolor>
+                <texturenofocus>-</texturenofocus>
+                <alttexturenofocus>-</alttexturenofocus>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=0)</onclick>
+            </control>
+            <control type="togglebutton" id="24001">
+                <label>A</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]A[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),A)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,A)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=A)</onclick>
+            </control>
+            <control type="togglebutton" id="24002">
+                <label>B</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]B[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),B)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,B)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=B)</onclick>
+            </control>
+            <control type="togglebutton" id="24003">
+                <label>C</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]C[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),C)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,C)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=C)</onclick>
+            </control>
+            <control type="togglebutton" id="24004">
+                <label>D</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]D[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),D)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,D)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=D)</onclick>
+            </control>
+            <control type="togglebutton" id="24005">
+                <label>E</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]E[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),E)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,E)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=E)</onclick>
+            </control>
+            <control type="togglebutton" id="24006">
+                <label>F</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]F[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),F)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,F)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=F)</onclick>
+            </control>
+            <control type="togglebutton" id="24007">
+                <label>G</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]G[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),G)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,G)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=G)</onclick>
+            </control>
+            <control type="togglebutton" id="24008">
+                <label>H</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]H[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),H)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,H)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=H)</onclick>
+            </control>
+            <control type="togglebutton" id="24009">
+                <label>I</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]I[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),I)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,I)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=I)</onclick>
+            </control>
+            <control type="togglebutton" id="24010">
+                <label>J</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]J[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),J)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,J)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=J)</onclick>
+            </control>
+            <control type="togglebutton" id="24011">
+                <label>K</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]K[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),K)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,K)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=K)</onclick>
+            </control>
+            <control type="togglebutton" id="24012">
+                <label>L</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]L[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),L)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,L)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=L)</onclick>
+            </control>
+            <control type="togglebutton" id="24013">
+                <label>M</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]M[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),M)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,M)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=M)</onclick>
+            </control>
+            <control type="togglebutton" id="24014">
+                <label>N</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]N[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),N)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,N)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=N)</onclick>
+            </control>
+            <control type="togglebutton" id="24015">
+                <label>O</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]O[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),O)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,O)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=O)</onclick>
+            </control>
+            <control type="togglebutton" id="24016">
+                <label>P</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]P[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),P)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,P)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=P)</onclick>
+            </control>
+            <control type="togglebutton" id="24017">
+                <label>Q</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]Q[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),Q)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,Q)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=Q)</onclick>
+            </control>
+            <control type="togglebutton" id="24018">
+                <label>R</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]R[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),R)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,R)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=R)</onclick>
+            </control>
+            <control type="togglebutton" id="24019">
+                <label>S</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]S[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),S)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,S)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=S)</onclick>
+            </control>
+            <control type="togglebutton" id="24020">
+                <label>T</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]T[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),T)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,T)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=T)</onclick>
+            </control>
+            <control type="togglebutton" id="24021">
+                <label>U</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]U[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),U)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,U)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=U)</onclick>
+            </control>
+            <control type="togglebutton" id="24022">
+                <label>V</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]V[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),V)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,V)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=V)</onclick>
+            </control>
+            <control type="togglebutton" id="24023">
+                <label>W</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]W[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),W)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,W)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=W)</onclick>
+            </control>
+            <control type="togglebutton" id="24024">
+                <label>X</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]X[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),X)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,X)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=X)</onclick>
+            </control>
+            <control type="togglebutton" id="24025">
+                <label>Y</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]Y[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),Y)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,Y)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=Y)</onclick>
+            </control>
+            <control type="togglebutton" id="24026">
+                <label>Z</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]Z[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),Z)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,Z)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=Z)</onclick>
+            </control>
+        </control>
         <control type="image">
             <posy>1012</posy>
             <width>1920</width>
@@ -176,14 +424,50 @@
             <animation effect="fade" end="100" time="0" delay="2400">Visible</animation>
             <animation effect="fade" time="800">Hidden</animation>
         </control>
+        <control type="button" id="610">
+            <include>HiddenObject</include>
+            <onfocus condition="!Control.IsVisible(61)">SetFocus(24000)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + [Substring(ListItem.SortLetter,0) | Substring(ListItem.SortLetter,1) | Substring(ListItem.SortLetter,2) | Substring(ListItem.SortLetter,3) | Substring(ListItem.SortLetter,4) | Substring(ListItem.SortLetter,5) | Substring(ListItem.SortLetter,6) | Substring(ListItem.SortLetter,7) | Substring(ListItem.SortLetter,8) | Substring(ListItem.SortLetter,9)]">SetFocus(24030)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,A)">SetFocus(24001)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,B)">SetFocus(24002)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,C)">SetFocus(24003)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,D)">SetFocus(24004)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,E)">SetFocus(24005)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,F)">SetFocus(24006)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,G)">SetFocus(24007)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,H)">SetFocus(24008)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,I)">SetFocus(24007)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,J)">SetFocus(24010)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,K)">SetFocus(24011)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,L)">SetFocus(24012)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,M)">SetFocus(24013)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,N)">SetFocus(24014)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,O)">SetFocus(24015)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,P)">SetFocus(24016)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,Q)">SetFocus(24017)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,R)">SetFocus(24018)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,S)">SetFocus(24019)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,T)">SetFocus(24020)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,U)">SetFocus(24021)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,V)">SetFocus(24022)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,W)">SetFocus(24023)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,X)">SetFocus(24024)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,Y)">SetFocus(24025)</onfocus>
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,Z)">SetFocus(24026)</onfocus>
+            <ondown>50</ondown>
+            <onclick>-</onclick>
+        </control>
         <control type="scrollbar" id="61">
             <posx>465</posx>
             <posy>1035</posy>
             <height>40</height>
             <width>975</width>
+            <visible>![SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
             <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
             <animation effect="fade" start="100" end="0" time="320" condition="![Control.HasFocus(61)]">Conditional</animation>
             <onup>50</onup>
+            <ondown condition="!Control.IsVisible(500)">109</ondown>
+            <ondown condition="Control.IsVisible(500)">50</ondown>
             <orientation>horizontal</orientation>
             <animation effect="zoom" start="70" end="100" center="auto" tween="back" time="320" condition="Control.HasFocus(61)">Conditional</animation>
             <texturesliderbar>-</texturesliderbar>
@@ -191,8 +475,6 @@
             <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
             <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
             <texturesliderbackground border="12,0,12,0">views/scrollbarbacklist2.png</texturesliderbackground>
-            <ondown condition="!Control.IsVisible(500)">109</ondown>
-            <ondown condition="Control.IsVisible(500)">50</ondown>
         </control>
         <control type="image">
             <posy>924</posy>

@@ -82,7 +82,7 @@
         <onleft>503</onleft>
         <onright>503</onright>
         <onup>7000</onup>
-        <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">61</ondown>
+        <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">610</ondown>
         <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !IsEmpty(ListItem.Trailer)">9000</ondown>
         <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + IsEmpty(ListItem.Trailer)">7000</ondown>
         <orientation>horizontal</orientation>
@@ -166,8 +166,9 @@
                 </control>
                     <control type="label">
                         <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
+                        <visible>!ControlGroup(24000).HasFocus</visible>
                         <include>Animation_VisibleChange200</include>
-                        <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61)">Conditional</animation>
+                        <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61) | Control.IsVisible(24000)">Conditional</animation>
                         <posx>510</posx>
                         <posy>1012</posy>
                         <width>900</width>
@@ -190,6 +191,7 @@
                     <include>Animation_VisibleChange200</include>
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
+                    <visible>!ControlGroup(24000).HasFocus</visible>
                     <visible>Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)] + !Control.HasFocus(61)</visible>
                 </control>
             </control>
