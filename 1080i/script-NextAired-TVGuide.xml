@@ -64,6 +64,25 @@
             <control type="group">
                 <posy>-15</posy>
                 <include>Furniture_SettingsBackPanel2</include>
+                <control type="button" id="3000">
+                    <description>Setting level button</description>
+                    <posx>63</posx>
+                    <top>852</top>
+                    <height>120</height>
+                    <width>434</width>
+                    <label>Addon Settings</label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textoffsety>10</textoffsety>
+                    <font>Font_Bold33</font>
+                    <textcolor>white</textcolor>
+                    <onup>206</onup>
+                    <ondown>200</ondown>
+                    <onclick>Addon.OpenSettings(script.tv.show.next.aired)</onclick>
+                    <disabledcolor>white</disabledcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <texturenofocus>-</texturenofocus>
+                </control>
                 <control type="group" id="9001">
                     <control type="list" id="200">
                         <include>NextAiredListVars</include>
@@ -166,7 +185,7 @@
                         <onup>SetFocus(205,0)</onup>
                         <onup>205</onup>
                         <ondown>SetFocus(200,0)</ondown>
-                        <ondown>200</ondown>
+                        <ondown>3000</ondown>
                         <onleft>200</onleft>
                         <onright>206</onright>
                         <visible allowhiddenfocus="true">[ControlGroup(9001).HasFocus + ControlGroup(9001).HasFocus(206)] | [ControlGroup(2000).HasFocus + ControlGroup(2000).HasFocus(2007)]</visible>
