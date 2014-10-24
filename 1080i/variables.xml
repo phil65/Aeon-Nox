@@ -840,7 +840,7 @@
     <variable name="ClassicWidget2ImageVar">
         <value condition="[Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),movie)] + !IsEmpty(Container(7000).ListItem.Property(Landscape))">$INFO[Container(7000).ListItem.Property(Landscape)]</value>
         <value condition="[Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo)] + !IsEmpty(Container(7000).ListItem.Property(Fanart))">$INFO[Container(7000).ListItem.Property(Fanart)]</value>
-        <value condition="!IsEmpty(Container(7000).ListItem.Icon)">$INFO[Container(8000).ListItem.Icon]</value>
+        <value condition="!IsEmpty(Container(7000).ListItem.Icon)">$INFO[Container(7000).ListItem.Icon]</value>
         <value>$INFO[Container(7000).ListItem.Thumb]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
@@ -2164,10 +2164,6 @@
         <value condition="Stringcompare(Container(9000).ListItem(21).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,21)</value>
         <value condition="Stringcompare(Container(9000).ListItem(22).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,22)</value>
         <value condition="Stringcompare(Container(9000).ListItem(23).Property(ID),Window(home).Property(SettingsFocusOffset))">Control.Move(9000,23)</value>
-    </variable>
-    <variable name="NextAiredLayoutVar">
-        <value condition="Skin.HasSetting(ClassicNextAired)">1</value>
-        <value>2</value>
     </variable>
     <variable name="SmallListIconVar">
         <value condition="Container.Content(songs)">$INFO[ListItem.DiscNumber,flags/discnumber/,.png]</value>
