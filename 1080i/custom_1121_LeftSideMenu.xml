@@ -159,13 +159,6 @@
                     <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
                 <item>
-                    <label>31233</label>
-                    <onclick>Container.SetViewMode(550)</onclick>
-                    <visible>IsEmpty(Skin.String(DisablePanelVL))</visible>
-                    <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
-                </item>
-                <item>
                     <label>31381</label>
                     <onclick>Container.SetViewMode(518)</onclick>
                     <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons)</visible>
@@ -274,14 +267,6 @@
                     <thumb>$INFO[Skin.String(DisableLowListVL)]</thumb>
                     <onclick condition="IsEmpty(Skin.String(DisableLowListVL))">Skin.SetString(DisableLowListVL,true)</onclick>
                     <onclick condition="!IsEmpty(Skin.String(DisableLowListVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableLowListVL)</onclick>
-                    <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
-                </item>
-                <item>
-                    <label>31233</label>
-                    <onclick>Container.SetViewMode(550)</onclick>
-                    <thumb>$INFO[Skin.String(DisablePanelVL)]</thumb>
-                    <onclick condition="IsEmpty(Skin.String(DisablePanelVL))">Skin.SetString(DisablePanelVL,true)</onclick>
-                    <onclick condition="!IsEmpty(Skin.String(DisablePanelVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisablePanelVL)</onclick>
                     <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
                 <item>

@@ -271,7 +271,7 @@
     <include name="FloorFlags">
         <control type="group">
             <include>Animation_FlagSlideDown</include>
-            <visible>Control.IsVisible(550) | Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
+            <visible>Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
             <visible>![SubString(Container.FolderPath,addons://) | SubString(Container.FolderPath,plugin.video)]</visible>
             <posy>1000</posy>
             <control type="group">
@@ -286,12 +286,12 @@
                         <posx>15</posx>
                         <texture>$VAR[SourceFlagVar,flags/source/,.png]</texture>
                         <include>AudioFlagsVars</include>
-                        <animation effect="slide" end="64" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                        <animation effect="slide" end="64" condition="Control.IsVisible(512)">Conditional</animation>
                     </control>
                     <control type="group">
                         <!--studio logo-->
                         <posx>155</posx>
-                        <animation effect="slide" end="109" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                        <animation effect="slide" end="109" condition="Control.IsVisible(512)">Conditional</animation>
                         <control type="image" id="76">
                             <posy>-7</posy>
                             <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
@@ -325,12 +325,12 @@
                         <posx>295</posx>
                         <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                         <include>AudioFlagsVars</include>
-                        <animation effect="slide" end="138" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                        <animation effect="slide" end="138" condition="Control.IsVisible(512)">Conditional</animation>
                     </control>
                 </control>
                 <control type="group">
                     <!--right part -->
-                    <animation effect="slide" end="-930" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                    <animation effect="slide" end="-930" condition="Control.IsVisible(512)">Conditional</animation>
                     <control type="image">
                         <!--AspectRatio logo-->
                         <posx>1483</posx>
@@ -446,7 +446,7 @@
                 </control>
                 <control type="group">
                     <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <animation effect="slide" end="-975" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
+                    <animation effect="slide" end="-975" condition="Control.IsVisible(512)">Conditional</animation>
                     <control type="image">
                         <posx>1600</posx>
                         <texture>flags/IMDB.png</texture>
@@ -478,7 +478,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>Control.IsVisible(512) | Control.IsVisible(550)</visible>
+                <visible>Control.IsVisible(512)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <control type="label">
