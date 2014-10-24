@@ -233,7 +233,7 @@
                     <onclick>Skin.ToggleSetting(unwatchedicon)</onclick>
                     <selected>Skin.HasSetting(unwatchedicon)</selected>
                     <visible>![Stringcompare(Window(home).Property(actualViewtype),Landscape) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
-                    <visible>[[Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners) | [Stringcompare(Window(home).Property(actualViewtype),Panel) + Skin.HasSetting(panellogo)]] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv) + Stringcompare(Window(home).Property(actualViewtype),TriPanel)]]</visible>
+                    <visible>[[Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners)] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv) + Stringcompare(Window(home).Property(actualViewtype),TriPanel)]]</visible>
                 </control>
                 <control type="radiobutton" id="1643">
                     <label>$LOCALIZE[31282]</label>
@@ -452,22 +452,6 @@
                     <selected>Skin.HasSetting(musiclistpanelthin)</selected>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),LowListMusic)</visible>
                 </control>
-                <control type="radiobutton" id="16837">
-                    <label>31059</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(panellogo)</onclick>
-                    <selected>Skin.HasSetting(panellogo)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),Panel)</visible>
-                    <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-                </control>
-                <control type="radiobutton" id="16838">
-                    <label>31172</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(panelinfo)</onclick>
-                    <selected>Skin.HasSetting(panelinfo)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),Panel)</visible>
-                    <visible>Container.Content(movies)</visible>
-                </control>
                 <!--List Options-->
                 <control type="radiobutton" id="1662">
                     <label>$LOCALIZE[31165]</label>
@@ -684,7 +668,7 @@
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(fstrailer)</onclick>
                     <visible>Container.Content(movies)</visible>
-                    <visible>!Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Panel) | Stringcompare(Window(home).Property(actualViewtype),Banners) | [Stringcompare(Window(home).Property(actualViewtype),Landscape) + !Skin.HasSetting(landscapeonelogo)] | Stringcompare(Window(home).Property(actualViewtype),AddonWall)</visible>
+                    <visible>!Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Banners) | [Stringcompare(Window(home).Property(actualViewtype),Landscape) + !Skin.HasSetting(landscapeonelogo)] | Stringcompare(Window(home).Property(actualViewtype),AddonWall)</visible>
                 </control>
                 <control type="radiobutton" id="287">
                     <label>31034</label>
