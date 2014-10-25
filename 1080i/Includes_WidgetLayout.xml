@@ -2328,8 +2328,8 @@
                         <aspectratio align="right">keep</aspectratio>
                         <colordiffuse>white</colordiffuse>
                         <animation effect="slide" end="9,0" time="0" condition="true">Conditional</animation>
-                        <texture>dialogs/circle/$INFO[Window(home).Property(PercentPlayed)].png</texture>
-                        <visible>!IsEmpty(Window(home).Property(PercentPlayed)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
+                        <texture>dialogs/circle/$INFO[Window(home).PercentPlayed].png</texture>
+                        <visible>!IsEmpty(Window(home).PercentPlayed) + !Stringcompare(Window(home).PercentPlayed,0)</visible>
                     </control>-->
                     <control type="grouplist">
                         <height>36</height>
@@ -2484,8 +2484,8 @@
                         <height>95</height>
                         <aspectratio align="left">keep</aspectratio>
                         <colordiffuse>white</colordiffuse>
-                        <texture>dialogs/circle/$INFO[Window(home).Property(PercentPlayed)].png</texture>
-                        <visible>!IsEmpty(Window(home).Property(PercentPlayed)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
+                        <texture>dialogs/circle/$INFO[Window(home).PercentPlayed].png</texture>
+                        <visible>!IsEmpty(Window(home).PercentPlayed) + !Stringcompare(Window(home).PercentPlayed,0)</visible>
                     </control>-->
                     <!--
                     <control type="grouplist">
@@ -4106,8 +4106,8 @@
             <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
             <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
             <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-            <info>ListItem.Property(PercentPlayed)</info>
-            <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0%)</visible>
+            <info>ListItem.PercentPlayed</info>
+            <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
         </control>
         <control type="label">
             <posx>202</posx>
