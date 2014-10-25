@@ -139,107 +139,6 @@
                 <texture>thumbs/thumb_glass.png</texture>
             </control>
         </control>
-        <control type="button" id="5001">
-            <include>HiddenObject</include>
-            <onup>50</onup>
-            <onleft>50</onleft>
-            <onright>50</onright>
-            <ondown>50</ondown>
-            <onback>50</onback>
-            <onclick condition="!IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
-            <onclick condition="IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
-            <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">SetFocus(50)</onclick>
-            <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-            <visible>Control.IsVisible(40002)</visible>
-        </control>
-        <control type="group" id="5002">
-            <posx>1370</posx>
-            <posy>220</posy>
-            <animation type="Visible" reversible="false">
-                <effect type="rotatey" center="1548" end="-90" time="360" tween="cubic" easing="in" />
-                <effect type="rotatey" center="1548" start="-90" end="90" time="0" delay="360" />
-                <effect type="fade" end="100" time="0" delay="360" />
-                <effect type="rotatey" center="1548" start="90" end="0" time="360" delay="360" tween="cubic" />
-            </animation>
-            <animation type="Hidden" reversible="false">
-                <effect type="rotatey" center="1548" end="90" time="360" tween="cubic" easing="in" />
-                <effect type="rotatey" center="1548" start="90" end="-90" time="0" delay="360" />
-                <effect type="fade" start="100" end="0" time="0" delay="360" />
-                <effect type="rotatey" center="1548" start="-90" end="0" time="0" delay="360" tween="cubic" />
-            </animation>
-            <include>Animation_ListSlideRight</include>
-            <visible>Control.HasFocus(5001)</visible>
-            <control type="image">
-                <posx>-78</posx>
-                <posy>164</posy>
-                <width>512</width>
-                <height>623</height>
-                <texture>wall/wall_bg_glow.png</texture>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
-                <include>PanelGlowFade</include>
-            </control>
-            <control type="image">
-                <posx>-78</posx>
-                <posy>164</posy>
-                <width>512</width>
-                <height>623</height>
-                <texture>wall/wall_bg.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-            </control>
-            <control type="image">
-                <posx>-78</posx>
-                <posy>164</posy>
-                <width>512</width>
-                <height>623</height>
-                <texture>wall/wall_bg_reflection.png</texture>
-            </control>
-            <control type="image">
-                <posx>-78</posx>
-                <posy>-40</posy>
-                <width>520</width>
-                <height>220</height>
-                <aspectratio aligny="top">keep</aspectratio>
-                <texture background="true">$VAR[LogoVar]</texture>
-            </control>
-            <control type="grouplist">
-                <posx>-46</posx>
-                <posy>200</posy>
-                <width>1400</width>
-                <orientation>horizontal</orientation>
-                <control type="label">
-                    <width min="0" max="1000">auto</width>
-                    <height>40</height>
-                    <label>$INFO[ListItem.RatingAndVotes,$LOCALIZE[31095]: [COLOR white4],[/COLOR]]$INFO[ListItem.Top250,$LOCALIZE[13409][COLOR white4],[/COLOR] # ]</label>
-                    <font>Font_Reg32</font>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
-                </control>
-            </control>
-            <control type="grouplist">
-                <posx>-46</posx>
-                <posy>235</posy>
-                <width>1400</width>
-                <orientation>horizontal</orientation>
-                <control type="label">
-                    <width min="0" max="1000">auto</width>
-                    <height>40</height>
-                    <label>[COLOR $VAR[FontColorVar]]$LOCALIZE[180]:[/COLOR] $INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                    <font>Font_Reg32</font>
-                    <textcolor>white4</textcolor>
-                </control>
-            </control>
-            <control type="textbox">
-                <posx>-46</posx>
-                <posy>275</posy>
-                <width>455</width>
-                <height>396</height>
-                <label fallback="31003">$VAR[InfoWallTextboxVar]</label>
-                <font>Font_Reg29</font>
-                <textcolor>white6</textcolor>
-                <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-            </control>
-        </control>
     </include>
     <include name="CommonRootView">
         <control type="group">
@@ -424,7 +323,7 @@
                 <onleft>62</onleft>
                 <onup>50</onup>
                 <ondown>50</ondown>
-                <onright>5001</onright>
+                <onright>9000</onright>
                 <viewtype label="535">list</viewtype>
                 <pagecontrol>62</pagecontrol>
                 <scrolltime tween="quadratic">200</scrolltime>
