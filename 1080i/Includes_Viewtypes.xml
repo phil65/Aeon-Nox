@@ -156,32 +156,19 @@
                 <scroll>true</scroll>
                 <scrollspeed>30</scrollspeed>
                 <visible>!ControlGroup(24000).HasFocus</visible>
-                <include>Animation_VisibleChange400</include>
+                <include>Animation_VisibleChange200</include>
             </control>
         </control>
     </include>
-    <include name="Furniture_DarkGradient">
-        <control type="grouplist" id="24000">
-            <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
-            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
-            <animation effect="slide" time="0" end="-280" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
-            <animation effect="slide" time="300" end="0,-30" tween="cubic" condition="ControlGroup(24000).HasFocus">Conditional</animation>
-            <!--
-            <animation effect="fade" start="100" end="0" time="400" delay="400" condition="Control.IsVisible(4051) + !Skin.HasSetting(ClassicTopBar)">Conditional</animation>-->
-            <animation effect="fade" delay="240" time="0" reversible="false">Hidden</animation>
-            <animation effect="fade" delay="240" time="400" reversible="false">Visible</animation>
-            <animation effect="fade" time="160">WindowClose</animation>
-            <posx>0</posx>
-            <posy>1040</posy>
-            <width>1920</width>
-            <height>540</height>
-            <onup>50</onup>
-            <ondown condition="!Control.IsVisible(500)">109</ondown>
-            <ondown condition="Control.IsVisible(500)">50</ondown>
-            <onright>24000</onright>
-            <onleft>24000</onleft>
-            <orientation>horizontal</orientation>
-            <align>center</align>
+    <include name="LetterButtons">
+            <control type="togglebutton" id="24031">
+                <label>*</label>
+                <altlabel>[B][COLOR $VAR[FontColorVar]]*[/B][/COLOR]</altlabel>
+                <enable>Substring(Window(home).Property(LetterList),.) | Substring(Window(home).Property(LetterList),*)</enable>
+                <usealttexture>Stringcompare(ListItem.SortLetter,*)</usealttexture>
+                <include>Objects_LetterButton</include>
+                <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=*)</onclick>
+            </control>
             <control type="togglebutton" id="24030">
                 <label>0-9</label>
                 <altlabel>[B][COLOR $VAR[FontColorVar]]0-9[/B][/COLOR]</altlabel>
@@ -411,6 +398,30 @@
                 <include>Objects_LetterButton</include>
                 <onclick>RunScript(script.extendedinfo,info=jumptoletter,id=Z)</onclick>
             </control>
+    </include>
+    <include name="Furniture_DarkGradient">
+        <control type="grouplist" id="24000">
+            <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
+            <animation effect="slide" time="0" end="-280" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
+            <animation effect="slide" time="300" end="0,-30" tween="cubic" condition="ControlGroup(24000).HasFocus">Conditional</animation>
+            <!--
+            <animation effect="fade" start="100" end="0" time="400" delay="400" condition="Control.IsVisible(4051) + !Skin.HasSetting(ClassicTopBar)">Conditional</animation>-->
+            <animation effect="fade" delay="240" time="0" reversible="false">Hidden</animation>
+            <animation effect="fade" delay="240" time="400" reversible="false">Visible</animation>
+            <animation effect="fade" time="160">WindowClose</animation>
+            <posx>0</posx>
+            <posy>1040</posy>
+            <width>1920</width>
+            <height>540</height>
+            <onup>50</onup>
+            <ondown condition="!Control.IsVisible(500)">109</ondown>
+            <ondown condition="Control.IsVisible(500)">50</ondown>
+            <onright>24000</onright>
+            <onleft>24000</onleft>
+            <orientation>horizontal</orientation>
+            <align>center</align>
+            <include>LetterButtons</include>
         </control>
         <control type="image">
             <posy>1012</posy>
@@ -422,7 +433,7 @@
             <animation effect="slide" time="160" end="1440" tween="cubic" condition="Control.IsVisible(510)">Conditional</animation>
         </control>
         <control type="grouplist">
-            <animation effect="slide" start="0,100" end="0" time="540" tween="cubic">VisibleChange</animation>
+            <animation effect="slide" start="0,70" end="0" delay="50" time="340" tween="cubic">VisibleChange</animation>
             <visible>!IsEmpty(Container.NumItems) + ControlGroup(24000).HasFocus</visible>
             <posy>1044</posy>
             <width>1920</width>
@@ -1465,7 +1476,6 @@
     </include>
     <include name="Neon_Floor">
         <control type="group">
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <control type="image">
                 <posy>854</posy>
                 <texture>common/topbar_left.png</texture>
