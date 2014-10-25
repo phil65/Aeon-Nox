@@ -147,17 +147,6 @@
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),movie) | Substring(Window(skinsettings).Property(CustomYesNoDialog),musicvideo) | Substring(Window(skinsettings).Property(CustomYesNoDialog),tv)</visible>
                     </control>
-                    <control type="button" id="11">
-                        <width>292</width>
-                        <height>62</height>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>31685</label>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,classic,skinsettings)</onfocus>
-                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
-                    </control>
                     <control type="button" id="12">
                         <width>292</width>
                         <height>62</height>
@@ -257,6 +246,7 @@
                         <textoffsetx>30</textoffsetx>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
+                        <onclick>Action(Close)</onclick>
                         <label>222</label>
                         <font>Font_Reg30_2</font>
                     </control>
