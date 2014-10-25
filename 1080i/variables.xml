@@ -831,6 +831,10 @@
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
         <value>$INFO[Window(home).Property(Widget1Title)]</value>
     </variable>
+    <variable name="WidgetConfigLabelVar">
+        <value condition="Stringcompare(Window(skinsettings).Property(WidgetSelection),Widget)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
+        <value>$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
+    </variable>
     <variable name="ClassicWidgetImageVar">
         <value condition="[Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),movie)] + !IsEmpty(Container(5010).ListItem.Art(landscape))">$INFO[Container(5010).ListItem.Art(landscape)]</value>
         <value condition="[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
