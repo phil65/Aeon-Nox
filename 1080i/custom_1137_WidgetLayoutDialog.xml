@@ -13,7 +13,7 @@
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="label" id="12112">
-            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(home).Property(Transparency)]</label>
+            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(home).Property(Transparency)]$INFO[Window(home).Property(PreviewWidget)]</label>
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
         <control type="group">
@@ -78,8 +78,11 @@
                         <label>Show small widget when not focused</label>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
+                        <selected>!IsEmpty(Window(home).Property(PreviewWidget))</selected>
                         <textcolor>white3</textcolor>
-                        <onclick>Nope</onclick>
+                        <onclick condition="IsEmpty(Window(home).Property(PreviewWidget))">SetProperty(PreviewWidget,classic,home)</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(PreviewWidget))">ClearProperty(PreviewWidget,home)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onclick>
                     </control>
                 </control>
                 <control type="grouplist" id="5400">
