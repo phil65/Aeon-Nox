@@ -421,6 +421,54 @@
             <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(518) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
             <animation effect="slide" time="160" end="1440" tween="cubic" condition="Control.IsVisible(510)">Conditional</animation>
         </control>
+        <control type="grouplist">
+            <animation effect="slide" start="0,100" end="0" time="540" tween="cubic">VisibleChange</animation>
+            <visible>!IsEmpty(Container.NumItems) + ControlGroup(24000).HasFocus</visible>
+            <posy>1044</posy>
+            <width>1920</width>
+            <align>center</align>
+            <aligny>center</aligny>
+            <itemgap>10</itemgap>
+            <orientation>horizontal</orientation>
+            <control type="image">
+                <width>32</width>
+                <height>40</height>
+                <aspectratio>keep</aspectratio>
+                <texture>breadcrumbs/items.png</texture>
+                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                <include>Animation_WindowFade200</include>
+            </control>
+            <control type="label">
+                <label>[UPPERCASE]$INFO[Container.NumItems] $VAR[ItemLabelVar][/UPPERCASE]</label>
+                <width min="15" max="1920">auto</width>
+                <height>38</height>
+                <font>Font_Reg25</font>
+                <shadowcolor>bcshadow</shadowcolor>
+                <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
+                <scroll>false</scroll>
+                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+            </control>
+            <control type="image">
+                <width>34</width>
+                <height>36</height>
+                <aspectratio>keep</aspectratio>
+                <texture>breadcrumbs/pages.png</texture>
+                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                <include>Animation_WindowFade200</include>
+                <visible>!Stringcompare(Container.NumPages,1)</visible>
+            </control>
+            <control type="label">
+                <label>[UPPERCASE]$INFO[Container.CurrentPage]$INFO[Container.NumPages,/][/UPPERCASE]</label>
+                <width min="15" max="1920">auto</width>
+                <height>38</height>
+                <font>Font_Reg25</font>
+                <shadowcolor>bcshadow</shadowcolor>
+                <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
+                <scroll>false</scroll>
+                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                <visible>!Stringcompare(Container.NumPages,1)</visible>
+            </control>
+        </control>
         <control type="image" id="4050">
             <visible>Container.Scrolling</visible>
             <animation effect="fade" end="100" time="0" delay="2400">Visible</animation>
