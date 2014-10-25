@@ -917,7 +917,6 @@
     </variable>
     <variable name="HomeMainFanartVar">
         <value condition="Substring(Control.GetLabel(4322),wall)">common/bgcolor.png</value>
-        <value condition="Control.IsVisible(8998) + !IsEmpty(Container(8000).ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4322),widgetfanart)">$INFO[Container(8000).ListItem.Art(fanart)]</value>
         <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
         <value>$VAR[MultiFanartVar]</value>
     </variable>

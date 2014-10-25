@@ -1296,7 +1296,7 @@
                 <effect type="zoom" start="150" delay="800" end="100" center="960,540" time="400" tween="cubic" />
                 <effect type="fade" end="100" delay="800" time="240" />
             </animation>
-            <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling))">
+            <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | Control.HasFocus(5010)">
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
