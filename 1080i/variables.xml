@@ -832,16 +832,16 @@
         <value>$INFO[Window(home).Property(Widget1Title)]</value>
     </variable>
     <variable name="ClassicWidgetImageVar">
-        <value condition="[Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),movie)] + !IsEmpty(Container(8000).ListItem.Property(Landscape))">$INFO[Container(8000).ListItem.Property(Landscape)]</value>
-        <value condition="[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !IsEmpty(Container(8000).ListItem.Property(Fanart))">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
-        <value condition="!IsEmpty(Container(8000).ListItem.Icon)">$INFO[Container(8000).ListItem.Icon]</value>
-        <value>$INFO[Container(8000).ListItem.Thumb]</value>
+        <value condition="[Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),movie)] + !IsEmpty(Container(5010).ListItem.Art(landscape))">$INFO[Container(5010).ListItem.Art(landscape)]</value>
+        <value condition="[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
+        <value condition="!IsEmpty(Container(5010).ListItem.Icon)">$INFO[Container(5010).ListItem.Icon]</value>
+        <value>$INFO[Container(5010).ListItem.Thumb]</value>
     </variable>
     <variable name="ClassicWidget2ImageVar">
-        <value condition="[Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),movie)] + !IsEmpty(Container(7000).ListItem.Property(Landscape))">$INFO[Container(7000).ListItem.Property(Landscape)]</value>
-        <value condition="[Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo)] + !IsEmpty(Container(7000).ListItem.Property(Fanart))">$INFO[Container(7000).ListItem.Property(Fanart)]</value>
-        <value condition="!IsEmpty(Container(7000).ListItem.Icon)">$INFO[Container(7000).ListItem.Icon]</value>
-        <value>$INFO[Container(7000).ListItem.Thumb]</value>
+        <value condition="[Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),movie)] + !IsEmpty(Container(6010).ListItem.Art(landscape))">$INFO[Container(6010).ListItem.Art(landscape)]</value>
+        <value condition="[Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo)] + !IsEmpty(Container(6010).ListItem.Art(fanart))">$INFO[Container(6010).ListItem.Art(fanart)]</value>
+        <value condition="!IsEmpty(Container(6010).ListItem.Icon)">$INFO[Container(6010).ListItem.Icon]</value>
+        <value>$INFO[Container(6010).ListItem.Thumb]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
@@ -865,8 +865,6 @@
         <value>$LOCALIZE[20360]</value>
     </variable>
     <variable name="HomeWidgetFanartVar">
-        <value condition="[Control.HasFocus(8000) | Control.HasFocus(8020)] + !IsEmpty(Container(8000).ListItem.Art(fanart))">$INFO[Container(8000).ListItem.Art(fanart)]</value>
-        <value condition="[Control.HasFocus(7000) | Control.HasFocus(7020)] + !IsEmpty(Container(7000).ListItem.Art(fanart))">$INFO[Container(7000).ListItem.Art(fanart)]</value>
         <value condition="[ControlGroup(5020).HasFocus | ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
         <value condition="Control.HasFocus(5010) + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5010) + Substring(Container(9000).ListItem.Property(Widget),featured) + !IsEmpty(Container(5001).ListItem.Art(fanart))">$INFO[Container(5001).ListItem.Art(fanart)]</value>
@@ -943,12 +941,12 @@
     </variable>
     <variable name="WidgetBackVar">
         <value condition="Substring(Control.GetLabel(4321),glass)">keyboard/keyboard_back_classic.png</value>
-        <value condition="Substring(Control.GetLabel(4321),default) | Control.HasFocus(8000)">keyboard/keyboard_back.png</value>
+        <value condition="Substring(Control.GetLabel(4321),default)">keyboard/keyboard_back.png</value>
         <value>-</value>
     </variable>
     <variable name="Widget2BackVar">
         <value condition="Substring(Control.GetLabel(4325),glass)">keyboard/keyboard_back_classic.png</value>
-        <value condition="Substring(Control.GetLabel(4325),default) | Control.HasFocus(7000)">keyboard/keyboard_back.png</value>
+        <value condition="Substring(Control.GetLabel(4325),default)">keyboard/keyboard_back.png</value>
         <value>-</value>
     </variable>
     <variable name="WeatherWidgetBackVar">
