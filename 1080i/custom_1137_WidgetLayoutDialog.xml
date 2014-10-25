@@ -2,6 +2,7 @@
 <window id="1137" type="dialog">
     <defaultcontrol>5400</defaultcontrol>
     <onload>Dialog.Close(1133)</onload>
+    <onload>SetProperty(Transparency,default,home)</onload>
     <onunload>ClearProperty(CustomYesNoDialog,skinsettings)</onunload>
     <onunload>ClearProperty(WidgetType,skinsettings)</onunload>
     <coordinates>
@@ -12,7 +13,7 @@
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="label" id="12112">
-            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(skinsettings).Property(Transparency)]</label>
+            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(home).Property(Transparency)]</label>
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
         <control type="group">
@@ -60,10 +61,15 @@
                         <height>62</height>
                         <textoffsetx>25</textoffsetx>
                         <label>Choose widget style</label>
+                        <label2>$VAR[WidgetStyleLabelVar]</label2>
                         <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
                         <textcolor>white3</textcolor>
-                        <onclick>Nope</onclick>
+                        <onclick condition="Stringcompare(Window(home).Property(Transparency),glass)">SetProperty(Transparency,2,home)</onclick>
+                        <onclick condition="Stringcompare(Window(home).Property(Transparency),default)">SetProperty(Transparency,glass,home)</onclick>
+                        <onclick condition="Stringcompare(Window(home).Property(Transparency),2)">SetProperty(Transparency,default,home)</onclick>
+                        <onclick condition="Stringcompare(Window(home).Property(Transparency),glass)">SetProperty(Transparency,2,home)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onclick>
                     </control>
                     <control type="radiobutton" id="5303">
                         <width>837</width>
@@ -75,43 +81,7 @@
                         <textcolor>white3</textcolor>
                         <onclick>Nope</onclick>
                     </control>
-                    <!--
-                    <control type="button" id="1111">
-                        <width>837</width>
-                        <height>62</height>
-                        <textoffsetx>25</textoffsetx>
-                        <label>31684</label>
-                        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
-                        <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
-                        <textcolor>white3</textcolor>
-                        <onfocus>SetProperty(Transparency,glass,skinsettings)</onfocus>
-                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
-                        <onclick>Dialog.Close(1146)</onclick>
-                    </control>
-                    <control type="button" id="1112">
-                        <width>175</width>
-                        <height>45</height>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>31685</label>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(Transparency,default,skinsettings)</onfocus>
-                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
-                        <onclick>Dialog.Close(1146)</onclick>
-                    </control>
-                    <control type="button" id="1113">
-                        <width>175</width>
-                        <height>45</height>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>16018</label>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white3</focusedcolor>
-                        <onfocus>ClearProperty(Transparency,skinsettings)</onfocus>
-                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
-                        <onclick>Dialog.Close(1146)</onclick>
-                    </control>--></control>
+                </control>
                 <control type="grouplist" id="5400">
                     <posx>708</posx>
                     <posy>52</posy>
