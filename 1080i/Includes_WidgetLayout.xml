@@ -211,127 +211,6 @@
             </control>
         </control>
     </include>
-    <include name="Furniture_HomeNowPlayingVideo">
-        <control type="group" id="8994">
-            <posx>-8</posx>
-            <posy>-22</posy>
-            <visible>!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo</visible>
-            <include>Animation_CommonFade</include>
-            <control type="group">
-                <visible>Skin.HasSetting(ShowBackgroundVideo)</visible>
-                <include>Animation_VisibleChange400</include>
-                <control type="image">
-                    <posx>37</posx>
-                    <posy>691</posy>
-                    <width>615</width>
-                    <height>359</height>
-                    <texture>common/black.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <bordertexture border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
-                    <bordersize>15</bordersize>
-                </control>
-                <control type="videowindow">
-                    <posx>52</posx>
-                    <posy>706</posy>
-                    <width>585</width>
-                    <height>329</height>
-                    <visible>Player.HasVideo</visible>
-                </control>
-            </control>
-            <control type="group">
-                <visible>!Skin.HasSetting(ShowBackgroundVideo)</visible>
-                <control type="group">
-                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
-                    <control type="image">
-                        <posx>108</posx>
-                        <posy>693</posy>
-                        <width>300</width>
-                        <height>300</height>
-                        <aligny>top</aligny>
-                        <aspectratio>keep</aspectratio>
-                        <texture background="true" fallback="common/cdart/bd.png">$INFO[Player.Art(discart)]</texture>
-                        <fadetime>300</fadetime>
-                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                    </control>
-                    <control type="image">
-                        <posx>30</posx>
-                        <posy>686</posy>
-                        <width>260</width>
-                        <height>390</height>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$VAR[PlayerPosterVar]</texture>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                    </control>
-                    <control type="image">
-                        <posx>10.5</posx>
-                        <posy>666.5</posy>
-                        <width>299</width>
-                        <height>429</height>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                        <bordersize>19.5</bordersize>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
-                    <control type="image">
-                        <posx>15</posx>
-                        <posy>723</posy>
-                        <width>498</width>
-                        <height>318</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture>common/bgcolor.png</texture>
-                        <animation effect="fade" end="30" condition="true">conditional</animation>
-                        <bordersize>9</bordersize>
-                    </control>
-                    <control type="image">
-                        <posx>24</posx>
-                        <posy>732</posy>
-                        <width>480</width>
-                        <height>300</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                        <visible>!IsEmpty(VideoPlayer.Cover)</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <posx>-370</posx>
-                <animation effect="slide" time="320" tween="cubic" easing="inout" end="218,-20" condition="!Skin.HasSetting(ShowBackgroundVideo) + [VideoPlayer.Content(files) | VideoPlayer.Content(livetv)]">Conditional</animation>
-                <animation effect="slide" time="640" tween="circle" easing="inout" end="354" condition="Skin.HasSetting(ShowBackgroundVideo)">Conditional</animation>
-                <control type="image">
-                    <posx>660</posx>
-                    <posy>990</posy>
-                    <width>45</width>
-                    <height>45</height>
-                    <texture>$VAR[NowPlayingPlayIconVar]</texture>
-                </control>
-                <control type="label">
-                    <aligny>top</aligny>
-                    <posx>720</posx>
-                    <posy>978</posy>
-                    <height>50</height>
-                    <aligny>top</aligny>
-                    <label>$VAR[NowPlayingPlayLabelVar]</label>
-                    <font>Font_Reg31_Caps</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                </control>
-                <control type="label">
-                    <posx>720</posx>
-                    <posy>1008</posy>
-                    <width>800</width>
-                    <aligny>top</aligny>
-                    <height>50</height>
-                    <label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.ChannelName,, - ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</label>
-                    <font>Font_Reg37_Caps</font>
-                    <textcolor>white3</textcolor>
-                    <wrapmultiline>true</wrapmultiline>
-                </control>
-            </control>
-        </control>
-    </include>
     <include name="HomeArtistSlideShow">
         <control type="group">
             <posx>1436</posx>
@@ -362,192 +241,6 @@
                 <width>425</width>
                 <height>400</height>
                 <texture>thumbs/boxes/cd_shadow_light.png</texture>
-            </control>
-        </control>
-    </include>
-    <include name="Furniture_HomeNowPlayingAudio">
-        <control type="group">
-            <visible>Player.HasAudio</visible>
-            <animation type="Visible">
-                <effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" end="100" time="240" />
-            </animation>
-            <animation type="Hidden">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <control type="group">
-                <visible>!Skin.HasSetting(disablecdart)</visible>
-                <control type="image">
-                    <posx>474</posx>
-                    <posy>768</posy>
-                    <width>388</width>
-                    <height>1</height>
-                    <texture>home/nowplaying_line_gradient.png</texture>
-                </control>
-                <control type="image">
-                    <posx>474</posx>
-                    <posy>977</posy>
-                    <width>388</width>
-                    <height>1</height>
-                    <texture>home/nowplaying_line_gradient.png</texture>
-                </control>
-                <control type="image">
-                    <posx>12</posx>
-                    <posy>656</posy>
-                    <width>423</width>
-                    <height>420</height>
-                    <texture>thumbs/cd_shadow_glow.png</texture>
-                    <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                </control>
-                <control type="group">
-                    <animation effect="slide" start="-150" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-                    <animation type="WindowClose">
-                        <effect type="slide" end="-180" time="320" tween="cubic" easing="in" />
-                        <effect type="fade" start="100" end="0" time="0" delay="320" />
-                        <condition type="!Player.Playing" />
-                    </animation>
-                    <control type="image">
-                        <posx>188</posx>
-                        <posy>686</posy>
-                        <width>360</width>
-                        <height>360</height>
-                        <aligny>top</aligny>
-                        <aspectratio>keep</aspectratio>
-                        <fadetime>300</fadetime>
-                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                        <include>cdart</include>
-                        <visible>!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>188</posx>
-                        <posy>686</posy>
-                        <width>360</width>
-                        <height>360</height>
-                        <aligny>top</aligny>
-                        <aspectratio>keep</aspectratio>
-                        <fadetime>300</fadetime>
-                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                        <include>vinylart</include>
-                        <visible>Skin.HasSetting(vinylart)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>188</posx>
-                        <posy>686</posy>
-                        <width>360</width>
-                        <height>360</height>
-                        <aligny>top</aligny>
-                        <aspectratio>keep</aspectratio>
-                        <fadetime>300</fadetime>
-                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                        <include>blurayart</include>
-                        <visible>Skin.HasSetting(blurayart)</visible>
-                    </control>
-                </control>
-                <control type="image">
-                    <posx>42</posx>
-                    <posy>684</posy>
-                    <width>363</width>
-                    <height>363</height>
-                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask2.png">$INFO[MusicPlayer.Cover]</texture>
-                    <bordertexture border="-90">thumbs/cd_shadow2.png</bordertexture>
-                </control>
-                <control type="image">
-                    <posx>42</posx>
-                    <posy>684</posy>
-                    <width>363</width>
-                    <height>363</height>
-                    <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-                    <texture diffuse="thumbs/cdcover_mask2.png">thumbs/cdcover_glass_noreflect.png</texture>
-                </control>
-            </control>
-            <control type="group">
-                <visible>Skin.HasSetting(disablecdart)</visible>
-                <control type="image">
-                    <posx>392</posx>
-                    <posy>768</posy>
-                    <width>388</width>
-                    <height>257</height>
-                    <texture>home/nowplaying_info.png</texture>
-                </control>
-                <control type="image">
-                    <posx>42</posx>
-                    <posy>684</posy>
-                    <width>363</width>
-                    <height>363</height>
-                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
-                </control>
-                <control type="image">
-                    <posx>22</posx>
-                    <posy>664</posy>
-                    <width>403</width>
-                    <height>403</height>
-                    <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-                    <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
-                    <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-                    <bordersize>20</bordersize>
-                </control>
-            </control>
-            <control type="group">
-                <control type="label">
-                    <posy>725</posy>
-                    <label>$INFO[MusicPlayer.Artist]</label>
-                    <font>Font_Reg36_Caps</font>
-                    <include>Furniture_HomeNowPlayingMetrics</include>
-                    <visible>Substring(Control.GetLabel(8308),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="82" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posy>768</posy>
-                    <label>$INFO[MusicPlayer.Album]</label>
-                    <font>Font_Reg28_Caps</font>
-                    <textcolor>white3</textcolor>
-                    <include>Furniture_HomeNowPlayingMetrics</include>
-                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="98" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
-                </control>
-                <control type="image" id="8308">
-                    <posx>530</posx>
-                    <posy>658</posy>
-                    <width>309</width>
-                    <height>108</height>
-                    <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
-                    <fadetime>400</fadetime>
-                    <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
-                    <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="-98" condition="Skin.HasSetting(disablecdart)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posy>940</posy>
-                    <label>$LOCALIZE[31040]</label>
-                    <font>Font_Reg28_Caps</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                    <include>Furniture_HomeNowPlayingMetrics</include>
-                    <visible>!Player.Paused</visible>
-                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="98" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posy>940</posy>
-                    <label>31043</label>
-                    <font>Font_Info</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                    <include>Furniture_HomeNowPlayingMetrics</include>
-                    <visible>Player.Paused</visible>
-                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="98" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posx>444</posx>
-                    <posy>975</posy>
-                    <width>650</width>
-                    <height>80</height>
-                    <aligny>bottom</aligny>
-                    <label>$INFO[MusicPlayer.Title]</label>
-                    <font>Font_Reg37_Caps</font>
-                    <textcolor>white3</textcolor>
-                    <wrapmultiline>true</wrapmultiline>
-                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="82" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
-                </control>
             </control>
         </control>
     </include>
@@ -610,8 +303,309 @@
                     <control type="group">
                         <animation effect="zoom" start="100" end="90" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
                         <animation effect="slide" end="0,70" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-                        <include>Furniture_HomeNowPlayingAudio</include>
-                        <include>Furniture_HomeNowPlayingVideo</include>
+                        <control type="group">
+                            <visible>Player.HasAudio</visible>
+                            <animation type="Visible">
+                                <effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />
+                                <effect type="fade" end="100" time="240" />
+                            </animation>
+                            <animation type="Hidden">
+                                <effect type="fade" start="100" end="0" time="240" />
+                                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+                            </animation>
+                            <control type="group">
+                                <visible>!Skin.HasSetting(disablecdart)</visible>
+                                <control type="image">
+                                    <posx>474</posx>
+                                    <posy>768</posy>
+                                    <width>388</width>
+                                    <height>1</height>
+                                    <texture>home/nowplaying_line_gradient.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>474</posx>
+                                    <posy>977</posy>
+                                    <width>388</width>
+                                    <height>1</height>
+                                    <texture>home/nowplaying_line_gradient.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>12</posx>
+                                    <posy>656</posy>
+                                    <width>423</width>
+                                    <height>420</height>
+                                    <texture>thumbs/cd_shadow_glow.png</texture>
+                                    <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
+                                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                                </control>
+                                <control type="group">
+                                    <animation effect="slide" start="-150" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
+                                    <animation type="WindowClose">
+                                        <effect type="slide" end="-180" time="320" tween="cubic" easing="in" />
+                                        <effect type="fade" start="100" end="0" time="0" delay="320" />
+                                        <condition type="!Player.Playing" />
+                                    </animation>
+                                    <control type="image">
+                                        <posx>188</posx>
+                                        <posy>686</posy>
+                                        <width>360</width>
+                                        <height>360</height>
+                                        <aligny>top</aligny>
+                                        <aspectratio>keep</aspectratio>
+                                        <fadetime>300</fadetime>
+                                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                                        <include>cdart</include>
+                                        <visible>!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
+                                    </control>
+                                    <control type="image">
+                                        <posx>188</posx>
+                                        <posy>686</posy>
+                                        <width>360</width>
+                                        <height>360</height>
+                                        <aligny>top</aligny>
+                                        <aspectratio>keep</aspectratio>
+                                        <fadetime>300</fadetime>
+                                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                                        <include>vinylart</include>
+                                        <visible>Skin.HasSetting(vinylart)</visible>
+                                    </control>
+                                    <control type="image">
+                                        <posx>188</posx>
+                                        <posy>686</posy>
+                                        <width>360</width>
+                                        <height>360</height>
+                                        <aligny>top</aligny>
+                                        <aspectratio>keep</aspectratio>
+                                        <fadetime>300</fadetime>
+                                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                                        <include>blurayart</include>
+                                        <visible>Skin.HasSetting(blurayart)</visible>
+                                    </control>
+                                </control>
+                                <control type="image">
+                                    <posx>42</posx>
+                                    <posy>684</posy>
+                                    <width>363</width>
+                                    <height>363</height>
+                                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask2.png">$INFO[MusicPlayer.Cover]</texture>
+                                    <bordertexture border="-90">thumbs/cd_shadow2.png</bordertexture>
+                                </control>
+                                <control type="image">
+                                    <posx>42</posx>
+                                    <posy>684</posy>
+                                    <width>363</width>
+                                    <height>363</height>
+                                    <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+                                    <texture diffuse="thumbs/cdcover_mask2.png">thumbs/cdcover_glass_noreflect.png</texture>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <visible>Skin.HasSetting(disablecdart)</visible>
+                                <control type="image">
+                                    <posx>392</posx>
+                                    <posy>768</posy>
+                                    <width>388</width>
+                                    <height>257</height>
+                                    <texture>home/nowplaying_info.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>42</posx>
+                                    <posy>684</posy>
+                                    <width>363</width>
+                                    <height>363</height>
+                                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>22</posx>
+                                    <posy>664</posy>
+                                    <width>403</width>
+                                    <height>403</height>
+                                    <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+                                    <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
+                                    <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
+                                    <bordersize>20</bordersize>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <control type="label">
+                                    <posy>725</posy>
+                                    <label>$INFO[MusicPlayer.Artist]</label>
+                                    <font>Font_Reg36_Caps</font>
+                                    <include>Furniture_HomeNowPlayingMetrics</include>
+                                    <visible>Substring(Control.GetLabel(8308),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))</visible>
+                                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="82" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
+                                </control>
+                                <control type="label">
+                                    <posy>768</posy>
+                                    <label>$INFO[MusicPlayer.Album]</label>
+                                    <font>Font_Reg28_Caps</font>
+                                    <textcolor>white3</textcolor>
+                                    <include>Furniture_HomeNowPlayingMetrics</include>
+                                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="98" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
+                                </control>
+                                <control type="image" id="8308">
+                                    <posx>530</posx>
+                                    <posy>658</posy>
+                                    <width>309</width>
+                                    <height>108</height>
+                                    <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
+                                    <fadetime>400</fadetime>
+                                    <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
+                                    <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
+                                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="-98" condition="Skin.HasSetting(disablecdart)">Conditional</animation>
+                                </control>
+                                <control type="label">
+                                    <posy>940</posy>
+                                    <label>$LOCALIZE[31040]</label>
+                                    <font>Font_Reg28_Caps</font>
+                                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                                    <include>Furniture_HomeNowPlayingMetrics</include>
+                                    <visible>!Player.Paused</visible>
+                                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="98" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
+                                </control>
+                                <control type="label">
+                                    <posy>940</posy>
+                                    <label>31043</label>
+                                    <font>Font_Info</font>
+                                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                                    <include>Furniture_HomeNowPlayingMetrics</include>
+                                    <visible>Player.Paused</visible>
+                                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="98" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
+                                </control>
+                                <control type="label">
+                                    <posx>444</posx>
+                                    <posy>975</posy>
+                                    <width>650</width>
+                                    <height>80</height>
+                                    <aligny>bottom</aligny>
+                                    <label>$INFO[MusicPlayer.Title]</label>
+                                    <font>Font_Reg37_Caps</font>
+                                    <textcolor>white3</textcolor>
+                                    <wrapmultiline>true</wrapmultiline>
+                                    <animation effect="slide" time="320" tween="cubic" easing="inout" end="82" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
+                                </control>
+                            </control>
+                        </control>
+                        <control type="group" id="8994">
+                            <posx>-8</posx>
+                            <posy>-22</posy>
+                            <visible>!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo</visible>
+                            <include>Animation_CommonFade</include>
+                            <control type="group">
+                                <visible>Skin.HasSetting(ShowBackgroundVideo)</visible>
+                                <include>Animation_VisibleChange400</include>
+                                <control type="image">
+                                    <posx>37</posx>
+                                    <posy>691</posy>
+                                    <width>615</width>
+                                    <height>359</height>
+                                    <texture>common/black.png</texture>
+                                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                                    <bordertexture border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
+                                    <bordersize>15</bordersize>
+                                </control>
+                                <control type="videowindow">
+                                    <posx>52</posx>
+                                    <posy>706</posy>
+                                    <width>585</width>
+                                    <height>329</height>
+                                    <visible>Player.HasVideo</visible>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <visible>!Skin.HasSetting(ShowBackgroundVideo)</visible>
+                                <control type="group">
+                                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
+                                    <control type="image">
+                                        <posx>108</posx>
+                                        <posy>693</posy>
+                                        <width>300</width>
+                                        <height>300</height>
+                                        <aligny>top</aligny>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture background="true" fallback="common/cdart/bd.png">$INFO[Player.Art(discart)]</texture>
+                                        <fadetime>300</fadetime>
+                                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                                    </control>
+                                    <control type="image">
+                                        <posx>30</posx>
+                                        <posy>686</posy>
+                                        <width>260</width>
+                                        <height>390</height>
+                                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                                        <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$VAR[PlayerPosterVar]</texture>
+                                        <fadetime>IconCrossfadeTime</fadetime>
+                                    </control>
+                                    <control type="image">
+                                        <posx>10.5</posx>
+                                        <posy>666.5</posy>
+                                        <width>299</width>
+                                        <height>429</height>
+                                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                                        <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                                        <bordersize>19.5</bordersize>
+                                    </control>
+                                </control>
+                                <control type="group">
+                                    <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
+                                    <control type="image">
+                                        <posx>15</posx>
+                                        <posy>723</posy>
+                                        <width>498</width>
+                                        <height>318</height>
+                                        <aspectratio>scale</aspectratio>
+                                        <texture>common/bgcolor.png</texture>
+                                        <animation effect="fade" end="30" condition="true">conditional</animation>
+                                        <bordersize>9</bordersize>
+                                    </control>
+                                    <control type="image">
+                                        <posx>24</posx>
+                                        <posy>732</posy>
+                                        <width>480</width>
+                                        <height>300</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
+                                        <fadetime>IconCrossfadeTime</fadetime>
+                                        <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                                    </control>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <posx>-370</posx>
+                                <animation effect="slide" time="320" tween="cubic" easing="inout" end="218,-20" condition="!Skin.HasSetting(ShowBackgroundVideo) + [VideoPlayer.Content(files) | VideoPlayer.Content(livetv)]">Conditional</animation>
+                                <animation effect="slide" time="640" tween="circle" easing="inout" end="354" condition="Skin.HasSetting(ShowBackgroundVideo)">Conditional</animation>
+                                <control type="image">
+                                    <posx>660</posx>
+                                    <posy>990</posy>
+                                    <width>45</width>
+                                    <height>45</height>
+                                    <texture>$VAR[NowPlayingPlayIconVar]</texture>
+                                </control>
+                                <control type="label">
+                                    <aligny>top</aligny>
+                                    <posx>720</posx>
+                                    <posy>978</posy>
+                                    <height>50</height>
+                                    <aligny>top</aligny>
+                                    <label>$VAR[NowPlayingPlayLabelVar]</label>
+                                    <font>Font_Reg31_Caps</font>
+                                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                                </control>
+                                <control type="label">
+                                    <posx>720</posx>
+                                    <posy>1008</posy>
+                                    <width>800</width>
+                                    <aligny>top</aligny>
+                                    <height>50</height>
+                                    <label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.ChannelName,, - ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</label>
+                                    <font>Font_Reg37_Caps</font>
+                                    <textcolor>white3</textcolor>
+                                    <wrapmultiline>true</wrapmultiline>
+                                </control>
+                            </control>
+                        </control>
                     </control>
                     <control type="group">
                         <visible>Player.HasAudio</visible>
