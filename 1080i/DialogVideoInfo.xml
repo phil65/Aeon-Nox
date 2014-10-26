@@ -905,7 +905,7 @@
                         <font>Font_Bold30</font>
                         <textcolor>white2</textcolor>
                         <visible>Control.HasFocus(601)</visible>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                     </control>
                     <control type="panel" id="601">
                         <posx>876</posx>
@@ -914,7 +914,7 @@
                         <height>177</height>
                         <onleft>5000</onleft>
                         <visible allowhiddenfocus="true">Control.HasFocus(601)</visible>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                         <animation effect="slide" start="0,0" end="2000,0" time="0" condition="!Control.HasFocus(601)">Conditional</animation>
                         <onright>5000</onright>
                         <onup>131</onup>
@@ -1054,7 +1054,7 @@
                             <height>217</height>
                             <texture border="6">views/addonwall_select.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <visible>Control.HasFocus(600)</visible>
                         </control>
                     </focusedlayout>
@@ -1224,7 +1224,7 @@
                     <height>30</height>
                     <texture flipx="true">arrowright.png</texture>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
                     <visible>Container(5000).HasPrevious+ ControlGroup(5000).HasFocus</visible>
                 </control>
@@ -1235,7 +1235,7 @@
                     <height>30</height>
                     <texture>arrowright.png</texture>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
                     <visible>Container(5000).HasNext+ ControlGroup(5000).HasFocus</visible>
                 </control>

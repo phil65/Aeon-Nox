@@ -242,7 +242,7 @@
                 <aspectratio>scale</aspectratio>
                 <texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
                 <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
                 <fadetime>400</fadetime>
             </control>
             <control type="image">
@@ -252,7 +252,7 @@
                 <texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
                 <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.2))</visible>
                 <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
                 <fadetime>400</fadetime>
             </control>
             <control type="image">
@@ -263,7 +263,7 @@
                 <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.3))</visible>
                 <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.3))</visible>
                 <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
                 <fadetime>400</fadetime>
             </control>
         </control>
@@ -801,7 +801,7 @@
                     <control type="group">
                         <!-- Genre -->
                             <posx>1743</posx>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                         <visible>!Control.IsVisible(53)</visible>
                         <control type="image">
                             <posy>6</posy>
@@ -836,7 +836,7 @@
                                 <control type="group">
                     <!-- Genre -->
                     <visible>!IsEmpty(ListItem.Genre)</visible>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <posx>1203</posx>
                     <control type="image">
                         <width>175</width>
@@ -869,7 +869,7 @@
                     <fadetime>IconCrossfadeTime2</fadetime>
                     <colordiffuse>floor</colordiffuse>
                     <visible>!IsEmpty(ListItem.StarRating)</visible>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                 </control>
                 <!-- Codec -->
                 <control type="image">
@@ -881,7 +881,7 @@
                 </control>
                 <control type="group">
                     <!-- Year -->
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>!IsEmpty(ListItem.Year)</visible>
                     <posx>1725</posx>
                     <control type="image">
