@@ -4067,14 +4067,33 @@
             <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(clearlogo)]</texture>
             <visible>!IsEmpty(ListItem.Art(clearlogo))</visible>
         </control>
-        <control type="image">
-            <posx>10</posx>
-            <posy>4</posy>
-            <width>512</width>
-            <height>340</height>
-            <aspectratio align="center">keep</aspectratio>
-            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
+        <control type="group">
             <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
+            <control type="image">
+                <posx>10</posx>
+                <posy>4</posy>
+                <width>512</width>
+                <height>340</height>
+                <aspectratio align="center">keep</aspectratio>
+                <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
+            </control>
+            <control type="image">
+                <posx>10</posx>
+                <posy>140</posy>
+                <width>512</width>
+                <height>60</height>
+                <texture>common/bgcolor.png</texture>
+                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+            </control>
+            <control type="label">
+                <posx>10</posx>
+                <posy>140</posy>
+                <width>512</width>
+                <height>60</height>
+<font>Font_Bold37_Caps</font>
+<align>center</align>
+                <label>$INFO[ListItem.Label]</label>
+            </control>
         </control>
         <control type="label">
             <posx>0</posx>
