@@ -14,11 +14,11 @@
                 <animation effect="slide" tween="cubic" easing="in" time="320" start="0,606" end="0,0">WindowOpen</animation>
                 <animation effect="slide" tween="cubic" easing="in" time="240" end="0,740">WindowClose</animation>
                 <control type="group">
-                    <animation effect="slide" end="0,-214" time="120" condition="Skin.HasSetting(nohighlist) + Control.HasFocus(7002)">Conditional</animation>
-                    <animation effect="slide" end="0,-50" time="120" condition="!Skin.HasSetting(nohighlist) + Control.HasFocus(7002)">Conditional</animation>
+                    <animation effect="slide" end="0,-214" time="120" condition="Skin.HasSetting(nohighlist)">Conditional</animation>
+                    <animation effect="slide" end="0,-50" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                     <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                     <control type="group">
-                        <visible>Container.Content(movies) + [Skin.HasSetting(lowlisttagline) | Control.HasFocus(7002)] + !IsEmpty(ListItem.Tagline)</visible>
+                        <visible>Container.Content(movies) + Skin.HasSetting(lowlisttagline) + !IsEmpty(ListItem.Tagline)</visible>
                         <animation type="Visible">
                             <effect type="zoom" end="100,100" start="100,0" time="320" easing="in" tween="cubic" center="960,755" />
                         </animation>
@@ -44,7 +44,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <animation effect="slide" end="-655,0" time="120" condition="!Control.IsVisible(9900) + !Control.HasFocus(7002)">Conditional</animation>
+                        <animation effect="slide" end="-655,0" time="120" condition="!Control.IsVisible(9900)">Conditional</animation>
                         <control type="image">
                             <posy>710</posy>
                             <width>1920</width>
@@ -87,231 +87,11 @@
                         <texture>views/listpanel_detailwide.png</texture>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <animation effect="fade" time="200">VisibleChange</animation>
-                        <visible>!Control.HasFocus(7002) + !Container.Content(seasons) + Control.IsVisible(9900)</visible>
-                    </control>
-                </control>
-                <control type="spincontrol" id="7002">
-                    <posx>1815</posx>
-                    <posy>525</posy>
-                    <onup>Control.Move(511,-1)</onup>
-                    <onleft>50</onleft>
-                    <onright condition="!Skin.HasSetting(kioskmode)">9000</onright>
-                    <ondown>Control.Move(511,1)</ondown>
-                    <onback>50</onback>
-                    <visible allowhiddenfocus="true">Control.HasFocus(7002)</visible>
-                </control>
-                <control type="group">
-                    <posx>450</posx>
-                    <visible>Control.HasFocus(7002)</visible>
-                    <control type="image">
-                        <posy>600</posy>
-                        <width>1440</width>
-                        <height>1</height>
-                        <texture>views/lowlistpanel_line.png</texture>
-                        <colordiffuse>66FFFFFF</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posy>975</posy>
-                        <width>1440</width>
-                        <height>1</height>
-                        <texture>views/lowlistpanel_line.png</texture>
-                        <colordiffuse>66FFFFFF</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posy>675</posy>
-                        <width>398</width>
-                        <height>1</height>
-                        <texture>views/lowlistpanel_line.png</texture>
-                        <colordiffuse>66FFFFFF</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posy>750</posy>
-                        <width>398</width>
-                        <height>1</height>
-                        <texture>views/lowlistpanel_line.png</texture>
-                        <colordiffuse>66FFFFFF</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posy>825</posy>
-                        <width>398</width>
-                        <height>1</height>
-                        <texture>views/lowlistpanel_line.png</texture>
-                        <colordiffuse>66FFFFFF</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posy>900</posy>
-                        <width>398</width>
-                        <height>1</height>
-                        <texture>views/lowlistpanel_line.png</texture>
-                        <colordiffuse>66FFFFFF</colordiffuse>
-                    </control>
-                    <control type="group">
-                        <visible>!Container.Content(episodes)</visible>
-                        <control type="image">
-                            <posx>405</posx>
-                            <posy>607</posy>
-                            <width>628</width>
-                            <height>360</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                            <fadetime>400</fadetime>
-                            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                            <bordersize>7</bordersize>
-                        </control>
-                        <control type="multiimage">
-                            <posx>412</posx>
-                            <posy>614</posy>
-                            <width>614</width>
-                            <height>346</height>
-                            <aspectratio>scale</aspectratio>
-                            <imagepath background="true">$INFO[ListItem.Path]/extrathumbs/</imagepath>
-                            <fadetime>1000</fadetime>
-                            <timeperimage>8000</timeperimage>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <posx>405</posx>
-                        <posy>607</posy>
-                        <width>628</width>
-                        <height>360</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture background="true">$INFO[ListItem.Thumb]</texture>
-                        <fadetime>400</fadetime>
-                        <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                        <bordersize>7</bordersize>
-                        <visible>Container.Content(episodes)</visible>
-                    </control>
-                    <control type="fadelabel">
-                        <posx>10</posx>
-                        <posy>540</posy>
-                        <width>1390</width>
-                        <height>60</height>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Title]</label>
-                        <font>Font_Reg42_Caps</font>
-                        <textcolor>white3</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>600</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <label>$VAR[FanartPanelDetail1Var]</label>
-                        <textcolor>grey2</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>638</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <aligny>top</aligny>
-                        <label fallback="31003">$VAR[FanartPanelValue1Var]</label>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>675</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <label>$VAR[FanartPanelDetail2Var]</label>
-                        <textcolor>grey2</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>712</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <aligny>top</aligny>
-                        <label fallback="31003">$VAR[FanartPanelValue2Var]</label>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>750</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <label>$VAR[FanartPanelDetail4Var]</label>
-                        <textcolor>grey2</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>788</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <aligny>top</aligny>
-                        <label fallback="31003">$VAR[FanartPanelValue4Var]</label>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                        <visible>IsEmpty(ListItem.Top250)</visible>
-                    </control>
-                    <control type="fadelabel">
-                        <posx>10</posx>
-                        <posy>788</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <aligny>top</aligny>
-                        <label fallback="31003">$INFO[ListItem.Top250,$LOCALIZE[13409] #]</label>
-                        <label fallback="31003">$INFO[ListItem.RatingAndVotes]</label>
-                        <textcolor>white6</textcolor>
-                        <visible>!IsEmpty(ListItem.Top250)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>825</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <label>$VAR[FanartPanelDetail5Var]</label>
-                        <textcolor>grey2</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>862</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <aligny>top</aligny>
-                        <label fallback="31003">$VAR[FanartPanelValue5Var]</label>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>900</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <label>$VAR[FanartPanelDetail6Var]</label>
-                        <textcolor>grey2</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>10</posx>
-                        <posy>938</posy>
-                        <width>398</width>
-                        <height>38</height>
-                        <aligny>top</aligny>
-                        <label fallback="31003">$VAR[FanartPanelValue6Var]</label>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="textbox">
-                        <posx>1050</posx>
-                        <posy>606</posy>
-                        <width>405</width>
-                        <height>367</height>
-                        <label>$VAR[GlobalPlotVar]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>white6</textcolor>
-                        <pagecontrol>7002</pagecontrol>
-                        <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <visible>!Container.Content(seasons) + Control.IsVisible(9900)</visible>
                     </control>
                 </control>
                 <control type="group">
-                    <visible>!Control.HasFocus(7002) + Control.IsVisible(9900)</visible>
+                    <visible>Control.IsVisible(9900)</visible>
                     <animation effect="fade" time="160">VisibleChange</animation>
                     <control type="image">
                         <posx>1275</posx>
@@ -468,7 +248,7 @@
                 <visible>Player.HasVideo</visible>
                 <animation effect="slide" tween="cubic" easing="inout" time="1040" start="-1200,0" end="0,0" delay="800">Visible</animation>
                 <animation effect="slide" tween="cubic" easing="inout" time="1040" start="-1200,0" end="0,0" delay="800">WindowOpen</animation>
-                <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist) | Control.HasFocus(7002)">Conditional</animation>
+                <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                 <include>Animation_CommonFade</include>
                 <control type="image">
                     <posx>405</posx>
@@ -508,7 +288,7 @@
                 <animation effect="slide" tween="cubic" easing="in" time="240" end="-450">WindowClose</animation>
                 <control type="group">
                     <animation effect="slide" end="-40,0" time="320" easing="inout" tween="cubic" condition="Control.HasFocus(69)">Conditional</animation>
-                    <visible>[!Container.Content(episodes) | Control.HasFocus(7002)]</visible>
+                    <visible>!Container.Content(episodes)</visible>
                     <animation effect="fade" time="120" end="100">Visible</animation>
                     <animation effect="fade" time="120" start="100" end="0">Hidden</animation>
                     <control type="image">
@@ -579,7 +359,7 @@
                         <effect type="fade" time="120" end="100" />
                         <effect type="slide" start="0,-75" end="0,0" time="160" />
                     </animation>
-                    <visible>Container.Content(episodes) + !Control.HasFocus(7002)</visible>
+                    <visible>Container.Content(episodes)</visible>
                     <control type="image">
                         <width>420</width>
                         <height>237</height>
@@ -636,8 +416,7 @@
                 <include condition="!Skin.HasSetting(nohighlist)">LowListHeightHigh</include>
                 <include condition="Skin.HasSetting(nohighlist)">LowListHeightLow</include>
                 <onleft>69</onleft>
-                <onright condition="!IsEmpty(Container.FolderPath)">7002</onright>
-                <onright condition="IsEmpty(Container.FolderPath)">9000</onright>
+                <onright>Info</onright>
                 <onup>511</onup>
                 <ondown>511</ondown>
                 <orientation>vertical</orientation>
@@ -649,7 +428,6 @@
                 <animation effect="slide" tween="cubic" easing="in" time="320" start="0,606" end="0,0">WindowOpen</animation>
                 <animation effect="slide" tween="cubic" easing="in" time="240" end="0,606">WindowClose</animation>
                 <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="40" condition="Control.HasFocus(7002)">Conditional</animation>
                 <itemlayout height="66" width="825" condition="![Skin.HasSetting(lowlistbanner) + Container.Content(tvshows)]">
                     <control type="image">
                         <posx>1</posx>
