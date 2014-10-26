@@ -392,7 +392,7 @@
         </control>
         <control type="group">
             <visible>Skin.HasSetting(showcasecdartmusic) + Control.IsVisible(509)</visible>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <animation type="WindowClose" reversible="false">
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
@@ -732,7 +732,7 @@
             <height>403</height>
             <texture background="true">thumbs/boxes/cd_shadow_light_shadow.png</texture>
             <bordersize>16</bordersize>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>

@@ -31,7 +31,7 @@
             </control>
             <control type="group">
                 <visible>Skin.HasSetting(AltBannerPlex)</visible>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <control type="image">
                     <posx>96</posx>
                     <posy>601</posy>
@@ -275,7 +275,7 @@
                 <height>347</height>
                 <texture border="21">featured/panel_featured_overlay.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <visible>Skin.HasSetting(AltBannerPlex)</visible>
                 <animation effect="fade" time="160" delay="120" start="100" end="40" condition="Control.IsVisible(7550)">Conditional</animation>
             </control>

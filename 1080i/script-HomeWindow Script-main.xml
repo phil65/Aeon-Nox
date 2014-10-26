@@ -84,14 +84,14 @@
                     <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
                     <fadetime>600</fadetime>
                     <visible>Player.HasAudio + Skin.HasSetting(artistslideshowhome)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
             </control>
             <include>CommonMediaPlayingBackground</include>
         </control>
         <control type="image">
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <visible>IsEmpty(Window(home).Property(DisableWidgets)) | Control.IsVisible(8995)</visible>
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)]</visible>
             <texture>common/bgcolor.png</texture>
@@ -196,7 +196,7 @@
                     <control type="grouplist">
                         <posx>30</posx>
                         <visible>Weather.IsFetched</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <orientation>horizontal</orientation>
                         <usecontrolcoords>true</usecontrolcoords>
                         <control type="label">
@@ -268,7 +268,7 @@
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                         <include>PanelGlowFade</include>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!Skin.HasSetting(DisableGlowbar) | Skin.HasSetting(classichome)</visible>
                     </control>
                     <!--Home Menu-->
@@ -410,7 +410,7 @@
                 <texture>common/bgcolor.png</texture>
                 <include>FullscreenDimensions</include>
                 <visible>Control.HasFocus(22222) | !IsEmpty(Window(home).Property(weatherwidget))</visible>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="image">
                 <aspectratio>keep</aspectratio>

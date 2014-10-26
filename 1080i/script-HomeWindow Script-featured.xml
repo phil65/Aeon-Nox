@@ -124,7 +124,7 @@
             <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
             <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
         </control>
         <control type="image">
             <posy>-150</posy>
@@ -133,7 +133,7 @@
             <texture flipy="true">views/showcase_glow.png</texture>
             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
             <animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
         </control>
@@ -992,7 +992,7 @@
                                     <height>240</height>
                                     <texture border="6">common/bgcolor.png</texture>
                                     <visible>Control.HasFocus(5010)</visible>
-                                    <include>Animation_VisibleChange400</include>
+                                    <animation effect="fade" time="350">VisibleChange</animation>
                                     <colordiffuse>55FFFFFF</colordiffuse>
                                 </control>
                             </itemlayout>
@@ -1144,7 +1144,7 @@
                                     <height>240</height>
                                     <texture border="6">common/bgcolor.png</texture>
                                     <visible>Control.HasFocus(5010)</visible>
-                                    <include>Animation_VisibleChange400</include>
+                                    <animation effect="fade" time="350">VisibleChange</animation>
                                     <colordiffuse>55FFFFFF</colordiffuse>
                                 </control>
                             </itemlayout>

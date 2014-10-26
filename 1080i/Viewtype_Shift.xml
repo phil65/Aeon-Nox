@@ -271,7 +271,7 @@
                     <textcolor>floor</textcolor>
                     <visible>!Control.IsVisible(24000)</visible>
                     <visible>![Control.HasFocus(61) | Control.IsVisible(4050)]</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="label">
                     <posx>195</posx>
@@ -286,7 +286,7 @@
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
                     <visible>Container.Content(albums)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="label">
                     <posx>195</posx>
@@ -301,7 +301,7 @@
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
                     <visible>!Container.Content(albums)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
             </control>
         </control>

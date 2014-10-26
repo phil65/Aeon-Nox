@@ -28,7 +28,7 @@
                 <visible>!StringCompare(Skin.String(MusicViz.MultiFanart),artistfanart) + !Substring(Skin.String(MusicViz.MultiFanart),case) + !Substring(Skin.String(MusicViz.MultiFanart),artistslideshow) + !Substring(Skin.String(MusicViz.MultiFanart),wall) + !IsEmpty(Skin.String(MusicViz.MultiFanart))</visible>
             </control>
             <control type="group">
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <visible>StringCompare(Skin.String(MusicViz.MultiFanart),artistfanart)</visible>
                 <control type="multiimage">
                     <imagepath fallback="special://skin/backgrounds/music/">$INFO[Player.Art(fanart)]</imagepath>
@@ -52,7 +52,7 @@
                 <aspectratio align="center" aligny="top">keep</aspectratio>
                 <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
                 <fadetime>600</fadetime>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),dailybabe)</visible>
@@ -62,7 +62,7 @@
             <include>LiveNoCasesbackground</include>
             <control type="group">
                 <visible>StringCompare(Skin.String(MusicViz.MultiFanart),artistslideshow)</visible>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <control type="image">
                     <texture>common/bgcolor.png</texture>
                     <include>FullscreenDimensions</include>
@@ -114,7 +114,7 @@
                     <aligny>center</aligny>
                     <orientation>horizontal</orientation>
                     <visible>Weather.IsFetched</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <itemgap>10</itemgap>
                     <control type="label">
                         <width min="15" max="1920">auto</width>
@@ -355,7 +355,7 @@
                         <shadowcolor>black</shadowcolor>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <scroll>true</scroll>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!Skin.HasSetting(CDArtinVis)</visible>
                         <animation effect="slide" end="-162" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     </control>
@@ -369,7 +369,7 @@
                         <shadowcolor>black</shadowcolor>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <scroll>true</scroll>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>Skin.HasSetting(CDArtinVis)</visible>
                         <animation effect="slide" end="-162" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     </control>
@@ -383,7 +383,7 @@
                         <shadowcolor>black</shadowcolor>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <scroll>true</scroll>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!Skin.HasSetting(CDArtinVis)</visible>
                         <animation effect="slide" end="-148" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     </control>
@@ -397,7 +397,7 @@
                         <shadowcolor>black</shadowcolor>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <scroll>true</scroll>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>Skin.HasSetting(CDArtinVis)</visible>
                         <animation effect="slide" end="-148" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     </control>
@@ -648,7 +648,7 @@
                         <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                     <control type="image">
                         <posx>120</posx>
@@ -677,7 +677,7 @@
                                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                                 <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                                <include>Animation_VisibleChange400</include>
+                                <animation effect="fade" time="350">VisibleChange</animation>
                             </control>
                             <control type="image">
                                 <posx>22</posx>
@@ -761,7 +761,7 @@
                     <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                     <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="image">
                     <posx>120</posx>
@@ -795,7 +795,7 @@
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                     <control type="multiimage">
                         <posx>2</posx>
@@ -874,7 +874,7 @@
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                     <control type="multiimage">
                         <posx>22</posx>

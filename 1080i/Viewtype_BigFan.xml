@@ -29,13 +29,13 @@
                         <include>FullscreenDimensions</include>
                         <randomize>no</randomize>
                         <visible>Skin.HasSetting(bigfanextrafanart) + [Container.Content(tvshows) | Container.Content(movies)]</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                     <control type="image">
                         <texture background="true">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</texture>
                         <include>FullscreenDimensions</include>
                         <visible>Container.Content(genres)</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                 </itemlayout>
                 <focusedlayout height="1080" width="1920">
@@ -48,14 +48,14 @@
                         <fadetime>350</fadetime>
                         <include>FullscreenDimensions</include>
                         <randomize>no</randomize>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>Skin.HasSetting(bigfanextrafanart) + [Container.Content(tvshows) | Container.Content(movies)]</visible>
                     </control>
                     <control type="image">
                         <texture background="true">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</texture>
                         <include>FullscreenDimensions</include>
                         <visible>Container.Content(genres)</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                 </focusedlayout>
             </control>

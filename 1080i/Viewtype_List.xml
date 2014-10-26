@@ -99,7 +99,7 @@
                 <texture background="true">thumbs/thumb_glass_shadow.png</texture>
                 <bordersize>18</bordersize>
                 <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
@@ -195,7 +195,7 @@
                     <texture background="true">thumbs/boxes/cd_shadow_light_shadow.png</texture>
                     <bordersize>18</bordersize>
                     <include>PanelGlowFade</include>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 </control>
@@ -923,7 +923,7 @@
             <texture>wall/wall_bg_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <include>PanelGlowFade</include>
         </control>
         <control type="image">

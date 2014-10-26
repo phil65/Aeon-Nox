@@ -43,7 +43,7 @@
                 <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                 <animation effect="rotate" start="-90" end="180" center="auto" delay="240" time="640" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <visible>Skin.HasSetting(TopBarToolTip)</visible>
             </control>
             <control type="image">

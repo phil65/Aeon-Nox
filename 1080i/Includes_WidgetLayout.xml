@@ -135,7 +135,7 @@
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="multiimage">
                 <posx>22</posx>
@@ -404,7 +404,7 @@
                             <include>Animation_CommonFade</include>
                             <control type="group">
                                 <visible>Skin.HasSetting(ShowBackgroundVideo)</visible>
-                                <include>Animation_VisibleChange400</include>
+                                <animation effect="fade" time="350">VisibleChange</animation>
                                 <control type="image">
                                     <posx>37</posx>
                                     <posy>691</posy>
@@ -609,7 +609,7 @@
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                     <control type="multiimage">
                         <posx>22</posx>
@@ -1140,7 +1140,7 @@
                     <include>PanelGlowFade</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <visible>Substring(Control.GetLabel(4321),default)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 </control>
                 <control type="image">
@@ -1273,7 +1273,7 @@
                         <include>PanelGlowFade</include>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>Substring(Control.GetLabel(4321),default)</visible>
                     </control>
                     <control type="image">
@@ -1288,7 +1288,7 @@
                 </control>
                 <control type="group">
                     <visible>!Substring(Control.GetLabel(4321),weather)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <control type="panel" id="5010">
                         <visible>!Substring(Control.GetLabel(4321),featured)</visible>
                         <posx>27</posx>
@@ -1343,7 +1343,7 @@
                                 <height>340</height>
                                 <texture>common/bgcolor.png</texture>
                                 <colordiffuse>99FFFFFF</colordiffuse>
-                                <include>Animation_VisibleChange400</include>
+                                <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
                         </itemlayout>
@@ -1430,7 +1430,7 @@
                                     <height>309</height>
                                     <texture>common/bgcolor.png</texture>
                                     <colordiffuse>99FFFFFF</colordiffuse>
-                                    <include>Animation_VisibleChange400</include>
+                                    <animation effect="fade" time="350">VisibleChange</animation>
                                     <visible>Control.HasFocus(5010)</visible>
                                 </control>
                             </control>
@@ -1485,7 +1485,7 @@
                                 <height>340</height>
                                 <texture>common/bgcolor.png</texture>
                                 <colordiffuse>99FFFFFF</colordiffuse>
-                                <include>Animation_VisibleChange400</include>
+                                <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
                         </itemlayout>
@@ -1555,7 +1555,7 @@
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),wunderground)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <control type="image">
                         <posx>1015</posx>
                         <posy>26</posy>
@@ -1667,7 +1667,7 @@
         <control type="group">
             <posy>31</posy>
             <visible>Substring(Control.GetLabel(4321),featured)</visible>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <control type="button" id="5011">
                 <posx>650</posx>
                 <posy>-5</posy>
@@ -1751,7 +1751,7 @@
                     <height>340</height>
                     <texture>common/bgcolor.png</texture>
                     <colordiffuse>99FFFFFF</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(5011) | Control.HasFocus(5012)]</visible>
                 </control>
             </control>
@@ -1789,7 +1789,7 @@
                     <height>340</height>
                     <texture>common/bgcolor.png</texture>
                     <colordiffuse>99FFFFFF</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(5010) | Control.HasFocus(5012)]</visible>
                 </control>
             </control>
@@ -1828,7 +1828,7 @@
                     <height>340</height>
                     <texture>common/bgcolor.png</texture>
                     <colordiffuse>99FFFFFF</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>Control.HasFocus(5010) | Control.HasFocus(5011)</visible>
                 </control>
             </control>
@@ -1857,7 +1857,7 @@
                 <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="image">
                 <posx>-100</posx>
@@ -1951,7 +1951,7 @@
                         <label>$LOCALIZE[20410]</label>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)])</onclick>
                         <include>WidgetMenuLabel</include>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!IsEmpty(Window(home).Property(Trailer)) + !IsEmpty(Window(home).Property(DBID))</visible>
                     </control>
                     <!--
@@ -2827,7 +2827,7 @@
                 <include>PanelGlowFade</include>
                 <visible>Substring(Control.GetLabel(4325),default)</visible>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
@@ -2960,7 +2960,7 @@
                         <visible>Substring(Control.GetLabel(4325),default)</visible>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
                     <control type="image">
                         <width>1650</width>
@@ -2974,7 +2974,7 @@
                 </control>
                 <control type="group">
                     <visible>!Substring(Control.GetLabel(4325),weather)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <control type="panel" id="6010">
                         <visible>!Substring(Control.GetLabel(4325),featured)</visible>
                         <posx>27</posx>
@@ -3070,7 +3070,7 @@
                                 <height>340</height>
                                 <texture>common/bgcolor.png</texture>
                                 <colordiffuse>99FFFFFF</colordiffuse>
-                                <include>Animation_VisibleChange400</include>
+                                <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(6010)</visible>
                             </control>
                         </itemlayout>
@@ -3118,7 +3118,7 @@
                                     <height>309</height>
                                     <texture>common/bgcolor.png</texture>
                                     <colordiffuse>99FFFFFF</colordiffuse>
-                                    <include>Animation_VisibleChange400</include>
+                                    <animation effect="fade" time="350">VisibleChange</animation>
                                     <visible>Control.HasFocus(6010)</visible>
                                 </control>
                             </control>
@@ -3173,7 +3173,7 @@
                                 <height>340</height>
                                 <texture>common/bgcolor.png</texture>
                                 <colordiffuse>99FFFFFF</colordiffuse>
-                                <include>Animation_VisibleChange400</include>
+                                <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>Control.HasFocus(6010)</visible>
                             </control>
                         </itemlayout>
@@ -3243,7 +3243,7 @@
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),wunderground)</visible>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <control type="image">
                         <posx>1015</posx>
                         <posy>26</posy>
@@ -3306,7 +3306,7 @@
         <control type="group">
             <posy>31</posy>
             <visible>Substring(Control.GetLabel(4325),featured)</visible>
-            <include>Animation_VisibleChange400</include>
+            <animation effect="fade" time="350">VisibleChange</animation>
             <control type="button" id="6011">
                 <posx>650</posx>
                 <posy>-5</posy>
@@ -3389,7 +3389,7 @@
                     <height>340</height>
                     <texture>common/bgcolor.png</texture>
                     <colordiffuse>99FFFFFF</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(6011) | Control.HasFocus(6012)]</visible>
                 </control>
             </control>
@@ -3431,7 +3431,7 @@
                     <height>340</height>
                     <texture>common/bgcolor.png</texture>
                     <colordiffuse>99FFFFFF</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(6010) | Control.HasFocus(6012)]</visible>
                 </control>
             </control>
@@ -3474,7 +3474,7 @@
                     <height>340</height>
                     <texture>common/bgcolor.png</texture>
                     <colordiffuse>99FFFFFF</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>[Control.HasFocus(6010) | Control.HasFocus(6011)]</visible>
                 </control>
             </control>

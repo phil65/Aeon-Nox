@@ -63,7 +63,7 @@
                             <texture background="true">$VAR[TVShowClearArtVar]</texture>
                             <fadetime>400</fadetime>
                             <visible>Skin.HasSetting(lowlistclearart)</visible>
-                            <include>Animation_VisibleChange400</include>
+                            <animation effect="fade" time="350">VisibleChange</animation>
                             <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
                         </control>
                         <include>Neon_LowList</include>
@@ -75,7 +75,7 @@
                             <aspectratio>keep</aspectratio>
                             <texture background="true">$VAR[LogoVar]</texture>
                             <fadetime>400</fadetime>
-                            <include>Animation_VisibleChange400</include>
+                            <animation effect="fade" time="350">VisibleChange</animation>
                             <visible>!Skin.HasSetting(lowlistclearart) + [Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]</visible>
                         </control>
                     </control>
@@ -521,7 +521,7 @@
                         <bordersize>18</bordersize>
                         <include>PanelGlowFade</include>
                         <visible>!Skin.HasSetting(usecaseslowlist)</visible>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>

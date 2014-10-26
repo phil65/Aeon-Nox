@@ -389,7 +389,7 @@
             </control>
             <control type="group">
                 <visible>!Skin.HasSetting(wallfullscreen)</visible>
-                <include>Animation_VisibleChange400</include>
+                <animation effect="fade" time="350">VisibleChange</animation>
                 <visible>[!Skin.HasSetting(WallVertical) + Control.IsVisible(500) + !Window.IsActive(musiclibrary)] | [!Skin.HasSetting(WallMusicVertical) + Control.IsVisible(500) + Window.IsActive(musiclibrary)]</visible>
                 <control type="image">
                     <posx>86</posx>

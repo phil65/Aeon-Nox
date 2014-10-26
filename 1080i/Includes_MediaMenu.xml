@@ -325,7 +325,7 @@
                         <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                         <animation effect="rotate" start="-90" end="180" center="auto" delay="240" time="640" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
                         <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                        <include>Animation_VisibleChange400</include>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!ControlGroup(9000).HasFocus</visible>
                     </control>
                 </control>
@@ -336,7 +336,7 @@
                     <height>25</height>
                     <texture flipx="true">defaulticons/DefaultFolderBack.png</texture>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>ControlGroup(9000).HasFocus</visible>
                 </control>
                 <control type="image">
@@ -347,7 +347,7 @@
                     <aspectratio>keep</aspectratio>
                     <texture>special://skin/extras/BigIcons/Film.png</texture>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <animation effect="fade" start="100" end="60" time="1200" pulse="true" condition="true">conditional</animation>
                     <animation effect="fade" start="100" end="0" time="400" delay="400" condition="!Control.IsVisible(4051)">Conditional</animation>
                     <animation effect="fade" start="100" end="0" time="160" condition="[IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)] | [IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | Container.Scrolling">Conditional</animation>

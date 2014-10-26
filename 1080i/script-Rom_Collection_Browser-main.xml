@@ -2493,7 +2493,7 @@
                                 <texture>defaulticons/DefaultFolderBack.png</texture>
                                 <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="[ControlGroup(9000).HasFocus | ControlGroup(100).HasFocus]">Conditional</animation>
                                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                                <include>Animation_VisibleChange400</include>
+                                <animation effect="fade" time="350">VisibleChange</animation>
                                 <visible>!ControlGroup(9000).HasFocus</visible>
                             </control>
                         </control>
@@ -2504,7 +2504,7 @@
                             <height>25</height>
                             <texture flipx="true">defaulticons/DefaultFolderBack.png</texture>
                             <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                            <include>Animation_VisibleChange400</include>
+                            <animation effect="fade" time="350">VisibleChange</animation>
                             <visible>ControlGroup(9000).HasFocus</visible>
                         </control>
                     </control>
