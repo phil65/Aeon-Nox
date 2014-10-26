@@ -15,13 +15,13 @@
         <control type="image">
             <texture background="true">$INFO[ListItem.FilenameAndPath]</texture>
             <include>CommonFanartVarsSingle</include>
-            <include>Animation_VisibleChange200</include>
+            <animation effect="fade" time="200">VisibleChange</animation>
             <visible>!Listitem.Isfolder</visible>
         </control>
         <control type="multiimage">
             <imagepath background="true">$INFO[ListItem.FolderPath]</imagepath>
             <include>CommonFanartVarsSingle</include>
-            <include>Animation_VisibleChange200</include>
+            <animation effect="fade" time="200">VisibleChange</animation>
             <visible>Listitem.Isfolder + !IsEmpty(Container.FolderPath) + !Stringcompare(ListItem.Label,..) + !substring(Container.FolderPath,plugin://)</visible>
         </control>
         <include>VideoBackground</include>

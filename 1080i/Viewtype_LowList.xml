@@ -86,7 +86,7 @@
                         <height>490</height>
                         <texture>views/listpanel_detailwide.png</texture>
                         <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                         <visible>!Control.HasFocus(7002) + !Container.Content(seasons) + Control.IsVisible(9900)</visible>
                     </control>
                 </control>
@@ -568,7 +568,7 @@
                         <texture background="true">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
                         <fadetime>50</fadetime>
                         <visible>Skin.HasSetting(usecaseslowlist) + Container.Content(movies)</visible>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                     </control>
                 </control>
                 <control type="group">

@@ -156,7 +156,7 @@
                 <scroll>true</scroll>
                 <scrollspeed>30</scrollspeed>
                 <visible>!ControlGroup(24000).HasFocus</visible>
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
             </control>
         </control>
     </include>
@@ -1249,7 +1249,7 @@
             </animation>
             <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="960,970" condition="Control.IsVisible(501) + Skin.HasSetting(showcasezoom)">Conditional</animation>
             <visible>Control.IsVisible(501)</visible>
-            <include>Animation_VisibleChange200</include>
+            <animation effect="fade" time="200">VisibleChange</animation>
             <control type="group">
                 <control type="group">
                     <control type="image">

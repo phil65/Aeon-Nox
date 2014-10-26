@@ -1264,7 +1264,7 @@
                     <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp1</include>
                 </animation>
                 <control type="group">
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>Substring(Control.GetLabel(4321),default) | Substring(Control.GetLabel(4321),glass)</visible>
                     <control type="image">
                         <width>1650</width>
@@ -1584,7 +1584,7 @@
                     <height>360</height>
                     <texture border="50">featured/panel_featured_overlay.png</texture>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>Substring(Control.GetLabel(4321),default)</visible>
                 </control>
                 <control type="button">
@@ -2258,7 +2258,7 @@
                             <aspectratio>scale</aspectratio>
                             <texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
                             <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <fadetime>400</fadetime>
                         </control>
                         <control type="image">
@@ -2268,7 +2268,7 @@
                             <texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
                             <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.2))</visible>
                             <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <fadetime>400</fadetime>
                         </control>
                         <control type="image">
@@ -2279,7 +2279,7 @@
                             <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.3))</visible>
                             <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.3))</visible>
                             <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <fadetime>400</fadetime>
                         </control>
                     </control>-->
@@ -2795,7 +2795,7 @@
                 <height>470</height>
                 <texture border="6">views/addonwall_select.png</texture>
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
                 <visible>!ControlGroup(500).HasFocus</visible>
             </control>
         </focusedlayout>
@@ -2951,7 +2951,7 @@
                 </animation>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),default) | Substring(Control.GetLabel(4325),glass)</visible>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
@@ -3271,7 +3271,7 @@
                     <width>1608</width>
                     <height>360</height>
                     <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>Substring(Control.GetLabel(4325),default)</visible>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>

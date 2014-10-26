@@ -285,7 +285,7 @@
                             <onup>7500</onup>
                             <ondown>7500</ondown>
                             <visible>IsEmpty(Window.Property(Weather.CurrentView))</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <itemlayout width="840" height="109">
                                 <control type="image">
                                     <posx>22</posx>
@@ -585,7 +585,7 @@
                             <onleft>9000</onleft>
                             <onup>7502</onup>
                             <ondown>7502</ondown>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <visible>SubString(Window.Property(Weather.CurrentView),36hour)</visible>
                             <itemlayout width="840" height="135">
                                 <control type="image">
@@ -740,7 +740,7 @@
                             <onup>7503</onup>
                             <ondown>7503</ondown>
                             <visible>SubString(Window.Property(Weather.CurrentView),weekend)</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <itemlayout width="840" height="135">
                                 <control type="image">
                                     <posx>15</posx>
@@ -910,7 +910,7 @@
                             <onup>7504</onup>
                             <ondown>7504</ondown>
                             <visible>SubString(Window.Property(Weather.CurrentView),hourly)</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <itemlayout width="840" height="109">
                                 <control type="image">
                                     <posx>22</posx>
@@ -1397,7 +1397,7 @@
                             <posx>892</posx>
                             <posy>30</posy>
                             <visible>StringCompare(Window.Property(Weather.CurrentView),videos)</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <control type="group">
                                 <visible>Player.HasVideo</visible>
                                 <control type="image">
@@ -1714,7 +1714,7 @@
                             <posx>892</posx>
                             <posy>30</posy>
                             <visible>StringCompare(Window.Property(Weather.CurrentView),maps)</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <control type="label">
                                 <posx>305</posx>
                                 <posy>158</posy>
@@ -1794,7 +1794,7 @@
                             <onup>7500</onup>
                             <ondown>7500</ondown>
                             <visible>![SubString(Window.Property(Weather.CurrentView),hourly) | SubString(Window.Property(Weather.CurrentView),videos) | SubString(Window.Property(Weather.CurrentView),maps) | SubString(Window.Property(Weather.CurrentView),video)]</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                             <itemlayout width="210" height="195">
                                 <control type="label">
                                     <width>210</width>

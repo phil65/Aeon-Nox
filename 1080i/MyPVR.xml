@@ -59,7 +59,7 @@
             <height>1068</height>
             <include>Animation_OpenCloseZoom_New</include>
             <control type="group">
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
                 <visible>Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13) | Control.IsVisible(14) | Control.IsVisible(15) | Control.IsVisible(16) | Control.IsVisible(17)</visible>
                 <control type="image">
                     <left>45</left>
@@ -114,7 +114,7 @@
 			<width>840</width>
 			<height>460</height>
             <visible>Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
-            <include>Animation_VisibleChange200</include>
+            <animation effect="fade" time="200">VisibleChange</animation>
             <include>Animation_OpenCloseZoom_New</include>
             <control type="image">
                 <left>0</left>
@@ -130,7 +130,7 @@
                 <width>804</width>
                 <height>448</height>
                 <texture>$VAR[PVRThumbVar]</texture>
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
                 <visible>!Player.HasVideo</visible>
             </control>
             <control type="videowindow">

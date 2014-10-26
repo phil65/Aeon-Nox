@@ -306,7 +306,7 @@
                                 <height>161</height>
                                 <texture border="6">views/addonwall_select.png</texture>
                                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                                <include>Animation_VisibleChange200</include>
+                                <animation effect="fade" time="200">VisibleChange</animation>
                                 <visible>Container.Content(tvshows)</visible>
                             </control>
                             <control type="image">
@@ -529,7 +529,7 @@
                             <include condition="Window.IsActive(pictures)">Aspectratio_Keep</include>
                             <include condition="!Window.IsActive(pictures)">Aspectratio_Scale</include>
                             <visible>!Player.Hasvideo</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="videowindow" id="40001">
                             <width>573</width>

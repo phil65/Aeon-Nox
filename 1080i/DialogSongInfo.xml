@@ -315,7 +315,7 @@
                     <!-- Genre -->
                     <visible>!IsEmpty(ListItem.Genre)</visible>
                         <animation effect="slide" end="-120,0" time="0" condition="IsEmpty(ListItem.Property(Album_Label))">Conditional</animation>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                         <posx>1110</posx>
                     <control type="image">
                             <posx>-20</posx>
@@ -349,7 +349,7 @@
                         <height>280</height>
                         <label>$INFO[Window(home).Property(summary)]</label>
                         <visible>!IsEmpty(Window(home).Property(summary))</visible>
-                        <include>Animation_VisibleChange200</include>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                         <font>Font_Reg30_2</font>
                         <shadowcolor>black</shadowcolor>
                         <textcolor>grey2</textcolor>

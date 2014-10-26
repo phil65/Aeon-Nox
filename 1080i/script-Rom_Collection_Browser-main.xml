@@ -1273,7 +1273,7 @@
                             <texture background="true" fallback="special://skin/backgrounds/programs/programs.jpg">$INFO[ListItem.Property(gameinfobig)]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                             <visible>!Player.Hasvideo</visible>
-                            <include>Animation_VisibleChange200</include>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="videowindow" id="40001">
                             <width>573</width>
@@ -2121,7 +2121,7 @@
                 <control type="group">
                     <visible>!Control.HasFocus(110)</visible>
                     <include>Animation_OpenCloseZoom</include>
-                    <include>Animation_VisibleChange200</include>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview)">Conditional</animation>
                     <control type="label">
                         <posx>195</posx>

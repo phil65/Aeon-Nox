@@ -300,7 +300,7 @@
                 <posx>-12</posx>
                 <posy>-38</posy>
                 <visible>!Skin.HasSetting(TopBarToolTip)</visible>
-                <include>Animation_VisibleChange200</include>
+                <animation effect="fade" time="200">VisibleChange</animation>
                 <animation effect="slide" end="-80" time="240" condition="[IsEmpty(ListItem.Trailer) + Skin.HasSetting(kioskmode)] |Control.HasFocus(109)">Conditional</animation>
                 <animation effect="slide" end="-181" time="320" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
                 <animation effect="slide" end="20" time="320" easing="in" tween="cubic" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
