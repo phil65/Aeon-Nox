@@ -671,26 +671,6 @@
                 <animation type="Hidden" reversible="false">
                     <include>Animation_PanelFlipUp2</include>
                 </animation>
-                <control type="image">
-                    <posx>120</posx>
-                    <posy>660</posy>
-                    <width>1650</width>
-                    <height>402</height>
-                    <texture border="50">featured/panel_featured_shadow.png</texture>
-                    <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>Animation_VisibleChange400</include>
-                </control>
-                <control type="image">
-                    <posx>120</posx>
-                    <posy>660</posy>
-                    <width>1650</width>
-                    <height>402</height>
-                    <texture border="50">featured/panel_featured.png</texture>
-                    <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
                 <control type="group">
                     <animation effect="zoom" start="100" end="85" time="640" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
                     <animation effect="slide" end="-1420,55" time="640" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
@@ -776,14 +756,6 @@
                         </focusedlayout>
                         <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
                     </control>
-                </control>
-                <control type="image">
-                    <posx>141</posx>
-                    <posy>681</posy>
-                    <width>1608</width>
-                    <height>360</height>
-                    <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
             </control>
         </control>
