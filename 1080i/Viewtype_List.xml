@@ -285,15 +285,6 @@
                     <visible>Container.Content(movies) | Container.Content(albums) | Container.Content(songs) | Container.Content(episodes)</visible>
                 </control>
                 <control type="image">
-                    <posx>960</posx>
-                    <posy>123</posy>
-                    <width>183</width>
-                    <height>850</height>
-                    <texture>views/listpanel_detailwide.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <visible>Container.Content(tvshows) | Container.Content(seasons) | StringCompare(Container.SortMethod,$LOCALIZE[570])</visible>
-                </control>
-                <control type="image">
                     <posx>1063</posx>
                     <posy>123</posy>
                     <width>80</width>
@@ -301,7 +292,7 @@
                     <texture>views/listpanel_detailwide.png</texture>
                     <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>[StringCompare(Container.SortMethod,$LOCALIZE[562]) + Container.Content(movies)] | [Container.Content(addons) + StringCompare(Container.SortMethod,$LOCALIZE[551])]</visible>
-                    <visible>[Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(addons)]</visible>
+                    <visible>Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(addons)</visible>
                     <animation effect="slide" end="38" condition="!Window.IsActive(videolibrary) + !Container.Content(musicvideos)">Conditional</animation>
                 </control>
                 <control type="image">
@@ -782,7 +773,7 @@
                         <label>$VAR[SlimListLabel1Var]</label>
                     </control>
                     <control type="label">
-                        <posx>1040</posx>
+                        <posx>142</posx>
                         <width>898</width>
                         <height>60</height>
                         <align>right</align>
@@ -843,7 +834,7 @@
                         <label>$VAR[SlimListLabel1Var]</label>
                     </control>
                     <control type="label">
-                        <posx>1040</posx>
+                        <posx>142</posx>
                         <width>898</width>
                         <height>60</height>
                         <align>right</align>
