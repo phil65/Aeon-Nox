@@ -1578,10 +1578,6 @@
         <value condition="[Container.Content(tvshows) | Container.Content(movies)] + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
         <value>$INFO[ListItem.Art(fanart)]</value>
     </variable>
-    <variable name="ListBottomLabelVar">
-        <value condition="Container.Content(movies)">$INFO[Container(50).NumItems] $VAR[ItemLabelVar]</value>
-        <value condition="!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons)">$INFO[Container(50).NumItems] $VAR[ItemLabelVar]$INFO[Container(50).Totaltime, (,)]</value>
-    </variable>
     <!-- LowList-->
     <variable name="LowListInfoDetail3">
         <value condition="Container.Content(tvshows)">$LOCALIZE[33054]:</value>
