@@ -104,12 +104,35 @@
                         <label>31804</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus condition="Substring(Window(skinsettings).Property(CustomYesNoDialog),babe) | Substring(Window(skinsettings).Property(CustomYesNoDialog),actors) | Substring(Window(skinsettings).Property(CustomYesNoDialog),Icon) | Substring(Window(skinsettings).Property(CustomYesNoDialog),addons) | Substring(Window(skinsettings).Property(CustomYesNoDialog),albums) | Substring(Window(skinsettings).Property(CustomYesNoDialog),artists) | Substring(Window(skinsettings).Property(CustomYesNoDialog),concerts)">SetProperty(WidgetType,panelcoversquare,skinsettings)</onfocus>
-                        <onfocus condition="Substring(Window(skinsettings).Property(CustomYesNoDialog),tv) | Substring(Window(skinsettings).Property(CustomYesNoDialog),images) | Substring(Window(skinsettings).Property(CustomYesNoDialog),rss) | Substring(Window(skinsettings).Property(CustomYesNoDialog),movie) | Substring(Window(skinsettings).Property(CustomYesNoDialog),musicvideo)">SetProperty(WidgetType,panelcoverepisode,skinsettings)</onfocus>
-                        <onfocus condition="Substring(Window(skinsettings).Property(CustomYesNoDialog),roms)">SetProperty(WidgetType,panel,skinsettings)</onfocus>
+                        <onfocus>SetProperty(WidgetType,panelcoversquare,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),babe) | Substring(Window(skinsettings).Property(CustomYesNoDialog),actors) | Substring(Window(skinsettings).Property(CustomYesNoDialog),Icon) | Substring(Window(skinsettings).Property(CustomYesNoDialog),addons) | Substring(Window(skinsettings).Property(CustomYesNoDialog),albums) | Substring(Window(skinsettings).Property(CustomYesNoDialog),artists) | Substring(Window(skinsettings).Property(CustomYesNoDialog),concerts)</visible>
                     </control>
-                    <control type="button" id="22">
+                    <control type="button" id="11">
+                        <width>292</width>
+                        <height>62</height>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>31804</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <onfocus>SetProperty(WidgetType,panelcoverepisode,skinsettings)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),tv) | Substring(Window(skinsettings).Property(CustomYesNoDialog),images) | Substring(Window(skinsettings).Property(CustomYesNoDialog),rss) | Substring(Window(skinsettings).Property(CustomYesNoDialog),movie) | Substring(Window(skinsettings).Property(CustomYesNoDialog),musicvideo)</visible>
+                    </control>
+                    <control type="button" id="12">
+                        <width>292</width>
+                        <height>62</height>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>31804</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <onfocus>SetProperty(WidgetType,panel,skinsettings)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),roms)</visible>
+                    </control>
+                    <control type="button" id="13">
                         <width>292</width>
                         <height>62</height>
                         <textoffsetx>15</textoffsetx>
@@ -121,7 +144,7 @@
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),movie) | Substring(Window(skinsettings).Property(CustomYesNoDialog),musicvideo) | Substring(Window(skinsettings).Property(CustomYesNoDialog),tv)</visible>
                     </control>
-                    <control type="button" id="12">
+                    <control type="button" id="14">
                         <width>292</width>
                         <height>62</height>
                         <textoffsetx>15</textoffsetx>
@@ -129,13 +152,35 @@
                         <label>31065</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus condition="Substring(Window(skinsettings).Property(CustomYesNoDialog),movie) | Substring(Window(skinsettings).Property(CustomYesNoDialog),musicvideo)">SetProperty(WidgetType,panel2poster,skinsettings)</onfocus>
-                        <onfocus condition="Substring(Window(skinsettings).Property(CustomYesNoDialog),babe) | Substring(Window(skinsettings).Property(CustomYesNoDialog),actors) | Substring(Window(skinsettings).Property(CustomYesNoDialog),addons) | Substring(Window(skinsettings).Property(CustomYesNoDialog),albums) | Substring(Window(skinsettings).Property(CustomYesNoDialog),artists) | Substring(Window(skinsettings).Property(CustomYesNoDialog),concerts)">SetProperty(WidgetType,panel2square,skinsettings)</onfocus>
-                        <onfocus condition="Substring(Window(skinsettings).Property(CustomYesNoDialog),tv) | Substring(Window(skinsettings).Property(CustomYesNoDialog),images) | Substring(Window(skinsettings).Property(CustomYesNoDialog),rss)">SetProperty(WidgetType,panel2episode,skinsettings)</onfocus>
+                        <onfocus>SetProperty(WidgetType,panel2poster,skinsettings)</onfocus>
+                        <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),movie) | Substring(Window(skinsettings).Property(CustomYesNoDialog),musicvideo)</visible>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
-                        <visible>!SubString(Window(skinsettings).Property(CustomYesNoDialog),roms) + !Substring(Window(skinsettings).Property(CustomYesNoDialog),Icon)</visible>
                     </control>
                     <control type="button" id="15">
+                        <width>292</width>
+                        <height>62</height>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>31065</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <onfocus>SetProperty(WidgetType,panel2square,skinsettings)</onfocus>
+                        <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),babe) | Substring(Window(skinsettings).Property(CustomYesNoDialog),actors) | Substring(Window(skinsettings).Property(CustomYesNoDialog),addons) | Substring(Window(skinsettings).Property(CustomYesNoDialog),albums) | Substring(Window(skinsettings).Property(CustomYesNoDialog),artists) | Substring(Window(skinsettings).Property(CustomYesNoDialog),concerts)</visible>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                    </control>
+                    <control type="button" id="16">
+                        <width>292</width>
+                        <height>62</height>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>31065</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <onfocus>SetProperty(WidgetType,panel2episode,skinsettings)</onfocus>
+                        <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),tv) | Substring(Window(skinsettings).Property(CustomYesNoDialog),images) | Substring(Window(skinsettings).Property(CustomYesNoDialog),rss)</visible>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                    </control>
+                    <control type="button" id="17">
                         <width>292</width>
                         <height>62</height>
                         <textoffsetx>15</textoffsetx>
@@ -147,7 +192,7 @@
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(skinsettings).Property(CustomYesNoDialog),roms) | Substring(Window(skinsettings).Property(CustomYesNoDialog),images)</visible>
                     </control>
-                    <control type="button" id="13">
+                    <control type="button" id="18">
                         <width>292</width>
                         <height>62</height>
                         <textoffsetx>15</textoffsetx>
@@ -159,7 +204,7 @@
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>SubString(Window(skinsettings).Property(CustomYesNoDialog),movie) | SubString(Window(skinsettings).Property(CustomYesNoDialog),tv)</visible>
                     </control>
-                    <control type="button" id="14">
+                    <control type="button" id="19">
                         <width>292</width>
                         <height>62</height>
                         <textoffsetx>15</textoffsetx>
@@ -171,7 +216,7 @@
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>SubString(Window(skinsettings).Property(CustomYesNoDialog),movie) | SubString(Window(skinsettings).Property(CustomYesNoDialog),tv)</visible>
                     </control>
-                    <control type="button" id="17">
+                    <control type="button" id="20">
                         <width>292</width>
                         <height>62</height>
                         <textoffsetx>15</textoffsetx>
@@ -183,7 +228,7 @@
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>SubString(Window(skinsettings).Property(CustomYesNoDialog),movie) | SubString(Window(skinsettings).Property(CustomYesNoDialog),tv)</visible>
                     </control>
-                    <control type="button" id="171">
+                    <control type="button" id="21">
                         <width>292</width>
                         <height>62</height>
                         <textoffsetx>15</textoffsetx>
