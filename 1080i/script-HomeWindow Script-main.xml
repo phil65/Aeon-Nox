@@ -15,8 +15,6 @@
         <control type="button" id="9004">
             <include>HiddenObject</include>
             <onfocus condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
-            <onfocus condition="!IsEmpty(Window(home).Property(SettingsFocusOffset))">$VAR[SettingsCustomStartupFocus]</onfocus>
-            <onfocus>ClearProperty(SettingsFocusOffset,home)</onfocus>
             <onfocus>SetProperty(Widget1Type,$INFO[Container(9000).ListItem.Property(Widget)],home)</onfocus>
             <onfocus>SetProperty(Widget2Type,$INFO[Container(9000).ListItem.Property(Widget2)],home)</onfocus>
             <onfocus>SetProperty(Widget1Title,$INFO[Container(9000).ListItem.Property(WidgetTitle)],home)</onfocus>
@@ -34,21 +32,6 @@
             <include>HiddenObject</include>
             <onfocus>SetFocus(9000)</onfocus>
             <onfocus>$INFO[Container(9000).ListItem.Property(Path)]</onfocus>
-        </control>
-        <control type="button" id="9007">
-            <include>HiddenObject</include>
-            <onfocus condition="Control.IsVisible(5000)">SetProperty(MenuItem,$INFO[Container(5010).ListItem.Property(ID)],home)</onfocus>
-            <onfocus condition="Control.IsVisible(5000)">SetFocus(5010)</onfocus>
-            <onfocus condition="Control.IsVisible(5000)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-            <onfocus condition="Control.IsVisible(5000) + IsEmpty(Container(5010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
-        </control>
-        <control type="button" id="9008">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(6010)</onfocus>
-            <onfocus condition="Control.IsVisible(6000)">SetProperty(MenuItem,$INFO[Container(6010).ListItem.Property(ID)],home)</onfocus>
-            <onfocus condition="Control.IsVisible(6000)">SetFocus(6010)</onfocus>
-            <onfocus condition="Control.IsVisible(6000)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
-            <onfocus condition="Control.IsVisible(6000) + IsEmpty(Container(6010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
         </control>
         <control type="button" id="5014">
             <include>HiddenObject</include>
