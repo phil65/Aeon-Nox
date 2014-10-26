@@ -14,8 +14,6 @@
                 <animation effect="slide" tween="cubic" easing="in" time="320" start="0,606" end="0,0">WindowOpen</animation>
                 <animation effect="slide" tween="cubic" easing="in" time="240" end="0,740">WindowClose</animation>
                 <control type="group">
-                    <animation effect="slide" end="0,-214" time="120" condition="Skin.HasSetting(nohighlist)">Conditional</animation>
-                    <animation effect="slide" end="0,-50" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                     <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                     <control type="group">
                         <visible>Container.Content(movies) + Skin.HasSetting(lowlisttagline) + !IsEmpty(ListItem.Tagline)</visible>
