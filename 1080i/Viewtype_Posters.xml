@@ -1476,18 +1476,6 @@
                             <effect type="rotatey" end="90" delay="800" time="320" />
                             <effect type="fade" delay="800" time="160" />
                         </animation>
-                        <animation type="Conditional" condition="Control.HasFocus(5101)" reversible="false">
-                            <effect type="rotatey" center="200" end="-90" time="360" tween="cubic" easing="in" />
-                            <effect type="rotatey" center="200" start="-90" end="90" time="0" delay="360" />
-                            <effect type="fade" start="100" end="0" time="0" delay="360" />
-                            <effect type="rotatey" center="200" start="90" end="0" time="360" delay="360" tween="cubic" />
-                        </animation>
-                        <animation type="Conditional" condition="!Control.HasFocus(5101)" reversible="false">
-                            <effect type="rotatey" center="200" end="90" time="0" tween="cubic" easing="in" delay="360" />
-                            <effect type="rotatey" center="200" start="90" end="-90" time="0" delay="360" />
-                            <effect type="fade" end="100" time="160" delay="360" />
-                            <effect type="rotatey" center="200" start="-90" end="0" time="360" delay="360" tween="cubic" />
-                        </animation>
                         <control type="group">
                             <visible>!IsEmpty(Container.ListItemNoWrap(0).FolderPath) | Skin.HasSetting(posterwrap)</visible>
                             <control type="image">
@@ -1524,74 +1512,6 @@
                             </control>
                         </control>
                     </control>
-                </control>
-            </control>
-            <control type="group" id="4551">
-                <posx>-20</posx>
-                <posy>320</posy>
-                <animation type="Visible" reversible="false">
-                    <effect type="rotatey" center="200" end="-90" time="360" tween="cubic" easing="in" />
-                    <effect type="rotatey" center="200" start="-90" end="90" time="0" delay="360" />
-                    <effect type="fade" end="100" time="0" delay="360" />
-                    <effect type="rotatey" center="200" start="90" end="0" time="360" delay="360" tween="cubic" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="rotatey" center="200" end="90" time="360" tween="cubic" easing="in" />
-                    <effect type="rotatey" center="200" start="90" end="-90" time="0" delay="360" />
-                    <effect type="fade" start="100" end="0" time="0" delay="360" />
-                    <effect type="rotatey" center="200" start="-90" end="0" time="0" delay="360" tween="cubic" />
-                </animation>
-                <visible>Control.HasFocus(5101)</visible>
-                <control type="image">
-                    <width>540</width>
-                    <height>930</height>
-                    <texture>views/tripanel/info_panel_alt_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                </control>
-                <control type="image">
-                    <posx>68</posx>
-                    <posy>92</posy>
-                    <width>440</width>
-                    <height>730</height>
-                    <texture>wall/wall_bg.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
-                <control type="grouplist">
-                    <posx>93</posx>
-                    <posy>150</posy>
-                    <width>400</width>
-                    <orientation>horizontal</orientation>
-                    <control type="label">
-                        <width min="0" max="1000">auto</width>
-                        <height>40</height>
-                        <label>$INFO[ListItem.RatingAndVotes,$LOCALIZE[31095]: [COLOR white4],[/COLOR]]$INFO[ListItem.Top250,$LOCALIZE[13409][COLOR white4],[/COLOR] # ]</label>
-                        <font>Font_Reg32</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                    </control>
-                </control>
-                <control type="grouplist">
-                    <posx>93</posx>
-                    <posy>190</posy>
-                    <width>400</width>
-                    <orientation>horizontal</orientation>
-                    <control type="label">
-                        <width min="0" max="1000">auto</width>
-                        <height>40</height>
-                        <label>[COLOR $VAR[FontColorVar]]$LOCALIZE[180]:[/COLOR] $INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                        <font>Font_Reg32</font>
-                        <textcolor>white4</textcolor>
-                    </control>
-                </control>
-                <control type="textbox">
-                    <posx>93</posx>
-                    <posy>236</posy>
-                    <width>395</width>
-                    <height>460</height>
-                    <label fallback="31003">$VAR[InfoWallTextboxVar]</label>
-                    <font>Font_Reg29</font>
-                    <textcolor>white6</textcolor>
-                    <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>
             <!-- Invisible buttons for list end animation -->
@@ -1638,7 +1558,7 @@
             <height>560</height>
             <onleft condition="!Skin.HasSetting(posterwrap)">8400</onleft>
             <onright condition="!Skin.HasSetting(posterwrap)">8401</onright>
-            <onup>5101</onup>
+            <onup>9000</onup>
             <ondown>610</ondown>
             <orientation>horizontal</orientation>
             <viewtype label="31271">Wraplist of Posters</viewtype>
@@ -1649,18 +1569,6 @@
             <visible>![!IsEmpty(Skin.String(DisablePostersVL)) + Window.IsActive(videos)]</visible>
             <itemlayout width="210" height="750"></itemlayout>
             <focusedlayout width="210" height="750"></focusedlayout>
-        </control>
-        <control type="button" id="5101">
-            <include>HiddenObject</include>
-            <onup>9000</onup>
-            <onleft>50</onleft>
-            <onright>50</onright>
-            <ondown>50</ondown>
-            <onback>50</onback>
-            <onclick condition="!IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
-            <onclick condition="IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
-            <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">SetFocus(50)</onclick>
-            <visible>!StringCompare(ListItem.Label,..) + Skin.HasSetting(posterviewinfopane)</visible>
         </control>
     </include>
 </includes>
