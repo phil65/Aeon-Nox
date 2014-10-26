@@ -1221,29 +1221,25 @@
             <animation effect="slide" end="0,-258" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" time="160" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
             <control type="group">
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4321),default) | Substring(Control.GetLabel(4321),glass)</visible>
-                    <include>Animation_VisibleChange200</include>
-                    <control type="image">
-                        <posx>-12</posx>
-                        <posy>-4</posy>
-                        <width>385</width>
-                        <height>370</height>
-                        <texture border="50">keyboard/keyboard_back_shadow.png</texture>
-                        <include>PanelGlowFade</include>
-                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <visible>Substring(Control.GetLabel(4321),default)</visible>
-                        <include>Animation_VisibleChange400</include>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posx>-12</posx>
-                        <posy>-5</posy>
-                        <width>385</width>
-                        <height>370</height>
-                        <texture border="20">$VAR[WidgetBackVar]</texture>
-                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                    </control>
+                <control type="image">
+                    <posx>-12</posx>
+                    <posy>-4</posy>
+                    <width>385</width>
+                    <height>370</height>
+                    <texture border="50">keyboard/keyboard_back_shadow.png</texture>
+                    <include>PanelGlowFade</include>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                    <visible>Substring(Control.GetLabel(4321),default)</visible>
+                    <include>Animation_VisibleChange400</include>
+                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>-12</posx>
+                    <posy>-5</posy>
+                    <width>385</width>
+                    <height>370</height>
+                    <texture border="20">$VAR[WidgetBackVar]</texture>
+                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -2922,29 +2918,25 @@
             </animation>
             <include>Animation_Widgets</include>
             <!--Unfocused widget-->
-            <control type="group">
-                <visible>Substring(Control.GetLabel(4325),default) | Substring(Control.GetLabel(4325),glass)</visible>
-                <include>Animation_VisibleChange200</include>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-4</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="50">keyboard/keyboard_back_shadow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>Substring(Control.GetLabel(4325),default)</visible>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-5</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="20">$VAR[Widget2BackVar]</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
+            <control type="image">
+                <posx>-12</posx>
+                <posy>-4</posy>
+                <width>385</width>
+                <height>370</height>
+                <texture border="50">keyboard/keyboard_back_shadow.png</texture>
+                <include>PanelGlowFade</include>
+                <visible>Substring(Control.GetLabel(4325),default)</visible>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <include>Animation_VisibleChange400</include>
+                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>-12</posx>
+                <posy>-5</posy>
+                <width>385</width>
+                <height>370</height>
+                <texture border="20">$VAR[Widget2BackVar]</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
             <control type="label">
                 <posx>15</posx>
