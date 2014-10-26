@@ -1741,9 +1741,9 @@
                 <width>389</width>
                 <height>30</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Label2]$INFO[ListItem.TVShowTitle]</label>
+                <label>$INFO[ListItem.TVShowTitle]</label>
                 <font>Font_Reg26</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
+                <textcolor>grey</textcolor>
             </control>
             <control type="label">
                 <posx>5</posx>
@@ -1751,10 +1751,9 @@
                 <width>389</width>
                 <height>30</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Rating,, • ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                <visible>!IsEmpty(ListItem.Director)</visible>
+                <label>$INFO[ListItem.Year]$INFO[ListItem.Property(Year)]$INFO[ListItem.Rating, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
                 <font>Font_Reg26</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
+                <textcolor>grey</textcolor>
             </control>
             <control type="label">
                 <posx>5</posx>
@@ -1764,7 +1763,7 @@
                 <textoffsetx>15</textoffsetx>
                 <label>$INFO[ListItem.Episode,, - ]$INFO[ListItem.Label]</label>
                 <font>Font_Reg26</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
+                <textcolor>white</textcolor>
             </control>
         </control>
     </include>
