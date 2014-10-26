@@ -176,7 +176,6 @@
                     <label>$LOCALIZE[31965]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[PlayListWidgetLabelVar][/COLOR]</label2>
                     <include>Objects_NowPlayingSettingsButton</include>
-                    <enable>!Skin.HasSetting(nowplayingpanel)</enable>
                     <onclick condition="Skin.HasSetting(fiveitemsplaylist) + Skin.HasSetting(itemsplaylist) + !Skin.HasSetting(homeartistslideshow)">Skin.Reset(fiveitemsplaylist)</onclick>
                     <onclick condition="!Skin.HasSetting(fiveitemsplaylist) + Skin.HasSetting(itemsplaylist) + !Skin.HasSetting(homeartistslideshow)">Skin.Reset(itemsplaylist)</onclick>
                     <onclick condition="!Skin.HasSetting(fiveitemsplaylist) + !Skin.HasSetting(itemsplaylist) + !Skin.HasSetting(homeartistslideshow)">Skin.SetBool(homeartistslideshow)</onclick>
@@ -233,11 +232,9 @@
                     <label>$LOCALIZE[31632]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[HomePanelVar][/COLOR]</label2>
                     <include>Objects_NowPlayingSettingsButton</include>
-                    <onclick condition="!Skin.HasSetting(nowplayingpanel) + !Skin.HasSetting(rotatenowplayingpanel)">Skin.SetBool(nowplayingpanel)</onclick>
-                    <onclick condition="Skin.HasSetting(nowplayingpanel) + !Skin.HasSetting(rotatenowplayingpanel)">Notification($LOCALIZE[31902],$LOCALIZE[31916],10000)</onclick>
-                    <onclick condition="Skin.HasSetting(nowplayingpanel) + !Skin.HasSetting(rotatenowplayingpanel)">Skin.SetBool(rotatenowplayingpanel)</onclick>
-                    <onclick condition="Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel)">Skin.Reset(rotatenowplayingpanel)</onclick>
-                    <onclick condition="Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel)">Skin.Reset(nowplayingpanel)</onclick>
+                    <onclick condition="!Skin.HasSetting(rotatenowplayingpanel)">Notification($LOCALIZE[31902],$LOCALIZE[31916],10000)</onclick>
+                    <onclick condition="!Skin.HasSetting(rotatenowplayingpanel)">Skin.SetBool(rotatenowplayingpanel)</onclick>
+                    <onclick condition="Skin.HasSetting(rotatenowplayingpanel)">Skin.Reset(rotatenowplayingpanel)</onclick>
                 </control>
                 <control type="radiobutton" id="455">
                     <label>31729</label>
