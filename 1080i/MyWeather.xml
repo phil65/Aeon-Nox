@@ -277,7 +277,7 @@
                             <posx>960</posx>
                             <posy>122</posy>
                             <width>840</width>
-                            <height>550</height>
+                            <height>786</height>
                             <orientation>vertical</orientation>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>200</scrolltime>
@@ -346,7 +346,7 @@
                                 <control type="image">
                                     <width>834</width>
                                     <height>109</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                     <visible>Control.HasFocus(7500)</visible>
                                 </control>
                                 <control type="image">
@@ -574,330 +574,6 @@
                                 </item>
                             </content>
                         </control>
-                        <control type="list" id="7502">
-                            <posx>960</posx>
-                            <posy>122</posy>
-                            <width>840</width>
-                            <height>540</height>
-                            <orientation>vertical</orientation>
-                            <pagecontrol>60</pagecontrol>
-                            <scrolltime>200</scrolltime>
-                            <onleft>9000</onleft>
-                            <onup>7502</onup>
-                            <ondown>7502</ondown>
-                            <animation effect="fade" time="200">VisibleChange</animation>
-                            <visible>SubString(Window.Property(Weather.CurrentView),36hour)</visible>
-                            <itemlayout width="840" height="135">
-                                <control type="image">
-                                    <posx>15</posx>
-                                    <posy>0</posy>
-                                    <width>135</width>
-                                    <height>135</height>
-                                    <aspectratio align="center">keep</aspectratio>
-                                    <info>ListItem.ActualIcon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>8</posy>
-                                    <width>375</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg31_Caps</font>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>45</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(Forecast)]</label>
-                                    <textcolor>grey2</textcolor>
-                                    <scroll>true</scroll>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>82</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>[COLOR grey2]$INFO[ListItem.Property(TemperatureHeading)] [/COLOR]$INFO[ListItem.Property(Temperature)]</label>
-                                </control>
-                                <control type="label">
-                                    <posx>820</posx>
-                                    <posy>82</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <align>right</align>
-                                    <label>[COLOR grey2]$LOCALIZE[31917]: [/COLOR]$INFO[ListItem.Property(ChancePrecipitation)]</label>
-                                </control>
-                                <control type="image">
-                                    <posy>75</posy>
-                                    <width>840</width>
-                                    <height>60</height>
-                                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout width="840" height="135">
-                                <control type="image">
-                                    <posy>75</posy>
-                                    <width>840</width>
-                                    <height>60</height>
-                                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                                </control>
-                                <control type="image">
-                                    <width>834</width>
-                                    <height>135</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                                    <visible>Control.HasFocus(7502)</visible>
-                                </control>
-                                <control type="image">
-                                    <posx>15</posx>
-                                    <posy>0</posy>
-                                    <width>135</width>
-                                    <height>135</height>
-                                    <aspectratio align="center">keep</aspectratio>
-                                    <info>ListItem.ActualIcon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>8</posy>
-                                    <width>375</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg31_Caps</font>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>45</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(Forecast)]</label>
-                                    <textcolor>grey2</textcolor>
-                                    <scroll>true</scroll>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>82</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>[COLOR grey2]$INFO[ListItem.Property(TemperatureHeading)] [/COLOR]$INFO[ListItem.Property(Temperature)]</label>
-                                </control>
-                                <control type="label">
-                                    <posx>820</posx>
-                                    <posy>82</posy>
-                                    <align>right</align>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>[COLOR grey2]$LOCALIZE[31917]: [/COLOR]$INFO[ListItem.Property(ChancePrecipitation)]</label>
-                                </control>
-                            </focusedlayout>
-                            <content>
-                                <item id="1">
-                                    <label>$INFO[Window(weather).Property(36Hour.1.Heading)]</label>
-                                    <label2>$INFO[Window(weather).Property(36Hour.1.DaylightTitle)]</label2>
-                                    <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(36Hour.1.FanartCode)]/1.jpg</property>
-                                    <property name="TemperatureHeading">$INFO[Window(weather).Property(36Hour.1.TemperatureHeading)]</property>
-                                    <property name="Forecast">$INFO[Window(weather).Property(36Hour.1.Forecast)]</property>
-                                    <property name="Precipitation">$INFO[Window(weather).Property(36Hour.1.Precipitation)]</property>
-                                    <property name="Temperature">$INFO[Window(weather).Property(36Hour.1.Temperature)]</property>
-                                    <property name="ChancePrecipitation">$INFO[Window(weather).Property(36Hour.1.ChancePrecipitation)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(36Hour.1.OutlookIcon)]</icon>
-                                </item>
-                                <item id="2">
-                                    <label>$INFO[Window(weather).Property(36Hour.2.Heading)]</label>
-                                    <label2>$INFO[Window(weather).Property(36Hour.2.DaylightTitle)]</label2>
-                                    <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(36Hour.2.FanartCode)]/1.jpg</property>
-                                    <property name="TemperatureHeading">$INFO[Window(weather).Property(36Hour.2.TemperatureHeading)]</property>
-                                    <property name="Forecast">$INFO[Window(weather).Property(36Hour.2.Forecast)]</property>
-                                    <property name="Precipitation">$INFO[Window(weather).Property(36Hour.2.Precipitation)]</property>
-                                    <property name="Temperature">$INFO[Window(weather).Property(36Hour.2.Temperature)]</property>
-                                    <property name="ChancePrecipitation">$INFO[Window(weather).Property(36Hour.2.ChancePrecipitation)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(36Hour.2.OutlookIcon)]</icon>
-                                </item>
-                                <item id="3">
-                                    <label>$INFO[Window(weather).Property(36Hour.3.Heading)]</label>
-                                    <label2>$INFO[Window(weather).Property(36Hour.3.DaylightTitle)]</label2>
-                                    <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(36Hour.3.FanartCode)]/1.jpg</property>
-                                    <property name="TemperatureHeading">$INFO[Window(weather).Property(36Hour.3.TemperatureHeading)]</property>
-                                    <property name="Forecast">$INFO[Window(weather).Property(36Hour.3.Forecast)]</property>
-                                    <property name="Precipitation">$INFO[Window(weather).Property(36Hour.3.Precipitation)]</property>
-                                    <property name="Temperature">$INFO[Window(weather).Property(36Hour.3.Temperature)]</property>
-                                    <property name="ChancePrecipitation">$INFO[Window(weather).Property(36Hour.3.ChancePrecipitation)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(36Hour.3.OutlookIcon)]</icon>
-                                </item>
-                            </content>
-                        </control>
-                        <control type="list" id="7503">
-                            <posx>960</posx>
-                            <posy>122</posy>
-                            <width>840</width>
-                            <height>540</height>
-                            <orientation>vertical</orientation>
-                            <pagecontrol>60</pagecontrol>
-                            <scrolltime>200</scrolltime>
-                            <onleft>9000</onleft>
-                            <onup>7503</onup>
-                            <ondown>7503</ondown>
-                            <visible>SubString(Window.Property(Weather.CurrentView),weekend)</visible>
-                            <animation effect="fade" time="200">VisibleChange</animation>
-                            <itemlayout width="840" height="135">
-                                <control type="image">
-                                    <posx>15</posx>
-                                    <posy>0</posy>
-                                    <width>135</width>
-                                    <height>135</height>
-                                    <aspectratio align="center">keep</aspectratio>
-                                    <info>ListItem.ActualIcon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>8</posy>
-                                    <width>375</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg31_Caps</font>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>45</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(Forecast)]</label>
-                                    <textcolor>grey2</textcolor>
-                                    <scroll>true</scroll>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>82</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(HighTemperature),[COLOR grey2]$LOCALIZE[419]: [/COLOR]]</label>
-                                    <textcolor>red</textcolor>
-                                    <selectedcolor>red</selectedcolor>
-                                </control>
-                                <control type="label">
-                                    <posx>390</posx>
-                                    <posy>82</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(LowTemperature),[COLOR grey2]$LOCALIZE[418]: [/COLOR]]</label>
-                                    <textcolor>blue</textcolor>
-                                </control>
-                                <control type="image">
-                                    <posy>75</posy>
-                                    <width>840</width>
-                                    <height>60</height>
-                                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout width="840" height="135">
-                                <control type="image">
-                                    <posy>75</posy>
-                                    <width>840</width>
-                                    <height>60</height>
-                                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                                </control>
-                                <control type="image">
-                                    <width>834</width>
-                                    <height>135</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                                    <visible>Control.HasFocus(7503)</visible>
-                                </control>
-                                <control type="image">
-                                    <posx>15</posx>
-                                    <posy>0</posy>
-                                    <width>135</width>
-                                    <height>135</height>
-                                    <aspectratio align="center">keep</aspectratio>
-                                    <info>ListItem.ActualIcon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>8</posy>
-                                    <width>375</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg31_Caps</font>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>45</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(Forecast)]</label>
-                                    <textcolor>grey2</textcolor>
-                                    <scroll>true</scroll>
-                                </control>
-                                <control type="label">
-                                    <posx>165</posx>
-                                    <posy>82</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(HighTemperature),[COLOR grey2]$LOCALIZE[419]: [/COLOR]]</label>
-                                    <textcolor>red</textcolor>
-                                    <selectedcolor>red</selectedcolor>
-                                </control>
-                                <control type="label">
-                                    <posx>390</posx>
-                                    <posy>82</posy>
-                                    <width>660</width>
-                                    <height>34</height>
-                                    <label>$INFO[ListItem.Property(LowTemperature),[COLOR grey2]$LOCALIZE[418]: [/COLOR]]</label>
-                                    <textcolor>blue</textcolor>
-                                </control>
-                            </focusedlayout>
-                            <content>
-                                <item id="1">
-                                    <label>$INFO[Window(weather).Property(Weekend.1.LongDay)]</label>
-                                    <label2>$INFO[Window(weather).Property(Weekend.1.Humidity)]</label2>
-                                    <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(Weekend.1.FanartCode)]/1.jpg</property>
-                                    <property name="Sunset">$INFO[Window(weather).Property(Weekend.1.Sunset)]</property>
-                                    <property name="Sunrise">$INFO[Window(weather).Property(Weekend.1.Sunrise)]</property>
-                                    <property name="UV">$INFO[Window(weather).Property(Weekend.1.UV)]</property>
-                                    <property name="Wind">$INFO[Window(weather).Property(Weekend.1.WindSpeed)]</property>
-                                    <property name="Forecast">$INFO[Window(weather).Property(Weekend.1.Outlook)]</property>
-                                    <property name="Precipitation">$INFO[Window(weather).Property(Weekend.1.Precipitation)]</property>
-                                    <property name="LowTemperature">$INFO[Window(weather).Property(Weekend.1.LowTemperature)]</property>
-                                    <property name="HighTemperature">$INFO[Window(weather).Property(Weekend.1.HighTemperature)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Weekend.1.OutlookIcon)]</icon>
-                                    <visible>!IsEmpty(Window(weather).Property(Weekend.1.LongDay))</visible>
-                                </item>
-                                <item id="2">
-                                    <label>$INFO[Window(weather).Property(Weekend.2.LongDay)]</label>
-                                    <label2>$INFO[Window(weather).Property(Weekend.2.Humidity)]</label2>
-                                    <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(Weekend.2.FanartCode)]/1.jpg</property>
-                                    <property name="Sunset">$INFO[Window(weather).Property(Weekend.2.Sunset)]</property>
-                                    <property name="Sunrise">$INFO[Window(weather).Property(Weekend.2.Sunrise)]</property>
-                                    <property name="UV">$INFO[Window(weather).Property(Weekend.2.UV)]</property>
-                                    <property name="Wind">$INFO[Window(weather).Property(Weekend.2.WindSpeed)]</property>
-                                    <property name="Forecast">$INFO[Window(weather).Property(Weekend.2.Outlook)]</property>
-                                    <property name="Precipitation">$INFO[Window(weather).Property(Weekend.2.Precipitation)]</property>
-                                    <property name="LowTemperature">$INFO[Window(weather).Property(Weekend.2.LowTemperature)]</property>
-                                    <property name="HighTemperature">$INFO[Window(weather).Property(Weekend.2.HighTemperature)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Weekend.2.OutlookIcon)]</icon>
-                                    <visible>!IsEmpty(Window(weather).Property(Weekend.2.LongDay))</visible>
-                                </item>
-                                <item id="3">
-                                    <label>$INFO[Window(weather).Property(Weekend.3.LongDay)]</label>
-                                    <label2>$INFO[Window(weather).Property(Weekend.3.Humidity)]</label2>
-                                    <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(Weekend.3.FanartCode)]/1.jpg</property>
-                                    <property name="Sunset">$INFO[Window(weather).Property(Weekend.3.Sunset)]</property>
-                                    <property name="Sunrise">$INFO[Window(weather).Property(Weekend.3.Sunrise)]</property>
-                                    <property name="UV">$INFO[Window(weather).Property(Weekend.3.UV)]</property>
-                                    <property name="Wind">$INFO[Window(weather).Property(Weekend.3.WindSpeed)]</property>
-                                    <property name="Forecast">$INFO[Window(weather).Property(Weekend.3.Outlook)]</property>
-                                    <property name="Precipitation">$INFO[Window(weather).Property(Weekend.3.Precipitation)]</property>
-                                    <property name="LowTemperature">$INFO[Window(weather).Property(Weekend.3.LowTemperature)]</property>
-                                    <property name="HighTemperature">$INFO[Window(weather).Property(Weekend.3.HighTemperature)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Weekend.3.OutlookIcon)]</icon>
-                                    <visible>!IsEmpty(Window(weather).Property(Weekend.3.LongDay))</visible>
-                                </item>
-                            </content>
-                        </control>
                         <control type="list" id="7504">
                             <posx>960</posx>
                             <posy>122</posy>
@@ -921,8 +597,8 @@
                                     <info>ListItem.ActualIcon</info>
                                 </control>
                                 <control type="label">
-                                        <posx>145</posx>
-                                        <posy>35</posy>
+                                    <posx>145</posx>
+                                    <posy>35</posy>
                                     <width>375</width>
                                     <height>34</height>
                                     <label>$INFO[ListItem.Label]</label>
@@ -968,7 +644,7 @@
                                 <control type="image">
                                     <width>834</width>
                                     <height>109</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                     <visible>Control.HasFocus(7504)</visible>
                                 </control>
                                 <control type="image">
@@ -1455,7 +1131,7 @@
                                     <control type="image">
                                         <width>834</width>
                                         <height>60</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                     </control>
                                     <control type="image">
                                         <posx>45</posx>
@@ -1725,30 +1401,6 @@
                                 <font>Font_Bold37</font>
                             </control>
                             <control type="image">
-                                <posx>80</posx>
-                                <posy>682</posy>
-                                <width>816</width>
-                                <height>122</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture>weather/whitepanel.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>27</posx>
-                                <posy>722</posy>
-                                <width>506</width>
-                                <height>42</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture>weather/key1.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>427</posx>
-                                <posy>722</posy>
-                                <width>506</width>
-                                <height>42</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture>weather/key2.png</texture>
-                            </control>
-                            <control type="image">
                                 <posx>77</posx>
                                 <posy>242</posy>
                                 <width>806</width>
@@ -1782,139 +1434,6 @@
                                 <onright>9000</onright>
                                 <onclick>SetProperty(FSMap,true,weather)</onclick>
                             </control>
-                        </control>
-                        <control type="list" id="7501">
-                            <posx>960</posx>
-                            <posy>690</posy>
-                            <width>840</width>
-                            <height>222</height>
-                            <pagecontrol>60</pagecontrol>
-                            <orientation>horizontal</orientation>
-                            <scrolltime>200</scrolltime>
-                            <onup>7500</onup>
-                            <ondown>7500</ondown>
-                            <visible>![SubString(Window.Property(Weather.CurrentView),hourly) | SubString(Window.Property(Weather.CurrentView),videos) | SubString(Window.Property(Weather.CurrentView),maps) | SubString(Window.Property(Weather.CurrentView),video)]</visible>
-                            <animation effect="fade" time="200">VisibleChange</animation>
-                            <itemlayout width="210" height="195">
-                                <control type="label">
-                                    <width>210</width>
-                                    <height>34</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg31_Caps</font>
-                                </control>
-                                <control type="image">
-                                    <posx>50</posx>
-                                    <posy>38</posy>
-                                    <width>120</width>
-                                    <height>120</height>
-                                    <aspectratio align="center">keep</aspectratio>
-                                    <info>ListItem.ActualIcon</info>
-                                </control>
-                                <control type="label">
-                                    <posy>158</posy>
-                                    <width>210</width>
-                                    <height>34</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label2]</label>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout width="210" height="195">
-                                <control type="label">
-                                    <width>210</width>
-                                    <height>34</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg31_Caps</font>
-                                </control>
-                                <control type="image">
-                                    <posx>50</posx>
-                                    <posy>38</posy>
-                                    <width>120</width>
-                                    <height>120</height>
-                                    <aspectratio align="center">keep</aspectratio>
-                                    <info>ListItem.ActualIcon</info>
-                                </control>
-                                <control type="label">
-                                    <posy>158</posy>
-                                    <width>210</width>
-                                    <height>34</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label2]</label>
-                                </control>
-                            </focusedlayout>
-                            <content>
-                                <item id="1">
-                                    <label>$INFO[Window(weather).Property(Hourly.1.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.1.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.1.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.1.OutlookIcon)]</icon>
-                                </item>
-                                <item id="2">
-                                    <label>$INFO[Window(weather).Property(Hourly.2.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.2.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.2.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.2.OutlookIcon)]</icon>
-                                </item>
-                                <item id="3">
-                                    <label>$INFO[Window(weather).Property(Hourly.3.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.3.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.3.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.3.OutlookIcon)]</icon>
-                                </item>
-                                <item id="4">
-                                    <label>$INFO[Window(weather).Property(Hourly.4.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.4.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.4.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.4.OutlookIcon)]</icon>
-                                </item>
-                                <item id="5">
-                                    <label>$INFO[Window(weather).Property(Hourly.5.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.5.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.5.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.5.OutlookIcon)]</icon>
-                                </item>
-                                <item id="6">
-                                    <label>$INFO[Window(weather).Property(Hourly.6.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.6.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.6.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.6.OutlookIcon)]</icon>
-                                </item>
-                                <item id="7">
-                                    <label>$INFO[Window(weather).Property(Hourly.7.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.7.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.7.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.7.OutlookIcon)]</icon>
-                                </item>
-                                <item id="8">
-                                    <label>$INFO[Window(weather).Property(Hourly.8.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.8.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.8.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.8.OutlookIcon)]</icon>
-                                </item>
-                                <item id="9">
-                                    <label>$INFO[Window(weather).Property(Hourly.9.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.9.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.9.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.9.OutlookIcon)]</icon>
-                                </item>
-                                <item id="10">
-                                    <label>$INFO[Window(weather).Property(Hourly.10.Time)]</label>
-                                    <label2>$INFO[Window(weather).Property(Hourly.10.Temperature)]</label2>
-                                    <property name="Outlook">$INFO[Window(weather).Property(Hourly.10.Outlook)]</property>
-                                    <onclick>noop</onclick>
-                                    <icon>$INFO[Window(weather).Property(Hourly.10.OutlookIcon)]</icon>
-                                </item>
-                            </content>
                         </control>
                     </control>
                 </control>
@@ -2016,18 +1535,6 @@
                         <onclick>ClearProperty(Weather.CurrentView)</onclick>
                         <selected>IsEmpty(Window.Property(Weather.CurrentView))</selected>
                     </control>
-                    <control type="radiobutton" id="303">
-                        <label>33034</label>
-                        <include>Objects_MediaMenuButtonAlt</include>
-                        <onclick>SetProperty(Weather.CurrentView,36hour)</onclick>
-                        <selected>SubString(Window.Property(Weather.CurrentView),36hour)</selected>
-                    </control>
-                    <control type="radiobutton" id="304">
-                        <label>33037</label>
-                        <include>Objects_MediaMenuButtonAlt</include>
-                        <onclick>SetProperty(Weather.CurrentView,weekend)</onclick>
-                        <selected>SubString(Window.Property(Weather.CurrentView),weekend)</selected>
-                    </control>
                     <control type="radiobutton" id="305">
                         <label>33036</label>
                         <include>Objects_MediaMenuButtonAlt</include>
@@ -2046,7 +1553,6 @@
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>SetProperty(Weather.CurrentView,maps)</onclick>
                         <selected>SubString(Window.Property(Weather.CurrentView),maps)</selected>
-                        <visible>SubString(Weather.Plugin,weather.wunderground)</visible>
                     </control>
                     <control type="button" id="1604">
                         <width>400</width>
