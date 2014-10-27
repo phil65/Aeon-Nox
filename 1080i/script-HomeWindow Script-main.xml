@@ -304,17 +304,17 @@
                         <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
                         <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
                         <control type="image">
-                            <posx>310</posx>
+                            <posx>190</posx>
                             <posy>612</posy>
-                            <width>1300</width>
+                            <width>1540</width>
                             <height>87</height>
                             <texture>home/submenubar_shadow.png</texture>
                             <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         </control>
                         <control type="fixedlist" id="9010">
-                            <posx>385</posx>
+                            <posx>285</posx>
                             <posy>605</posy>
-                            <width>1150</width>
+                            <width>1350</width>
                             <height>50</height>
                             <onleft>9010</onleft>
                             <onright>9010</onright>
@@ -327,10 +327,10 @@
                             <ondown condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
                             <ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9011)</ondown>
                             <ondown condition="Skin.HasSetting(lowermainmenu)">SetFocus(9011)</ondown>
-                            <itemlayout width="230" height="50">
+                            <itemlayout width="270" height="50">
                                 <control type="label">
                                     <posx>5</posx>
-                                    <width>220</width>
+                                    <width>270</width>
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
@@ -338,10 +338,10 @@
                                     <textcolor>grey2</textcolor>
                                 </control>
                             </itemlayout>
-                            <focusedlayout width="230" height="50">
+                            <focusedlayout width="270" height="50">
                                 <control type="label">
                                     <posx>5</posx>
-                                    <width>220</width>
+                                    <width>270</width>
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
@@ -353,7 +353,7 @@
                                 </control>
                                 <control type="label">
                                     <posx>5</posx>
-                                    <width>220</width>
+                                    <width>270</width>
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
