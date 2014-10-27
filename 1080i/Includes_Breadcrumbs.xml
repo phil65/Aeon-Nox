@@ -63,12 +63,12 @@
                 <visible>!Window.IsActive(PVR)</visible>
             </control>
             <control type="label">
-                <label>$INFO[Control.GetLabel(10), (,)]</label>
+                <label>$INFO[Control.GetLabel(10),: ]</label>
                 <include>BreadcrumbsLabel</include>
                 <visible>!Stringcompare(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
             </control>
             <control type="label">
-                <label>($LOCALIZE[587])</label>
+                <label> (Filtered)</label>
                 <include>BreadcrumbsLabel</include>
                 <visible>Container.Filtered</visible>
             </control>

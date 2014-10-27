@@ -130,7 +130,7 @@
             <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
             <animation effect="slide" end="1920,0" time="240">WindowClose</animation>
             <animation effect="slide" start="0,-50" end="0,0" delay="800" time="480">WindowOpen</animation>
-            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(rsshomelow)">Conditional</animation>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation type="Visible" reversible="false">
                 <effect type="fade" end="100" time="240" />
@@ -149,7 +149,7 @@
                     <width>1920</width>
                     <height>87</height>
                     <texture flipy="true">home/nav_back_shadow.png</texture>
-                    <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
+                    <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                     <colordiffuse>black</colordiffuse>
                     <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                     <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
@@ -269,7 +269,7 @@
                         <height>87</height>
                         <texture flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
                         <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                        <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
+                        <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
                         <animation effect="zoom" start="100,0" end="100,100" time="540" tween="cubic">VisibleChange</animation>
@@ -303,7 +303,7 @@
                         <width>794</width>
                         <height>87</height>
                         <texture>home/timepanel_mid_shadow.png</texture>
-                        <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
+                        <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     </control>
@@ -385,8 +385,9 @@
                             <animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
                         </control>
                         <control type="image">
+                            <posx>-300</posx>
                             <posy>453</posy>
-                            <width>1920</width>
+                            <width>2520</width>
                             <height>225</height>
                             <texture>home/homemenu_back_glow.png</texture>
                             <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
