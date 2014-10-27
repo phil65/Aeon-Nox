@@ -67,9 +67,33 @@
                 <visible>!Stringcompare(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
             </control>
             <control type="label">
-                <label> (Filtered)</label>
+                <label>(Filtered)</label>
                 <include>BreadcrumbsLabel</include>
                 <visible>Container.Filtered</visible>
+            </control>
+        </control>
+        <control type="button" id="4051">
+            <include>HiddenObject</include>
+            <visible>![Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious]</visible>
+            <animation effect="fade" end="100" time="0">Visible</animation>
+            <animation effect="fade" time="400">Hidden</animation>
+        </control>
+        <control type="group">
+            <control type="grouplist">
+                <width>1900</width>
+                <align>right</align>
+                <aligny>center</aligny>
+                <orientation>horizontal</orientation>
+                <include>Animation_WindowFade200</include>
+                <control type="label">
+                    <width min="15" max="1920">auto</width>
+                    <height>38</height>
+                    <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]</label>
+                    <font>Font_Reg30_Caps</font>
+                    <shadowcolor>bcshadow</shadowcolor>
+                    <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
+                    <scroll>false</scroll>
+                </control>
             </control>
         </control>
     </include>
@@ -77,7 +101,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <visible>Player.HasMedia</visible>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+            <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
             <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
             <control type="multiimage">
                 <posx>12</posx>
@@ -163,34 +187,6 @@
                     <scroll>true</scroll>
                     <pauseatend>7000</pauseatend>
                     <visible>Player.HasVideo + !IsEmpty(VideoPlayer.ChannelName)</visible>
-                </control>
-            </control>
-        </control>
-    </include>
-    <include name="Breadcrumbs_Furniture">
-        <control type="group">
-            <control type="button" id="4051">
-                <include>HiddenObject</include>
-                <visible>![Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious]</visible>
-                <animation effect="fade" end="100" time="0">Visible</animation>
-                <animation effect="fade" time="400">Hidden</animation>
-            </control>
-            <control type="group">
-                <control type="grouplist">
-                    <width>1900</width>
-                    <align>right</align>
-                    <aligny>center</aligny>
-                    <orientation>horizontal</orientation>
-                    <include>Animation_WindowFade200</include>
-                    <control type="label">
-                        <width min="15" max="1920">auto</width>
-                        <height>38</height>
-                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]</label>
-                        <font>Font_Reg30_Caps</font>
-                        <shadowcolor>bcshadow</shadowcolor>
-                        <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
-                        <scroll>false</scroll>
-                    </control>
                 </control>
             </control>
         </control>
