@@ -142,7 +142,6 @@
             </animation>
             <visible>[!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]] | Skin.HasSetting(rsshomelow)</visible>
             <control type="group">
-                <visible>Skin.HasSetting(alternativerss)</visible>
                 <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <control type="image">
                     <posy>2</posy>
@@ -181,63 +180,6 @@
                         <titlecolor>$VAR[HomeMenuWidgetTextVar]</titlecolor>
                         <scrollspeed>40</scrollspeed>
                         <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <visible>!Skin.HasSetting(alternativerss)</visible>
-                <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                <control type="image">
-                    <posx>81</posx>
-                    <width>1880</width>
-                    <height>87</height>
-                    <texture>home/rssbar_mid.png</texture>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posx>165</posx>
-                    <posy>3</posy>
-                    <width>1880</width>
-                    <height>40</height>
-                    <textoffsetx>0</textoffsetx>
-                    <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>FF666666</textcolor>
-                    <scroll>true</scroll>
-                    <wrapmultiline>false</wrapmultiline>
-                    <scrollspeed>40</scrollspeed>
-                    <visible>Skin.HasSetting(ActorBirthdayRSS)</visible>
-                </control>
-                <control type="rss">
-                    <posx>165</posx>
-                    <posy>3</posy>
-                    <width>1880</width>
-                    <height>86</height>
-                    <font>Font_Reg26</font>
-                    <textcolor>a9000000</textcolor>
-                    <urlset>1</urlset>
-                    <headlinecolor>a9000000</headlinecolor>
-                    <highlightcolor>a9000000</highlightcolor>
-                    <titlecolor>dc2B60DE</titlecolor>
-                    <scrollspeed>40</scrollspeed>
-                    <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
-                </control>
-                <control type="group">
-                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                    <control type="image">
-                        <posx>116</posx>
-                        <width>200</width>
-                        <height>40</height>
-                        <texture>home/rssbar_mid_fade.png</texture>
-                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posx>1785</posx>
-                        <width>165</width>
-                        <height>40</height>
-                        <texture>home/rssbar_begin_fade.png</texture>
-                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                     </control>
                 </control>
             </control>
@@ -358,22 +300,20 @@
                         <animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                     </control>
                     <control type="group" id="9001">
-                        <posx>240</posx>
-                        <posy>609</posy>
                         <animation effect="zoom" end="120" center="960,610" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                         <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
                         <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
                         <control type="image">
-                            <posx>70</posx>
-                            <posy>3</posy>
+                            <posx>310</posx>
+                            <posy>612</posy>
                             <width>1300</width>
                             <height>87</height>
                             <texture>home/submenubar_shadow.png</texture>
                             <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         </control>
                         <control type="fixedlist" id="9010">
-                            <posx>145</posx>
-                            <posy>-4</posy>
+                            <posx>385</posx>
+                            <posy>605</posy>
                             <width>1150</width>
                             <height>50</height>
                             <onleft>9010</onleft>
