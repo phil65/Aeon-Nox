@@ -669,65 +669,6 @@
         <include>FavoritesMainMenu</include>
         <include>WeatherMainMenu</include>
     </include>
-    <include name="SubMenuListContent">
-        <posx>145</posx>
-        <posy>-4</posy>
-        <width>1150</width>
-        <height>50</height>
-        <onleft>9010</onleft>
-        <onright>9010</onright>
-        <orientation>horizontal</orientation>
-        <focusposition>2</focusposition>
-        <hitrect x="-238" y="0" w="2400" h="130" />
-        <scrolltime tween="quadratic">300</scrolltime>
-        <onup>9000</onup>
-        <onback>SetFocus(9000)</onback>
-        <ondown condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
-        <ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9011)</ondown>
-        <ondown condition="Skin.HasSetting(lowermainmenu)">SetFocus(9011)</ondown>
-        <itemlayout width="230" height="50">
-            <control type="label">
-                <posx>5</posx>
-                <width>220</width>
-                <height>50</height>
-                <align>center</align>
-                <label>$INFO[ListItem.Label]</label>
-                <font>Font_Reg28_Caps</font>
-                <textcolor>grey2</textcolor>
-            </control>
-        </itemlayout>
-        <focusedlayout width="230" height="50">
-            <control type="label">
-                <posx>5</posx>
-                <width>220</width>
-                <height>50</height>
-                <align>center</align>
-                <label>$INFO[ListItem.Label]</label>
-                <font>Font_Reg28_Caps</font>
-                <textcolor>grey2</textcolor>
-                <animation effect="zoom" center="112,25" start="100" end="130" time="160" tween="quadratic">Focus</animation>
-                <animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
-                <scroll>true</scroll>
-            </control>
-            <control type="label">
-                <posx>5</posx>
-                <width>220</width>
-                <height>50</height>
-                <align>center</align>
-                <label>$INFO[ListItem.Label]</label>
-                <font>Font_Reg28_Caps</font>
-                <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
-                <animation effect="zoom" center="112,25" start="100" end="130" time="160" tween="quadratic">Focus</animation>
-                <animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
-                <scroll>true</scroll>
-                <animation effect="fade" time="200">VisibleChange</animation>
-                <visible>Control.HasFocus(9010)</visible>
-            </control>
-        </focusedlayout>
-        <content>
-            <include>skinshortcuts-submenu</include>
-        </content>
-    </include>
     <include name="MainMenuFixedList">
         <control type="fixedlist" id="9000">
             <include>MainMenuListContent</include>
@@ -736,11 +677,6 @@
     <include name="MainMenuWrapList">
         <control type="wraplist" id="9000">
             <include>MainMenuListContent</include>
-        </control>
-    </include>
-    <include name="SubMenuFixedList">
-        <control type="fixedlist" id="9010">
-            <include>SubMenuListContent</include>
         </control>
     </include>
     <include name="MainMenuCommonContent">
