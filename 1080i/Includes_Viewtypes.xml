@@ -743,30 +743,8 @@
             <animation effect="slide" end="0,45" time="320" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="slide" end="0,-1000" time="240" easing="in" tween="cubic">WindowClose</animation>
-            <animation effect="slide" end="0,35" time="400" easing="in" tween="cubic" condition="!Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503)">Conditional</animation>
             <animation effect="slide" end="0,60" time="400" easing="in" tween="cubic" condition="[Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]">Conditional</animation>
-            <animation effect="slide" end="0,65" time="400" easing="in" tween="cubic" condition="!Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]">Conditional</animation>
-            <animation effect="zoom" end="113" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(no_infopane_panel)">Conditional</animation>
-            <control type="group">
-                <visible>!Skin.HasSetting(no_infopane_panel)</visible>
-                <animation effect="fade" time="350">VisibleChange</animation>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>1050</height>
-                    <texture>wall/wall_bg_glow.png</texture>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                    <include>PanelGlowFade</include>
-                </control>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>1050</height>
-                    <texture>wall/wall_bg.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
-            </control>
+            <animation effect="zoom" end="113" center="960,500" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
             <control type="image">
                 <posx>112</posx>
                 <posy>8</posy>
@@ -811,7 +789,6 @@
             </control>
             <control type="group">
                 <visible>Container.Content(movies) | [Container.Content(tvshows) + Control.isVisible(8858)]</visible>
-                <visible>!Skin.HasSetting(no_infopane_panel)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
                 <control type="label">
                     <posx>170</posx>
@@ -834,7 +811,7 @@
                 <fadetime>FanartCrossfadeTime</fadetime>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
-                <animation effect="zoom" end="108" center="1800,270" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503)">Conditional</animation>
+                <animation effect="zoom" end="108" center="1800,270" time="320" tween="cubic" easing="inout" condition="Control.IsVisible(503)">Conditional</animation>
                 <visible>StringCompare(Control.GetLabel(4420),fanart)</visible>
                 <animation type="VisibleChange">
                     <effect type="fade" end="100" delay="320" time="160" />

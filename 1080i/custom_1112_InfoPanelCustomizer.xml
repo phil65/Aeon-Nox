@@ -64,12 +64,6 @@
                     <visible>[Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),Banners)] + [[Container.Content(tvshows) + ![Skin.HasSetting(tvposterinfopane) | Skin.HasSetting(tvthumbsinfopane)]] | Container.Content(seasons)]</visible>
                     <enable>!Stringcompare(Control.GetLabel(4421),infopaneloff)</enable>
                 </control>
-                <control type="radiobutton" id="1625">
-                    <label>31696</label>
-                    <include>Objects_MediaMenuButtonAround</include>
-                    <onclick>Skin.ToggleSetting(no_infopane_panel)</onclick>
-                    <selected>Skin.HasSetting(no_infopane_panel)</selected>
-                </control>
             </control>
             <control type="panel" id="451">
                 <posx>305</posx>
