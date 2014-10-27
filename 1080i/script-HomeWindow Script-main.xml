@@ -129,8 +129,7 @@
             <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
             <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
             <animation effect="slide" end="1920,0" time="240">WindowClose</animation>
-            <animation effect="slide" start="1880,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-            <animation effect="slide" start="1880,0" end="0,0" delay="2000" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" start="0,-50" end="0,0" delay="800" time="480">WindowOpen</animation>
             <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation type="Visible" reversible="false">
@@ -261,8 +260,7 @@
                 </control>
                 <control type="group">
                     <animation effect="slide" end="-750,0" time="240">WindowClose</animation>
-                    <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-                    <animation effect="slide" start="-750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+                    <animation effect="slide" start="0,50" end="0,0" delay="800" time="480">WindowOpen</animation>
                     <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <control type="image">
@@ -295,8 +293,7 @@
                     <posx>748r</posx>
                     <visible>!Skin.HasSetting(DisableTimePanel)</visible>
                     <animation effect="slide" end="750,0" time="240">WindowClose</animation>
-                    <animation effect="slide" start="750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-                    <animation effect="slide" start="750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+                    <animation effect="slide" start="0,50" end="0,0" delay="800" time="480">WindowOpen</animation>
                     <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
