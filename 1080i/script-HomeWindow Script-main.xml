@@ -150,7 +150,8 @@
                     <width>1920</width>
                     <height>87</height>
                     <texture flipy="true">home/nav_back_shadow.png</texture>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+      <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
+              <colordiffuse>black</colordiffuse>
                     <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                     <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
