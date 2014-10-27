@@ -5,8 +5,10 @@
         <top>0</top>
         <system>1</system>
     </coordinates>
-    <include>Animation_ListSlideRight</include>
-    <include>Animation_DialogZoom</include>
+    <animation condition="!Skin.HasSetting(alternatetvosd)" effect="slide" start="2000,0" end="0,0" time="600" tween="back" easing="out">WindowOpen</animation>
+	<animation condition="!Skin.HasSetting(alternatetvosd)" effect="slide" start="0,0" end="2000,0" time="600" tween="back" easing="in">WindowClose</animation>
+	<animation condition="Skin.HasSetting(alternatetvosd)" effect="slide" start="0,1000" end="0,0" time="600" easing="out" tween="back">WindowOpen</animation>
+	<animation condition="Skin.HasSetting(alternatetvosd)" effect="slide" start="0,0" end="0,1000" time="600" easing="in" tween="back">WindowClose</animation>
     <onload>NextChannelGroup</onload>
     <onload>PreviousChannelGroup</onload>
     <onunload>RunScript(script.pvrosd,close_page)</onunload>

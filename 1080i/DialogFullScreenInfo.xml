@@ -128,7 +128,7 @@
                     <texture>flags/rating/MPAA_NR_Certificate_US.png</texture>
                     <include>OSDFlagVars</include>
                     <visible>!VideoPlayer.Content(files) + IsEmpty(Control.GetLabel(2117))</visible>
-                </control>
+                </control>				
                 <control type="image">
                     <posx>1480</posx>
                     <texture>flags/aspectratio/$INFO[VideoPlayer.VideoAspect,,.png]</texture>
@@ -191,7 +191,7 @@
 					<texture fallback="">special://skin/extras/BigIcons/Speaker.png</texture>
 					<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
 					<visible>!Substring(VideoPlayer.AudioLanguage,und)</visible>
-                </control>
+                </control>				
                 <control type="image">
                     <posx>1860</posx>
                     <posy>970</posy>
@@ -212,8 +212,8 @@
 					<colordiffuse>white2</colordiffuse>
 					<animation effect="fade" time="200">VisibleChange</animation>
 					<texture fallback="">subtitles/flags/$INFO[VideoPlayer.SubtitlesLanguage,,.png]</texture>
-                </control>
-			</control>
+                </control>	
+			</control>									
         </control>
         <control type="group" id="9004">
             <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>
@@ -355,7 +355,7 @@
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <colordiffuse>grey</colordiffuse>
                     <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) + IsEmpty(Control.GetLabel(11465))</visible>
-                </control>
+                </control>				
                 <control type="group">
                     <visible>!VideoPlayer.Content(episodes)</visible>
                     <control type="label">
@@ -367,7 +367,7 @@
                         <label fallback="-">$INFO[VideoPlayer.Year]</label>
                         <font>Font_Bold42</font>
                         <textcolor>grey</textcolor>
-                    </control>
+                    </control>					
                     <control type="label">
                         <posx>272</posx>
                         <posy>136</posy>
@@ -393,7 +393,7 @@
                     </control>
 					<control type="group">
 						<width>135</width>
-						<height>90</height>
+						<height>90</height>						
 						<control type="image" id="1156">
 							<posx>285</posx>
 							<posy>87</posy>
@@ -411,7 +411,7 @@
 							<colordiffuse>grey</colordiffuse>
 							<visible>IsEmpty(Control.GetLabel(1156))</visible>
 						</control>
-					</control>
+					</control>						
                 </control>
                 <control type="group">
                     <posx>435</posx>
@@ -730,7 +730,7 @@
                 <width>300</width>
                 <height>300</height>
                 <texture background="true">$INFO[Player.Art(discart)]</texture>
-                <animation effect="fade" time="200">VisibleChange</animation>
+                <include>Animation_VisibleChange200</include>
                 <animation type="WindowOpen">
                     <effect type="rotate" end="-360" center="auto" time="6400" delay="1600" tween="cubic" easing="inout" />
                     <effect type="slide" start="150" end="0" delay="640" time="320" tween="cubic" />
@@ -1016,11 +1016,11 @@
                 </control>
             </control>
         </control>
-
+		
 		<!-- New DialogInfo for LiveTV -->
 		<control type="group" id="9006">
-            <animation effect="slide" start="0,1080" end="0,60" time="400" easing="out" tween="back">WindowOpen</animation>
-            <animation effect="slide" start="0,60" end="0,1080" time="400" easing="in" tween="back">WindowClose</animation>
+            <animation effect="slide" start="0,1080" end="0,60" time="600" easing="out" tween="back">WindowOpen</animation>
+            <animation effect="slide" start="0,60" end="0,1080" time="600" easing="in" tween="back">WindowClose</animation>
             <visible>VideoPlayer.Content(LiveTV) + !Window.IsActive(infodialog) + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
             <control type="image">
                 <posx>260</posx>
@@ -1034,7 +1034,7 @@
                 <posx>300</posx>
                 <posy>70</posy>
                 <width>1320</width>
-                <height>780</height>
+                <height>780</height> 
 				<control type="label"> <!-- Channel name -->
                     <posy>-790</posy>
                     <width>1050</width>
@@ -1144,7 +1144,7 @@
                         <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
                         <visible>!Control.IsVisible(50)</visible>
                     </control>
-                </control>
+                </control>               
                 <control type="togglebutton" id="9000">
                     <posy>640</posy>
                     <width>1320</width>
@@ -1172,9 +1172,9 @@
                 </control>
             </control>
         </control>
-
+		
 		<!-- Include FullScreenInfoBarLiveTV for LiveTV -->
-		<control type="group">
+		<control type="group" id="9007"> 
             <visible>VideoPlayer.Content(LiveTV) + Control.IsVisible(9006)</visible>
             <include condition="VideoPlayer.Content(livetv)">FullScreenInfoBarLiveTV</include>
 		</control>
