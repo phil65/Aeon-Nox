@@ -213,7 +213,7 @@
                         <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                        <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
+                        <visible>!IsEmpty(Control.GetLabel(4323))</visible>
                         <animation effect="zoom" start="100,0" end="100,100" time="540" tween="cubic">VisibleChange</animation>
                     </control>
                     <control type="label">
@@ -224,7 +224,7 @@
                         <font>Font_Reg28_Caps</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <scroll>true</scroll>
-                        <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
+                        <visible>!IsEmpty(Control.GetLabel(4323))</visible>
                         <animation type="VisibleChange">
                             <effect type="fade" end="100" time="360" />
                             <effect type="slide" start="0,50" end="0,0" time="360" />
