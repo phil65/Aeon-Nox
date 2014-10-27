@@ -11,11 +11,11 @@
             <onfocus>ActivateWindow(1165)</onfocus>
         </control>
         <control type="image">
-            <texture>diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
         </control>
         <control type="group">
             <animation effect="slide" start="3242,0" end="0,0" time="920" tween="quadratic">WindowOpen</animation>

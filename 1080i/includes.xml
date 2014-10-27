@@ -891,9 +891,9 @@
     </include>
     <include name="DialogBackFade">
         <control type="image">
-            <texture>diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <animation effect="fade" start="100" end="0" time="240" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
@@ -901,9 +901,9 @@
     </include>
     <include name="ContextMenuOverlay">
         <control type="image">
-            <texture>diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
             <visible>Window.IsActive(contextmenu)</visible>

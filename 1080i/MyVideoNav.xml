@@ -96,13 +96,13 @@
             <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
         </control>
         <control type="image">
-            <texture>diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
             <animation effect="fade" end="100" time="440" delay="160">Visible</animation>
             <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <visible>!Control.HasFocus(109)</visible>
             <visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | [Skin.HasSetting(no_infopane_panel) + Control.IsVisible(7550)] | Control.IsVisible(5999)</visible>
         </control>
