@@ -885,23 +885,6 @@
         <value condition="Control.HasFocus(6011) + !IsEmpty(Container(6002).ListItem.Art(fanart))">$INFO[Container(6002).ListItem.Art(fanart)]</value>
         <value condition="Player.HasAudio + Skin.HasSetting(musicfanarthome) + Window.IsActive(script-HomeWindow Script-main.xml) + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
     </variable>
-    <variable name="NavBarImageVar">
-        <value condition="Skin.HasSetting(shadowbars)">home/nav_back_shadow.png</value>
-        <value>home/nav_back.png</value>
-    </variable>
-    <variable name="SubMenuImageVar">
-        <value condition="Skin.HasSetting(shadowbars)">home/submenubar_shadow.png</value>
-        <value>home/submenubar.png</value>
-    </variable>
-    <variable name="TimePanelImageVar">
-        <value condition="Skin.HasSetting(shadowbars)">home/timepanel_mid_shadow.png</value>
-        <value>home/timepanel_mid.png</value>
-    </variable>
-    <variable name="BarStyleLabelVar">
-        <value condition="Skin.HasSetting(shadowbars)">$LOCALIZE[31054]</value>
-        <value condition="Skin.HasSetting(colorpanels)">$LOCALIZE[31112]</value>
-        <value>$LOCALIZE[571]</value>
-    </variable>
     <variable name="RepeatImageVar">
         <value condition="Substring(Control.GetLabel(26),$LOCALIZE[595])">special://skin/extras/BigIcons/ButtonRepeatOff.png</value>
         <value condition="Substring(Control.GetLabel(26),$LOCALIZE[596])">special://skin/extras/BigIcons/ButtonRepeatOne.png</value>

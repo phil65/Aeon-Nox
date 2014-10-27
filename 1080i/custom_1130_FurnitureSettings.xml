@@ -144,14 +144,10 @@
                     <enable>!Skin.HasSetting(DisableRSS)</enable>
                     <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
-                <control type="button" id="473">
-                    <label>31909</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$VAR[BarStyleLabelVar][/COLOR]</label2>
+                <control type="radiobutton" id="473">
+                    <label>Color Panels</label>
                     <include>Objects_CommonSettingsButton</include>
-                    <onclick condition="!Skin.HasSetting(shadowbars) + Skin.HasSetting(colorpanels)">Skin.SetBool(shadowbars)</onclick>
-                    <onclick condition="!Skin.HasSetting(shadowbars) + !Skin.HasSetting(colorpanels)">Skin.SetBool(colorpanels)</onclick>
-                    <onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(shadowbars)</onclick>
-                    <onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(colorpanels)</onclick>
+                    <onclick>Skin.Togglesetting(colorpanels)</onclick>
                     <visible>Stringcompare(Window.Property(actualItem),LibraryStats) | Stringcompare(Window.Property(actualItem),LibraryStats)</visible>
                 </control>
                 <control type="radiobutton" id="482">
