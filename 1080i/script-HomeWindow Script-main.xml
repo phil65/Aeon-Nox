@@ -150,8 +150,8 @@
                     <width>1920</width>
                     <height>87</height>
                     <texture flipy="true">home/nav_back_shadow.png</texture>
-      <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-              <colordiffuse>black</colordiffuse>
+                    <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
+                    <colordiffuse>black</colordiffuse>
                     <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                     <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
@@ -271,7 +271,7 @@
                         <height>87</height>
                         <texture flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
                         <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-<animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
+                        <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
                         <animation effect="zoom" start="100,0" end="100,100" time="540" tween="cubic">VisibleChange</animation>
@@ -285,10 +285,10 @@
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <scroll>true</scroll>
                         <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
-                   <animation type="VisibleChange">
-                        <effect type="fade" end="100" time="360" />
-                        <effect type="slide" start="0,50" end="0,0" time="360" />
-                    </animation>
+                        <animation type="VisibleChange">
+                            <effect type="fade" end="100" time="360" />
+                            <effect type="slide" start="0,50" end="0,0" time="360" />
+                        </animation>
                     </control>
                 </control>
                 <control type="group">
@@ -306,8 +306,8 @@
                         <width>794</width>
                         <height>87</height>
                         <texture>home/timepanel_mid_shadow.png</texture>
-<animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-                       <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                        <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
+                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     </control>
                     <control type="label">
@@ -377,25 +377,24 @@
                         <include>SubMenuFixedList</include>
                     </control>
                     <!--Home Menu Bar-->
-                    <control type="image">
-                        <posy>453</posy>
-                        <width>1920</width>
-                        <height>225</height>
-                        <texture>$VAR[HomeMenuBackVar]</texture>
-                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <control type="group">
                         <animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
-                    </control>
-                    <control type="image">
-                        <posy>453</posy>
-                        <width>1920</width>
-                        <height>225</height>
-                        <texture>home/homemenu_back_glow.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                        <animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <include>PanelGlowFade</include>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <visible>!Skin.HasSetting(DisableGlowbar) | Skin.HasSetting(classichome)</visible>
+                        <control type="image">
+                            <posy>453</posy>
+                            <width>1920</width>
+                            <height>225</height>
+                            <texture>$VAR[HomeMenuBackVar]</texture>
+                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+                        </control>
+                        <control type="image">
+                            <posy>453</posy>
+                            <width>1920</width>
+                            <height>225</height>
+                            <texture>home/homemenu_back_glow.png</texture>
+                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <include>PanelGlowFade</include>
+                        </control>
                     </control>
                     <!--Home Menu-->
                     <control type="button" id="8993">
