@@ -50,7 +50,6 @@
                 <aspectratio>keep</aspectratio>
                 <texture>$VAR[BreadcrumbsIconVar]</texture>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <visible>!Player.HasMedia</visible>
             </control>
             <control type="label">
@@ -78,6 +77,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <visible>Player.HasMedia</visible>
+                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
             <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
             <control type="multiimage">
                 <posx>12</posx>
@@ -88,7 +88,6 @@
                 <fadetime>10</fadetime>
                 <timeperimage>100</timeperimage>
                 <randomize>true</randomize>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <visible>Player.HasAudio + Player.Playing</visible>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
             </control>
@@ -98,7 +97,6 @@
                 <width>30</width>
                 <height>24</height>
                 <texture>VisualEqu/static/0.png</texture>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <visible>Player.HasAudio + !Player.Playing</visible>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
             </control>
@@ -109,7 +107,6 @@
                 <texture>common/logo_movies.png</texture>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                 <visible>Player.HasVideo</visible>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
             </control>
             <control type="grouplist">
                 <posx>68</posx>
