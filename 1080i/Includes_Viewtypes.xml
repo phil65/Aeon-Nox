@@ -739,7 +739,14 @@
             <visible>Window.IsActive(1112) | Control.IsVisible(197) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>Control.IsVisible(9900)</visible>
             <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(501) | [Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]</visible>
-            <animation effect="slide" start="0,-1200" end="0,0" time="600" tween="cubic">VisibleChange</animation>
+            <animation type="Visible">
+                <effect type="fade" delay="300" end="100" time="360" />
+                <effect type="slide" start="0,-1200" end="0,0" time="600" tween="cubic"/>
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" end="0" time="360" />
+                <effect type="slide" start="0,0" end="0,-1200" time="300" tween="cubic" easing="in"/>
+            </animation>
             <animation effect="slide" end="0,45" time="320" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="slide" end="0,-1000" time="240" easing="in" tween="cubic">WindowClose</animation>

@@ -8,7 +8,14 @@
             <visible>Window.IsActive(1112) | Control.IsVisible(199) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>!Stringcompare(ListItem.Label,..) + !Container.Content()</visible>
             <visible>Control.IsVisible(57) | Control.isVisible(509) | Control.IsVisible(503)</visible>
-            <animation effect="slide" start="0,-1200" end="0,0" time="560" tween="cubic">VisibleChange</animation>
+            <animation type="Visible">
+                <effect type="fade" delay="300" end="100" time="360" />
+                <effect type="slide" start="0,-1200" end="0,0" time="600" tween="cubic"/>
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" end="0" time="360" />
+                <effect type="slide" start="0,0" end="0,-1200" time="300" tween="cubic" easing="in"/>
+            </animation>
             <animation effect="slide" start="0,-1200" end="0,0" time="440" delay="640" tween="cubic">WindowOpen</animation>
             <animation effect="slide" end="0,-32" time="440" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
             <animation effect="slide" end="0,112" time="440" tween="cubic" condition="Control.IsVisible(57) + Skin.HasSetting(smallshiftview)">Conditional</animation>
