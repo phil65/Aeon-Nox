@@ -93,7 +93,7 @@
         <control type="button" id="5999">
             <include>HiddenObject</include>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
+            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
         </control>
         <control type="image">
             <texture>diffuseoverlay.png</texture>
@@ -115,10 +115,8 @@
             <control type="group">
                 <!--view id = 50-->
                 <include>CommonRootView</include>
-                <!--view id = 510-->
-                <include condition="IsEmpty(Skin.String(DisablePostersVL))">PostersViewList</include>
-                <include condition="IsEmpty(Skin.String(DisablePostersVL)) | IsEmpty(Skin.String(DisableTriPanelVL))">PostersView</include>
                 <!--view id = 52-->
+                <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">PostersView</include>
                 <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanel</include>
                 <!--view id = 53-->
                 <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanelSquare</include>
@@ -227,14 +225,14 @@
                 </control>
                 <control type="button" id="7566">
                     <include>HiddenObject</include>
-                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onfocus>
-                    <onfocus condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
+                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onfocus>
+                    <onfocus condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
                 </control>
             </control>
             <include>FloorFlags</include>
             <include>FloorLabels</include>
-            <include condition="!Skin.HasSetting(DisablePostersVL) | !Skin.HasSetting(DisableShiftVL) |!Skin.HasSetting(DisableTriPanelVL)">Posters_Furniture</include>
+            <include condition="!Skin.HasSetting(DisableShiftVL) |!Skin.HasSetting(DisableTriPanelVL)">Posters_Furniture</include>
             <control type="group">
                 <animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview) + Control.IsVisible(57)">Conditional</animation>
                 <animation effect="slide" end="-642.5,0" time="320" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>

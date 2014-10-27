@@ -587,13 +587,12 @@
                     <onclick condition="Stringcompare(Skin.String(TriPanelSquarePosition),1)">Skin.SetString(TriPanelSquarePosition,2)</onclick>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),TriPanelSquare)</visible>
                 </control>
-                <!--Posters Options-->
                 <control type="radiobutton" id="1648">
                     <label>$LOCALIZE[31694]:</label>
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(posterwrap)</onclick>
                     <selected>!Skin.HasSetting(posterwrap)</selected>
-                    <visible>Window.IsActive(videolibrary) + [Stringcompare(Window(home).Property(actualViewtype),posters) | [Stringcompare(Window(home).Property(actualViewtype),tripanel) + Stringcompare(Skin.String(TriPanelPosition),4)]]</visible>
+                    <visible>Window.IsActive(videolibrary) + [Stringcompare(Window(home).Property(actualViewtype),tripanel) + Stringcompare(Skin.String(TriPanelPosition),4)]</visible>
                 </control>
                 <control type="radiobutton" id="1640">
                     <label>$LOCALIZE[31477] [LOWERCASE]$LOCALIZE[31069][/LOWERCASE]</label>
@@ -646,7 +645,7 @@
                     <onclick condition="Skin.HasSetting(watchedoverlay) + Skin.HasSetting(newstatus)">Skin.Reset(watchedoverlay)</onclick>
                     <onclick condition="Skin.HasSetting(watchedoverlay) + Skin.HasSetting(newstatus)">Skin.Reset(newstatus)</onclick>
                     <onclick condition="!Skin.HasSetting(watchedoverlay) + !Skin.HasSetting(newstatus)">Skin.SetBool(watchedoverlay)</onclick>
-                    <visible>[Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),posters) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Substring(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Shift)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+                    <visible>[Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Substring(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Shift)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
                 </control>
                 <control type="button" id="266">
                     <label>$LOCALIZE[207]:</label>

@@ -221,14 +221,6 @@
                     <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
                 <item>
-                    <label>$LOCALIZE[31271]</label>
-                    <onclick>Container.SetViewMode(510)</onclick>
-                    <visible>Window.IsActive(videos) + !IsEmpty(Container.FolderPath) + !Container.Content(addons) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)] + !Container.Content(years)</visible>
-                    <visible>![Window.IsActive(videos) + !IsEmpty(Skin.String(DisablePostersVL))]</visible>
-                    <visible>!Container.Content(countries)</visible>
-                    <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
-                </item>
-                <item>
                     <label>$LOCALIZE[31235]</label>
                     <onclick>Container.SetViewMode(57)</onclick>
                     <visible>[[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist) | Window.isActive(programs) | Window.isActive(addonbrowser) | [Window.IsActive(videos) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)]]] + !IsEmpty(Container.FolderPath) + !Container.Content(years)] | Window.IsActive(videoplaylist)</visible>
@@ -316,13 +308,6 @@
                     <thumb>$INFO[Skin.String(DisableLandscapeVL)]</thumb>
                     <onclick condition="IsEmpty(Skin.String(DisableLandscapeVL))">Skin.SetString(DisableLandscapeVL,true)</onclick>
                     <onclick condition="!IsEmpty(Skin.String(DisableLandscapeVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableLandscapeVL)</onclick>
-                    <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
-                </item>
-                <item>
-                    <label>$LOCALIZE[31271]</label>
-                    <thumb>$INFO[Skin.String(DisablePostersVL)]</thumb>
-                    <onclick condition="IsEmpty(Skin.String(DisablePostersVL))">Skin.SetString(DisablePostersVL,true)</onclick>
-                    <onclick condition="!IsEmpty(Skin.String(DisablePostersVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisablePostersVL)</onclick>
                     <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
                 <item>

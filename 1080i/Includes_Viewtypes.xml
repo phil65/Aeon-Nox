@@ -14,7 +14,7 @@
                 <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
             </control>
             <control type="group" id="8860">
-                <visible>![Control.IsVisible(512) | Control.IsVisible(510)]</visible>
+                <visible>!Control.IsVisible(512)</visible>
                 <animation effect="slide" time="800" start="1200,0" end="0,0" tween="cubic">WindowOpen</animation>
                 <animation effect="slide" time="800" end="1200,0" tween="cubic">WindowClose</animation>
                 <control type="image">
@@ -43,7 +43,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>![Control.IsVisible(510) | Control.IsVisible(57)]</visible>
+                <visible>!Control.IsVisible(57)</visible>
                 <visible>!Control.HasFocus(109)</visible>
                 <animation effect="slide" end="0,-400" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -402,7 +402,7 @@
     <include name="Furniture_DarkGradient">
         <control type="grouplist" id="24000">
             <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
-            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
             <animation effect="slide" time="0" end="-280" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
             <animation effect="slide" time="300" end="0,-30" tween="cubic" condition="ControlGroup(24000).HasFocus">Conditional</animation>
             <!--
@@ -430,7 +430,6 @@
             <texture>views/showcase_gradient.png</texture>
             <include>Animation_CommonFade</include>
             <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(518) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
-            <animation effect="slide" time="160" end="1440" tween="cubic" condition="Control.IsVisible(510)">Conditional</animation>
         </control>
         <control type="grouplist">
             <animation effect="slide" start="0,70" end="0" delay="50" time="340" tween="cubic">VisibleChange</animation>
@@ -524,7 +523,7 @@
             <height>40</height>
             <width>975</width>
             <visible>![SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
-            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
             <animation effect="fade" start="100" end="0" time="320" condition="![Control.HasFocus(61)]">Conditional</animation>
             <onup>50</onup>
             <ondown condition="!Control.IsVisible(500)">109</ondown>
