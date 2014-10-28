@@ -3478,7 +3478,7 @@
                 <width>450</width>
                 <height>30</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Artist]</label>
+                <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Artist]$INFO[ListItem.Property(Addon.Version)]$INFO[ListItem.Property(Addon.Creator), • ]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>grey2</textcolor>
             </control>
@@ -3487,7 +3487,7 @@
                 <posy>124</posy>
                 <width>400</width>
                 <height>210</height>
-                <label>$INFO[ListItem.Plot]$INFO[ListItem.Album_Description]$INFO[ListItem.Artist_Description]</label>
+                <label>$INFO[ListItem.Plot]$INFO[ListItem.Album_Description]$INFO[ListItem.Artist_Description]$INFO[ListItem.Property(Addon.Description)]</label>
                 <font>Font_Reg28</font>
                 <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
