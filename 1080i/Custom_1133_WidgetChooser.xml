@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1133">
-    <onload>ClearProperty(NoStyleSelect)</onload>
     <defaultcontrol always="true">500</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.rssfeeds)</onload>
@@ -172,6 +171,7 @@
                         </control>
                     </focusedlayout>
                     <!--
+                    0: EMPTY
                     1: panelcoversquare
                     2: panelcoverepisode
                     3: panel
@@ -941,23 +941,23 @@
                             <label>$LOCALIZE[12600]</label>
                             <onclick>SetProperty(CustomYesNoDialog,weather,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[12600])</onclick>
-                            <onclick>SetProperty(AllowedStyles,None,home)</onclick>
+                            <onclick>SetProperty(AllowedStyles,_0_,home)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>!IsEmpty(Weather.Plugin)</visible>
                         </item>
-                        <item>
+<!--                         <item>
                             <label>31183</label>
                             <onclick>SetProperty(CustomYesNoDialog,wundergroundpanel,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Weather Wunderground)</onclick>
                             <onclick>SetProperty(AllowedStyles,None,home)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>SubString(Weather.Plugin,weather.wunderground)</visible>
-                        </item>
+                        </item> -->
                         <item>
                             <label>$LOCALIZE[10007]</label>
                             <onclick>SetProperty(CustomYesNoDialog,systemclassic,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[138])</onclick>
-                            <onclick>SetProperty(AllowedStyles,None,home)</onclick>
+                            <onclick>SetProperty(AllowedStyles,_0_,home)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
 <!--                         <item>
@@ -1062,7 +1062,6 @@
                             <onclick>SetProperty(CustomYesNoDialog,babesimages,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babes)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabes)</onclick>
-                            <onclick>SetProperty(StyleSelect,None,home)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
@@ -1071,7 +1070,6 @@
                             <onclick>SetProperty(CustomYesNoDialog,babeimages,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Daily Babe)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=dailybabe)</onclick>
-                            <onclick>SetProperty(StyleSelect,None,home)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>

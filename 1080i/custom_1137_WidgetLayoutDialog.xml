@@ -112,6 +112,18 @@
                     12: panellandscape
                     -->
 
+                    <control type="button" id="9">
+                        <width>292</width>
+                        <height>62</height>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>Default</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <onfocus>ClearProperty(WidgetType,skinsettings)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <visible>Substring(Window(home).Property(AllowedStyles),_0_)</visible>
+                    </control>
                     <control type="button" id="10">
                         <width>292</width>
                         <height>62</height>
