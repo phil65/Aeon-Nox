@@ -505,8 +505,7 @@
     </variable>
     <variable name="FanartPanelValue5Var">
         <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.Runtime),, $LOCALIZE[12391]]</value>
-        <value condition="[Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)] + !ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
-        <value condition="[Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)] + ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]][COLOR grey]$INFO[ListItem.PercentPlayed, (,%)][/COLOR]</value>
+        <value condition="Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
         <value>$VAR[LastEpisodeVar]</value>
     </variable>
     <variable name="FanartPanelDetail6Var">
@@ -571,8 +570,7 @@
     </variable>
     <variable name="PosterPanelValue5Var">
         <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.Runtime),, $LOCALIZE[12391]]</value>
-        <value condition="IsEmpty(ListItem.TvShowTitle) + !ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
-        <value condition="IsEmpty(ListItem.TvShowTitle) + ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]][COLOR white3]$INFO[ListItem.PercentPlayed, (,%)][/COLOR]</value>
+        <value condition="IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
         <value>$VAR[NextEpisodeVar]</value>
     </variable>
     <variable name="PosterPanelDetail6Var">
@@ -1656,8 +1654,7 @@
     </variable>
     <variable name="LowListInfoValue5">
         <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.Runtime),, $LOCALIZE[12391]]</value>
-        <value condition="[Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)] + !ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
-        <value condition="Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Duration,, $LOCALIZE[12391]][COLOR grey]$INFO[ListItem.PercentPlayed, (,%)][/COLOR]</value>
+        <value condition="Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
         <value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[Window(Home).Property(NextAired.AirTime)]</value>
     </variable>
     <variable name="LowListSubTitleVar">
@@ -1687,8 +1684,7 @@
     <variable name="TriPanelValue1Var">
         <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.Runtime),, $LOCALIZE[12391]]</value>
         <value condition="System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors)]">$INFO[Window.Property(current.actor.age)]</value>
-        <value condition="[Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)] + !ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
-        <value condition="Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Duration,, $LOCALIZE[12391]][COLOR grey]$INFO[ListItem.PercentPlayed, (,%)][/COLOR]</value>
+        <value condition="Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
         <value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[Window(Home).Property(NextAired.Runtime),, $LOCALIZE[12391]]</value>
         <value condition="Window.IsActive(programs)">$INFO[ListItem.Studio]</value>
     </variable>
