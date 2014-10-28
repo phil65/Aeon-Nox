@@ -100,7 +100,7 @@
         </control>
         <control type="group">
             <visible>Skin.HasSetting(DisableGlowbar)</visible>
-            <include>Animation_VisibleChangeDelayed</include>
+            <animation effect="fade" time="200">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
             <control type="image">
                 <posy>480</posy>
@@ -110,7 +110,8 @@
                 <colordiffuse>black</colordiffuse>
                 <visible>![Substring(Control.GetLabel(4321),classic) + !Control.HasFocus(5010)]</visible>
                 <visible>[Control.IsVisible(8995) + Skin.HasSetting(movenowplayingwidget)] | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)</visible>
-                <include>Animation_VisibleChangeDelayed</include>
+        <animation effect="fade" time="500" delay="160">Visible</animation>
+        <animation effect="fade" time="700">Hidden</animation>
                 <animation effect="slide" time="320" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             </control>
             <control type="image">
@@ -118,7 +119,8 @@
                 <height>600</height>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>
-                <include>Animation_VisibleChangeDelayed</include>
+        <animation effect="fade" time="500" delay="160">Visible</animation>
+        <animation effect="fade" time="700">Hidden</animation>
                 <visible>![Substring(Control.GetLabel(4325),classic) + !Control.HasFocus(6010)]</visible>
                 <visible>[Control.IsVisible(8995) + !Skin.HasSetting(movenowplayingwidget)] | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)</visible>
             </control>
