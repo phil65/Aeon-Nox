@@ -3550,18 +3550,8 @@
                 <width>400</width>
                 <height>50</height>
                 <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.TVShowTitle]</label>
+                <label>$INFO[ListItem.TVShowTitle]$INFO[ListItem.Property(Date)]</label>
                 <font>Font_MainClassic4</font>
-            </control>
-            <control type="label">
-                <posx>415</posx>
-                <posy>76</posy>
-                <width>340</width>
-                <height>30</height>
-                <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Property(Channel)]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>grey2</textcolor>
             </control>
             <control type="label">
                 <posx>562</posx>
@@ -3588,7 +3578,7 @@
                 <posy>112</posy>
                 <width>355</width>
                 <height>205</height>
-                <label>$INFO[ListItem.Plot]</label>
+                <label>$INFO[ListItem.Plot]$INFO[ListItem.Property(Description)]</label>
                 <font>Font_Reg28</font>
                 <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
