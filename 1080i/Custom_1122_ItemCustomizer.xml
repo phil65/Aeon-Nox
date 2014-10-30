@@ -114,17 +114,6 @@
                         <aspectratio>keep</aspectratio>
                         <texture>$INFO[Skin.String(ItemToEdit.Icon)]</texture>
                         <colordiffuse>FFFFFFFF</colordiffuse>
-                        <visible>!Substring(Skin.String(ItemToEdit.Icon),/BigIcons/)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>100</posx>
-                        <width>600</width>
-                        <height>100</height>
-                        <align>center</align>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[Skin.String(ItemToEdit.Icon)]</texture>
-                        <colordiffuse>white</colordiffuse>
-                        <visible>Substring(Skin.String(ItemToEdit.Icon),/BigIcons/)</visible>
                     </control>
                 </control>
                 <control type="grouplist" id="4">
@@ -190,7 +179,7 @@
                     <control type="button" id="30">
                         <label>31807</label>
                         <include>Objects_CustomizerSettingsButton</include>
-                        <onclick>Skin.SetFile(ItemToEdit.Icon,.png|.bmp|.gif|.jpg|.jpeg|.ico,special://skin/extras/BigIcons)</onclick>
+                        <onclick>Skin.SetFile(ItemToEdit.Icon,.png|.bmp|.gif|.jpg|.jpeg|.ico,special://skin/extras/icons)</onclick>
                     </control>
                     <control type="button" id="31">
                         <label>Focus Item on Startup</label>

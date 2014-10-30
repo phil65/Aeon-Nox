@@ -53,8 +53,8 @@
                     <include>Objects_ShutdownMenuButton</include>
                     <onclick>Quit()</onclick>
                     <selected>Control.HasFocus(1)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/exit.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/exit.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/close.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/close.png</textureradiooff>
                     <visible>System.ShowExitButton</visible>
                 </control>
                 <control type="radiobutton" id="2">
@@ -62,8 +62,8 @@
                     <include>Objects_ShutdownMenuButton</include>
                     <onclick>Powerdown()</onclick>
                     <selected>Control.HasFocus(2)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Power.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Power.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/poweroff.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/poweroff.png</textureradiooff>
                     <visible>System.CanPowerDown</visible>
                 </control>
                 <control type="radiobutton" id="3">
@@ -71,8 +71,8 @@
                     <include>Objects_ShutdownMenuButton</include>
                     <onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
                     <selected>Control.HasFocus(3)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/AlarmClock.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/AlarmClock.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/alarm.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/alarm.png</textureradiooff>
                     <visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
                     <visible>!System.HasAlarm(shutdowntimer)</visible>
                 </control>
@@ -80,8 +80,8 @@
                     <label>$LOCALIZE[31428] [B]$INFO[System.Alarmpos][/B]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(15)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/AlarmClock.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/AlarmClock.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/alarm.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/alarm.png</textureradiooff>
                     <onclick>CancelAlarm(shutdowntimer)</onclick>
                     <visible>System.HasAlarm(shutdowntimer)</visible>
                 </control>
@@ -89,8 +89,8 @@
                     <label>$LOCALIZE[13011]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(5)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Battery.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Battery.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/battery.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/battery.png</textureradiooff>
                     <onclick>Suspend()</onclick>
                     <visible>System.CanSuspend</visible>
                 </control>
@@ -98,8 +98,8 @@
                     <label>$LOCALIZE[13010]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(10)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Battery.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Battery.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/battery.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/battery.png</textureradiooff>
                     <onclick>Hibernate()</onclick>
                     <visible>System.CanHibernate + !System.CanSuspend</visible>
                 </control>
@@ -107,8 +107,8 @@
                     <label>$LOCALIZE[13013]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(6)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/pre.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/pre.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/reboot.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/reboot.png</textureradiooff>
                     <onclick>Reset()</onclick>
                     <visible>System.CanReboot</visible>
                 </control>
@@ -116,16 +116,16 @@
                     <label>$LOCALIZE[13391]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(4)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/CD-DVD.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/CD-DVD.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/disc.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/disc.png</textureradiooff>
                     <onclick>EjectTray()</onclick>
                     <visible>System.HasMediadvd + System.Platform.ATV2</visible>
                 </control>
                 <control type="radiobutton" id="7">
                     <label>$INFO[system.profilename,$LOCALIZE[20126] ]</label>
                     <include>Objects_ShutdownMenuButton</include>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Lock.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Lock.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/lock.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/lock.png</textureradiooff>
                     <selected>Control.HasFocus(7)</selected>
                     <onclick>Dialog.Close(all,true)</onclick>
                     <onclick>System.LogOff</onclick>
@@ -136,8 +136,8 @@
                     <label>$VAR[MasterLockLabelVar]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(8)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Key.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Key.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/key.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/key.png</textureradiooff>
                     <onclick>xbmc.mastermode</onclick>
                     <visible>System.HasLocks</visible>
                 </control>
@@ -145,32 +145,32 @@
                     <label>$LOCALIZE[5]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(9)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Controlpanel.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Controlpanel.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/controlpanel3.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/controlpanel3.png</textureradiooff>
                     <onclick>ActivateWindow(Settings,return)</onclick>
                 </control>
                 <control type="radiobutton" id="12">
                     <label>$LOCALIZE[10003]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(12)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Cabinet.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Cabinet.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/filemanager.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/filemanager.png</textureradiooff>
                     <onclick>ActivateWindow(FileManager)</onclick>
                 </control>
                 <control type="radiobutton" id="14">
                     <label>$LOCALIZE[1036]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(14)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Star.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Star.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/star.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/star.png</textureradiooff>
                     <onclick>ActivateWindow(Favourites)</onclick>
                 </control>
                 <control type="radiobutton" id="21">
                     <label>$LOCALIZE[13016]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(21)</selected>
-                    <textureradioon colordiffuse="white2">special://skin/extras/BigIcons/Power.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Power.png</textureradiooff>
+                    <textureradioon colordiffuse="white2">special://skin/extras/icons/poweroff.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/poweroff.png</textureradiooff>
                     <visible>!System.CanPowerDown</visible>
                 </control>
                 <control type="image" id="19">

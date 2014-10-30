@@ -225,7 +225,7 @@
             <include>Neon_Floor</include>
         </control>
 		<control type="group">
-            <visible>Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>    
+            <visible>Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
             <control type="videowindow">
                 <include>FullscreenDimensions</include>
                 <visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
@@ -233,7 +233,7 @@
         </control>
 		<include>Furniture_Glow</include>
 	</include>
-	
+
 	<include name="PVRMediaMenuTop">
 		<control type="label" id="200">
 			<label>31176</label>
@@ -332,8 +332,8 @@
                     <control type="radiobutton" id="104">
 						<description>Search</description>
                         <top>188</top>
-                        <textureradioon>special://skin/extras/BigIcons/Search.png</textureradioon>
-                        <textureradiooff>special://skin/extras/BigIcons/Search.png</textureradiooff>
+                        <textureradioon>special://skin/extras/icons/magnifier.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/magnifier.png</textureradiooff>
                         <label>137</label>
                         <include>Objects_MediaMenuButtonIcons</include>
 						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
@@ -366,8 +366,8 @@
             </control>
         </control>
 	</include>
-	
-	
+
+
 	<!-- Main LiveTV Infobar -->
 	<include name="FullScreenInfoBarLiveTV">
 		<animation effect="slide" time="600" start="0,200" easing="out" tween="back">WindowOpen</animation>
@@ -510,7 +510,7 @@
 				</control>
 			</control>
         </control>
-        
+
 		<!-- Middle Info (Start\End times, Current\Next EPG, Progress-bar, Recording) -->
 		<control type="group" id="1">
 			<visible>VideoPlayer.HasEpg</visible>
@@ -633,7 +633,7 @@
                 <visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
             </control>
 		</control>
-		
+
 		<!-- Bottom right Info (Stream status, SNR & Signal, Time-shift) -->
 		<control type="group" id="1">
 			<control type="group" id="1">
@@ -673,13 +673,13 @@
                 </control>
             </control>
 		</control>
-		
+
 		<!-- Media flags -->
         <control type="group" id="1">
 			<animation effect="slide" time="600" start="400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
 			<animation effect="slide" time="600" end="400,0" easing="in" tween="back">WindowClose</animation>
 			<animation effect="slide" time="600" start="400,0" delay="300" easing="out" tween="back">Visible</animation>
-			<animation effect="slide" time="600" end="400,0" easing="in" tween="back">Hidden</animation>	
+			<animation effect="slide" time="600" end="400,0" easing="in" tween="back">Hidden</animation>
             <posx>1550</posx>
             <posy>895</posy>
 			<height>140</height>
@@ -711,7 +711,7 @@
                 <texture>$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
 				<colordiffuse>white</colordiffuse>
             </control>
-			
+
             <control type="image" id="1">
                 <posx>50</posx>
                 <posy>52</posy>
@@ -731,7 +731,7 @@
 				<colordiffuse>white</colordiffuse>
             </control>
         </control>
-        
+
 		<!-- Encryption & Tuners -->
         <control type="group" id="1">
             <posx>65</posx>
@@ -1010,7 +1010,7 @@
             </control>
         </control>
     </include>
-	
+
 	<!-- Large channel list OSD (extended) -->
 	<include name="ChannelOSDExtended">
 		<left>60</left>
@@ -1068,7 +1068,7 @@
 		<include>ChannelInfoPanel</include>
 		<include>ChannelListLarge</include>
 	</include>
-	
+
 	<!-- Large channels list (right pane) -->
 	<include name="ChannelListLarge">
 		<control type="list" id="11">
@@ -1204,7 +1204,7 @@
 			</focusedlayout>
 		</control>
 	</include>
-	
+
 	<!-- Channel information pane (left pane) -->
 	<include name="ChannelInfoPanel">
 		<control type="group">
@@ -1332,7 +1332,7 @@
 		</control>
 	</include>
 
-	
+
 	<!-- Standard channel list OSD -->
 	<include name="ChannelOSDStandard">
             <left>1225</left>

@@ -60,15 +60,15 @@
                 <textcolor>$VAR[TitleColorVar]</textcolor>
             </control>
             <control type="group">
-                <posx>790</posx>
-                <posy>210</posy>
+                <posx>890</posx>
+                <posy>220</posy>
                 <control type="togglebutton" id="440">
-                    <width>100</width>
-                    <height>100</height>
-                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
-                    <texturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                    <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                    <alttexturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/pause.png</texturefocus>
+                    <texturenofocus colordiffuse="grey2">special://skin/extras/icons/pause.png</texturenofocus>
+                    <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/play.png</alttexturefocus>
+                    <alttexturenofocus colordiffuse="grey2">special://skin/extras/icons/play.png</alttexturenofocus>
                     <usealttexture>[Player.Paused | Player.Forwarding | Player.Rewinding] | Player.HasVideo | !Player.HasMedia</usealttexture>
                     <onclick>$INFO[Window(Home).Property(RecentAlbum.1.Play)]</onclick>
                     <ondown>450</ondown>
@@ -77,15 +77,15 @@
                 </control>
             </control>
             <control type="group">
-                <posx>1450</posx>
-                <posy>210</posy>
+                <posx>1560</posx>
+                <posy>220</posy>
                 <control type="togglebutton" id="441">
-                    <width>100</width>
-                    <height>100</height>
-                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
-                    <texturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                    <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                    <alttexturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/pause.png</texturefocus>
+                    <texturenofocus colordiffuse="grey2">special://skin/extras/icons/pause.png</texturenofocus>
+                    <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/play.png</alttexturefocus>
+                    <alttexturenofocus colordiffuse="grey2">special://skin/extras/icons/play.png</alttexturenofocus>
                     <usealttexture>[Player.Paused | Player.Forwarding | Player.Rewinding] | Player.HasAudio | !Player.HasMedia</usealttexture>
                     <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.1.Path)],1)</onclick>
                     <ondown>20</ondown>

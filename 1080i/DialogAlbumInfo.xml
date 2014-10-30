@@ -1515,8 +1515,8 @@
                         <control id="20" type="radiobutton">
                             <label>$LOCALIZE[208]</label>
                             <selected>Control.HasFocus(20)</selected>
-                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPlay.png</textureradioon>
-                            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/ButtonPlay.png</textureradiooff>
+                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/play.png</textureradioon>
+                            <textureradiooff colordiffuse="grey">special://skin/extras/icons/play.png</textureradiooff>
                             <include>Objects_MediaMenuButtonIcons</include>
                             <onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
                             <visible>System.HasAddon(script.playalbum) + Container.Content(albums)</visible>
@@ -1524,8 +1524,8 @@
                         <control id="22" type="radiobutton">
                             <label>$LOCALIZE[31096]</label>
                             <selected>Control.HasFocus(22)</selected>
-                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Youtube.png</textureradioon>
-                            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Youtube.png</textureradiooff>
+                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/youtube.png</textureradioon>
+                            <textureradiooff colordiffuse="grey">special://skin/extras/icons/youtube.png</textureradiooff>
                             <onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
                             <onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
                             <include>Objects_MediaMenuButtonIcons</include>
@@ -1568,8 +1568,8 @@
                         <control id="120" type="radiobutton">
                             <label>31614</label>
                             <selected>Control.HasFocus(120)</selected>
-                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/CD-DVD.png</textureradioon>
-                            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/CD-DVD.png</textureradiooff>
+                            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/disc.png</textureradioon>
+                            <textureradiooff colordiffuse="grey">special://skin/extras/icons/disc.png</textureradiooff>
                             <include>Objects_MediaMenuButtonIcons</include>
                             <onclick>RunAddon(script.cdartmanager)</onclick>
                             <visible>System.HasAddon(script.cdartmanager)</visible>

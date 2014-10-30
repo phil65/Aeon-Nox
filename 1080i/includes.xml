@@ -299,9 +299,8 @@
         <onleft condition="Skin.HasSetting(quicknav)">ActivateWindow(1121)</onleft>
         <onleft condition="!Skin.HasSetting(quicknav) + !Window.IsActive(musicinformation) + !Window.IsActive(PVR)">SetFocus(50)</onleft>
         <!--window.ismedia does not work-->
-        <radiowidth>60</radiowidth>
+        <radiowidth>45</radiowidth>
         <radioposx>8</radioposx>
-        <radioposy>-3</radioposy>
     </include>
     <include name="Objects_MediaMenuButtonAround">
         <width>400</width>
@@ -428,9 +427,8 @@
         <disabledcolor>$VAR[SpotColorVar2]</disabledcolor>
         <focusedcolor>white2</focusedcolor>
         <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
-        <radioposx>40</radioposx>
-        <radioposy>-2</radioposy>
-        <radiowidth>67</radiowidth>
+        <radioposx>49</radioposx>
+        <radiowidth>45</radiowidth>
         <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
         <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlow</include>
     </include>
@@ -986,7 +984,7 @@
             <property name="Path" fallback="RunScript(script.globalsearch)">$INFO[Skin.String(QuickNavItem8.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(QuickNavItem8.Type)]</property>
             <property name="DisableIcon">$INFO[Skin.String(QuickNavItem8.Disable)]</property>
-            <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
+            <thumb fallback="special://skin/extras/icons/magnifier.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
             <onclick>SetProperty(MenuItem,QuickNavItem8,home)</onclick>
             <onclick>SetFocus(810)</onclick>
             <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickNavItem8.Disable))</visible>
