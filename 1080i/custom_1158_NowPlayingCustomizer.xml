@@ -65,29 +65,15 @@
                 <control type="togglebutton" id="440">
                     <width>100</width>
                     <height>100</height>
-                    <texturefocus>special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
-                    <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                    <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                    <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
+                    <texturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
+                    <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
+                    <alttexturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
                     <usealttexture>[Player.Paused | Player.Forwarding | Player.Rewinding] | Player.HasVideo | !Player.HasMedia</usealttexture>
-                    <colordiffuse>grey2</colordiffuse>
                     <onclick>$INFO[Window(Home).Property(RecentAlbum.1.Play)]</onclick>
                     <ondown>450</ondown>
                     <onup>450</onup>
                     <onright>441</onright>
-                </control>
-                <control type="togglebutton">
-                    <width>100</width>
-                    <height>100</height>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                    <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                    <visible>Control.HasFocus(440)</visible>
-                    <usealttexture>[Player.Paused | Player.Forwarding | Player.Rewinding] | Player.HasVideo | !Player.HasMedia</usealttexture>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                    <onclick>PlayerControl(Play)</onclick>
                 </control>
             </control>
             <control type="group">
@@ -96,31 +82,15 @@
                 <control type="togglebutton" id="441">
                     <width>100</width>
                     <height>100</height>
-                    <texturefocus>special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
-                    <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                    <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                    <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+                    <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
+                    <texturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
+                    <alttexturefocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
+                    <alttexturenofocus colordiffuse="grey2">special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
                     <usealttexture>[Player.Paused | Player.Forwarding | Player.Rewinding] | Player.HasAudio | !Player.HasMedia</usealttexture>
-                    <colordiffuse>grey2</colordiffuse>
                     <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.1.Path)],1)</onclick>
                     <ondown>20</ondown>
                     <onup>20</onup>
                     <onleft>440</onleft>
-                </control>
-                <control type="togglebutton">
-                    <width>100</width>
-                    <height>100</height>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                    <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                    <visible>Control.HasFocus(441)</visible>
-                    <usealttexture>[Player.Paused | Player.Forwarding | Player.Rewinding] | Player.HasAudio | !Player.HasMedia</usealttexture>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                    <onclick>PlayerControl(Play)</onclick>
-                    <ondown>450</ondown>
-                    <onup>450</onup>
                 </control>
             </control>
             <control type="grouplist" id="450">
