@@ -98,8 +98,7 @@
                         <posx>50</posx>
                         <width>600</width>
                         <height>80</height>
-                        <texture>views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                         <include>PanelGlowFade</include>
                         <visible>Control.HasFocus(800)</visible>
                     </control>
@@ -183,7 +182,7 @@
                         <property name="Path" fallback="ReplaceWindow(Videos,Addons,return)">$INFO[Skin.String(QuickList1_6.Path)]</property>
                         <property name="Type" fallback="custom">$INFO[Skin.String(QuickList1_6.Type)]</property>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_6.Disable)]</property>
-                        <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickList1_6.MultiFanart)]</thumb>
+                        <thumb fallback="special://skin/extras/icons/camcorder.png">$INFO[Skin.String(QuickList1_6.MultiFanart)]</thumb>
                         <onclick>SetProperty(MenuItem,QuickList1_6,home)</onclick>
                         <onclick>SetFocus(810)</onclick>
                         <visible>!IsEmpty(Window(home).Property(quicknavsetup)) | IsEmpty(Skin.String(QuickList1_6.Disable))</visible>
@@ -226,12 +225,10 @@
                 <width>550</width>
                 <height>40</height>
                 <align>center</align>
-                <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <label>$VAR[QuickNavButtonLabelVar]</label>
                 <font>Font_Reg26</font>
                 <textcolor>grey2</textcolor>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
                 <onclick condition="IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
                 <onclick condition="!IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
