@@ -36,8 +36,7 @@
                 <posy>-24</posy>
                 <width>776</width>
                 <height>372</height>
-                <texture border="22">dialogs/scan_backg_shadow.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]" border="22">dialogs/scan_backg_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -47,8 +46,7 @@
                 <posy>-24</posy>
                 <width>776</width>
                 <height>372</height>
-                <texture border="22">dialogs/scan_backg.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]" border="22">dialogs/scan_backg.png</texture>
             </control>
             <include>Dialogs_Settings</include>
             <control type="panel" id="10">
@@ -77,9 +75,8 @@
                     <control type="image">
                         <width>70</width>
                         <height>70</height>
-                        <texture>views/addonwall_select.png</texture>
+                        <texture colordiffuse="black">views/addonwall_select.png</texture>
                         <animation effect="fade" time="200">VisibleChange</animation>
-                        <colordiffuse>black</colordiffuse>
                         <bordersize>1.7</bordersize>
                         <visible>Control.HasFocus(10)</visible>
                     </control>

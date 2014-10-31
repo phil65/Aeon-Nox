@@ -18,9 +18,8 @@
                 <posy>36</posy>
                 <width>1846</width>
                 <height>1006</height>
-                <texture>settings/settings_panelback_shadow.png</texture>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_panelback_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <posx>34</posx>
@@ -28,8 +27,7 @@
                 <width>925</width>
                 <height>1010</height>
                 <aspectratio align="left">scale</aspectratio>
-                <texture>settings/settings_panelback.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">settings/settings_panelback.png</texture>
             </control>
             <control type="image">
                 <posx>959</posx>
@@ -37,8 +35,7 @@
                 <width>925</width>
                 <height>1010</height>
                 <aspectratio align="right">scale</aspectratio>
-                <texture flipx="true">settings/settings_panelback.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture flipx="true" colordiffuse="$VAR[DialogColorVar]">settings/settings_panelback.png</texture>
             </control>
             <control type="grouplist" id="9">
                 <posx>63</posx>
@@ -74,11 +71,10 @@
                 <height>74</height>
                 <textoffsetx>18</textoffsetx>
                 <textoffsety>18</textoffsety>
-                <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <font>Font_Bold34</font>
                 <textcolor>grey</textcolor>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             </control>
             <control type="button" id="3">
                 <include>Default_SettingButton</include>

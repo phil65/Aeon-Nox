@@ -66,11 +66,10 @@
         <textcolor>white2</textcolor>
     </default>
     <default type="progress">
-        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
         <texturebg>dialogs/progress/progress_back.png</texturebg>
-        <lefttexture>dialogs/progress/progress_left.png</lefttexture>
-        <midtexture>dialogs/progress/progress_mid.png</midtexture>
-        <righttexture>dialogs/progress/progress_right.png</righttexture>
+        <lefttexture colordiffuse="$VAR[AreaColorVar]">dialogs/progress/progress_left.png</lefttexture>
+        <midtexture colordiffuse="$VAR[AreaColorVar]">dialogs/progress/progress_mid.png</midtexture>
+        <righttexture colordiffuse="$VAR[AreaColorVar]">dialogs/progress/progress_right.png</righttexture>
         <overlaytexture>-</overlaytexture>
     </default>
     <default type="spincontrol">
@@ -187,9 +186,8 @@
         <texturesliderbackground>-</texturesliderbackground>
         <texturesliderbar>-</texturesliderbar>
         <texturesliderbarfocus>-</texturesliderbarfocus>
-        <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-        <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+        <textureslidernib colordiffuse="$VAR[AreaColorVar]">views/scrollbarnub-nofocus.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="$VAR[AreaColorVar]">views/scrollbarnub-focus.png</textureslidernibfocus>
         <showonepage>false</showonepage>
         <orientation>vertical</orientation>
         <include>Animation_WindowFade200</include>

@@ -71,15 +71,13 @@
             <posy>404</posy>
             <width>2220</width>
             <height>780</height>
-            <colordiffuse>black</colordiffuse>
-            <texture>home/nowplaying_shadow.png</texture>
+            <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
         </control>
         <control type="image">
             <width>2220</width>
             <height>170</height>
-            <texture flipy="true">home/nav_back_shadow.png</texture>
+            <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
             <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-            <colordiffuse>black</colordiffuse>
         </control>
         <control type="group">
             <control type="group">
@@ -199,8 +197,7 @@
                                 <posy>29</posy>
                                 <width>1230</width>
                                 <height>506</height>
-                                <colordiffuse>aaffffff</colordiffuse>
-                                <texture>common/bgcolor.png</texture>
+                                <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
                                 <visible>Container.Content(albums)</visible>
                             </control>
                             <control type="group">
@@ -325,8 +322,7 @@
                                             <posy>86</posy>
                                             <width>150</width>
                                             <height>70</height>
-                                            <texture fallback="empty.png">$INFO[Window(home).Property(Album.Song.1.FileExtension),flags/audio/,.png]</texture>
-                                            <colordiffuse>white2</colordiffuse>
+                                            <texture colordiffuse="white2" fallback="empty.png">$INFO[Window(home).Property(Album.Song.1.FileExtension),flags/audio/,.png]</texture>
                                             <aspectratio>keep</aspectratio>
                                         </control>
                                         <control type="label">
@@ -347,9 +343,8 @@
                                         <posy>76</posy>
                                         <width>135</width>
                                         <height>88</height>
-                                        <texture fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
+                                        <texture colordiffuse="white2" fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
                                         <fadetime>IconCrossfadeTime2</fadetime>
-                                        <colordiffuse>white2</colordiffuse>
                                     </control>
                                     <control type="group">
                                         <posx>480</posx>
@@ -359,8 +354,7 @@
                                             <width>150</width>
                                             <height>90</height>
                                             <aspectratio>keep</aspectratio>
-                                            <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                                            <colordiffuse>white2</colordiffuse>
+                                            <texture colordiffuse="white2">$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
                                         </control>
                                         <control id="8670" type="label">
                                             <posy>83</posy>
@@ -387,9 +381,8 @@
                                             <width>175</width>
                                             <height>105</height>
                                             <posy>6</posy>
-                                            <texture>defaulticons/DefaultAddonMusic.png</texture>
+                                            <texture colordiffuse="white2">defaulticons/DefaultAddonMusic.png</texture>
                                             <aspectratio>keep</aspectratio>
-                                            <colordiffuse>white2</colordiffuse>
                                             <animation condition="true" effect="fade" end="30" start="100" time="40">Conditional</animation>
                                         </control>
                                         <control type="label">
@@ -606,8 +599,7 @@
                             <posy>59</posy>
                             <width>1290</width>
                             <height>516</height>
-                            <texture>featured/panel_featured_overlay.png</texture>
-                            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
                         </control>
                     </control>
                 </control>
@@ -648,8 +640,7 @@
                                 <posy>-31</posy>
                                 <width>530</width>
                                 <height>510</height>
-                                <texture>home/nav_back_shadow.png</texture>
-                                <colordiffuse>black</colordiffuse>
+                                <texture colordiffuse="black">home/nav_back_shadow.png</texture>
                             </control>
                             <control type="label">
                                 <posy>420</posy>
