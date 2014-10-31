@@ -15,15 +15,13 @@
                     <posy>33</posy>
                     <width>650</width>
                     <height>715</height>
-                    <texture>views/tripanel/info_panel_alt_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_alt_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
                     <width>650</width>
                     <height>815</height>
-                    <texture border="0,100,0,200">views/tripanel/info_panel_alt.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]" border="0,100,0,200">views/tripanel/info_panel_alt.png</texture>
                 </control>
                 <control type="grouplist">
                     <posx>140</posx>
@@ -89,8 +87,7 @@
                     <posy>-22</posy>
                     <width>606</width>
                     <height>720</height>
-                    <texture>views/tripanel/info_panel_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="group">
@@ -113,9 +110,8 @@
                     <width>530</width>
                     <height>530</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask.png" fallback="DefaultMusicGenres.png">common/bgcolor.png</texture>
+                    <texture colordiffuse="FF000000" background="true" diffuse="thumbs/boxes/cdcover_mask.png" fallback="DefaultMusicGenres.png">common/bgcolor.png</texture>
                     <fadetime>0</fadetime>
-                    <colordiffuse>FF000000</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>55</posx>
@@ -148,8 +144,7 @@
                     <posy>-45</posy>
                     <width>595</width>
                     <height>719</height>
-                    <texture>views/tripanel/info_panel_alt_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_alt_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="group">
@@ -173,9 +168,8 @@
                     <width>486</width>
                     <height>486</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask.png" fallback="DefaultMusicGenres.png">common/bgcolor.png</texture>
+                    <texture colordiffuse="FF000000" background="true" diffuse="thumbs/boxes/cdcover_mask.png" fallback="DefaultMusicGenres.png">common/bgcolor.png</texture>
                     <fadetime>0</fadetime>
-                    <colordiffuse>FF000000</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>53</posx>
@@ -212,15 +206,13 @@
                     <posy>24</posy>
                     <width>650</width>
                     <height>752</height>
-                    <texture>views/tripanel/info_panel_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/info_panel_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
                     <width>650</width>
                     <height>835</height>
-                    <texture border="0,100,0,300">views/tripanel/info_panel.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]" border="0,100,0,300">views/tripanel/info_panel.png</texture>
                 </control>
                 <!--Runtime label-->
                 <control type="grouplist">
@@ -276,8 +268,7 @@
                 <control type="image">
                     <width>650</width>
                     <height>835</height>
-                    <texture border="0,100,0,300">views/tripanel/panel_info_shadow.png</texture>
-                    <colordiffuse>white6</colordiffuse>
+                    <texture colordiffuse="white6" border="0,100,0,300">views/tripanel/panel_info_shadow.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -293,9 +284,8 @@
                     <posy>44</posy>
                     <width>864</width>
                     <height>737</height>
-                    <texture border="33,33,33,148">wall/wall_bg_glow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]" border="33,33,33,148">wall/wall_bg_glow.png</texture>
                     <include>PanelGlowFade</include>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
@@ -303,8 +293,7 @@
                     <posy>44</posy>
                     <width>864</width>
                     <height>737</height>
-                    <texture border="33,33,33,148">wall/wall_bg.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]" border="33,33,33,148">wall/wall_bg.png</texture>
                 </control>
                 <control type="image">
                     <posx>42</posx>
@@ -393,9 +382,8 @@
                             <posy>8</posy>
                             <width>35</width>
                             <height>35</height>
-                            <texture>$VAR[WatchedIconVar]</texture>
+                            <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                             <aspectratio>keep</aspectratio>
-                            <colordiffuse>grey</colordiffuse>
                             <visible>!Container.Content(songs)</visible>
                         </control>
                         <control type="image">
@@ -404,8 +392,7 @@
                             <width>150</width>
                             <height>46</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.StarRating,flags/music/rating/]</texture>
-                            <colordiffuse>grey</colordiffuse>
+                            <texture colordiffuse="grey">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
                             <visible>Container.Content(albums)</visible>
                         </control>
                     </itemlayout>
@@ -479,8 +466,7 @@
                             <width>150</width>
                             <height>46</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.StarRating,flags/music/rating/]</texture>
-                            <colordiffuse>grey</colordiffuse>
+                            <texture colordiffuse="grey">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
                             <visible>Container.Content(albums)</visible>
                         </control>
                         <control type="image">
@@ -488,8 +474,7 @@
                             <posy>8</posy>
                             <width>35</width>
                             <height>35</height>
-                            <texture>$VAR[WatchedIconVar]</texture>
-                            <colordiffuse>grey</colordiffuse>
+                            <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                             <aspectratio>keep</aspectratio>
                             <visible>!Container.Content(songs)</visible>
                         </control>
@@ -559,8 +544,7 @@
                             <posy>7</posy>
                             <width>35</width>
                             <height>35</height>
-                            <texture>$VAR[WatchedIconVar]</texture>
-                            <colordiffuse>grey</colordiffuse>
+                            <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                             <aspectratio>keep</aspectratio>
                             <animation effect="slide" end="-57,35" time="0" condition="Container.Content(songs)">Conditional</animation>
                         </control>
@@ -570,8 +554,7 @@
                             <posy>44</posy>
                             <width>842</width>
                             <height>60</height>
-                            <texture border="1">settings/listselect_nf.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[AreaColorVar]" border="1">settings/listselect_nf.png</texture>
                         </control>
                         <control type="group">
                             <animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
@@ -579,15 +562,13 @@
                                 <posx>24</posx>
                                 <width>2</width>
                                 <height>104</height>
-                                <texture>views/tripanel/upright.png</texture>
-                                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/upright.png</texture>
                             </control>
                             <control type="image">
                                 <posx>109</posx>
                                 <width>2</width>
                                 <height>104</height>
-                                <texture>views/tripanel/upright.png</texture>
-                                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[AreaColorVar]">views/tripanel/upright.png</texture>
                             </control>
                         </control>
                         <control type="image">
@@ -636,8 +617,7 @@
                             <posy>7</posy>
                             <width>35</width>
                             <height>35</height>
-                            <texture>$VAR[WatchedIconVar]</texture>
-                            <colordiffuse>grey</colordiffuse>
+                            <texture colordiffuse="grey">$VAR[WatchedIconVar]</texture>
                             <animation effect="slide" end="-57,35" time="0" condition="Container.Content(songs)">Conditional</animation>
                             <aspectratio>keep</aspectratio>
                         </control>
