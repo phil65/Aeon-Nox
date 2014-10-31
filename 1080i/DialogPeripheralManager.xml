@@ -16,15 +16,13 @@
             <control type="image">
                 <width>1440</width>
                 <height>915</height>
-                <texture>settings/settings_panelback_shadow.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]">settings/settings_panelback_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <width>1440</width>
                 <height>915</height>
-                <texture>settings/settings_panelback.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">settings/settings_panelback.png</texture>
             </control>
             <control type="group">
                 <animation effect="fade" start="100" end="0" time="160" condition="Window.IsVisible(DialogPeripheralSettings.xml)">Conditional</animation>

@@ -112,7 +112,6 @@
                 <height>250</height>
                 <texture border="6" fallback="DefaultArtist.png">$INFO[ListItem.Thumb]</texture>
                 <aspectratio aligny="top" align="center">scale</aspectratio>
-                <colordiffuse>FFFFFFFF</colordiffuse>
             </control>
             <control type="group">
                 <posx>235</posx>
@@ -121,9 +120,8 @@
                     <posy>1</posy>
                     <width>438</width>
                     <height>247</height>
-                    <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
+                    <texture colordiffuse="FF555555">$INFO[ListItem.Property(Venue_Image)]</texture>
                     <aspectratio aligny="center" align="center">scale</aspectratio>
-                    <colordiffuse>FF555555</colordiffuse>
                 </control>
                 <control type="textbox">
                     <posy>0</posy>
@@ -176,9 +174,8 @@
                 <posy>1</posy>
                 <width>438</width>
                 <height>247</height>
-                <texture>$INFO[ListItem.Property(Venue_Image)]</texture>
+                <texture colordiffuse="FF555555">$INFO[ListItem.Property(Venue_Image)]</texture>
                 <aspectratio aligny="center" align="center">scale</aspectratio>
-                <colordiffuse>FF555555</colordiffuse>
             </control>
             <control type="image">
                 <width>670</width>
@@ -516,8 +513,7 @@
             <width>360</width>
             <height>178</height>
             <aspectratio>keep</aspectratio>
-            <texture>XBMC_Logo.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture colordiffuse="white">XBMC_Logo.png</texture>
         </control>
         <control type="image">
             <posx>49</posx>
@@ -533,9 +529,8 @@
             <posy>36</posy>
             <width>1846</width>
             <height>1006</height>
-            <texture>settings/settings_panelback_shadow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">settings/settings_panelback_shadow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <animation effect="fade" time="350">VisibleChange</animation>
         </control>
         <control type="image">
@@ -543,8 +538,7 @@
             <posy>34</posy>
             <width>1850</width>
             <height>1010</height>
-            <texture>settings/settings_panelback2.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">settings/settings_panelback2.png</texture>
         </control>
         <control type="image">
             <posx>80</posx>
@@ -552,8 +546,7 @@
             <width>400</width>
             <height>158</height>
             <aspectratio>keep</aspectratio>
-            <texture>XBMC_Logo.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture colordiffuse="white">XBMC_Logo.png</texture>
         </control>
         <control type="image">
             <posx>49</posx>
@@ -671,7 +664,6 @@
         <font>Font_Reg32</font>
         <textcolor>grey2</textcolor>
         <radioposx>550</radioposx>
-        <colordiffuse></colordiffuse>
     </include>
     <include name="Objects_LetterButton">
         <width>32</width>
@@ -968,18 +960,16 @@
             <posy>110</posy>
             <width>748</width>
             <height>683</height>
-            <texture>wall/wall_bg_glow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
         </control>
         <control type="image">
             <posx>105</posx>
             <posy>110</posy>
             <width>748</width>
             <height>683</height>
-            <texture>wall/wall_bg.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
         </control>
         <control type="image">
             <posx>105</posx>
@@ -993,8 +983,7 @@
             <posy>149</posy>
             <width>128</width>
             <height>540</height>
-            <texture>views/listpanel_detailwide.png</texture>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[AreaColorVar]">views/listpanel_detailwide.png</texture>
         </control>
     </include>
     <include name="FileBrowserPanel">
@@ -1003,9 +992,8 @@
             <posy>110</posy>
             <width>1132</width>
             <height>1056</height>
-            <texture>wall/wall_bg_glow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             <animation effect="fade" time="350">VisibleChange</animation>
             <include>PanelGlowFade</include>
         </control>
@@ -1014,8 +1002,7 @@
             <posy>110</posy>
             <width>1132</width>
             <height>1056</height>
-            <texture>wall/wall_bg.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
         </control>
     </include>
     <include name="FullScreenInfoBar">
@@ -1064,8 +1051,7 @@
             <posy>945</posy>
             <width>1920</width>
             <height>135</height>
-            <texture>osd/osd_back.png</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">osd/osd_back.png</texture>
         </control>
         <control type="group">
             <posy>910</posy>
@@ -1093,10 +1079,9 @@
                     <posy>581</posy>
                     <width>335</width>
                     <height>504</height>
-                    <texture>thumbs/thumb_glass_shadow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]">thumbs/thumb_glass_shadow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>PanelGlowFade</include>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="image">
@@ -1228,8 +1213,7 @@
                     <posy>110</posy>
                     <width>180</width>
                     <height>36</height>
-                    <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
-                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[TitleColorVar]">$INFO[VideoPlayer.Rating,stars/,.png]</texture>
                 </control>
             </control>
         </control>
@@ -1683,8 +1667,7 @@
             <control type="image">
                 <width>1332</width>
                 <height>612</height>
-                <texture border="50">featured/panel_featured_shadow.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -1939,8 +1922,7 @@
                 <posy>100</posy>
                 <width>2</width>
                 <height>789</height>
-                <texture>dialogs/weatherline.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">dialogs/weatherline.png</texture>
             </control>
         </control>
     </include>
