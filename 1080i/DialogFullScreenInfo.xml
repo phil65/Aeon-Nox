@@ -619,7 +619,6 @@
                         <height>90</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture colordiffuse="FF7c7c7c">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
-                        <>FF7c7c7c</colordiffuse>
                         <visible>IsEmpty(Control.GetLabel(900011))</visible>
                         <animation effect="slide" end="0,-10" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900012))</visible>
@@ -933,8 +932,7 @@
                         <width>140</width>
                         <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture>$VAR[VideoSourceFlagVar,flags/source/,.png]</texture>
-                        <colordiffuse>FF7c7c7c</colordiffuse>
+                        <texture colordiffuse="FF7c7c7c">$VAR[VideoSourceFlagVar,flags/source/,.png]</texture>
                         <visible>!IsEmpty(Control.GetLabel(900011))</visible>
                     </control>
                     <control type="image">
@@ -942,8 +940,7 @@
                         <width>132</width>
                         <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture fallback="flags/source/defaultsource.png">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
-                        <colordiffuse>FF7c7c7c</colordiffuse>
+                        <texture colordiffuse="FF7c7c7c" fallback="flags/source/defaultsource.png">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
                         <visible>IsEmpty(Control.GetLabel(900011))</visible>
                     </control>
                     <control type="image">
@@ -954,8 +951,7 @@
                         <width>161</width>
                         <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
-                        <colordiffuse>FF7c7c7c</colordiffuse>
+                        <texture colordiffuse="FF7c7c7c" fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
                     </control>
                     <control type="image">
                         <include>Furniture_FlagUpright</include>
@@ -964,8 +960,7 @@
                         <width>100</width>
                         <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture fallback="flags/resolution/defaultscreen.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
-                        <colordiffuse>FF7c7c7c</colordiffuse>
+                        <texture colordiffuse="FF7c7c7c" fallback="flags/resolution/defaultscreen.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
                     </control>
                     <control type="image">
                         <include>Furniture_FlagUpright</include>
@@ -975,8 +970,7 @@
                         <width>132</width>
                         <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
-                        <colordiffuse>FF7c7c7c</colordiffuse>
+                        <texture colordiffuse="FF7c7c7c" fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
                     </control>
                     <control type="image">
                         <include>Furniture_FlagUpright</include>
@@ -985,8 +979,7 @@
                         <width>58</width>
                         <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture>flags/cc.png</texture>
-                        <colordiffuse>FF7c7c7c</colordiffuse>
+                        <texture colordiffuse="FF7c7c7c">flags/cc.png</texture>
                         <visible>VideoPlayer.HasSubtitles</visible>
                     </control>
                 </control>
@@ -1002,8 +995,7 @@
                 <posx>260</posx>
                 <width>1400</width>
                 <height>800</height>
-                <texture>wall/wall_bg.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
                 <animation effect="fade" end="95" condition="true">Conditional</animation>
             </control>
             <control type="group">
@@ -1022,18 +1014,7 @@
                     <posy>84</posy>
                     <width>1320</width>
                     <height>1</height>
-                    <texture>new_pvr/osd_back_pvr_line_white.png</texture>
-                    <colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
-                </control>
-				<control type="image"> <!-- Logo background -->
-                    <posx>1050</posx>
-                    <posy>-20</posy>
-                    <width>250</width>
-                    <height>200</height>
-                    <texture>pvr/bg_channel_icon.png</texture>
-					<align>center</align>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-					<visible>false</visible>
+                    <texture colordiffuse="$VAR[SubTitleColorVar]">new_pvr/osd_back_pvr_line_white.png</texture>
                 </control>
                 <control type="image"> <!-- Channel logo -->
                     <posx>1050</posx>
