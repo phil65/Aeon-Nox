@@ -48,7 +48,7 @@
                     <visible>!IsEmpty(ListItem.Director)</visible>
                 </control>
                 <control type="group">
-                    <control type="button" id="130" description="director_button">
+                    <control type="button" id="130">
                         <posx>875</posx>
                         <posy>242</posy>
                         <width>960</width>
@@ -61,7 +61,7 @@
                         <ondown>131</ondown>
                         <visible>!IsEmpty(ListItem.Director)</visible>
                     </control>
-                    <control type="button" id="131" description="writer_button">
+                    <control type="button" id="131">
                         <posx>875</posx>
                         <posy>283</posy>
                         <width>960</width>
@@ -523,7 +523,7 @@
                                     <font>Font_Bold30</font>
                                     <visible>!IsEmpty(ListItem.Tagline)</visible>
                                 </control>
-                                <control type="textbox" id="800" description="wide_textbox">
+                                <control type="textbox" id="800">
                                     <width>1016</width>
                                     <height>325</height>
                                     <align>left</align>
@@ -533,7 +533,7 @@
                                     <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
                                     <visible>IsEmpty(ListItem.Art(discart)) + IsEmpty(ListItem.Art(characterart)) + [IsEmpty(ListItem.Art(tvshow.characterart)) | !Container.Content(episodes)]</visible>
                                 </control>
-                                <control type="textbox" description="narrow_textbox">
+                                <control type="textbox">
                                     <width>746</width>
                                     <height>325</height>
                                     <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$INFO[ListItem.Plot]</label>

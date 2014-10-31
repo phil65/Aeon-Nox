@@ -6,8 +6,8 @@
     <onload>ClearProperty(Fanart,home)</onload>
     <onload>ClearProperty(Fanart2,home)</onload>
     <onload>ClearProperty(Fanart3,home)</onload>
-    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
-    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
+    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
         <control id="9023" type="button">
