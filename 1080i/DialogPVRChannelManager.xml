@@ -37,8 +37,7 @@
                         <posy>0</posy>
                         <width>733</width>
                         <height>74</height>
-                        <texture>settings/settings_radiobuttonoff.png</texture>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">settings/settings_radiobuttonoff.png</texture>
                     </control>
                     <control type="image">
                         <posx>22</posx>
@@ -46,10 +45,9 @@
                         <width>74</width>
                         <height>74</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(Icon)]</texture>
+                        <texture colordiffuse="88FFFFFF">$INFO[ListItem.Property(Icon)]</texture>
                         <visible>ListItem.Property(ActiveChannel)</visible>
                         <bordersize>8</bordersize>
-                        <colordiffuse>88FFFFFF</colordiffuse>
                     </control>
                     <control type="label">
                         <posx>110</posx>
