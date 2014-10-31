@@ -32,8 +32,7 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <texture>info/info_rightpaneltop.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">info/info_rightpaneltop.png</texture>
             </control>
             <!--Buttons-->
             <control type="group">
@@ -85,8 +84,7 @@
                         <posy>90</posy>
                         <width>1042</width>
                         <height>854</height>
-                        <texture>info/info_panellines_movie2.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">info/info_panellines_movie2.png</texture>
                     </control>
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
@@ -100,8 +98,7 @@
                                 <posx>-20</posx>
                                 <width>120</width>
                                 <height>120</height>
-                                <texture>common/imdb.png</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">common/imdb.png</texture>
                                 <include>AudioFlagsVars</include>
                             </control>
                             <control type="label">
@@ -158,9 +155,8 @@
                                     <width>42</width>
                                     <height>35</height>
                                     <aspectratio aligny="center" align="left">keep</aspectratio>
-                                    <texture background="true">$VAR[CountryFlagVar]</texture>
+                                    <texture colordiffuse="AAFFFFFF" background="true">$VAR[CountryFlagVar]</texture>
                                     <fadetime>200</fadetime>
-                                    <colordiffuse>AAFFFFFF</colordiffuse>
                                     <visible>!IsEmpty(Control.GetLabel(12020))</visible>
                                 </control>
                                 <control type="label">
@@ -229,8 +225,7 @@
                             <posy>90</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>-25</posx>
@@ -272,8 +267,7 @@
                                 <width>135</width>
                                 <height>67</height>
                                 <aspectratio align="center">keep</aspectratio>
-                                <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2" fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                                 <visible>Container.Content(movies) | Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
                             </control>
                             <control type="image">
@@ -288,9 +282,8 @@
                                     <posy>5</posy>
                                     <width>155</width>
                                     <height>67</height>
-                                    <texture>flags/IMDB.png</texture>
+                                    <texture colordiffuse="white2">flags/IMDB.png</texture>
                                     <aspectratio>keep</aspectratio>
-                                    <colordiffuse>white2</colordiffuse>
                                 </control>
                                 <control type="label">
                                     <posy>29</posy>
@@ -312,8 +305,7 @@
                                 <width>155</width>
                                 <height>68</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture>tvguide/$INFO[Window(Home).Property(NextAired.StatusID)].png</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">tvguide/$INFO[Window(Home).Property(NextAired.StatusID)].png</texture>
                                 <visible>Container.Content(tvshows)</visible>
                             </control>
                             <control type="group">
@@ -324,8 +316,7 @@
                                     <width>155</width>
                                     <height>68</height>
                                     <aspectratio>keep</aspectratio>
-                                    <texture>flags/time.png</texture>
-                                    <colordiffuse>white2</colordiffuse>
+                                    <texture colordiffuse="white2">flags/time.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>0</posx>
@@ -352,8 +343,7 @@
                                     <width>155</width>
                                     <height>68</height>
                                     <aspectratio>keep</aspectratio>
-                                    <texture>flags/year.png</texture>
-                                    <colordiffuse>white2</colordiffuse>
+                                    <texture colordiffuse="white2">flags/year.png</texture>
                                 </control>
                                 <control type="label">
                                     <posy>18</posy>
@@ -381,8 +371,7 @@
                                     <width>150</width>
                                     <height>74</height>
                                     <aspectratio aligny="center" align="center">keep</aspectratio>
-                                    <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-                                    <colordiffuse>white2</colordiffuse>
+                                    <texture colordiffuse="white2">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                                     <visible>!IsEmpty(Control.GetLabel(800011))</visible>
                                 </control>
                                 <control type="label">
@@ -426,8 +415,7 @@
                                 <height>45</height>
                                 <posy>2</posy>
                                 <aspectratio align="center">keep</aspectratio>
-                                <colordiffuse>white</colordiffuse>
-                                <texture>defaulticons/DefaultCountry.png</texture>
+                                <texture colordiffuse="white">defaulticons/DefaultCountry.png</texture>
                             </control>
                             <control type="label">
                                 <width>840</width>
@@ -449,8 +437,7 @@
                                 <width>50</width>
                                 <height>50</height>
                                 <aspectratio align="right">keep</aspectratio>
-                                <colordiffuse>white</colordiffuse>
-                                <texture>common/director-icon.png</texture>
+                                <texture colordiffuse="white">common/director-icon.png</texture>
                             </control>
                             <control type="label">
                                 <posx>180</posx>
@@ -482,8 +469,7 @@
                                 <posy>2</posy>
                                 <height>45</height>
                                 <aspectratio align="center">keep</aspectratio>
-                                <colordiffuse>white</colordiffuse>
-                                <texture>defaulticons/DefaultInProgressShows.png</texture>
+                                <texture colordiffuse="white">defaulticons/DefaultInProgressShows.png</texture>
                             </control>
                             <control type="label">
                                 <width>840</width>
@@ -503,8 +489,7 @@
                                 <width>50</width>
                                 <height>50</height>
                                 <aspectratio align="right">keep</aspectratio>
-                                <colordiffuse>white</colordiffuse>
-                                <texture>common/writer-icon.png</texture>
+                                <texture colordiffuse="white">common/writer-icon.png</texture>
                             </control>
                             <control type="label">
                                 <posx>180</posx>
@@ -521,8 +506,7 @@
                         <width>40</width>
                         <height>40</height>
                         <aspectratio align="right">keep</aspectratio>
-                        <colordiffuse>white</colordiffuse>
-                        <texture>defaulticons/DefaultActor.png</texture>
+                        <texture colordiffuse="white">defaulticons/DefaultActor.png</texture>
                     </control>
                     <control type="group">
                         <control type="group">
@@ -612,8 +596,7 @@
                             <posy>872</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>-10</posx>
@@ -629,8 +612,7 @@
                                 <width>100</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture>$VAR[SourceFlagVar,flags/source/,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">$VAR[SourceFlagVar,flags/source/,.png]</texture>
                                 <visible>!IsEmpty(Control.GetLabel(900011))</visible>
                             </control>
                             <control type="image" id="900012">
@@ -638,8 +620,7 @@
                                 <width>100</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
                                 <visible>IsEmpty(Control.GetLabel(900011))</visible>
                                 <visible>!IsEmpty(Control.GetLabel(900012))</visible>
                             </control>
@@ -652,8 +633,7 @@
                                 <width>126</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">$VAR[AudioFlagVar,flags/audio/,.png]</texture>
                                 <visible>!IsEmpty(Control.GetLabel(900013))</visible>
                             </control>
                             <control type="image">
@@ -665,8 +645,7 @@
                                 <width>126</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture>$INFO[Window.Property(AudioCodec.2),flags/audio/]$INFO[Window.Property(AudioChannels.2),,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">$INFO[Window.Property(AudioCodec.2),flags/audio/]$INFO[Window.Property(AudioChannels.2),,.png]</texture>
                                 <visible>!IsEmpty(Control.GetLabel(90013)) + ![Stringcompare(Window.Property(AudioCodec.1),Window.Property(AudioCodec.2)) + Stringcompare(Window.Property(AudioChannels.1),Window.Property(AudioChannels.2))]</visible>
                             </control>
                             <control type="image">
@@ -678,8 +657,7 @@
                                 <width>80</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
                                 <visible>!IsEmpty(Control.GetLabel(900014))</visible>
                             </control>
                             <control type="image">
@@ -691,8 +669,7 @@
                                 <width>80</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
                                 <visible>!IsEmpty(Control.GetLabel(900015))</visible>
                             </control>
                             <control type="image">
@@ -704,8 +681,7 @@
                                 <width>100</width>
                                 <height>62</height>
                                 <aspectratio aligny="center" align="center">keep</aspectratio>
-                                <texture>flags/cc.png</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <texture colordiffuse="white2">flags/cc.png</texture>
                                 <visible>!IsEmpty(ListItem.SubtitleLanguage) + IsEmpty(Window.Property(SubtitleLanguage.1))</visible>
                             </control>
                             <!--Language flags-->
@@ -844,8 +820,7 @@
                                 <width>97</width>
                                 <height>75</height>
                                 <aspectratio aligny="top" align="right">keep</aspectratio>
-                                <texture>defaulticons/DefaultTVShows.png</texture>
-                                <colordiffuse>white</colordiffuse>
+                                <texture colordiffuse="white">defaulticons/DefaultTVShows.png</texture>
                             </control>
                             <control type="group">
                                 <control type="label">
@@ -874,8 +849,7 @@
                             <posy>943</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[AreaColorVar]">info/infopanel_line.png</texture>
                         </control>
                     </control>
                 </control>
@@ -1052,8 +1026,7 @@
                         <control type="image">
                             <width>190</width>
                             <height>217</height>
-                            <texture border="6">views/addonwall_select.png</texture>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
                             <animation effect="fade" time="200">VisibleChange</animation>
                             <visible>Control.HasFocus(600)</visible>
                         </control>
@@ -1212,8 +1185,7 @@
                     <posx>709</posx>
                     <width>40</width>
                     <height>1080</height>
-                    <texture>common/topbar_top.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_top.png</texture>
                     <include>TopbarPulseAnimationLeft</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
@@ -1222,8 +1194,7 @@
                     <posy>571</posy>
                     <width>30</width>
                     <height>30</height>
-                    <texture flipx="true">arrowright.png</texture>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]" flipx="true">arrowright.png</texture>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
                     <visible>Container(5000).HasPrevious+ ControlGroup(5000).HasFocus</visible>
@@ -1233,8 +1204,7 @@
                     <posy>571</posy>
                     <width>30</width>
                     <height>30</height>
-                    <texture>arrowright.png</texture>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]">arrowright.png</texture>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
                     <visible>Container(5000).HasNext+ ControlGroup(5000).HasFocus</visible>
@@ -1256,10 +1226,9 @@
                 <posx>709</posx>
                 <width>40</width>
                 <height>1080</height>
-                <texture>common/topbar_down.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_down.png</texture>
                 <animation effect="fade" time="320" delay="408">Visible</animation>
                 <animation effect="fade" time="80">Hidden</animation>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <include>TopbarPulseAnimationRight</include>
                 <visible>!Skin.HasSetting(DisableGlowbar) + IsEmpty(Window(movieinformation).Property(FanartZoom))</visible>
             </control>
