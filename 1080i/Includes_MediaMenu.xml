@@ -232,15 +232,15 @@
         <control type="radiobutton" id="6">
             <label>13317</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Image.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Image.png</textureradiooff>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/image7.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/icons/image7.png</textureradiooff>
             <selected>Control.HasFocus(6)</selected>
         </control>
         <control type="radiobutton" id="7">
             <label>13318</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ImageRec.png</textureradioon>
-            <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/ImageRec.png</textureradiooff>
+            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/image5.png</textureradioon>
+            <textureradiooff colordiffuse="grey">special://skin/extras/icons/image5.png</textureradiooff>
             <selected>Control.HasFocus(7)</selected>
         </control>
         <control type="radiobutton" id="9">
@@ -389,7 +389,7 @@
                     <onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader,mode=custom,mediatype=musicvideo,silent=true,poster,clearlogo,fanart,extrafanart)</onclick>
                     <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,silent=true,extrafanart,poster,fanart,banner,clearlogo,clearart,landscape,discart,extrathumbs)</onclick>
                 </control>
-                <control type="radiobutton" id="612" description="GoToPlaylist">
+                <control type="radiobutton" id="612">
                     <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/playlist.png</textureradioon>
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/playlist.png</textureradiooff>
                     <label>13350</label>
@@ -400,9 +400,9 @@
                     <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
                     <visible>!Window.IsActive(MusicPlaylist) + !Window.IsActive(VideoPlaylist)</visible>
                 </control>
-                <control type="radiobutton" id="613" description="GoFullScreen">
-                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Media2.png</textureradioon>
-                    <textureradiooff colordiffuse="grey">special://skin/extras/BigIcons/Media2.png</textureradiooff>
+                <control type="radiobutton" id="613">
+                    <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/Media2.png</textureradioon>
+                    <textureradiooff colordiffuse="grey">special://skin/extras/icons/Media2.png</textureradiooff>
                     <label>FullScreen Media</label>
                     <include>Objects_MediaMenuButtonIcons</include>
                     <selected>Control.HasFocus(613)</selected>

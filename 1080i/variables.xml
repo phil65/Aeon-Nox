@@ -884,14 +884,14 @@
         <value condition="Player.HasAudio + Skin.HasSetting(musicfanarthome) + Window.IsActive(script-HomeWindow Script-main.xml) + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
     </variable>
     <variable name="RepeatImageVar">
-        <value condition="Substring(Control.GetLabel(26),$LOCALIZE[595])">special://skin/extras/BigIcons/repeatoff.png</value>
-        <value condition="Substring(Control.GetLabel(26),$LOCALIZE[596])">special://skin/extras/BigIcons/repeatone.png</value>
-        <value>special://skin/extras/icons/repeat.png</value>
+        <value condition="Substring(Control.GetLabel(26),$LOCALIZE[595])">special://skin/extras/icons/repeatoff.png</value>
+        <value condition="Substring(Control.GetLabel(26),$LOCALIZE[596])">special://skin/extras/icons/repeatone.png</value>
+        <value>special://skin/extras/icons/repeat2.png</value>
     </variable>
     <variable name="WatchedFilterImageVar">
         <value condition="StringCompare(Control.GetLabel(10),$LOCALIZE[16102])">special://skin/extras/BigIcons/ButtonCheck.png</value>
         <value condition="StringCompare(Control.GetLabel(10),$LOCALIZE[16101])">special://skin/extras/BigIcons/ButtonRemove.png</value>
-        <value>special://skin/extras/icons/plus.png.png</value>
+        <value>special://skin/extras/icons/plus.png</value>
     </variable>
     <variable name="LibraryScanLabelVar">
         <value condition="Window.IsActive(videos) + library.IsScanningVideo">$LOCALIZE[13353]</value>
