@@ -7,7 +7,7 @@
 	<views>10,11,12,13</views>
 	<controls>
         <include>PVRCommonBackground</include>
-		
+
 		<control type="group">
 			<description>Guide Timeline</description>
 			<visible>Control.IsVisible(10)</visible>
@@ -68,7 +68,7 @@
 						<textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                 </rulerlayout>
-                <channellayout height="60" width="400">                  
+                <channellayout height="60" width="400">
 					<control type="label">
                         <left>5</left>
                         <top>-2</top>
@@ -366,7 +366,7 @@
                 </control>
             </control>
 		</control>
-		
+
 		<control type="group">
 			<description>TV Guide Now</description>
 			<visible>Control.IsVisible(11)</visible>
@@ -452,11 +452,7 @@
 								<top>22</top>
 								<width>180</width>
 								<height>12</height>
-								<visible allowhiddenfocus="true">SubString(Window(mypvr).Property(EpgNow),true)</visible>
-								<texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-								<lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-								<midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-								<righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+								<visible>SubString(Window(mypvr).Property(EpgNow),true)</visible>
 								<info>ListItem.Progress</info>
 							</control>
 							<control type="label">
@@ -541,11 +537,7 @@
 								<top>22</top>
 								<width>180</width>
 								<height>12</height>
-								<visible allowhiddenfocus="true">SubString(Window(mypvr).Property(EpgNow),true)</visible>
-								<texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-								<lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-								<midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-								<righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+								<visible>SubString(Window(mypvr).Property(EpgNow),true)</visible>
 								<info>ListItem.Progress</info>
 							</control>
 							<control type="label">
@@ -664,7 +656,7 @@
                 </control>
             </control>
 		</control>
-		
+
 		<control type="group">
 			<description>TV Guide Next</description>
 			<visible>Control.IsVisible(12)</visible>
@@ -750,11 +742,7 @@
 								<top>22</top>
 								<width>180</width>
 								<height>12</height>
-								<visible allowhiddenfocus="true">SubString(Window(mypvr).Property(EpgNow),true)</visible>
-								<texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-								<lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-								<midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-								<righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+								<visible>SubString(Window(mypvr).Property(EpgNow),true)</visible>
 								<info>ListItem.Progress</info>
 							</control>
 							<control type="label">
@@ -839,11 +827,7 @@
 								<top>22</top>
 								<width>180</width>
 								<height>12</height>
-								<visible allowhiddenfocus="true">SubString(Window(mypvr).Property(EpgNow),true)</visible>
-								<texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-								<lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-								<midtexture border="0,0,12,0">dialogs/progress/progress_mid.png</midtexture>
-								<righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
+								<visible>SubString(Window(mypvr).Property(EpgNow),true)</visible>
 								<info>ListItem.Progress</info>
 							</control>
 							<control type="label">
@@ -962,7 +946,7 @@
                 </control>
             </control>
 		</control>
-		
+
 		<control type="group">
 			<description>TV Guide Channel</description>
 			<visible>Control.IsVisible(13)</visible>
