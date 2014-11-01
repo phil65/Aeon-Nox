@@ -104,12 +104,17 @@
                         <label2>[COLOR white]$INFO[Skin.String(CustomFocusOffset)][/COLOR]</label2>
                         <include>Objects_CustomizerInfoButton</include>
                     </control>
+                    <control type="button">
+                        <label>Icon: </label>
+                        <label2>[COLOR white]$INFO[Skin.String(CustomFocusOffset)][/COLOR]</label2>
+                        <include>Objects_CustomizerInfoButton</include>
+                    </control>
                     <control type="image">
-                        <posx>100</posx>
-                        <width>600</width>
-                        <height>100</height>
+                        <width>40</width>
+                        <height>40</height>
                         <align>center</align>
                         <aspectratio>keep</aspectratio>
+                        <animation effect="slide" end="460,-50" condition="true">Conditional</animation>
                         <texture>$INFO[Skin.String(ItemToEdit.Icon)]</texture>
                     </control>
                 </control>
