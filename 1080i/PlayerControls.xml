@@ -3,6 +3,7 @@
     <defaultcontrol always="true">300</defaultcontrol>
     <onload>Dialog.Close(1121)</onload>
     <onload condition="Window.IsActive(script.pseudotv.TVOverlay.xml)">Dialog.Close(114)</onload>
+    <onload condition="!Player.HasMedia">Action(Close)</onload>
     <controls>
         <include>DialogBackFade</include>
         <control type="group">
