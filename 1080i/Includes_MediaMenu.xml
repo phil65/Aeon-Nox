@@ -27,10 +27,10 @@
         <control type="radiobutton" id="20">
             <label>$LOCALIZE[191]$INFO[Playlist.Random, : ]</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonShuffle.png</textureradioonfocus>
-            <textureradioonnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonShuffle.png</textureradioonnofocus>
-            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/ButtonNoShuffle.png</textureradioofffocus>
-            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/ButtonNoShuffle.png</textureradiooffnofocus>
+            <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/shuffle.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="grey">special://skin/extras/icons/shuffle.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/shuffleoff.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/icons/shuffleoff.png</textureradiooffnofocus>
             <selected>Playlist.IsRandom</selected>
         </control>
         <!--
@@ -173,9 +173,6 @@
             <include>Objects_MediaMenuButtonIcons</include>
             <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/eye.png</textureradioon>
             <textureradiooff colordiffuse="grey">special://skin/extras/icons/eye.png</textureradiooff>
-            <!--
-            <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">$VAR[WatchedFilterImageVar]</textureradioon>
-            <textureradiooff colordiffuse="grey">$VAR[WatchedFilterImageVar]</textureradiooff>-->
             <onclick>SendClick(10)</onclick>
             <selected>Control.HasFocus(1330)</selected>
             <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
