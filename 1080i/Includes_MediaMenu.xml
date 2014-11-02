@@ -78,14 +78,19 @@
             <textureradiooffnofocus colordiffuse="grey">special://skin/extras/icons/alarm.png</textureradiooffnofocus>
             <onclick>SendClick(5)</onclick>
         </control>
-        <control type="radiobutton" id="6">
-            <label>25000</label>
+        <control type="radiobutton" id="2050">
+            <label>$LOCALIZE[25000]: $VAR[AddonNotificationsLabelVar]</label>
             <include>Objects_MediaMenuButtonIcons</include>
-            <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/Message.png</textureradioonfocus>
-            <textureradioonnofocus colordiffuse="grey">special://skin/extras/BigIcons/Message.png</textureradioonnofocus>
-            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/BigIcons/noMessage.png</textureradioofffocus>
-            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/BigIcons/noMessage.png</textureradiooffnofocus>
+            <textureradioonfocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/letter2.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="grey">special://skin/extras/icons/letter2.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/letter.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="grey">special://skin/extras/icons/letter.png</textureradiooffnofocus>
+            <onclick>SetFocus(6)</onclick>
+            <onclick>Select</onclick>
+            <onclick>SetFocus(2050)</onclick>
+            <selected>SubString(Control.GetLabel(6),*)</selected>
         </control>
+
         <control type="radiobutton" id="7">
             <label>25001</label>
             <include>Objects_MediaMenuButtonIcons</include>

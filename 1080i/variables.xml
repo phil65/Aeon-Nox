@@ -897,6 +897,10 @@
         <value condition="Window.IsActive(musiclibrary) + library.IsScanningMusic">$LOCALIZE[13353]</value>
         <value>$LOCALIZE[653]</value>
     </variable>
+    <variable name="AddonNotificationsLabelVar">
+        <value condition="SubString(Control.GetLabel(6),*)">$LOCALIZE[107]</value>
+        <value>$LOCALIZE[106]</value>
+    </variable>
     <variable name="MultiFanartVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.MultiFanart)]</value>
         <value condition="!IsEmpty(Container(9000).ListItem.Icon)">$INFO[Container(9000).ListItem.Icon]</value>
