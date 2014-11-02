@@ -293,12 +293,11 @@
                         <animation effect="slide" end="109" condition="Control.IsVisible(512)">Conditional</animation>
                         <control type="image" id="76">
                             <posy>-7</posy>
-                            <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                            <texture colordiffuse="floor">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                             <width>135</width>
                             <height>82</height>
                             <aspectratio>keep</aspectratio>
                             <fadetime>IconCrossfadeTime2</fadetime>
-                            <colordiffuse>floor</colordiffuse>
                             <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="image">
@@ -362,13 +361,12 @@
                     <animation effect="slide" end="980" condition="Control.IsVisible(516)">Conditional</animation>
                     <control type="image">
                         <posx>60</posx>
-                        <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                        <texture colordiffuse="white2" fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                         <width>150</width>
                         <height>84</height>
                         <posy>-8</posy>
                         <aspectratio>keep</aspectratio>
                         <fadetime>IconCrossfadeTime2</fadetime>
-                        <colordiffuse>white2</colordiffuse>
                         <animation effect="fade" time="200">VisibleChange</animation>
                     </control>
                     <control type="group">
@@ -464,8 +462,7 @@
                     <control type="image">
                         <posx>1450</posx>
                         <include>AudioFlagsVars</include>
-                        <texture>tvguide/$INFO[Window(Home).Property(NextAired.StatusID)].png</texture>
-                        <colordiffuse>floor</colordiffuse>
+                        <texture colordiffuse="floor">tvguide/$INFO[Window(Home).Property(NextAired.StatusID)].png</texture>
                     </control>
                     <control type="image">
                         <posx>1745</posx>
@@ -516,12 +513,11 @@
             <control type="image">
                 <posx>1255</posx>
                 <posy>-9</posy>
-                <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                <texture colordiffuse="white2">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                 <width>150</width>
                 <height>84</height>
                 <aspectratio>keep</aspectratio>
                 <fadetime>IconCrossfadeTime2</fadetime>
-                <colordiffuse>white2</colordiffuse>
                 <animation effect="fade" time="200">VisibleChange</animation>
                 <visible>!IsEmpty(ListItem.Thumb)</visible>
                 <visible>![Control.IsVisible(50) + !Skin.HasSetting(slimlist)]</visible>
@@ -713,9 +709,8 @@
                         <posx>0</posx>
                         <width>135</width>
                         <height>88</height>
-                        <texture fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
+                        <texture colordiffuse="floor" fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
                         <fadetime>IconCrossfadeTime2</fadetime>
-                        <colordiffuse>floor</colordiffuse>
                         <visible>![Control.IsVisible(53) | Control.IsVisible(50)]</visible>
                     </control>
                     <control type="image">
@@ -806,8 +801,7 @@
                             <posy>6</posy>
                             <width>175</width>
                             <height>88</height>
-                            <texture>defaulticons/DefaultAddonMusic.png</texture>
-                            <colordiffuse>floor</colordiffuse>
+                            <texture colordiffuse="floor">defaulticons/DefaultAddonMusic.png</texture>
                             <aspectratio>keep</aspectratio>
                             <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
                         </control>
@@ -841,9 +835,8 @@
                         <width>175</width>
                         <height>88</height>
                             <posy>6</posy>
-                            <texture>defaulticons/DefaultAddonMusic.png</texture>
+                            <texture colordiffuse="floor">defaulticons/DefaultAddonMusic.png</texture>
                             <aspectratio>keep</aspectratio>
-                        <colordiffuse>floor</colordiffuse>
                         <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
                     </control>
                     <control type="label">
@@ -864,9 +857,8 @@
                     <posx>1380</posx>
                     <width>135</width>
                     <height>88</height>
-                    <texture fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
+                    <texture colordiffuse="floor" fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
                     <fadetime>IconCrossfadeTime2</fadetime>
-                    <colordiffuse>floor</colordiffuse>
                     <visible>!IsEmpty(ListItem.StarRating)</visible>
                     <animation effect="fade" time="200">VisibleChange</animation>
                 </control>
@@ -886,8 +878,7 @@
                     <control type="image">
                         <width>135</width>
                         <height>88</height>
-                        <texture>flags/music/year/year.png</texture>
-                        <colordiffuse>floor</colordiffuse>
+                        <texture colordiffuse="floor">flags/music/year/year.png</texture>
                     </control>
                     <control type="label">
                         <width>135</width>
@@ -981,12 +972,11 @@
                 </control>
                 <control type="image">
                     <posy>-10</posy>
-                    <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                    <texture colordiffuse="floor" fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                     <width>125</width>
                     <height>90</height>
                     <aspectratio>keep</aspectratio>
                     <fadetime>IconCrossfadeTime2</fadetime>
-                    <colordiffuse>floor</colordiffuse>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>!Control.IsVisible(57)</visible>
                     <visible>Container.Content(tvshows) | SubString(Container.FolderPath,plugin.video.the.trailers)</visible>
