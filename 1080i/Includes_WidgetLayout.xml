@@ -1017,8 +1017,7 @@
                     <posy>-5</posy>
                     <width>385</width>
                     <height>370</height>
-                    <texture border="20">$VAR[WidgetBackVar]</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]" border="20">$VAR[WidgetBackVar]</texture>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -1141,11 +1140,10 @@
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
-                        <texture border="50">$VAR[PanelWidgetBackVar]</texture>
+                        <texture colordiffuse="$VAR[DialogColorVar]" border="50">$VAR[PanelWidgetBackVar]</texture>
                         <animation type="Conditional" condition="true">
                             <effect type="fade" start="100" end="75" time="400" tween="cubic" easing="inout" />
                         </animation>
-                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                 </control>
                 <control type="group">
@@ -1429,8 +1427,7 @@
                     <posy>21</posy>
                     <width>1608</width>
                     <height>360</height>
-                    <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured_overlay.png</texture>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>Substring(Control.GetLabel(4321),default)</visible>
                 </control>
@@ -1707,8 +1704,7 @@
                 <posy>-350</posy>
                 <width>1850</width>
                 <height>752</height>
-                <texture border="50">featured/panel_featured.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured.png</texture>
             </control>
             <control type="group" id="52000">
                 <posx>-73</posx>
@@ -2480,8 +2476,7 @@
                 <posy>-329</posy>
                 <width>1808</width>
                 <height>710</height>
-                <texture border="50">featured/panel_featured_overlay.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured_overlay.png</texture>
             </control>
         </control>
     </include>
@@ -2671,8 +2666,7 @@
                 <posy>-5</posy>
                 <width>385</width>
                 <height>370</height>
-                <texture border="20">$VAR[Widget2BackVar]</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]" border="20">$VAR[Widget2BackVar]</texture>
             </control>
             <control type="label">
                 <posx>15</posx>
@@ -2793,8 +2787,7 @@
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
-                        <texture border="50">$VAR[PanelWidget2BackVar]</texture>
-                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[DialogColorVar]" border="50">$VAR[PanelWidget2BackVar]</texture>
                         <animation type="Conditional" condition="true">
                             <effect type="fade" start="100" end="75" time="400" tween="cubic" easing="inout" />
                         </animation>
@@ -3083,10 +3076,9 @@
                     <posy>21</posy>
                     <width>1608</width>
                     <height>360</height>
-                    <texture border="50">featured/panel_featured_overlay.png</texture>
+                    <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured_overlay.png</texture>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>Substring(Control.GetLabel(4325),default)</visible>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
                 <control type="button">
                     <description>left Arrow</description>
@@ -3959,8 +3951,7 @@
         <control type="image">
             <width>284</width>
             <height>396</height>
-            <texture>$VAR[WeatherWidgetBackVar]</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">$VAR[WeatherWidgetBackVar]</texture>
         </control>
     </include>
     <include name="weatherwidget2back">
@@ -3976,8 +3967,7 @@
         <control type="image">
             <width>284</width>
             <height>396</height>
-            <texture>$VAR[WeatherWidget2BackVar]</texture>
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[DialogColorVar]">$VAR[WeatherWidget2BackVar]</texture>
         </control>
     </include>
     <include name="Weather_Widget2">
