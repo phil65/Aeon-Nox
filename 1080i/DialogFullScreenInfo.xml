@@ -174,7 +174,7 @@
 					<width>30</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
-					<texture colordiffuse="white2">special://skin/extras/BigIcons/Subtitle.png</texture>
+					<texture colordiffuse="white2">special://skin/extras/icons/subtitle.png</texture>
 					<visible>!IsEmpty(VideoPlayer.SubtitlesLanguage)</visible>
                 </control>
                 <control type="image">
@@ -183,9 +183,8 @@
 					<width>30</width>
 					<height>30</height>
 					<aspectratio>keep</aspectratio>
-					<texture colordiffuse="white2">special://skin/extras/BigIcons/Speaker.png</texture>
-					<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
-					<visible>!Substring(VideoPlayer.AudioLanguage,und)</visible>
+					<texture colordiffuse="white2">special://skin/extras/icons/speaker.png</texture>
+					<visible>!IsEmpty(VideoPlayer.AudioLanguage) + !Substring(VideoPlayer.AudioLanguage,und)</visible>
                 </control>
                 <control type="image">
                     <posx>1860</posx>
