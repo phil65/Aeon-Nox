@@ -44,7 +44,6 @@
             <visible>!Window.IsActive(1154)</visible>
             <visible>IsEmpty(Window(home).Property(PanelWidgetInfo)) + IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
             <visible>[IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(movenowplayingwidget)] | [IsEmpty(Control.GetLabel(4321)) + Skin.HasSetting(movenowplayingwidget)] | !IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <animation effect="slide" end="0,35" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
                 <effect type="zoom" start="150" end="100" center="960,540" delay="2000" time="800" tween="cubic" />
                 <effect type="fade" delay="2000" start="50" end="100" time="240" />
@@ -65,8 +64,7 @@
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
-            <animation effect="slide" end="0,390" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,600" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,390" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget)">Conditional</animation>
             <animation effect="slide" end="0,11" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) + Window.IsActive(script-HomeWindow Script-main.xml)">Conditional</animation>
             <control type="group" id="8995">
                 <posx>22</posx>
@@ -90,8 +88,8 @@
                 <visible>[!Skin.HasSetting(nohomepageMusicinfo) + Player.HasAudio] | [!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo]</visible>
                 <control type="group">
                     <control type="group">
-                        <animation effect="zoom" start="100" end="90" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-                        <animation effect="slide" end="0,70" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                        <animation effect="zoom" start="100" end="90" time="320" easing="inout" tween="circle" condition="true">Conditional</animation>
+                        <animation effect="slide" end="0,70" time="320" easing="inout" tween="circle" condition="true">Conditional</animation>
                         <control type="group">
                             <visible>Player.HasAudio</visible>
                             <animation type="Visible">
@@ -397,8 +395,8 @@
                     </control>
                     <control type="group">
                         <visible>Player.HasAudio</visible>
-                        <animation effect="zoom" start="100" end="90" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-                        <animation effect="slide" end="200,70" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                        <animation effect="zoom" start="100" end="90" time="320" easing="inout" tween="circle" condition="true">Conditional</animation>
+                        <animation effect="slide" end="200,70" time="320" easing="inout" tween="circle" condition="true">Conditional</animation>
                         <include>NextTracksList</include>
                         <control type="group">
                             <visible>Skin.HasSetting(homeartistslideshow)</visible>
@@ -407,8 +405,8 @@
                     </control>
                     <control type="group">
                         <visible>Player.HasVideo</visible>
-                        <animation effect="zoom" start="100" end="90" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-                        <animation effect="slide" end="200,70" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                        <animation effect="zoom" start="100" end="90" time="320" easing="inout" tween="circle" condition="true">Conditional</animation>
+                        <animation effect="slide" end="200,70" time="320" easing="inout" tween="circle" condition="true">Conditional</animation>
                         <control type="textbox">
                             <posx>400</posx>
                             <posy>680</posy>
@@ -550,9 +548,8 @@
     </include>
     <include name="Weather_Widget">
         <control type="group">
-            <posy>660</posy>
+            <posy>410</posy>
             <visible>Substring(Control.GetLabel(4321),weather) + Weather.IsFetched</visible>
-            <animation effect="slide" end="0,-250" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <include>Animation_Widgets</include>
             <visible>!IsEmpty(Weather.Plugin)</visible>
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(script-HomeWindow Script-main.xml)]</visible>
@@ -1006,8 +1003,7 @@
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
             <include>Animation_Widgets</include>
-            <animation effect="slide" end="0,-258" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" time="160" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
+            <animation effect="slide" end="0,-258" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
             <control type="group">
                 <control type="image">
                     <posx>-12</posx>
@@ -1126,20 +1122,14 @@
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
             <include>Animation_Widgets</include>
-            <animation type="Conditional" condition="true">
-                <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
-            </animation>
-            <animation effect="slide" end="0,-285" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
+            <animation effect="slide" end="0,-285" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
+            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <control type="group">
                 <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp2</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown2</include>
+                    <include>Animation_PanelFlipUp2</include>
                 </animation>
                 <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown1</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp1</include>
+                    <include>Animation_PanelFlipDown1</include>
                 </animation>
                 <control type="group">
                     <animation effect="fade" time="200">VisibleChange</animation>
@@ -2661,7 +2651,6 @@
         <control type="group">
             <posx>1542</posx>
             <posy>13</posy>
-            <animation effect="slide" end="0,40" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <visible>Substring(Control.GetLabel(4325),classic)</visible>
             <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
@@ -2780,10 +2769,7 @@
             <posy>-4</posy>
             <width>1920</width>
             <height>825</height>
-            <animation effect="slide" end="0,35" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <!--
-            <animation effect="fade" start="100" end="0" time="0" condition="Stringcompare(Container(6010).NumItems,0) + !Substring(Control.GetLabel(4325),featured) + !Window.IsAcive(1122)">Conditional</animation>-->
             <visible>Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel) | Substring(Control.GetLabel(4325),classic)</visible>
             <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
                 <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
@@ -2795,16 +2781,12 @@
             </animation>
             <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <include>Animation_Widgets</include>
-            <animation type="Conditional" condition="true">
-                <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
-            </animation>
             <control type="group">
                 <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidget2Info))" reversible="false">
                     <include>Animation_PanelFlipUp2</include>
                 </animation>
                 <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidget2Info))" reversible="false">
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp1</include>
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown1</include>
+                    <include>Animation_PanelFlipDown1</include>
                 </animation>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),default) | Substring(Control.GetLabel(4325),glass)</visible>
@@ -3868,11 +3850,9 @@
         </control>
     </include>
     <include name="NavigationWidget1">
-        <onup condition="Control.IsVisible(4445) + Skin.HasSetting(lowermainmenu)">SetFocus(4445)</onup>
-        <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(8993)</onup>
-        <onup condition="!Control.IsVisible(4445) + Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
-        <ondown condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9011)</ondown>
-        <ondown condition="Skin.HasSetting(lowermainmenu)">8993</ondown>
+        <onup condition="Control.IsVisible(4445)">SetFocus(4445)</onup>
+        <onup condition="!Control.IsVisible(4445)">SetFocus(9000)</onup>
+        <ondown>8993</ondown>
         <onback>8993</onback>
     </include>
     <include name="FeaturedWidgetSquareLayout">
@@ -4359,8 +4339,8 @@
     </include>
     <include name="NavigationWidget2">
         <onup>SetFocus(9000)</onup>
-        <ondown condition="!Skin.HasSetting(lowermainmenu) | !Control.IsVisible(4444)">9000</ondown>
-        <ondown condition="Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
+        <ondown condition="!Control.IsVisible(4444)">9000</ondown>
+        <ondown condition="Control.IsVisible(4444)">4444</ondown>
         <onback>9000</onback>
     </include>
 </includes>

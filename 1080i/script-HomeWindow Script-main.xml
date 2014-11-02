@@ -103,24 +103,23 @@
             <animation effect="fade" time="200">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
             <control type="image">
-                <posy>480</posy>
+                <posy>800</posy>
                 <width>2100</width>
                 <height>600</height>
                 <texture>home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>
                 <visible>![Substring(Control.GetLabel(4321),classic) + !Control.HasFocus(5010)]</visible>
                 <visible>[Control.IsVisible(8995) + Skin.HasSetting(movenowplayingwidget)] | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)</visible>
-        <animation effect="fade" time="500" delay="160">Visible</animation>
-        <animation effect="fade" time="700">Hidden</animation>
-                <animation effect="slide" time="320" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <animation effect="fade" time="500" delay="160">Visible</animation>
+                <animation effect="fade" time="700">Hidden</animation>
             </control>
             <control type="image">
                 <width>2100</width>
                 <height>600</height>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <colordiffuse>black</colordiffuse>
-        <animation effect="fade" time="500" delay="160">Visible</animation>
-        <animation effect="fade" time="700">Hidden</animation>
+                <animation effect="fade" time="500" delay="160">Visible</animation>
+                <animation effect="fade" time="700">Hidden</animation>
                 <visible>![Substring(Control.GetLabel(4325),classic) + !Control.HasFocus(6010)]</visible>
                 <visible>[Control.IsVisible(8995) + !Skin.HasSetting(movenowplayingwidget)] | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)</visible>
             </control>
@@ -128,14 +127,12 @@
         <control type="group">
             <posy>610</posy>
             <visible>[system.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)] + !Skin.HasSetting(DisableRSS)</visible>
-            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
-            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
             <animation effect="slide" end="1920,0" time="240">WindowClose</animation>
                     <animation type="WindowOpen">
                         <effect type="fade" delay="980" end="100" time="200" />
                         <effect type="slide" start="0,-50" end="0,0" delay="800" time="480" />
                     </animation>
-            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <animation type="Visible" reversible="false">
                 <effect type="fade" end="100" time="240" />
@@ -191,8 +188,6 @@
         </control>
         <include>MainMenuBottomBar</include>
         <control type="group">
-            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
-            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
             <control type="group">
                 <posy>472</posy>
                 <control type="list" id="43260">
@@ -211,7 +206,7 @@
                         <effect type="fade" delay="980" end="100" time="300" />
                         <effect type="slide" start="0,50" end="0,0" delay="800" time="480" />
                     </animation>
-                    <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
+                    <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <control type="image">
                         <posy>0</posy>
@@ -247,7 +242,7 @@
                         <effect type="fade" delay="980" end="100" time="300" />
                         <effect type="slide" start="0,50" end="0,0" delay="800" time="480" />
                     </animation>
-                    <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
+                    <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
                     <control type="image">
@@ -295,8 +290,8 @@
             </control>
             <control type="group">
                 <include>FullscreenDimensions</include>
-                <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
                 <include>Animation_OpenCloseZoom</include>
+                <posy>338</posy>
                 <control type="group">
                     <animation effect="zoom" end="80" center="960,520" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                     <!--Submenu-->
@@ -335,9 +330,7 @@
                             <scrolltime tween="quadratic">300</scrolltime>
                             <onup>9000</onup>
                             <onback>SetFocus(9000)</onback>
-                            <ondown condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
-                            <ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9011)</ondown>
-                            <ondown condition="Skin.HasSetting(lowermainmenu)">SetFocus(9011)</ondown>
+                            <ondown>SetFocus(9011)</ondown>
                             <itemlayout width="270" height="50">
                                 <control type="label">
                                     <posx>5</posx>
@@ -474,19 +467,15 @@
             <animation type="Conditional" condition="true">
                 <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
             </animation>
-            <animation effect="slide" end="0,285" time="0" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Stringcompare(Window(home).Property(WidgetPosition),Widget1)">Conditional</animation>
-            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
+            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <visible>!IsEmpty(Window(home).Property(WidgetType))</visible>
             <visible>[!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
             <visible>!Window.IsActive(1165)</visible>
             <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">
-                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp1</include>
-                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown1</include>
+                <include>Animation_LargePanelFlipUp1</include>
             </animation>
             <animation type="Hidden" reversible="false">
-                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown2</include>
-                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp2</include>
+                <include>Animation_LargePanelFlipDown2</include>
             </animation>
             <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">
                 <include>Animation_LargePanelFlipUp1</include>
