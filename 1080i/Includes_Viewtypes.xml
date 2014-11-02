@@ -22,20 +22,18 @@
                     <posy>874</posy>
                     <width>1490</width>
                     <height>206</height>
-                    <texture>views/showcase_spot.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_spot.png</texture>
                     <animation effect="fade" start="100" end="50" time="240" condition="!Control.IsVisible(52) + !Control.IsVisible(53) + [ControlGroup(9000).HasFocus | Control.HasFocus(60) | Control.HasFocus(70) | Control.HasFocus(62) | Control.HasFocus(61)]">Conditional</animation>
                     <animation effect="slide" time="160" end="-585" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
                     <animation effect="slide" time="160" end="-120" tween="cubic" condition="Control.IsVisible(57) + Skin.HasSetting(smallshiftview)">Conditional</animation>
                     <animation effect="slide" time="160" end="185" tween="cubic" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>1040</posx>
                     <posy>874</posy>
                     <width>880</width>
                     <height>206</height>
-                    <texture>views/list_spot.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">views/list_spot.png</texture>
                     <animation effect="slide" time="160" end="190" tween="cubic" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
                     <animation effect="slide" time="160" end="60" tween="cubic" condition="Control.IsVisible(50) + Window.IsActive(musiclibrary)">Conditional</animation>
                     <visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53)</visible>
@@ -567,10 +565,9 @@
             <control type="image">
                 <width>130</width>
                 <height>80</height>
-                <texture>dialogs/dialog_back_shadow.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]">dialogs/dialog_back_shadow.png</texture>
                 <include>PanelGlowFade</include>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <width>130</width>
@@ -623,8 +620,7 @@
                     <animation effect="zoom" start="112,68,1695,1038" end="136,38,1651,1132" time="240" condition="Control.IsVisible(518)">Conditional</animation>
                     <width>1695</width>
                     <height>1038</height>
-                    <texture>wall/wall_bg_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>PanelGlowFade</include>
                 </control>
@@ -712,8 +708,7 @@
                 <posy>15</posy>
                 <width>45</width>
                 <height>45</height>
-                <texture>$VAR[WatchedIconVar]</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">$VAR[WatchedIconVar]</texture>
                 <visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) | Container.ListItem.IsResumable</visible>
             </control>
             <control type="image">
@@ -1341,8 +1336,7 @@
         <width>3840</width>
         <height>40</height>
         <animation effect="slide" start="0,0" end="-1920,0" time="3000" pulse="true" tween="cubic" easing="inout" condition="true">Conditional</animation>
-        <texture>common/topbar_right.png</texture>
-        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+        <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_right.png</texture>
     </include>
     <include name="Neon_Floor">
         <control type="group">
@@ -1364,8 +1358,7 @@
         <control type="image">
             <width>40</width>
             <height>3000</height>
-            <texture>common/topbar_top.png</texture>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_top.png</texture>
             <animation effect="slide" start="0,0" end="0,-1920" time="3000" pulse="true" tween="cubic" easing="inout" condition="true">Conditional</animation>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <animation effect="fade" time="350">VisibleChange</animation>

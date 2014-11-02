@@ -10,8 +10,7 @@
             <control type="image">
                 <width>425</width>
                 <height>398</height>
-                <texture>thumbs/boxes/cd_shadow_light_shadow.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">thumbs/boxes/cd_shadow_light_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -121,9 +120,8 @@
                                     <posy>656</posy>
                                     <width>423</width>
                                     <height>420</height>
-                                    <texture>thumbs/cd_shadow_glow.png</texture>
+                                    <texture colordiffuse="$VAR[AreaColorVar]">thumbs/cd_shadow_glow.png</texture>
                                     <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                                 </control>
                                 <control type="group">
@@ -287,8 +285,7 @@
                                     <posy>691</posy>
                                     <width>615</width>
                                     <height>359</height>
-                                    <texture>common/black.png</texture>
-                                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                                    <texture colordiffuse="$VAR[AreaColorVar]">common/black.png</texture>
                                     <bordertexture border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
                                     <bordersize>15</bordersize>
                                 </control>
@@ -481,8 +478,7 @@
                         <posy>600</posy>
                         <width>425</width>
                         <height>400</height>
-                        <texture>thumbs/boxes/cd_shadow_light_shadow.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">thumbs/boxes/cd_shadow_light_shadow.png</texture>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                         <animation effect="fade" time="350">VisibleChange</animation>
@@ -1010,12 +1006,11 @@
                     <posy>-4</posy>
                     <width>385</width>
                     <height>370</height>
-                    <texture border="50">keyboard/keyboard_back_shadow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]" border="50">keyboard/keyboard_back_shadow.png</texture>
                     <include>PanelGlowFade</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <visible>Substring(Control.GetLabel(4321),default)</visible>
                     <animation effect="fade" time="350">VisibleChange</animation>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>-12</posx>
@@ -1137,9 +1132,8 @@
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
-                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
                         <include>PanelGlowFade</include>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>Substring(Control.GetLabel(4321),default)</visible>
@@ -1703,9 +1697,8 @@
                 <posy>-350</posy>
                 <width>1850</width>
                 <height>752</height>
-                <texture border="50">featured/panel_featured_shadow.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
                 <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
             </control>
@@ -2499,8 +2492,7 @@
                 <posy>150</posy>
                 <width>74</width>
                 <height>74</height>
-                <texture>loader.gif</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">loader.gif</texture>
                 <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
             </control>
             <control type="group">
@@ -2574,8 +2566,7 @@
                 <posy>150</posy>
                 <width>74</width>
                 <height>74</height>
-                <texture>loader.gif</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">loader.gif</texture>
                 <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
             </control>
             <control type="group">
@@ -2669,12 +2660,11 @@
                 <posy>-4</posy>
                 <width>385</width>
                 <height>370</height>
-                <texture border="50">keyboard/keyboard_back_shadow.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]" border="50">keyboard/keyboard_back_shadow.png</texture>
                 <include>PanelGlowFade</include>
                 <visible>Substring(Control.GetLabel(4325),default)</visible>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <posx>-12</posx>
@@ -2794,10 +2784,9 @@
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
-                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
                         <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                         <visible>Substring(Control.GetLabel(4325),default)</visible>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
@@ -3963,10 +3952,9 @@
             <posy>8</posy>
             <width>267</width>
             <height>380</height>
-            <texture border="40">keyboard/keyboard_back_shadow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]" border="40">keyboard/keyboard_back_shadow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
         </control>
         <control type="image">
             <width>284</width>
@@ -3981,10 +3969,9 @@
             <posy>8</posy>
             <width>267</width>
             <height>380</height>
-            <texture border="40">keyboard/keyboard_back_shadow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]" border="40">keyboard/keyboard_back_shadow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
         </control>
         <control type="image">
             <width>284</width>

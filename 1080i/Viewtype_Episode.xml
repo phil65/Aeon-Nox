@@ -90,12 +90,11 @@
                     <width>540</width>
                     <height>800</height>
                     <align>center</align>
-                    <texture background="true">thumbs/thumb_glass_shadow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]" background="true">thumbs/thumb_glass_shadow.png</texture>
                     <bordersize>18</bordersize>
                     <include>PanelGlowFade</include>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <visible>!IsEmpty(Control.GetLabel(3822))</visible>
                 </control>
                 <control type="image" id="3822">

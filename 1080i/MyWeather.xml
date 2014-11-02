@@ -67,8 +67,7 @@
                     <posy>82</posy>
                     <width>1695</width>
                     <height>1012</height>
-                    <texture>wall/wall_bg_glow.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>PanelGlowFade</include>
                     <animation effect="fade" time="350">VisibleChange</animation>
@@ -86,8 +85,7 @@
                     <posy>136</posy>
                     <width>2</width>
                     <height>789</height>
-                    <texture>dialogs/weatherline.png</texture>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[AreaColorVar]">dialogs/weatherline.png</texture>
                 </control>
                 <control type="image">
                     <posx>112</posx>
@@ -1408,7 +1406,6 @@
                                 <texture>common/black.png</texture>
                                 <bordertexture border="15">common/white.png</bordertexture>
                                 <bordersize>15</bordersize>
-                                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                                 <visible>Control.HasFocus(5)</visible>
                             </control>
                             <control type="multiimage">

@@ -82,8 +82,7 @@
                         <posy>754</posy>
                         <width>66</width>
                         <height>490</height>
-                        <texture>views/listpanel_detailwide.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">views/listpanel_detailwide.png</texture>
                         <animation effect="fade" time="200">VisibleChange</animation>
                         <visible>!Container.Content(seasons) + Control.IsVisible(9900)</visible>
                     </control>
@@ -253,9 +252,8 @@
                     <width>1110</width>
                     <height>480</height>
                     <texture>common/black.png</texture>
-                    <bordertexture border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
+                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
                     <bordersize>15</bordersize>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 </control>
                 <control type="videowindow">
                     <posx>420</posx>
@@ -295,13 +293,12 @@
                         <width>467</width>
                         <height>682</height>
                         <align>center</align>
-                        <texture background="true">thumbs/thumb_glass_shadow.png</texture>
+                        <texture colordiffuse="$VAR[AreaColorVar]" background="true">thumbs/thumb_glass_shadow.png</texture>
                         <bordersize>18</bordersize>
                         <include>PanelGlowFade</include>
                         <visible>!Skin.HasSetting(usecaseslowlist)</visible>
                         <animation effect="fade" time="350">VisibleChange</animation>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posy>-130</posy>

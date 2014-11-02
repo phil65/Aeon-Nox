@@ -48,9 +48,8 @@
                     <posx>112</posx>
                     <width>1695</width>
                     <height>1050</height>
-                    <texture>wall/wall_bg_glow.png</texture>
+                    <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                     <include>PanelGlowFade</include>
                 </control>
                 <control type="image">
@@ -238,16 +237,14 @@
                 <posy>472</posy>
                 <width>1920</width>
                 <height>608</height>
-                <texture>views/showcase_floor.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_floor.png</texture>
             </control>
             <control type="image">
                 <posx>-340</posx>
                 <posy>874</posy>
                 <width>2490</width>
                 <height>226</height>
-                <texture>views/showcase_spot.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_spot.png</texture>
                 <animation effect="slide" time="160" end="-585" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
                 <visible>!Control.IsVisible(52)</visible>
             </control>
@@ -255,8 +252,7 @@
                 <posy>874</posy>
                 <width>1920</width>
                 <height>206</height>
-                <texture>views/panel_spot.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/panel_spot.png</texture>
                 <visible>Control.IsVisible(52)</visible>
             </control>
             <control type="image">
@@ -264,8 +260,7 @@
                 <posy>874</posy>
                 <width>2490</width>
                 <height>226</height>
-                <texture>views/showcase_spot.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_spot.png</texture>
                 <visible>Control.IsVisible(58)</visible>
             </control>
             <control type="image">
@@ -273,8 +268,7 @@
                 <posy>874</posy>
                 <width>880</width>
                 <height>206</height>
-                <texture>views/list_spot.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/list_spot.png</texture>
                 <visible>Control.IsVisible(58)</visible>
             </control>
             <control type="image">
@@ -300,9 +294,8 @@
                 <posy>68</posy>
                 <width>1695</width>
                 <height>1038</height>
-                <texture>wall/wall_bg_glow.png</texture>
+                <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
                 <include>PanelGlowFade</include>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             </control>
             <control type="image">
@@ -310,8 +303,7 @@
                 <posy>68</posy>
                 <width>1695</width>
                 <height>1038</height>
-                <texture>wall/wall_bg.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
                 <animation effect="zoom" start="112,68,1695,1038" end="38,68,1845,1038" time="0" reversible="false" condition="Control.IsVisible(52)">Conditional</animation>
             </control>
             <control type="image">
@@ -1261,8 +1253,7 @@
                             <width>603</width>
                             <height>352</height>
                             <texture>common/black.png</texture>
-                            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
-                            <bordertexture border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
+                            <bordertexture colordiffuse="$VAR[AreaColorVar]" border="15">home/nowplaying/OverlayDialogBackground.png</bordertexture>
                             <bordersize>15</bordersize>
                         </control>
                         <control type="image">
@@ -2161,8 +2152,7 @@
                         <posy>123</posy>
                         <width>170</width>
                         <height>850</height>
-                        <texture>views/listpanel_detailwide.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">views/listpanel_detailwide.png</texture>
                         <visible>!Skin.HasSetting(slimlist)</visible>
                     </control>
                     <control type="image">
@@ -2170,8 +2160,7 @@
                         <posy>123</posy>
                         <width>123</width>
                         <height>850</height>
-                        <texture>views/listpanel_detailwide.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]">views/listpanel_detailwide.png</texture>
                         <visible>Skin.HasSetting(slimlist)</visible>
                     </control>
                     <control type="list" id="58">
@@ -2307,8 +2296,7 @@
                                 <posy>8</posy>
                                 <width>45</width>
                                 <height>45</height>
-                                <info>ListItem.Overlay</info>
-                                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                                <texture colordiffuse="$VAR[AreaColorVar]">$INFO[ListItem.Overlay]</texture>
                             </control>
                         </itemlayout>
                         <focusedlayout height="60" condition="Skin.HasSetting(slimlist)">

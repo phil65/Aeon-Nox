@@ -130,8 +130,7 @@
             <posy>-150</posy>
             <width>1920</width>
             <height>608</height>
-            <texture flipy="true">views/showcase_glow.png</texture>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[AreaColorVar]" flipy="true">views/showcase_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <animation effect="fade" time="350">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
@@ -144,16 +143,14 @@
                 <posy>472</posy>
                 <width>1920</width>
                 <height>608</height>
-                <texture>views/showcase_floor.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_floor.png</texture>
             </control>
             <control type="image">
                 <posx>-340</posx>
                 <posy>874</posy>
                 <width>2490</width>
                 <height>226</height>
-                <texture>views/showcase_spot.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_spot.png</texture>
             </control>
             <control type="image">
                 <posy>1012</posy>
@@ -179,8 +176,7 @@
                 <posy>874</posy>
                 <width>2020</width>
                 <height>206</height>
-                <texture>views/panel_spot.png</texture>
-                <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/panel_spot.png</texture>
             </control>
             <include>Neon_Floor</include>
         </control>
@@ -224,8 +220,7 @@
                         <posy>450</posy>
                         <width>1332</width>
                         <height>160</height>
-                        <texture border="50">featured/panel_featured_shadow.png</texture>
-                        <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <include>PanelGlowFade</include>
                     </control>

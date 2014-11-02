@@ -537,13 +537,12 @@
             <width>320</width>
             <height>454</height>
             <align>center</align>
-            <texture background="true">thumbs/thumb_glass_shadow.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]" background="true">thumbs/thumb_glass_shadow.png</texture>
             <bordersize>18</bordersize>
             <animation effect="fade" time="350">VisibleChange</animation>
             <include>PanelGlowFade</include>
             <visible>![Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]]</visible>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[AreaColorVar]</colordiffuse>
         </control>
     </include>
     <include name="MovieShowcaseThumb">
