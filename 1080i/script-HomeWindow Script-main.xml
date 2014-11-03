@@ -202,7 +202,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <posy>690</posy>
+                        <posy>695</posy>
                         <label>$INFO[MusicPlayer.Artist]</label>
                         <font>Font_Reg36_Caps</font>
                         <posx>200</posx>
@@ -210,7 +210,7 @@
                         <height>38</height>
                     </control>
                     <control type="label">
-                        <posy>730</posy>
+                        <posy>728</posy>
                         <label>$INFO[MusicPlayer.Album]</label>
                         <font>Font_Reg28</font>
                         <textcolor>white3</textcolor>
@@ -220,13 +220,23 @@
                     </control>
                     <control type="label">
                         <posx>200</posx>
-                        <posy>765</posy>
+                        <posy>758</posy>
                         <width>780</width>
                         <height>80</height>
                         <aligny>bottom</aligny>
                         <label>[COLOR=$VAR[FontColorVar]]$INFO[MusicPlayer.TrackNumber]: [/COLOR]$INFO[MusicPlayer.Title]</label>
                         <font>Font_Reg37</font>
                         <textcolor>white3</textcolor>
+                    </control>
+                    <control type="progress">
+                        <posx>200</posx>
+                        <posy>800</posy>
+                        <width>200</width>
+                        <height>10</height>
+                                    <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                            <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
+                        <aligny>bottom</aligny>
+                        <info>Player.Progress</info>
                     </control>
                 </control>
                 <control type="group" id="8994">
