@@ -4,8 +4,7 @@
     <onunload>ClearProperty(LiveTVShowEpgNext,home)</onunload>
     <controls>
         <control type="group" id="9001">
-            <visible>!Window.IsActive(infodialog)</visible>
-            <visible>!Control.IsVisible(9004) + !Control.IsVisible(9005) + !Control.IsVisible(9006)</visible>
+            <visible>!Control.IsVisible(9005) + !Control.IsVisible(9006)</visible>
             <animation type="Visible">
                 <effect type="fade" time="320" end="100" />
                 <effect type="slide" time="320" start="0,-135" end="0,0" tween="cubic" />
@@ -22,6 +21,29 @@
                 <effect type="fade" time="320" start="100" end="0" />
                 <effect type="slide" time="320" end="0,-135" easing="in" tween="cubic" />
             </animation>
+            <control type="togglebutton" id="9000">
+                <posy>640</posy>
+                <width>1320</width>
+                <height>50</height>
+                <textoffsetx>0</textoffsetx>
+                <textoffsety>4</textoffsety>
+                <align>center</align>
+                <aligny>top</aligny>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <alttexturefocus>-</alttexturefocus>
+                <alttexturenofocus>-</alttexturenofocus>
+                <label>$LOCALIZE[31075]</label>
+                <altlabel>$LOCALIZE[31075]</altlabel>
+                <font>Font_Reg22</font>
+                <textcolor>grey</textcolor>
+                <onleft>StepBack</onleft>
+                <onright>StepForward</onright>
+                <onup>BigStepForward</onup>
+                <ondown>BigStepBack</ondown>
+                <onclick condition="IsEmpty(Window(home).Property(LiveTVShowEpgNext))">SetProperty(LiveTVShowEpgNext,1,home)</onclick>
+                <onclick condition="!IsEmpty(Window(home).Property(LiveTVShowEpgNext))">ClearProperty(LiveTVShowEpgNext,home)</onclick>
+            </control>
             <control type="group">
                 <posy>128</posy>
                 <animation type="Visible">
@@ -210,7 +232,7 @@
             <animation effect="slide" start="0,1080" end="0,100" time="320" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" start="0,100" end="0,-1080" time="400" tween="quadratic">WindowClose</animation>
             <animation effect="slide" start="0,1080" end="0,100" time="320" tween="quadratic">VisibleChange</animation>
-            <visible>!VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg + !Window.IsActive(infodialog) + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
+            <visible>!VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
             <control type="image">
                 <posx>260</posx>
                 <width>1400</width>
@@ -378,30 +400,6 @@
                     <font>Font_Reg30</font>
                     <textcolor>grey</textcolor>
                 </control>
-                <control type="togglebutton" id="9000">
-                    <posy>640</posy>
-                    <width>1320</width>
-                    <height>50</height>
-                    <textoffsetx>0</textoffsetx>
-                    <textoffsety>4</textoffsety>
-                    <align>center</align>
-                    <aligny>top</aligny>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <alttexturefocus>-</alttexturefocus>
-                    <alttexturenofocus>-</alttexturenofocus>
-                    <label>$LOCALIZE[31075]</label>
-                    <altlabel>$LOCALIZE[31075]</altlabel>
-                    <font>Font_Reg22</font>
-                    <textcolor>grey</textcolor>
-                    <onleft>StepBack</onleft>
-                    <onright>StepForward</onright>
-                    <onup>BigStepForward</onup>
-                    <ondown>BigStepBack</ondown>
-                    <onclick condition="IsEmpty(Window(home).Property(LiveTVShowEpgNext))">SetProperty(LiveTVShowEpgNext,1,home)</onclick>
-                    <onclick condition="!IsEmpty(Window(home).Property(LiveTVShowEpgNext))">ClearProperty(LiveTVShowEpgNext,home)</onclick>
-                    <visible>!IsEmpty(VideoPlayer.NextTitle)</visible>
-                </control>
                 <control type="grouplist">
                     <posx>6</posx>
                     <posy>685</posy>
@@ -467,12 +465,11 @@
                 </control>
             </control>
         </control>
-
-        <!-- New DialogInfo for LiveTV -->
+        <!--New DialogInfo for LiveTV-->
         <control type="group" id="9006">
             <animation effect="slide" start="0,1080" end="0,60" time="600" easing="out" tween="back">WindowOpen</animation>
             <animation effect="slide" start="0,60" end="0,1080" time="600" easing="in" tween="back">WindowClose</animation>
-            <visible>VideoPlayer.Content(LiveTV) + !Window.IsActive(infodialog) + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
+            <visible>VideoPlayer.Content(LiveTV) + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
             <control type="image">
                 <posx>260</posx>
                 <width>1400</width>
@@ -485,20 +482,23 @@
                 <posy>70</posy>
                 <width>1320</width>
                 <height>780</height>
-                <control type="label"> <!-- Channel name -->
+                <control type="label">
+                    <!--Channel name-->
                     <posy>-790</posy>
                     <width>1050</width>
                     <label>$INFO[VideoPlayer.ChannelName]</label>
                     <font>Font_Reg38</font>
                     <textcolor>$VAR[FontColorVar]</textcolor>
                 </control>
-                <control type="image"> <!-- pvr line -->
+                <control type="image">
+                    <!--pvr line-->
                     <posy>84</posy>
                     <width>1320</width>
                     <height>1</height>
                     <texture colordiffuse="$VAR[SubTitleColorVar]">new_pvr/osd_back_pvr_line_white.png</texture>
                 </control>
-                <control type="image"> <!-- Channel logo -->
+                <control type="image">
+                    <!--Channel logo-->
                     <posx>1050</posx>
                     <posy>100</posy>
                     <width>200</width>
@@ -508,7 +508,8 @@
                     <texture>$INFO[VideoPlayer.Cover]</texture>
                     <visible>IsEmpty(VideoPlayer.PlotOutline)</visible>
                 </control>
-                <control type="image"> <!-- Show\Movie poster -->
+                <control type="image">
+                    <!--Show\Movie poster-->
                     <posx>1050</posx>
                     <posy>100</posy>
                     <width>250</width>
@@ -584,35 +585,8 @@
                         <visible>!Control.IsVisible(50)</visible>
                     </control>
                 </control>
-                <control type="togglebutton" id="9000">
-                    <posy>640</posy>
-                    <width>1320</width>
-                    <height>50</height>
-                    <textoffsetx>0</textoffsetx>
-                    <textoffsety>4</textoffsety>
-                    <align>center</align>
-                    <aligny>top</aligny>
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <alttexturefocus>-</alttexturefocus>
-                    <alttexturenofocus>-</alttexturenofocus>
-                    <label>$LOCALIZE[31075]</label>
-                    <altlabel>$LOCALIZE[31075]</altlabel>
-                    <font>Font_Reg22</font>
-                    <textcolor>grey</textcolor>
-                    <onleft>StepBack</onleft>
-                    <onright>StepForward</onright>
-                    <onup>BigStepForward</onup>
-                    <ondown>BigStepBack</ondown>
-                    <onclick condition="IsEmpty(Window(home).Property(LiveTVShowEpgNext))">SetProperty(LiveTVShowEpgNext,1,home)</onclick>
-                    <onclick condition="!IsEmpty(Window(home).Property(LiveTVShowEpgNext))">ClearProperty(LiveTVShowEpgNext,home)</onclick>
-                    <visible>false</visible>
-                    <!--<visible>!IsEmpty(VideoPlayer.NextTitle)</visible>-->
-                </control>
             </control>
         </control>
-
-        <!-- Include FullScreenInfoBarLiveTV for LiveTV -->
         <control type="group">
             <visible>VideoPlayer.Content(LiveTV) + Control.IsVisible(9006)</visible>
             <include condition="VideoPlayer.Content(livetv)">FullScreenInfoBarLiveTV</include>
