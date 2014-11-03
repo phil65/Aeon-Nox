@@ -419,7 +419,7 @@
             </control>
         </control>
         <control type="group">
-            <posy>610</posy>
+            <posy>602</posy>
             <visible>!Skin.HasSetting(DisableRSS)</visible>
             <visible>!Player.HasMedia</visible>
             <visible>System.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)</visible>
@@ -438,7 +438,7 @@
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="slide" end="0,-40" time="240" tween="cubic" easing="inout" />
             </animation>
-            <visible>[!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]] | Skin.HasSetting(rsshomelow)</visible>
+            <visible>!Control.HasFocus(9010) | Skin.HasSetting(rsshomelow)</visible>
             <control type="group">
                 <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <control type="image">
@@ -626,7 +626,7 @@
         </control>-->
         <control type="group">
             <control type="group">
-                <posy>472</posy>
+                <posy>466</posy>
                 <control type="list" id="43260">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -736,13 +736,13 @@
                         <width>50</width>
                         <height>15</height>
                         <texture colordiffuse="white">arrowdown.png</texture>
-                        <visible>Control.HasFocus(9000) + !Skin.HasSetting(showsubmenu) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
+                        <visible>Control.HasFocus(9000) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
                         <animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                     </control>
                     <control type="group" id="9001">
                         <animation effect="zoom" end="120" center="960,610" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
-                        <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
+                        <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) | !IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
+                        <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) | !IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
                         <control type="image">
                             <posx>190</posx>
                             <posy>612</posy>
