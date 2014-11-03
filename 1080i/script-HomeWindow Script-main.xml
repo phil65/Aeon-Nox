@@ -363,33 +363,47 @@
                         <width>830</width>
                         <height>28</height>
                         <align>right</align>
-                        <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(1).Duration,,][/COLOR]</label>
+                        <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR]</label>
                         <font>Font_Reg25</font>
                     </control>
                     <control type="label">
                         <width>830</width>
                         <height>28</height>
                         <align>right</align>
-                        <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(2).Duration,,][/COLOR]</label>
+                        <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR]</label>
                         <font>Font_Reg25</font>
                     </control>
                     <control type="label">
                         <width>830</width>
                         <height>28</height>
                         <align>right</align>
-                        <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(3).Duration,,][/COLOR]</label>
+                        <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
                         <font>Font_Reg25</font>
                     </control>
                 </control>
+                <control type="grouplist">
+                    <visible>VideoPlayer.Content(LiveTV)</visible>
+                    <posx>1055</posx>
+                    <posy>695</posy>
+                    <width>950</width>
+                    <height>1080</height>
+                    <orientation>vertical</orientation>
+                    <itemgap>4</itemgap>
                 <control type="textbox">
-                    <posx>1100</posx>
-                    <posy>680</posy>
-                    <width>750</width>
-                    <height>260</height>
+                    <width>830</width>
+                    <height>77</height>
                     <label fallback="31003">$INFO[VideoPlayer.Plot]</label>
-                    <font>Font_Reg30_2</font>
+                    <font>Font_Reg25</font>
                     <autoscroll delay="5000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
-                    <visible>Player.HasVideo</visible>
+                </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>28</height>
+                        <align>right</align>
+                        <label>Next: $INFO[VideoPlayer.NextTitle,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime]$INFO[VideoPlayer.NextDuration, (,)][/COLOR]</label>
+                        <font>Font_Reg25</font>
+                    </control>
+
                 </control>
             </control>
             <control type="textbox">
