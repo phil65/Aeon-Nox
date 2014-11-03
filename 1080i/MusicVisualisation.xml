@@ -196,8 +196,7 @@
                 <posx>8</posx>
                 <posy>30</posy>
                 <animation effect="slide" start="-975" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-                <animation effect="slide" end="-975" time="320" tween="cubic" easing="in" delay="320" condition="Skin.HasSetting(CDArtinVis)">WindowClose</animation>
-                <animation effect="slide" end="-975" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">WindowClose</animation>
+                <animation effect="slide" end="-975" time="320" tween="cubic" easing="in" delay="320">WindowClose</animation>
                 <control type="image">
                     <posx>56</posx>
                     <posy>-282</posy>
@@ -205,7 +204,7 @@
                     <height>450</height>
                     <texture colordiffuse="$VAR[AreaColorVar]">thumbs/cd_shadow_glow.png</texture>
                     <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                    <visible>!Skin.HasSetting(DisableGlowbar) + Skin.HasSetting(vinylart)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
                     <posx>262</posx>
@@ -214,7 +213,6 @@
                     <height>381</height>
                     <aspectratio>keep</aspectratio>
                     <fadetime>300</fadetime>
-                    <visible>Skin.HasSetting(cdartinvis)</visible>
                     <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
                     <animation effect="slide" end="-180" time="320" tween="cubic">Hidden</animation>
                     <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
@@ -280,20 +278,6 @@
                     <control type="label">
                         <posx>650</posx>
                         <posy>-109</posy>
-                        <width>1425</width>
-                        <height>36</height>
-                        <label>[COLOR grey]$INFO[MusicPlayer.Album][/COLOR]$INFO[MusicPlayer.Year, [,] ]</label>
-                        <font>Font_MainClassic2</font>
-                        <shadowcolor>black</shadowcolor>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <scroll>true</scroll>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <visible>!Skin.HasSetting(CDArtinVis)</visible>
-                        <animation effect="slide" end="-162" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <posx>650</posx>
-                        <posy>-109</posy>
                         <width>1230</width>
                         <height>36</height>
                         <label>[COLOR grey]$INFO[MusicPlayer.Album][/COLOR]$INFO[MusicPlayer.Year, [,] ]</label>
@@ -302,22 +286,6 @@
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <scroll>true</scroll>
                         <animation effect="fade" time="350">VisibleChange</animation>
-                        <visible>Skin.HasSetting(CDArtinVis)</visible>
-                        <animation effect="slide" end="-162" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <posx>635</posx>
-                        <posy>-32</posy>
-                        <width>1410</width>
-                        <height>45</height>
-                        <label>$INFO[MusicPlayer.TrackNumber,,: ][COLOR=grey]$INFO[MusicPlayer.Title][/COLOR]</label>
-                        <font>Font_MainClassic3</font>
-                        <shadowcolor>black</shadowcolor>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <scroll>true</scroll>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <visible>!Skin.HasSetting(CDArtinVis)</visible>
-                        <animation effect="slide" end="-148" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     </control>
                     <control type="label">
                         <posx>635</posx>
@@ -330,8 +298,6 @@
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <scroll>true</scroll>
                         <animation effect="fade" time="350">VisibleChange</animation>
-                        <visible>Skin.HasSetting(CDArtinVis)</visible>
-                        <animation effect="slide" end="-148" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     </control>
                     <control type="label">
                         <posx>635</posx>
@@ -342,7 +308,6 @@
                         <font>Font_MainClassic</font>
                         <shadowcolor>black</shadowcolor>
                         <textcolor>white3</textcolor>
-                        <animation effect="slide" end="-147" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                         <scroll>true</scroll>
                         <visible>Substring(Control.GetLabel(8308),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                     </control>
@@ -355,12 +320,10 @@
                         <fadetime>400</fadetime>
                         <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                         <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-                        <animation effect="slide" time="320" tween="cubic" easing="inout" end="-155" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     </control>
                 </control>
                 <control type="group">
                     <posy>55</posy>
-                    <animation effect="slide" end="-120" time="400" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
                     <control type="image" id="8310">
                         <posx>791</posx>
                         <posy>66</posy>
