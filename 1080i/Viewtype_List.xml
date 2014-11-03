@@ -127,9 +127,8 @@
                 <width>510</width>
                 <height>765</height>
                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
-                <texture diffuse="thumbs/movieposter_mask_reflect.png" flipy="true" background="true" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
+                <texture colordiffuse="d0FFFFFF" diffuse="thumbs/movieposter_mask_reflect.png" flipy="true" background="true" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                 <fadetime>IconCrossfadeTime2</fadetime>
-                <colordiffuse>d0FFFFFF</colordiffuse>
             </control>
             <control type="image">
                 <width>510</width>
@@ -156,9 +155,8 @@
                     <width>525</width>
                     <height>780</height>
                     <aspectratio aligny="bottom">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Icon]</texture>
+                    <texture colordiffuse="FF000000" background="true">$INFO[ListItem.Icon]</texture>
                     <fadetime>0</fadetime>
-                    <colordiffuse>FF000000</colordiffuse>
                     <bordersize>7</bordersize>
                 </control>
                 <control type="image">
@@ -218,9 +216,8 @@
                     <width>510</width>
                     <height>510</height>
                     <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-                    <texture diffuse="thumbs/cdcover_mask_reflect.png" flipy="true" background="true" fallback="DefaultAlbumCover.png">$VAR[ListAlbumVar]</texture>
+                    <texture colordiffuse="d0FFFFFF" diffuse="thumbs/cdcover_mask_reflect.png" flipy="true" background="true" fallback="DefaultAlbumCover.png">$VAR[ListAlbumVar]</texture>
                     <fadetime>IconCrossfadeTime2</fadetime>
-                    <colordiffuse>d0FFFFFF</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>-20</posx>
@@ -403,8 +400,7 @@
                         <width>120</width>
                         <height>82</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-                        <colordiffuse>white6</colordiffuse>
+                        <texture colordiffuse="white6">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                         <visible>!Container.Content(episodes)</visible>
                     </control>
                     <control type="label">
@@ -448,8 +444,7 @@
                         <width>170</width>
                         <height>27</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
-                        <colordiffuse>white6</colordiffuse>
+                        <texture colordiffuse="white6">$INFO[ListItem.Rating,stars/,.png]</texture>
                     </control>
                     <control type="image">
                         <posx>1072</posx>
@@ -481,8 +476,7 @@
                         <width>45</width>
                         <height>42</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.DiscNumber,flags/discnumber/,.png]</texture>
-                        <colordiffuse>white</colordiffuse>
+                        <texture colordiffuse="white">$INFO[ListItem.DiscNumber,flags/discnumber/,.png]</texture>
                         <visible>Container.Content(songs)</visible>
                     </control>
                     <control type="label">
@@ -615,8 +609,7 @@
                         <width>170</width>
                         <height>27</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.StarRating]</texture>
-                        <colordiffuse>white6</colordiffuse>
+                        <texture colordiffuse="white6">$INFO[ListItem.StarRating]</texture>
                     </control>
                     <control type="image">
                         <posx>1072</posx>

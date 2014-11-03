@@ -94,9 +94,8 @@
             <animation effect="fade" time="350">VisibleChange</animation>
             <visible>IsEmpty(Window(home).Property(DisableWidgets)) | Control.IsVisible(8995)</visible>
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)]</visible>
-            <texture>common/bgcolor.png</texture>
+            <texture colordiffuse="$INFO[Skin.String(BackgroundDarkness)]">common/bgcolor.png</texture>
             <include>FullscreenDimensions</include>
-            <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
         </control>
         <control type="group">
             <visible>Skin.HasSetting(DisableGlowbar)</visible>
@@ -210,8 +209,7 @@
                         <posy>0</posy>
                         <width>794</width>
                         <height>87</height>
-                        <texture flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
-                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                        <texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(4323))</visible>
@@ -248,9 +246,8 @@
                         <posy>-46</posy>
                         <width>794</width>
                         <height>87</height>
-                        <texture>home/timepanel_mid_shadow.png</texture>
+                        <texture colordiffuse="$VAR[ExtendedColorVar]">home/timepanel_mid_shadow.png</texture>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
-                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     </control>
                     <control type="label">
@@ -280,8 +277,7 @@
                             <posy>-8</posy>
                             <width>55</width>
                             <height>55</height>
-                            <colordiffuse>white2</colordiffuse>
-                            <texture>weather/small/$INFO[Weather.FanartCode].png</texture>
+                            <texture colordiffuse="white2">weather/small/$INFO[Weather.FanartCode].png</texture>
                         </control>
                     </control>
                 </control>
@@ -298,8 +294,7 @@
                         <posy>613</posy>
                         <width>50</width>
                         <height>15</height>
-                        <texture>arrowdown.png</texture>
-                        <colordiffuse>white</colordiffuse>
+                        <texture colordiffuse="white">arrowdown.png</texture>
                         <visible>Control.HasFocus(9000) + !Skin.HasSetting(showsubmenu) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
                         <animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                     </control>
@@ -312,8 +307,7 @@
                             <posy>612</posy>
                             <width>1540</width>
                             <height>87</height>
-                            <texture>home/submenubar_shadow.png</texture>
-                            <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[ExtendedColorVar]">home/submenubar_shadow.png</texture>
                         </control>
                         <control type="fixedlist" id="9010">
                             <posx>285</posx>
@@ -506,8 +500,7 @@
                 <width>35</width>
                 <height>35</height>
                 <aspectratio>keep</aspectratio>
-                <texture>special://skin/extras/icons/info.png</texture>
-                <colordiffuse>white</colordiffuse>
+                <texture colordiffuse="white">special://skin/extras/icons/info.png</texture>
             </control>
             <control type="image">
                 <posx>60</posx>
@@ -515,8 +508,7 @@
                 <width>50</width>
                 <height>50</height>
                 <aspectratio>keep</aspectratio>
-                <texture>home/widgets.png</texture>
-                <colordiffuse>white4</colordiffuse>
+                <texture colordiffuse="white4">home/widgets.png</texture>
             </control>
         </control>
         <control type="group">

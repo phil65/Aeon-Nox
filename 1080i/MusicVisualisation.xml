@@ -94,9 +94,8 @@
                     <posx>-45</posx>
                     <width>794</width>
                     <height>87</height>
-                    <texture flipy="true">home/timepanel_mid_shadow.png</texture>
-<animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true">home/timepanel_mid_shadow.png</texture>
+                    <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
                 </control>
                 <control type="label">
                     <posx>734</posx>
@@ -433,8 +432,7 @@
                         <posy>66</posy>
                         <width>150</width>
                         <height>99</height>
-                        <texture fallback="empty.png">$INFO[MusicPlayer.Codec,flags/audio/]$INFO[MusicPlayer.Channels,,.png]</texture>
-                        <colordiffuse>white3</colordiffuse>
+                        <texture colordiffuse="white3" fallback="empty.png">$INFO[MusicPlayer.Codec,flags/audio/]$INFO[MusicPlayer.Channels,,.png]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="image" id="8309">
@@ -442,8 +440,7 @@
                         <posy>66</posy>
                         <width>150</width>
                         <height>99</height>
-                        <texture fallback="empty.png">$INFO[MusicPlayer.Codec,flags/audio/,.png]</texture>
-                        <colordiffuse>white3</colordiffuse>
+                        <texture colordiffuse="white3" fallback="empty.png">$INFO[MusicPlayer.Codec,flags/audio/,.png]</texture>
                         <aspectratio>keep</aspectratio>
                         <visible>StringCompare(Control.GetLabel(8310),empty.png)</visible>
                     </control>
@@ -477,8 +474,7 @@
                         <width>150</width>
                         <height>90</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>flags/music/rating/$INFO[Player.StarRating]</texture>
-                        <colordiffuse>white</colordiffuse>
+                        <texture colordiffuse="white">flags/music/rating/$INFO[Player.StarRating]</texture>
                     </control>
                     <control type="group">
                         <visible>!Window.IsActive(musicosd)</visible>
@@ -488,16 +484,14 @@
                             <posy>145</posy>
                             <width>50</width>
                             <height>15</height>
-                            <texture>arrowdown.png</texture>
-                            <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[TitleColorVar]">arrowdown.png</texture>
                         </control>
                         <control type="image">
                             <posx>1106</posx>
                             <posy>70</posy>
                             <width>50</width>
                             <height>15</height>
-                            <texture flipy="true">arrowdown.png</texture>
-                            <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                            <texture colordiffuse="$VAR[TitleColorVar]" flipy="true">arrowdown.png</texture>
                         </control>
                     </control>
                     <control type="image" id="8669">
@@ -506,8 +500,7 @@
                         <width>150</width>
                         <height>90</height>
                         <aspectratio>keep</aspectratio>
-                        <texture>$INFO[MusicPlayer.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                        <colordiffuse>white3</colordiffuse>
+                        <texture colordiffuse="white3">$INFO[MusicPlayer.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
                     </control>
                     <control type="label">
                         <posx>607</posx>
@@ -531,8 +524,7 @@
                             <height>110</height>
                             <aspectratio>keep</aspectratio>
                             <animation effect="fade" start="100" end="50" time="40" condition="true">Conditional</animation>
-                            <texture>defaulticons/DefaultAddonMusic.png</texture>
-                        <colordiffuse>white3</colordiffuse>
+                            <texture colordiffuse="white3">defaulticons/DefaultAddonMusic.png</texture>
                         </control>
                         <control type="label">
                             <posx>1095</posx>
@@ -541,7 +533,7 @@
                             <height>86</height>
                             <label>$INFO[MusicPlayer.Genre]</label>
                             <textcolor>white3</textcolor>
-                           <font>Font_Reg19_Caps</font>
+                            <font>Font_Reg19_Caps</font>
                             <shadowcolor>black</shadowcolor>
                             <scroll>false</scroll>
                             <wrapmultiline>true</wrapmultiline>
@@ -707,7 +699,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Playlist -->
+                    <!--Playlist-->
                     <include>NextTracksList</include>
                     <control type="textbox">
                         <posx>640</posx>
