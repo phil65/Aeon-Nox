@@ -5,7 +5,7 @@
     <controls>
         <control type="group" id="0">
             <animation effect="slide" end="0,45" time="160" tween="cubic" condition="Window.IsVisible(seekbar) + !Skin.HasSetting(Show_Info_Paused)">Conditional</animation>
-            <animation effect="slide" end="0,165" time="160" tween="cubic" condition="[Window.IsVisible(seekbar) + Skin.HasSetting(Show_Info_Paused)] | [Window.IsVisible(fullscreeninfo) + IsEmpty(Window(home).Property(morefullscreeninfo)) + Player.Paused]">Conditional</animation>
+            <animation effect="slide" end="0,165" time="160" tween="cubic" condition="[Window.IsVisible(seekbar) + Skin.HasSetting(Show_Info_Paused)] | [Window.IsVisible(fullscreeninfo) + Player.Paused]">Conditional</animation>
             <animation effect="slide" end="0,135" time="160" tween="cubic" condition="!VideoPlayer.Content(LiveTV) + Window.IsVisible(fullscreeninfo) + IsEmpty(Window(home).Property(morefullscreeninfo)) + !Player.Paused">Conditional</animation>
             <!-- codec infos -->
             <control type="image">
