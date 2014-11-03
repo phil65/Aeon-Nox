@@ -27,8 +27,9 @@
                         <height>651</height>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture>views/lowlist_panelback.png</texture>
-                            <animation effect="fade" start="100" end="80" time="40" condition="!Skin.HasSetting(musiclistpanelthin)">Conditional</animation>
-                            <animation effect="fade" start="100" end="35" time="40" condition="Skin.HasSetting(musiclistpanelthin)">Conditional</animation>                    </control>
+                        <animation effect="fade" start="100" end="80" time="40" condition="!Skin.HasSetting(musiclistpanelthin)">Conditional</animation>
+                        <animation effect="fade" start="100" end="35" time="40" condition="Skin.HasSetting(musiclistpanelthin)">Conditional</animation>
+                    </control>
                     <include>Neon_LowList</include>
                     <control type="image">
                         <posx>465</posx>
@@ -626,41 +627,23 @@
                     </control>
                 </itemlayout>
                 <focusedlayout height="66" width="1470">
-                    <control type="group">
-                        <visible>!Skin.HasSetting(lowlistmusicwidelist)</visible>
-                        <control type="image">
-                            <posx>1</posx>
-                            <posy>65</posy>
-                            <width>910</width>
-                            <height>1</height>
-                            <texture>views/lowlistpanel_line.png</texture>
-                        </control>
                     <control type="image">
+                        <visible>!Skin.HasSetting(lowlistmusicwidelist)</visible>
                         <posy>-20</posy>
                         <width>930</width>
                         <height>110</height>
-                <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
+                        <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
                         <include>PanelGlowFade</include>
                         <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(506)">Conditional</animation>
                     </control>
-                    </control>
-                    <control type="group">
+                    <control type="image">
                         <visible>Skin.HasSetting(lowlistmusicwidelist)</visible>
-                        <control type="image">
-                            <posx>1</posx>
-                            <posy>65</posy>
-                            <width>1470</width>
-                            <height>1</height>
-                            <texture>views/lowlistpanel_line.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>14</posx>
-                            <width>1470</width>
-                            <height>66</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                            <include>PanelGlowFade</include>
-                            <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(506)">Conditional</animation>
-                        </control>
+                        <posy>-20</posy>
+                        <width>1430</width>
+                        <height>110</height>
+                        <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
+                        <include>PanelGlowFade</include>
+                        <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(506)">Conditional</animation>
                     </control>
                     <control type="label">
                         <posx>15</posx>
