@@ -106,8 +106,7 @@
                 <posy>800</posy>
                 <width>2100</width>
                 <height>600</height>
-                <texture>home/nowplaying_shadow.png</texture>
-                <colordiffuse>black</colordiffuse>
+                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
                 <visible>![Substring(Control.GetLabel(4321),classic) + !Control.HasFocus(5010)]</visible>
                 <visible>[Control.IsVisible(8995) + Skin.HasSetting(movenowplayingwidget)] | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)</visible>
                 <animation effect="fade" time="500" delay="160">Visible</animation>
@@ -116,8 +115,7 @@
             <control type="image">
                 <width>2100</width>
                 <height>600</height>
-                <texture flipy="true">home/nowplaying_shadow.png</texture>
-                <colordiffuse>black</colordiffuse>
+                <texture colordiffuse="black" flipy="true">home/nowplaying_shadow.png</texture>
                 <animation effect="fade" time="500" delay="160">Visible</animation>
                 <animation effect="fade" time="700">Hidden</animation>
                 <visible>![Substring(Control.GetLabel(4325),classic) + !Control.HasFocus(6010)]</visible>
@@ -149,9 +147,8 @@
                     <posy>2</posy>
                     <width>1920</width>
                     <height>87</height>
-                    <texture flipy="true">home/nav_back_shadow.png</texture>
+                    <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
                     <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
-                    <colordiffuse>black</colordiffuse>
                     <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                     <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
@@ -500,9 +497,8 @@
                 <posy>-20</posy>
                 <width>290</width>
                 <height>100</height>
-                <texture>home/fade.png</texture>
+                <texture colordiffuse="black">home/fade.png</texture>
                 <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-                <colordiffuse>black</colordiffuse>
             </control>
             <control type="image">
                 <posx>20</posx>

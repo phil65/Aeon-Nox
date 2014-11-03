@@ -532,8 +532,7 @@
                 <width>88</width>
                 <height>57</height>
                 <aspectratio>keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
-                <colordiffuse>48FFFFFF</colordiffuse>
+                <texture colordiffuse="48FFFFFF" background="true">$INFO[ListItem.Property(BigIcon)]</texture>
             </control>
             <control type="label">
                 <posx>172</posx>
@@ -563,8 +562,7 @@
                     <width>88</width>
                     <height>57</height>
                     <aspectratio>keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
-                    <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
+                    <texture colordiffuse="$VAR[MainMenuFontColorVar]" background="true">$INFO[ListItem.Property(BigIcon)]</texture>
                 </control>
             </control>
             <control type="label">
@@ -719,8 +717,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture>common/logo_pics.png</texture>
-                    <colordiffuse>black</colordiffuse>
+                    <texture colordiffuse="black">common/logo_pics.png</texture>
                     <visible>Player.HasMedia</visible>
                 </control>
                 <control type="image">
@@ -729,16 +726,14 @@
                     <align>center</align>
                     <aligny>top</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture>common/logo_music.png</texture>
-                    <colordiffuse>black</colordiffuse>
+                    <texture colordiffuse="black">common/logo_music.png</texture>
                     <visible>System.HasMediadvd</visible>
                 </control>
                 <control type="image">
                     <posy>-5</posy>
                     <width>45</width>
                     <height>45</height>
-                    <texture>dialogs/circle/$INFO[Window(Home).Property(RecommendedMovie.1.PercentPlayed)].png</texture>
-                    <colordiffuse>black</colordiffuse>
+                    <texture colordiffuse="black">dialogs/circle/$INFO[Window(Home).Property(RecommendedMovie.1.PercentPlayed)].png</texture>
                     <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
                 </control>
                 <control type="label">

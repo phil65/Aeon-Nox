@@ -1266,10 +1266,9 @@
                                     <posy>10</posy>
                                     <width>240</width>
                                     <height>240</height>
-                                    <texture border="6">common/bgcolor.png</texture>
+                                    <texture colordiffuse="55FFFFFF" border="6">common/bgcolor.png</texture>
                                     <visible>Control.HasFocus(5010)</visible>
                                     <animation effect="fade" time="350">VisibleChange</animation>
-                                    <colordiffuse>55FFFFFF</colordiffuse>
                                 </control>
                             </itemlayout>
                             <focusedlayout height="240" width="266">
@@ -1381,10 +1380,9 @@
                                     <posy>10</posy>
                                     <width>240</width>
                                     <height>240</height>
-                                    <texture border="6">common/bgcolor.png</texture>
+                                    <texture colordiffuse="55FFFFFF" border="6">common/bgcolor.png</texture>
                                     <visible>Control.HasFocus(6010)</visible>
                                     <animation effect="fade" time="350">VisibleChange</animation>
-                                    <colordiffuse>55FFFFFF</colordiffuse>
                                 </control>
                             </itemlayout>
                             <focusedlayout height="240" width="266">
@@ -1437,8 +1435,7 @@
                         <width>1260</width>
                         <height>506</height>
                         <aspectratio aligny="top">scale</aspectratio>
-                        <texture background="true">$INFO[Player.Art(fanart)]</texture>
-                        <colordiffuse>44FFFFFF</colordiffuse>
+                        <texture colordiffuse="44FFFFFF" background="true">$INFO[Player.Art(fanart)]</texture>
                     </control>
                     <control type="group" id="7001">
                         <posx>131</posx>
@@ -1541,8 +1538,7 @@
                         <width>1260</width>
                         <height>506</height>
                         <aspectratio aligny="top">scale</aspectratio>
-                        <texture background="true">$INFO[Player.Art(fanart)]</texture>
-                        <colordiffuse>44FFFFFF</colordiffuse>
+                        <texture colordiffuse="44FFFFFF" background="true">$INFO[Player.Art(fanart)]</texture>
                     </control>
                     <control type="group">
                         <posx>131</posx>
@@ -1972,8 +1968,7 @@
                         <height>240</height>
                         <texture border="6">common/bgcolor.png</texture>
                         <visible>Control.HasFocus(6010)</visible>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <colordiffuse>55FFFFFF</colordiffuse>
+                        <animation colordiffuse="55FFFFFF" effect="fade" time="350">VisibleChange</animation>
                     </control>
                 </itemlayout>
                 <focusedlayout height="240" width="266">
@@ -2007,9 +2002,8 @@
     <control type="image">
         <width>1920</width>
         <height>87</height>
-        <texture flipy="true">home/nav_back_shadow.png</texture>
+        <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
         <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-        <colordiffuse>black</colordiffuse>
     </control>
     <control type="grouplist">
         <posx>0</posx>
@@ -2023,8 +2017,7 @@
             <width>38</width>
             <height>30</height>
             <aspectratio>keep</aspectratio>
-            <texture>common/featured_icon.png</texture>
-            <colordiffuse>$VAR[BreadCrumbsContentColorVar]</colordiffuse>
+            <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">common/featured_icon.png</texture>
             <visible>!Window.IsActive(visualisation)</visible>
         </control>
             <control type="image">
@@ -2034,8 +2027,7 @@
                 <height>30</height>
                 <animation effect="rotate" end="-90" center="auto" time="0" condition="true">Conditional</animation>
                 <aspectratio>keep</aspectratio>
-                <texture>settingsarrow.png</texture>
-                <colordiffuse>$VAR[BreadCrumbsContentColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">settingsarrow.png</texture>
                 <visible>Window.IsActive(visualisation)</visible>
             </control>
         <control type="label">
