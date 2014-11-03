@@ -233,8 +233,8 @@
                         <posy>800</posy>
                         <width>200</width>
                         <height>10</height>
-                                    <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                            <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
+                        <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                        <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
                         <aligny>bottom</aligny>
                         <info>Player.Progress</info>
                     </control>
@@ -335,8 +335,8 @@
                         <posy>815</posy>
                         <width>200</width>
                         <height>10</height>
-                                    <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                            <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
+                        <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                        <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
                         <aligny>bottom</aligny>
                         <info>Player.Progress</info>
                     </control>
@@ -346,7 +346,21 @@
                     <include>NextTracksList</include>
                     <control type="group">
                         <visible>Skin.HasSetting(homeartistslideshow)</visible>
-                        <include>HomeArtistSlideShow</include>
+                        <posx>1436</posx>
+                        <posy>672</posy>
+                        <animation effect="slide" start="575" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
+                        <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
+                        <animation effect="fade" time="320">VisibleChange</animation>
+                        <control type="multiimage">
+                            <posx>22</posx>
+                            <posy>19</posy>
+                            <width>380</width>
+                            <height>354</height>
+                            <aspectratio>scale</aspectratio>
+                            <imagepath background="true">$VAR[NowPlayingMultiImageVar]</imagepath>
+                            <fadetime>750</fadetime>
+                            <timeperimage>5000</timeperimage>
+                        </control>
                     </control>
                 </control>
                 <control type="textbox">
