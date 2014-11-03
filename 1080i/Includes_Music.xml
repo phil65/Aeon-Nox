@@ -155,7 +155,7 @@
                 <control type="group">
                     <visible>Stringcompare(Control.GetLabel(4420),fourthumbs)</visible>
                     <control type="group">
-                        <!-- left side-->
+                        <!--left side-->
                         <control type="image">
                             <posx>154</posx>
                             <animation effect="zoom" end="200" center="154,70" time="320" tween="cubic" easing="inout" condition="IsEmpty(Window(home).Property(Artist.Album.3.Thumb)) + !IsEmpty(Window(home).Property(Artist.Album.1.Thumb)) + IsEmpty(Window(home).Property(Artist.Album.5.Thumb)) + IsEmpty(Window(home).Property(Artist.Album.7.Thumb))">Conditional</animation>
@@ -188,7 +188,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <!-- right side-->
+                        <!--right side-->
                         <control type="image">
                             <posx>1570</posx>
                             <posy>70</posy>
@@ -573,180 +573,87 @@
             <width>1290</width>
             <height>1080</height>
             <orientation>vertical</orientation>
+            <itemgap>4</itemgap>
             <animation effect="fade" time="320">VisibleChange</animation>
             <visible>Skin.HasSetting(itemsplaylist) | Window.IsActive(visualisation)</visible>
             <control type="label">
                 <width>900</width>
                 <align>right</align>
-                <height>45</height>
+                <height>35</height>
                 <label>[UPPERCASE]$LOCALIZE[31889][/UPPERCASE]</label>
                 <font>Font_Reg26</font>
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
             </control>
-            <control type="grouplist">
-                <posy>694</posy>
+            <control type="label">
                 <width>900</width>
-                <height>300</height>
-                <itemgap>3</itemgap>
-                <orientation>vertical</orientation>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(1).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(2).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(3).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(4).Title,, - ][COLOR white4]$INFO[MusicPlayer.Offset(4).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(4).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(5).Title,, - ][COLOR white5]$INFO[MusicPlayer.Offset(5).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(5).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(6).Title,, - ][COLOR white6]$INFO[MusicPlayer.Offset(6).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(6).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(7).Title,, - ][COLOR white7]$INFO[MusicPlayer.Offset(7).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(7).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(8).Title,, - ][COLOR white8]$INFO[MusicPlayer.Offset(8).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(8).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(9).Title,, - ][COLOR white9]$INFO[MusicPlayer.Offset(9).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(9).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
-                <control type="label">
-                    <width>900</width>
-                    <height>28</height>
-                    <align>right</align>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(10).Title,, - ][COLOR white10]$INFO[MusicPlayer.Offset(10).Artist,,][/COLOR][/UPPERCASE][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(10).Duration,,][/COLOR]</label>
-                    <font>Font_Reg26</font>
-                </control>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(1).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
             </control>
-            <control type="grouplist">
-                <posy>694</posy>
-                <width>610</width>
-                <height>30</height>
-                <visible>!IsEmpty(MusicPlayer.Offset(11).Title)</visible>
-                <itemgap>3</itemgap>
-                <orientation>horizontal</orientation>
-                <visible>!Window.IsActive(script-HomeWindow Script-main.xml) + !Window.IsActive(1158)</visible>
-                <control type="label">
-                    <width min="30" max="60">auto</width>
-                    <height>26</height>
-                    <label>11:</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                </control>
-                <control type="label">
-                    <width min="50" max="380">auto</width>
-                    <height>26</height>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(11).Artist,,:][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="label">
-                    <width min="50" max="610">auto</width>
-                    <height>26</height>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(11).Title][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(2).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
             </control>
-            <control type="grouplist">
-                <posy>694</posy>
-                <width>610</width>
-                <height>30</height>
-                <visible>!IsEmpty(MusicPlayer.Offset(12).Title)</visible>
-                <visible>!Window.IsActive(script-HomeWindow Script-main.xml) + !Window.IsActive(1158)</visible>
-                <itemgap>3</itemgap>
-                <orientation>horizontal</orientation>
-                <control type="label">
-                    <width min="30" max="60">auto</width>
-                    <height>26</height>
-                    <label>12:</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                </control>
-                <control type="label">
-                    <width min="50" max="380">auto</width>
-                    <height>26</height>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(12).Artist,,:][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="label">
-                    <width min="50" max="610">auto</width>
-                    <height>26</height>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(12).Title][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(3).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
             </control>
-            <control type="grouplist">
-                <posy>694</posy>
-                <width>610</width>
-                <height>30</height>
-                <visible>!Window.IsActive(script-HomeWindow Script-main.xml) + !Window.IsActive(1158)</visible>
-                <visible>!IsEmpty(MusicPlayer.Offset(13).Title)</visible>
-                <itemgap>3</itemgap>
-                <orientation>horizontal</orientation>
-                <control type="label">
-                    <width min="30" max="60">auto</width>
-                    <height>26</height>
-                    <label>13:</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                </control>
-                <control type="label">
-                    <width min="50" max="380">auto</width>
-                    <height>26</height>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(13).Artist,,:][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="label">
-                    <width min="50" max="610">auto</width>
-                    <height>26</height>
-                    <label>[UPPERCASE]$INFO[MusicPlayer.Offset(13).Title][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(4).Title,, - ][COLOR white4]$INFO[MusicPlayer.Offset(4).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(4).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
+            </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(5).Title,, - ][COLOR white5]$INFO[MusicPlayer.Offset(5).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(5).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
+            </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(6).Title,, - ][COLOR white6]$INFO[MusicPlayer.Offset(6).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(6).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
+            </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(7).Title,, - ][COLOR white7]$INFO[MusicPlayer.Offset(7).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(7).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
+            </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(8).Title,, - ][COLOR white8]$INFO[MusicPlayer.Offset(8).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(8).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
+            </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(9).Title,, - ][COLOR white9]$INFO[MusicPlayer.Offset(9).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(9).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
+            </control>
+            <control type="label">
+                <width>900</width>
+                <height>28</height>
+                <align>right</align>
+                <label>$INFO[MusicPlayer.Offset(10).Title,, - ][COLOR white10]$INFO[MusicPlayer.Offset(10).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(10).Duration,,][/COLOR]</label>
+                <font>Font_Reg26</font>
             </control>
         </control>
     </include>
@@ -923,7 +830,7 @@
                     <texture>$VAR[MusicOSDRepeatClassicButtonVar]</texture>
                     <include>ClassicOSDButton</include>
                     <animation effect="slide" end="200,0" condition="true">Conditional</animation>
-                     <animation center="62,62" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back" condition="Control.HasFocus(704)">Conditional</animation>
+                    <animation center="62,62" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back" condition="Control.HasFocus(704)">Conditional</animation>
                 </control>
                 <control type="radiobutton" id="703">
                     <textureradiooff>osd/buttons/OSDLyricsNF.png</textureradiooff>
@@ -960,7 +867,7 @@
         </control>
     </include>
     <include name="MusicInfoModePanels">
-        <!-- Main Group -->
+        <!--Main Group-->
         <control type="grouplist" id="40">
             <posx>-135</posx>
             <posy>5</posy>
@@ -978,7 +885,7 @@
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
-            <!-- Similar Artists -->
+            <!--Similar Artists-->
             <control type="group" id="5000">
                 <width>2325</width>
                 <height>825</height>
@@ -1079,10 +986,9 @@
                                     <visible>Control.HasFocus(5010)</visible>
                                 </control>
                             </focusedlayout>
-                                    <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
+                            <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
                         </control>
-                        <!--content-->
-                    </control>
+                        <!--content--></control>
                     <control type="image">
                         <posx>21</posx>
                         <posy>59</posy>
@@ -1092,7 +998,7 @@
                     </control>
                 </control>
             </control>
-            <!-- Discography -->
+            <!--Discography-->
             <control type="group" id="6000">
                 <width>2325</width>
                 <height>825</height>
@@ -1195,8 +1101,7 @@
                             </focusedlayout>
                             <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
                         </control>
-                        <!--content-->
-                    </control>
+                        <!--content--></control>
                     <control type="image">
                         <posx>21</posx>
                         <posy>59</posy>
@@ -1206,7 +1111,7 @@
                     </control>
                 </control>
             </control>
-            <!-- Bio -->
+            <!--Bio-->
             <control type="group" id="7000">
                 <width>2325</width>
                 <height>825</height>
@@ -1310,7 +1215,7 @@
                     </control>
                 </control>
             </control>
-            <!-- Playlist -->
+            <!--Playlist-->
             <control type="group" id="8000">
                 <width>2325</width>
                 <height>825</height>
@@ -1424,448 +1329,447 @@
                                     <font>Font_Reg29</font>
                                     <textcolor>grey2</textcolor>
                                 </control>
-                                <!--                 <control type="label">
-                    <posy>10</posy>
-                    <posx>235</posx>
-                    <width>660</width>
-                    <height>60</height>
-                    <textcolor>grey2</textcolor>
-                    <align>right</align>
-                    <number>yes</number>
-                    <font>Font_Reg29</font>
-                    <label>$INFO[ListItem.Property(Number)]</label>
-                </control> -->
-            </itemlayout>
-            <focusedlayout height="48" width="800">
-                <control type="image">
-                    <width>800</width>
-                    <height>48</height>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                    <visible>Control.HasFocus(8010)</visible>
+                                <!--
+                                <control type="label">
+                                    <posy>10</posy>
+                                    <posx>235</posx>
+                                    <width>660</width>
+                                    <height>60</height>
+                                    <textcolor>grey2</textcolor>
+                                    <align>right</align>
+                                    <number>yes</number>
+                                    <font>Font_Reg29</font>
+                                    <label>$INFO[ListItem.Property(Number)]</label>
+                                </control>--></itemlayout>
+                            <focusedlayout height="48" width="800">
+                                <control type="image">
+                                    <width>800</width>
+                                    <height>48</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                    <visible>Control.HasFocus(8010)</visible>
+                                </control>
+                                <control type="image">
+                                    <posx>15</posx>
+                                    <posy>0</posy>
+                                    <width>370</width>
+                                    <height>48</height>
+                                    <texture border="3">osd/osd_settings_buttonnf.png</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>35</posx>
+                                    <posy>0</posy>
+                                    <width>60</width>
+                                    <height>48</height>
+                                    <align>right</align>
+                                    <label>$INFO[ListItem.Property(Number)]</label>
+                                    <font>Font_Reg29</font>
+                                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                                </control>
+                                <control type="label">
+                                    <posx>45</posx>
+                                    <posy>0</posy>
+                                    <width>765</width>
+                                    <height>48</height>
+                                    <align>left</align>
+                                    <label>[COLOR white2]$INFO[ListItem.Property(Artist)]: [/COLOR]$INFO[ListItem.Label]</label>
+                                    <font>Font_Reg29</font>
+                                    <textcolor>grey2</textcolor>
+                                </control>
+                            </focusedlayout>
+                            <content>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(1).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(1).Artist]</property>
+                                    <property name="Number">1:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(1).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(1)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(2).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(2).Artist]</property>
+                                    <property name="Number">2:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(2).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(2)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(2).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(3).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(3).Artist]</property>
+                                    <property name="Number">3:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(3).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(3)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(3).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(4).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(4).Artist]</property>
+                                    <property name="Number">4:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(4).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(4)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(4).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(5).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(5).Artist]</property>
+                                    <property name="Number">5:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(5).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(5)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(6).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(6).Artist]</property>
+                                    <property name="Number">6:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(6).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(6)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(6).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(7).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(7).Artist]</property>
+                                    <property name="Number">7:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(7).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(7)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(7).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(8).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(8).Artist]</property>
+                                    <property name="Number">8:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(8).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(8)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(8).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(9).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(9).Artist]</property>
+                                    <property name="Number">9:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(9).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(9)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(9).Title)</visible>
+                                </item>
+                                <item>
+                                    <label>$INFO[MusicPlayer.Offset(10).Title]</label>
+                                    <property name="Artist">$INFO[MusicPlayer.Offset(10).Artist]</property>
+                                    <property name="Number">10:</property>
+                                    <thumb>$INFO[MusicPlayer.Offset(10).Cover]</thumb>
+                                    <onclick>Playlist.PlayOffset(10)</onclick>
+                                    <visible>!IsEmpty(MusicPlayer.Offset(10).Title)</visible>
+                                </item>
+                            </content>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <posx>21</posx>
+                        <posy>59</posy>
+                        <width>1290</width>
+                        <height>516</height>
+                        <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
+                    </control>
                 </control>
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>0</posy>
-                    <width>370</width>
-                    <height>48</height>
-                    <texture border="3">osd/osd_settings_buttonnf.png</texture>
+            </control>
+            <!--Fanart-->
+            <control type="group" id="9000">
+                <width>2325</width>
+                <height>825</height>
+                <animation type="Conditional" condition="![ControlGroup(9000).HasFocus | Control.HasFocus(9012)]">
+                    <effect type="fade" start="100" end="80" time="400" tween="cubic" easing="inout" />
+                    <effect type="zoom" start="100" end="70" time="400" tween="cubic" easing="inout" center="auto" />
+                </animation>
+                <control type="button" id="9012">
+                    <include>HiddenObject</include>
+                    <onup>Dialog.Close(1154)</onup>
+                    <onup condition="Window.IsActive(visualisation)">SetFocus(602)</onup>
+                    <ondown>9001</ondown>
+                    <onright>10012</onright>
+                    <onleft>8012</onleft>
+                    <ondown>9001</ondown>
+                    <onclick>Action(Close)</onclick>
+                    <onclick>ActivateWindow(musiclibrary,root,return)</onclick>
                 </control>
-                <control type="label">
-                    <posx>35</posx>
-                    <posy>0</posy>
-                    <width>60</width>
-                    <height>48</height>
-                    <align>right</align>
-                    <label>$INFO[ListItem.Property(Number)]</label>
-                    <font>Font_Reg29</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                <control type="group" id="9001">
+                    <posx>450</posx>
+                    <include>FeaturedPanel</include>
+                    <control type="group">
+                        <posx>31</posx>
+                        <posy>31</posy>
+                        <control type="button" id="9010">
+                            <include>HiddenObject</include>
+                            <onup>9012</onup>
+                            <ondown>9012</ondown>
+                            <onleft>8010</onleft>
+                            <onright>5012</onright>
+                            <onclick>SetFocus(9010)</onclick>
+                        </control>
+                        <control type="image">
+                            <posx>21</posx>
+                            <posy>29</posy>
+                            <width>1230</width>
+                            <height>506</height>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[Player.Art(fanart)]</texture>
+                            <visible>!SubString(Control.getLabel(8870),extrafanart)</visible>
+                        </control>
+                        <control type="multiimage" id="8870">
+                            <posx>21</posx>
+                            <posy>29</posy>
+                            <width>1230</width>
+                            <height>506</height>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+                        </control>
+                        <control type="image">
+                            <posx>21</posx>
+                            <posy>500</posy>
+                            <width>1230</width>
+                            <height>35</height>
+                            <texture>common/bgcolor.png</texture>
+                            <visible>!IsEmpty(MusicPlayer.Property(Artist_Born)) | !IsEmpty(MusicPlayer.Property(Artist_Formed)) | !IsEmpty(MusicPlayer.Property(Artist_Died)) | !IsEmpty(MusicPlayer.Property(Artist_Disbanded))</visible>
+                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                        </control>
+                        <control type="grouplist">
+                            <posx>31</posx>
+                            <posy>500</posy>
+                            <width>1230</width>
+                            <height>35</height>
+                            <align>center</align>
+                            <itemgap>50</itemgap>
+                            <orientation>horizontal</orientation>
+                            <control type="label">
+                                <width min="50" max="800">auto</width>
+                                <aligny>bottom</aligny>
+                                <label>$LOCALIZE[21893]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Born)][/COLOR]</label>
+                                <font>Font_Reg29</font>
+                                <shadowcolor>black</shadowcolor>
+                                <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                                <visible>!IsEmpty(MusicPlayer.Property(Artist_Born))</visible>
+                            </control>
+                            <control type="label">
+                                <width min="50" max="800">auto</width>
+                                <aligny>bottom</aligny>
+                                <label>$LOCALIZE[21894]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Formed)][/COLOR]</label>
+                                <font>Font_Reg29</font>
+                                <shadowcolor>black</shadowcolor>
+                                <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                                <visible>!IsEmpty(MusicPlayer.Property(Artist_Formed))</visible>
+                            </control>
+                            <control type="label">
+                                <width min="50" max="800">auto</width>
+                                <aligny>bottom</aligny>
+                                <label>$LOCALIZE[21897]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Died)][/COLOR]</label>
+                                <font>Font_Reg29</font>
+                                <shadowcolor>black</shadowcolor>
+                                <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                                <visible>!IsEmpty(MusicPlayer.Property(Artist_Died))</visible>
+                            </control>
+                            <control type="label">
+                                <width min="50" max="800">auto</width>
+                                <aligny>bottom</aligny>
+                                <label>$LOCALIZE[21896]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Disbanded)][/COLOR]</label>
+                                <font>Font_Reg29</font>
+                                <shadowcolor>black</shadowcolor>
+                                <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                                <visible>!IsEmpty(MusicPlayer.Property(Artist_Disbanded))</visible>
+                            </control>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <posx>21</posx>
+                        <posy>59</posy>
+                        <width>1290</width>
+                        <height>516</height>
+                        <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
+                    </control>
                 </control>
-                <control type="label">
-                    <posx>45</posx>
-                    <posy>0</posy>
-                    <width>765</width>
-                    <height>48</height>
-                    <align>left</align>
-                    <label>[COLOR white2]$INFO[ListItem.Property(Artist)]: [/COLOR]$INFO[ListItem.Label]</label>
-                    <font>Font_Reg29</font>
-                    <textcolor>grey2</textcolor>
+            </control>
+            <!--MusicVideos-->
+            <control type="group" id="10000">
+                <width>2325</width>
+                <height>825</height>
+                <animation type="Conditional" condition="![ControlGroup(10000).HasFocus | Control.HasFocus(10012)]">
+                    <effect type="fade" start="100" end="80" time="400" tween="cubic" easing="inout" />
+                    <effect type="zoom" start="100" end="70" time="400" tween="cubic" easing="inout" center="auto" />
+                </animation>
+                <control type="button" id="10012">
+                    <include>HiddenObject</include>
+                    <onup>Dialog.Close(1154)</onup>
+                    <onup condition="Window.IsActive(visualisation)">SetFocus(602)</onup>
+                    <ondown>10001</ondown>
+                    <onright>5012</onright>
+                    <onleft>9012</onleft>
+                    <ondown>10001</ondown>
+                    <onclick>Action(Close)</onclick>
                 </control>
-            </focusedlayout>
-            <content>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(1).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(1).Artist]</property>
-                    <property name="Number">1:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(1).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(1)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(2).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(2).Artist]</property>
-                    <property name="Number">2:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(2).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(2)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(2).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(3).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(3).Artist]</property>
-                    <property name="Number">3:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(3).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(3)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(3).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(4).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(4).Artist]</property>
-                    <property name="Number">4:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(4).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(4)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(4).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(5).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(5).Artist]</property>
-                    <property name="Number">5:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(5).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(5)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(6).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(6).Artist]</property>
-                    <property name="Number">6:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(6).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(6)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(6).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(7).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(7).Artist]</property>
-                    <property name="Number">7:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(7).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(7)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(7).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(8).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(8).Artist]</property>
-                    <property name="Number">8:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(8).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(8)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(8).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(9).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(9).Artist]</property>
-                    <property name="Number">9:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(9).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(9)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(9).Title)</visible>
-                </item>
-                <item>
-                    <label>$INFO[MusicPlayer.Offset(10).Title]</label>
-                    <property name="Artist">$INFO[MusicPlayer.Offset(10).Artist]</property>
-                    <property name="Number">10:</property>
-                    <thumb>$INFO[MusicPlayer.Offset(10).Cover]</thumb>
-                    <onclick>Playlist.PlayOffset(10)</onclick>
-                    <visible>!IsEmpty(MusicPlayer.Offset(10).Title)</visible>
-                </item>
-            </content>
+                <control type="group">
+                    <posx>450</posx>
+                    <include>FeaturedPanel</include>
+                    <control type="group" id="10001">
+                        <posx>131</posx>
+                        <posy>91</posy>
+                        <control type="label">
+                            <posx>-100</posx>
+                            <posy>-15</posy>
+                            <width>445</width>
+                            <height>34</height>
+                            <align>center</align>
+                            <label>$LOCALIZE[20389]</label>
+                            <font>Font_Reg37_Caps</font>
+                            <textcolor>$VAR[TitleColorVar]</textcolor>
+                        </control>
+                        <control type="group">
+                            <posx>-90</posx>
+                            <posy>27</posy>
+                            <control type="image">
+                                <posx>-20</posx>
+                                <posy>-8</posy>
+                                <width>465</width>
+                                <height>465</height>
+                                <texture colordiffuse="$VAR[AreaColorVar]">thumbs/boxes/cd_shadow_light_shadow.png</texture>
+                                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                                <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
+                                <animation effect="fade" time="350">VisibleChange</animation>
+                            </control>
+                            <control type="multiimage">
+                                <posx>2</posx>
+                                <posy>11</posy>
+                                <width>420</width>
+                                <height>420</height>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Container(10010).ListItem.Icon]</imagepath>
+                                <fadetime>750</fadetime>
+                                <timeperimage>5000</timeperimage>
+                            </control>
+                            <control type="image">
+                                <posx>-20</posx>
+                                <posy>-8</posy>
+                                <width>465</width>
+                                <height>465</height>
+                                <texture>thumbs/boxes/cd_shadow_light.png</texture>
+                            </control>
+                        </control>
+                        <control type="panel" id="10010">
+                            <posx>379</posx>
+                            <posy>-22</posy>
+                            <width>800</width>
+                            <height>490</height>
+                            <onup>10012</onup>
+                            <ondown>10012</ondown>
+                            <onback>Dialog.Close(1154)</onback>
+                            <onright>5010</onright>
+                            <onleft>9010</onleft>
+                            <orientation>vertical</orientation>
+                            <pagecontrol>60</pagecontrol>
+                            <focusposition>0</focusposition>
+                            <scrolltime tween="cubic" easing="inout">400</scrolltime>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout height="240" width="266">
+                                <include>MusicVisPanelLayout</include>
+                                <control type="image">
+                                    <posy>10</posy>
+                                    <width>240</width>
+                                    <height>240</height>
+                                    <texture border="6">common/bgcolor.png</texture>
+                                    <visible>Control.HasFocus(6010)</visible>
+                                    <animation colordiffuse="55FFFFFF" effect="fade" time="350">VisibleChange</animation>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="240" width="266">
+                                <include>MusicVisPanelLayout</include>
+                                <control type="image">
+                                    <posy>10</posy>
+                                    <width>236</width>
+                                    <height>238</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <visible>Control.HasFocus(6010)</visible>
+                                </control>
+                            </focusedlayout>
+                            <content>plugin://script.extendedinfo?info=musicvideos&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
+                        </control>
+                        <!--content--></control>
+                    <control type="image">
+                        <posx>21</posx>
+                        <posy>59</posy>
+                        <width>1290</width>
+                        <height>516</height>
+                        <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
+                    </control>
+                </control>
+            </control>
         </control>
-    </control>
-    <control type="image">
-        <posx>21</posx>
-        <posy>59</posy>
-        <width>1290</width>
-        <height>516</height>
-        <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
-    </control>
-</control>
-</control>
-<!-- Fanart -->
-<control type="group" id="9000">
-    <width>2325</width>
-    <height>825</height>
-    <animation type="Conditional" condition="![ControlGroup(9000).HasFocus | Control.HasFocus(9012)]">
-        <effect type="fade" start="100" end="80" time="400" tween="cubic" easing="inout" />
-        <effect type="zoom" start="100" end="70" time="400" tween="cubic" easing="inout" center="auto" />
-    </animation>
-    <control type="button" id="9012">
-        <include>HiddenObject</include>
-        <onup>Dialog.Close(1154)</onup>
-        <onup condition="Window.IsActive(visualisation)">SetFocus(602)</onup>
-        <ondown>9001</ondown>
-        <onright>10012</onright>
-        <onleft>8012</onleft>
-        <ondown>9001</ondown>
-        <onclick>Action(Close)</onclick>
-        <onclick>ActivateWindow(musiclibrary,root,return)</onclick>
-    </control>
-    <control type="group" id="9001">
-        <posx>450</posx>
-        <include>FeaturedPanel</include>
         <control type="group">
-            <posx>31</posx>
-            <posy>31</posy>
-            <control type="button" id="9010">
-                <include>HiddenObject</include>
-                <onup>9012</onup>
-                <ondown>9012</ondown>
-                <onleft>8010</onleft>
-                <onright>5012</onright>
-                <onclick>SetFocus(9010)</onclick>
-            </control>
+            <visible>!IsEmpty(Player.FolderPath)</visible>
+            <include>Animation_HideBreadCrumbs</include>
+            <visible>!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus</visible>
             <control type="image">
-                <posx>21</posx>
-                <posy>29</posy>
-                <width>1230</width>
-                <height>506</height>
-                <aspectratio aligny="top">scale</aspectratio>
-                <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[Player.Art(fanart)]</texture>
-                <visible>!SubString(Control.getLabel(8870),extrafanart)</visible>
-            </control>
-            <control type="multiimage" id="8870">
-                <posx>21</posx>
-                <posy>29</posy>
-                <width>1230</width>
-                <height>506</height>
-                <aspectratio aligny="top">scale</aspectratio>
-                <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-            </control>
-            <control type="image">
-                <posx>21</posx>
-                <posy>500</posy>
-                <width>1230</width>
-                <height>35</height>
-                <texture>common/bgcolor.png</texture>
-                <visible>!IsEmpty(MusicPlayer.Property(Artist_Born)) | !IsEmpty(MusicPlayer.Property(Artist_Formed)) | !IsEmpty(MusicPlayer.Property(Artist_Died)) | !IsEmpty(MusicPlayer.Property(Artist_Disbanded))</visible>
-                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                <width>1920</width>
+                <height>87</height>
+                <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
+                <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
             </control>
             <control type="grouplist">
-                <posx>31</posx>
-                <posy>500</posy>
-                <width>1230</width>
-                <height>35</height>
+                <posx>0</posx>
+                <width>1920</width>
                 <align>center</align>
                 <itemgap>50</itemgap>
                 <orientation>horizontal</orientation>
-                <control type="label">
-                    <width min="50" max="800">auto</width>
-                    <aligny>bottom</aligny>
-                    <label>$LOCALIZE[21893]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Born)][/COLOR]</label>
-                    <font>Font_Reg29</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <visible>!IsEmpty(MusicPlayer.Property(Artist_Born))</visible>
-                </control>
-                <control type="label">
-                    <width min="50" max="800">auto</width>
-                    <aligny>bottom</aligny>
-                    <label>$LOCALIZE[21894]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Formed)][/COLOR]</label>
-                    <font>Font_Reg29</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <visible>!IsEmpty(MusicPlayer.Property(Artist_Formed))</visible>
-                </control>
-                <control type="label">
-                    <width min="50" max="800">auto</width>
-                    <aligny>bottom</aligny>
-                    <label>$LOCALIZE[21897]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Died)][/COLOR]</label>
-                    <font>Font_Reg29</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <visible>!IsEmpty(MusicPlayer.Property(Artist_Died))</visible>
-                </control>
-                <control type="label">
-                    <width min="50" max="800">auto</width>
-                    <aligny>bottom</aligny>
-                    <label>$LOCALIZE[21896]: [COLOR white3]$INFO[MusicPlayer.Property(Artist_Disbanded)][/COLOR]</label>
-                    <font>Font_Reg29</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <visible>!IsEmpty(MusicPlayer.Property(Artist_Disbanded))</visible>
-                </control>
-            </control>
-        </control>
-        <control type="image">
-            <posx>21</posx>
-            <posy>59</posy>
-            <width>1290</width>
-            <height>516</height>
-            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
-        </control>
-    </control>
-</control>
-<!-- MusicVideos -->
-<control type="group" id="10000">
-    <width>2325</width>
-    <height>825</height>
-    <animation type="Conditional" condition="![ControlGroup(10000).HasFocus | Control.HasFocus(10012)]">
-        <effect type="fade" start="100" end="80" time="400" tween="cubic" easing="inout" />
-        <effect type="zoom" start="100" end="70" time="400" tween="cubic" easing="inout" center="auto" />
-    </animation>
-    <control type="button" id="10012">
-        <include>HiddenObject</include>
-        <onup>Dialog.Close(1154)</onup>
-        <onup condition="Window.IsActive(visualisation)">SetFocus(602)</onup>
-        <ondown>10001</ondown>
-        <onright>5012</onright>
-        <onleft>9012</onleft>
-        <ondown>10001</ondown>
-        <onclick>Action(Close)</onclick>
-    </control>
-    <control type="group">
-        <posx>450</posx>
-        <include>FeaturedPanel</include>
-        <control type="group" id="10001">
-            <posx>131</posx>
-            <posy>91</posy>
-            <control type="label">
-                <posx>-100</posx>
-                <posy>-15</posy>
-                <width>445</width>
-                <height>34</height>
-                <align>center</align>
-                <label>$LOCALIZE[20389]</label>
-                <font>Font_Reg37_Caps</font>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
-            </control>
-            <control type="group">
-                <posx>-90</posx>
-                <posy>27</posy>
+                <usecontrolcoords>true</usecontrolcoords>
                 <control type="image">
-                    <posx>-20</posx>
-                    <posy>-8</posy>
-                    <width>465</width>
-                    <height>465</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">thumbs/boxes/cd_shadow_light_shadow.png</texture>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                </control>
-                <control type="multiimage">
-                    <posx>2</posx>
-                    <posy>11</posy>
-                    <width>420</width>
-                    <height>420</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Container(10010).ListItem.Icon]</imagepath>
-                    <fadetime>750</fadetime>
-                    <timeperimage>5000</timeperimage>
+                    <posy>6</posy>
+                    <width>38</width>
+                    <height>30</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">common/featured_icon.png</texture>
+                    <visible>!Window.IsActive(visualisation)</visible>
                 </control>
                 <control type="image">
-                    <posx>-20</posx>
-                    <posy>-8</posy>
-                    <width>465</width>
-                    <height>465</height>
-                    <texture>thumbs/boxes/cd_shadow_light.png</texture>
+                    <posy>6</posy>
+                    <posx>-30</posx>
+                    <width>38</width>
+                    <height>30</height>
+                    <animation effect="rotate" end="-90" center="auto" time="0" condition="true">Conditional</animation>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">settingsarrow.png</texture>
+                    <visible>Window.IsActive(visualisation)</visible>
+                </control>
+                <control type="label">
+                    <label>$LOCALIZE[31635]</label>
+                    <include>FeaturedTopLabel</include>
+                    <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(5012)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(5000).HasFocus">Conditional</animation>
+                </control>
+                <control type="label">
+                    <label>$LOCALIZE[21888]</label>
+                    <include>FeaturedTopLabel</include>
+                    <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(6012)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(6000).HasFocus">Conditional</animation>
+                </control>
+                <control type="label">
+                    <label>$LOCALIZE[21887]</label>
+                    <include>FeaturedTopLabel</include>
+                    <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(7012)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(7000).HasFocus">Conditional</animation>
+                </control>
+                <control type="label">
+                    <label>$LOCALIZE[559]</label>
+                    <include>FeaturedTopLabel</include>
+                    <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(8012)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(8000).HasFocus">Conditional</animation>
+                </control>
+                <control type="label">
+                    <label>$LOCALIZE[20445]</label>
+                    <include>FeaturedTopLabel</include>
+                    <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9012)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+                </control>
+                <control type="label">
+                    <label>Music Videos</label>
+                    <include>FeaturedTopLabel</include>
+                    <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(10012)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(10000).HasFocus">Conditional</animation>
+                    <visible>IntegerGreaterThan(Window(home).Property(MusicVideos.Count),0)</visible>
                 </control>
             </control>
-            <control type="panel" id="10010">
-                <posx>379</posx>
-                <posy>-22</posy>
-                <width>800</width>
-                <height>490</height>
-                <onup>10012</onup>
-                <ondown>10012</ondown>
-                <onback>Dialog.Close(1154)</onback>
-                <onright>5010</onright>
-                <onleft>9010</onleft>
-                <orientation>vertical</orientation>
-                <pagecontrol>60</pagecontrol>
-                <focusposition>0</focusposition>
-                <scrolltime tween="cubic" easing="inout">400</scrolltime>
-                <preloaditems>2</preloaditems>
-                <itemlayout height="240" width="266">
-                    <include>MusicVisPanelLayout</include>
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>240</width>
-                        <height>240</height>
-                        <texture border="6">common/bgcolor.png</texture>
-                        <visible>Control.HasFocus(6010)</visible>
-                        <animation colordiffuse="55FFFFFF" effect="fade" time="350">VisibleChange</animation>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="240" width="266">
-                    <include>MusicVisPanelLayout</include>
-                    <control type="image">
-                        <posy>10</posy>
-                        <width>236</width>
-                        <height>238</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                        <visible>Control.HasFocus(6010)</visible>
-                    </control>
-                </focusedlayout>
-                <content>plugin://script.extendedinfo?info=musicvideos&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
-            </control>
-            <!--content-->
         </control>
-        <control type="image">
-            <posx>21</posx>
-            <posy>59</posy>
-            <width>1290</width>
-            <height>516</height>
-            <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured_overlay.png</texture>
-        </control>
-    </control>
-</control>
-</control>
-<control type="group">
-    <visible>!IsEmpty(Player.FolderPath)</visible>
-    <include>Animation_HideBreadCrumbs</include>
-    <visible>!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus</visible>
-    <control type="image">
-        <width>1920</width>
-        <height>87</height>
-        <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
-        <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-    </control>
-    <control type="grouplist">
-        <posx>0</posx>
-        <width>1920</width>
-        <align>center</align>
-        <itemgap>50</itemgap>
-        <orientation>horizontal</orientation>
-        <usecontrolcoords>true</usecontrolcoords>
-        <control type="image">
-            <posy>6</posy>
-            <width>38</width>
-            <height>30</height>
-            <aspectratio>keep</aspectratio>
-            <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">common/featured_icon.png</texture>
-            <visible>!Window.IsActive(visualisation)</visible>
-        </control>
-            <control type="image">
-                <posy>6</posy>
-                <posx>-30</posx>
-                <width>38</width>
-                <height>30</height>
-                <animation effect="rotate" end="-90" center="auto" time="0" condition="true">Conditional</animation>
-                <aspectratio>keep</aspectratio>
-                <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">settingsarrow.png</texture>
-                <visible>Window.IsActive(visualisation)</visible>
-            </control>
-        <control type="label">
-            <label>$LOCALIZE[31635]</label>
-            <include>FeaturedTopLabel</include>
-            <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(5012)">Conditional</animation>
-            <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(5000).HasFocus">Conditional</animation>
-        </control>
-        <control type="label">
-            <label>$LOCALIZE[21888]</label>
-            <include>FeaturedTopLabel</include>
-            <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(6012)">Conditional</animation>
-            <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(6000).HasFocus">Conditional</animation>
-        </control>
-        <control type="label">
-            <label>$LOCALIZE[21887]</label>
-            <include>FeaturedTopLabel</include>
-            <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(7012)">Conditional</animation>
-            <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(7000).HasFocus">Conditional</animation>
-        </control>
-        <control type="label">
-            <label>$LOCALIZE[559]</label>
-            <include>FeaturedTopLabel</include>
-            <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(8012)">Conditional</animation>
-            <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(8000).HasFocus">Conditional</animation>
-        </control>
-        <control type="label">
-            <label>$LOCALIZE[20445]</label>
-            <include>FeaturedTopLabel</include>
-            <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9012)">Conditional</animation>
-            <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(9000).HasFocus">Conditional</animation>
-        </control>
-        <control type="label">
-            <label>Music Videos</label>
-            <include>FeaturedTopLabel</include>
-            <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(10012)">Conditional</animation>
-            <animation effect="zoom" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(10000).HasFocus">Conditional</animation>
-            <visible>IntegerGreaterThan(Window(home).Property(MusicVideos.Count),0)</visible>
-        </control>
-    </control>
-</control>
-</include>
+    </include>
 </includes>
