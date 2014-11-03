@@ -341,64 +341,44 @@
                         <info>Player.Progress</info>
                     </control>
                 </control>
-                <control type="group">
+                <control type="grouplist">
                     <visible>Player.HasAudio</visible>
-                    <control type="grouplist">
-                        <posx>1055</posx>
-                        <posy>702</posy>
-                        <width>950</width>
-                        <height>1080</height>
-                        <orientation>vertical</orientation>
-                        <itemgap>4</itemgap>
-                        <!--
-                        <control type="label">
-                            <width>900</width>
-                            <align>right</align>
-                            <height>27</height>
-                            <label>[UPPERCASE]$LOCALIZE[31889][/UPPERCASE]</label>
-                            <font>Font_Reg26</font>
-                            <textcolor>$VAR[TitleColorVar]</textcolor>
-                            <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
-                        </control>-->
-                        <control type="label">
-                            <width>830</width>
-                            <height>28</height>
-                            <align>right</align>
-                            <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(1).Duration,,][/COLOR]</label>
-                            <font>Font_Reg26</font>
-                        </control>
-                        <control type="label">
-                            <width>830</width>
-                            <height>28</height>
-                            <align>right</align>
-                            <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(2).Duration,,][/COLOR]</label>
-                            <font>Font_Reg26</font>
-                        </control>
-                        <control type="label">
-                            <width>830</width>
-                            <height>28</height>
-                            <align>right</align>
-                            <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(3).Duration,,][/COLOR]</label>
-                            <font>Font_Reg26</font>
-                        </control>
+                    <posx>1055</posx>
+                    <posy>702</posy>
+                    <width>950</width>
+                    <height>1080</height>
+                    <orientation>vertical</orientation>
+                    <itemgap>4</itemgap>
+                    <!--
+                    <control type="label">
+                        <width>900</width>
+                        <align>right</align>
+                        <height>27</height>
+                        <label>[UPPERCASE]$LOCALIZE[31889][/UPPERCASE]</label>
+                        <font>Font_Reg26</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
+                    </control>-->
+                    <control type="label">
+                        <width>830</width>
+                        <height>28</height>
+                        <align>right</align>
+                        <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(1).Duration,,][/COLOR]</label>
+                        <font>Font_Reg26</font>
                     </control>
-                    <control type="group">
-                        <visible>Skin.HasSetting(homeartistslideshow)</visible>
-                        <posx>1436</posx>
-                        <posy>672</posy>
-                        <animation effect="slide" start="575" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-                        <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
-                        <animation effect="fade" time="320">VisibleChange</animation>
-                        <control type="multiimage">
-                            <posx>22</posx>
-                            <posy>19</posy>
-                            <width>380</width>
-                            <height>354</height>
-                            <aspectratio>scale</aspectratio>
-                            <imagepath background="true">$VAR[NowPlayingMultiImageVar]</imagepath>
-                            <fadetime>750</fadetime>
-                            <timeperimage>5000</timeperimage>
-                        </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>28</height>
+                        <align>right</align>
+                        <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(2).Duration,,][/COLOR]</label>
+                        <font>Font_Reg26</font>
+                    </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>28</height>
+                        <align>right</align>
+                        <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]] - $INFO[MusicPlayer.Offset(3).Duration,,][/COLOR]</label>
+                        <font>Font_Reg26</font>
                     </control>
                 </control>
                 <control type="textbox">
@@ -489,7 +469,7 @@
         </control>
         <control type="grouplist" id="4010">
             <orientation>horizontal</orientation>
-                <include>Animation_WindowFade200</include>
+            <include>Animation_WindowFade200</include>
             <width>1920</width>
             <align>center</align>
             <posy>970</posy>
