@@ -223,78 +223,11 @@
                         <condition type="!Player.Playing" />
                     </animation>
                     <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                    <visible>!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
-                    <include>cdart</include>
-                </control>
-                <control type="image">
-                    <posx>262</posx>
-                    <posy>-243</posy>
-                    <width>387</width>
-                    <height>381</height>
-                    <aspectratio>keep</aspectratio>
-                    <fadetime>300</fadetime>
-                    <visible>Skin.HasSetting(cdartinvis)</visible>
-                    <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
-                    <animation effect="slide" end="-180" time="320" tween="cubic">Hidden</animation>
-                    <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-                    <animation type="WindowClose">
-                        <effect type="slide" end="-180" time="320" tween="cubic" easing="in" />
-                        <effect type="fade" start="100" end="0" time="0" delay="320" />
-                        <condition type="!Player.Playing" />
-                    </animation>
-                    <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                     <include>vinylart</include>
-                    <visible>Skin.HasSetting(vinylart)</visible>
-                </control>
-                <control type="image">
-                    <posx>262</posx>
-                    <posy>-243</posy>
-                    <width>387</width>
-                    <height>381</height>
-                    <aspectratio>keep</aspectratio>
-                    <fadetime>300</fadetime>
-                    <visible>Skin.HasSetting(cdartinvis)</visible>
-                    <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
-                    <animation effect="slide" end="-180" time="320" tween="cubic">Hidden</animation>
-                    <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-                    <animation type="WindowClose">
-                        <effect type="slide" end="-180" time="320" tween="cubic" easing="in" />
-                        <effect type="fade" start="100" end="0" time="0" delay="320" />
-                        <condition type="!Player.Playing" />
-                    </animation>
-                    <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                    <include>blurayart</include>
-                    <visible>Skin.HasSetting(blurayart)</visible>
-                </control>
-                <control type="group">
-                    <animation effect="fade" time="600">VisibleChange</animation>
-                    <visible>!Skin.HasSetting(vinylart)</visible>
-                    <control type="image">
-                        <posx>68</posx>
-                        <posy>-248</posy>
-                        <width>398</width>
-                        <height>398</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture diffuse="thumbs/boxes/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-270</posy>
-                        <width>490</width>
-                        <height>450</height>
-                        <texture>thumbs/boxes/cd_shadow_light.png</texture>
-                    </control>
-                    <control type="image">
-                        <posy>-270</posy>
-                        <width>490</width>
-                        <height>450</height>
-                        <texture>thumbs/boxes/cd_glass.png</texture>
-                    </control>
                 </control>
                 <control type="group">
                     <posx>40</posx>
                     <posy>13</posy>
-                    <animation effect="fade" time="600">VisibleChange</animation>
-                    <visible>Skin.HasSetting(vinylart)</visible>
                     <control type="image">
                         <posx>42</posx>
                         <posy>-270</posy>
