@@ -635,14 +635,14 @@
                             <height>1</height>
                             <texture>views/lowlistpanel_line.png</texture>
                         </control>
-                        <control type="image">
-                            <posx>14</posx>
-                            <width>897</width>
-                            <height>66</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                            <include>PanelGlowFade</include>
-                            <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(506)">Conditional</animation>
-                        </control>
+                    <control type="image">
+                        <posy>-20</posy>
+                        <width>930</width>
+                        <height>110</height>
+                <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
+                        <include>PanelGlowFade</include>
+                        <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(506)">Conditional</animation>
+                    </control>
                     </control>
                     <control type="group">
                         <visible>Skin.HasSetting(lowlistmusicwidelist)</visible>
