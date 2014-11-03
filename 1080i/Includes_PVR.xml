@@ -214,13 +214,11 @@
             </control>
             <include>Neon_Floor</include>
         </control>
-		<control type="group">
-            <visible>Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
             <control type="videowindow">
+            <visible>Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
                 <include>FullscreenDimensions</include>
                 <visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
             </control>
-        </control>
 		<include>Furniture_Glow</include>
 	</include>
 

@@ -1348,7 +1348,7 @@
     </include>
     <include name="CommonMediaPlayingBackground">
         <control type="group">
-            <visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
+            <visible>Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)</visible>
             <control type="image">
                 <texture>common/black.png</texture>
                 <include>FullscreenDimensions</include>
@@ -1359,7 +1359,7 @@
         </control>
         <control type="visualisation">
             <include>FullscreenDimensions</include>
-            <visible>Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis)</visible>
+            <visible>Player.HasAudio + Skin.HasSetting(ShowBackgroundVis)</visible>
         </control>
     </include>
     <include name="CommonFanartVarsSingle">

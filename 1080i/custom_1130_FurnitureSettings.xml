@@ -17,7 +17,7 @@
                 <height>620</height>
                 <texture colordiffuse="$VAR[AreaColorVar]" border="50">osd/osd_settings_back_glow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <animation type="Conditional" condition="!Stringcompare(Window.Property(actualItem),MainMenu)">
+                <animation type="Conditional" condition="!Stringcompare(Window.Property(actualItem),MainMenu) + !Stringcompare(Window.Property(actualItem),RSS)">
                     <effect type="zoom" end="100,66" time="320" easing="in" tween="cubic" />
                 </animation>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -29,7 +29,7 @@
                 <width>1210</width>
                 <height>620</height>
                 <texture colordiffuse="$VAR[DialogColorVar]" border="50">osd/osd_settings_back.png</texture>
-                <animation type="Conditional" condition="!Stringcompare(Window.Property(actualItem),MainMenu)">
+                <animation type="Conditional" condition="!Stringcompare(Window.Property(actualItem),MainMenu) + !Stringcompare(Window.Property(actualItem),RSS)">
                     <effect type="zoom" end="100,66" time="320" easing="in" tween="cubic" />
                 </animation>
             </control>
@@ -145,8 +145,8 @@
                     <label>31615</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
-                    <selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),NowPlaying)</visible>
+                    <selected>Skin.HasSetting(ShowBackgroundVis)</selected>
+                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
                 <control type="button" id="309">
                     <label>$LOCALIZE[31802]:</label>
@@ -158,14 +158,14 @@
                     <onclick condition="Skin.HasSetting(artistslideshowhome)">Skin.SetBool(musicfanarthome)</onclick>
                     <onclick condition="Skin.HasSetting(artistslideshowhome)">Skin.Reset(artistslideshowhome)</onclick>
                     <onclick condition="Skin.HasSetting(musicfanarthome)">Skin.Reset(musicfanarthome)</onclick>
-                    <visible>Stringcompare(Window.Property(actualItem),NowPlaying)</visible>
+                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
                 <control type="radiobutton" id="306">
                     <label>31611</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
-                    <selected>!Skin.HasSetting(ShowBackgroundVideo)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),NowPlaying)</visible>
+                    <selected>Skin.HasSetting(ShowBackgroundVideo)</selected>
+                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
             </control>
         </control>
