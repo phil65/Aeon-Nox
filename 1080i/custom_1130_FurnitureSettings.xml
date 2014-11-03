@@ -141,6 +141,32 @@
                     <selected>Skin.HasSetting(ActorBirthdayRSS)</selected>
                     <visible>Stringcompare(Window.Property(actualItem),RSS) + System.HasAddon(script.metadata.actors)</visible>
                 </control>
+                <control type="radiobutton" id="305">
+                    <label>31615</label>
+                    <include>Objects_CommonSettingsButton</include>
+                    <onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
+                    <selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
+                    <visible>Stringcompare(Window.Property(actualItem),NowPlaying)</visible>
+                </control>
+                <control type="button" id="309">
+                    <label>$LOCALIZE[31802]:</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[HomeMusicBGVar][/COLOR]</label2>
+                    <include>Objects_CommonSettingsButton</include>
+                    <onclick condition="!Skin.HasSetting(musicfanarthome) + !Skin.HasSetting(homecdwall) + !Skin.HasSetting(artistslideshowhome)">Skin.SetBool(homecdwall)</onclick>
+                    <onclick condition="Skin.HasSetting(homecdwall)">Skin.SetBool(artistslideshowhome)</onclick>
+                    <onclick condition="Skin.HasSetting(homecdwall)">Skin.Reset(homecdwall)</onclick>
+                    <onclick condition="Skin.HasSetting(artistslideshowhome)">Skin.SetBool(musicfanarthome)</onclick>
+                    <onclick condition="Skin.HasSetting(artistslideshowhome)">Skin.Reset(artistslideshowhome)</onclick>
+                    <onclick condition="Skin.HasSetting(musicfanarthome)">Skin.Reset(musicfanarthome)</onclick>
+                    <visible>Stringcompare(Window.Property(actualItem),NowPlaying)</visible>
+                </control>
+                <control type="radiobutton" id="306">
+                    <label>31611</label>
+                    <include>Objects_CommonSettingsButton</include>
+                    <onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
+                    <selected>!Skin.HasSetting(ShowBackgroundVideo)</selected>
+                    <visible>Stringcompare(Window.Property(actualItem),NowPlaying)</visible>
+                </control>
             </control>
         </control>
     </controls>
