@@ -1246,7 +1246,7 @@
                 </control>
                 <control type="grouplist" id="5020">
                     <posx>465</posx>
-                    <posy>-130</posy>
+                    <posy>-160</posy>
                     <width>1373</width>
                     <height>80</height>
                     <onleft>5020</onleft>
@@ -1296,9 +1296,9 @@
                     </control>-->
                     <control type="spincontrol" id="5019">
                         <posx>0</posx>
-                        <posy>-20</posy>
-                        <width>50</width>
-                        <height>88</height>
+                        <posy>-5</posy>
+                        <width>70</width>
+                        <height>100</height>
                     </control>
                 </control>
                 <control type="image">
@@ -1902,7 +1902,7 @@
                 </control>
                 <control type="grouplist" id="5030">
                     <posx>700</posx>
-                    <posy>198</posy>
+                    <posy>168</posy>
                     <width>1373</width>
                     <onleft>5030</onleft>
                     <onright>5030</onright>
@@ -1940,9 +1940,9 @@
                     </control>
                     <control type="spincontrol" id="5034">
                         <posx>0</posx>
-                        <posy>-20</posy>
-                        <width>50</width>
-                        <height>88</height>
+                        <posy>-5</posy>
+                        <width>70</width>
+                        <height>100</height>
                     </control>
                 </control>
             </control>
@@ -3052,15 +3052,17 @@
         </control>
     </include>
     <include name="WidgetMenuLabel">
-        <width min="15" max="230">auto</width>
-        <height>42</height>
+        <width>300</width>
+        <height>90</height>
         <align>center</align>
-        <aligny>top</aligny>
+        <aligny>center</aligny>
         <font>Font_Reg33_Caps</font>
         <textcolor>grey</textcolor>
         <focusedcolor>white2</focusedcolor>
         <scroll>false</scroll>
-    </include>
+                <texturefocus border="20" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                <texturenofocus border="20">buttons/roundedbutton-nofocus.png</texturenofocus>
+                    </include>
     <include name="WidgetLandscapeLayout">
         <control type="group">
             <visible>IsEmpty(ListItem.Art(landscape))</visible>
