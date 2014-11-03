@@ -11,7 +11,6 @@
         <control type="group">
             <posy>280</posy>
             <include>Animation_DialogPopupOpenClose</include>
-            <animation effect="slide" end="0,-460" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget)">Conditional</animation>
             <control type="image">
                 <posx>267</posx>
                 <posy>180</posy>
@@ -203,12 +202,6 @@
                     <onclick condition="!Skin.HasSetting(rotatenowplayingpanel)">Notification($LOCALIZE[31902],$LOCALIZE[31916],10000)</onclick>
                     <onclick condition="!Skin.HasSetting(rotatenowplayingpanel)">Skin.SetBool(rotatenowplayingpanel)</onclick>
                     <onclick condition="Skin.HasSetting(rotatenowplayingpanel)">Skin.Reset(rotatenowplayingpanel)</onclick>
-                </control>
-                <control type="radiobutton" id="455">
-                    <label>31729</label>
-                    <include>Objects_NowPlayingSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(movenowplayingwidget)</onclick>
-                    <selected>Skin.HasSetting(movenowplayingwidget)</selected>
                 </control>
             </control>
         </control>
