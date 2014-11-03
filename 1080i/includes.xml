@@ -130,7 +130,6 @@
                     <font>Font_Bold28</font>
                     <align>left</align>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[ListItem.Property(EventName)]</label>
                 </control>
                 <control type="textbox">
@@ -148,7 +147,6 @@
                     <height>40</height>
                     <font>Font_Reg25</font>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>white2</textcolor>
                     <info>ListItem.Label2</info>
                 </control>
                 <control type="label">
@@ -158,7 +156,6 @@
                     <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
                     <font>Font_Reg25</font>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>white2</textcolor>
                 </control>
             </control>
         </itemlayout>
@@ -203,7 +200,6 @@
                     <font>Font_Bold28</font>
                     <align>left</align>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[ListItem.Property(EventName)]</label>
                 </control>
                 <control type="textbox">
@@ -221,7 +217,6 @@
                     <height>40</height>
                     <font>Font_Reg25</font>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>white2</textcolor>
                     <info>ListItem.Label2</info>
                 </control>
                 <control type="label">
@@ -231,7 +226,6 @@
                     <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
                     <font>Font_Reg25</font>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>white2</textcolor>
                 </control>
             </control>
             <control type="image">
@@ -453,9 +447,8 @@
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
             <control type="image">
-                <texture>common/black.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(BackgroundDarkness)]">common/black.png</texture>
                 <include>FullscreenDimensions</include>
-                <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
             </control>
@@ -463,23 +456,20 @@
                 <posy>472</posy>
                 <width>1920</width>
                 <height>608</height>
-                <texture>views/showcase_floor.png</texture>
-                <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
+                <texture colordiffuse="$VAR[ExtendedColorDiffuseVar]">views/showcase_floor.png</texture>
             </control>
             <control type="image">
                 <posy>874</posy>
                 <width>1920</width>
                 <height>206</height>
-                <texture>views/panel_spot.png</texture>
-                <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+                <texture colordiffuse="$VAR[SpotColorVar2]">views/panel_spot.png</texture>
             </control>
             <include>Neon_Floor</include>
             <control type="image">
                 <posy>-100</posy>
                 <width>1920</width>
                 <height>608</height>
-                <texture flipy="true">views/showcase_glow.png</texture>
-                <colordiffuse>black</colordiffuse>
+                <texture colordiffuse="black" flipy="true">views/showcase_glow.png</texture>
             </control>
         </control>
     </include>
@@ -662,7 +652,6 @@
         <width>32</width>
         <height>35</height>
         <textoffsetx>0</textoffsetx>
-        <textcolor>white2</textcolor>
         <align>center</align>
         <font>Font_Reg20</font>
         <selectedcolor>$VAR[AreaColorVar]</selectedcolor>
@@ -806,12 +795,12 @@
     </include>
     <include name="DialogVideoInfoButton">
         <width>254.5</width>
-        <height>50</height>
+        <height>90</height>
         <textoffsetx>0</textoffsetx>
-        <textoffsety>4</textoffsety>
         <align>center</align>
-        <aligny>top</aligny>
-        <texturenofocus>button-nofocus.png</texturenofocus>
+        <aligny>center</aligny>
+        <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+        <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
         <font>Font_Reg30_2</font>
         <textcolor>grey</textcolor>
         <disabledcolor>66868686</disabledcolor>
@@ -1262,8 +1251,7 @@
                 <posx>-80</posx>
                 <width>2080</width>
                 <height>87</height>
-                <texture border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
-                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                <texture colordiffuse="$VAR[ExtendedColorVar]" border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
             </control>
             <control type="progress" id="23">
                 <posx>150</posx>
@@ -1423,7 +1411,6 @@
                     <include>ClassicOSDButton</include>
                     <textureradioon>osd/buttons/OSDUpNF.png</textureradioon>
                     <textureradiooff>osd/buttons/OSDUpNF.png</textureradiooff>
-                    <colordiffuse>white</colordiffuse>
                     <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
                     <onclick>PlayerControl(Next)</onclick>
                 </control>
@@ -1799,7 +1786,6 @@
                     <width>397</width>
                     <height>34</height>
                     <texture>common/bgcolor.png</texture>
-                    <colordiffuse>99FFFFFF</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>301</posx>
@@ -1807,16 +1793,14 @@
                     <width>120</width>
                     <height>62</height>
                     <aspectratio>keep</aspectratio>
-                    <texture>tvguide/$INFO[ListItem.Property(StatusID)].png</texture>
-                    <colordiffuse>floor</colordiffuse>
+                    <texture colordiffuse="floor">tvguide/$INFO[ListItem.Property(StatusID)].png</texture>
                 </control>
                 <control type="image">
                     <posx>20</posx>
                     <posy>491</posy>
                     <width>35</width>
                     <height>35</height>
-                    <texture>tvguide/clock.png</texture>
-                    <colordiffuse>floor</colordiffuse>
+                    <texture colordiffuse="floor">tvguide/clock.png</texture>
                 </control>
                 <control type="label">
                     <posx>30</posx>
@@ -1884,8 +1868,7 @@
                 <width>135</width>
                 <height>90</height>
                 <aspectratio>keep</aspectratio>
-                <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Property(Network),flags/studios/,.png]</texture>
-                <colordiffuse>floor</colordiffuse>
+                <texture colordiffuse="floor" fallback="flags/studios/default-studio.png">$INFO[ListItem.Property(Network),flags/studios/,.png]</texture>
             </control>
             <control type="image">
                 <posx>435</posx>

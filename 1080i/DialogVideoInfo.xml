@@ -511,18 +511,11 @@
                                 <posy>556</posy>
                                 <height>330</height>
                                 <itemgap>3</itemgap>
-                                <control type="label">
-                                    <label>$INFO[ListItem.TagLine]</label>
-                                    <height>30</height>
-                                    <width>1016</width>
-                                    <font>Font_Bold30</font>
-                                    <visible>!IsEmpty(ListItem.Tagline)</visible>
-                                </control>
                                 <control type="textbox" id="800">
                                     <width>1016</width>
                                     <height>325</height>
                                     <align>left</align>
-                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$INFO[ListItem.Plot]</label>
+                                    <label fallback="31003">[B]$INFO[ListItem.TagLine,,[CR]][/B]$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$INFO[ListItem.Plot]</label>
                                     <font>Font_Reg28_2</font>
                                     <pagecontrol>60</pagecontrol>
                                     <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
@@ -531,7 +524,7 @@
                                 <control type="textbox">
                                     <width>746</width>
                                     <height>325</height>
-                                    <label fallback="31003">$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$INFO[ListItem.Plot]</label>
+                                    <label fallback="31003">[B]$INFO[ListItem.TagLine,,[CR]][/B]$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$INFO[ListItem.Plot]</label>
                                     <font>Font_Reg28_2</font>
                                     <pagecontrol>60</pagecontrol>
                                     <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
@@ -550,27 +543,26 @@
                                 <!--
                                 <posx>825</posx>
                                 <posy>68</posy>-->
-                                <posx>785</posx>
-                                <posy>592</posy>
-                                <width>300</width>
-                                <height>300</height>
+                                <posx>780</posx>
+                                <posy>558</posy>
+                                <width>330</width>
+                                <height>330</height>
                                 <texture background="true">$INFO[ListItem.Art(discart)]</texture>
                                 <!--
                                 <visible>!ControlGroup(6000).HasFocus</visible>-->
                                 <animation type="WindowOpen" reversible="false">
                                     <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
-                                    <effect type="rotate" start="0" center="935,742" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
-                                    <effect type="zoom" start="104" center="935,742" end="100" delay="2120" time="140" tween="quadratic" easing="out" />
+                                    <effect type="rotate" start="0" center="945,718" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
+                                    <effect type="zoom" start="104" center="945,718" end="100" delay="2120" time="140" tween="quadratic" easing="out" />
                                 </animation>
                                 <animation type="WindowClose" reversible="false">
                                     <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
-                                    <effect type="rotate" start="0" center="935,742" end="-720" time="700" tween="quadratic" easing="out" />
+                                    <effect type="rotate" start="0" center="945,718" end="-720" time="700" tween="quadratic" easing="out" />
                                 </animation>
                             </control>
                             <control type="spincontrol" id="60">
                                 <posx>995</posx>
                                 <animation effect="slide" start="0,0" end="-260,0" time="0" condition="!Control.IsVisible(800)">Conditional</animation>
-                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="!IsEmpty(ListItem.Tagline)">Conditional</animation>
                                 <posy>532</posy>
                                 <width>50</width>
                                 <height>88</height>
@@ -1028,7 +1020,7 @@
                 </control>
                 <control type="grouplist" id="5000">
                     <posx>827</posx>
-                    <posy>560</posy>
+                    <posy>540</posy>
                     <width>1018</width>
                     <height>400</height>
                     <onleft>5000</onleft>
