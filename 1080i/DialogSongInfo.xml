@@ -66,11 +66,7 @@
                             <effect type="fade" start="100" end="0" time="0" delay="320" />
                             <condition type="!Player.Playing" />
                         </animation>
-                        <!--
-                        <animation effect="rotate" end="-360" center="auto" time="6000" loop="true" reversible="false" condition="Player.HasMedia + !Player.Paused">Conditional</animation>-->
-                        <include condition="!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)">cdartlibrary</include>
-                        <include condition="Skin.HasSetting(vinylart)">vinylartlibrary</include>
-                        <include condition="Skin.HasSetting(blurayart)">blurayartlibrary</include>
+                        <texture background="true" fallback="common/cdart/vinyl.png">$VAR[cdARTVar]</texture>
                     </control>
                     <control type="group">
                         <animation effect="fade" time="600">VisibleChange</animation>

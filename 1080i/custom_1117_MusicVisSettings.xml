@@ -76,17 +76,6 @@
                     <onclick>Skin.ToggleSetting(showvisinfo)</onclick>
                     <selected>Skin.HasSetting(showvisinfo)</selected>
                 </control>
-                <control type="button" id="451">
-                    <label>$LOCALIZE[31377]</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$VAR[CDArtLabelVar][/COLOR]</label2>
-                    <include>Objects_CommonSettingsButton</include>
-                    <onclick condition="!Skin.HasSetting(CDArtinVis)">Skin.SetBool(CDArtinVis)</onclick>
-                    <onclick condition="Skin.HasSetting(CDArtinVis) + !Skin.HasSetting(blurayart) + !Skin.HasSetting(vinylart)">Skin.SetBool(blurayart)</onclick>
-                    <onclick condition="Skin.HasSetting(CDArtinVis) + Skin.HasSetting(blurayart) + !Skin.HasSetting(vinylart)">Skin.SetBool(vinylart)</onclick>
-                    <onclick condition="Skin.HasSetting(CDArtinVis) + Skin.HasSetting(blurayart) + !Skin.HasSetting(vinylart)">Skin.Reset(blurayart)</onclick>
-                    <onclick condition="Skin.HasSetting(CDArtinVis) + !Skin.HasSetting(blurayart) + Skin.HasSetting(vinylart)">Skin.Reset(vinylart)</onclick>
-                    <onclick condition="Skin.HasSetting(CDArtinVis) + !Skin.HasSetting(blurayart) + Skin.HasSetting(vinylart)">Skin.Reset(CDArtinVis)</onclick>
-                </control>
                 <control type="radiobutton" id="463">
                     <label>31887</label>
                     <include>Objects_CommonSettingsButton</include>

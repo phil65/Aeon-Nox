@@ -471,9 +471,7 @@
                         <height>412</height>
                         <aspectratio>keep</aspectratio>
                         <fadetime>IconCrossfadeTime2</fadetime>
-                        <include condition="!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)">cdartlibrary</include>
-                        <include condition="Skin.HasSetting(vinylart)">vinylartlibrary</include>
-                        <include condition="Skin.HasSetting(blurayart)">blurayartlibrary</include>
+                        <texture background="true" fallback="common/cdart/vinyl.png">$VAR[cdARTVar]</texture>
                         <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="StringCompare(ListItem.Album,MusicPlayer.Album) + !IsEmpty(ListItem.Thumb) + Player.HasAudio">Conditional</animation>
                     </control>
                 </control>

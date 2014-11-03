@@ -1833,11 +1833,6 @@
         <value condition="[Skin.HasSetting(NoVideoLibraryFanartMusicVideos)  + Container.Content(musicvideos)] | [Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(NoVideoLibraryFanart)  + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]">$LOCALIZE[106]</value>
         <value>$LOCALIZE[107]</value>
     </variable>
-    <variable name="CDArtFallbackLabelVar">
-        <value condition="Skin.HasSetting(vinylart)">$LOCALIZE[31227]</value>
-        <value condition="Skin.HasSetting(blurayart)">$LOCALIZE[31255]</value>
-        <value>CD</value>
-    </variable>
     <variable name="Widget1ContentVar">
         <value condition="!IsEmpty(Window(home).Property(update))">-</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetContent)]</value>
@@ -1919,12 +1914,6 @@
         <value condition="Substring(Control.GetLabel(4322),thebigpicture)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),mostplayedroms)">bla</value>
         <value condition="Substring(Control.GetLabel(4322),nextaired)">bla</value> -->
-    </variable>
-    <variable name="CDArtLabelVar">
-        <value condition="Skin.HasSetting(vinylart)">$LOCALIZE[31227]</value>
-        <value condition="Skin.HasSetting(blurayart)">$LOCALIZE[31255]</value>
-        <value condition="Skin.HasSetting(CDArtinVis)">$LOCALIZE[571]</value>
-        <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="NowPlayingTextBoxLabelVar">
         <value condition="Window.IsActive(visualisation) + !Skin.HasSetting(activatepanelrotation)">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[24016]:  [COLOR white6],[/COLOR][CR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[24017]: [COLOR white6],[/COLOR][CR]]$INFO[Window(visualisation).Property(ArtistSlideshow.ArtistBiography),$LOCALIZE[21887]:  [COLOR white6],[/COLOR]]</value>

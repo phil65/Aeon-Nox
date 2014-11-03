@@ -406,9 +406,7 @@
                                         <effect delay="3800" easing="out" end="0" start="1610,0" time="1620" tween="quadratic" type="slide"/>
                                         <effect center="358,240" delay="3800" easing="out" end="720" start="0" time="1620" tween="quadratic" type="rotate"/>
                                     </animation>
-                                    <include condition="!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)">cdartlibrary</include>
-                                    <include condition="Skin.HasSetting(vinylart)">vinylartlibrary</include>
-                                    <include condition="Skin.HasSetting(blurayart)">blurayartlibrary</include>
+                                    <texture background="true" fallback="common/cdart/vinyl.png">$VAR[cdARTVar]</texture>
                                 </control>
                                 <control id="3" type="image">
                                     <posx>68</posx>
