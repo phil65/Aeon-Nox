@@ -1088,6 +1088,7 @@
                     <control type="grouplist" id="6100">
                         <width>285</width>
                         <orientation>vertical</orientation>
+                        <itemgap>-30</itemgap>
                         <visible>!Skin.HasSetting(kioskmode)</visible>
                         <control type="button" id="6">
                             <label>$LOCALIZE[184]</label>
@@ -1099,7 +1100,7 @@
                             <animation effect="zoom" start="100,0" end="100,100" time="300" easing="out" tween="cubic">VisibleChange</animation>
                             <label>31030</label>
                             <onright>6000</onright>
-                            <include>DialogVideoInfoButtonSolid</include>
+                            <include>DialogVideoInfoButton</include>
                             <visible>ControlGroup(6100).HasFocus</visible>
                             <onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
                             <visible>System.HasAddon(script.libraryeditor) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
@@ -1107,6 +1108,7 @@
                     </control>
                     <control type="grouplist" id="6000">
                         <width>285</width>
+                        <itemgap>-30</itemgap>
                         <orientation>vertical</orientation>
                         <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
                         <control type="button" id="10">
@@ -1114,7 +1116,7 @@
                             <include>DialogVideoInfoButton</include>
                         </control>
                         <control type="button" id="5052">
-                            <include>DialogVideoInfoButtonSolid</include>
+                            <include>DialogVideoInfoButton</include>
                             <label>$LOCALIZE[413]</label>
                             <visible>ControlGroup(6000).HasFocus</visible>
                             <animation effect="zoom" start="100,0" end="100,100" time="300" easing="out" tween="cubic">VisibleChange</animation>
@@ -1123,7 +1125,7 @@
                             <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID])</onclick>
                         </control>
                         <control type="button" id="5053">
-                            <include>DialogVideoInfoButtonSolid</include>
+                            <include>DialogVideoInfoButton</include>
                             <label>$LOCALIZE[14061]</label>
                             <animation effect="zoom" start="100,0" end="100,100" center="0,-50" time="300" easing="out" tween="cubic">VisibleChange</animation>
                             <visible>ControlGroup(6000).HasFocus</visible>
@@ -1133,7 +1135,7 @@
                         </control>
                         <control type="button" id="21">
                             <label>$LOCALIZE[31467]</label>
-                            <include>DialogVideoInfoButtonSolid</include>
+                            <include>DialogVideoInfoButton</include>
                             <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
                             <onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
                             <animation effect="zoom" start="100,0" end="100,100" center="0,-100" time="300" easing="out" tween="cubic">VisibleChange</animation>
@@ -1142,7 +1144,7 @@
                         </control>
                         <control type="button" id="23">
                             <label>$LOCALIZE[31365]</label>
-                            <include>DialogVideoInfoButtonSolid</include>
+                            <include>DialogVideoInfoButton</include>
                             <onclick>RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
                             <animation effect="zoom" start="100,0" end="100,100" time="300" center="0,-150" easing="out" tween="cubic">VisibleChange</animation>
                             <visible>ControlGroup(6000).HasFocus</visible>
@@ -1150,7 +1152,7 @@
                         </control>
                         <control type="button" id="24">
                             <label>$LOCALIZE[31468]</label>
-                            <include>DialogVideoInfoButtonSolid</include>
+                            <include>DialogVideoInfoButton</include>
                             <onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs)</onclick>
                             <animation effect="zoom" start="100,0" end="100,100" center="0,-150" time="300" easing="out" tween="cubic">VisibleChange</animation>
                             <visible>ControlGroup(6000).HasFocus</visible>
