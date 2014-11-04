@@ -872,8 +872,8 @@
                 </control>
                 <control type="button" id="5050">
                     <include>HiddenObject</include>
-                    <onleft>SetFocus(8993)</onleft>
-                    <onright>SetFocus(8993)</onright>
+                    <onleft>SetFocus(9000)</onleft>
+                    <onright>SetFocus(9000)</onright>
                     <onunfocus>ClearProperty(weatherwidget,home)</onunfocus>
                     <include>NavigationWidget1</include>
                     <onclick condition="Substring(Control.GetLabel(4321),wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
@@ -1945,7 +1945,7 @@
                     <width>287</width>
                     <height>409</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                    <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>19.5</bordersize>
                 </control>
@@ -2012,7 +2012,7 @@
                     <width>287</width>
                     <height>409</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                    <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>19.5</bordersize>
                 </control>
@@ -3263,8 +3263,8 @@
     <include name="NavigationWidget1">
         <onup condition="Control.IsVisible(4445)">SetFocus(4445)</onup>
         <onup condition="!Control.IsVisible(4445)">SetFocus(9000)</onup>
-        <ondown>8993</ondown>
-        <onback>8993</onback>
+        <ondown>9000</ondown>
+        <onback>9000</onback>
     </include>
     <include name="FeaturedWidgetSquareLayout">
         <control type="image">
