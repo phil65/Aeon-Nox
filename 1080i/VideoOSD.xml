@@ -20,11 +20,11 @@
         </control>
         <control type="group">
             <animation effect="slide" end="0,260" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1118)">Conditional</animation>
-            <visible>!Window.IsActive(fullscreeninfo)</visible>
+            <visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml)</visible>
             <include condition="VideoPlayer.Content(LiveTV)">FullScreenInfoBarLiveTV</include>
         </control>
         <control type="group">
-            <visible>!Window.IsActive(fullscreeninfo)</visible>
+            <visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml)</visible>
             <animation type="Visible">
                 <effect type="fade" time="160" end="100" />
                 <effect type="slide" time="160" start="0,98" end="0,0" tween="cubic" />

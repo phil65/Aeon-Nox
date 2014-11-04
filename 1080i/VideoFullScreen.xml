@@ -5,8 +5,8 @@
     <controls>
         <control type="group" id="0">
             <animation effect="slide" end="0,45" time="160" tween="cubic" condition="Window.IsVisible(seekbar) + !Skin.HasSetting(Show_Info_Paused)">Conditional</animation>
-            <animation effect="slide" end="0,165" time="160" tween="cubic" condition="[Window.IsVisible(seekbar) + Skin.HasSetting(Show_Info_Paused)] | [Window.IsVisible(fullscreeninfo) + Player.Paused]">Conditional</animation>
-            <animation effect="slide" end="0,135" time="160" tween="cubic" condition="!VideoPlayer.Content(LiveTV) + Window.IsVisible(fullscreeninfo) + IsEmpty(Window(home).Property(morefullscreeninfo)) + !Player.Paused">Conditional</animation>
+            <animation effect="slide" end="0,165" time="160" tween="cubic" condition="[Window.IsVisible(seekbar) + Skin.HasSetting(Show_Info_Paused)] | [Window.IsVisible(script-HomeWindow Script-fullscreeninfo.xml) + Player.Paused]">Conditional</animation>
+            <animation effect="slide" end="0,135" time="160" tween="cubic" condition="!VideoPlayer.Content(LiveTV) + Window.IsVisible(script-HomeWindow Script-fullscreeninfo.xml) + IsEmpty(Window(home).Property(morefullscreeninfo)) + !Player.Paused">Conditional</animation>
             <!-- codec infos -->
             <control type="image">
                 <posy>-465</posy>
@@ -287,7 +287,7 @@
                 <effect type="fade" time="160" start="100" end="0" />
                 <effect type="slide" time="160" end="0,-98" easing="in" tween="cubic" />
             </animation>
-            <visible>![Player.Forwarding|Player.Seeking] + ![Window.IsVisible(seekbar) | Window.IsVisible(fullscreeninfo)]</visible>
+            <visible>![Player.Forwarding|Player.Seeking] + ![Window.IsVisible(seekbar) | Window.IsVisible(script-HomeWindow Script-fullscreeninfo.xml)]</visible>
             <visible>VideoPlayer.Content(LiveTV)</visible>
             <control type="image" id="1">
                 <posx>704</posx>
@@ -309,7 +309,7 @@
             </control>
         </control>
         <control type="group" id="2">
-			<visible>[Player.ShowInfo|Player.Forwarding|Player.Seeking] + ![Window.IsVisible(fullscreeninfo) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
+			<visible>[Player.ShowInfo|Player.Forwarding|Player.Seeking] + ![Window.IsVisible(script-HomeWindow Script-fullscreeninfo.xml) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.ChannelName)</visible>
             <include>FullScreenInfoBarLiveTV</include>
         </control>

@@ -14,12 +14,12 @@
     <onunload>RunScript(script.pvrosd,close_page)</onunload>
     <controls>
         <control type="group"> <!-- Extended channel list (center) -->
-			<visible>!Window.IsActive(fullscreeninfo) + Skin.HasSetting(alternatetvosd)</visible>
+			<visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) + Skin.HasSetting(alternatetvosd)</visible>
             <include condition="Skin.HasSetting(alternatetvosd) + VideoPlayer.Content(LiveTV)">ChannelOSDExtended</include>
         </control>
-		
+
         <control type="group"> <!-- Mini channel list (right side) - original -->
-            <visible>!Window.IsActive(fullscreeninfo) + !Skin.HasSetting(alternatetvosd)</visible>
+            <visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) + !Skin.HasSetting(alternatetvosd)</visible>
             <include condition="!Skin.HasSetting(alternatetvosd) + VideoPlayer.Content(LiveTV)">ChannelOSDStandard</include>
         </control>
     </controls>

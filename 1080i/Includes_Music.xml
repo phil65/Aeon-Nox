@@ -695,155 +695,153 @@
         </control>
     </include>
     <include name="ClassicMusicOSD">
-        <control type="group">
-            <control type="grouplist" id="650">
-                <posy>4</posy>
-                <width>640</width>
-                <height>150</height>
-                <align>left</align>
-                <itemgap>-25</itemgap>
-                <scrolltime tween="sine">200</scrolltime>
-                <orientation>horizontal</orientation>
-                <onup>Dialog.Close(musicosd)</onup>
-                <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-                <onleft>708</onleft>
-                <onright>600</onright>
-                <control type="radiobutton" id="700">
-                    <textureradioon>osd/buttons/OSDPlaylistNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDPlaylistNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>ActivateWindow(MusicPlaylist)</onclick>
-                </control>
-                <control type="radiobutton" id="500">
-                    <textureradioon>osd/buttons/OSDVizNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDVizNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                </control>
-                <control type="radiobutton" id="701">
-                    <textureradioon>osd/buttons/OSDSettingsNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDSettingsNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
-                </control>
-                <control type="radiobutton" id="702">
-                    <textureradioon>osd/buttons/OSDVideoNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDVideoNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>ActivateWindow(122)</onclick>
-                </control>
+        <control type="grouplist" id="650">
+            <posy>4</posy>
+            <width>640</width>
+            <height>150</height>
+            <align>left</align>
+            <itemgap>-25</itemgap>
+            <scrolltime tween="sine">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <onup>Dialog.Close(musicosd)</onup>
+            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
+            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+            <onleft>708</onleft>
+            <onright>600</onright>
+            <control type="radiobutton" id="700">
+                <textureradioon>osd/buttons/OSDPlaylistNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDPlaylistNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>ActivateWindow(MusicPlaylist)</onclick>
             </control>
-            <control type="grouplist" id="652">
-                <description>Video settings buttons</description>
-                <posy>4</posy>
-                <width>1920</width>
-                <height>150</height>
-                <align>center</align>
-                <itemgap>-25</itemgap>
-                <scrolltime tween="sine">200</scrolltime>
-                <orientation>horizontal</orientation>
-                <onup>Dialog.Close(musicosd)</onup>
-                <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-                <onleft>702</onleft>
-                <onright>703</onright>
-                <control type="radiobutton" id="600">
-                    <textureradioon>osd/buttons/OSDPrevTrackNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDPrevTrackNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>PlayerControl(Previous)</onclick>
-                </control>
-                <control type="radiobutton" id="601">
-                    <textureradioon>osd/buttons/OSDRewindNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDRewindNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>PlayerControl(Rewind)</onclick>
-                </control>
-                <control type="radiobutton" id="602">
-                    <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
-                    <textureradioon>osd/buttons/OSDPlayNF.png</textureradioon>
-                    <include>ClassicOSDButton</include>
-                    <selected>Player.Paused | Player.Forwarding | Player.Rewinding</selected>
-                    <onclick>PlayerControl(Play)</onclick>
-                </control>
-                <control type="radiobutton" id="603">
-                    <textureradioon>osd/buttons/OSDStopNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDStopNF.png</textureradiooff>
-                    <label>31352</label>
-                    <include>ClassicOSDButton</include>
-                    <onclick>PlayerControl(Stop)</onclick>
-                </control>
-                <control type="radiobutton" id="604">
-                    <textureradioon>osd/buttons/OSDForwardNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDForwardNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>PlayerControl(Forward)</onclick>
-                </control>
-                <control type="radiobutton" id="605">
-                    <textureradioon>osd/buttons/OSDNextTrackNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDNextTrackNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>PlayerControl(Next)</onclick>
-                </control>
-                <control type="radiobutton" id="716">
-                    <textureradioon>osd/buttons/OSDRecordNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDRecordNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>PlayerControl(record)</onclick>
-                    <visible>Player.CanRecord</visible>
-                </control>
+            <control type="radiobutton" id="500">
+                <textureradioon>osd/buttons/OSDVizNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDVizNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
             </control>
-            <control type="grouplist" id="651">
-                <description>Video settings buttons</description>
-                <posy>4</posy>
-                <width>1920</width>
-                <height>150</height>
-                <align>right</align>
-                <itemgap>-25</itemgap>
-                <scrolltime tween="sine">200</scrolltime>
-                <orientation>horizontal</orientation>
-                <onup>Dialog.Close(musicosd)</onup>
-                <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-                <onleft>716</onleft>
-                <onright>700</onright>
-                <control type="image" id="715">
-                    <texture>$VAR[MusicOSDRepeatClassicButtonVar]</texture>
-                    <include>ClassicOSDButton</include>
-                    <animation effect="slide" end="200,0" condition="true">Conditional</animation>
-                    <animation center="62,62" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back" condition="Control.HasFocus(704)">Conditional</animation>
-                </control>
-                <control type="radiobutton" id="703">
-                    <textureradiooff>osd/buttons/OSDLyricsNF.png</textureradiooff>
-                    <textureradioon>osd/buttons/OSDLyricsNF.png</textureradioon>
-                    <include>ClassicOSDButton</include>
-                    <onclick condition="!IsEmpty(Skin.String(LyricScript_Path))">Close</onclick>
-                    <onclick condition="!IsEmpty(Skin.String(LyricScript_Path))">RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
-                    <onclick condition="IsEmpty(Skin.String(LyricScript_Path))">Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
-                    <onclick condition="IsEmpty(Skin.String(LyricScript_Path))">Close</onclick>
-                    <onclick condition="IsEmpty(Skin.String(LyricScript_Path))">RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
-                    <selected>IsEmpty(Skin.String(LyricScript_Path))</selected>
-                </control>
-                <control type="button" id="704">
-                    <textureradioon>-</textureradioon>
-                    <textureradiooff>-</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>PlayerControl(Repeat)</onclick>
-                </control>
-                <control type="radiobutton" id="714">
-                    <textureradiooff>osd/buttons/OSDRandomOffNF.png</textureradiooff>
-                    <textureradioon>osd/buttons/OSDRandomOnNF.png</textureradioon>
-                    <include>ClassicOSDButton</include>
-                    <selected>Playlist.IsRandom</selected>
-                    <onclick>PlayerControl(Random)</onclick>
-                </control>
-                <control type="radiobutton" id="708">
-                    <textureradioon>osd/buttons/OSDSkinNF.png</textureradioon>
-                    <textureradiooff>osd/buttons/OSDSkinNF.png</textureradiooff>
-                    <include>ClassicOSDButton</include>
-                    <onclick>Dialog.Close(musicosd)</onclick>
-                    <onclick>ActivateWindow(1117)</onclick>
-                </control>
+            <control type="radiobutton" id="701">
+                <textureradioon>osd/buttons/OSDSettingsNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDSettingsNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+            </control>
+            <control type="radiobutton" id="702">
+                <textureradioon>osd/buttons/OSDVideoNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDVideoNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>ActivateWindow(122)</onclick>
+            </control>
+        </control>
+        <control type="grouplist" id="652">
+            <description>Video settings buttons</description>
+            <posy>4</posy>
+            <width>1920</width>
+            <height>150</height>
+            <align>center</align>
+            <itemgap>-25</itemgap>
+            <scrolltime tween="sine">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <onup>Dialog.Close(musicosd)</onup>
+            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
+            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+            <onleft>702</onleft>
+            <onright>703</onright>
+            <control type="radiobutton" id="600">
+                <textureradioon>osd/buttons/OSDPrevTrackNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDPrevTrackNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>PlayerControl(Previous)</onclick>
+            </control>
+            <control type="radiobutton" id="601">
+                <textureradioon>osd/buttons/OSDRewindNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDRewindNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>PlayerControl(Rewind)</onclick>
+            </control>
+            <control type="radiobutton" id="602">
+                <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
+                <textureradioon>osd/buttons/OSDPlayNF.png</textureradioon>
+                <include>ClassicOSDButton</include>
+                <selected>Player.Paused | Player.Forwarding | Player.Rewinding</selected>
+                <onclick>PlayerControl(Play)</onclick>
+            </control>
+            <control type="radiobutton" id="603">
+                <textureradioon>osd/buttons/OSDStopNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDStopNF.png</textureradiooff>
+                <label>31352</label>
+                <include>ClassicOSDButton</include>
+                <onclick>PlayerControl(Stop)</onclick>
+            </control>
+            <control type="radiobutton" id="604">
+                <textureradioon>osd/buttons/OSDForwardNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDForwardNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>PlayerControl(Forward)</onclick>
+            </control>
+            <control type="radiobutton" id="605">
+                <textureradioon>osd/buttons/OSDNextTrackNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDNextTrackNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>PlayerControl(Next)</onclick>
+            </control>
+            <control type="radiobutton" id="716">
+                <textureradioon>osd/buttons/OSDRecordNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDRecordNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>PlayerControl(record)</onclick>
+                <visible>Player.CanRecord</visible>
+            </control>
+        </control>
+        <control type="grouplist" id="651">
+            <description>Video settings buttons</description>
+            <posy>4</posy>
+            <width>1920</width>
+            <height>150</height>
+            <align>right</align>
+            <itemgap>-25</itemgap>
+            <scrolltime tween="sine">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <onup>Dialog.Close(musicosd)</onup>
+            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
+            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+            <onleft>716</onleft>
+            <onright>700</onright>
+            <control type="image" id="715">
+                <texture>$VAR[MusicOSDRepeatClassicButtonVar]</texture>
+                <include>ClassicOSDButton</include>
+                <animation effect="slide" end="200,0" condition="true">Conditional</animation>
+                <animation center="62,62" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back" condition="Control.HasFocus(704)">Conditional</animation>
+            </control>
+            <control type="radiobutton" id="703">
+                <textureradiooff>osd/buttons/OSDLyricsNF.png</textureradiooff>
+                <textureradioon>osd/buttons/OSDLyricsNF.png</textureradioon>
+                <include>ClassicOSDButton</include>
+                <onclick condition="!IsEmpty(Skin.String(LyricScript_Path))">Close</onclick>
+                <onclick condition="!IsEmpty(Skin.String(LyricScript_Path))">RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+                <onclick condition="IsEmpty(Skin.String(LyricScript_Path))">Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+                <onclick condition="IsEmpty(Skin.String(LyricScript_Path))">Close</onclick>
+                <onclick condition="IsEmpty(Skin.String(LyricScript_Path))">RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+                <selected>IsEmpty(Skin.String(LyricScript_Path))</selected>
+            </control>
+            <control type="button" id="704">
+                <textureradioon>-</textureradioon>
+                <textureradiooff>-</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>PlayerControl(Repeat)</onclick>
+            </control>
+            <control type="radiobutton" id="714">
+                <textureradiooff>osd/buttons/OSDRandomOffNF.png</textureradiooff>
+                <textureradioon>osd/buttons/OSDRandomOnNF.png</textureradioon>
+                <include>ClassicOSDButton</include>
+                <selected>Playlist.IsRandom</selected>
+                <onclick>PlayerControl(Random)</onclick>
+            </control>
+            <control type="radiobutton" id="708">
+                <textureradioon>osd/buttons/OSDSkinNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDSkinNF.png</textureradiooff>
+                <include>ClassicOSDButton</include>
+                <onclick>Dialog.Close(musicosd)</onclick>
+                <onclick>ActivateWindow(1117)</onclick>
             </control>
         </control>
     </include>
