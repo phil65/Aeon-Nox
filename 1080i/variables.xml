@@ -582,8 +582,12 @@
         <value condition="Container.Content(tvshows) + !Control.isVisible(503)">$INFO[Window(Home).Property(NextAired.Runtime),, $LOCALIZE[12391]]</value>
     </variable>
     <variable name="LogoVarList">
-        <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+        <value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
         <value>$INFO[ListItem.Art(clearlogo)]</value>
+    </variable>
+    <variable name="LandscapeVar">
+        <value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+        <value>$INFO[ListItem.Art(landscape)]</value>
     </variable>
     <variable name="LogoVar">
         <value condition="Container.Content(albums) + Substring(Container.FolderPath,musicdb://2/,left)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container.FolderName,,/logo.png]</value>
@@ -2147,6 +2151,12 @@
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>
         <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
         <value>$INFO[Player.Art(clearlogo)]</value>
+    </variable>
+    <variable name="ListItemArtworkVar">
+        <value condition="!IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+        <value>$INFO[ListItem.Art(clearlogo)]</value>
     </variable>
     <variable name="PlayerLogoVar">
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>

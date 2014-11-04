@@ -582,26 +582,14 @@
                 <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
                     <include>Animation_PanelFlipDown1</include>
                 </animation>
-                <control type="group">
-                    <animation effect="fade" time="200">VisibleChange</animation>
-                    <visible>Substring(Control.GetLabel(4321),default) | Substring(Control.GetLabel(4321),glass)</visible>
-                    <control type="image">
-                        <width>1650</width>
-                        <height>402</height>
-                        <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
-                        <include>PanelGlowFade</include>
-                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <visible>Substring(Control.GetLabel(4321),default)</visible>
-                    </control>
-                    <control type="image">
-                        <width>1650</width>
-                        <height>402</height>
-                        <texture colordiffuse="$VAR[DialogColorVar]" border="50">$VAR[PanelWidgetBackVar]</texture>
-                        <animation type="Conditional" condition="true">
-                            <effect type="fade" start="100" end="75" time="400" tween="cubic" easing="inout" />
-                        </animation>
-                    </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>25</posy>
+                    <width>1610</width>
+                    <height>353</height>
+                    <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
+                     <visible>Substring(Control.GetLabel(4321),default)</visible>
+                   <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="group">
                     <visible>!Substring(Control.GetLabel(4321),weather)</visible>
@@ -880,15 +868,6 @@
                     <visible>SubString(Control.GetLabel(4321),wunderground)</visible>
                 </control>
                 <include>FeaturedWidget</include>
-                <control type="image">
-                    <posx>21</posx>
-                    <posy>21</posy>
-                    <width>1608</width>
-                    <height>360</height>
-                    <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured_overlay.png</texture>
-                    <animation effect="fade" time="200">VisibleChange</animation>
-                    <visible>Substring(Control.GetLabel(4321),default)</visible>
-                </control>
                 <control type="button">
                     <description>left Arrow</description>
                     <posx>-40</posx>
@@ -2200,26 +2179,14 @@
                 <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidget2Info))" reversible="false">
                     <include>Animation_PanelFlipDown1</include>
                 </animation>
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4325),default) | Substring(Control.GetLabel(4325),glass)</visible>
-                    <animation effect="fade" time="200">VisibleChange</animation>
-                    <control type="image">
-                        <width>1650</width>
-                        <height>402</height>
-                        <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
-                        <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                        <visible>Substring(Control.GetLabel(4325),default)</visible>
-                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                    </control>
-                    <control type="image">
-                        <width>1650</width>
-                        <height>402</height>
-                        <texture colordiffuse="$VAR[DialogColorVar]" border="50">$VAR[PanelWidget2BackVar]</texture>
-                        <animation type="Conditional" condition="true">
-                            <effect type="fade" start="100" end="75" time="400" tween="cubic" easing="inout" />
-                        </animation>
-                    </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>25</posy>
+                    <width>1610</width>
+                    <height>353</height>
+                    <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
+                    <visible>Substring(Control.GetLabel(4325),default)</visible>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                 </control>
                 <control type="group">
                     <visible>!Substring(Control.GetLabel(4325),weather)</visible>
@@ -2500,15 +2467,6 @@
                     <visible>SubString(Control.GetLabel(4325),wunderground)</visible>
                 </control>
                 <include>FeaturedWidget2</include>
-                <control type="image">
-                    <posx>21</posx>
-                    <posy>21</posy>
-                    <width>1608</width>
-                    <height>360</height>
-                    <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured_overlay.png</texture>
-                    <animation effect="fade" time="200">VisibleChange</animation>
-                    <visible>Substring(Control.GetLabel(4325),default)</visible>
-                </control>
                 <control type="button">
                     <description>left Arrow</description>
                     <posx>-40</posx>
@@ -3017,9 +2975,9 @@
         <textcolor>grey</textcolor>
         <focusedcolor>white2</focusedcolor>
         <scroll>false</scroll>
-                <texturefocus border="20" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                <texturenofocus border="20">buttons/roundedbutton-nofocus.png</texturenofocus>
-                    </include>
+        <texturefocus border="20" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+        <texturenofocus border="20">buttons/roundedbutton-nofocus.png</texturenofocus>
+    </include>
     <include name="WidgetLandscapeLayout">
         <control type="group">
             <visible>IsEmpty(ListItem.Art(landscape))</visible>
@@ -3035,7 +2993,7 @@
                 <width>532</width>
                 <height>340</height>
                 <aspectratio align="center">keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                <texture background="true">$VAR[LogoVarList]</texture>
             </control>
             <control type="group">
                 <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Episode)</visible>
@@ -3062,7 +3020,7 @@
             <width>532</width>
             <height>340</height>
             <aspectratio align="center">stretch</aspectratio>
-            <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
+            <texture background="true">$VAR[LandscapeVar]</texture>
         </control>
         <control type="group">
             <visible>!IsEmpty(ListItem.Episode)</visible>
@@ -3074,7 +3032,7 @@
                 <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
             </control>
             <control type="label">
-                <posx>272</posx>
+                <posx>2</posx>
                 <posy>-32</posy>
                 <width>528</width>
                 <height>105</height>
@@ -3214,12 +3172,12 @@
         </control>
         <control type="label">
             <posx>0</posx>
-            <posy>313</posy>
+            <posy>316</posy>
             <width>532</width>
             <height>30</height>
             <align>center</align>
-            <label>$VAR[WidgetSubTitleVar]</label>
-            <font>Font_Reg30_2</font>
+            <label>[UPPERCASE]$VAR[WidgetSubTitleVar][/UPPERCASE]</label>
+            <font>Font_Reg25</font>
         </control>
     </include>
     <include name="WidgetClearArtLayout">
@@ -3227,37 +3185,27 @@
             <posx>10</posx>
             <posy>4</posy>
             <width>512</width>
-            <height>340</height>
+            <height>337</height>
             <aspectratio align="center">keep</aspectratio>
-            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(clearlogo)]</texture>
-            <visible>IsEmpty(ListItem.Art(clearart)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-        </control>
-        <control type="image">
-            <posx>16</posx>
-            <posy>-25</posy>
-            <width>500</width>
-            <height>340</height>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$INFO[ListItem.Art(clearart)]</texture>
-            <visible>!IsEmpty(ListItem.Art(clearart))</visible>
+            <texture background="true" fallback="XBMC_Logo.png">$VAR[ListItemArtworkVar]</texture>
         </control>
         <control type="image">
             <posx>10</posx>
             <posy>4</posy>
             <width>512</width>
-            <height>340</height>
+            <height>337</height>
             <aspectratio align="center">keep</aspectratio>
             <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
-            <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearart))</visible>
+            <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(tvshow.clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearart))</visible>
         </control>
         <control type="label">
             <posx>0</posx>
-            <posy>313</posy>
+            <posy>316</posy>
             <width>532</width>
             <height>30</height>
             <align>center</align>
-            <label>$VAR[WidgetSubTitleVar]</label>
-            <font>Font_Reg30_2</font>
+            <label>[UPPERCASE]$VAR[WidgetSubTitleVar][/UPPERCASE]</label>
+            <font>Font_Reg25</font>
         </control>
     </include>
     <include name="NavigationWidget1">
