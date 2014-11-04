@@ -665,20 +665,20 @@
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
                     <control type="image">
-                        <posx>255</posx>
+                        <posx>390</posx>
                         <posy>-46</posy>
-                        <width>494</width>
+                        <width>394</width>
                         <height>87</height>
                         <texture colordiffuse="$VAR[ExtendedColorVar]">home/timepanel_mid_shadow.png</texture>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <posx>730</posx>
+                        <posx>735</posx>
                         <width>430</width>
                         <height>36</height>
                         <align>right</align>
-                        <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][COLOR grey]$INFO[System.Date,  •  ]  •[/COLOR]  $INFO[System.Time]</label>
+                        <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
                         <font>Font_Reg25</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     </control>
