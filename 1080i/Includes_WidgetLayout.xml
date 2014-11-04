@@ -985,13 +985,14 @@
                 <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
                 <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
                 <onclick>RunScript(script.home,container=5002,focuscontrol=5055)</onclick>
+                <visible>IntegerGreaterThan(Container(5002).NumItems,0)</visible>
             </control>
             <control type="button" id="5010">
                 <posx>26</posx>
                 <posy>-5</posy>
                 <width>624</width>
                 <height>350</height>
-                <visible>Substring(Control.GetLabel(4321),featured)</visible>
+                <visible>Substring(Control.GetLabel(4321),featured) + IntegerGreaterThan(Container(5001).NumItems,0)</visible>
                 <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <onleft>5012</onleft>
@@ -1019,6 +1020,7 @@
                 <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
                 <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
                 <onclick>RunScript(script.home,container=5003,focuscontrol=5055)</onclick>
+                <visible>IntegerGreaterThan(Container(5003).NumItems,0)</visible>
             </control>
             <control type="group">
                 <posx>31</posx>
@@ -2570,6 +2572,7 @@
                 <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
                 <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
                 <onclick>RunScript(script.home,container=6002,focuscontrol=5055)</onclick>
+                <visible>IntegerGreaterThan(Container(6002).NumItems,0)</visible>
             </control>
             <control type="button" id="6010">
                 <posx>26</posx>
@@ -2577,6 +2580,7 @@
                 <width>624</width>
                 <height>350</height>
                 <visible>Substring(Control.GetLabel(4325),featured)</visible>
+                <visible>IntegerGreaterThan(Container(6001).NumItems,0)</visible>
                 <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
                 <texturenofocus></texturenofocus>
                 <include>NavigationWidget2</include>
@@ -2603,6 +2607,7 @@
                 <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
                 <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
                 <onclick>RunScript(script.home,container=6003,focuscontrol=5055)</onclick>
+                <visible>IntegerGreaterThan(Container(6003).NumItems,0)</visible>
             </control>
             <control type="group">
                 <posx>31</posx>
