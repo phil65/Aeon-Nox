@@ -226,38 +226,18 @@
                         <visible>Player.HasVideo</visible>
                         <include>Animation_CommonFade</include>
                         <control type="group">
-                            <animation effect="zoom" end="32" center="-20,700" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
                             <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
                             <include>Animation_CommonFade</include>
                             <control type="image">
-                                <posx>100</posx>
-                                <posy>688</posy>
-                                <width>330</width>
-                                <height>330</height>
+                                <posx>-160</posx>
+                                <posy>700</posy>
+                                <width>250</width>
+                                <height>250</height>
                                 <aligny>top</aligny>
                                 <aspectratio>keep</aspectratio>
                                 <texture background="true" fallback="common/cdart/bd.png">$INFO[Player.Art(discart)]</texture>
                                 <fadetime>300</fadetime>
                                 <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                            </control>
-                            <control type="image">
-                                <posx>22</posx>
-                                <posy>664</posy>
-                                <width>260</width>
-                                <height>390</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$VAR[PlayerPosterVar]</texture>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>2.5</posx>
-                                <posy>644.5</posy>
-                                <width>299</width>
-                                <height>429</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
                             </control>
                         </control>
                         <control type="group">
@@ -287,16 +267,16 @@
                         </control>
                         <control type="label">
                             <aligny>top</aligny>
-                            <posx>152</posx>
-                            <posy>688</posy>
+                            <posx>125</posx>
+                            <posy>698</posy>
                             <height>50</height>
                             <label>$VAR[NowPlayingPlayLabelVar]</label>
                             <font>Font_Reg28</font>
                             <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
-                            <posx>152</posx>
-                            <posy>718</posy>
+                            <posx>125</posx>
+                            <posy>728</posy>
                             <width>800</width>
                             <aligny>top</aligny>
                             <height>50</height>
@@ -307,16 +287,16 @@
                         </control>
                         <control type="label">
                             <aligny>top</aligny>
-                            <posx>152</posx>
-                            <posy>758</posy>
+                            <posx>125</posx>
+                            <posy>768</posy>
                             <height>50</height>
-                            <label>$INFO[VideoPlayer.Genre]</label>
+                            <label>$INFO[VideoPlayer.Genre]$INFO[VideoPlayer.Premiered]</label>
                             <font>Font_Reg25</font>
                             <textcolor>grey2</textcolor>
                         </control>
                         <control type="progress">
-                            <posx>152</posx>
-                            <posy>793</posy>
+                            <posx>125</posx>
+                            <posy>803</posy>
                             <width>200</width>
                             <height>7</height>
                             <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
@@ -364,6 +344,46 @@
                         <font>Font_Reg23</font>
                     </control>
                 </control>
+                            <control type="image">
+                                <posx>1670</posx>
+                                <posy>610</posy>
+                                <width>200</width>
+                                <height>300</height>
+                                <aspectratio>keep</aspectratio>
+                                <texture fallback="DefaultVideo.png">$VAR[PlayerArtworkVar]</texture>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                                <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
+                                <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                            </control>
+    <!--             <control type="grouplist">
+                    <visible>VideoPlayer.Content(movies)</visible>
+                    <posx>825</posx>
+                    <posy>710</posy>
+                    <width>855</width>
+                    <height>1080</height>
+                    <orientation>vertical</orientation>
+                    <control type="label">
+                        <width>830</width>
+                        <height>26</height>
+                        <align>right</align>
+                        <label>  $INFO[VideoPlayer.Genre]  [COLOR $VAR[FontColorVar]]  -  Genre[/COLOR]</label>
+                        <font>Font_Reg23</font>
+                    </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>26</height>
+                        <align>right</align>
+                        <label>  $INFO[VideoPlayer.Director]  [COLOR $VAR[FontColorVar]]  -  Director[/COLOR]</label>
+                        <font>Font_Reg23</font>
+                    </control>
+                    <control type="label">
+                        <width>830</width>
+                        <height>26</height>
+                        <align>right</align>
+                        <label>  $INFO[VideoPlayer.Writer]  [COLOR $VAR[FontColorVar]]  -  Writer[/COLOR]</label>
+                        <font>Font_Reg23</font>
+                    </control>
+                </control> -->
                 <control type="grouplist">
                     <visible>VideoPlayer.Content(LiveTV)</visible>
                     <posx>1055</posx>
