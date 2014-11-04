@@ -131,7 +131,6 @@
             </control>
         </control>
         <control type="group">
-            <posy>260</posy>
             <animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
                 <effect type="zoom" start="150" end="100" center="960,540" delay="2000" time="800" tween="cubic" />
                 <effect type="fade" delay="2000" start="50" end="100" time="240" />
@@ -145,8 +144,8 @@
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
             <control type="group" id="8995">
+                <posy>260</posy>
                 <posx>22</posx>
-                <posy>-0</posy>
                 <control type="group">
                     <visible>Player.HasAudio</visible>
                     <animation type="Visible">
@@ -158,14 +157,7 @@
                         <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
                     </animation>
                     <control type="group">
-                        <animation effect="zoom" end="32" center="-20,700" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                        <control type="image">
-                            <posy>656</posy>
-                            <width>423</width>
-                            <height>420</height>
-                            <texture colordiffuse="$VAR[AreaColorVar]">thumbs/cd_shadow_glow.png</texture>
-                            <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                        </control>
+                        <animation effect="zoom" end="34" center="-20,700" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
                         <control type="image">
                             <animation effect="slide" start="-150" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
                             <animation type="WindowClose">
@@ -240,103 +232,107 @@
                 </control>
                 <control type="group" id="8994">
                     <control type="group">
-                        <animation effect="zoom" end="32" center="-20,720" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                        <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
+                        <visible>Player.HasVideo</visible>
                         <include>Animation_CommonFade</include>
-                        <control type="image">
-                            <posx>100</posx>
-                            <posy>688</posy>
-                            <width>330</width>
-                            <height>330</height>
+                        <control type="group">
+                            <animation effect="zoom" end="32" center="-20,700" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
+                            <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
+                            <include>Animation_CommonFade</include>
+                            <control type="image">
+                                <posx>100</posx>
+                                <posy>688</posy>
+                                <width>330</width>
+                                <height>330</height>
+                                <aligny>top</aligny>
+                                <aspectratio>keep</aspectratio>
+                                <texture background="true" fallback="common/cdart/bd.png">$INFO[Player.Art(discart)]</texture>
+                                <fadetime>300</fadetime>
+                                <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                            </control>
+                            <control type="image">
+                                <posx>22</posx>
+                                <posy>664</posy>
+                                <width>260</width>
+                                <height>390</height>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$VAR[PlayerPosterVar]</texture>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                            </control>
+                            <control type="image">
+                                <posx>2.5</posx>
+                                <posy>644.5</posy>
+                                <width>299</width>
+                                <height>429</height>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                                <bordersize>19.5</bordersize>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <animation effect="zoom" end="40" center="-70,675" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
+                            <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
+                            <include>Animation_CommonFade</include>
+                            <control type="image">
+                                <posx>7</posx>
+                                <posy>701</posy>
+                                <width>498</width>
+                                <height>318</height>
+                                <aspectratio>scale</aspectratio>
+                                <texture>common/bgcolor.png</texture>
+                                <animation effect="fade" end="30" condition="true">conditional</animation>
+                                <bordersize>9</bordersize>
+                            </control>
+                            <control type="image">
+                                <posx>16</posx>
+                                <posy>710</posy>
+                                <width>480</width>
+                                <height>300</height>
+                                <aspectratio>scale</aspectratio>
+                                <texture fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                                <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                            </control>
+                        </control>
+                        <control type="label">
                             <aligny>top</aligny>
-                            <aspectratio>keep</aspectratio>
-                            <texture background="true" fallback="common/cdart/bd.png">$INFO[Player.Art(discart)]</texture>
-                            <fadetime>300</fadetime>
-                            <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                            <posx>152</posx>
+                            <posy>688</posy>
+                            <height>50</height>
+                            <label>$VAR[NowPlayingPlayLabelVar]</label>
+                            <font>Font_Reg28</font>
+                            <textcolor>$VAR[TitleColorVar]</textcolor>
                         </control>
-                        <control type="image">
-                            <posx>22</posx>
-                            <posy>664</posy>
-                            <width>260</width>
-                            <height>390</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$VAR[PlayerPosterVar]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
+                        <control type="label">
+                            <posx>152</posx>
+                            <posy>718</posy>
+                            <width>800</width>
+                            <aligny>top</aligny>
+                            <height>50</height>
+                            <label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.ChannelName,, - ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</label>
+                            <font>Font_Reg37_Caps</font>
+                            <textcolor>white3</textcolor>
+                            <wrapmultiline>true</wrapmultiline>
                         </control>
-                        <control type="image">
-                            <posx>2.5</posx>
-                            <posy>644.5</posy>
-                            <width>299</width>
-                            <height>429</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
+                        <control type="label">
+                            <aligny>top</aligny>
+                            <posx>152</posx>
+                            <posy>758</posy>
+                            <height>50</height>
+                            <label>$INFO[VideoPlayer.Genre]</label>
+                            <font>Font_Reg25</font>
+                            <textcolor>grey2</textcolor>
                         </control>
-                    </control>
-                    <control type="group">
-                        <animation effect="zoom" end="32" center="-20,720" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                        <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
-                        <include>Animation_CommonFade</include>
-                        <control type="image">
-                            <posx>7</posx>
-                            <posy>701</posy>
-                            <width>498</width>
-                            <height>318</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture>common/bgcolor.png</texture>
-                            <animation effect="fade" end="30" condition="true">conditional</animation>
-                            <bordersize>9</bordersize>
+                        <control type="progress">
+                            <posx>152</posx>
+                            <posy>793</posy>
+                            <width>200</width>
+                            <height>7</height>
+                            <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                            <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
+                            <aligny>bottom</aligny>
+                            <info>Player.Progress</info>
                         </control>
-                        <control type="image">
-                            <posx>16</posx>
-                            <posy>710</posy>
-                            <width>480</width>
-                            <height>300</height>
-                            <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                            <visible>!IsEmpty(VideoPlayer.Cover)</visible>
-                        </control>
-                    </control>
-                    <control type="label">
-                        <aligny>top</aligny>
-                        <posx>152</posx>
-                        <posy>688</posy>
-                        <height>50</height>
-                        <label>$VAR[NowPlayingPlayLabelVar]</label>
-                        <font>Font_Reg28</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>152</posx>
-                        <posy>718</posy>
-                        <width>800</width>
-                        <aligny>top</aligny>
-                        <height>50</height>
-                        <label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.ChannelName,, - ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</label>
-                        <font>Font_Reg37_Caps</font>
-                        <textcolor>white3</textcolor>
-                        <wrapmultiline>true</wrapmultiline>
-                    </control>
-                    <control type="label">
-                        <aligny>top</aligny>
-                        <posx>152</posx>
-                        <posy>758</posy>
-                        <height>50</height>
-                        <label>$INFO[VideoPlayer.Genre]</label>
-                        <font>Font_Reg25</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="progress">
-                        <posx>152</posx>
-                        <posy>793</posy>
-                        <width>200</width>
-                        <height>7</height>
-                        <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                        <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
-                        <aligny>bottom</aligny>
-                        <info>Player.Progress</info>
                     </control>
                 </control>
                 <control type="grouplist">
@@ -405,7 +401,7 @@
             </control>
             <control type="textbox">
                 <posx>550</posx>
-                <posy>20</posy>
+                <posy>280</posy>
                 <width>570</width>
                 <height>311</height>
                 <aligny>top</aligny>
