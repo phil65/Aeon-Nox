@@ -2147,6 +2147,10 @@
         <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
         <value>$INFO[Player.Art(clearlogo)]</value>
     </variable>
+    <variable name="PlayerLogoVar">
+        <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>
+        <value>$INFO[Player.Art(clearlogo)]</value>
+    </variable>
     <variable name="HomeCustomStartupFocus">
         <value condition="Stringcompare(Container(9000).ListItem(1).Property(ID),Skin.String(CustomFocusOffset))">Control.Move(9000,1)</value>
         <value condition="Stringcompare(Container(9000).ListItem(2).Property(ID),Skin.String(CustomFocusOffset))">Control.Move(9000,2)</value>
