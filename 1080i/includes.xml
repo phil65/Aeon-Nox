@@ -609,7 +609,7 @@
         <textoffsety>8</textoffsety>
         <aligny>top</aligny>
         <font>Font_Reg28</font>
-        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+        <textcolor>$VAR[FontColorVar]</textcolor>
     </include>
     <include name="FullscreenDimensions">
         <width>1920</width>
@@ -682,7 +682,7 @@
         <texturefocus>-</texturefocus>
         <aligny>top</aligny>
         <font>Font_Reg28</font>
-        <textcolor>$VAR[SubTitleColorVar]</textcolor>
+        <textcolor>$VAR[FontColorVar]</textcolor>
     </include>
     <include name="Objects_CommonSettingsScrollbar">
         <posx>1524</posx>
@@ -720,7 +720,6 @@
         <onload>Skin.SetString(TriPanelSquarePosition,1)</onload>
         <onload>Skin.SetString(TriPanelPosition,1)</onload>
         <onload>Skin.SetBool(DisableGlowbar)</onload>
-        <onload>Skin.SetBool(colortext)</onload>
         <onload>Skin.SetBool(AutoScroll)</onload>
         <onload>Skin.SetBool(smallerdialogs)</onload>
         <onload>Skin.SetBool(musicfanartslideshow)</onload>
@@ -1118,7 +1117,7 @@
             <label>$INFO[VideoPlayer.Writer,[COLOR bcicon]$LOCALIZE[31157][/COLOR] ]</label>
             <label>$INFO[VideoPlayer.Director,[COLOR bcicon]$LOCALIZE[31156][/COLOR] ]</label>
             <font>Font_Reg30_2</font>
-            <textcolor>$VAR[TitleColorVar]</textcolor>
+            <textcolor>$VAR[FontColorVar]</textcolor>
             <scroll>true</scroll>
             <scrollspeed>70</scrollspeed>
             <pauseatend>5000</pauseatend>
@@ -1135,7 +1134,7 @@
             <label>$INFO[VideoPlayer.Director,[COLOR bcicon]$LOCALIZE[31156][/COLOR] ]</label>
             <label>$INFO[VideoPlayer.premiered,[COLOR bcicon]$LOCALIZE[20416]: [/COLOR]]</label>
             <font>Font_Reg30_2</font>
-            <textcolor>$VAR[TitleColorVar]</textcolor>
+            <textcolor>$VAR[FontColorVar]</textcolor>
             <scroll>true</scroll>
             <scrollspeed>70</scrollspeed>
             <pauseatend>5000</pauseatend>
@@ -1172,7 +1171,7 @@
                     <posy>110</posy>
                     <width>180</width>
                     <height>36</height>
-                    <texture colordiffuse="$VAR[TitleColorVar]">$INFO[VideoPlayer.Rating,stars/,.png]</texture>
+                    <texture colordiffuse="$VAR[FontColorVar]">$INFO[VideoPlayer.Rating,stars/,.png]</texture>
                 </control>
             </control>
         </control>
@@ -1791,7 +1790,7 @@
                     <align>center</align>
                     <label>$INFO[ListItem.Label2][COLOR white2]$INFO[ListItem.Property(ShortTime)][/COLOR][COLOR grey] $INFO[ListItem.Property(Runtime),, $LOCALIZE[12391],(,))][/COLOR]</label>
                     <font>Font_Reg28</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                 </control>
             </control>
             <control type="label">
@@ -1801,7 +1800,7 @@
                 <height>30</height>
                 <label>$INFO[ListItem.Property(NextSeasonNumber),S]$INFO[ListItem.Property(NextEpisodeNumber),E]$INFO[ListItem.Property(EpisodeNumber)]</label>
                 <font>Font_Bold37</font>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="label">
                 <posx>22</posx>
@@ -1817,7 +1816,7 @@
                 <width>415</width>
                 <height>80</height>
                 <label>$LOCALIZE[31189]:[CR][COLOR white2]$INFO[ListItem.Property(LatestSeasonNumber),S]$INFO[ListItem.Property(LatestEpisodeNumber),E][COLOR grey] ($LOCALIZE[31322]: $INFO[ListItem.Property(LatestDate)])[/COLOR]:[CR] $INFO[ListItem.Property(LatestTitle)][/COLOR]</label>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="label">
                 <label></label>
@@ -1825,7 +1824,7 @@
                 <posy>618</posy>
                 <width>415</width>
                 <height>80</height>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="label">
                 <posx>22</posx>
@@ -1833,7 +1832,7 @@
                 <width>415</width>
                 <height>80</height>
                 <label>$LOCALIZE[515]: [CR][COLOR white2]$INFO[ListItem.Property(Genre)][/COLOR]</label>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="label">
                 <posx>22</posx>
@@ -1841,7 +1840,7 @@
                 <width>170</width>
                 <height>80</height>
                 <label>$LOCALIZE[31005]:[CR][COLOR white2]$INFO[ListItem.Property(Premiered)][/COLOR]</label>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
             </control>
             <control type="image">
                 <posx>0</posx>

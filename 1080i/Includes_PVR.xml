@@ -1181,7 +1181,7 @@
 			  <height>50</height>
 			  <width>460</width>
 			  <font>Font_Bold42_Caps</font>
-			  <textcolor>$VAR[SubTitleColorVar]</textcolor>
+			  <textcolor>$VAR[FontColorVar]</textcolor>
 			  <label>$INFO[Container(11).ListItem.Label]</label>
 			</control>
 			<control type="label"> <!-- Current epg time -->
@@ -1198,7 +1198,7 @@
 				<width>460</width>
 				<height>20</height>
 				<info>Container(11).ListItem.Progress</info>
-				<colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
+				<colordiffuse>$VAR[FontColorVar]</colordiffuse>
 				<texturebg border="3">new_pvr/texturebg_border_white.png</texturebg>
 				<midtexture border="3">new_pvr/texturebg_white.png</midtexture>
 				<lefttexture>-</lefttexture>
@@ -1210,7 +1210,7 @@
 				<height>50</height>
 				<width>740</width>
 				<font>Font_Bold34</font>
-				<textcolor>$VAR[SubTitleColorVar]</textcolor>
+				<textcolor>$VAR[FontColorVar]</textcolor>
 				<label>$INFO[Container(11).ListItem.Title]</label>
 			</control>
 			<control type="image"> <!-- Channel logo -->
@@ -1259,7 +1259,7 @@
 			  <align>right</align>
 			  <font>Font_Bold16</font>
 			  <textcolor>grey</textcolor>
-			  <label>$LOCALIZE[515]: [COLOR $VAR[SubTitleColorVar]]$INFO[Container(11).ListItem.Genre][/COLOR]</label>
+			  <label>$LOCALIZE[515]: [COLOR $VAR[FontColorVar]]$INFO[Container(11).ListItem.Genre][/COLOR]</label>
 			</control>
 			<control type="label"> <!-- Next label -->
 			  <left>0</left>
@@ -1269,7 +1269,7 @@
 			  <align>left</align>
 			  <font>Font_Bold16</font>
 			  <textcolor>grey</textcolor>
-			  <label>$LOCALIZE[19031] [COLOR $VAR[SubTitleColorVar]]$INFO[Container(11).ListItem.NextTitle][/COLOR]</label>
+			  <label>$LOCALIZE[19031] [COLOR $VAR[FontColorVar]]$INFO[Container(11).ListItem.NextTitle][/COLOR]</label>
 			</control>
 			<control type="label"> <!-- Next start time -->
 			  <visible>!StringCompare(Container(11).ListItem.NextTitle,)</visible>

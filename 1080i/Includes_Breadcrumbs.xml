@@ -37,7 +37,7 @@
                 <height>36</height>
                 <posx>-2</posx>
                 <posy>2</posy>
-                <texture colordiffuse="$VAR[TitleColorVar]">settingsarrow.png</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">settingsarrow.png</texture>
                 <animation effect="rotate" end="-90" center="auto" delay="240" time="640" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
                 <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                 <animation effect="rotate" start="-90" end="180" center="auto" delay="240" time="640" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
@@ -46,7 +46,7 @@
                 <width>54</width>
                 <height>38</height>
                 <aspectratio>keep</aspectratio>
-                <texture colordiffuse="$VAR[TitleColorVar]">$VAR[BreadcrumbsIconVar]</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">$VAR[BreadcrumbsIconVar]</texture>
                 <visible>!Player.HasMedia</visible>
             </control>
             <control type="label">
@@ -85,7 +85,7 @@
                 <control type="label">
                     <width min="15" max="1920">auto</width>
                     <height>38</height>
-                    <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]</label>
+                    <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[FontColorVar]]$INFO[System.Time][/COLOR]</label>
                     <font>Font_Reg30_Caps</font>
                     <shadowcolor>bcshadow</shadowcolor>
                     <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
@@ -110,21 +110,21 @@
                 <timeperimage>100</timeperimage>
                 <randomize>true</randomize>
                 <visible>Player.HasAudio + Player.Playing</visible>
-                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                <colordiffuse>$VAR[FontColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <posx>12</posx>
                 <posy>9</posy>
                 <width>30</width>
                 <height>24</height>
-                <texture colordiffuse="$VAR[TitleColorVar]">VisualEqu/static/0.png</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">VisualEqu/static/0.png</texture>
                 <visible>Player.HasAudio + !Player.Playing</visible>
             </control>
             <control type="image">
                 <width>54</width>
                 <height>38</height>
                 <aspectratio>keep</aspectratio>
-                <texture colordiffuse="$VAR[TitleColorVar]">common/logo_movies.png</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">common/logo_movies.png</texture>
                 <visible>Player.HasVideo</visible>
             </control>
             <control type="grouplist">

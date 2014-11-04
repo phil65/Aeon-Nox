@@ -106,7 +106,7 @@
                     <align>right</align>
                     <label>[COLOR grey]$INFO[System.Date(ddd)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
                     <font>Font_Reg33_Caps</font>
-                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                 </control>
                 <control type="grouplist">
                     <posx>30</posx>
@@ -123,7 +123,7 @@
                         <aligny>top</aligny>
                         <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
                         <font>Font_Reg33_Caps</font>
-                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="label">
                         <width min="1" max="1920">auto</width>
@@ -283,7 +283,7 @@
                         <label>[COLOR grey]$INFO[MusicPlayer.Album][/COLOR]$INFO[MusicPlayer.Year, [,] ]</label>
                         <font>Font_MainClassic2</font>
                         <shadowcolor>black</shadowcolor>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                         <scroll>true</scroll>
                         <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
@@ -295,7 +295,7 @@
                         <label>$INFO[MusicPlayer.TrackNumber,,: ][COLOR=grey]$INFO[MusicPlayer.Title][/COLOR]</label>
                         <font>Font_MainClassic3</font>
                         <shadowcolor>black</shadowcolor>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                         <scroll>true</scroll>
                         <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
@@ -350,7 +350,7 @@
                         <label>$INFO[MusicPlayer.BitRate,,[COLOR grey] kbps[/COLOR]][CR]$INFO[MusicPlayer.SampleRate,,[COLOR grey] kHz[/COLOR] ][CR]$INFO[MusicPlayer.bitspersample,,[COLOR grey] bit[/COLOR] ]</label>
                         <font>Font_Reg19_Caps</font>
                         <shadowcolor>black</shadowcolor>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <control type="label">
                         <posx>788</posx>
@@ -381,14 +381,14 @@
                             <posy>145</posy>
                             <width>50</width>
                             <height>15</height>
-                            <texture colordiffuse="$VAR[TitleColorVar]">arrowdown.png</texture>
+                            <texture colordiffuse="$VAR[FontColorVar]">arrowdown.png</texture>
                         </control>
                         <control type="image">
                             <posx>1106</posx>
                             <posy>70</posy>
                             <width>50</width>
                             <height>15</height>
-                            <texture colordiffuse="$VAR[TitleColorVar]" flipy="true">arrowdown.png</texture>
+                            <texture colordiffuse="$VAR[FontColorVar]" flipy="true">arrowdown.png</texture>
                         </control>
                     </control>
                     <control type="image" id="8669">
@@ -610,7 +610,7 @@
                         <aligny>top</aligny>
                         <label>$VAR[NowPlayingTextBoxLabelVar]</label>
                         <font>Font_Reg26</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                         <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
@@ -662,7 +662,7 @@
                         <height>34</height>
                         <label>$LOCALIZE[31635]</label>
                         <font>Font_Reg37_Caps</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
                     </control>
                     <animation effect="slide" start="575" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
                     <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
@@ -726,7 +726,7 @@
                                 <height>34</height>
                                 <label>$INFO[ListItem.Label]</label>
                                 <font>Font_Reg28_Caps</font>
-                                <textcolor>$VAR[TitleColorVar]</textcolor>
+                                <textcolor>$VAR[FontColorVar]</textcolor>
                             </control>
                         </focusedlayout>
                         <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
@@ -740,7 +740,7 @@
                     <aligny>top</aligny>
                     <label>$VAR[NowPlayingTextBoxLabelVar2]</label>
                     <font>Font_Reg26</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                     <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="group">
@@ -805,7 +805,7 @@
                             <align>right</align>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font_Reg28_Caps</font>
-                            <textcolor>$VAR[TitleColorVar]</textcolor>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                     </focusedlayout>
                     <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
