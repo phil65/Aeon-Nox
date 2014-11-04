@@ -23,7 +23,7 @@
             <control type="button" id="11">
                 <onclick>noop</onclick>
                 <onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-                <animation effect="fade" start="100" end="0" time="3200">Focus</animation>
+                <animation effect="fade" start="100" end="0" time="4000">Focus</animation>
             </control>
         </control>
         <control type="image">
@@ -32,13 +32,13 @@
             <include>FullscreenDimensions</include>
         </control>
         <control type="image">
-            <posx>923</posx>
+            <posx>920</posx>
             <posy>603</posy>
-            <width>64</width>
-            <height>64</height>
-            <texture colordiffuse="$VAR[AreaColorVar]">loader.gif</texture>
-<!--             <animation effect="rotate" end="-360" center="auto" time="3000" loop="true" reversible="false" condition="true">Conditional</animation>
- -->            <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
+            <width>80</width>
+            <height>80</height>
+            <texture colordiffuse="$VAR[AreaColorVar]">spinner.png</texture>
+            <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="true">Conditional</animation>
+            <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
         </control>
         <control type="image">
             <posx>704</posx>
