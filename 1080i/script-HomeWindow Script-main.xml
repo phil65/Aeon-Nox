@@ -239,16 +239,13 @@
                     </control>
                 </control>
                 <control type="group" id="8994">
-                    <posx>-8</posx>
-                    <posy>-22</posy>
-                    <visible>Player.HasVideo</visible>
-                    <include>Animation_CommonFade</include>
                     <control type="group">
                         <animation effect="zoom" end="32" center="-20,720" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
                         <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
+                        <include>Animation_CommonFade</include>
                         <control type="image">
-                            <posx>108</posx>
-                            <posy>710</posy>
+                            <posx>100</posx>
+                            <posy>688</posy>
                             <width>330</width>
                             <height>330</height>
                             <aligny>top</aligny>
@@ -258,8 +255,8 @@
                             <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                         </control>
                         <control type="image">
-                            <posx>30</posx>
-                            <posy>686</posy>
+                            <posx>22</posx>
+                            <posy>664</posy>
                             <width>260</width>
                             <height>390</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
@@ -267,8 +264,8 @@
                             <fadetime>IconCrossfadeTime</fadetime>
                         </control>
                         <control type="image">
-                            <posx>10.5</posx>
-                            <posy>666.5</posy>
+                            <posx>2.5</posx>
+                            <posy>644.5</posy>
                             <width>299</width>
                             <height>429</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
@@ -280,9 +277,10 @@
                     <control type="group">
                         <animation effect="zoom" end="32" center="-20,720" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
                         <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
+                        <include>Animation_CommonFade</include>
                         <control type="image">
-                            <posx>15</posx>
-                            <posy>723</posy>
+                            <posx>7</posx>
+                            <posy>701</posy>
                             <width>498</width>
                             <height>318</height>
                             <aspectratio>scale</aspectratio>
@@ -291,8 +289,8 @@
                             <bordersize>9</bordersize>
                         </control>
                         <control type="image">
-                            <posx>24</posx>
-                            <posy>732</posy>
+                            <posx>16</posx>
+                            <posy>710</posy>
                             <width>480</width>
                             <height>300</height>
                             <aspectratio>keep</aspectratio>
@@ -303,16 +301,16 @@
                     </control>
                     <control type="label">
                         <aligny>top</aligny>
-                        <posx>160</posx>
-                        <posy>710</posy>
+                        <posx>152</posx>
+                        <posy>688</posy>
                         <height>50</height>
                         <label>$VAR[NowPlayingPlayLabelVar]</label>
                         <font>Font_Reg28</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
-                        <posx>160</posx>
-                        <posy>740</posy>
+                        <posx>152</posx>
+                        <posy>718</posy>
                         <width>800</width>
                         <aligny>top</aligny>
                         <height>50</height>
@@ -323,16 +321,16 @@
                     </control>
                     <control type="label">
                         <aligny>top</aligny>
-                        <posx>160</posx>
-                        <posy>780</posy>
+                        <posx>152</posx>
+                        <posy>758</posy>
                         <height>50</height>
                         <label>$INFO[VideoPlayer.Genre]</label>
                         <font>Font_Reg25</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="progress">
-                        <posx>160</posx>
-                        <posy>815</posy>
+                        <posx>152</posx>
+                        <posy>793</posy>
                         <width>200</width>
                         <height>7</height>
                         <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
@@ -389,13 +387,13 @@
                     <height>1080</height>
                     <orientation>vertical</orientation>
                     <itemgap>4</itemgap>
-                <control type="textbox">
-                    <width>830</width>
-                    <height>77</height>
-                    <label fallback="31003">$INFO[VideoPlayer.Plot]</label>
-                    <font>Font_Reg25</font>
-                    <autoscroll delay="5000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
-                </control>
+                    <control type="textbox">
+                        <width>830</width>
+                        <height>77</height>
+                        <label fallback="31003">$INFO[VideoPlayer.Plot]</label>
+                        <font>Font_Reg25</font>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>
                     <control type="label">
                         <width>830</width>
                         <height>28</height>
@@ -403,7 +401,6 @@
                         <label>Next: $INFO[VideoPlayer.NextTitle,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[TitleColorVar]]$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime]$INFO[VideoPlayer.NextDuration, (,)][/COLOR]</label>
                         <font>Font_Reg25</font>
                     </control>
-
                 </control>
             </control>
             <control type="textbox">
