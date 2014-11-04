@@ -632,7 +632,7 @@
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <control type="image">
                         <posy>0</posy>
-                        <width>794</width>
+                        <width>664</width>
                         <height>87</height>
                         <texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
@@ -642,7 +642,7 @@
                     </control>
                     <control type="label">
                         <posx>15</posx>
-                        <width>703</width>
+                        <width>640</width>
                         <height>36</height>
                         <label>$VAR[LibraryStatsVar]</label>
                         <font>Font_Reg25</font>
@@ -667,43 +667,22 @@
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
                     <control type="image">
-                        <posx>-45</posx>
+                        <posx>255</posx>
                         <posy>-46</posy>
-                        <width>794</width>
+                        <width>494</width>
                         <height>87</height>
                         <texture colordiffuse="$VAR[ExtendedColorVar]">home/timepanel_mid_shadow.png</texture>
                         <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
                         <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <posx>734</posx>
-                        <width>600</width>
+                        <posx>730</posx>
+                        <width>430</width>
                         <height>36</height>
                         <align>right</align>
-                        <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
+                        <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][COLOR grey]$INFO[System.Date,  •  ]  •[/COLOR]  $INFO[System.Time]</label>
                         <font>Font_Reg25</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                    </control>
-                    <control type="grouplist">
-                        <posx>30</posx>
-                        <visible>Weather.IsFetched</visible>
-                        <animation effect="fade" time="350">VisibleChange</animation>
-                        <orientation>horizontal</orientation>
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <control type="label">
-                            <width min="0" max="700">auto</width>
-                            <height>36</height>
-                            <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• [/COLOR]</label>
-                            <font>Font_Reg25</font>
-                            <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        </control>
-                        <control type="image">
-                            <posx>-10</posx>
-                            <posy>-8</posy>
-                            <width>55</width>
-                            <height>55</height>
-                            <texture colordiffuse="white2">weather/small/$INFO[Weather.FanartCode].png</texture>
-                        </control>
                     </control>
                 </control>
             </control>
