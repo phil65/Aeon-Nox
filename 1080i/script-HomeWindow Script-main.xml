@@ -22,11 +22,6 @@
             <onfocus>SetProperty(Widget1Content,$INFO[Container(9000).ListItem.Property(WidgetContent)],home)</onfocus>
             <onfocus>SetProperty(Widget2Content,$INFO[Container(9000).ListItem.Property(Widget2Content)],home)</onfocus>
             <onfocus>SetFocus(9000)</onfocus>
-            <onleft>SetFocus(9000)</onleft>
-            <onright>SetFocus(9000)</onright>
-            <ondown>SetFocus(9000)</ondown>
-            <onup>SetFocus(9000)</onup>
-            <onclick>SetFocus(9000)</onclick>
         </control>
         <control type="button" id="9006">
             <include>HiddenObject</include>
@@ -48,10 +43,6 @@
             <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4325)],home)</onfocus>
             <onfocus condition="Substring(Control.GetLabel(4325),movie) + IsEmpty(Container(6010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6010).ListItem.Property(ID)],imdbid=$INFO[Container(6010).ListItem.Property(imdbid)])</onfocus>
             <onfocus>RunScript(script.home,container=6010,focuscontrol=5055)</onfocus>
-        </control>
-        <control type="button" id="9011">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(9000)</onfocus>
         </control>
         <include>MainMenuCommonContent</include>
         <!--Fanart-->
