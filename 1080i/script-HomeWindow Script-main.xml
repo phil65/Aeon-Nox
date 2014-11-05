@@ -420,7 +420,8 @@
                     </control>
                 </control>
             </control>
-<!--             <control type="textbox">
+            <!--
+            <control type="textbox">
                 <posx>550</posx>
                 <posy>280</posy>
                 <width>570</width>
@@ -430,8 +431,7 @@
                 <font>Font_Reg26</font>
                 <textcolor>white6</textcolor>
                 <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-            </control> -->
-        </control>
+            </control>--></control>
         <control type="group">
             <posy>602</posy>
             <visible>!Skin.HasSetting(DisableRSS)</visible>
@@ -654,65 +654,66 @@
                 </control>
                 <control type="group">
                     <animation effect="slide" end="-750,0" time="240">WindowClose</animation>
-                    <animation type="WindowOpen">
+                    <animation type="WindowOpen" condition="Skin.HasSetting(totalshomehigh)">
+                        <effect type="fade" delay="980" end="100" time="300" />
+                        <effect type="slide" start="0,-50" end="0,0" delay="800" time="480" />
+                    </animation>
+                    <animation type="WindowOpen" condition="!Skin.HasSetting(totalshomehigh)">
                         <effect type="fade" delay="980" end="100" time="300" />
                         <effect type="slide" start="0,50" end="0,0" delay="800" time="480" />
                     </animation>
                     <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
                     <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                    <control type="image">
-                        <posy>0</posy>
-                        <width>664</width>
-                        <height>87</height>
-                        <texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
-                        <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
-                        <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
+                    <control type="group">
                         <visible>!IsEmpty(Control.GetLabel(4323))</visible>
-                        <animation effect="zoom" start="100,0" end="100,100" time="540" tween="cubic">VisibleChange</animation>
-                    </control>
-                    <control type="label">
-                        <posx>15</posx>
-                        <width>640</width>
-                        <height>36</height>
-                        <label>$VAR[LibraryStatsVar]</label>
-                        <font>Font_Reg25</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <scroll>true</scroll>
-                        <visible>!IsEmpty(Control.GetLabel(4323))</visible>
-                        <animation type="VisibleChange">
+                        <animation type="VisibleChange" condition="Skin.HasSetting(totalshomehigh)">
+                            <effect type="fade" end="100" time="360" />
+                            <effect type="slide" start="0,-50" end="0,0" time="360" />
+                        </animation>
+                        <animation type="VisibleChange" condition="!Skin.HasSetting(totalshomehigh)">
                             <effect type="fade" end="100" time="360" />
                             <effect type="slide" start="0,50" end="0,0" time="360" />
                         </animation>
+                        <control type="image">
+                            <posy>0</posy>
+                            <width>664</width>
+                            <height>87</height>
+                            <texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true" flipx="true">home/timepanel_mid_shadow.png</texture>
+                            <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
+                            <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
+                        </control>
+                        <control type="label">
+                            <posx>15</posx>
+                            <width>640</width>
+                            <height>36</height>
+                            <label>$VAR[LibraryStatsVar]</label>
+                            <font>Font_Reg25</font>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
+                            <scroll>true</scroll>
+                        </control>
                     </control>
-                </control>
-                <control type="group">
-                    <posx>748r</posx>
-                    <visible>!Skin.HasSetting(DisableTimePanel)</visible>
-                    <animation effect="slide" end="750,0" time="240">WindowClose</animation>
-                    <animation type="WindowOpen">
-                        <effect type="fade" delay="980" end="100" time="300" />
-                        <effect type="slide" start="0,50" end="0,0" delay="800" time="480" />
-                    </animation>
-                    <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                    <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                    <animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
-                    <control type="image">
-                        <posx>390</posx>
-                        <posy>-46</posy>
-                        <width>394</width>
-                        <height>87</height>
-                        <texture colordiffuse="$VAR[ExtendedColorVar]">home/timepanel_mid_shadow.png</texture>
-                        <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
-                        <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <posx>735</posx>
-                        <width>430</width>
-                        <height>36</height>
-                        <align>right</align>
-                        <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
-                        <font>Font_Reg25</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
+                    <control type="group">
+                        <posx>748r</posx>
+                        <visible>!Skin.HasSetting(DisableTimePanel)</visible>
+                        <animation effect="fade" start="0" end="100" time="240">VisibleChange</animation>
+                        <control type="image">
+                            <posx>390</posx>
+                            <posy>-46</posy>
+                            <width>394</width>
+                            <height>87</height>
+                            <texture colordiffuse="$VAR[ExtendedColorVar]">home/timepanel_mid_shadow.png</texture>
+                            <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
+                            <animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
+                        </control>
+                        <control type="label">
+                            <posx>735</posx>
+                            <width>430</width>
+                            <height>36</height>
+                            <align>right</align>
+                            <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
+                            <font>Font_Reg25</font>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
+                        </control>
                     </control>
                 </control>
             </control>
