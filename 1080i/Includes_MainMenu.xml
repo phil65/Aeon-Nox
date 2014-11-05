@@ -122,27 +122,6 @@
         </content>
     </include>
     <include name="MainMenuItems">
-        <item id="6">
-            <label fallback="24027">$INFO[Skin.String(WeatherHomeItem.Label)]</label>
-            <property name="Path" fallback="ActivateWindow(Weather)">$INFO[Skin.String(WeatherHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(WeatherHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="weather">$INFO[Skin.String(WeatherHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="weather">$INFO[Skin.String(WeatherHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/sun.png">$INFO[Skin.String(WeatherHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(WeatherHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(WeatherHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(WeatherHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(WeatherHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(WeatherHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(WeatherHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(WeatherHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(WeatherHomeItem.WidgetContent)]</property>
-            <property name="ID">WeatherHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],WeatherHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/weather/">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(WeatherHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
-        </item>
         <item id="13">
             <label fallback="1036">$INFO[Skin.String(FavouritesHomeItem.Label)]</label>
             <property name="Path" fallback="ActivateWindow(favourites)">$INFO[Skin.String(FavouritesHomeItem.Path)]</property>
@@ -163,27 +142,6 @@
             <onclick>SetFocus(9006)</onclick>
             <icon fallback="special://skin/backgrounds/favourites/">$INFO[Skin.String(FavouritesHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(FavouritesHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
-        </item>
-        <item id="12">
-            <label fallback="13005">$INFO[Skin.String(ShutdownHomeItem.Label)]</label>
-            <property name="Path" fallback="ActivateWindow(1113)">$INFO[Skin.String(ShutdownHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(ShutdownHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="shutdown">$INFO[Skin.String(ShutdownHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="shutdown">$INFO[Skin.String(ShutdownHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/poweroff.png">$INFO[Skin.String(ShutdownHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(ShutdownHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(ShutdownHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(ShutdownHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(ShutdownHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(ShutdownHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(ShutdownHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(ShutdownHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(ShutdownHomeItem.WidgetContent)]</property>
-            <property name="ID">ShutdownHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],ShutdownHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/shutdown/">$INFO[Skin.String(ShutdownHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(ShutdownHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
         <item id="8">
             <label fallback="137">$INFO[Skin.String(SearchHomeItem.Label)]</label>
@@ -206,27 +164,7 @@
             <icon fallback="special://skin/backgrounds/search/">$INFO[Skin.String(SearchHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(SearchHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
-        <item id="5">
-            <label fallback="13000">$INFO[Skin.String(SettingsHomeItem.Label)]</label>
-            <property name="Path" fallback="ActivateWindow(settings)">$INFO[Skin.String(SettingsHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(SettingsHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="settings">$INFO[Skin.String(SettingsHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="system">$INFO[Skin.String(SettingsHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/controlpanel3.png">$INFO[Skin.String(SettingsHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(SettingsHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(SettingsHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(SettingsHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(SettingsHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(SettingsHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(SettingsHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(SettingsHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(SettingsHomeItem.WidgetContent)]</property>
-            <property name="ID">SettingsHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],SettingsHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/system/">$INFO[Skin.String(SettingsHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(SettingsHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
-        </item>
+
         <item id="1">
             <label fallback="31505">$INFO[Skin.String(ProgramsHomeItem.Label)]</label>
             <property name="Path" fallback="ActivateWindow(Programs,Addons,return)">$INFO[Skin.String(ProgramsHomeItem.Path)]</property>
@@ -269,26 +207,47 @@
             <icon fallback="special://skin/backgrounds/videos/">$INFO[Skin.String(VideosHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(VideosHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
-        <item id="25">
-            <label fallback="31290">$INFO[Skin.String(TVGuideHomeItem.Label)]</label>
-            <property name="Path" fallback="RunAddon(script.tv.show.next.aired)">$INFO[Skin.String(TVGuideHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(TVGuideHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(TVGuideHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="none">$INFO[Skin.String(TVGuideHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/calendar.png">$INFO[Skin.String(TVGuideHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(TVGuideHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(TVGuideHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(TVGuideHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(TVGuideHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(TVGuideHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(TVGuideHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(TVGuideHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(TVGuideHomeItem.WidgetContent)]</property>
-            <property name="ID">TVGuideHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TVGuideHomeItem,home)</onclick>
+        <item id="10">
+            <label fallback="342">$INFO[Skin.String(MovieHomeItem.Label)]</label>
+            <property name="Path" fallback="ActivateWindow(Videos,MovieTitles,return)">$INFO[Skin.String(MovieHomeItem.Path)]</property>
+            <property name="Type" fallback="custom">$INFO[Skin.String(MovieHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="movies">$INFO[Skin.String(MovieHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="movies">$INFO[Skin.String(MovieHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/video.png">$INFO[Skin.String(MovieHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(MovieHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(MovieHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(MovieHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(MovieHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(MovieHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(MovieHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(MovieHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(MovieHomeItem.WidgetContent)]</property>
+            <property name="ID">MovieHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MovieHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/tvguide/">$INFO[Skin.String(TVGuideHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(TVGuideHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+            <icon fallback="special://skin/backgrounds/movies/">$INFO[Skin.String(MovieHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(MovieHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+        </item>
+        <item id="105">
+            <label fallback="Trailers">$INFO[Skin.String(TrailerHomeItem.Label)]</label>
+            <property name="Path" fallback="RunScript(script.home,window=trailers)">$INFO[Skin.String(TrailerHomeItem.Path)]</property>
+            <property name="Type">$INFO[Skin.String(TrailerHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(TrailerHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="none">$INFO[Skin.String(TrailerHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/movieclap.png">$INFO[Skin.String(TrailerHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(TrailerHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(TrailerHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(TrailerHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(TrailerHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(TrailerHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(TrailerHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(TrailerHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(TrailerHomeItem.WidgetContent)]</property>
+            <property name="ID">TrailerHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TrailerHomeItem,home)</onclick>
+            <onclick>SetFocus(9006)</onclick>
+            <icon fallback="special://skin/backgrounds/trailers/">$INFO[Skin.String(TrailerHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(TrailerHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
         <item id="11">
             <label fallback="20343">$INFO[Skin.String(TVShowHomeItem.Label)]</label>
@@ -311,26 +270,47 @@
             <icon fallback="special://skin/backgrounds/tvshows/">$INFO[Skin.String(TVShowHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(TVShowHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
-        <item id="10">
-            <label fallback="342">$INFO[Skin.String(MovieHomeItem.Label)]</label>
-            <property name="Path" fallback="ActivateWindow(Videos,MovieTitles,return)">$INFO[Skin.String(MovieHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(MovieHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="movies">$INFO[Skin.String(MovieHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="movies">$INFO[Skin.String(MovieHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/video.png">$INFO[Skin.String(MovieHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(MovieHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(MovieHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(MovieHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(MovieHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(MovieHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(MovieHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(MovieHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(MovieHomeItem.WidgetContent)]</property>
-            <property name="ID">MovieHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MovieHomeItem,home)</onclick>
+        <item id="25">
+            <label fallback="31290">$INFO[Skin.String(TVGuideHomeItem.Label)]</label>
+            <property name="Path" fallback="RunAddon(script.tv.show.next.aired)">$INFO[Skin.String(TVGuideHomeItem.Path)]</property>
+            <property name="Type" fallback="custom">$INFO[Skin.String(TVGuideHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(TVGuideHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="none">$INFO[Skin.String(TVGuideHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/calendar.png">$INFO[Skin.String(TVGuideHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(TVGuideHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(TVGuideHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(TVGuideHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(TVGuideHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(TVGuideHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(TVGuideHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(TVGuideHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(TVGuideHomeItem.WidgetContent)]</property>
+            <property name="ID">TVGuideHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TVGuideHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/movies/">$INFO[Skin.String(MovieHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(MovieHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+            <icon fallback="special://skin/backgrounds/tvguide/">$INFO[Skin.String(TVGuideHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(TVGuideHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+        </item>
+        <item id="7">
+            <label fallback="31017">$INFO[Skin.String(LiveTVHomeItem.Label)]</label>
+            <property name="Path" fallback="ActivateWindow(TVChannels)">$INFO[Skin.String(LiveTVHomeItem.Path)]</property>
+            <property name="Type" fallback="custom">$INFO[Skin.String(LiveTVHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="livetv">$INFO[Skin.String(LiveTVHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="pvr">$INFO[Skin.String(LiveTVHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/tv3.png">$INFO[Skin.String(LiveTVHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(LiveTVHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(LiveTVHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(LiveTVHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(LiveTVHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(LiveTVHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(LiveTVHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(LiveTVHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(LiveTVHomeItem.WidgetContent)]</property>
+            <property name="ID">LiveTVHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],LiveTVHomeItem,home)</onclick>
+            <onclick>SetFocus(9006)</onclick>
+            <icon fallback="special://skin/backgrounds/livetv/">$INFO[Skin.String(LiveTVHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(LiveTVHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
         <item id="3">
             <label fallback="2">$INFO[Skin.String(MusicHomeItem.Label)]</label>
@@ -395,27 +375,6 @@
             <icon fallback="special://skin/backgrounds/pictures/">$INFO[Skin.String(PicturesHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(PicturesHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
-        <item id="7">
-            <label fallback="31017">$INFO[Skin.String(LiveTVHomeItem.Label)]</label>
-            <property name="Path" fallback="ActivateWindow(TVChannels)">$INFO[Skin.String(LiveTVHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(LiveTVHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="livetv">$INFO[Skin.String(LiveTVHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="pvr">$INFO[Skin.String(LiveTVHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/tv3.png">$INFO[Skin.String(LiveTVHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(LiveTVHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(LiveTVHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(LiveTVHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(LiveTVHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(LiveTVHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(LiveTVHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(LiveTVHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(LiveTVHomeItem.WidgetContent)]</property>
-            <property name="ID">LiveTVHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],LiveTVHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/livetv/">$INFO[Skin.String(LiveTVHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(LiveTVHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
-        </item>
         <item id="27">
             <label fallback="31163">$INFO[Skin.String(FeaturedHomeItem.Label)]</label>
             <property name="Path" fallback="RunScript(script.home,window=featured)">$INFO[Skin.String(FeaturedHomeItem.Path)]</property>
@@ -436,6 +395,90 @@
             <onclick>SetFocus(9006)</onclick>
             <icon fallback="special://skin/backgrounds/featured/">$INFO[Skin.String(FeaturedHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(FeaturedHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+        </item>
+        <item id="6">
+            <label fallback="24027">$INFO[Skin.String(WeatherHomeItem.Label)]</label>
+            <property name="Path" fallback="ActivateWindow(Weather)">$INFO[Skin.String(WeatherHomeItem.Path)]</property>
+            <property name="Type" fallback="custom">$INFO[Skin.String(WeatherHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="weather">$INFO[Skin.String(WeatherHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="weather">$INFO[Skin.String(WeatherHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/sun.png">$INFO[Skin.String(WeatherHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(WeatherHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(WeatherHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(WeatherHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(WeatherHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(WeatherHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(WeatherHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(WeatherHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(WeatherHomeItem.WidgetContent)]</property>
+            <property name="ID">WeatherHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],WeatherHomeItem,home)</onclick>
+            <onclick>SetFocus(9006)</onclick>
+            <icon fallback="special://skin/backgrounds/weather/">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(WeatherHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+        </item>
+        <item id="106">
+            <label fallback="33035">$INFO[Skin.String(MapsBrowserHomeItem.Label)]</label>
+            <property name="Path" fallback="RunScript(script.maps.browser)">$INFO[Skin.String(MapsBrowserHomeItem.Path)]</property>
+            <property name="Type" fallback="custom">$INFO[Skin.String(MapsBrowserHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(MapsBrowserHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="none">$INFO[Skin.String(MapsBrowserHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/map2.png">$INFO[Skin.String(MapsBrowserHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(MapsBrowserHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(MapsBrowserHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(MapsBrowserHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(MapsBrowserHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(MapsBrowserHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(MapsBrowserHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(MapsBrowserHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(MapsBrowserHomeItem.WidgetContent)]</property>
+            <property name="ID">MapsBrowserHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MapsBrowserHomeItem,home)</onclick>
+            <onclick>SetFocus(9006)</onclick>
+            <icon fallback="special://skin/backgrounds/maps/">$INFO[Skin.String(MapsBrowserHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(MapsBrowserHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+        </item>
+        <item id="5">
+            <label fallback="13000">$INFO[Skin.String(SettingsHomeItem.Label)]</label>
+            <property name="Path" fallback="ActivateWindow(settings)">$INFO[Skin.String(SettingsHomeItem.Path)]</property>
+            <property name="Type" fallback="custom">$INFO[Skin.String(SettingsHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="settings">$INFO[Skin.String(SettingsHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="system">$INFO[Skin.String(SettingsHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/controlpanel3.png">$INFO[Skin.String(SettingsHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(SettingsHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(SettingsHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(SettingsHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(SettingsHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(SettingsHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(SettingsHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(SettingsHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(SettingsHomeItem.WidgetContent)]</property>
+            <property name="ID">SettingsHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],SettingsHomeItem,home)</onclick>
+            <onclick>SetFocus(9006)</onclick>
+            <icon fallback="special://skin/backgrounds/system/">$INFO[Skin.String(SettingsHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(SettingsHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
+        </item>
+        <item id="12">
+            <label fallback="13005">$INFO[Skin.String(ShutdownHomeItem.Label)]</label>
+            <property name="Path" fallback="ActivateWindow(1113)">$INFO[Skin.String(ShutdownHomeItem.Path)]</property>
+            <property name="Type" fallback="custom">$INFO[Skin.String(ShutdownHomeItem.Type)]</property>
+            <property name="submenuVisibility" fallback="shutdown">$INFO[Skin.String(ShutdownHomeItem.SubMenu)]</property>
+            <property name="InfoLine" fallback="shutdown">$INFO[Skin.String(ShutdownHomeItem.InfoLine)]</property>
+            <property name="BigIcon" fallback="special://skin/extras/icons/poweroff.png">$INFO[Skin.String(ShutdownHomeItem.Icon)]</property>
+            <property name="DisableIcon">$INFO[Skin.String(ShutdownHomeItem.Disable)]</property>
+            <property name="BackgroundOverlay">$INFO[Skin.String(ShutdownHomeItem.BackgroundOverlay)]</property>
+            <property name="Widget2Title">$INFO[Skin.String(ShutdownHomeItem.Widget2Title)]</property>
+            <property name="WidgetTitle">$INFO[Skin.String(ShutdownHomeItem.WidgetTitle)]</property>
+            <property name="Widget2">$INFO[Skin.String(ShutdownHomeItem.Widget2)]</property>
+            <property name="Widget">$INFO[Skin.String(ShutdownHomeItem.Widget)]</property>
+            <property name="Widget2Content">$INFO[Skin.String(ShutdownHomeItem.Widget2Content)]</property>
+            <property name="WidgetContent">$INFO[Skin.String(ShutdownHomeItem.WidgetContent)]</property>
+            <property name="ID">ShutdownHomeItem</property>
+            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],ShutdownHomeItem,home)</onclick>
+            <onclick>SetFocus(9006)</onclick>
+            <icon fallback="special://skin/backgrounds/shutdown/">$INFO[Skin.String(ShutdownHomeItem.MultiFanart)]</icon>
+            <visible>IsEmpty(Skin.String(ShutdownHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
         <item id="101">
             <label fallback="CUSTOM1">$INFO[Skin.String(CustomHomeItem1.Label)]</label>
@@ -520,48 +563,6 @@
             <onclick>SetFocus(9006)</onclick>
             <icon fallback="special://skin/backgrounds/videos/">$INFO[Skin.String(CustomHomeItem4.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(CustomHomeItem4.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
-        </item>
-        <item id="105">
-            <label fallback="Trailers">$INFO[Skin.String(TrailerHomeItem.Label)]</label>
-            <property name="Path" fallback="RunScript(script.home,window=trailers)">$INFO[Skin.String(TrailerHomeItem.Path)]</property>
-            <property name="Type">$INFO[Skin.String(TrailerHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(TrailerHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="none">$INFO[Skin.String(TrailerHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/movieclap.png">$INFO[Skin.String(TrailerHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(TrailerHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(TrailerHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(TrailerHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(TrailerHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(TrailerHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(TrailerHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(TrailerHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(TrailerHomeItem.WidgetContent)]</property>
-            <property name="ID">TrailerHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TrailerHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/trailers/">$INFO[Skin.String(TrailerHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(TrailerHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
-        </item>
-        <item id="106">
-            <label fallback="33035">$INFO[Skin.String(MapsBrowserHomeItem.Label)]</label>
-            <property name="Path" fallback="RunScript(script.maps.browser)">$INFO[Skin.String(MapsBrowserHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(MapsBrowserHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="none">$INFO[Skin.String(MapsBrowserHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="none">$INFO[Skin.String(MapsBrowserHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/map2.png">$INFO[Skin.String(MapsBrowserHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(MapsBrowserHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(MapsBrowserHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(MapsBrowserHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(MapsBrowserHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(MapsBrowserHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(MapsBrowserHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(MapsBrowserHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(MapsBrowserHomeItem.WidgetContent)]</property>
-            <property name="ID">MapsBrowserHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MapsBrowserHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/maps/">$INFO[Skin.String(MapsBrowserHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(MapsBrowserHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
     </include>
     <include name="MainMenuFixedList">
