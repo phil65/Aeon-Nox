@@ -48,7 +48,7 @@
             <include>PanelSpot</include>
             <include>Neon_Floor</include>
         </control>
-      <control type="group">
+        <control type="group">
             <animation type="WindowOpen" reversible="false">
                 <effect type="zoom" start="150" end="100" center="960,540" time="480" tween="cubic" />
                 <effect type="fade" end="100" time="80" />
@@ -325,30 +325,26 @@
             <height>72</height>
             <texture>views/showcase_gradient.png</texture>
         </control>
-        <control type="group">
+        <include>BreadcrumbsContent</include>
+        <control type="grouplist">
             <include>Animation_HideBreadCrumbs</include>
-            <include>BreadcrumbsContent</include>
-            <control type="grouplist">
-                <width>1920</width>
-                <align>center</align>
-                <aligny>center</aligny>
-                <itemgap>10</itemgap>
-                <orientation>horizontal</orientation>
-                <include>Animation_WindowFade200</include>
-                <control type="image">
-                    <width>34</width>
-                    <height>42</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>breadcrumbs/items.png</texture>
-                    <colordiffuse>$VAR[FontColorVar]</colordiffuse>
-                    <animation effect="slide" end="0,-2" time="0" condition="true">Conditional</animation>
-                </control>
-                <control type="label">
-                    <label>$INFO[Window(Home).Property(NextAired.Total),, $LOCALIZE[20343]]</label>
-                    <include>BreadcrumbsLabel</include>
-                </control>
+            <width>1920</width>
+            <align>center</align>
+            <aligny>center</aligny>
+            <itemgap>10</itemgap>
+            <orientation>horizontal</orientation>
+            <control type="image">
+                <width>34</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture>breadcrumbs/items.png</texture>
+                <colordiffuse>$VAR[FontColorVar]</colordiffuse>
+                <animation effect="slide" end="0,-2" time="0" condition="true">Conditional</animation>
+            </control>
+            <control type="label">
+                <label>$INFO[Window(Home).Property(NextAired.Total),, $LOCALIZE[20343]]</label>
+                <include>BreadcrumbsLabel</include>
             </control>
         </control>
-        <include>Furniture_NowPlayingWidget</include>
     </controls>
 </window>

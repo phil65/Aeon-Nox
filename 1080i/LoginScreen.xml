@@ -12,7 +12,7 @@
             <imagepath background="true" fallback="special://skin/backgrounds/appearance.jpg">$INFO[Skin.String(LoginBackdrop)]</imagepath>
         </control>
         <include>CommonMediaPlayingBackground</include>
-        <!-- Furniture -->
+        <!--Furniture-->
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
             <control type="image">
@@ -145,39 +145,18 @@
             <font>-</font>
             <include>HiddenObject</include>
         </control>
-        <control type="group">
+        <include>BreadcrumbsContent</include>
+        <control type="grouplist">
             <include>Animation_HideBreadCrumbs</include>
-            <include>BreadcrumbsContent</include>
-            <control type="grouplist">
-                <width>1920</width>
-                <align>center</align>
-                <aligny>center</aligny>
-                <itemgap>15</itemgap>
-                <include>Animation_WindowFade200</include>
-                <orientation>horizontal</orientation>
-                <control type="label" id="3">
-                    <include>BreadcrumbsLabel</include>
-                </control>
-            </control>
-            <control type="group">
-                <control type="grouplist">
-                    <width>1882</width>
-                    <align>right</align>
-                    <aligny>center</aligny>
-                    <orientation>horizontal</orientation>
-                    <control type="label">
-                        <width min="15" max="1920">auto</width>
-                        <height>38</height>
-                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]]$INFO[System.Date][/COLOR][COLOR=time]$INFO[System.Time,  •  ][/COLOR]       </label>
-                        <font>Font_Reg30_Caps</font>
-                        <shadowcolor>bcshadow</shadowcolor>
-                        <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
-                        <scroll>false</scroll>
-                    </control>
-                </control>
+            <width>1920</width>
+            <align>center</align>
+            <aligny>center</aligny>
+            <itemgap>15</itemgap>
+            <orientation>horizontal</orientation>
+            <control type="label" id="3">
+                <include>BreadcrumbsLabel</include>
             </control>
         </control>
-        <include>Furniture_NowPlayingWidget</include>
         <control type="button" id="98">
             <posx>922</posx>
             <posy>990</posy>
