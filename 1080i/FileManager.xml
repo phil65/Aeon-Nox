@@ -276,22 +276,18 @@
             <texture>home/homemenu_gradient.png</texture>
         </control>
         <include>BreadcrumbsContent</include>
-        <control type="group">
+        <control type="grouplist">
             <include>Animation_HideBreadCrumbs</include>
             <width>1920</width>
             <align>center</align>
             <aligny>center</aligny>
-            <visible>!IsEmpty(Container.NumItems) + !Skin.HasSetting(ClassicTopBar)</visible>
             <itemgap>10</itemgap>
             <orientation>horizontal</orientation>
-            <animation effect="fade" time="320" delay="320">Visible</animation>
-            <animation effect="fade" time="320">Hidden</animation>
-            <include>Animation_WindowFade200</include>
             <control type="image">
                 <width>34</width>
                 <height>42</height>
                 <aspectratio>keep</aspectratio>
-                <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">breadcrumbs/items.png</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">breadcrumbs/items.png</texture>
                 <animation effect="slide" end="0,-2" time="0" condition="true">Conditional</animation>
             </control>
             <control type="label">
@@ -308,7 +304,7 @@
                 <width>34</width>
                 <height>42</height>
                 <aspectratio>keep</aspectratio>
-                <texture colordiffuse="$VAR[BreadCrumbsContentColorVar]">breadcrumbs/pages.png</texture>
+                <texture colordiffuse="$VAR[FontColorVar]">breadcrumbs/pages.png</texture>
                 <animation effect="slide" end="0,-3" time="0" condition="true">Conditional</animation>
             </control>
             <control type="label">
