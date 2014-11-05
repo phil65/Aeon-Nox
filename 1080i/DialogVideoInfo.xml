@@ -7,7 +7,6 @@
     <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(FanartZoom,movieinformation)</onunload>
-    <allowoverlay>no</allowoverlay>
     <controls>
         <control type="group">
             <animation effect="slide" start="1242,0" end="0,0" time="320" tween="quadratic">WindowOpen</animation>

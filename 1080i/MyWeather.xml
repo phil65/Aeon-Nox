@@ -2,7 +2,6 @@
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
-    <allowoverlay>no</allowoverlay>
     <onload condition="IsEmpty(Weather.plugin)">Notification(Error,No weather service selected)</onload>
     <onload condition="IsEmpty(Weather.plugin) + IsEmpty(Window.Property(openweathersettings))">SetProperty(openweathersettings,true)</onload>
     <onload condition="IsEmpty(Weather.plugin) + !IsEmpty(Window.Property(openweathersettings))">ActivateWindow(home)</onload>
