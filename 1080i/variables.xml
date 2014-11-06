@@ -416,10 +416,6 @@
         <value condition="!IsEmpty(Skin.String(LiveTVBackground))">$INFO[Skin.String(LiveTVBackground)]</value>
         <value>special://skin/backgrounds/livetv/</value>
     </variable>
-    <variable name="NowPlayingBackGroundVar">
-        <value condition="ControlGroup(450).HasFocus">special://skin/backgrounds/music/</value>
-        <value>special://skin/backgrounds/videos/</value>
-    </variable>
     <variable name="NowPlayingPlayLabelVar">
         <value condition="Player.Paused">$LOCALIZE[31043]</value>
         <value>$LOCALIZE[31040]</value>
@@ -2003,10 +1999,6 @@
     <variable name="ContextMiddleVar">
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_middle_glow.png</value>
         <value>dialogs/context_middle.png</value>
-    </variable>
-    <variable name="ShutdownTopVar">
-        <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_top_shutdown_glow.png</value>
-        <value>dialogs/context_top_shutdown.png</value>
     </variable>
     <variable name="MasterLockLabelVar">
         <value condition="!System.IsMaster">$LOCALIZE[20045]</value>
