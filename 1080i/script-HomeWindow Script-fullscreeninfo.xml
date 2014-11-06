@@ -188,7 +188,6 @@
             <include condition="!VideoPlayer.Content(livetv)">FullScreenInfoBar</include>
             <control type="group">
                 <animation effect="slide" end="-1800,0" condition="VideoPlayer.Content(files)">Conditional</animation>
-                <visible>Skin.HasSetting(AudioSubFlag)</visible>
                 <control type="image">
                     <posx>1820</posx>
                     <posy>1000</posy>
@@ -205,7 +204,7 @@
                     <height>30</height>
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="white2">special://skin/extras/icons/speaker.png</texture>
-                    <visible>!IsEmpty(VideoPlayer.AudioLanguage) + !Substring(VideoPlayer.AudioLanguage,und)</visible>
+                    <visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
                 </control>
                 <control type="image">
                     <posx>1860</posx>
