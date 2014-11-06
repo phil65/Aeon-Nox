@@ -327,6 +327,18 @@
         <disabledcolor>$VAR[FontColorVar]</disabledcolor>
         <focusedcolor>white6</focusedcolor>
     </include>
+    <include name="ShutdownNoGlow">
+        <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus.png</texturefocus>
+        <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/shutdown_nofocus.png</texturenofocus>
+        <alttexturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/shutdown_nofocus.png</alttexturenofocus>
+    </include>
+    <include name="ShutdownGlow">
+        <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus_glow.png</texturefocus>
+        <texturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_nofocus_glow.png</texturenofocus>
+        <alttexturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus_glow.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_nofocus_glow.png</alttexturenofocus>
+    </include>
     <include name="ShutdownNoGlowAlt">
         <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus2.png</texturefocus>
         <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/shutdown_nofocus2.png</texturenofocus>
@@ -377,10 +389,8 @@
         <focusedcolor>white2</focusedcolor>
         <radioposx>49</radioposx>
         <radiowidth>45</radiowidth>
-        <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus_glow.png</texturefocus>
-        <texturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_nofocus_glow.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus_glow.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_nofocus_glow.png</alttexturenofocus>
+        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
+        <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlow</include>
     </include>
     <include name="HiddenObject">
         <posx>-300</posx>
