@@ -16,8 +16,6 @@
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
         <orientation>horizontal</orientation>
-        <animation effect="fade" end="100" time="160">Visible</animation>
-        <animation effect="fade" start="100" end="30" time="160" condition="[Window.IsVisible(1113) | ControlGroup(9001).HasFocus | ControlGroup(6000).HasFocus | ControlGroup(5000).HasFocus]">conditional</animation>
         <itemlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
             <control type="image">
                 <posx>252</posx>
@@ -461,7 +459,7 @@
         </item>
         <item id="12">
             <label fallback="13005">$INFO[Skin.String(ShutdownHomeItem.Label)]</label>
-            <property name="Path" fallback="ActivateWindow(1113)">$INFO[Skin.String(ShutdownHomeItem.Path)]</property>
+            <property name="Path" fallback="RunScript(script.toolbox,info=yesnodialog,header=Shutdown,text=$LOCALIZE[31149],yesaction=Dialog.Close(all,true)|Quit())">$INFO[Skin.String(ShutdownHomeItem.Path)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(ShutdownHomeItem.Type)]</property>
             <property name="submenuVisibility" fallback="shutdown">$INFO[Skin.String(ShutdownHomeItem.SubMenu)]</property>
             <property name="InfoLine" fallback="shutdown">$INFO[Skin.String(ShutdownHomeItem.InfoLine)]</property>
