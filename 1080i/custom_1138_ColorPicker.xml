@@ -203,12 +203,6 @@
                         <icon>common/silver.png</icon>
                         <onclick>Skin.SetString($INFO[Window(skinsettings).Property(colordialog)],FFC9C0BB)</onclick>
                     </item>
-                    <item>
-                        <label>31630</label>
-                        <icon>common/QuestionMark.png</icon>
-                        <onclick condition="System.HasAddon(script.color.picker)">RunScript(script.color.picker,Skin.SetString($INFO[Window(skinsettings).Property(colordialog)]),SetStringInRealTime=true)</onclick>
-                        <onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31900],$LOCALIZE[31910])</onclick>
-                    </item>
                 </content>
             </control>
             <control type="radiobutton" id="11">

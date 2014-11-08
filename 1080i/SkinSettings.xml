@@ -167,11 +167,10 @@
                     <ondown>10004</ondown>
                     <onright>10009</onright>
                     <control type="radiobutton" id="402">
-                        <label>script.color.picker $INFO[System.AddonVersion(script.color.picker)]</label>
+                        <label>script.toolbox $INFO[System.AddonVersion(script.toolbox)]</label>
                         <include>Default_SettingRadioButtonShort</include>
-                        <onclick condition="System.HasAddon(script.color.picker)">Addon.OpenSettings(script.color.picker)</onclick>
-                        <onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[31902],$LOCALIZE[31871])</onclick>
-                        <selected>System.HasAddon(script.color.picker)</selected>
+                        <onclick>Addon.OpenSettings(script.toolbox)</onclick>
+                        <selected>System.HasAddon(script.toolbox)</selected>
                     </control>
                     <control type="radiobutton" id="404">
                         <label>service.skin.widgets $INFO[System.AddonVersion(service.skin.widgets)]</label>
