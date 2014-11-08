@@ -584,6 +584,12 @@
         <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">common/cdart/bd.png</value>
         <value condition="!IsEmpty(ListItem.VideoResolution)">common/cdart/default.png</value>
     </variable>
+    <variable name="NowPlayingDiscVar">
+        <value condition="!IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
+        <value condition="IntegerGreaterThan(VideoPlayer.VideoResolution,719)">common/cdart/bd.png</value>
+        <value condition="!IsEmpty(VideoPlayer.VideoResolution)">common/cdart/default.png</value>
+        <value condition="Player.HasAudio">$INFO[Player.FolderPath]cdart.png</value>
+    </variable>
     <variable name="PlayerPosterVar">
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.poster)]</value>
         <value>$INFO[VideoPlayer.Cover]</value>
