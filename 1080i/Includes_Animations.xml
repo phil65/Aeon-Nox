@@ -69,15 +69,9 @@
         </animation>
     </include>
     <include name="Animation_MediaMenuSlide2">
-        <animation type="Conditional" condition="!ControlGroup(9000).HasFocus">
-            <effect type="slide" end="-420,0" time="320" easing="in" tween="cubic" />
-        </animation>
-        <animation type="WindowClose">
-            <effect type="slide" end="-450,0" time="320" easing="in" tween="cubic" />
-        </animation>
-        <animation type="WindowOpen">
-            <effect type="slide" start="-450" end="0" time="320" delay="800" tween="cubic" />
-        </animation>
+        <animation effect="slide" end="-420,0" time="320" easing="in" tween="cubic" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
+        <animation effect="slide" end="-450,0" time="320" easing="in" tween="cubic">WindowClose</animation>
+        <animation effect="slide" start="-450,0" delay="800" time="320" tween="cubic">WindowOpen</animation>
         <animation type="Conditional" condition="Window.IsActive(1126)">
             <effect type="fade" start="100" end="0" time="250" />
             <effect type="zoom" end="115,100" time="250" easing="in" tween="cubic" />
@@ -115,12 +109,8 @@
         <animation type="WindowOpen" condition="[Window.Previous(home) | Window.Previous(fullscreenvideo) | Window.Previous(visualisation) | Window.Previous(slideshow) | [Window.Previous(settings) + Window.Next(videolibrary)]]">
             <effect type="slide" start="0,-52" end="0,0" time="240" tween="cubic" easing="in" />
         </animation>
-        <animation type="Hidden">
-            <effect type="slide" end="0,-52" time="240" tween="cubic" easing="in" />
-        </animation>
-        <animation type="Visible">
-            <effect type="slide" start="0,-52" end="0,0" time="240" tween="cubic" easing="in" />
-        </animation>
+        <animation effect="slide" end="0,-52" time="240" tween="cubic" easing="in">Hidden</animation>
+        <animation effect="slide" start="0,-52" end="0,0" time="240" tween="cubic" easing="in">Visible</animation>
     </include>
     <include name="Animation_HomeWidget">
         <animation effect="fade" delay="800" time="400">WindowOpen</animation>
