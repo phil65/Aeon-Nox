@@ -183,41 +183,40 @@
                     </control>
                 </control>
                 <control type="group" id="8994">
-                    <control type="group">
-                        <visible>Player.HasVideo</visible>
+                    <visible>Player.HasVideo</visible>
+                    <include>Animation_CommonFade</include>
+                    <!--
+                    <control type="image">
+                        <animation effect="zoom" end="40" center="-70,675" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
+                        <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
                         <include>Animation_CommonFade</include>
-<!--                         <control type="image">
-                            <animation effect="zoom" end="40" center="-70,675" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                            <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
-                            <include>Animation_CommonFade</include>
-                            <visible>!IsEmpty(VideoPlayer.Cover)</visible>
-                            <posx>16</posx>
-                            <posy>710</posy>
-                            <width>480</width>
-                            <height>300</height>
-                            <aspectratio>scale</aspectratio>
-                            <texture>$INFO[VideoPlayer.Cover]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control> -->
-                        <control type="textbox">
-                            <aligny>top</aligny>
-                            <posx>0</posx>
-                            <posy>700</posy>
-                            <height>110</height>
-                            <label>$INFO[VideoPlayer.Premiered]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Rating,  •  ][CR]$INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x,: ][B]$INFO[VideoPlayer.Title][/B][CR]$INFO[VideoPlayer.Genre]$INFO[VideoPlayer.TVShowTitle]</label>
-                            <font>Font_Reg23</font>
-                            <textcolor>white3</textcolor>
-                        </control>
-                        <control type="progress">
-                            <posx>0</posx>
-                            <posy>797</posy>
-                            <width>200</width>
-                            <height>7</height>
-                            <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                            <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
-                            <aligny>bottom</aligny>
-                            <info>Player.Progress</info>
-                        </control>
+                        <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                        <posx>16</posx>
+                        <posy>710</posy>
+                        <width>480</width>
+                        <height>300</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$INFO[VideoPlayer.Cover]</texture>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                    </control>-->
+                    <control type="textbox">
+                        <aligny>top</aligny>
+                        <posx>0</posx>
+                        <posy>700</posy>
+                        <height>110</height>
+                        <label>$INFO[VideoPlayer.Premiered]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Rating,  •  ][CR]$INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x,: ][B]$INFO[VideoPlayer.Title][/B][CR]$INFO[VideoPlayer.Genre]$INFO[VideoPlayer.TVShowTitle]</label>
+                        <font>Font_Reg23</font>
+                        <textcolor>white3</textcolor>
+                    </control>
+                    <control type="progress">
+                        <posx>0</posx>
+                        <posy>797</posy>
+                        <width>200</width>
+                        <height>7</height>
+                        <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                        <midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
+                        <aligny>bottom</aligny>
+                        <info>Player.Progress</info>
                     </control>
                 </control>
                 <control type="textbox">
