@@ -316,24 +316,31 @@
             <visible>!Skin.HasSetting(DisableRSS)</visible>
             <visible>!Player.HasMedia</visible>
             <visible>System.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)</visible>
-            <animation effect="slide" end="1920,0" time="240">WindowClose</animation>
-            <animation type="WindowOpen">
+            <visible>!Control.HasFocus(9010) | Skin.HasSetting(rsshomelow)</visible>
+            <animation effect="slide" delay="980" start="0,50" time="240" condition="Skin.HasSetting(rsshomelow)">WindowOpen</animation>
+            <animation effect="slide" end="0,50" time="200" condition="Skin.HasSetting(rsshomelow)">WindowClose</animation>
+            <animation effect="slide" start="0,50" time="240" condition="Skin.HasSetting(rsshomelow)">Visible</animation>
+            <animation effect="slide" end="0,50" time="240" condition="Skin.HasSetting(rsshomelow)">Hidden</animation>
+            <animation type="WindowOpen" condition="!Skin.HasSetting(rsshomelow)">
                 <effect type="fade" delay="980" end="100" time="200" />
                 <effect type="slide" start="0,-50" end="0,0" delay="800" time="480" />
             </animation>
-            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
-            <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
-            <animation type="Visible" reversible="false">
+            <animation type="WindowClose" condition="!Skin.HasSetting(rsshomelow)">
+                <effect type="fade" end="0" time="200" />
+                <effect type="slide" start="0,0" end="0,-50" time="200" />
+            </animation>
+            <animation type="Visible" reversible="false" condition="!Skin.HasSetting(rsshomelow)">
                 <effect type="fade" end="100" time="240" />
                 <effect type="slide" start="0,-40" end="0,0" time="240" tween="cubic" easing="inout" />
             </animation>
-            <animation type="Hidden" reversible="false">
+            <animation type="Hidden" reversible="false" condition="!Skin.HasSetting(rsshomelow)">
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="slide" end="0,-40" time="240" tween="cubic" easing="inout" />
             </animation>
-            <visible>!Control.HasFocus(9010) | Skin.HasSetting(rsshomelow)</visible>
+            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
+            <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
             <control type="group">
-                <animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+                <animation effect="slide" end="0,437" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <control type="image">
                     <posy>2</posy>
                     <width>1920</width>
