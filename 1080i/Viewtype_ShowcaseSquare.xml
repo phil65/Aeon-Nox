@@ -1,81 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="contents509list">
-        <posx>-368</posx>
-        <posy>580</posy>
-        <width>2655</width>
-        <height>525</height>
-        <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(programs) | Window.IsActive(pictures) | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)]</visible>
-        <onleft>509</onleft>
-        <onright>509</onright>
-        <onup condition="!Window.IsActive(videolibrary) + !Container.Content(years) + !Container.Content(genres)">7000</onup>
-        <onup condition="Window.IsActive(videolibrary) | Container.Content(years) | Container.Content(genres)">9000</onup>
-        <ondown>610</ondown>
-        <viewtype label="31028">bigwrap</viewtype>
-        <pagecontrol>61</pagecontrol>
-        <scrolltime>200</scrolltime>
-        <focusposition>3</focusposition>
-        <orientation>horizontal</orientation>
-        <preloaditems>2</preloaditems>
-        <include>Animation_OpenCloseZoom_New</include>
-        <animation effect="fade" time="8" delay="600" end="100" condition="Skin.HasSetting(noflowalbum)">Conditional</animation>
-        <animation effect="fade" start="100" end="0" time="320" condition="Control.HasFocus(110)">Conditional</animation>
-        <itemlayout height="525" width="375" condition="Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)">
-            <control type="group">
-                <animation effect="zoom" start="100" end="85" center="200,345" time="240" reversible="false" tween="cubic" condition="!Skin.HasSetting(usecasescd) + Container.Content(albums)">Conditional</animation>
-                <animation effect="fade" time="0" delay="640">Visible</animation>
-                <include>MusicShowcaseGlow</include>
-                <control type="image">
-                    <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
-                    <include>MusicShowcaseThumb</include>
-                </control>
-                <include>MusicShowcaseCase</include>
-                <include>MusicShowcaseGlassOverlayAngled</include>
-                <control type="image">
-                    <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
-                    <include>MusicShowcaseThumbReflection</include>
-                </control>
-                <control type="image">
-                    <include>MusicShowcaseThumbReflectionCD</include>
-                </control>
-            </control>
-        </itemlayout>
-        <focusedlayout height="525" width="375" condition="Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)">
-            <control type="group">
-                <animation effect="zoom" start="100" end="85" center="200,345" time="240" reversible="false" tween="cubic" condition="!Skin.HasSetting(usecasescd) + Container.Content(albums)">Conditional</animation>
-                <visible>Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)</visible>
-                <animation effect="fade" time="0" delay="640">Visible</animation>
-                <animation effect="zoom" start="100" end="110" center="202,345" time="320" reversible="false" tween="cubic">Focus</animation>
-                <animation effect="zoom" start="110" end="100" center="202,345" time="160" reversible="false" tween="cubic">Unfocus</animation>
-                <include>MusicShowcaseGlow</include>
-                <control type="image">
-                    <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
-                    <include>MusicShowcaseThumb</include>
-                </control>
-                <include>MusicShowcaseCase</include>
-                <include>MusicShowcaseGlassOverlayMain</include>
-                <control type="image">
-                    <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
-                    <include>MusicShowcaseThumbReflectionMain</include>
-                </control>
-                <control type="image">
-                    <include>MusicShowcaseThumbReflectionCD</include>
-                </control>
-            </control>
-        </focusedlayout>
-        <itemlayout height="525" width="200" condition="![Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)]"></itemlayout>
-        <focusedlayout height="525" width="655" condition="![Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)]"></focusedlayout>
-    </include>
-    <include name="scqfixed">
-        <control type="fixedlist" id="509">
-            <include>contents509list</include>
-        </control>
-    </include>
-    <include name="scqwrap">
-        <control type="wraplist" id="509">
-            <include>contents509list</include>
-        </control>
-    </include>
     <include name="ShowcaseQuadrate">
         <control type="group">
             <visible>Control.IsVisible(509)</visible>
@@ -364,7 +288,7 @@
                 <control type="group">
                     <posx>758</posx>
                     <control type="group">
-                        <visible>!IsEmpty(Container(509).ListItemNoWrap(0).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(509).ListItemNoWrap(0).FolderPath)</visible>
                         <include>MusicShowcaseGlow</include>
                         <control type="image">
                             <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
@@ -382,8 +306,72 @@
                     </control>
                 </control>
             </control>
-            <include condition="!Skin.HasSetting(showcasewrap)">scqfixed</include>
-            <include condition="Skin.HasSetting(showcasewrap)">scqwrap</include>
+            <control type="fixedlist" id="509">
+                <posx>-368</posx>
+                <posy>580</posy>
+                <width>2655</width>
+                <height>525</height>
+                <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(programs) | Window.IsActive(pictures) | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)]</visible>
+                <onleft>509</onleft>
+                <onright>509</onright>
+                <onup condition="!Window.IsActive(videolibrary) + !Container.Content(years) + !Container.Content(genres)">7000</onup>
+                <onup condition="Window.IsActive(videolibrary) | Container.Content(years) | Container.Content(genres)">9000</onup>
+                <ondown>610</ondown>
+                <viewtype label="31028">bigwrap</viewtype>
+                <pagecontrol>61</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <focusposition>3</focusposition>
+                <orientation>horizontal</orientation>
+                <preloaditems>2</preloaditems>
+                <include>Animation_OpenCloseZoom_New</include>
+                <animation effect="fade" time="8" delay="600" end="100" condition="Skin.HasSetting(noflowalbum)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="320" condition="Control.HasFocus(110)">Conditional</animation>
+                <itemlayout height="525" width="375" condition="Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)">
+                    <control type="group">
+                        <animation effect="zoom" start="100" end="85" center="200,345" time="240" reversible="false" tween="cubic" condition="!Skin.HasSetting(usecasescd) + Container.Content(albums)">Conditional</animation>
+                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <include>MusicShowcaseGlow</include>
+                        <control type="image">
+                            <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
+                            <include>MusicShowcaseThumb</include>
+                        </control>
+                        <include>MusicShowcaseCase</include>
+                        <include>MusicShowcaseGlassOverlayAngled</include>
+                        <control type="image">
+                            <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
+                            <include>MusicShowcaseThumbReflection</include>
+                        </control>
+                        <control type="image">
+                            <include>MusicShowcaseThumbReflectionCD</include>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="525" width="375" condition="Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)">
+                    <control type="group">
+                        <animation effect="zoom" start="100" end="85" center="200,345" time="240" reversible="false" tween="cubic" condition="!Skin.HasSetting(usecasescd) + Container.Content(albums)">Conditional</animation>
+                        <visible>Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)</visible>
+                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <animation effect="zoom" start="100" end="110" center="202,345" time="320" reversible="false" tween="cubic">Focus</animation>
+                        <animation effect="zoom" start="110" end="100" center="202,345" time="160" reversible="false" tween="cubic">Unfocus</animation>
+                        <include>MusicShowcaseGlow</include>
+                        <control type="image">
+                            <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
+                            <include>MusicShowcaseThumb</include>
+                        </control>
+                        <include>MusicShowcaseCase</include>
+                        <include>MusicShowcaseGlassOverlayMain</include>
+                        <control type="image">
+                            <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
+                            <include>MusicShowcaseThumbReflectionMain</include>
+                        </control>
+                        <control type="image">
+                            <include>MusicShowcaseThumbReflectionCD</include>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <itemlayout height="525" width="200" condition="![Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)]"></itemlayout>
+                <focusedlayout height="525" width="655" condition="![Skin.HasSetting(noflowalbum) + !Control.IsVisible(7003)]"></focusedlayout>
+            </control>
         </control>
         <control type="button" id="1970">
             <include>HiddenObject</include>
@@ -434,10 +422,10 @@
             </control>
         </control>
     </include>
-    <!-- Music Showcase Items-->
+    <!--Music Showcase Items-->
     <include name="MusicShowcaseItem-6">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(-6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(-6).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem-6Var]</texture>
@@ -456,7 +444,7 @@
     </include>
     <include name="MusicShowcaseItem-5">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(-5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(-5).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem-5Var]</texture>
@@ -475,7 +463,7 @@
     </include>
     <include name="MusicShowcaseItem-4">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(-4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(-4).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem-4Var]</texture>
@@ -495,7 +483,7 @@
     <include name="MusicShowcaseItem-3">
         <control type="group">
             <include>MusicShowcaseGlow</include>
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(-3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(-3).FolderPath)</visible>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem-3Var]</texture>
                 <include>MusicShowcaseThumb</include>
@@ -513,7 +501,7 @@
     </include>
     <include name="MusicShowcaseItem-2">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(-2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(-2).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem-2Var]</texture>
@@ -532,7 +520,7 @@
     </include>
     <include name="MusicShowcaseItem-1">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(-1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(-1).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem-1Var]</texture>
@@ -551,7 +539,7 @@
     </include>
     <include name="MusicShowcaseItem0">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(0).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(0).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem0Var]</texture>
@@ -570,7 +558,7 @@
     </include>
     <include name="MusicShowcaseItem1">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(1).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem1Var]</texture>
@@ -589,7 +577,7 @@
     </include>
     <include name="MusicShowcaseItem2">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(2).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem2Var]</texture>
@@ -608,7 +596,7 @@
     </include>
     <include name="MusicShowcaseItem3">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(3).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem3Var]</texture>
@@ -627,7 +615,7 @@
     </include>
     <include name="MusicShowcaseItem4">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(4).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem4Var]</texture>
@@ -646,7 +634,7 @@
     </include>
     <include name="MusicShowcaseItem5">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(5).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem5Var]</texture>
@@ -665,7 +653,7 @@
     </include>
     <include name="MusicShowcaseItem6">
         <control type="group">
-            <visible>!IsEmpty(Container(509).ListItemNoWrap(6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+            <visible>!IsEmpty(Container(509).ListItemNoWrap(6).FolderPath)</visible>
             <include>MusicShowcaseGlow</include>
             <control type="image">
                 <texture background="true" diffuse="thumbs/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[MusicShowcaseItem6Var]</texture>
@@ -752,7 +740,7 @@
         <animation effect="slide" start="0,00" end="0,10" time="0" condition="!Skin.HasSetting(usecasescd) + Container.Content(albums)">Conditional</animation>
         <colordiffuse>52FFFFFF</colordiffuse>
     </include>
-    <!-- Music Showcase Variables: Thumb glass overlays -->
+    <!--Music Showcase Variables: Thumb glass overlays-->
     <include name="MusicShowcaseGlassOverlayAngled">
         <control type="image">
             <posx>27</posx>

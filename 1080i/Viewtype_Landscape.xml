@@ -74,80 +74,68 @@
             <include>UnwatchedIcon</include>
         </control>
     </include>
-    <include name="contents503list">
-        <posx>-330</posx>
-        <posy>612</posy>
-        <width>2580</width>
-        <height>600</height>
-        <onleft>503</onleft>
-        <onright>503</onright>
-        <onup>7000</onup>
-        <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">610</ondown>
-        <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !IsEmpty(ListItem.Trailer)">9000</ondown>
-        <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + IsEmpty(ListItem.Trailer)">7000</ondown>
-        <orientation>horizontal</orientation>
-        <viewtype label="$LOCALIZE[31150]">BigWrap</viewtype>
-        <pagecontrol>61</pagecontrol>
-        <scrolltime tween="quadratic">300</scrolltime>
-        <focusposition>2</focusposition>
-        <preloaditems>2</preloaditems>
-        <visible>![!IsEmpty(Skin.String(DisableLandscapeVL)) + Window.IsActive(videos)]</visible>
-        <visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(artists)]</visible>
-        <include>Animation_OpenCloseZoom_New</include>
-        <animation effect="slide" end="52" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeclearart)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]">Conditional</animation>
-        <itemlayout width="495" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | [Container.Content(artists) + !Skin.HasSetting(landscapeonelogo)]">
-            <include>LandscapeThumbs</include>
-        </itemlayout>
-        <focusedlayout width="600" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | [Container.Content(artists) + !Skin.HasSetting(landscapeonelogo)]">
-            <control type="group">
-                <posx>57</posx>
-                <animation effect="zoom" center="auto" start="100" end="122" time="240" tween="quadratic" reversible="false">Focus</animation>
-                <animation type="UnFocus" condition="Control.HasFocus(503)">
-                    <effect type="slide" end="-57" time="0" tween="quadratic" />
-                    <effect type="zoom" center="auto" start="122" end="100" time="240" tween="quadratic" />
-                </animation>
-                <include>LandscapeThumbs</include>
-            </control>
-        </focusedlayout>
-        <itemlayout width="495" height="450" condition="[Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">
-            <include>LandscapeLogoLayout</include>
-        </itemlayout>
-        <focusedlayout width="495" height="450" condition="Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]">
-            <control type="group">
-                <animation effect="zoom" center="auto" start="100" end="122" time="480" tween="back" reversible="false">Focus</animation>
-                <animation effect="zoom" center="auto" start="122" end="100" time="160" tween="back" reversible="false">UnFocus</animation>
-                <include>LandscapeLogoLayout</include>
-            </control>
-        </focusedlayout>
-        <itemlayout width="516" height="450" condition="Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]"></itemlayout>
-        <focusedlayout width="516" height="450" condition="Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]"></focusedlayout>
-        <itemlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
-            <include>LandscapeClearArtLayout</include>
-        </itemlayout>
-        <focusedlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
-            <control type="group">
-                <animation effect="zoom" center="auto" start="100" end="122" time="480" tween="back" reversible="false">Focus</animation>
-                <animation effect="zoom" center="auto" start="122" end="100" time="160" tween="back" reversible="false">UnFocus</animation>
-                <include>LandscapeClearArtLayout</include>
-            </control>
-        </focusedlayout>
-    </include>
-    <include name="lsfixed">
-        <control type="fixedlist" id="503">
-            <include>contents503list</include>
-        </control>
-    </include>
-    <include name="lswrap">
-        <control type="wraplist" id="503">
-            <include>contents503list</include>
-        </control>
-    </include>
     <include name="MediaListView3">
         <control type="group">
             <visible>Control.IsVisible(503)</visible>
             <animation effect="slide" tween="cubic" time="400" start="0,806" end="0,0">VisibleChange</animation>
-            <include condition="!Skin.HasSetting(showcasewrap)">lsfixed</include>
-            <include condition="Skin.HasSetting(showcasewrap)">lswrap</include>
+            <control type="fixedlist" id="503">
+                <posx>-330</posx>
+                <posy>612</posy>
+                <width>2580</width>
+                <height>600</height>
+                <onleft>503</onleft>
+                <onright>503</onright>
+                <onup>7000</onup>
+                <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">610</ondown>
+                <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !IsEmpty(ListItem.Trailer)">9000</ondown>
+                <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + IsEmpty(ListItem.Trailer)">7000</ondown>
+                <orientation>horizontal</orientation>
+                <viewtype label="$LOCALIZE[31150]">BigWrap</viewtype>
+                <pagecontrol>61</pagecontrol>
+                <scrolltime tween="quadratic">300</scrolltime>
+                <focusposition>2</focusposition>
+                <preloaditems>2</preloaditems>
+                <visible>![!IsEmpty(Skin.String(DisableLandscapeVL)) + Window.IsActive(videos)]</visible>
+                <visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(artists)]</visible>
+                <include>Animation_OpenCloseZoom_New</include>
+                <animation effect="slide" end="52" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeclearart)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]">Conditional</animation>
+                <itemlayout width="495" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | [Container.Content(artists) + !Skin.HasSetting(landscapeonelogo)]">
+                    <include>LandscapeThumbs</include>
+                </itemlayout>
+                <focusedlayout width="600" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | [Container.Content(artists) + !Skin.HasSetting(landscapeonelogo)]">
+                    <control type="group">
+                        <posx>57</posx>
+                        <animation effect="zoom" center="auto" start="100" end="122" time="240" tween="quadratic" reversible="false">Focus</animation>
+                        <animation type="UnFocus" condition="Control.HasFocus(503)">
+                            <effect type="slide" end="-57" time="0" tween="quadratic" />
+                            <effect type="zoom" center="auto" start="122" end="100" time="240" tween="quadratic" />
+                        </animation>
+                        <include>LandscapeThumbs</include>
+                    </control>
+                </focusedlayout>
+                <itemlayout width="495" height="450" condition="[Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">
+                    <include>LandscapeLogoLayout</include>
+                </itemlayout>
+                <focusedlayout width="495" height="450" condition="Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]">
+                    <control type="group">
+                        <animation effect="zoom" center="auto" start="100" end="122" time="480" tween="back" reversible="false">Focus</animation>
+                        <animation effect="zoom" center="auto" start="122" end="100" time="160" tween="back" reversible="false">UnFocus</animation>
+                        <include>LandscapeLogoLayout</include>
+                    </control>
+                </focusedlayout>
+                <itemlayout width="516" height="450" condition="Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]"></itemlayout>
+                <focusedlayout width="516" height="450" condition="Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]"></focusedlayout>
+                <itemlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
+                    <include>LandscapeClearArtLayout</include>
+                </itemlayout>
+                <focusedlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
+                    <control type="group">
+                        <animation effect="zoom" center="auto" start="100" end="122" time="480" tween="back" reversible="false">Focus</animation>
+                        <animation effect="zoom" center="auto" start="122" end="100" time="160" tween="back" reversible="false">UnFocus</animation>
+                        <include>LandscapeClearArtLayout</include>
+                    </control>
+                </focusedlayout>
+            </control>
             <control type="group">
                 <include>Animation_WindowFade200</include>
                 <control type="image" id="8822">
@@ -164,22 +152,22 @@
                     <visible>Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]</visible>
                     <visible>![Container.OnNext | Container.OnPrevious]</visible>
                 </control>
-                    <control type="label">
-                        <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
-                        <visible>!ControlGroup(24000).HasFocus</visible>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61) | Control.IsVisible(24000)">Conditional</animation>
-                        <posx>510</posx>
-                        <posy>1012</posy>
-                        <width>900</width>
-                        <align>center</align>
-                        <label>$VAR[EpisodeTitleVar]</label>
-                        <font>Font_ShowcaseMainLabel2_Caps</font>
-                        <shadowcolor>floorshadow</shadowcolor>
-                        <textcolor>floor</textcolor>
-                        <scroll>true</scroll>
-                        <scrollspeed>30</scrollspeed>
-                    </control>
+                <control type="label">
+                    <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
+                    <visible>!ControlGroup(24000).HasFocus</visible>
+                    <animation effect="fade" time="200">VisibleChange</animation>
+                    <animation effect="slide" end="0,-20" time="240" condition="Control.IsVisible(4050) | Control.HasFocus(61) | Control.IsVisible(24000)">Conditional</animation>
+                    <posx>510</posx>
+                    <posy>1012</posy>
+                    <width>900</width>
+                    <align>center</align>
+                    <label>$VAR[EpisodeTitleVar]</label>
+                    <font>Font_ShowcaseMainLabel2_Caps</font>
+                    <shadowcolor>floorshadow</shadowcolor>
+                    <textcolor>floor</textcolor>
+                    <scroll>true</scroll>
+                    <scrollspeed>30</scrollspeed>
+                </control>
                 <control type="label">
                     <posx>510</posx>
                     <posy>1030</posy>

@@ -562,14 +562,6 @@
                     <selected>Skin.HasSetting(MovieWallBanner)</selected>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),Wall) + Container.Content(movies)</visible>
                 </control>
-                <control type="radiobutton" id="1696">
-                    <label>$LOCALIZE[31694]:</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(showcasewrap)</onclick>
-                    <selected>!Skin.HasSetting(showcasewrap)</selected>
-                    <include condition="!Window.IsActive(script-Rom_Collection_Browser-main.xml)">ReloadWindowOnClick</include>
-                    <visible>Substring(Window(home).Property(actualViewtype),Showcase) | Stringcompare(Window(home).Property(actualViewtype),Landscape)</visible>
-                </control>
                 <control type="button" id="1635">
                     <label>$LOCALIZE[31674]</label>
                     <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(TriPanelPosition)][/COLOR]</label2>

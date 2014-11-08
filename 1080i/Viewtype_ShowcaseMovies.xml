@@ -1,91 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="contents501list">
-        <posx>-69</posx>
-        <posy>540</posy>
-        <width>2058</width>
-        <height>525</height>
-        <visible>[!Container.Content(episodes) | SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)] + !Container.Content(addons)</visible>
-        <visible>![!IsEmpty(Skin.String(DisableShowcaseVL)) + Window.IsActive(videos)]</visible>
-        <onleft>501</onleft>
-        <onright>501</onright>
-        <onup>7000</onup>
-        <ondown>610</ondown>
-        <viewtype label="31028">bigwrap</viewtype>
-        <pagecontrol>61</pagecontrol>
-        <scrolltime tween="quadratic">300</scrolltime>
-        <focusposition>3</focusposition>
-        <orientation>horizontal</orientation>
-        <preloaditems>2</preloaditems>
-        <include>Animation_OpenCloseZoom_New</include>
-        <itemlayout height="600" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
-            <control type="group">
-                <posy>30</posy>
-                <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
-                <animation effect="fade" time="0" delay="640">Visible</animation>
-                <include>MovieShowCaseGlow</include>
-                <control type="image">
-                    <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                    <include>MovieShowcaseThumb</include>
-                </control>
-                <include>MovieShowcaseGlassOverlay</include>
-                <control type="image">
-                    <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                    <include>MovieShowcaseThumbReflection</include>
-                </control>
-                <control type="image">
-                    <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-                    <include>MovieShowcaseDVDCoverVars</include>
-                </control>
-                <include>MovieShowcaseThumbReflectionDVD</include>
-                <control type="image">
-                    <include>WatchedOverlayShowCase</include>
-                    <texture>$VAR[OverlayVisibility0]</texture>
-                </control>
-            </control>
-        </itemlayout>
-        <focusedlayout height="525" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
-            <control type="group">
-                <posy>30</posy>
-                <animation effect="fade" time="0" delay="640">Visible</animation>
-                <animation effect="zoom" start="100" end="120" center="147,345" time="240" reversible="false" tween="cubic">Focus</animation>
-                <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
-                <include>MovieShowCaseGlow</include>
-                <control type="image">
-                    <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                    <include>MovieShowcaseThumb</include>
-                </control>
-                <include>MovieShowcaseGlassOverlay</include>
-                <control type="image">
-                    <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                    <include>MovieShowcaseThumbReflectionMain</include>
-                </control>
-                <include>MovieShowcaseThumbReflectionDVD</include>
-                <control type="image">
-                    <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-                    <include>MovieShowcaseDVDCoverVars</include>
-                </control>
-                <control type="image">
-                    <include>WatchedOverlayShowCase</include>
-                    <texture>$VAR[OverlayVisibility0]</texture>
-                </control>
-            </control>
-        </focusedlayout>
-        <itemlayout height="600" width="100" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></itemlayout>
-        <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></focusedlayout>
-        <itemlayout height="600" width="200" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></itemlayout>
-        <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></focusedlayout>
-    </include>
-    <include name="scmfixed">
-        <control type="fixedlist" id="501">
-            <include>contents501list</include>
-        </control>
-    </include>
-    <include name="scmwrap">
-        <control type="wraplist" id="501">
-            <include>contents501list</include>
-        </control>
-    </include>
     <include name="Showcase">
         <control type="group">
             <visible>Control.IsVisible(501)</visible>
@@ -100,7 +14,7 @@
                     <animation effect="slide" end="-135,0" time="200" reversible="false">Hidden</animation>
                     <control type="group">
                         <posx>15</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-7).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-7).FolderPath)</visible>
                         <visible>Container.OnNext</visible>
                         <animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
                         <animation effect="rotatey" center="-135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -108,37 +22,37 @@
                     </control>
                     <control type="group">
                         <posx>150</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)</visible>
                         <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-6</include>
                     </control>
                     <control type="group">
                         <posx>285</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)</visible>
                         <animation effect="rotatey" center="135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-5</include>
                     </control>
                     <control type="group">
                         <posx>420</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)</visible>
                         <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-4</include>
                     </control>
                     <control type="group">
                         <posx>555</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)</visible>
                         <animation effect="rotatey" center="405" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-3</include>
                     </control>
                     <control type="group">
                         <posx>690</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)</visible>
                         <animation effect="rotatey" center="540" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-2</include>
                     </control>
                     <control type="group">
                         <posx>1635</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)</visible>
                         <visible>!Container.OnNext</visible>
                         <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
                         <animation effect="rotatey" center="2100" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -146,31 +60,31 @@
                     </control>
                     <control type="group">
                         <posx>1500</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)</visible>
                         <animation effect="rotatey" center="1965" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem5</include>
                     </control>
                     <control type="group">
                         <posx>1365</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)</visible>
                         <animation effect="rotatey" center="1830" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem4</include>
                     </control>
                     <control type="group">
                         <posx>1230</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)</visible>
                         <animation effect="rotatey" center="1695" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem3</include>
                     </control>
                     <control type="group">
                         <posx>1095</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)</visible>
                         <animation effect="rotatey" center="1560" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem2</include>
                     </control>
                     <control type="group">
                         <posx>960</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)</visible>
                         <animation effect="rotatey" center="1425" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem1</include>
                     </control>
@@ -180,14 +94,14 @@
                         <control type="group">
                             <posx>825</posx>
                             <visible>Container.OnNext</visible>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)</visible>
                             <animation effect="rotatey" center="1290" end="-55" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
                             <animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
                             <include>MovieShowCaseItem0</include>
                         </control>
                         <control type="group">
                             <posx>758</posx>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                            <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)</visible>
                             <visible>Container.OnNext</visible>
                             <animation effect="rotatey" center="608" end="-55" time="200" reversible="false" tween="quadratic">Hidden</animation>
                             <include>MovieShowCaseItem-1</include>
@@ -201,7 +115,7 @@
                     <animation effect="slide" end="135,0" time="200" reversible="false">Hidden</animation>
                     <control type="group">
                         <posx>1500</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(7).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(7).FolderPath)</visible>
                         <visible>Container.OnPrevious</visible>
                         <animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
                         <animation effect="rotatey" center="1965" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -209,37 +123,37 @@
                     </control>
                     <control type="group">
                         <posx>1365</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)</visible>
                         <animation effect="rotatey" center="1830" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem6</include>
                     </control>
                     <control type="group">
                         <posx>1230</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)</visible>
                         <animation effect="rotatey" center="1695" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem5</include>
                     </control>
                     <control type="group">
                         <posx>1095</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)</visible>
                         <animation effect="rotatey" center="1560" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem4</include>
                     </control>
                     <control type="group">
                         <posx>960</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)</visible>
                         <animation effect="rotatey" center="1425" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem3</include>
                     </control>
                     <control type="group">
                         <posx>825</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)</visible>
                         <animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem2</include>
                     </control>
                     <control type="group">
                         <posx>-120</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)</visible>
                         <visible>!Container.OnPrevious</visible>
                         <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
                         <animation effect="rotatey" center="-270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -247,31 +161,31 @@
                     </control>
                     <control type="group">
                         <posx>15</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)</visible>
                         <animation effect="rotatey" center="-135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-5</include>
                     </control>
                     <control type="group">
                         <posx>150</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)</visible>
                         <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-4</include>
                     </control>
                     <control type="group">
                         <posx>285</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)</visible>
                         <animation effect="rotatey" center="135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-3</include>
                     </control>
                     <control type="group">
                         <posx>420</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)</visible>
                         <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-2</include>
                     </control>
                     <control type="group">
                         <posx>555</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)</visible>
                         <animation effect="rotatey" center="405" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-1</include>
                     </control>
@@ -281,14 +195,14 @@
                         <control type="group">
                             <posx>690</posx>
                             <visible>Container.OnPrevious</visible>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)</visible>
                             <animation effect="rotatey" center="540" end="55" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
                             <animation effect="rotatey" center="540" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                             <include>MovieShowCaseItem0</include>
                         </control>
                         <control type="group">
                             <posx>758</posx>
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                            <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)</visible>
                             <visible>Container.OnPrevious</visible>
                             <animation effect="rotatey" center="1223" end="55" time="200" reversible="false" tween="quadratic">Hidden</animation>
                             <include>MovieShowCaseItem1</include>
@@ -320,7 +234,7 @@
                     <visible>!Control.IsVisible(6001) + !Control.IsVisible(6002) + Control.IsVisible(960)</visible>
                     <control type="group">
                         <posx>15</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)</visible>
                         <animation effect="slide" time="240" end="818" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="818" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="-135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -332,7 +246,7 @@
                     </control>
                     <control type="group">
                         <posx>150</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)</visible>
                         <animation effect="slide" time="240" end="682" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="682" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -344,7 +258,7 @@
                     </control>
                     <control type="group">
                         <posx>285</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)</visible>
                         <animation effect="slide" time="240" end="548" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="548" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -356,7 +270,7 @@
                     </control>
                     <control type="group">
                         <posx>420</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)</visible>
                         <animation effect="slide" time="240" end="412" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="412" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -368,7 +282,7 @@
                     </control>
                     <control type="group">
                         <posx>555</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)</visible>
                         <animation effect="slide" time="240" end="278" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="278" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="405" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -380,7 +294,7 @@
                     </control>
                     <control type="group">
                         <posx>690</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)</visible>
                         <animation effect="slide" time="240" end="142" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="142" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="540" start="-55" end="-55" time="0" condition="true">Conditional</animation>
@@ -392,7 +306,7 @@
                     </control>
                     <control type="group">
                         <posx>1500</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-818" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-818" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="1965" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -404,7 +318,7 @@
                     </control>
                     <control type="group">
                         <posx>1365</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-682" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-682" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="1830" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -416,7 +330,7 @@
                     </control>
                     <control type="group">
                         <posx>1230</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-548" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-548" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="1695" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -428,7 +342,7 @@
                     </control>
                     <control type="group">
                         <posx>1095</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-412" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-412" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="1560" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -440,7 +354,7 @@
                     </control>
                     <control type="group">
                         <posx>960</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-278" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-278" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="1425" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -452,7 +366,7 @@
                     </control>
                     <control type="group">
                         <posx>825</posx>
-                        <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                        <visible>!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)</visible>
                         <animation effect="slide" time="240" end="-142" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-142" tween="cubic">WindowOpen</animation>
                         <animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
@@ -465,7 +379,7 @@
                     <control type="group">
                         <posx>758</posx>
                         <control type="group">
-                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath) | Skin.HasSetting(showcasewrap)</visible>
+                            <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)</visible>
                             <include>MovieShowCaseGlow</include>
                             <control type="image">
                                 <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
@@ -489,8 +403,82 @@
                     </control>
                 </control>
             </control>
-            <include condition="!Skin.HasSetting(showcasewrap)">scmfixed</include>
-            <include condition="Skin.HasSetting(showcasewrap)">scmwrap</include>
+            <control type="fixedlist" id="501">
+                <posx>-69</posx>
+                <posy>540</posy>
+                <width>2058</width>
+                <height>525</height>
+                <visible>[!Container.Content(episodes) | SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)] + !Container.Content(addons)</visible>
+                <visible>![!IsEmpty(Skin.String(DisableShowcaseVL)) + Window.IsActive(videos)]</visible>
+                <onleft>501</onleft>
+                <onright>501</onright>
+                <onup>7000</onup>
+                <ondown>610</ondown>
+                <viewtype label="31028">bigwrap</viewtype>
+                <pagecontrol>61</pagecontrol>
+                <scrolltime tween="quadratic">300</scrolltime>
+                <focusposition>3</focusposition>
+                <orientation>horizontal</orientation>
+                <preloaditems>2</preloaditems>
+                <include>Animation_OpenCloseZoom_New</include>
+                <itemlayout height="600" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
+                    <control type="group">
+                        <posy>30</posy>
+                        <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
+                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <include>MovieShowCaseGlow</include>
+                        <control type="image">
+                            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                            <include>MovieShowcaseThumb</include>
+                        </control>
+                        <include>MovieShowcaseGlassOverlay</include>
+                        <control type="image">
+                            <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                            <include>MovieShowcaseThumbReflection</include>
+                        </control>
+                        <control type="image">
+                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
+                            <include>MovieShowcaseDVDCoverVars</include>
+                        </control>
+                        <include>MovieShowcaseThumbReflectionDVD</include>
+                        <control type="image">
+                            <include>WatchedOverlayShowCase</include>
+                            <texture>$VAR[OverlayVisibility0]</texture>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="525" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
+                    <control type="group">
+                        <posy>30</posy>
+                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <animation effect="zoom" start="100" end="120" center="147,345" time="240" reversible="false" tween="cubic">Focus</animation>
+                        <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
+                        <include>MovieShowCaseGlow</include>
+                        <control type="image">
+                            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                            <include>MovieShowcaseThumb</include>
+                        </control>
+                        <include>MovieShowcaseGlassOverlay</include>
+                        <control type="image">
+                            <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                            <include>MovieShowcaseThumbReflectionMain</include>
+                        </control>
+                        <include>MovieShowcaseThumbReflectionDVD</include>
+                        <control type="image">
+                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
+                            <include>MovieShowcaseDVDCoverVars</include>
+                        </control>
+                        <control type="image">
+                            <include>WatchedOverlayShowCase</include>
+                            <texture>$VAR[OverlayVisibility0]</texture>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <itemlayout height="600" width="100" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></itemlayout>
+                <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></focusedlayout>
+                <itemlayout height="600" width="200" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></itemlayout>
+                <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></focusedlayout>
+            </control>
         </control>
     </include>
     <include name="MovieShowcaseThumbReflectionDVD">
@@ -515,7 +503,7 @@
         <fadetime>0</fadetime>
         <visible>Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]</visible>
     </include>
-    <!-- Movie Showcase Variables: Main thumbs -->
+    <!--Movie Showcase Variables: Main thumbs-->
     <include name="MovieShowcaseThumbDimensions">
         <posx>17</posx>
         <posy>10</posy>
@@ -578,7 +566,7 @@
         <animation effect="slide" start="0,0" end="6,-3" time="0" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
         <animation effect="slide" start="0,0" end="0,-29" time="0" condition="[container.content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(usecases) + !Skin.HasSetting(clearcases)">Conditional</animation>
     </include>
-    <!-- Movie Showcase Variables: Thumb glass overlays -->
+    <!--Movie Showcase Variables: Thumb glass overlays-->
     <include name="MovieShowcaseGlassOverlay">
         <control type="image">
             <texture diffuse="thumbs/thumb_mask.png">thumbs/thumb_glass.png</texture>
@@ -586,7 +574,7 @@
             <visible>![Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]]</visible>
         </control>
     </include>
-    <!-- Movie Showcase Items-->
+    <!--Movie Showcase Items-->
     <include name="MovieShowCaseItem-7">
         <include>MovieShowCaseGlow</include>
         <control type="image">
