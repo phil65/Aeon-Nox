@@ -1979,14 +1979,6 @@
         <value condition="Stringcompare(Skin.String(LibraryStructure),4)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)] - $INFO[Container(5010).ListItem.Label] $INFO[Window(home).Property(Year),(,)\cdart.png]</value>
         <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)]\$INFO[Container(5010).ListItem.Label,,\cdart.png]</value>
     </variable>
-    <variable name="ContextBottomVar">
-        <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_bottom_glow.png</value>
-        <value>dialogs/context_bottom.png</value>
-    </variable>
-    <variable name="ContextTopVar">
-        <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_top_glow.png</value>
-        <value>dialogs/context_top.png</value>
-    </variable>
     <variable name="ContextMiddleVar">
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_middle_glow.png</value>
         <value>dialogs/context_middle.png</value>
@@ -1994,6 +1986,10 @@
     <variable name="ShutdownTopVar">
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_top_shutdown_glow.png</value>
         <value>dialogs/context_top_shutdown.png</value>
+    </variable>
+    <variable name="ShutdownBottomVar">
+        <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_bottom_glow.png</value>
+        <value>dialogs/context_bottom.png</value>
     </variable>
     <variable name="MasterLockLabelVar">
         <value condition="!System.IsMaster">$LOCALIZE[20045]</value>

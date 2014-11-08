@@ -6,12 +6,16 @@
         <posy>0</posy>
         <system>1</system>
     </coordinates>
+<!--     <onload>RunScript(script.toolbox,info=blur,id=$INFO[ListItem.Art(poster)])</onload>
+ -->    <onload>RunScript(script.toolbox,info=blur,id=$INFO[ListItem.Thumb])</onload>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="image" id="999">
-            <width>462</width>
-            <height>1080</height>
-            <texture colordiffuse="$VAR[DialogColorVar]">$VAR[ContextMiddleVar]</texture>
+            <posx>10</posx>
+            <posy>-10</posy>
+            <width>442</width>
+            <height>1100</height>
+            <texture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</texture>
         </control>
         <control type="grouplist" id="996">
             <width>462</width>
@@ -30,13 +34,13 @@
                 <visible>System.HasAddon(script.libraryeditor) + !IsEmpty(ListItem.DBID) + !SubString(ListItem.Path,videodb://movies/sets)</visible>
                 <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
             </control>
-            <!--            <control type="button" id="2067">
+            <control type="button" id="2067">
                 <include>ContextMenuButton</include>
                 <label>Delete</label>
                 <onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=delete&amp;type=Song)</onclick>
                 <visible>System.HasAddon(script.libraryeditor) + !IsEmpty(ListItem.DBID)</visible>
                 <visible>Container.Content(songs)</visible>
-            </control> -->
+            </control>
             <control type="button" id="2009">
                 <include>ContextMenuButton</include>
                 <label>$LOCALIZE[31096]</label>
@@ -74,21 +78,6 @@
                 <visible>Container.Content(artists)</visible>
                 <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
             </control>
-        </control>
-        <control type="image" id="997">
-            <posy>-39</posy>
-            <width>462</width>
-            <height>39</height>
-            <texture colordiffuse="$VAR[DialogColorVar]">$VAR[ContextTopVar]</texture>
-        </control>
-        <control type="image" id="998">
-            <posy>585</posy>
-            <width>462</width>
-            <height>40</height>
-<!--             <animation effect="slide" start="0,0" end="0,-58" time="0" condition="!Control.IsVisible(2001)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,-58" time="0" condition="!Control.IsVisible(2066)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,-58" time="0" condition="!Control.IsVisible(2009)">Conditional</animation> -->
-            <texture colordiffuse="$VAR[DialogColorVar]">$VAR[ContextBottomVar]</texture>
         </control>
         <control type="button" id="1000">
             <width>462</width>
