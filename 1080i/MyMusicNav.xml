@@ -381,7 +381,7 @@
                     <animation effect="fade" time="200">WindowOpen</animation>
                     <animation effect="fade" time="200">WindowClose</animation>
                     <control type="image">
-                        <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
+                        <texture colordiffuse="$VAR[PanelColorVar]">diffuseoverlay.png</texture>
                         <include>FullscreenDimensions</include>
                         <animation effect="fade" end="100" time="320" delay="80">Visible</animation>
                         <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
@@ -390,7 +390,7 @@
                         <visible>[[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(50) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(7679) | Control.IsVisible(512)]]</visible>
                     </control>
                     <control type="image" id="5999">
-                        <texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
+                        <texture colordiffuse="$VAR[PanelColorVar]">diffuseoverlay.png</texture>
                         <include>FullscreenDimensions</include>
                         <animation effect="fade" end="100" time="440" delay="160">Visible</animation>
                         <animation effect="fade" start="100" end="0" time="80">Hidden</animation>
