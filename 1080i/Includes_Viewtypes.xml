@@ -21,11 +21,13 @@
                     <posy>874</posy>
                     <width>1490</width>
                     <height>206</height>
+                    <visible>!Control.IsVisible(50) + !Control.IsVisible(52)</visible>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_spot.png</texture>
                     <animation effect="fade" start="100" end="50" time="240" condition="!Control.IsVisible(52) + !Control.IsVisible(53) + [ControlGroup(9000).HasFocus | Control.HasFocus(60) | Control.HasFocus(70) | Control.HasFocus(62) | Control.HasFocus(61)]">Conditional</animation>
                     <animation effect="slide" time="160" end="-585" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
                     <animation effect="slide" time="160" end="-120" tween="cubic" condition="Control.IsVisible(57) + Skin.HasSetting(smallshiftview)">Conditional</animation>
-                    <animation effect="slide" time="160" end="185" tween="cubic" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
+                    <animation effect="slide" time="160" end="185" tween="cubic" condition= "Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>1040</posx>
@@ -35,26 +37,17 @@
                     <texture colordiffuse="$VAR[AreaColorVar]">views/list_spot.png</texture>
                     <animation effect="slide" time="160" end="190" tween="cubic" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
                     <animation effect="slide" time="160" end="60" tween="cubic" condition="Control.IsVisible(50) + Window.IsActive(musiclibrary)">Conditional</animation>
+                    <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53)</visible>
                     <visible>!Container.Content(years) + !Container.Content(playlists)</visible>
                 </control>
             </control>
-            <control type="group">
-                <visible>!Control.IsVisible(57)</visible>
-                <visible>!Control.HasFocus(109)</visible>
-                <animation effect="slide" end="0,-400" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
+            <control type="image">
+                <width>1920</width>
+                <height>1080</height>
+                <texture colordiffuse="vignette">views/showcase_vignette.png</texture>
+                <visible>!Control.HasFocus(109) + !Control.IsVisible(57)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
-                <control type="image">
-                    <width>696</width>
-                    <height>1080</height>
-                    <texture colordiffuse="vignette">views/showcase_vignette.png</texture>
-                </control>
-                <control type="image">
-                    <posx>1224</posx>
-                    <width>696</width>
-                    <height>1080</height>
-                    <texture colordiffuse="vignette" flipx="true">views/showcase_vignette.png</texture>
-                </control>
             </control>
             <control type="image">
                 <posy>874</posy>
@@ -476,7 +469,8 @@
         <control type="button" id="610">
             <include>HiddenObject</include>
             <onfocus condition="!Control.IsVisible(61)">SetFocus(24000)</onfocus>
-<!--             <onfocus condition="Control.IsVisible(61) + [Substring(ListItem.SortLetter,0) | Substring(ListItem.SortLetter,1) | Substring(ListItem.SortLetter,2) | Substring(ListItem.SortLetter,3) | Substring(ListItem.SortLetter,4) | Substring(ListItem.SortLetter,5) | Substring(ListItem.SortLetter,6) | Substring(ListItem.SortLetter,7) | Substring(ListItem.SortLetter,8) | Substring(ListItem.SortLetter,9)]">SetFocus(24030)</onfocus>
+            <!--
+            <onfocus condition="Control.IsVisible(61) + [Substring(ListItem.SortLetter,0) | Substring(ListItem.SortLetter,1) | Substring(ListItem.SortLetter,2) | Substring(ListItem.SortLetter,3) | Substring(ListItem.SortLetter,4) | Substring(ListItem.SortLetter,5) | Substring(ListItem.SortLetter,6) | Substring(ListItem.SortLetter,7) | Substring(ListItem.SortLetter,8) | Substring(ListItem.SortLetter,9)]">SetFocus(24030)</onfocus>
             <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,A)">SetFocus(24001)</onfocus>
             <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,B)">SetFocus(24002)</onfocus>
             <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,C)">SetFocus(24003)</onfocus>
@@ -502,7 +496,7 @@
             <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,W)">SetFocus(24023)</onfocus>
             <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,X)">SetFocus(24024)</onfocus>
             <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,Y)">SetFocus(24025)</onfocus>
-            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,Z)">SetFocus(24026)</onfocus> -->
+            <onfocus condition="Control.IsVisible(61) + Stringcompare(ListItem.SortLetter,Z)">SetFocus(24026)</onfocus>-->
             <onfocus>SetFocus(61)</onfocus>
             <ondown>50</ondown>
             <onclick>-</onclick>
@@ -512,8 +506,9 @@
             <posy>1035</posy>
             <height>40</height>
             <width>975</width>
-<!--             <visible>![SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
- -->            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
+            <!--
+            <visible>![SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>-->
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
             <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(61)">Conditional</animation>
             <onup>50</onup>
             <ondown condition="!Control.IsVisible(500)">109</ondown>
