@@ -306,18 +306,13 @@
                 <effect type="slide" start="-450" end="0" time="320" delay="800" tween="cubic" />
             </animation>
             <control type="group">
-                <animation type="Conditional" condition="Window.IsActive(1121)">
-                    <effect type="slide" end="-182" time="320" easing="in" tween="cubic" />
-                </animation>
+                <animation effect="slide" end="-182" time="320" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
                 <control type="image">
-                    <posx>-42</posx>
-                    <width>462</width>
+                    <posx>-92</posx>
+                    <width>512</width>
                     <height>1080</height>
                     <texture colordiffuse="$VAR[DialogColorVar]">dialogs/context_middle.png</texture>
-                    <animation type="Conditional" condition="Window.IsActive(1126)">
-                        <effect type="zoom" end="115,100" time="320" easing="in" tween="cubic" />
-                        <effect type="slide" end="-62" time="320" easing="in" tween="cubic" />
-                    </animation>
+                    <animation effect="slide" end="-2" time="320" easing="in" tween="cubic" condition="Window.IsActive(1126)">Conditional</animation>
                 </control>
                 <control type="group">
                     <posx>380</posx>
