@@ -41,35 +41,6 @@
                         </control>
                     </focusedlayout>
                     <itemlayout height="268" width="189" condition="[Container.Content(movies) + !Skin.HasSetting(usecasesinfowall)] | [Container.Content(tvshows) + ![Skin.HasSetting(TVInfoWallLandscape) | Skin.HasSetting(TVInfoWallBanner) | Skin.HasSetting(TVInfoWallLogo)]] | [[Window.IsActive(programs) + !Container.Content(addons)] + !Skin.HasSetting(InfoWallSquare)] | Container.Content(sets) | Container.Content(seasons)">
-                        <control type="group">
-                            <visible>Skin.HasSetting(useclearcasesinfowall)</visible>
-                            <control type="image">
-                                <posx>4</posx>
-                                <posy>10</posy>
-                                <width>165</width>
-                                <height>246</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="wall/wall_movie_mask.png">$VAR[ListPosterVar]</texture>
-                            </control>
-                            <control type="image">
-                                <posx>-3</posx>
-                                <posy>4</posy>
-                                <width>180</width>
-                                <height>262</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture>wall/boxes/wall_movie_overlay.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>110</posx>
-                                <posy>10</posy>
-                                <width>60</width>
-                                <height>60</height>
-                                <texture>$VAR[OverlayVisibility0]</texture>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!Skin.HasSetting(useclearcasesinfowall)</visible>
-                            <animation effect="fade" end="90" time="0" condition="true">Conditional</animation>
                             <control type="image">
                                 <width>189</width>
                                 <height>268</height>
@@ -85,46 +56,12 @@
                                 <height>60</height>
                                 <texture>$VAR[OverlayVisibility0]</texture>
                             </control>
-                        </control>
                         <control type="group">
                             <posy>5</posy>
                             <include>UnwatchedIcon</include>
                         </control>
                     </itemlayout>
                     <focusedlayout height="268" width="189" condition="[Container.Content(movies) + !Skin.HasSetting(usecasesinfowall)] | [Container.Content(tvshows) + ![Skin.HasSetting(TVInfoWallLandscape) | Skin.HasSetting(TVInfoWallBanner) | Skin.HasSetting(TVInfoWallLogo)]] | [[Window.IsActive(programs) + !Container.Content(addons)] + !Skin.HasSetting(InfoWallSquare)] | Container.Content(sets) | Container.Content(seasons)">
-                        <control type="group">
-                            <visible>Skin.HasSetting(useclearcasesinfowall)</visible>
-                            <animation effect="zoom" center="87,133" start="100" end="118" time="160" tween="quadratic" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>4</posx>
-                                <posy>10</posy>
-                                <width>165</width>
-                                <height>246</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture background="true" diffuse="wall/wall_movie_mask.png">$VAR[ListPosterVar]</texture>
-                            </control>
-                            <control type="image">
-                                <posx>-3</posx>
-                                <posy>4</posy>
-                                <width>180</width>
-                                <height>262</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture>wall/boxes/wall_movie_overlay.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>110</posx>
-                                <posy>10</posy>
-                                <width>60</width>
-                                <height>60</height>
-                                <texture>$VAR[OverlayVisibility0]</texture>
-                            </control>
-                            <control type="group">
-                                <posy>5</posy>
-                                <include>UnwatchedIcon</include>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <visible>!Skin.HasSetting(useclearcasesinfowall)</visible>
                             <control type="image">
                                 <width>189</width>
                                 <height>268</height>
@@ -149,7 +86,6 @@
                                 <posy>5</posy>
                                 <include>UnwatchedIcon</include>
                             </control>
-                        </control>
                     </focusedlayout>
                     <itemlayout height="268" width="189" condition="Container.Content(movies) + Skin.HasSetting(usecasesinfowall)">
                         <control type="image">

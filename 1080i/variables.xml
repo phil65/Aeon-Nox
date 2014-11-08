@@ -1789,11 +1789,6 @@
         <value condition="Control.HasFocus(22222)">$INFO[Container(6010).ListItem.Thumb]</value>
         <value>-</value>
     </variable>
-    <variable name="AddonWallCasesLabelVar">
-        <value condition="Skin.HasSetting(useclearcasesinfowall)">$LOCALIZE[31282]</value>
-        <value condition="Skin.HasSetting(usecasesinfowall)">$LOCALIZE[31248]</value>
-        <value>$LOCALIZE[106]</value>
-    </variable>
     <variable name="VideoFanArtLabelVar">
         <value condition="[Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)] | [Container.Content(tvshows) + Skin.HasSetting(extrafanarttvshows)] | [Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)] | [Container.Content(movies) + Skin.HasSetting(extrafanartmovies)] | [Container.Content(musicvideos) + Skin.HasSetting(extrafanartmusicvideos)]">$LOCALIZE[31047]</value>
         <value condition="[Skin.HasSetting(NoVideoLibraryFanartMusicVideos)  + Container.Content(musicvideos)] | [Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(NoVideoLibraryFanart)  + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]">$LOCALIZE[106]</value>
