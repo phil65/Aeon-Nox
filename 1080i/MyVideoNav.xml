@@ -179,7 +179,20 @@
                     <scroll>true</scroll>
                 </control>
             </control>
-            <control type="image">
+            <control type="group">
+                <visible>StringCompare(Control.GetLabel(4420),fanart)</visible>
+                <animation type="VisibleChange">
+                    <effect type="fade" end="100" delay="320" time="160" />
+                </animation>
+                <control type="image">
+                <posx>899</posx>
+                <posy>59</posy>
+                <width>818</width>
+                <height>474</height>
+                <aspectratio>stretch</aspectratio>
+                <texture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</texture>
+            </control>
+                <control type="image">
                 <posx>909</posx>
                 <posy>69</posy>
                 <width>798</width>
@@ -187,14 +200,8 @@
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true" fallback="special://skin/backgrounds/fallback_movies.jpg">$VAR[FanartTextureVar]</texture>
                 <fadetime>FanartCrossfadeTime</fadetime>
-                <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                <bordersize>7</bordersize>
-                <animation effect="zoom" end="108" center="1800,270" time="320" tween="cubic" easing="inout" condition="Control.IsVisible(503)">Conditional</animation>
-                <visible>StringCompare(Control.GetLabel(4420),fanart)</visible>
-                <animation type="VisibleChange">
-                    <effect type="fade" end="100" delay="320" time="160" />
-                </animation>
             </control>
+        </control>
             <control type="group">
                 <posx>158</posx>
                 <posy>74</posy>
