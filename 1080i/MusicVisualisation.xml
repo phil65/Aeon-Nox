@@ -18,11 +18,6 @@
         <include>BackgroundFadeLabels</include>
         <control type="group">
             <include>Animation_WindowFade200</include>
-            <control type="multiimage">
-                <imagepath fallback="special://skin/backgrounds/music/" background="true">$VAR[MusicVizBackgroundVar]</imagepath>
-                <include>MusicVizBG</include>
-                <visible>!StringCompare(Skin.String(MusicViz.MultiFanart),artistfanart) + !Substring(Skin.String(MusicViz.MultiFanart),case) + !Substring(Skin.String(MusicViz.MultiFanart),artistslideshow) + !Substring(Skin.String(MusicViz.MultiFanart),wall) + !IsEmpty(Skin.String(MusicViz.MultiFanart))</visible>
-            </control>
             <control type="group">
                 <animation effect="fade" time="350">VisibleChange</animation>
                 <control type="multiimage">
@@ -31,7 +26,12 @@
                 </control>
                 <control type="image">
                     <texture colordiffuse="FFAAAAAA" fallback="special://skin/backgrounds/music/">$INFO[Window(home).Property(ImageFilter)]</texture>
-                    <include>MusicVizBG</include>
+                    <aspectratio align="center" aligny="center">scale</aspectratio>
+                    <fadetime>1000</fadetime>
+                    <include>FullscreenDimensions</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
+                    <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+                    <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
                 </control>
             </control>
             <include>cdwall-musicvisualisation</include>
@@ -49,7 +49,7 @@
                     <posx>345</posx>
                     <width>794</width>
                     <height>70</height>
-                    <texture colordiffuse="$VAR[ExtendedColorVar]" flipy="true">home/timepanel_mid_shadow.png</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" flipy="true">home/timepanel_mid_shadow.png</texture>
                     <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
                 </control>
                 <control type="label">
@@ -60,7 +60,7 @@
                     <align>right</align>
                     <label>[COLOR grey]$INFO[System.Date(ddd)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
                     <font>Font_Reg25</font>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                 </control>
             </control>
         </control>
@@ -121,7 +121,7 @@
                     <posy>-282</posy>
                     <width>447</width>
                     <height>450</height>
-                    <texture border="20" colordiffuse="$VAR[AreaColorVar]">thumbs/cd_shadow_glow.png</texture>
+                    <texture border="20" colordiffuse="$INFO[Window(home).Property(ImageColor)]">thumbs/cd_shadow_glow.png</texture>
                     <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                 </control>
                 <control type="image">
@@ -174,7 +174,7 @@
                     <label>$INFO[MusicPlayer.TrackNumber,,: ][COLOR=grey]$INFO[MusicPlayer.Title][/COLOR]</label>
                     <font>Font_Bold56</font>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
@@ -184,7 +184,7 @@
                     <label>[COLOR grey]$INFO[MusicPlayer.Album][/COLOR]$INFO[MusicPlayer.Year, [,] ]</label>
                     <font>Font_Reg42</font>
                     <shadowcolor>black</shadowcolor>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
@@ -208,6 +208,23 @@
                     <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                 </control>
+<!--                 <control type="image">
+                <posx>635</posx>
+                <posy>-450</posy>
+                <width>818</width>
+                <height>474</height>
+                <aspectratio>stretch</aspectratio>
+                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</texture>
+            </control>
+                <control type="image">
+                <posx>645</posx>
+                <posy>-440</posy>
+                <width>798</width>
+                <height>454</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture background="true">$INFO[Player.Art(fanart)]</texture>
+                <fadetime>FanartCrossfadeTime</fadetime>
+            </control> -->
             </control>
             <control type="group">
                 <control type="group">
@@ -219,9 +236,9 @@
                     <width>830</width>
                     <align>right</align>
                     <height>110</height>
-                    <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B][CR]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
+                    <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B][CR]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
                     <font>Font_Reg23</font>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                     <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
                     <visible>Player.HasAudio</visible>
                 </control>
@@ -251,7 +268,7 @@
                         <label>$INFO[MusicPlayer.BitRate,,[COLOR grey] kbps[/COLOR]][CR]$INFO[MusicPlayer.SampleRate,,[COLOR grey] kHz[/COLOR] ][CR]$INFO[MusicPlayer.bitspersample,,[COLOR grey] bit[/COLOR] ]</label>
                         <font>Font_Reg19_Caps</font>
                         <shadowcolor>black</shadowcolor>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
+                        <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                     </control>
 <!--                     <control type="label">
                         <posx>788</posx>
@@ -313,6 +330,8 @@
                     <width>1754</width>
                     <height>15</height>
                     <info>Player.Progress</info>
+                                    <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
                 </control>
             </control>
         </control>
@@ -336,7 +355,7 @@
             <control type="label">
                 <posx>75</posx>
                 <posy>55</posy>
-                <label>$INFO[Visualisation.Name] [I][COLOR=$VAR[AreaColorVar]]($LOCALIZE[20166])[/COLOR][/I] • fps: $INFO[System.FPS]</label>
+                <label>$INFO[Visualisation.Name] [I][COLOR=$INFO[Window(home).Property(ImageColor)]]($LOCALIZE[20166])[/COLOR][/I] • fps: $INFO[System.FPS]</label>
                 <label>-</label>
                 <font>Font_Reg30_2</font>
                 <visible>Visualisation.Locked</visible>

@@ -1,44 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="120">
-    <defaultcontrol always="true">380</defaultcontrol>
+    <defaultcontrol always="true">650</defaultcontrol>
     <controls>
-        <control type="button" id="380">
-            <onfocus condition="Skin.HasSetting(musicvisinfomode)">SetFocus(5000)</onfocus>
-            <onfocus condition="!Skin.HasSetting(musicvisinfomode)">SetFocus(602)</onfocus>
-            <include>HiddenObject</include>
-        </control>
         <control type="group">
-            <animation effect="slide" start="0,-218" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="0,-218" time="240" delay="120" tween="quadratic">WindowClose</animation>
-            <animation effect="slide" end="0,-218" time="240" tween="quadratic" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(1100)">Conditional</animation>
+            <animation effect="slide" start="0,218" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="0,218" time="240" delay="120" tween="quadratic">WindowClose</animation>
+            <animation effect="slide" end="0,218" time="240" tween="quadratic" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(1100)">Conditional</animation>
             <control type="group" id="5800">
-                <animation effect="slide" end="0,-200" time="400" tween="cubic" condition="!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus">Conditional</animation>
-                <control type="image">
-                    <posx>623</posx>
-                    <posy>127</posy>
-                    <width>673</width>
-                    <height>87</height>
-                    <texture flipy="true">osd/osd_bottom_bar.png</texture>
-                </control>
-                <control type="label" id="1">
-                    <posx>703</posx>
-                    <posy>100</posy>
-                    <width>513</width>
-                    <height>87</height>
-                    <align>center</align>
-                    <label>$LOCALIZE[31897]</label>
-                    <font>Font_Reg30_Caps</font>
-                    <shadowcolor>88e5e5e5</shadowcolor>
-                    <textcolor>FF363636</textcolor>
-                </control>
-                <control type="image">
-                    <width>1920</width>
-                    <height>135</height>
-                    <texture colordiffuse="$VAR[DialogColorVar]" flipy="true">osd/osd_back.png</texture>
-                </control>
+                <posy>960</posy>
+                <animation effect="slide" end="0,200" time="400" tween="cubic" condition="!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus">Conditional</animation>
                 <include>ClassicMusicOSD</include>
             </control>
         </control>
+                   <control type="group">
+                        <posx>-160</posx>
+                        <posy>-470</posy>
+                        <include>NextTracksList</include>
+                    </control>
+<!--             <control type="textbox">
+                <posx>922</posx>
+                <posy>93</posy>
+                <width>500</width>
+                <height>440</height>
+                <aligny>top</aligny>
+                <label>$VAR[NowPlayingTextBoxLabelVar2]</label>
+                <font>Font_Reg26</font>
+                <textcolor>$VAR[FontColorVar]</textcolor>
+                <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+            </control> -->
         <control type="slider" id="87">
             <posx>1568</posx>
             <posy>1049</posy>
