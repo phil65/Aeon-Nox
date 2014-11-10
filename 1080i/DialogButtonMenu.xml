@@ -7,27 +7,17 @@
         <system>1</system>
     </coordinates>
     <controls>
-        <control type="button" id="800">
-            <include>HiddenObject</include>
-            <onfocus condition="Window.IsActive(1157)">SetProperty(quicklistactive,true,home)</onfocus>
-            <onfocus>Dialog.Close(1157)</onfocus>
-            <onfocus>Dialog.Close(shutdownmenu)</onfocus>
-            <onfocus condition="IsEmpty(Window(home).Property(quicklistactive))">ActivateWindow(1157)</onfocus>
-            <onfocus>ClearProperty(quicklistactive,home)</onfocus>
-            <visible>Skin.HasSetting(quicklistmenu)</visible>
-        </control>
         <include>DialogBackFade</include>
         <control type="group">
-                <animation type="WindowOpen" reversible="false">
-        <effect type="zoom" start="150" end="100" center="960,540" time="720" tween="cubic" />
-        <effect type="fade" end="100" time="720" />
-    </animation>
-    <animation type="WindowClose" reversible="false">
-        <effect type="fade" start="100" end="0" time="240" />
-        <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-    </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="zoom" start="150" end="100" center="960,540" time="720" tween="cubic" />
+                <effect type="fade" end="100" time="720" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="240" />
+                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+            </animation>
             <posx>40</posx>
-            <visible>!Skin.HasSetting(quicklistmenu)</visible>
             <control type="grouplist" id="800">
                 <posx>670</posx>
                 <width>550</width>
@@ -173,7 +163,7 @@
                     <posy>699</posy>
                     <width>488</width>
                     <height>41</height>
-                    <texture colordiffuse="$VAR[SpotColorVar2]">$VAR[ContextBottomVar]</texture>
+                    <texture colordiffuse="$VAR[SpotColorVar2]">$VAR[ShutdownBottomVar]</texture>
                 </control>
             </control>
         </control>
