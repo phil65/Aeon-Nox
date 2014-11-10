@@ -2,14 +2,9 @@
 <window>
     <defaultcontrol>-</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
-    <onload>Skin.Reset(vispanelrotate)</onload>
     <onload>Dialog.Close(all,true)</onload>
-    <onload>AlarmClock(Vis,Skin.ToggleSetting(vispanelrotate),00:20,silent,loop)</onload>
-    <!--
-    <onload>ActivateWindow(musicosd)</onload>-->
+    <onload>RunScript(script.artistslideshow,daemon=True)</onload>
     <onunload>CancelAlarm(Vis,true)</onunload>
-    <onunload>Skin.Reset(vispanelrotate)</onunload>
-    <onload condition="Skin.HasSetting(musicvisinfomode)">ActivateWindow(musicosd)</onload>
     <controls>
         <control type="label" id="4322">
             <label>$INFO[Skin.String(MusicViz.MultiFanart)]</label>
@@ -25,11 +20,10 @@
                     <include>MusicVizBG</include>
                 </control>
                 <control type="image">
-                    <texture colordiffuse="FFAAAAAA" fallback="special://skin/backgrounds/music/">$INFO[Window(home).Property(ImageFilter)]</texture>
+                    <texture colordiffuse="FFFFFFFF" fallback="special://skin/backgrounds/music/">$INFO[Window(home).Property(ImageFilter)]</texture>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <fadetime>1000</fadetime>
                     <include>FullscreenDimensions</include>
-                    <animation effect="fade" time="350">VisibleChange</animation>
                     <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
                     <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
                 </control>
@@ -65,7 +59,7 @@
             </control>
         </control>
         <control type="group">
-            <posy>854</posy>
+            <posy>0</posy>
             <width>1920</width>
             <height>226</height>
             <visible>Player.ShowInfo | Skin.HasSetting(showvisinfo) | Window.IsActive(musicosd)</visible>
@@ -79,7 +73,7 @@
             </animation>
             <control type="image">
                 <posx>704</posx>
-                <posy>-854</posy>
+                <posy>0</posy>
                 <width>513</width>
                 <height>87</height>
                 <texture flipy="true">osd/osd_top_bar.png</texture>
@@ -91,7 +85,7 @@
             </control>
             <control type="label">
                 <posx>750</posx>
-                <posy>-854</posy>
+                <posy>0</posy>
                 <width>420</width>
                 <height>42</height>
                 <align>center</align>
@@ -105,7 +99,7 @@
                 <visible>Player.Paused</visible>
             </control>
             <control type="image">
-                <posy>-320</posy>
+                <posy>532</posy>
                 <width>2100</width>
                 <height>720</height>
                 <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
@@ -113,22 +107,25 @@
             </control>
             <control type="group">
                 <posx>8</posx>
-                <posy>-320</posy>
+                <posy>532</posy>
                 <animation effect="slide" start="-975" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-                <animation effect="slide" end="-975" time="320" tween="cubic" easing="in" delay="320">WindowClose</animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="240" />
+                <effect type="slide" end="-975" time="320" tween="cubic" easing="in" />
+            </animation>
                 <control type="image">
-                    <posx>56</posx>
-                    <posy>-282</posy>
-                    <width>447</width>
-                    <height>450</height>
+                    <posx>48</posx>
+                    <posy>-360</posy>
+                    <width>530</width>
+                    <height>527</height>
                     <texture border="20" colordiffuse="$INFO[Window(home).Property(ImageColor)]">thumbs/cd_shadow_glow.png</texture>
-                    <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
+                    <animation effect="fade" start="60" end="80" time="2000" pulse="true" condition="true">conditional</animation>
                 </control>
                 <control type="image">
-                    <posx>262</posx>
-                    <posy>-243</posy>
-                    <width>387</width>
-                    <height>381</height>
+                    <posx>292</posx>
+                    <posy>-320</posy>
+                    <width>450</width>
+                    <height>450</height>
                     <aspectratio>keep</aspectratio>
                     <fadetime>300</fadetime>
                     <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
@@ -143,21 +140,19 @@
                     <texture background="true" fallback="common/cdart/vinyl.png">$INFO[Player.FolderPath]cdart.png</texture>
                 </control>
                 <control type="group">
-                    <posx>40</posx>
-                    <posy>13</posy>
+                    <posx>33</posx>
+                    <posy>-330</posy>
                     <control type="image">
                         <posx>42</posx>
-                        <posy>-270</posy>
-                        <width>400</width>
-                        <height>400</height>
+                        <width>470</width>
+                        <height>470</height>
                         <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask2.png">$INFO[MusicPlayer.Cover]</texture>
                         <bordertexture border="-90">thumbs/cd_shadow2.png</bordertexture>
                     </control>
                     <control type="image">
                         <posx>42</posx>
-                        <posy>-270</posy>
-                        <width>400</width>
-                        <height>400</height>
+                        <width>470</width>
+                        <height>470</height>
                         <aspectratio scalediffuse="false" align="right">scale</aspectratio>
                         <texture diffuse="thumbs/cdcover_mask2.png">thumbs/cdcover_glass_noreflect.png</texture>
                     </control>
@@ -165,7 +160,7 @@
             </control>
             <control type="group">
                 <posx>80</posx>
-                <posy>-137</posy>
+                <posy>717</posy>
                 <include>Animation_OpenCloseZoom</include>
                 <control type="label">
                     <posy>0</posy>
@@ -198,50 +193,55 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="image" id="8308">
-                    <posx>635</posx>
-                    <posy>-450</posy>
-                    <width>1000</width>
-                    <height>400</height>
+                    <posx>-240</posx>
+                    <posy>-710</posy>
+                    <width>960</width>
+                    <height>185</height>
                     <aspectratio>keep</aspectratio>
                     <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
                     <fadetime>400</fadetime>
                     <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                 </control>
-<!--                 <control type="image">
-                <posx>635</posx>
-                <posy>-450</posy>
-                <width>818</width>
-                <height>474</height>
-                <aspectratio>stretch</aspectratio>
-                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</texture>
-            </control>
                 <control type="image">
-                <posx>645</posx>
-                <posy>-440</posy>
-                <width>798</width>
-                <height>454</height>
-                <aspectratio align="center">scale</aspectratio>
-                <texture background="true">$INFO[Player.Art(fanart)]</texture>
-                <fadetime>FanartCrossfadeTime</fadetime>
-            </control> -->
+                    <posx>945</posx>
+                    <posy>-525</posy>
+                    <width>818</width>
+                    <height>494</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</texture>
+                </control>
+                <control type="multiimage">
+                    <posx>955</posx>
+                    <posy>-515</posy>
+                    <width>798</width>
+                    <height>474</height>
+                    <aspectratio align="top">scale</aspectratio>
+                    <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+                    <fadetime>FanartCrossfadeTime</fadetime>
+                </control>
             </control>
             <control type="group">
+                <posy>854</posy>
                 <control type="group">
                     <posy>-900</posy>
                     <visible>!Window.IsActive(musicosd)</visible>
-                <control type="textbox">
-                    <posx>1000</posx>
-                    <posy>996</posy>
-                    <width>830</width>
-                    <align>right</align>
-                    <height>110</height>
-                    <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B][CR]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
-                    <font>Font_Reg23</font>
-                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
-                    <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
-                    <visible>Player.HasAudio</visible>
-                </control>
+                    <animation effect="fade" start="0" end="100" delay="400" time="200">Visible</animation>
+                    <animation effect="fade" end="0" time="200">Hidden</animation>
+                    <animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
+                    <animation effect="fade" end="0" time="200">WindowClose</animation>
+                    <control type="textbox">
+                        <posx>1000</posx>
+                        <posy>996</posy>
+                        <width>830</width>
+                        <align>right</align>
+                        <height>110</height>
+                        <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B][CR]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
+                        <font>Font_Reg23</font>
+                        <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+                        <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
+                        <visible>Player.HasAudio</visible>
+                    </control>
                     <control type="image" id="8310">
                         <posx>91</posx>
                         <posy>1006</posy>
@@ -270,7 +270,8 @@
                         <shadowcolor>black</shadowcolor>
                         <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                     </control>
-<!--                     <control type="label">
+                    <!--
+                    <control type="label">
                         <posx>788</posx>
                         <posy>69</posy>
                         <width>210</width>
@@ -282,7 +283,7 @@
                         <scroll>false</scroll>
                         <wrapmultiline>true</wrapmultiline>
                         <visible>StringCompare(Control.GetLabel(8309),empty.png) + StringCompare(Control.GetLabel(8310),empty.png)</visible>
-                    </control> -->
+                    </control>-->
                     <control type="image">
                         <posx>340</posx>
                         <posy>993</posy>
@@ -313,7 +314,7 @@
                     </control>
                 </control>
                 <control type="label">
-                <posx>1840</posx>
+                    <posx>1840</posx>
                     <posy>0</posy>
                     <width>400</width>
                     <height>75</height>
@@ -323,15 +324,19 @@
                     <font>Font_Bold37_Caps</font>
                     <shadowcolor>black</shadowcolor>
                     <textcolor>white3</textcolor>
+                                        <animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
+                    <animation effect="fade" end="0" time="200">WindowClose</animation>
                 </control>
                 <control type="progress" id="23">
+                                        <animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
+                    <animation effect="fade" end="0" time="200">WindowClose</animation>
                     <posx>83</posx>
                     <posy>52</posy>
                     <width>1754</width>
                     <height>15</height>
                     <info>Player.Progress</info>
-                                    <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
+                    <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                    <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
                 </control>
             </control>
         </control>
