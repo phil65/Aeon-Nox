@@ -1449,9 +1449,6 @@
         <include>BreadcrumbsContent</include>
         <!---MEDIA MENU-->
         <control type="group" id="9000">
-            <animation type="Conditional" condition="Window.IsActive(1128) | Window.IsActive(1127)">
-                <effect type="slide" end="-600" time="320" easing="in" tween="cubic" />
-            </animation>
             <include>Media_Menu_Furniture</include>
             <control type="group">
                 <include>Animation_MediaMenuSlide2</include>
@@ -1553,11 +1550,6 @@
                         <label>5</label>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <onclick>ActivateWindow(MyWeatherSettings)</onclick>
-                    </control>
-                    <control type="button" id="1664">
-                        <label>31876</label>
-                        <include>Objects_MediaMenuButtonAlt</include>
-                        <onclick>ActivateWindow(1128)</onclick>
                     </control>
                 </control>
                 <include>QuickNavLabel</include>
