@@ -1131,21 +1131,13 @@
                 <onfocus condition="Substring(Window(home).Property(WidgetType),addons) | Substring(Window(home).Property(WidgetType),album) | Substring(Window(home).Property(WidgetType),artist) | Substring(Window(home).Property(WidgetType),pics) | Substring(Window(home).Property(WidgetType),rss)">SetFocus(5032)</onfocus>
             </control>
             <control type="image">
-                <posx>-100</posx>
-                <posy>-350</posy>
-                <width>1850</width>
-                <height>752</height>
-                <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
-                <animation effect="fade" start="100" end="80" time="2000" pulse="true" condition="true">conditional</animation>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <animation effect="fade" time="350">VisibleChange</animation>
-            </control>
-            <control type="image">
-                <posx>-100</posx>
-                <posy>-350</posy>
-                <width>1850</width>
-                <height>752</height>
-                <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured.png</texture>
+                <posx>-79</posx>
+                <posy>-330</posy>
+                <width>1810</width>
+                <height>712</height>
+                    <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
+                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                    <bordersize>10</bordersize>
             </control>
             <control type="group" id="52000">
                 <posx>-73</posx>
@@ -1896,13 +1888,6 @@
                         <height>100</height>
                     </control>
                 </control>
-            </control>
-            <control type="image">
-                <posx>-79</posx>
-                <posy>-329</posy>
-                <width>1808</width>
-                <height>710</height>
-                <texture colordiffuse="$VAR[DialogColorVar]" border="50">featured/panel_featured_overlay.png</texture>
             </control>
         </control>
     </include>
