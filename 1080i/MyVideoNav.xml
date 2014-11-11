@@ -7,7 +7,7 @@
     <onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload>ClearProperty(BrowseActors,home)</onload>
     <backgroundcolor>backgroundcolor</backgroundcolor>
-    <views>50,52,53,57,500,501,503,508,509,511,512,514,516,518</views>
+    <views>50,52,53,57,500,501,503,508,509,511,512,514,516</views>
     <controls>
         <control type="button" id="10">
             <include>HiddenObject</include>
@@ -92,7 +92,7 @@
         <control type="button" id="5999">
             <include>HiddenObject</include>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
+            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(50) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
         </control>
         <control type="image">
             <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
@@ -614,7 +614,6 @@
                 <!--view id = 514-->
                 <include condition="IsEmpty(Skin.String(DisableEpisodeVL))">Viewtype_Episode</include>
                 <include condition="IsEmpty(Skin.String(DisablePanelVL))">Panel</include>
-                <include condition="IsEmpty(Skin.String(DisableInfoPanelVL))">Viewtype_FullscreenPanel</include>
             </control>
             <!--
             <control type="list" id="20000">

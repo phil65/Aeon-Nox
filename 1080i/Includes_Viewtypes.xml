@@ -5,7 +5,7 @@
             <include>Animation_OpenClose_Furniture</include>
             <animation effect="fade" time="350">VisibleChange</animation>
             <animation effect="slide" end="0,400" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
-            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | [Control.IsVisible(518) + Skin.HasSetting(infopanelbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
+            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
             <animation effect="fade" start="100" end="0" delay="200" time="240">WindowClose</animation>
             <control type="image">
                 <posy>472</posy>
@@ -56,8 +56,7 @@
                 <height>206</height>
                 <texture colordiffuse="$VAR[SpotColorVar2]">views/panel_spot.png</texture>
                 <include>Animation_OpenClose_Furniture</include>
-                <visible>[Control.IsVisible(518) + !Skin.HasSetting(infopanelfanart)]| Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(500) | [Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | Control.IsVisible(500) | Control.IsVisible(508)</visible>
-                <animation effect="zoom" start="0,874,1920,206" end="0,874,2020,206" time="0" reversible="false" condition="Control.IsVisible(518)">Conditional</animation>
+                <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(500) | [Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | Control.IsVisible(500) | Control.IsVisible(508)</visible>
             </control>
             <include>Neon_Floor</include>
         </control>
@@ -406,7 +405,7 @@
             <height>72</height>
             <texture>views/showcase_gradient.png</texture>
             <include>Animation_CommonFade</include>
-            <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(518) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
+            <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
         </control>
         <control type="grouplist">
             <animation effect="slide" start="0,70" end="0" delay="50" time="340" tween="cubic">VisibleChange</animation>
@@ -578,25 +577,19 @@
             <include>Animation_OpenClose_Furniture</include>
             <animation effect="fade" time="350">VisibleChange</animation>
             <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
-            <visible>!Skin.HasSetting(DisableGlowbar) + ![Control.IsVisible(518) + Skin.HasSetting(infopanelbackground)]</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
         </control>
     </include>
     <include name="WallPanel">
         <control type="group">
             <include>Animation_Widgets</include>
-            <animation effect="fade" end="100" time="160">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="160">Hidden</animation>
-            <animation type="Conditional" condition="Control.IsVisible(518) + Skin.HasSetting(infopanelfanart)">
-                <effect type="zoom" end="50,100" time="320" easing="in" tween="cubic" />
-                <effect type="slide" end="148" time="320" easing="in" tween="cubic" />
-            </animation>
-            <visible>[Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | [Control.IsVisible(518) + !Skin.HasSetting(infopanelbackground)]</visible>
+            <animation effect="fade" end="100" time="160">VisibleChange</animation>
+            <visible>[Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)]</visible>
             <control type="group">
                 <control type="image">
                     <posx>112</posx>
                     <posy>68</posy>
                     <animation effect="zoom" start="112,68,1695,1038" end="38,68,1845,1038" time="240" condition="Control.IsVisible(512)">Conditional</animation>
-                    <animation effect="zoom" start="112,68,1695,1038" end="136,38,1651,1132" time="240" condition="Control.IsVisible(518)">Conditional</animation>
                     <width>1695</width>
                     <height>1038</height>
                     <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
@@ -607,7 +600,6 @@
                     <posx>112</posx>
                     <posy>68</posy>
                     <animation effect="zoom" start="112,68,1695,1038" end="38,68,1845,1038" time="240" condition="Control.IsVisible(512)">Conditional</animation>
-                    <animation effect="zoom" start="112,68,1695,1038" end="136,38,1651,1132" time="240" condition="Control.IsVisible(518)">Conditional</animation>
                     <width>1695</width>
                     <height>1038</height>
                     <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
@@ -616,7 +608,6 @@
                     <posx>112</posx>
                     <posy>68</posy>
                     <animation effect="zoom" start="112,68,1695,1038" end="38,68,1845,1038" time="240" condition="Control.IsVisible(512)">Conditional</animation>
-                    <animation effect="zoom" start="112,68,1695,1038" end="136,38,1651,1132" time="240" condition="Control.IsVisible(518)">Conditional</animation>
                     <width>1695</width>
                     <height>1038</height>
                     <texture>wall/wall_bg_reflection.png</texture>

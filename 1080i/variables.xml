@@ -499,16 +499,10 @@
         <value>$INFO[ListItem.Plot]</value>
     </variable>
     <variable name="GlobalPlotVar">
-        <value condition="SubString(ListItem.Path,videodb://movies/sets/,left) + !Control.IsVisible(518)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+        <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
         <value condition="System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors)]">$INFO[Window.Property(current.actor.biography)]</value>
         <value condition="Container.Content(seasons)">$INFO[Container.ShowPlot]</value>
         <value condition="!Skin.HasSetting(preferplot) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-        <value>$INFO[ListItem.Plot]</value>
-    </variable>
-    <variable name="GlobalPlotOutlineVar">
-        <value condition="SubString(ListItem.Path,videodb://movies/sets/,left) + !Control.IsVisible(518)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
-        <value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-        <value condition="Container.Content(seasons)">$INFO[Container.ShowPlot]</value>
         <value>$INFO[ListItem.Plot]</value>
     </variable>
     <variable name="FanartTextureVar">
