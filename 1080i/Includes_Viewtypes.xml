@@ -409,7 +409,7 @@
         </control>
         <control type="grouplist">
             <animation effect="slide" start="0,70" end="0" delay="50" time="340" tween="cubic">VisibleChange</animation>
-            <visible>!IsEmpty(Container.NumItems) + ControlGroup(24000).HasFocus</visible>
+            <visible>!IsEmpty(Container.NumItems) + [ControlGroup(24000).HasFocus | Control.HasFocus(61)]</visible>
             <posy>1044</posy>
             <width>1920</width>
             <align>center</align>
@@ -495,7 +495,7 @@
         </control>
         <control type="scrollbar" id="61">
             <posx>465</posx>
-            <posy>1035</posy>
+            <posy>1015</posy>
             <height>40</height>
             <width>975</width>
             <!--
