@@ -79,36 +79,18 @@
             </control>
             <include>CommonMediaPlayingBackground</include>
         </control>
-        <control type="image">
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <animation effect="fade" time="350">VisibleChange</animation>
-            <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)]</visible>
-            <texture colordiffuse="$INFO[Skin.String(BackgroundDarkness)]">common/bgcolor.png</texture>
-            <include>FullscreenDimensions</include>
-        </control>
         <control type="group">
             <visible>Skin.HasSetting(DisableGlowbar)</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
             <control type="image">
-                <posy>250</posy>
-                <width>2100</width>
-                <height>600</height>
-                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
-                <visible>![Substring(Control.GetLabel(4321),classic) + !Control.HasFocus(5010)]</visible>
-                <visible>Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)</visible>
-                <animation effect="fade" time="500" delay="160">Visible</animation>
-                <animation effect="fade" time="700">Hidden</animation>
-            </control>
-            <control type="image">
-                <width>2100</width>
-                <height>600</height>
-                <texture colordiffuse="black" flipy="true">home/nowplaying_shadow.png</texture>
-                <animation effect="fade" time="500" delay="160">Visible</animation>
-                <animation effect="fade" time="700">Hidden</animation>
-                <visible>![Substring(Control.GetLabel(4325),classic) + !Control.HasFocus(6010)]</visible>
-                <visible>Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)</visible>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>1080</height>
+                <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
+                <visible>IsEmpty(Window(home).Property(DisableWidgets)</visible>
+                <animation effect="fade" time="500">VisibleChange</animation>
+                <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
             </control>
             <control type="image">
                 <animation effect="slide" start="-150" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
@@ -136,7 +118,7 @@
                 <texture colordiffuse="black" flipy="true">home/nowplaying_shadow.png</texture>
                 <animation effect="fade" time="500" delay="160">Visible</animation>
                 <animation effect="fade" time="700">Hidden</animation>
-                <visible>Player.HasMedia</visible>
+                <visible>Player.HasMedia + !IsEmpty(Window(home).Property(DisableWidgets)</visible>
             </control>
         </control>
         <control type="group">
