@@ -8,63 +8,15 @@
         <value condition="Container.Content(albums)">plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Album]</value>
         <value>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$ESCINFO[ListItem.Artist] Music</value>
     </variable>
-    <variable name="DefaultAreaColorVar">
-        <value condition="[Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(diffuse_videolibrary))">$INFO[Skin.String(diffuse_videolibrary)]</value>
-        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + !IsEmpty(Skin.String(diffuse_music))">$INFO[Skin.String(diffuse_music)]</value>
-        <value condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + !IsEmpty(Skin.String(diffuse_programs))">$INFO[Skin.String(diffuse_programs)]</value>
-        <value condition="Window.IsActive(pictures) + !IsEmpty(Skin.String(diffuse_pictures))">$INFO[Skin.String(diffuse_pictures)]</value>
-        <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(diffuse_addons))">$INFO[Skin.String(diffuse_addons)]</value>
-        <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(diffuse_musicplaylist))">$INFO[Skin.String(diffuse_musicplaylist)]</value>
-        <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(diffuse_videoplaylist))">$INFO[Skin.String(diffuse_videoplaylist)]</value>
-        <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(diffuse_PVR))">$INFO[Skin.String(diffuse_PVR)]</value>
-        <value condition="!IsEmpty(Skin.String(diffuse_mainmenu))">$INFO[Skin.String(diffuse_mainmenu)]</value>
-        <value>diffuse_white</value>
-    </variable>
-    <variable name="WhiteAreaColorVar">
-        <value condition="[Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(diffuse_white_videolibrary))">$INFO[Skin.String(diffuse_white_videolibrary)]</value>
-        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + !IsEmpty(Skin.String(diffuse_white_music))">$INFO[Skin.String(diffuse_white_music)]</value>
-        <value condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + !IsEmpty(Skin.String(diffuse_white_programs))">$INFO[Skin.String(diffuse_white_programs)]</value>
-        <value condition="Window.IsActive(pictures) + !IsEmpty(Skin.String(diffuse_white_pictures))">$INFO[Skin.String(diffuse_white_pictures)]</value>
-        <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(diffuse_white_addons))">$INFO[Skin.String(diffuse_white_addons)]</value>
-        <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(diffuse_white_musicplaylist))">$INFO[Skin.String(diffuse_white_musicplaylist)]</value>
-        <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(diffuse_white_videoplaylist))">$INFO[Skin.String(diffuse_white_videoplaylist)]</value>
-        <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(diffuse_white_PVR))">$INFO[Skin.String(diffuse_white_PVR)]</value>
-        <value condition="!IsEmpty(Skin.String(diffuse_white_mainmenu))">$INFO[Skin.String(diffuse_white_mainmenu)]</value>
-       <value>FFAAAAAA</value>
-    </variable>
     <variable name="AreaColorVar">
         <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + !IsEmpty(Skin.String(diffuse_color))">$INFO[Skin.String(diffuse_color)]</value>
-        <value condition="Substring(Skin.CurrentTheme,whit)">$VAR[WhiteAreaColorVar]</value>
-        <value>$VAR[DefaultAreaColorVar]</value>
-    </variable>
-    <variable name="DefaultFontColorVar">
-        <value condition="[Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(font_videolibrary))">$INFO[Skin.String(font_videolibrary)]</value>
-        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + !IsEmpty(Skin.String(font_music))">$INFO[Skin.String(font_music)]</value>
-        <value condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + !IsEmpty(Skin.String(font_programs))">$INFO[Skin.String(font_programs)]</value>
-        <value condition="Window.IsActive(pictures) + !IsEmpty(Skin.String(font_pictures))">$INFO[Skin.String(font_pictures)]</value>
-        <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(font_addons))">$INFO[Skin.String(font_addons)]</value>
-        <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(font_musicplaylist))">$INFO[Skin.String(font_musicplaylist)]</value>
-        <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(font_videoplaylist))">$INFO[Skin.String(font_videoplaylist)]</value>
-        <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(font_PVR))">$INFO[Skin.String(font_PVR)]</value>
-        <value condition="!IsEmpty(Skin.String(font_mainmenu))">$INFO[Skin.String(font_mainmenu)]</value>
-        <value>white2</value>
-    </variable>
-    <variable name="WhiteFontColorVar">
-        <value condition="[Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(white_font_videolibrary))">$INFO[Skin.String(white_font_videolibrary)]</value>
-        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + !IsEmpty(Skin.String(white_font_music))">$INFO[Skin.String(white_font_music)]</value>
-        <value condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + !IsEmpty(Skin.String(white_font_programs))">$INFO[Skin.String(white_font_programs)]</value>
-        <value condition="Window.IsActive(pictures) + !IsEmpty(Skin.String(white_font_pictures))">$INFO[Skin.String(white_font_pictures)]</value>
-        <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(white_font_addons))">$INFO[Skin.String(white_font_addons)]</value>
-        <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(white_font_musicplaylist))">$INFO[Skin.String(white_font_musicplaylist)]</value>
-        <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(white_font_videoplaylist))">$INFO[Skin.String(white_font_videoplaylist)]</value>
-        <value condition="Window.IsActive(PVR) + !IsEmpty(Skin.String(white_font_PVR))">$INFO[Skin.String(white_font_PVR)]</value>
-        <value condition="!IsEmpty(Skin.String(white_font_mainmenu))">$INFO[Skin.String(white_font_mainmenu)]</value>
-        <value>white2</value>
+        <value condition="Substring(Skin.CurrentTheme,whit)">$INFO[Skin.String(diffuse_white_mainmenu)]</value>
+        <value>$INFO[Skin.String(diffuse_mainmenu)]</value>
     </variable>
     <variable name="FontColorVar">
         <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + !IsEmpty(Skin.String(font_color))">$INFO[Skin.String(font_color)]</value>
-        <value condition="Substring(Skin.CurrentTheme,whit)">$VAR[WhiteFontColorVar]</value>
-        <value>$VAR[DefaultFontColorVar]</value>
+        <value condition="Substring(Skin.CurrentTheme,whit)">$INFO[Skin.String(white_font_mainmenu)]</value>
+        <value>$INFO[Skin.String(font_mainmenu)]</value>
     </variable>
     <variable name="SpotColorVar2">
         <value condition="Substring(Skin.CurrentTheme,whit)">FFAAAAAA</value>
@@ -1943,15 +1895,6 @@
         <value condition="Skin.HasSetting(watchedoverlay)">$LOCALIZE[31241]</value>
         <value condition="Skin.HasSetting(newstatus)">$LOCALIZE[31240]</value>
         <value>$LOCALIZE[231]</value>
-    </variable>
-    <variable name="VisPanelLabelVar">
-        <value condition="Skin.HasSetting(activatepanelrotation)">$LOCALIZE[31636]</value>
-        <value condition="Skin.HasSetting(DisablePanelWidgetVis)">$LOCALIZE[106]</value>
-        <value>$LOCALIZE[571]</value>
-    </variable>
-    <variable name="HomePanelVar">
-        <value condition="Skin.HasSetting(rotatenowplayingpanel)">$LOCALIZE[31636]</value>
-        <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="cdARTVar">
         <value condition="Stringcompare(ListItem.Artist,Musicplayer.Artist) + Stringcompare(ListItem.Album,MusicPlayer.Album)">$INFO[Player.FolderPath]cdart.png</value>

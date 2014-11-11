@@ -6,10 +6,9 @@
         <include>CommonSettingsBackground</include>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
-            <texture colordiffuse="$INFO[Skin.String(BackgroundDarkness)]">common/bgcolor.png</texture>
-            <include>FullscreenDimensions</include>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <animation effect="fade" time="350">VisibleChange</animation>
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
+                 <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
+           <include>FullscreenDimensions</include>
         </control>
         <include>Furniture_SettingsFloor</include>
         <control type="group">

@@ -445,7 +445,7 @@
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
             <control type="image">
-                <texture colordiffuse="$INFO[Skin.String(BackgroundDarkness)]">common/black.png</texture>
+                <texture colordiffuse="80FFFFFF">common/black.png</texture>
                 <include>FullscreenDimensions</include>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -696,27 +696,10 @@
     </include>
     <include name="AutoConfig">
         <onload>Skin.ResetSettings</onload>
-        <onload>Skin.SetString(diffuse_programs,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_music,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_videolibrary,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_PVR,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_pictures,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_addons,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_musicplaylist,FF6db9e5)</onload>
-        <onload>Skin.SetString(diffuse_videoplaylist,FF6db9e5)</onload>
         <onload>Skin.SetString(diffuse_mainmenu,FF6db9e5)</onload>
         <onload>Skin.SetString(diffuse_color,FF6db9e5)</onload>
         <onload>Skin.SetString(font_color,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_videolibrary,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_music,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_programs,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_pictures,FF6db9e5)</onload>
         <onload>Skin.SetString(font_mainmenu,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_addons,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_musicplaylist,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_videoplaylist,FF6db9e5)</onload>
-        <onload>Skin.SetString(font_PVR,FF6db9e5)</onload>
-        <onload>Skin.SetString(BackgroundDarkness,80FFFFFF)</onload>
         <onload>Skin.SetString(LibraryStructure,2)</onload>
         <onload>Skin.SetString(TriPanelSquarePosition,1)</onload>
         <onload>Skin.SetString(TriPanelPosition,1)</onload>
@@ -1315,46 +1298,6 @@
         <texturenofocus>-</texturenofocus>
         <radioposx>1</radioposx>
         <radioposy>-1</radioposy>
-    </include>
-    <include name="ColorConfigDefaultTheme">
-        <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_music)])</onload>
-        <onload condition="Window.IsActive(videos)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_videolibrary)])</onload>
-        <onload condition="Window.IsActive(PVR)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_PVR)])</onload>
-        <onload condition="Window.IsActive(pictures)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_pictures)])</onload>
-        <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_addons)])</onload>
-        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_programs)])</onload>
-        <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_musicplaylist)])</onload>
-        <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_videoplaylist)])</onload>
-        <onload condition="Window.IsActive(script-HomeWindow Script-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_mainmenu)])</onload>
-        <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(font_color,$INFO[Skin.String(font_music)])</onload>
-        <onload condition="Window.IsActive(videos)">Skin.SetString(font_color,$INFO[Skin.String(font_videolibrary)])</onload>
-        <onload condition="Window.IsActive(PVR)">Skin.SetString(font_color,$INFO[Skin.String(font_PVR)])</onload>
-        <onload condition="Window.IsActive(pictures)">Skin.SetString(font_color,$INFO[Skin.String(font_pictures)])</onload>
-        <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(font_color,$INFO[Skin.String(font_addons)])</onload>
-        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(font_color,$INFO[Skin.String(font_programs)])</onload>
-        <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(font_color,$INFO[Skin.String(font_musicplaylist)])</onload>
-        <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(font_videoplaylist)])</onload>
-        <onload condition="Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(1130) | Window.IsActive(script-HomeWindow Script-featured.xml)">Skin.SetString(font_color,$INFO[Skin.String(font_mainmenu)])</onload>
-    </include>
-    <include name="ColorConfigWhiteTheme">
-        <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_music)])</onload>
-        <onload condition="Window.IsActive(videos)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_videolibrary)])</onload>
-        <onload condition="Window.IsActive(PVR)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_PVR)])</onload>
-        <onload condition="Window.IsActive(pictures)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_pictures)])</onload>
-        <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_addons)])</onload>
-        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_programs)])</onload>
-        <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_musicplaylist)])</onload>
-        <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_videoplaylist)])</onload>
-        <onload condition="Window.IsActive(script-HomeWindow Script-main.xml)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_white_mainmenu)])</onload>
-        <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(font_color,$INFO[Skin.String(white_font_music)])</onload>
-        <onload condition="Window.IsActive(videos)">Skin.SetString(font_color,$INFO[Skin.String(white_font_videolibrary)])</onload>
-        <onload condition="Window.IsActive(PVR)">Skin.SetString(font_color,$INFO[Skin.String(white_font_PVR)])</onload>
-        <onload condition="Window.IsActive(pictures)">Skin.SetString(font_color,$INFO[Skin.String(white_font_pictures)])</onload>
-        <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(font_color,$INFO[Skin.String(white_font_addons)])</onload>
-        <onload condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">Skin.SetString(font_color,$INFO[Skin.String(white_font_programs)])</onload>
-        <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_musicplaylist)])</onload>
-        <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_videoplaylist)])</onload>
-        <onload condition="Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(1130) | Window.IsActive(script-HomeWindow Script-featured.xml)">Skin.SetString(font_color,$INFO[Skin.String(white_font_mainmenu)])</onload>
     </include>
     <include name="VideoOSD">
         <control type="group" id="703">
