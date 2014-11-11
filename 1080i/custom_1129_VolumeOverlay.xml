@@ -25,6 +25,7 @@
                     <height>120</height>
                     <texture>$VAR[VolumeCircleVar]</texture>
                     <colordiffuse>$VAR[VolumeColorVar]</colordiffuse>
+                    <animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
                     <fadetime>0</fadetime>
                 </control>
                 <control type="image">
@@ -32,6 +33,7 @@
                     <posy>61</posy>
                     <width>40</width>
                     <height>40</height>
+    <animation effect="slide" start="0,0" end="40,-60" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
                     <texture colordiffuse="white2">$VAR[VolumeIconVar]</texture>
                 </control>
             <control type="label">
@@ -41,6 +43,7 @@
                 <height>200</height>
                 <align>center</align>
                 <shadowcolor>black</shadowcolor>
+                    <animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
                 <label>[B][UPPERCASE]$VAR[VolumeLabelVar][/UPPERCASE][/B]</label>
                 <font>Font_Reg22</font>
                 <scroll>true</scroll>
