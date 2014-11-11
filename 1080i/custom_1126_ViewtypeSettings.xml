@@ -310,14 +310,6 @@
                     <onclick condition="Skin.HasSetting(tvshowlogosfloor)">Skin.Reset(tvshowlogosfloor)</onclick>
                     <visible>[[Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),AddonWall)] + Container.Content(tvshows)]</visible>
                 </control>
-                <!-- BannerPlex options-->
-                <control type="radiobutton" id="1708">
-                    <label>31696</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(AltBannerPlex)</onclick>
-                    <selected>Skin.HasSetting(AltBannerPlex)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),Banners)</visible>
-                </control>
                 <!--Episode option-->
                 <control type="radiobutton" id="1705">
                     <label>$LOCALIZE[31060]:</label>
