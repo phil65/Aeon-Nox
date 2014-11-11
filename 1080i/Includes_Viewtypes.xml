@@ -410,6 +410,7 @@
         <control type="grouplist">
             <animation effect="slide" start="0,70" end="0" delay="50" time="340" tween="cubic">VisibleChange</animation>
             <visible>!IsEmpty(Container.NumItems) + [ControlGroup(24000).HasFocus | Control.HasFocus(61)]</visible>
+                <include>Animation_WindowFade200</include>
             <posy>1044</posy>
             <width>1920</width>
             <align>center</align>
@@ -421,7 +422,6 @@
                 <height>40</height>
                 <aspectratio>keep</aspectratio>
                 <texture colordiffuse="$VAR[FontColorVar]">breadcrumbs/items.png</texture>
-                <include>Animation_WindowFade200</include>
             </control>
             <control type="label">
                 <label>[UPPERCASE]$INFO[Container.NumItems] $VAR[ItemLabelVar][/UPPERCASE]</label>
@@ -431,26 +431,33 @@
                 <shadowcolor>bcshadow</shadowcolor>
                 <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
                 <scroll>false</scroll>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
             </control>
             <control type="image">
                 <width>34</width>
                 <height>36</height>
                 <aspectratio>keep</aspectratio>
                 <texture colordiffuse="$VAR[FontColorVar]">breadcrumbs/pages.png</texture>
-                <include>Animation_WindowFade200</include>
                 <visible>!Stringcompare(Container.NumPages,1)</visible>
             </control>
             <control type="label">
-                <label>[UPPERCASE]$INFO[Container.CurrentPage]$INFO[Container.NumPages,/][/UPPERCASE]$INFO[ListItem.SortLetter,  |  [B],[/B]]</label>
+                <label>[UPPERCASE]$INFO[Container.CurrentPage]$INFO[Container.NumPages,/][/UPPERCASE]</label>
                 <width min="15" max="1920">auto</width>
                 <height>38</height>
                 <font>Font_Reg25</font>
                 <shadowcolor>bcshadow</shadowcolor>
                 <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
                 <scroll>false</scroll>
-                <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <visible>!Stringcompare(Container.NumPages,1)</visible>
+            </control>
+            <control type="label">
+                <label>$INFO[ListItem.SortLetter,  |  [B],[/B]]</label>
+                <width min="15" max="1920">auto</width>
+                <height>38</height>
+                <font>Font_Reg25</font>
+                <shadowcolor>bcshadow</shadowcolor>
+                <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
+                <scroll>false</scroll>
+                <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
             </control>
         </control>
         <control type="image" id="4050">
