@@ -10,33 +10,55 @@
                 <posy>960</posy>
                 <animation effect="slide" end="0,200" time="400" tween="cubic" condition="!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus">Conditional</animation>
                 <include>ClassicMusicOSD</include>
+<!--                 <control type="grouplist" id="996">
+                    <width>462</width>
+                    <height max="1080">auto</height>
+                        <visible>Control.HasFocus(500)</visible>
+                    <control type="button" id="2001">
+                        <include>ContextMenuButton</include>
+                        <label>Visualisation Settings</label>
+                        <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+                    </control>
+                    <control type="button" id="2002">
+                        <include>ContextMenuButton</include>
+                        <label>Select Presets</label>
+                        <onclick>ActivateWindow(122)</onclick>
+                    </control>
+                    <control type="button" id="2003">
+                        <include>ContextMenuButton</include>
+                        <label>Visualisation Settings</label>
+                        <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+                    </control>
+                </control> -->
             </control>
         </control>
-                   <control type="group">
-                        <posx>-160</posx>
-                        <posy>-470</posy>
-                        <include>NextTracksList</include>
-                    </control>
-<!--             <control type="textbox">
-                <posx>922</posx>
-                <posy>93</posy>
-                <width>500</width>
-                <height>440</height>
-                <aligny>top</aligny>
-                <label>$VAR[NowPlayingTextBoxLabelVar2]</label>
-                <font>Font_Reg26</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-            </control> -->
+<!--         <control type="group">
+            <posx>-160</posx>
+            <posy>-470</posy>
+            <include>NextTracksList</include>
+        </control> -->
+        <!--
+        <control type="textbox">
+            <posx>922</posx>
+            <posy>93</posy>
+            <width>500</width>
+            <height>440</height>
+            <aligny>top</aligny>
+            <label>$VAR[NowPlayingTextBoxLabelVar2]</label>
+            <font>Font_Reg26</font>
+            <textcolor>$VAR[FontColorVar]</textcolor>
+            <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+        </control>-->
         <control type="slider" id="87">
-            <posx>1568</posx>
-            <posy>1049</posy>
-            <width>310</width>
-            <height>20</height>
-            <action>seek</action>
+            <posx>500</posx>
+            <posy>500</posy>
+            <width>1210</width>
+            <height>50</height>
             <texturesliderbar></texturesliderbar>
-            <textureslidernib></textureslidernib>
-            <textureslidernibfocus></textureslidernibfocus>
+                                <info>Player.Progress</info>
+                    <action>seek</action>
+        <textureslidernib>settings/orb_nofo.png</textureslidernib>
+        <textureslidernibfocus>settings/orb_fo.png</textureslidernibfocus>
         </control>
     </controls>
 </window>

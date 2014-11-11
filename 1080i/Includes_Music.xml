@@ -551,95 +551,89 @@
         </item>
     </include>
     <include name="NextTracksList">
-        <control type="grouplist">
-            <posx>986</posx>
-            <posy>680</posy>
-            <width>1290</width>
-            <height>1080</height>
-            <orientation>vertical</orientation>
-            <itemgap>7</itemgap>
-            <animation effect="fade" time="320">VisibleChange</animation>
-            <visible>Skin.HasSetting(itemsplaylist) | Window.IsActive(visualisation)</visible>
-            <control type="label">
-                <width>900</width>
-                <align>right</align>
-                <height>35</height>
-                <label>[UPPERCASE]$LOCALIZE[31889][/UPPERCASE]</label>
-                <font>Font_Reg26</font>
-                <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
-                <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
+            <control type="list" id="8010">
+                <posx>980</posx>
+                <posy>680</posy>
+                <width>800</width>
+                <height>479</height>
+                <onup>10002</onup>
+                <ondown>8012</ondown>
+                <onleft>1000</onleft>
+                <onright>61</onright>
+                <orientation>vertical</orientation>
+                <pagecontrol>61</pagecontrol>
+                <focusposition>0</focusposition>
+                <scrolltime tween="cubic" easing="inout">400</scrolltime>
+                <preloaditems>2</preloaditems>
+                <itemlayout height="60" width="800">
+                    <control type="label">
+                        <posx>50</posx>
+                        <posy>0</posy>
+                        <width>70</width>
+                        <height>80</height>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Property(Number)]</label>
+                        <font>font28</font>
+                        <textcolor>grey</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>550</posx>
+                        <posy>0</posy>
+                        <width>110</width>
+                        <height>80</height>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Property(Duration)]</label>
+                        <font>font28</font>
+                        <textcolor>grey</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>400</width>
+                        <height>80</height>
+                        <align>left</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font28</font>
+                        <textcolor>grey</textcolor>
+                    </control></itemlayout>
+                <focusedlayout height="60" width="800">
+                    <control type="group">
+                        <animation effect="zoom" start="100" end="110" time="150" center="430,50">Focus</animation>
+                        <animation effect="zoom" end="100" start="110" time="150" center="430,50">UnFocus</animation>
+                        <control type="label">
+                            <posx>50</posx>
+                            <posy>0</posy>
+                            <width>70</width>
+                            <height>80</height>
+                            <align>right</align>
+                            <label>$INFO[ListItem.Property(Number)]</label>
+                            <font>font28</font>
+                            <textcolor>white</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>550</posx>
+                            <posy>0</posy>
+                            <width>110</width>
+                            <height>80</height>
+                            <align>right</align>
+                            <label>$INFO[ListItem.Property(Duration)]</label>
+                            <font>font28</font>
+                            <textcolor>white</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>60</posx>
+                            <posy>0</posy>
+                            <width>400</width>
+                            <height>80</height>
+                            <align>left</align>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>font28</font>
+                            <textcolor>white</textcolor>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <content>playlistmusic://</content>
             </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(4).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(4).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(4).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(5).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(5).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(5).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(6).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(6).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(6).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(7).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(7).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(7).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(8).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(8).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(8).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(9).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(9).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(9).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-            <control type="label">
-                <width>900</width>
-                <height>28</height>
-                <align>right</align>
-                <label>$INFO[MusicPlayer.Offset(10).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(10).Artist,,][/COLOR][COLOR $INFO[Window(home).Property(ImageColor)]]$INFO[MusicPlayer.Offset(10).Duration, - ,][/COLOR]</label>
-                <font>Font_Reg26</font>
-            </control>
-        </control>
     </include>
     <include name="MusicVisPanelLayout">
         <control type="image">
