@@ -80,8 +80,6 @@
             <include>CommonMediaPlayingBackground</include>
         </control>
         <control type="group">
-            <visible>Skin.HasSetting(DisableGlowbar)</visible>
-            <animation effect="fade" time="200">VisibleChange</animation>
             <include>Animation_WindowFade200</include>
             <control type="image">
                 <posy>0</posy>
@@ -118,7 +116,7 @@
                 <texture colordiffuse="black" flipy="true">home/nowplaying_shadow.png</texture>
                 <animation effect="fade" time="500" delay="160">Visible</animation>
                 <animation effect="fade" time="700">Hidden</animation>
-                <visible>Player.HasMedia + !IsEmpty(Window(home).Property(DisableWidgets)</visible>
+                <visible>Player.HasMedia</visible>
             </control>
         </control>
         <control type="group">
