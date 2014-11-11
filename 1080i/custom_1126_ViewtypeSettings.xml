@@ -16,7 +16,7 @@
             <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
         </control>
         <control type="group">
-            <animation type="Conditional" condition="Window.IsActive(1128) | Window.IsActive(1127) | Window.IsActive(1112)">
+            <animation type="Conditional" condition="Window.IsActive(1127) | Window.IsActive(1112)">
                 <effect type="slide" end="-600" time="320" easing="in" tween="cubic" />
             </animation>
             <control type="grouplist" id="450">
@@ -598,11 +598,6 @@
                     <onclick>Skin.ToggleSetting(fstrailer)</onclick>
                     <visible>Container.Content(movies)</visible>
                     <visible>!Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Banners) | [Stringcompare(Window(home).Property(actualViewtype),Landscape) + !Skin.HasSetting(landscapeonelogo)] | Stringcompare(Window(home).Property(actualViewtype),AddonWall)</visible>
-                </control>
-                <control type="button" id="1664">
-                    <label>31298</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>ActivateWindow(1128)</onclick>
                 </control>
             </control>
         </control>

@@ -219,7 +219,7 @@
     </include>
     <include name="PVRSideblade">
         <control type="group" id="9000">
-            <animation type="Conditional" condition="Window.IsActive(1128) | Window.IsActive(1127)">
+            <animation type="Conditional" condition="Window.IsActive(1127)">
                 <effect type="slide" end="-600" time="320" easing="in" tween="cubic" />
             </animation>
             <control type="group">
@@ -303,14 +303,6 @@
                         <label>31026</label>
                         <aligny>center</aligny>
                         <include>Objects_MediaMenuLabelAlt2</include>
-                    </control>
-                    <control type="radiobutton" id="1664">
-                        <label>31876</label>
-                        <textureradioon>special://skin/extras/icons/controlpanel.png</textureradioon>
-                        <textureradiooff>special://skin/extras/icons/controlpanel.png</textureradiooff>
-                        <include>Objects_MediaMenuButtonIcons</include>
-                        <onclick>SetFocus(50)</onclick>
-                        <onclick>ActivateWindow(1128)</onclick>
                     </control>
                     <control type="radiobutton" id="327">
                         <label>Ext. Channel OSD</label>
