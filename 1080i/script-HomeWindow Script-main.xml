@@ -788,44 +788,6 @@
             <include>WidgetInfoPanel</include>
         </control>
         <control type="group">
-            <posx>0</posx>
-            <posy>20</posy>
-            <visible>!IsEmpty(Window(home).Property(DisableWidgets)) + !Player.HasMedia</visible>
-            <include>Animation_WindowFade200</include>
-            <animation type="Visible">
-                <effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" end="100" time="240" />
-            </animation>
-            <animation type="Hidden">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <control type="image">
-                <posx>-20</posx>
-                <posy>-20</posy>
-                <width>290</width>
-                <height>100</height>
-                <texture colordiffuse="black">home/fade.png</texture>
-                <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-            </control>
-            <control type="image">
-                <posx>20</posx>
-                <posy>13</posy>
-                <width>35</width>
-                <height>35</height>
-                <aspectratio>keep</aspectratio>
-                <texture colordiffuse="white">special://skin/extras/icons/info.png</texture>
-            </control>
-            <control type="image">
-                <posx>60</posx>
-                <posy>10</posy>
-                <width>50</width>
-                <height>50</height>
-                <aspectratio>keep</aspectratio>
-                <texture colordiffuse="white4">home/widgets.png</texture>
-            </control>
-        </control>
-        <control type="group">
             <control type="image">
                 <texture>common/bgcolor.png</texture>
                 <include>FullscreenDimensions</include>
