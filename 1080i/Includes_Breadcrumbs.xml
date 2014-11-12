@@ -79,14 +79,12 @@
             <control type="label">
                 <width>1900</width>
                 <align>right</align>
-                    <animation effect="slide" start="0,0" end="-45,0" delay="500" time="300" tween="sine" condition="!Window.IsVisible(volumebar) + Window.IsActive(mutebug)">Conditional</animation>
-
-                <include>Animation_WindowFade200</include>
+                <animation effect="slide" start="0,0" end="-45,0" delay="500" time="300" tween="sine" condition="!Window.IsVisible(volumebar) + Window.IsActive(mutebug)">Conditional</animation>
                 <height>38</height>
-                <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[FontColorVar]]$INFO[System.Time][/COLOR]</label>
+                <label>$INFO[System.Time]</label>
                 <font>Font_Reg28_Caps</font>
                 <shadowcolor>bcshadow</shadowcolor>
-                <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
                 <scroll>false</scroll>
             </control>
         </control>
