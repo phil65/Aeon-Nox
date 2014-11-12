@@ -33,8 +33,8 @@
                 <texturenofocus>-</texturenofocus>
                 <alttexturefocus>-</alttexturefocus>
                 <alttexturenofocus>-</alttexturenofocus>
-                <label>$LOCALIZE[31075]</label>
-                <altlabel>$LOCALIZE[31075]</altlabel>
+                <label></label>
+                <altlabel></altlabel>
                 <font>Font_Reg22</font>
                 <textcolor>grey</textcolor>
                 <onleft>StepBack</onleft>
@@ -44,43 +44,24 @@
                 <onclick condition="IsEmpty(Window(home).Property(LiveTVShowEpgNext))">SetProperty(LiveTVShowEpgNext,1,home)</onclick>
                 <onclick condition="!IsEmpty(Window(home).Property(LiveTVShowEpgNext))">ClearProperty(LiveTVShowEpgNext,home)</onclick>
             </control>
-            <control type="group">
-                <posy>128</posy>
-                <animation type="Visible">
-                    <effect type="fade" time="320" end="100" />
-                    <effect type="slide" time="320" start="0,-135" end="0,0" tween="cubic" />
-                </animation>
-                <animation type="Hidden">
-                    <effect type="fade" time="320" start="100" end="0" />
-                    <effect type="slide" time="320" end="0,-135" easing="in" tween="cubic" />
-                </animation>
-                <visible>Player.Paused</visible>
-                <control type="image">
-                    <posx>704</posx>
-                    <width>513</width>
-                    <height>87</height>
-                    <texture flipy="true">osd/osd_top_bar.png</texture>
-                </control>
+            <control type="image">
+                <posy>0</posy>
+                <width>2100</width>
+                <height>180</height>
+                <texture flipy="true" colordiffuse="black">home/nowplaying_shadow.png</texture>
+            </control>
                 <control type="label">
+                <posy>128</posy>
                     <posx>750</posx>
                     <width>420</width>
                     <height>42</height>
                     <align>center</align>
                     <label>$VAR[VideoPlayerSeekVar]</label>
                     <font>Font_Reg33_Caps</font>
-                    <shadowcolor>88e5e5e5</shadowcolor>
-                    <textcolor>FF363636</textcolor>
+                    <shadowcolor>88FFFFFF</shadowcolor>
+                    <textcolor>white2</textcolor>
+                <visible>Player.Paused</visible>
                 </control>
-            </control>
-            <control type="image">
-                <width>1920</width>
-                <height>135</height>
-                <texture colordiffuse="$VAR[DialogColorVar]" flipy="true">osd/osd_back.png</texture>
-            </control>
-            <control type="group">
-                <posy>84</posy>
-                <include>Neon_Topbar</include>
-            </control>
             <control type="label">
                 <posx>520</posx>
                 <posy>18</posy>
@@ -189,24 +170,6 @@
             <control type="group">
                 <animation effect="slide" end="-1800,0" condition="VideoPlayer.Content(files)">Conditional</animation>
                 <control type="image">
-                    <posx>1820</posx>
-                    <posy>1000</posy>
-                    <width>30</width>
-                    <height>30</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="white2">special://skin/extras/icons/subtitle.png</texture>
-                    <visible>!IsEmpty(VideoPlayer.SubtitlesLanguage)</visible>
-                </control>
-                <control type="image">
-                    <posx>1820</posx>
-                    <posy>970</posy>
-                    <width>30</width>
-                    <height>30</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="white2">special://skin/extras/icons/speaker.png</texture>
-                    <visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
-                </control>
-                <control type="image">
                     <posx>1860</posx>
                     <posy>970</posy>
                     <width>30</width>
@@ -231,7 +194,7 @@
             <animation effect="slide" start="0,1080" end="0,100" time="320" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" start="0,100" end="0,-1080" time="400" tween="quadratic">WindowClose</animation>
             <animation effect="slide" start="0,1080" end="0,100" time="320" tween="quadratic">VisibleChange</animation>
-            <visible>!VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
+            <visible>VideoPlayer.HasEpg + !Control.IsVisible(9001) + !Control.IsVisible(9002)</visible>
             <control type="image">
                 <posx>260</posx>
                 <width>1400</width>
@@ -342,7 +305,7 @@
                         <label fallback="31003">$INFO[VideoPlayer.Plot]</label>
                         <font>Font_Reg35</font>
                         <pagecontrol>60</pagecontrol>
-                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
+                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                         <visible>!Control.IsVisible(50)</visible>
                     </control>
                 </control>
@@ -379,7 +342,7 @@
                         <label fallback="31003">$INFO[VideoPlayer.NextPlot]</label>
                         <font>Font_Reg35</font>
                         <pagecontrol>60</pagecontrol>
-                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
+                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                         <visible>!Control.IsVisible(50)</visible>
                     </control>
                 </control>
@@ -482,7 +445,6 @@
                 <width>1320</width>
                 <height>780</height>
                 <control type="label">
-                    <!--Channel name-->
                     <posy>-790</posy>
                     <width>1050</width>
                     <label>$INFO[VideoPlayer.ChannelName]</label>
@@ -490,14 +452,12 @@
                     <textcolor>$VAR[FontColorVar]</textcolor>
                 </control>
                 <control type="image">
-                    <!--pvr line-->
                     <posy>84</posy>
                     <width>1320</width>
                     <height>1</height>
                     <texture colordiffuse="$VAR[FontColorVar]">new_pvr/osd_back_pvr_line_white.png</texture>
                 </control>
                 <control type="image">
-                    <!--Channel logo-->
                     <posx>1050</posx>
                     <posy>100</posy>
                     <width>200</width>
@@ -507,15 +467,14 @@
                     <texture>$INFO[VideoPlayer.Cover]</texture>
                     <visible>IsEmpty(VideoPlayer.PlotOutline)</visible>
                 </control>
-                <control type="image">
-                    <!--Show\Movie poster-->
+                <control type="textbox">
                     <posx>1050</posx>
                     <posy>100</posy>
                     <width>250</width>
                     <height>440</height>
                     <align>center</align>
                     <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.PlotOutline]</texture>
+                    <label>$INFO[VideoPlayer.PlotOutline]</label>
                     <visible>!IsEmpty(VideoPlayer.PlotOutline)</visible>
                 </control>
                 <control type="group">
@@ -543,8 +502,7 @@
                         <label>$INFO[VideoPlayer.Plot]</label>
                         <font>Font_Reg35</font>
                         <pagecontrol>60</pagecontrol>
-                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
-                        <visible>!Control.IsVisible(50)</visible>
+                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="group">
@@ -580,7 +538,7 @@
                         <label>$INFO[VideoPlayer.NextPlot]</label>
                         <font>Font_Reg35</font>
                         <pagecontrol>60</pagecontrol>
-                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
+                        <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                         <visible>!Control.IsVisible(50)</visible>
                     </control>
                 </control>

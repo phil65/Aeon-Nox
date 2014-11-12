@@ -3,8 +3,14 @@
     <defaultcontrol always="true">650</defaultcontrol>
     <controls>
         <control type="group">
-            <animation effect="slide" start="0,218" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="0,218" time="240" delay="120" tween="quadratic">WindowClose</animation>
+            <animation type="WindowOpen">
+                <effect type="slide" start="0,218" end="0,0" time="440" tween="cubic" />
+                <effect type="zoom" start="50" end="100" time="440" delay="0" center="auto" tween="cubic" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" end="0,218" start="0,0" time="440" tween="cubic" />
+                <effect type="zoom" end="50" start="100" time="440" delay="0" center="auto" tween="cubic" />
+            </animation>
             <animation effect="slide" end="0,218" time="240" tween="quadratic" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(1100)">Conditional</animation>
             <control type="group" id="5800">
                 <posy>960</posy>
