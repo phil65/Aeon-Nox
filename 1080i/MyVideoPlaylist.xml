@@ -17,7 +17,7 @@
             <include>DelayAnimations</include>
         </control>
         <control type="image">
-            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
@@ -28,7 +28,7 @@
             <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(50) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
         </control>
         <control type="image" id="5999">
-            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
