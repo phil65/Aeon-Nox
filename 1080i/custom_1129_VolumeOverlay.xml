@@ -18,24 +18,27 @@
         <control type="group">
             <posx>1770</posx>
             <posy>0</posy>
-                <control type="image">
-            <posx>15</posx>
-            <posy>20</posy>
-                    <width>120</width>
-                    <height>120</height>
-                    <texture>$VAR[VolumeCircleVar]</texture>
-                    <colordiffuse>$VAR[VolumeColorVar]</colordiffuse>
-                    <animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
-                    <fadetime>0</fadetime>
-                </control>
-                <control type="image">
-                    <posx>56</posx>
-                    <posy>61</posy>
-                    <width>40</width>
-                    <height>40</height>
-    <animation effect="slide" start="0,0" end="40,-60" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
-                    <texture colordiffuse="white2">$VAR[VolumeIconVar]</texture>
-                </control>
+            <control type="image">
+                <posx>15</posx>
+                <posy>20</posy>
+                <width>120</width>
+                <height>120</height>
+                <texture>$VAR[VolumeCircleVar]</texture>
+                <colordiffuse>$VAR[VolumeColorVar]</colordiffuse>
+                <animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
+                <fadetime>0</fadetime>
+            </control>
+            <control type="image">
+                <posx>56</posx>
+                <posy>61</posy>
+                <width>40</width>
+                <height>40</height>
+                <animation type="Conditional" condition="!Window.IsVisible(volumebar)">
+                    <effect type="slide" start="0,0" end="40,-62" delay="300" time="500" tween="sine" />
+                    <effect type="zoom" start="100" end="80" delay="300" time="500" center="auto" tween="sine" />
+                </animation>
+                <texture colordiffuse="white2">$VAR[VolumeIconVar]</texture>
+            </control>
             <control type="label">
                 <posx>25</posx>
                 <posy>35</posy>
@@ -43,11 +46,11 @@
                 <height>200</height>
                 <align>center</align>
                 <shadowcolor>black</shadowcolor>
-                    <animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="!Window.IsVisible(volumebar)">Conditional</animation>
                 <label>[B][UPPERCASE]$VAR[VolumeLabelVar][/UPPERCASE][/B]</label>
                 <font>Font_Reg22</font>
                 <scroll>true</scroll>
             </control>
-            </control>
+        </control>
     </controls>
 </window>
