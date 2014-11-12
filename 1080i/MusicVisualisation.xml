@@ -37,24 +37,26 @@
         <control type="group">
             <animation effect="slide" end="735,0" time="240">WindowClose</animation>
             <control type="group">
-                <posx>748r</posx>
+                <posx>1680</posx>
                 <posy>0</posy>
                 <control type="image">
-                    <posx>345</posx>
+                    <posx>0</posx>
                     <width>794</width>
                     <height>70</height>
                     <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" flipy="true">home/timepanel_mid_shadow.png</texture>
                     <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
                 </control>
                 <control type="label">
-                    <posx>734</posx>
-                    <posy>-5</posy>
+                    <animation effect="slide" start="0,0" end="-45,0" delay="500" time="300" tween="sine" condition="!Window.IsVisible(volumebar) + Window.IsActive(mutebug)">Conditional</animation>
+                    <posx>220</posx>
+                    <posy>0</posy>
                     <width>600</width>
                     <height>40</height>
                     <align>right</align>
-                    <label>[COLOR grey]$INFO[System.Date(ddd)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
-                    <font>Font_Reg25</font>
-                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
+                    <label>$INFO[System.Time]</label>
+                    <font>Font_Reg28_Caps</font>
+                    <shadowcolor>bcshadow</shadowcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                 </control>
             </control>
         </control>
