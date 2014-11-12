@@ -3,18 +3,15 @@
     <defaultcontrol>703</defaultcontrol>
     <controls>
         <control type="group">
-            <animation effect="slide" start="0,-218" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="0,-218" time="240" delay="120" tween="quadratic">WindowClose</animation>
-            <animation effect="slide" end="0,-218" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1118)">Conditional</animation>
+            <posy>950</posy>
+            <animation effect="slide" start="0,218" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="0,218" time="240" delay="120" tween="quadratic">WindowClose</animation>
+            <animation effect="slide" end="0,218" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1118)">Conditional</animation>
             <control type="image">
-                <width>1920</width>
-                <height>135</height>
-                <texture flipy="true">osd/osd_back.png</texture>
-                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-            </control>
-            <control type="group">
-                <posy>84</posy>
-                <include>Neon_Topbar</include>
+                <posy>-200</posy>
+                <width>2100</width>
+                <height>330</height>
+                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
             </control>
             <include>VideoOSD</include>
         </control>
@@ -33,7 +30,31 @@
                 <effect type="fade" time="160" start="100" end="0" />
                 <effect type="slide" time="160" end="0,98" easing="in" tween="cubic" />
             </animation>
-            <include condition="!VideoPlayer.Content(LiveTV)">BottomProgressBar</include>
+               <control type="label">
+                    <posx>1840</posx>
+                    <posy>875</posy>
+                    <width>400</width>
+                    <height>75</height>
+                    <align>right</align>
+                    <aligny>bottom</aligny>
+                    <label>$VAR[PlayerTimeLabelVar]</label>
+                    <font>Font_Bold37_Caps</font>
+                    <shadowcolor>black</shadowcolor>
+                    <textcolor>white3</textcolor>
+                                        <animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
+                    <animation effect="fade" end="0" time="200">WindowClose</animation>
+                </control>
+                <control type="progress" id="23">
+                                        <animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
+                    <animation effect="fade" end="0" time="200">WindowClose</animation>
+                    <posx>83</posx>
+                    <posy>930</posy>
+                    <width>1754</width>
+                    <height>15</height>
+                    <info>Player.Progress</info>
+                    <texturebg colordiffuse="$VAR[AreaColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                    <midtexture colordiffuse="$VAR[AreaColorVar]">new_pvr/texturebg_white.png</midtexture>
+                </control>
         </control>
     </controls>
 </window>
