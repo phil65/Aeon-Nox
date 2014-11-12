@@ -89,11 +89,6 @@
             <visible>!Container.OnNext + !Container.OnPrevious + StringCompare(Control.GetLabel(4421),infopanelonauto)</visible>
             <include>DelayAnimations</include>
         </control>
-        <control type="button" id="5999">
-            <include>HiddenObject</include>
-            <visible>!Control.HasFocus(109)</visible>
-            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(50) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52)]</visible>
-        </control>
         <control type="image">
             <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
@@ -103,7 +98,7 @@
             <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
             <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | Control.IsVisible(7550) | Control.IsVisible(5999)</visible>
+            <visible>Control.IsVisible(512) | Control.IsVisible(500) | Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(52)</visible>
         </control>
         <include>Furniture_Glow</include>
         <control type="group" id="7550">
