@@ -148,7 +148,7 @@
                         <align>left</align>
                         <height>110</height>
                         <label>$INFO[MusicPlayer.Artist][CR]$INFO[MusicPlayer.Album] [$INFO[MusicPlayer.Year]][CR][COLOR=$VAR[FontColorVar]]$INFO[MusicPlayer.TrackNumber]: [/COLOR]$INFO[MusicPlayer.Title]</label>
-                        <font>Font_Reg23</font>
+                        <font>Font_Reg22</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="progress">
@@ -185,7 +185,7 @@
                         <posy>700</posy>
                         <height>110</height>
                         <label>$INFO[VideoPlayer.Premiered]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Rating,  •  ][CR]$INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x,: ][B]$INFO[VideoPlayer.Title][/B][CR]$INFO[VideoPlayer.Genre]$INFO[VideoPlayer.TVShowTitle]</label>
-                        <font>Font_Reg23</font>
+                        <font>Font_Reg22</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="progress">
@@ -201,12 +201,12 @@
                 </control>
                 <control type="textbox">
                     <posx>1055</posx>
-                    <posy>700</posy>
+                    <posy>695</posy>
                     <width>830</width>
                     <align>right</align>
-                    <height>110</height>
+                    <height>115</height>
                     <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B][CR]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
-                    <font>Font_Reg23</font>
+                    <font>Font_Reg22</font>
                     <textcolor>$VAR[FontColorVar]</textcolor>
                     <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
                     <visible>Player.HasAudio</visible>
@@ -235,21 +235,21 @@
                         <height>26</height>
                         <align>right</align>
                         <label>$INFO[VideoPlayer.Genre]  [COLOR $VAR[FontColorVar]]  -  Genre[/COLOR]</label>
-                        <font>Font_Reg23</font>
+                        <font>Font_Reg22</font>
                     </control>
                     <control type="label">
                         <width>830</width>
                         <height>26</height>
                         <align>right</align>
                         <label>$INFO[VideoPlayer.Director]  [COLOR $VAR[FontColorVar]]  -  Director[/COLOR]</label>
-                        <font>Font_Reg23</font>
+                        <font>Font_Reg22</font>
                     </control>
                     <control type="label">
                         <width>830</width>
                         <height>26</height>
                         <align>right</align>
                         <label>$INFO[VideoPlayer.Writer]  [COLOR $VAR[FontColorVar]]  -  Writer[/COLOR]</label>
-                        <font>Font_Reg23</font>
+                        <font>Font_Reg22</font>
                     </control>
                 </control>-->
                 <control type="grouplist">
@@ -264,7 +264,7 @@
                         <width>830</width>
                         <height>80</height>
                         <label fallback="31003">$INFO[VideoPlayer.Plot]</label>
-                        <font>Font_Reg23</font>
+                        <font>Font_Reg22</font>
                         <textcolor>white3</textcolor>
                         <align>right</align>
                         <autoscroll delay="7000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
