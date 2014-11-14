@@ -1296,122 +1296,7 @@
         <radioposy>-1</radioposy>
     </include>
     <include name="VideoOSD">
-        <control type="grouplist" id="70030">
-            <visible>VideoPlayer.Content(LiveTV)</visible>
-            <posx>0</posx>
-            <posy>2</posy>
-            <width>1920</width>
-            <height>135</height>
-            <align>center</align>
-            <itemgap>7</itemgap>
-            <scrolltime tween="sine">200</scrolltime>
-            <orientation>horizontal</orientation>
-            <onleft>70030</onleft>
-            <onright>70030</onright>
-            <onup>-</onup>
-            <ondown>-</ondown>
-            <control type="radiobutton" id="70031">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDVideoNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDAudioNF.png</textureradiooff>
-                <onclick>ActivateWindow(OSDAudioSettings)</onclick>
-            </control>
-            <control type="radiobutton" id="70032">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDVideoNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDVideoNF.png</textureradiooff>
-                <onclick>ActivateWindow(OSDVideoSettings)</onclick>
-            </control>
-            <control type="image" id="72001">
-                <width>100</width>
-                <texture>-</texture>
-            </control>
-            <control type="radiobutton" id="70034">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDUpNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDUpNF.png</textureradiooff>
-                <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
-                <onclick>PlayerControl(Next)</onclick>
-            </control>
-            <control type="radiobutton" id="70035">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDDownNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDDownNF.png</textureradiooff>
-                <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
-                <onclick>PlayerControl(Previous)</onclick>
-            </control>
-            <control type="radiobutton" id="70036">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDRewindNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDRewindNF.png</textureradiooff>
-                <onclick>PlayerControl(Rewind)</onclick>
-                <enable>Player.SeekEnabled</enable>
-                <animation effect="fade" start="100" end="50" time="80" condition="!Player.SeekEnabled">Conditional</animation>
-            </control>
-            <control type="radiobutton" id="70037">
-                <include>ClassicOSDButton</include>
-                <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
-                <textureradioon>osd/buttons/OSDPlayNF.png</textureradioon>
-                <selected>Player.Paused | Player.Forwarding | Player.Rewinding</selected>
-                <onclick>PlayerControl(Play)</onclick>
-            </control>
-            <control type="radiobutton" id="70038">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDStopNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDStopNF.png</textureradiooff>
-                <onclick>PlayerControl(Stop)</onclick>
-            </control>
-            <control type="radiobutton" id="70039">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDForwardNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDForwardNF.png</textureradiooff>
-                <onclick>PlayerControl(Forward)</onclick>
-                <enable>Player.SeekEnabled</enable>
-                <animation effect="fade" start="100" end="50" time="80" condition="!Player.SeekEnabled">Conditional</animation>
-            </control>
-            <control type="radiobutton" id="70040">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDPlaylistNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDPlaylistNF.png</textureradiooff>
-                <onclick>ActivateWindow(PVROSDChannels)</onclick>
-                <onclick>Dialog.Close(VideoOSD)</onclick>
-            </control>
-            <control type="radiobutton" id="70041">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDEpgNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDEpgNF.png</textureradiooff>
-                <onclick>ActivateWindow(PVROSDGuide)</onclick>
-                <onclick>Dialog.Close(VideoOSD)</onclick>
-            </control>
-            <control type="image" id="72000">
-                <width>100</width>
-                <texture>-</texture>
-            </control>
-            <control type="radiobutton" id="70043">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDTxtNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDTxtNF.png</textureradiooff>
-                <onclick>ActivateWindow(Teletext)</onclick>
-                <onclick>Dialog.Close(VideoOSD)</onclick>
-            </control>
-            <control type="radiobutton" id="70044">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDRecordNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDRecordNF.png</textureradiooff>
-                <selected>Player.Recording</selected>
-                <onclick>PlayerControl(Record)</onclick>
-                <enable>Player.CanRecord</enable>
-                <animation effect="fade" start="100" end="50" time="80" condition="!Player.CanRecord">Conditional</animation>
-            </control>
-            <control type="radiobutton" id="70045">
-                <include>ClassicOSDButton</include>
-                <textureradioon>osd/buttons/OSDSettingsNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDSettingsNF.png</textureradiooff>
-                <onclick>ActivateWindow(1118)</onclick>
-            </control>
-        </control>
         <control type="grouplist" id="201">
-            <visible>!VideoPlayer.Content(LiveTV)</visible>
             <posx>0</posx>
             <posy>2</posy>
             <width>1920</width>
@@ -1420,7 +1305,7 @@
             <itemgap>7</itemgap>
             <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
-            <onup>-</onup>
+            <onup>87</onup>
             <ondown>-</ondown>
             <onleft>201</onleft>
             <onright>201</onright>
@@ -1430,6 +1315,7 @@
                 <label>298</label>
                 <include>ClassicOSDButton</include>
                 <onclick>ActivateWindow(videobookmarks)</onclick>
+                <visible>!VideoPlayer.Content(livetv)</visible>
             </control>
             <control type="radiobutton" id="701">
                 <textureradioon>osd/buttons/OSDAudioNF.png</textureradioon>
@@ -1454,12 +1340,7 @@
                 <textureradiooff>osd/buttons/OSDPrevTrackNF.png</textureradiooff>
                 <include>ClassicOSDButton</include>
                 <onclick>PlayerControl(Previous)</onclick>
-            </control>
-            <control type="radiobutton" id="601">
-                <textureradioon>osd/buttons/OSDRewindNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDRewindNF.png</textureradiooff>
-                <include>ClassicOSDButton</include>
-                <onclick>PlayerControl(Rewind)</onclick>
+                <visible>!VideoPlayer.Content(livetv)</visible>
             </control>
             <control type="radiobutton" id="602">
                 <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
@@ -1474,17 +1355,28 @@
                 <include>ClassicOSDButton</include>
                 <onclick>PlayerControl(Stop)</onclick>
             </control>
-            <control type="radiobutton" id="604">
-                <textureradioon>osd/buttons/OSDForwardNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDForwardNF.png</textureradiooff>
-                <include>ClassicOSDButton</include>
-                <onclick>PlayerControl(Forward)</onclick>
-            </control>
             <control type="radiobutton" id="605">
                 <textureradioon>osd/buttons/OSDNextTrackNF.png</textureradioon>
                 <textureradiooff>osd/buttons/OSDNextTrackNF.png</textureradiooff>
                 <include>ClassicOSDButton</include>
                 <onclick>PlayerControl(Next)</onclick>
+                <visible>!VideoPlayer.Content(livetv)</visible>
+            </control>
+                        <control type="radiobutton" id="70040">
+                <include>ClassicOSDButton</include>
+                <textureradioon>osd/buttons/OSDPlaylistNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDPlaylistNF.png</textureradiooff>
+                <onclick>ActivateWindow(PVROSDChannels)</onclick>
+                <onclick>Dialog.Close(VideoOSD)</onclick>
+                <visible>VideoPlayer.Content(livetv)</visible>
+            </control>
+            <control type="radiobutton" id="70041">
+                <include>ClassicOSDButton</include>
+                <textureradioon>osd/buttons/OSDEpgNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDEpgNF.png</textureradiooff>
+                <onclick>ActivateWindow(PVROSDGuide)</onclick>
+                <onclick>Dialog.Close(VideoOSD)</onclick>
+                <visible>VideoPlayer.Content(livetv)</visible>
             </control>
             <control type="image" id="73002">
                 <width>100</width>
@@ -1497,6 +1389,7 @@
                 <include>ClassicOSDButton</include>
                 <onclick>Close</onclick>
                 <onclick>ActivateWindow(SubtitleSearch)</onclick>
+                <visible>!VideoPlayer.Content(livetv)</visible>
             </control>
             <control type="radiobutton" id="804">
                 <textureradioon>osd/buttons/OSDDvdNF.png</textureradioon>
@@ -1506,6 +1399,25 @@
                 <onclick>PlayerControl(ShowVideoMenu)</onclick>
                 <enable>VideoPlayer.HasMenu</enable>
                 <animation effect="fade" start="100" end="50" time="80" condition="!VideoPlayer.HasMenu">Conditional</animation>
+                <visible>!VideoPlayer.Content(livetv)</visible>
+            </control>
+            <control type="radiobutton" id="70043">
+                <include>ClassicOSDButton</include>
+                <textureradioon>osd/buttons/OSDTxtNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDTxtNF.png</textureradiooff>
+                <onclick>ActivateWindow(Teletext)</onclick>
+                <onclick>Dialog.Close(VideoOSD)</onclick>
+                <visible>VideoPlayer.Content(livetv)</visible>
+            </control>
+            <control type="radiobutton" id="70044">
+                <include>ClassicOSDButton</include>
+                <textureradioon>osd/buttons/OSDRecordNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDRecordNF.png</textureradiooff>
+                <selected>Player.Recording</selected>
+                <onclick>PlayerControl(Record)</onclick>
+                <enable>Player.CanRecord</enable>
+                <visible>VideoPlayer.Content(livetv)</visible>
+                <animation effect="fade" start="100" end="50" time="80" condition="!Player.CanRecord">Conditional</animation>
             </control>
             <control type="radiobutton" id="705">
                 <textureradioon>osd/buttons/OSDSettingsNF.png</textureradioon>

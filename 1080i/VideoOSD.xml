@@ -57,6 +57,49 @@
                     <texturebg colordiffuse="$VAR[AreaColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
                     <midtexture colordiffuse="$VAR[AreaColorVar]">new_pvr/texturebg_white.png</midtexture>
                 </control>
+            <control type="button" id="87">
+                <include>HiddenObject</include>
+                <onup>8010</onup>
+                <ondown>650</ondown>
+                <onright>PlayerControl(SmallSkipForward)</onright>
+                <onleft>PlayerControl(SmallSkipBackward)</onleft>
+                <visible>Player.SeekEnabled</visible>
+                <onclick>-</onclick>
+            </control>
+            <control type="slider">
+                <posx>83</posx>
+                <posy>-40</posy>
+                <width>1754</width>
+                <height>45</height>
+                <onup>8010</onup>
+                <ondown>650</ondown>
+                <controloffsetx>75</controloffsetx>
+                <controloffsety>0</controloffsety>
+                <texturesliderbar colordiffuse="00FFFFFF">settings/slider_back.png</texturesliderbar>
+                <textureslidernib>settings/orb_nofo.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">settings/orb_fo.png</textureslidernibfocus>
+                <info>Player.Progress</info>
+                <action>seek</action>
+                <visible>!Control.HasFocus(87)</visible>
+                <include>Animation_WindowFade200</include>
+            </control>
+            <control type="slider">
+                <posx>83</posx>
+                <posy>-40</posy>
+                <width>1754</width>
+                <height>45</height>
+                <onup>8010</onup>
+                <ondown>650</ondown>
+                <controloffsetx>75</controloffsetx>
+                <controloffsety>0</controloffsety>
+                <texturesliderbar colordiffuse="00FFFFFF">settings/slider_back.png</texturesliderbar>
+                <textureslidernib colordiffuse="$INFO[Window(home).Property(ImageColor)]">settings/orb_fo.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">settings/orb_fo.png</textureslidernibfocus>
+                <info>Player.Progress</info>
+                <action>seek</action>
+                <include>Animation_WindowFade200</include>
+                <visible>Control.HasFocus(87)</visible>
+            </control>
             </control>
         </control>
         <control type="group">
