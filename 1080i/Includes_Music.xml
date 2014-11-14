@@ -674,15 +674,15 @@
     </include>
     <include name="ClassicMusicOSD">
         <control type="grouplist" id="650">
-            <posx>100</posx>
+            <posx>150</posx>
             <posy>4</posy>
-            <width>640</width>
+            <width>1920</width>
             <height>150</height>
             <align>left</align>
             <itemgap>-25</itemgap>
             <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
-            <onup>Dialog.Close(musicosd)</onup>
+            <onup>87</onup>
             <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
             <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
             <onleft>708</onleft>
@@ -710,21 +710,10 @@
                 <include>ClassicOSDButtonMusic</include>
                 <onclick>ActivateWindow(122)</onclick>
             </control>
-        </control>
-        <control type="grouplist" id="652">
-            <description>Video settings buttons</description>
-            <posy>4</posy>
-            <width>1920</width>
-            <height>150</height>
-            <align>center</align>
-            <itemgap>-25</itemgap>
-            <scrolltime tween="sine">200</scrolltime>
-            <orientation>horizontal</orientation>
-            <onup>Dialog.Close(musicosd)</onup>
-            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-            <onleft>702</onleft>
-            <onright>703</onright>
+            <control type="image" id="2000">
+                <width>100</width>
+                <texture>-</texture>
+            </control>
             <control type="radiobutton" id="600">
                 <textureradioon>osd/buttons/OSDPrevTrackNF.png</textureradioon>
                 <textureradiooff>osd/buttons/OSDPrevTrackNF.png</textureradiooff>
@@ -770,21 +759,6 @@
                 <onclick>PlayerControl(record)</onclick>
                 <visible>Player.CanRecord</visible>
             </control>
-        </control>
-        <control type="grouplist" id="651">
-            <description>Video settings buttons</description>
-            <posy>4</posy>
-            <width>1820</width>
-            <height>150</height>
-            <align>right</align>
-            <itemgap>-25</itemgap>
-            <scrolltime tween="sine">200</scrolltime>
-            <orientation>horizontal</orientation>
-            <onup>Dialog.Close(musicosd)</onup>
-            <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
-            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
-            <onleft>716</onleft>
-            <onright>700</onright>
             <control type="image" id="715">
                 <texture>$VAR[MusicOSDRepeatClassicButtonVar]</texture>
                 <include>ClassicOSDButtonMusic</include>

@@ -3,7 +3,7 @@
     <defaultcontrol>-</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <onload>Dialog.Close(all,true)</onload>
-    <onload>RunScript(script.artistslideshow,daemon=True)</onload>
+    <onload>RunScript(script.artistslideshow)</onload>
     <onunload>CancelAlarm(Vis,true)</onunload>
     <controls>
         <control type="label" id="4322">
@@ -213,6 +213,8 @@
                     <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                 </control>
+                <control type="group">
+                            <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd)">Conditional</animation>
                 <control type="image">
                     <posx>945</posx>
                     <posy>-525</posy>
@@ -221,7 +223,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</texture>
                 </control>
-                <control type="multiimage">
+                <control type="multiimage" id="8888">
                     <posx>955</posx>
                     <posy>-515</posy>
                     <width>798</width>
@@ -230,6 +232,7 @@
                     <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
                     <fadetime>FanartCrossfadeTime</fadetime>
                 </control>
+            </control>
             </control>
             <control type="group">
                 <posy>854</posy>

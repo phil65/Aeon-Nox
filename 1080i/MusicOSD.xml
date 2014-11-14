@@ -15,16 +15,16 @@
             <animation effect="slide" end="0,218" time="240" tween="quadratic" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(1100)">Conditional</animation>
             <control type="group" id="5800">
                 <posy>940</posy>
-                <animation effect="slide" end="0,200" time="400" tween="cubic" condition="!ControlGroup(650).HasFocus + !ControlGroup(651).HasFocus+ !ControlGroup(652).HasFocus">Conditional</animation>
                 <include>ClassicMusicOSD</include>
-<!--                 <control type="grouplist" id="996">
+                <!--
+                <control type="grouplist" id="996">
                     <width>462</width>
                     <height max="1080">auto</height>
-                        <visible>Control.HasFocus(500)</visible>
+                    <visible>Control.HasFocus(500)</visible>
                     <control type="button" id="2001">
                         <include>ContextMenuButton</include>
                         <label>Visualisation Settings</label>
-                        <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+                        <onclimck>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
                     </control>
                     <control type="button" id="2002">
                         <include>ContextMenuButton</include>
@@ -36,14 +36,16 @@
                         <label>Visualisation Settings</label>
                         <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
                     </control>
-                </control> -->
-            </control>
+                </control>--></control>
         </control>
-<!--         <control type="group">
-            <posx>-160</posx>
-            <posy>-470</posy>
+
+        <control type="group">
+            <posx>0</posx>
+            <posy>-490</posy>
+            <animation effect="fade" time="350">WindowOpen</animation>
+            <animation effect="fade" time="350">WindowClose</animation>
             <include>NextTracksList</include>
-        </control> -->
+        </control>
         <!--
         <control type="textbox">
             <posx>922</posx>
@@ -57,15 +59,20 @@
             <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>-->
         <control type="slider" id="87">
-            <posx>500</posx>
-            <posy>500</posy>
-            <width>1210</width>
-            <height>50</height>
-            <texturesliderbar></texturesliderbar>
-                                <info>Player.Progress</info>
-                    <action>seek</action>
-        <textureslidernib>settings/orb_nofo.png</textureslidernib>
-        <textureslidernibfocus>settings/orb_fo.png</textureslidernibfocus>
+                    <posx>83</posx>
+                    <posy>899</posy>
+                    <width>1754</width>
+            <height>30</height>
+            <onup>650</onup>
+            <ondown>650</ondown>
+            <controloffsetx>75</controloffsetx>
+            <controloffsety>0</controloffsety>
+            <texturesliderbar colordiffuse="00FFFFFF">settings/slider_back.png</texturesliderbar>
+            <textureslidernib>settings/orb_nofo.png</textureslidernib>
+            <textureslidernibfocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">settings/orb_fo.png</textureslidernibfocus>
+            <info>Player.Progress</info>
+            <action>seek</action>
+            <include>Animation_WindowFade200</include>
         </control>
     </controls>
 </window>
