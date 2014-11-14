@@ -44,7 +44,74 @@
             <posy>-490</posy>
             <animation effect="fade" time="350">WindowOpen</animation>
             <animation effect="fade" time="350">WindowClose</animation>
-            <include>NextTracksList</include>
+        <control type="list" id="8010">
+            <posx>980</posx>
+            <posy>680</posy>
+            <width>1000</width>
+            <height>479</height>
+            <onup>10002</onup>
+            <ondown>8012</ondown>
+            <onleft>87</onleft>
+            <onright>87</onright>
+            <orientation>vertical</orientation>
+            <pagecontrol>61</pagecontrol>
+            <focusposition>0</focusposition>
+            <scrolltime tween="cubic" easing="inout">400</scrolltime>
+            <preloaditems>2</preloaditems>
+            <itemlayout height="60" width="1000">
+                <control type="label">
+                    <posx>700</posx>
+                    <posy>0</posy>
+                    <width>110</width>
+                    <height>80</height>
+                    <align>right</align>
+                    <label>$INFO[ListItem.Duration]</label>
+                    <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                    <font>font28</font>
+                    <textcolor>grey</textcolor>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <width>650</width>
+                    <height>80</height>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                    <font>font28</font>
+                    <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                    <textcolor>grey</textcolor>
+                </control>
+            </itemlayout>
+            <focusedlayout height="60" width="1000">
+                <control type="group">
+                    <animation effect="zoom" start="100" end="110" time="150" center="430,50">Focus</animation>
+                    <animation effect="zoom" end="100" start="110" time="150" center="430,50">UnFocus</animation>
+                    <control type="label">
+                        <posx>700</posx>
+                        <posy>0</posy>
+                        <width>110</width>
+                        <height>80</height>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Duration]</label>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                        <font>font28</font>
+                        <textcolor>white</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>650</width>
+                        <height>80</height>
+                        <align>left</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font28</font>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
+                        <textcolor>white</textcolor>
+                    </control>
+                </control>
+            </focusedlayout>
+            <content>playlistmusic://</content>
+        </control>
         </control>
         <!--
         <control type="textbox">

@@ -550,76 +550,6 @@
             <visible>IntegerGreaterThan(Window(Home).Property(ArtistEvents.Count),19)</visible>
         </item>
     </include>
-    <include name="NextTracksList">
-        <control type="list" id="8010">
-            <posx>980</posx>
-            <posy>680</posy>
-            <width>1000</width>
-            <height>479</height>
-            <onup>10002</onup>
-            <ondown>8012</ondown>
-            <onleft>87</onleft>
-            <onright>87</onright>
-            <orientation>vertical</orientation>
-            <pagecontrol>61</pagecontrol>
-            <focusposition>0</focusposition>
-            <scrolltime tween="cubic" easing="inout">400</scrolltime>
-            <preloaditems>2</preloaditems>
-            <itemlayout height="60" width="1000">
-                <control type="label">
-                    <posx>700</posx>
-                    <posy>0</posy>
-                    <width>110</width>
-                    <height>80</height>
-                    <align>right</align>
-                    <label>$INFO[ListItem.Duration]</label>
-                    <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
-                    <font>font28</font>
-                    <textcolor>grey</textcolor>
-                </control>
-                <control type="label">
-                    <posx>60</posx>
-                    <posy>0</posy>
-                    <width>650</width>
-                    <height>80</height>
-                    <align>left</align>
-                    <label>$INFO[ListItem.Label]</label>
-                    <font>font28</font>
-                    <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
-                    <textcolor>grey</textcolor>
-                </control>
-            </itemlayout>
-            <focusedlayout height="60" width="1000">
-                <control type="group">
-                    <animation effect="zoom" start="100" end="110" time="150" center="430,50">Focus</animation>
-                    <animation effect="zoom" end="100" start="110" time="150" center="430,50">UnFocus</animation>
-                    <control type="label">
-                        <posx>700</posx>
-                        <posy>0</posy>
-                        <width>110</width>
-                        <height>80</height>
-                        <align>right</align>
-                        <label>$INFO[ListItem.Duration]</label>
-                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
-                        <font>font28</font>
-                        <textcolor>white</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>60</posx>
-                        <posy>0</posy>
-                        <width>650</width>
-                        <height>80</height>
-                        <align>left</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>font28</font>
-                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
-                        <textcolor>white</textcolor>
-                    </control>
-                </control>
-            </focusedlayout>
-            <content>playlistmusic://</content>
-        </control>
-    </include>
     <include name="MusicVisPanelLayout">
         <control type="image">
             <posx>15</posx>
@@ -705,12 +635,6 @@
                 <include>ClassicOSDButtonMusic</include>
                 <onclick>PlayerControl(Previous)</onclick>
             </control>
-            <control type="radiobutton" id="601">
-                <textureradioon>osd/buttons/OSDRewindNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDRewindNF.png</textureradiooff>
-                <include>ClassicOSDButtonMusic</include>
-                <onclick>PlayerControl(Rewind)</onclick>
-            </control>
             <control type="radiobutton" id="602">
                 <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
                 <textureradioon>osd/buttons/OSDPlayNF.png</textureradioon>
@@ -724,12 +648,6 @@
                 <label>31352</label>
                 <include>ClassicOSDButtonMusic</include>
                 <onclick>PlayerControl(Stop)</onclick>
-            </control>
-            <control type="radiobutton" id="604">
-                <textureradioon>osd/buttons/OSDForwardNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDForwardNF.png</textureradiooff>
-                <include>ClassicOSDButtonMusic</include>
-                <onclick>PlayerControl(Forward)</onclick>
             </control>
             <control type="radiobutton" id="605">
                 <textureradioon>osd/buttons/OSDNextTrackNF.png</textureradioon>
