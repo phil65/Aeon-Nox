@@ -305,7 +305,7 @@
                         <aspectratio>keep</aspectratio>
                         <texture colordiffuse="white">flags/music/rating/$INFO[Player.StarRating]</texture>
                     </control>
-                    <control type="image" id="8669">
+                    <control type="image" id="8980">
                         <posx>612</posx>
                         <posy>1016</posy>
                         <width>150</width>
@@ -323,8 +323,10 @@
                         <font>Font_Bold26_Caps</font>
                         <textcolor>grey</textcolor>
                         <wrapmultiline>true</wrapmultiline>
-                        <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8669),empty.png)">Conditional</animation>
-                    </control>
+                                                    <visible>IsEmpty(Control.GetLabel(8980))</visible>
+
+<!--                         <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8980),empty.png)">Conditional</animation>
+ -->                    </control>
                 </control>
                 <control type="label">
                     <posx>1840</posx>
