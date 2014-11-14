@@ -16,7 +16,6 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" reversible="false" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" reversible="false" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <control type="group">
-                <animation effect="fade" time="350">VisibleChange</animation>
                 <control type="multiimage">
                     <imagepath fallback="special://skin/backgrounds/music/">$INFO[Player.Art(fanart)]</imagepath>
                     <aspectratio align="center" aligny="top">scale</aspectratio>
@@ -46,31 +45,18 @@
             <width>200</width>
             <height>200</height>
         </control>
-        <control type="group">
+        <control type="label">
+            <animation effect="slide" start="0,0" end="-45,0" delay="500" time="300" tween="sine" condition="!Window.IsVisible(volumebar) + Window.IsActive(mutebug)">Conditional</animation>
             <animation effect="slide" end="735,0" time="240">WindowClose</animation>
-            <control type="group">
-                <posx>1680</posx>
-                <posy>0</posy>
-                <control type="image">
-                    <posx>0</posx>
-                    <width>794</width>
-                    <height>70</height>
-                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" flipy="true">home/timepanel_mid_shadow.png</texture>
-                    <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
-                </control>
-                <control type="label">
-                    <animation effect="slide" start="0,0" end="-45,0" delay="500" time="300" tween="sine" condition="!Window.IsVisible(volumebar) + Window.IsActive(mutebug)">Conditional</animation>
-                    <posx>220</posx>
-                    <posy>0</posy>
-                    <width>600</width>
-                    <height>40</height>
-                    <align>right</align>
-                    <label>$INFO[System.Time]</label>
-                    <font>Font_Reg28_Caps</font>
-                    <shadowcolor>bcshadow</shadowcolor>
-                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
-                </control>
-            </control>
+            <posx>1900</posx>
+            <posy>0</posy>
+            <width>600</width>
+            <height>40</height>
+            <align>right</align>
+            <label>$INFO[System.Time]</label>
+            <font>Font_Reg28_Caps</font>
+            <shadowcolor>bcshadow</shadowcolor>
+            <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
         </control>
         <control type="group">
             <posy>0</posy>
@@ -239,12 +225,13 @@
                 </control>
             </control>
             <control type="image">
+                    <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!IsEmpty(Player.Art(fanart)) + SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
                 <posx>1269</posx>
                 <posy>-525</posy>
                 <width>494</width>
                 <height>494</height>
                 <aspectratio>scale</aspectratio>
-                <imagepath background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</imagepath>
+                <imagepath background="true">$INFO[Player.Art(fanart)]</imagepath>
                 <bordertexture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</bordertexture>
                 <bordersize>10</bordersize>
             </control>
