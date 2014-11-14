@@ -27,7 +27,10 @@
                     <fadetime>1000</fadetime>
                     <include>FullscreenDimensions</include>
                 </control>
-                <control type="image">
+            </control>
+            <include>cdwall-musicvisualisation</include>
+        </control>
+                       <control type="image">
                     <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
                     <width>1920</width>
                     <height>1080</height>
@@ -35,9 +38,6 @@
                     <animation effect="fade" time="200">WindowClose</animation>
                     <animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
                 </control>
-            </control>
-            <include>cdwall-musicvisualisation</include>
-        </control>
         <control type="visualisation" id="2">
             <width>200</width>
             <height>200</height>
