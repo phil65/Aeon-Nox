@@ -15,9 +15,8 @@
                 <height>0</height>
                 <texture>-</texture>
             </control>
-            <!-- ** Required ** Do not change <id> or <type> (Smooth scrolling list for lyrics) -->
             <control type="list" id="110">
-                <posx>682</posx>
+                <posx>800</posx>
                 <posy>190</posy>
                 <width>1354</width>
                 <height>460</height>
@@ -32,7 +31,7 @@
                 <itemlayout height="45">
                     <control type="label">
                         <posx>1</posx>
-                        <width>1754</width>
+                        <width>1000</width>
                         <height>45</height>
                         <align>center</align>
                         <font>Font_Reg32</font>
@@ -42,29 +41,29 @@
                 </itemlayout>
                 <focusedlayout height="45">
                     <control type="group">
-                                                <animation effect="zoom" start="100" end="110" time="150" center="500,50">Focus</animation>
+                        <animation effect="zoom" start="100" end="110" time="150" center="500,50">Focus</animation>
                         <animation effect="zoom" end="100" start="110" time="150" center="500,50">UnFocus</animation>
-                    <control type="label">
-                        <posx>1</posx>
-                        <width>1000</width>
-                        <height>45</height>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg32</font>
-                        <textcolor>grey</textcolor>
-                        <visible>!Control.HasFocus(110)</visible>
+                        <control type="label">
+                            <posx>1</posx>
+                            <width>1000</width>
+                            <height>45</height>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg32</font>
+                            <textcolor>grey</textcolor>
+                            <visible>!Control.HasFocus(110)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>1</posx>
+                            <width>1000</width>
+                            <height>45</height>
+                            <align>center</align>
+                            <label fallback="--">$INFO[ListItem.Label]</label>
+                            <font>Font_Reg32</font>
+                            <textcolor>white2</textcolor>
+                            <visible>Control.HasFocus(110)</visible>
+                        </control>
                     </control>
-                    <control type="label">
-                        <posx>1</posx>
-                        <width>1000</width>
-                        <height>45</height>
-                        <align>center</align>
-                        <label fallback="--">$INFO[ListItem.Label]</label>
-                        <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
-                        <visible>Control.HasFocus(110)</visible>
-                    </control>
-                </control>
                 </focusedlayout>
             </control>
             <control type="spincontrol" id="111">
@@ -96,7 +95,6 @@
                 <textcolor>white</textcolor>
                 <visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
             </control>
-            <!-- ** Required ** Do not change <id> or <type> (Song Chooser if it gets it wrong) -->
             <control type="list" id="120">
                 <posx>482</posx>
                 <posy>90</posy>
