@@ -396,9 +396,9 @@
                     <label>13350</label>
                     <include>Objects_MediaMenuButtonIcons</include>
                     <selected>Control.HasFocus(612)</selected>
-                    <onclick condition="Player.HasAudio">ActivateWindow(musicplaylist)</onclick>
-                    <onclick condition="Player.HasVideo">ActivateWindow(videoplaylist)</onclick>
-                    <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
+                    <onclick condition="IntegerGreaterThan(Playlist.Length(music),1)">ActivateWindow(musicplaylist)</onclick>
+                    <onclick condition="IntegerGreaterThan(Playlist.Length(video),1)">ActivateWindow(videoplaylist)</onclick>
+                    <visible>IntegerGreaterThan(Playlist.Length(music),1) | IntegerGreaterThan(Playlist.Length(video),1)</visible>
                     <visible>!Window.IsActive(MusicPlaylist) + !Window.IsActive(VideoPlaylist)</visible>
                 </control>
                 <control type="radiobutton" id="613">
