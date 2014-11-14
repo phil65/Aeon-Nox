@@ -1340,7 +1340,7 @@
                 <textureradiooff>osd/buttons/OSDPrevTrackNF.png</textureradiooff>
                 <include>ClassicOSDButton</include>
                 <onclick>PlayerControl(Previous)</onclick>
-                <visible>!VideoPlayer.Content(livetv)</visible>
+                <visible>!VideoPlayer.Content(livetv) + IntegerGreaterThan(Playlist.Length(video),1)</visible>
             </control>
             <control type="radiobutton" id="602">
                 <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
@@ -1360,7 +1360,7 @@
                 <textureradiooff>osd/buttons/OSDNextTrackNF.png</textureradiooff>
                 <include>ClassicOSDButton</include>
                 <onclick>PlayerControl(Next)</onclick>
-                <visible>!VideoPlayer.Content(livetv)</visible>
+                <visible>!VideoPlayer.Content(livetv) + IntegerGreaterThan(Playlist.Length(video),1)</visible>
             </control>
                         <control type="radiobutton" id="70040">
                 <include>ClassicOSDButton</include>
