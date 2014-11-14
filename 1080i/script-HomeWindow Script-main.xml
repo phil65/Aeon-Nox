@@ -430,7 +430,7 @@
                     <ondown>9000</ondown>
                     <onclick>FullScreen</onclick>
                     <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
+                    <texturenofocus>-</texturenofocus>
                 </control>
                 <control type="image">
                     <posy>22</posy>
@@ -451,12 +451,12 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <onleft>4022</onleft>
-                    <onright>4020</onright>
+                    <onright>4024</onright>
                     <onup>9000</onup>
                     <ondown>9000</ondown>
                     <onclick>PlayDVD</onclick>
                     <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
+                    <texturenofocus>-</texturenofocus>
                 </control>
                 <control type="image">
                     <posy>22</posy>
@@ -465,6 +465,34 @@
                     <aligny>top</aligny>
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="grey2">special://skin/extras/icons/disc.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                    <onclick condition="IntegerGreaterThan(Playlist.Length(music),1)">ActivateWindow(musicplaylist)</onclick>
+                    <onclick condition="IntegerGreaterThan(Playlist.Length(video),1)">ActivateWindow(videoplaylist)</onclick>
+                    <visible>IntegerGreaterThan(Playlist.Length(music),1) | IntegerGreaterThan(Playlist.Length(video),1)</visible>
+                <width>70</width>
+                <control type="button" id="4024">
+                    <width>100</width>
+                    <posx>-13</posx>
+                    <height>93</height>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <onleft>4023</onleft>
+                    <onright>4020</onright>
+                    <onup>9000</onup>
+                    <ondown>9000</ondown>
+                    <onclick>PlayDVD</onclick>
+                    <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+                <control type="image">
+                    <posy>22</posy>
+                    <height>45</height>
+                    <align>center</align>
+                    <aligny>top</aligny>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="grey2">special://skin/extras/icons/playlist.png</texture>
                 </control>
             </control>
         </control>
