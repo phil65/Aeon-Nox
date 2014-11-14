@@ -214,7 +214,7 @@
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                 </control>
                 <control type="group">
-                            <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd)">Conditional</animation>
+                            <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
                 <control type="image">
                     <posx>945</posx>
                     <posy>-525</posy>
@@ -311,10 +311,10 @@
                         <width>150</width>
                         <height>90</height>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="white3">$INFO[MusicPlayer.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
+                        <texture colordiffuse="white3" fallback="empty.png">$INFO[MusicPlayer.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
                     </control>
                     <control type="label">
-                        <posx>632</posx>
+                        <posx>585</posx>
                         <posy>1019</posy>
                         <width>205</width>
                         <height>70</height>
@@ -323,7 +323,7 @@
                         <font>Font_Bold26_Caps</font>
                         <textcolor>grey</textcolor>
                         <wrapmultiline>true</wrapmultiline>
-                        <visible>IsEmpty(Control.GetLabel(8669))</visible>
+                        <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8669),empty.png)">Conditional</animation>
                     </control>
                 </control>
                 <control type="label">
