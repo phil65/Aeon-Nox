@@ -29,22 +29,25 @@
                 <scrolltime>200</scrolltime>
                 <animation effect="fade" time="800">WindowOpen</animation>
                 <animation effect="fade" time="160">WindowClose</animation>
-                <itemlayout height="38">
+                <itemlayout height="45">
                     <control type="label">
                         <posx>1</posx>
                         <width>1754</width>
-                        <height>38</height>
+                        <height>45</height>
                         <align>center</align>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </itemlayout>
-                <focusedlayout height="38">
+                <focusedlayout height="45">
+                    <control type="group">
+                                                <animation effect="zoom" start="100" end="110" time="150" center="500,50">Focus</animation>
+                        <animation effect="zoom" end="100" start="110" time="150" center="500,50">UnFocus</animation>
                     <control type="label">
                         <posx>1</posx>
-                        <width>1754</width>
-                        <height>38</height>
+                        <width>1000</width>
+                        <height>45</height>
                         <align>center</align>
                         <label>$INFO[ListItem.Label]</label>
                         <font>Font_Reg32</font>
@@ -53,36 +56,15 @@
                     </control>
                     <control type="label">
                         <posx>1</posx>
-                        <width>1754</width>
-                        <height>38</height>
+                        <width>1000</width>
+                        <height>45</height>
                         <align>center</align>
                         <label fallback="--">$INFO[ListItem.Label]</label>
                         <font>Font_Reg32</font>
-                        <textcolor>grey</textcolor>
+                        <textcolor>white2</textcolor>
                         <visible>Control.HasFocus(110)</visible>
-                        <animation type="Focus" reversible="false">
-                            <effect type="fade" end="100" time="240" />
-                        </animation>
-                        <animation type="UnFocus" reversible="false">
-                            <effect type="fade" start="100" end="0" time="160" />
-                        </animation>
                     </control>
-                    <control type="label">
-                        <posx>1</posx>
-                        <width>1754</width>
-                        <height>38</height>
-                        <align>center</align>
-                        <label fallback="--">$INFO[ListItem.Label]</label>
-                        <font>Font_Reg32</font>
-                        <textcolor>white</textcolor>
-                        <visible>Control.HasFocus(110)</visible>
-                        <animation type="Focus" reversible="false">
-                            <effect type="fade" end="100" time="240" />
-                        </animation>
-                        <animation type="UnFocus" reversible="false">
-                            <effect type="fade" start="100" end="0" time="160" />
-                        </animation>
-                    </control>
+                </control>
                 </focusedlayout>
             </control>
             <control type="spincontrol" id="111">

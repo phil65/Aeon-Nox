@@ -554,7 +554,7 @@
             <control type="list" id="8010">
                 <posx>980</posx>
                 <posy>680</posy>
-                <width>800</width>
+                <width>1000</width>
                 <height>479</height>
                 <onup>10002</onup>
                 <ondown>8012</ondown>
@@ -565,38 +565,41 @@
                 <focusposition>0</focusposition>
                 <scrolltime tween="cubic" easing="inout">400</scrolltime>
                 <preloaditems>2</preloaditems>
-                <itemlayout height="60" width="800">
+                <itemlayout height="60" width="1000">
                     <control type="label">
                         <posx>50</posx>
                         <posy>0</posy>
                         <width>70</width>
                         <height>80</height>
                         <align>right</align>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                         <label>$INFO[ListItem.Property(Number)]</label>
                         <font>font28</font>
                         <textcolor>grey</textcolor>
                     </control>
                     <control type="label">
-                        <posx>550</posx>
+                        <posx>700</posx>
                         <posy>0</posy>
                         <width>110</width>
                         <height>80</height>
                         <align>right</align>
-                        <label>$INFO[ListItem.Property(Duration)]</label>
+                            <label>$INFO[ListItem.Duration]</label>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                         <font>font28</font>
                         <textcolor>grey</textcolor>
                     </control>
                     <control type="label">
                         <posx>60</posx>
                         <posy>0</posy>
-                        <width>400</width>
+                        <width>650</width>
                         <height>80</height>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
                         <font>font28</font>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                         <textcolor>grey</textcolor>
                     </control></itemlayout>
-                <focusedlayout height="60" width="800">
+                <focusedlayout height="60" width="1000">
                     <control type="group">
                         <animation effect="zoom" start="100" end="110" time="150" center="430,50">Focus</animation>
                         <animation effect="zoom" end="100" start="110" time="150" center="430,50">UnFocus</animation>
@@ -608,26 +611,29 @@
                             <align>right</align>
                             <label>$INFO[ListItem.Property(Number)]</label>
                             <font>font28</font>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                             <textcolor>white</textcolor>
                         </control>
                         <control type="label">
-                            <posx>550</posx>
+                            <posx>700</posx>
                             <posy>0</posy>
                             <width>110</width>
                             <height>80</height>
                             <align>right</align>
-                            <label>$INFO[ListItem.Property(Duration)]</label>
+                            <label>$INFO[ListItem.Duration]</label>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                             <font>font28</font>
                             <textcolor>white</textcolor>
                         </control>
                         <control type="label">
                             <posx>60</posx>
                             <posy>0</posy>
-                            <width>400</width>
+                            <width>650</width>
                             <height>80</height>
                             <align>left</align>
                             <label>$INFO[ListItem.Label]</label>
                             <font>font28</font>
+                        <selectedcolor>$INFO[Window(home).Property(ImageColor)]</selectedcolor>
                             <textcolor>white</textcolor>
                         </control>
                     </control>
