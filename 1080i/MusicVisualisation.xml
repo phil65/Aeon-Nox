@@ -13,13 +13,17 @@
         <include>BackgroundFadeLabels</include>
         <control type="group">
             <include>Animation_WindowFade200</include>
-                                <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
-                    <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" reversible="false" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" reversible="false" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <control type="group">
                 <animation effect="fade" time="350">VisibleChange</animation>
                 <control type="multiimage">
                     <imagepath fallback="special://skin/backgrounds/music/">$INFO[Player.Art(fanart)]</imagepath>
-                    <include>MusicVizBG</include>
+                    <aspectratio align="center" aligny="top">scale</aspectratio>
+                    <fadetime>1000</fadetime>
+                    <include>FullscreenDimensions</include>
+                    <animation effect="fade" time="350">VisibleChange</animation>
+                    <timeperimage>10000</timeperimage>
                 </control>
                 <control type="image">
                     <texture colordiffuse="FFFFFFFF" fallback="special://skin/backgrounds/music/">$INFO[Window(home).Property(ImageFilter)]</texture>
@@ -30,14 +34,14 @@
             </control>
             <include>cdwall-musicvisualisation</include>
         </control>
-                       <control type="image">
-                    <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
-                    <width>1920</width>
-                    <height>1080</height>
-                    <aspectratio align="center">scale</aspectratio>
-                    <animation effect="fade" time="200">WindowClose</animation>
-                    <animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
-                </control>
+        <control type="image">
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
+            <width>1920</width>
+            <height>1080</height>
+            <aspectratio align="center">scale</aspectratio>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
+        </control>
         <control type="visualisation" id="2">
             <width>200</width>
             <height>200</height>
@@ -214,25 +218,35 @@
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                 </control>
                 <control type="group">
-                            <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
-                <control type="image">
-                    <posx>945</posx>
-                    <posy>-525</posy>
-                    <width>818</width>
-                    <height>494</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</texture>
-                </control>
-                <control type="multiimage" id="8888">
-                    <posx>955</posx>
-                    <posy>-515</posy>
-                    <width>798</width>
-                    <height>474</height>
-                    <aspectratio align="top">scale</aspectratio>
-                    <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-                    <fadetime>FanartCrossfadeTime</fadetime>
+                    <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
+                    <control type="image">
+                        <posx>945</posx>
+                        <posy>-525</posy>
+                        <width>818</width>
+                        <height>494</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</texture>
+                    </control>
+                    <control type="multiimage" id="8888">
+                        <posx>955</posx>
+                        <posy>-515</posy>
+                        <width>798</width>
+                        <height>474</height>
+                        <aspectratio align="top">scale</aspectratio>
+                        <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+                        <fadetime>FanartCrossfadeTime</fadetime>
+                    </control>
                 </control>
             </control>
+            <control type="image">
+                <posx>1269</posx>
+                <posy>-525</posy>
+                <width>494</width>
+                <height>494</height>
+                <aspectratio>scale</aspectratio>
+                <imagepath background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</imagepath>
+                <bordertexture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                <bordersize>10</bordersize>
             </control>
             <control type="group">
                 <posy>854</posy>
@@ -323,10 +337,9 @@
                         <font>Font_Bold26_Caps</font>
                         <textcolor>grey</textcolor>
                         <wrapmultiline>true</wrapmultiline>
-                                                    <visible>IsEmpty(Control.GetLabel(8980))</visible>
-
-<!--                         <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8980),empty.png)">Conditional</animation>
- -->                    </control>
+                        <visible>IsEmpty(Control.GetLabel(8980))</visible>
+                        <!--
+                        <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8980),empty.png)">Conditional</animation>--></control>
                 </control>
                 <control type="label">
                     <posx>1840</posx>

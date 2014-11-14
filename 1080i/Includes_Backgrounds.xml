@@ -1387,15 +1387,6 @@
             <animation effect="fade" time="350">VisibleChange</animation>
         </control>
     </include>
-    <include name="MusicVizBG">
-        <aspectratio align="center" aligny="top">scale</aspectratio>
-        <fadetime>1000</fadetime>
-        <include>FullscreenDimensions</include>
-        <animation effect="fade" time="350">VisibleChange</animation>
-        <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
-        <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
-        <timeperimage>10000</timeperimage>
-    </include>
     <include name="cdwall-musicvisualisation">
         <control type="group" id="2355">
             <posx>-52</posx>
@@ -1404,8 +1395,6 @@
         <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
         <animation effect="rotatex" start="" end="15" time="0" condition="true">Conditional</animation> -->
             <visible>[Window.IsActive(visualisation) + StringCompare(Skin.String(MusicViz.MultiFanart),cd-wall)] | [Player.HasAudio + Window.IsActive(script-HomeWindow Script-main.xml) + Skin.HasSetting(homecdwall)] | Stringcompare(Control.GetLabel(4322),cdwall)</visible>
-            <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="6000" tween="sine" easing="inout" pulse="true" condition="[![Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animation_bg)] | [[Window.IsActive(script-HomeWindow Script-main.xml) | Window.IsActive(skinsettings)] + Skin.HasSetting(animatedbg)]">Conditional</animation>
             <include>Animation_WindowFade200</include>
             <animation effect="fade" time="350">VisibleChange</animation>
             <control type="panel" id="9032">
