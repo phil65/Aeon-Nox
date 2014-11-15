@@ -56,10 +56,10 @@
                 <onright>9000</onright>
             </control>
             <control type="panel" id="500">
-                <posx>129</posx>
-                <posy>124</posy>
-                <width>1665</width>
-                <height>805</height>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>1080</height>
                 <visible>!IsEmpty(Container.FolderPath) | Window.IsActive(videoplaylist)</visible>
                 <visible>![!IsEmpty(Skin.String(DisableWallVL)) + Window.IsActive(videos)]</visible>
                 <visible>!Container.Content(songs)</visible>
@@ -185,14 +185,17 @@
                         <visible>Container.Content(artists)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout height="161" width="831" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
+                <itemlayout height="220" width="960" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
                     <control type="group">
+                        <posy>100</posy>
+                        <posx>65</posx>
                         <control type="image">
                             <width>831</width>
                             <height>161</height>
                             <aspectratio align="center">scale</aspectratio>
                             <texture background="true">$VAR[BannerVar]</texture>
                             <bordersize>5</bordersize>
+                            <bordertexture border="5" colordiffuse="black">views/addonwall_select.png</bordertexture>
                         </control>
                         <control type="image">
                             <posx>30</posx>
@@ -232,21 +235,17 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="161" width="831" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
+                <focusedlayout height="220" width="960" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
                     <control type="group">
-                        <control type="image">
-                            <posy>2</posy>
-                            <width>831</width>
-                            <height>157</height>
-                            <aspectratio>stretch</aspectratio>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/addonwall_select.png</texture>
-                        </control>
+                         <posy>100</posy>
+                        <posx>65</posx>
                         <control type="image">
                             <width>831</width>
                             <height>161</height>
                             <aspectratio align="center">scale</aspectratio>
                             <texture background="true">$VAR[BannerVar]</texture>
                             <bordersize>5</bordersize>
+                            <bordertexture border="5" colordiffuse="$VAR[FocusTextureColorVar]">views/addonwall_select.png</bordertexture>
                         </control>
                         <control type="image">
                             <posx>30</posx>
@@ -278,49 +277,70 @@
                         </control>
                     </control>
                 </focusedlayout>
-                <itemlayout width="185" height="268" condition="[[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]]">
-                    <control type="image">
-                        <posx>-14</posx>
-                        <posy>-14</posy>
-                        <width>212</width>
-                        <height>296</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                        <bordersize>18</bordersize>
-                    </control>
-                    <include>MovieWallIcons</include>
-                    <control type="image">
-                        <posx>4</posx>
-                        <posy>4</posy>
-                        <width>177</width>
-                        <height>260</height>
-                        <texture diffuse="wall/wall_movie_mask.png">common/bgcolor.png</texture>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <animation effect="fade" start="100" end="25" time="0" condition="true">Conditional</animation>
-                    </control>
+                <itemlayout width="240" height="390" condition="[[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]]">
+            <control type="group">
+                <posy>150</posy>
+                <control type="image">
+                    <posx>11</posx>
+                    <posy>30</posy>
+                    <width>193</width>
+                    <height>290</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                </control>
+                <control type="image">
+                    <posx>-8.5</posx>
+                    <posy>10.5</posy>
+                    <width>232</width>
+                    <height>328</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                    <bordersize>19.5</bordersize>
+                </control>
+                           <control type="progress">
+                <posx>15</posx>
+                <posy>332</posy>
+                <width>190</width>
+                <height>10</height>
+                <info>ListItem.PercentPlayed</info>
+                <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
+            </control>
+            </control>
                 </itemlayout>
-                <focusedlayout width="185" height="268" condition="[[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]]">
-                    <control type="group">
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="auto" start="100" end="140" time="320" tween="cubic" />
-                        </animation>
-                        <animation effect="slide" end="0,20" time="0" reversible="false" tween="cubic" condition="Container(500).Row(0)">Conditional</animation>
-                        <animation effect="slide" end="0,-20" time="0" reversible="false" tween="cubic" condition="Container(500).Row(2)">Conditional</animation>
-                        <animation effect="slide" end="20,0" time="0" reversible="false" tween="cubic" condition="Container(500).Column(0)">Conditional</animation>
-                        <animation effect="slide" end="-20,0" time="0" reversible="false" tween="cubic" condition="Container(500).Column(8)">Conditional</animation>
-                        <control type="image">
-                            <posx>-14</posx>
-                            <posy>-14</posy>
-                            <width>212</width>
-                            <height>296</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                            <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>18</bordersize>
-                        </control>
-                        <include>MovieWallIcons</include>
-                    </control>
+                <focusedlayout width="240" height="390" condition="[[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]]">
+            <control type="group">
+                <posy>150</posy>
+                <animation effect="zoom" center="100,150" start="100" end="105" delay="300" time="280" tween="back" reversible="false">Focus</animation>
+                <control type="image">
+                    <posx>11</posx>
+                    <posy>30</posy>
+                    <width>193</width>
+                    <height>290</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Art(poster)]</texture>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                </control>
+                <control type="image">
+                    <posx>-8.5</posx>
+                    <posy>10.5</posy>
+                    <width>232</width>
+                    <height>328</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                    <bordersize>19.5</bordersize>
+                </control>
+                           <control type="progress">
+                <posx>15</posx>
+                <posy>332</posy>
+                <width>190</width>
+                <height>10</height>
+                <info>ListItem.PercentPlayed</info>
+                <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
+            </control>
+            </control>
                 </focusedlayout>
                 <itemlayout width="208" height="201" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + ![Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]">
                     <include>WallIcons</include>
