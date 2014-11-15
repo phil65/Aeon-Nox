@@ -209,9 +209,6 @@
         <value condition="substring(VideoPlayer.mpaa,Brazil:16) | substring(VideoPlayer.mpaa,16 anos)">MPAA_Brazil_16</value>
         <value condition="substring(VideoPlayer.mpaa,Brazil:18) | substring(VideoPlayer.mpaa,18 anos)">MPAA_Brazil_18</value>
     </variable>
-    <variable name="AudioFlagVar">
-        <value>$INFO[ListItem.AudioCodec]$INFO[ListItem.AudioChannels]</value>
-    </variable>
     <variable name="NextEpisodeVar">
         <value condition="!IsEmpty(Window(Home).Property(NextAired.Label)) + !IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate)]</value>
         <value>$LOCALIZE[31003]</value>

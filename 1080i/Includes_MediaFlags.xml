@@ -280,7 +280,7 @@
                     </control>
                     <control type="image">
                         <posx>1750</posx>
-                        <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                        <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                         <!--Audio logo-->
                         <include>AudioFlagsVars</include>
                     </control>
@@ -480,7 +480,7 @@
             </control>
             <control type="image">
                 <posx>1740</posx>
-                <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                 <include>OSDFlagVars</include>
                 <visible>!ListItem.IsFolder</visible>
             </control>
@@ -844,13 +844,9 @@
                 <control type="group">
                     <visible>!IsEmpty(ListItem.Rating)</visible>
                     <posx>1400</posx>
-                    <control type="image">
-                        <texture>flags/IMDB.png</texture>
-                        <include>AudioFlagsVars</include>
-                    </control>
                     <control type="label">
                         <posx>-1</posx>
-                        <posy>20</posy>
+                        <posy>5</posy>
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
@@ -858,10 +854,20 @@
                         <font>Font_Bold37</font>
                         <textcolor>floor</textcolor>
                     </control>
+                    <control type="label">
+                        <posx>-1</posx>
+                        <posy>32</posy>
+                        <width>135</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                        <font>Font_Reg22_Caps</font>
+                        <textcolor>floor</textcolor>
+                    </control>
                 </control>
                 <control type="image">
                     <posx>1535</posx>
-                    <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                    <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                     <include>AudioFlagsVars</include>
                 </control>
                 <control type="image">
