@@ -6,6 +6,15 @@
             <visible>Control.IsVisible(512)</visible>
             <control type="group">
                 <posy>-30</posy>
+                <control type="scrollbar" id="60">
+                    <posx>1190</posx>
+                    <posy>164</posy>
+                    <width>46</width>
+                    <height>787</height>
+                    <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
+                    <onleft>512</onleft>
+                    <onright>9000</onright>
+                </control>
                 <control type="panel" id="512">
                     <posx>60</posx>
                     <posy>154</posy>
@@ -33,6 +42,7 @@
                     <focusedlayout height="268" width="285" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">
                         <control type="image">
                             <width>261</width>
+                            <animation center="auto" effect="zoom" end="130" reversible="false" start="100" time="480" tween="back">Focus</animation>
                             <height>261</height>
                             <aspectratio>keep</aspectratio>
                             <texture background="true">$VAR[ThumbnailVar]</texture>
@@ -41,39 +51,43 @@
                         </control>
                     </focusedlayout>
                     <itemlayout height="268" width="189" condition="[Container.Content(movies) + !Skin.HasSetting(usecasesinfowall)] | [Container.Content(tvshows) + ![Skin.HasSetting(TVInfoWallLandscape) | Skin.HasSetting(TVInfoWallBanner) | Skin.HasSetting(TVInfoWallLogo)]] | [[Window.IsActive(programs) + !Container.Content(addons)] + !Skin.HasSetting(InfoWallSquare)] | Container.Content(sets) | Container.Content(seasons)">
-                            <control type="image">
-                                <width>189</width>
-                                <height>268</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture background="true">$VAR[ListPosterVar]</texture>
-                                <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
-                                <bordersize>5</bordersize>
-                            </control>
-                            <control type="image">
-                                <posx>125</posx>
-                                <posy>5</posy>
-                                <width>60</width>
-                                <height>60</height>
-                                <texture>$VAR[OverlayVisibility0]</texture>
-                            </control>
+                        <control type="image">
+                            <width>189</width>
+                            <height>268</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true">$VAR[ListPosterVar]</texture>
+                            <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
+                            <bordersize>5</bordersize>
+                        </control>
+                        <control type="image">
+                            <width>189</width>
+                            <height>268</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture colordiffuse="60FFFFFF">common/bgcolor.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>125</posx>
+                            <posy>5</posy>
+                            <width>60</width>
+                            <height>60</height>
+                            <texture>$VAR[OverlayVisibility0]</texture>
+                        </control>
                         <control type="group">
                             <posy>5</posy>
                             <include>UnwatchedIcon</include>
                         </control>
                     </itemlayout>
                     <focusedlayout height="268" width="189" condition="[Container.Content(movies) + !Skin.HasSetting(usecasesinfowall)] | [Container.Content(tvshows) + ![Skin.HasSetting(TVInfoWallLandscape) | Skin.HasSetting(TVInfoWallBanner) | Skin.HasSetting(TVInfoWallLogo)]] | [[Window.IsActive(programs) + !Container.Content(addons)] + !Skin.HasSetting(InfoWallSquare)] | Container.Content(sets) | Container.Content(seasons)">
-                            <control type="image">
+                        <control type="group">
+                            <animation center="auto" effect="zoom" end="135" reversible="false" start="100" delay="120" time="400" tween="cubic">Focus</animation>
+<!--                             <animation center="auto" effect="zoom" end="100" reversible="false" start="135" time="420" tween="cubic">UnFocus</animation>
+ -->                            <control type="image">
                                 <width>189</width>
                                 <height>268</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                            </control>
-                            <control type="image">
-                                <width>189</width>
-                                <height>268</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio>scale</aspectratio>
                                 <texture background="true">$VAR[ListPosterVar]</texture>
-                                <bordersize>5</bordersize>
+                                <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                                <bordersize>10</bordersize>
                             </control>
                             <control type="image">
                                 <posx>125</posx>
@@ -86,6 +100,7 @@
                                 <posy>5</posy>
                                 <include>UnwatchedIcon</include>
                             </control>
+                        </control>
                     </focusedlayout>
                     <itemlayout height="268" width="189" condition="Container.Content(movies) + Skin.HasSetting(usecasesinfowall)">
                         <control type="image">
@@ -347,15 +362,6 @@
                         </control>
                         <include>UnwatchedIcon</include>
                     </focusedlayout>
-                </control>
-                <control type="scrollbar" id="60">
-                    <posx>1190</posx>
-                    <posy>164</posy>
-                    <width>46</width>
-                    <height>787</height>
-                    <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-                    <onleft>512</onleft>
-                    <onright>9000</onright>
                 </control>
                 <control type="group">
                     <posx>-17</posx>
