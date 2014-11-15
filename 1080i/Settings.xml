@@ -54,7 +54,7 @@
                         <width>400</width>
                         <height>250</height>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="$VAR[AreaColorVar]">$INFO[ListItem.Icon]</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
                         <bordertexture border="5">button-nofocus.png</bordertexture>
                         <bordersize>5</bordersize>
                     </control>
@@ -76,6 +76,9 @@
                 </itemlayout>
                 <focusedlayout height="270" width="440">
                     <control type="group">
+                                                   <animation type="Focus" reversible="false">
+                                <effect type="zoom" center="auto" start="100" end="125" time="320" tween="cubic" />
+                            </animation>
                     <control type="image">
                         <aspectratio>keep</aspectratio>
                         <width>400</width>
