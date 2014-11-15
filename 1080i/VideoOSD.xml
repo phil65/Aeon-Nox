@@ -22,12 +22,6 @@
                 <height>330</height>
                 <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
             </control>
-                    <control type="group">
-                        <posy>-950</posy>
-            <animation effect="slide" end="0,260" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)">Conditional</animation>
-            <visible>!Window.IsActive(fullscreeninfo)</visible>
-            <include condition="VideoPlayer.Content(LiveTV)">FullScreenInfoBarLiveTV</include>
-        </control>
             <include>VideoOSD</include>
             <control type="group">
                 <visible>!Window.IsActive(fullscreeninfo)</visible>
