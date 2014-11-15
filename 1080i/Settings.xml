@@ -95,6 +95,19 @@
                         <texture border="20" colordiffuse="$VAR[FocusTextureColorVar]">views/addonwall_select.png</texture>
                         <animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
                     </control>
+                    <control type="textbox">
+                        <posx>10</posx>
+                        <posy>10</posy>
+                                                   <animation type="Focus" reversible="false">
+                                <effect type="fade" start="0" end="100" delay="1000" time="500" tween="cubic" />
+                            </animation>
+                        <width>380</width>
+                        <height>140</height>
+                            <autoscroll delay="3000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                        <label>$INFO[ListItem.Property(Description)]</label>
+                        <font>Font_Reg25_2</font>
+                        <align>center</align>
+                    </control>
                     <control type="label">
                         <width>400</width>
                         <height>400</height>
