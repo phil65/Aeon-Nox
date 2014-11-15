@@ -46,26 +46,6 @@
         <control type="group">
             <visible>Control.IsVisible(500)</visible>
             <include>Animation_Widgets</include>
-            <control type="image">
-                <posx>147</posx>
-                <posy>147</posy>
-                <width>1628</width>
-                <height>765</height>
-                <texture background="true">wall/wall_movie_squares.png</texture>
-                <animation effect="fade" time="200">VisibleChange</animation>
-                <visible>[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(sets) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]</visible>
-                <animation effect="zoom" end="113" center="960,600" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(wallfullscreen)">Conditional</animation>
-            </control>
-            <control type="image">
-                <posx>144</posx>
-                <posy>140</posy>
-                <width>1632</width>
-                <height>775</height>
-                <texture background="true">wall/wall_squares.png</texture>
-                <animation effect="fade" time="200">VisibleChange</animation>
-                <visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + ![Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]</visible>
-                <animation effect="zoom" end="113" center="960,600" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(wallfullscreen)">Conditional</animation>
-            </control>
             <control type="scrollbar" id="72">
                 <posx>1774</posx>
                 <posy>132</posy>
@@ -91,7 +71,6 @@
                 <onright>72</onright>
                 <onup>500</onup>
                 <ondown>500</ondown>
-                <animation effect="zoom" end="113" center="960,600" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(wallfullscreen)">Conditional</animation>
                 <orientation>vertical</orientation>
                 <itemlayout height="268" width="275" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + [Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]">
                     <control type="image">

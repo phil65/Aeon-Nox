@@ -267,13 +267,6 @@
                     <onclick>Skin.ToggleSetting(InfoWallTagLine)</onclick>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),AddonWall) + Container.Content(movies)</visible>
                 </control>
-                <control type="radiobutton" id="1701">
-                    <label>$LOCALIZE[31195]</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(addonwallaltbackground)</onclick>
-                    <selected>Skin.HasSetting(addonwallaltbackground)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),AddonWall)</visible>
-                </control>
                 <!--Floor Label Options-->
                 <control type="button" id="1649">
                     <label>$LOCALIZE[31388]:</label>
@@ -488,13 +481,6 @@
                     <onclick>Skin.ToggleSetting(wallcases)</onclick>
                     <selected>Skin.HasSetting(wallcases)</selected>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),Wall) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos)]</visible>
-                </control>
-                <control type="radiobutton" id="16531">
-                    <label>31195</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(wallfullscreen)</onclick>
-                    <selected>Skin.HasSetting(wallfullscreen)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),Wall)</visible>
                 </control>
                 <control type="radiobutton" id="16442">
                     <label>$LOCALIZE[31454]</label>
