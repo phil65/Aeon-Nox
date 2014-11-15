@@ -204,6 +204,15 @@
             <visible>Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
             <visible>![SubString(Container.FolderPath,addons://) | SubString(Container.FolderPath,plugin.video)]</visible>
             <posy>1000</posy>
+                                <control type="image">
+                <posy>-70</posy>
+                <width>2100</width>
+                <height>180</height>
+                <visible>Control.IsVisible(500)</visible>
+                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
+                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
+            </control>
             <control type="group">
                 <visible>!ListItem.IsFolder</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
@@ -536,6 +545,15 @@
             <posy>988</posy>
             <visible>!Control.IsVisible(506)</visible>
             <include>Animation_FlagSlideDown</include>
+                                <control type="image">
+                <posy>-70</posy>
+                <width>2100</width>
+                <height>180</height>
+                <visible>Control.IsVisible(500)</visible>
+                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
+                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
+            </control>
             <control type="group">
                 <visible>Container.Content(artists) + !IsEmpty(ListItem.DBID)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
