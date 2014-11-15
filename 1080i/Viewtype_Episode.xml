@@ -85,15 +85,26 @@
                 <visible>Window.IsActive(videos)</visible>
                 <visible>!Skin.HasSetting(disableepisodeposter)</visible>
                 <control type="image">
-                    <posx>30</posx>
-                    <posy>160</posy>
-                    <width>540</width>
-                    <height>800</height>
+                     <posx>50</posx>
+                    <posy>184</posy>
+                    <width>498</width>
+                    <height>750</height>
                     <align>center</align>
                     <texture colordiffuse="$VAR[AreaColorVar]">thumbs/thumb_glass_shadow.png</texture>
                     <include>PanelGlowFade</include>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                    <visible>!IsEmpty(Control.GetLabel(3822))</visible>
+                </control>
+                <control type="image">
+                    <posx>49</posx>
+                    <posy>190</posy>
+                    <width>502</width>
+                    <height>739</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">common/black.png</texture>
+                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                    <bordersize>19</bordersize>
                     <visible>!IsEmpty(Control.GetLabel(3822))</visible>
                 </control>
                 <control type="image" id="3822">
