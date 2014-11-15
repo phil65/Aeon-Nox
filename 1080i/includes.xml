@@ -1286,14 +1286,6 @@
             <ondown>-</ondown>
             <onleft>201</onleft>
             <onright>201</onright>
-            <control type="radiobutton" id="700">
-                <textureradioon>osd/buttons/OSDBookMarksNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDBookMarksNF.png</textureradiooff>
-                <label>298</label>
-                <include>ClassicOSDButton</include>
-                <onclick>ActivateWindow(videobookmarks)</onclick>
-                <visible>!VideoPlayer.Content(livetv)</visible>
-            </control>
             <control type="radiobutton" id="701">
                 <textureradioon>osd/buttons/OSDAudioNF.png</textureradioon>
                 <textureradiooff>osd/buttons/OSDAudioNF.png</textureradiooff>
@@ -1323,7 +1315,7 @@
                 <textureradiooff>osd/buttons/OSDPauseNF.png</textureradiooff>
                 <textureradioon>osd/buttons/OSDPlayNF.png</textureradioon>
                 <include>ClassicOSDButton</include>
-                <selected>Player.Paused | Player.Forwarding | Player.Rewinding</selected>
+                <selected>Player.Paused</selected>
                 <onclick>PlayerControl(Play)</onclick>
             </control>
             <control type="radiobutton" id="603">
@@ -1359,6 +1351,14 @@
                 <width>100</width>
                 <texture>-</texture>
             </control>
+            <control type="radiobutton" id="700">
+                <textureradioon>osd/buttons/OSDBookMarksNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDBookMarksNF.png</textureradiooff>
+                <label>298</label>
+                <include>ClassicOSDButton</include>
+                <onclick>ActivateWindow(videobookmarks)</onclick>
+                <visible>!VideoPlayer.Content(livetv)</visible>
+            </control>
             <control type="radiobutton" id="703">
                 <textureradioon>osd/buttons/OSDSubtitlesNF.png</textureradioon>
                 <textureradiooff>osd/buttons/OSDSubtitlesNF.png</textureradiooff>
@@ -1374,9 +1374,7 @@
                 <label>31355</label>
                 <include>ClassicOSDButton</include>
                 <onclick>PlayerControl(ShowVideoMenu)</onclick>
-                <enable>VideoPlayer.HasMenu</enable>
-                <animation effect="fade" start="100" end="50" time="80" condition="!VideoPlayer.HasMenu">Conditional</animation>
-                <visible>!VideoPlayer.Content(livetv)</visible>
+                <visible>VideoPlayer.HasMenu</visible>
             </control>
             <control type="radiobutton" id="70043">
                 <include>ClassicOSDButton</include>
