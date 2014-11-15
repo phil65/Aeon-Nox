@@ -5,21 +5,21 @@
         <top>0</top>
         <system>1</system>
     </coordinates>
-    <animation condition="!Skin.HasSetting(alternatetvosd)" effect="slide" start="2000,0" end="0,0" time="600" tween="back" easing="out">WindowOpen</animation>
-	<animation condition="!Skin.HasSetting(alternatetvosd)" effect="slide" start="0,0" end="2000,0" time="600" tween="back" easing="in">WindowClose</animation>
-	<animation condition="Skin.HasSetting(alternatetvosd)" effect="slide" start="0,1000" end="0,0" time="600" easing="out" tween="back">WindowOpen</animation>
-	<animation condition="Skin.HasSetting(alternatetvosd)" effect="slide" start="0,0" end="0,1000" time="600" easing="in" tween="back">WindowClose</animation>
+    <animation condition="!Skin.HasSetting(alternatetvosd)" effect="slide" start="2000,0" end="0,0" time="600" tween="cubic" easing="out">WindowOpen</animation>
+	<animation condition="!Skin.HasSetting(alternatetvosd)" effect="slide" start="0,0" end="2000,0" time="600" tween="cubic" easing="in">WindowClose</animation>
+	<animation condition="Skin.HasSetting(alternatetvosd)" effect="slide" start="0,1000" end="0,0" time="600" easing="out" tween="cubic">WindowOpen</animation>
+	<animation condition="Skin.HasSetting(alternatetvosd)" effect="slide" start="0,0" end="0,1000" time="600" easing="in" tween="cubic">WindowClose</animation>
     <onload>NextChannelGroup</onload>
     <onload>PreviousChannelGroup</onload>
     <onunload>RunScript(script.pvrosd,close_page)</onunload>
     <controls>
         <control type="group"> <!-- Extended channel list (center) -->
-			<visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) + Skin.HasSetting(alternatetvosd)</visible>
+			<visible>!Window.IsActive(fullscreeninfo) + Skin.HasSetting(alternatetvosd)</visible>
             <include condition="Skin.HasSetting(alternatetvosd) + VideoPlayer.Content(LiveTV)">ChannelOSDExtended</include>
         </control>
 
         <control type="group"> <!-- Mini channel list (right side) - original -->
-            <visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml) + !Skin.HasSetting(alternatetvosd)</visible>
+            <visible>!Window.IsActive(fullscreeninfo) + !Skin.HasSetting(alternatetvosd)</visible>
             <include condition="!Skin.HasSetting(alternatetvosd) + VideoPlayer.Content(LiveTV)">ChannelOSDStandard</include>
         </control>
     </controls>

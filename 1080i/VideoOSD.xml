@@ -22,9 +22,15 @@
                 <height>330</height>
                 <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
             </control>
+                    <control type="group">
+                        <posy>-950</posy>
+            <animation effect="slide" end="0,260" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)">Conditional</animation>
+            <visible>!Window.IsActive(fullscreeninfo)</visible>
+            <include condition="VideoPlayer.Content(LiveTV)">FullScreenInfoBarLiveTV</include>
+        </control>
             <include>VideoOSD</include>
             <control type="group">
-                <visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml)</visible>
+                <visible>!Window.IsActive(fullscreeninfo)</visible>
                 <animation type="Visible">
                     <effect type="fade" time="160" end="100" />
                     <effect type="slide" time="160" start="0,98" end="0,0" tween="cubic" />
@@ -205,11 +211,6 @@
                     </control>
                 </control>
             </control>
-        </control>
-        <control type="group">
-            <animation effect="slide" end="0,260" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)">Conditional</animation>
-            <visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml)</visible>
-            <include condition="VideoPlayer.Content(LiveTV)">FullScreenInfoBarLiveTV</include>
         </control>
     </controls>
 </window>
