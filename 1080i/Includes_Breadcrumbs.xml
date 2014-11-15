@@ -9,7 +9,7 @@
     <include name="BreadcrumbsLabel">
         <width min="15" max="1920">auto</width>
         <height>38</height>
-        <font>Font_Reg28_Caps</font>
+        <font>Font_Reg25_2</font>
         <shadowcolor>bcshadow</shadowcolor>
         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
         <scroll>false</scroll>
@@ -32,12 +32,12 @@
                 <visible>![Player.HasMedia + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
                 <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <control type="image">
-                    <width>40</width>
-                    <height>36</height>
+                    <width>41</width>
+                    <height>41</height>
                     <posx>-2</posx>
-                    <posy>2</posy>
+                    <posy>0</posy>
                     <visible>Window.IsActive(addonbrowser) | Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(videos) | Window.IsActive(pictures) | Window.IsActive(programs) | Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)</visible>
-                    <aspectratio align="left">keep</aspectratio>
+                    <aspectratio align="left">stretch</aspectratio>
                     <texture colordiffuse="$VAR[FontColorVar]">settingsarrow.png</texture>
                     <animation effect="rotate" end="-90" center="auto" delay="240" time="640" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509)">Conditional</animation>
                     <animation effect="rotate" end="-180" center="auto" delay="240" time="640" condition="ControlGroup(9000).HasFocus">Conditional</animation>
@@ -46,7 +46,7 @@
                 <control type="image">
                     <width>56</width>
                     <height>38</height>
-                    <aspectratio align="left">keep</aspectratio>
+                    <aspectratio align="center">keep</aspectratio>
                     <texture colordiffuse="$VAR[FontColorVar]">$VAR[BreadcrumbsIconVar]</texture>
                     <visible>!Player.HasMedia</visible>
                 </control>
@@ -82,7 +82,7 @@
                 <animation effect="slide" start="0,0" end="-45,0" delay="500" time="300" tween="sine" condition="!Window.IsVisible(volumebar) + Window.IsActive(mutebug)">Conditional</animation>
                 <height>38</height>
                             <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
-                <font>Font_Reg28_Caps</font>
+                <font>Font_Reg25_2</font>
                 <shadowcolor>bcshadow</shadowcolor>
                 <textcolor>$VAR[FontColorVar]</textcolor>
                 <scroll>false</scroll>
@@ -119,7 +119,7 @@
                     <width min="15" max="200">auto</width>
                     <height>38</height>
                     <label>$INFO[Player.Time]</label>
-                    <font>Font_Reg28_Caps</font>
+                    <font>Font_Reg25_2</font>
                     <textcolor>grey</textcolor>
                 </control>
                 <control type="fadelabel">
@@ -128,7 +128,7 @@
                     <height>38</height>
                     <label>[COLOR white2]$INFO[MusicPlayer.Title][/COLOR]</label>
                     <label>[COLOR white3]$INFO[MusicPlayer.Artist][/COLOR]</label>
-                    <font>Font_Reg28_Caps</font>
+                    <font>Font_Reg25_2</font>
                     <scroll>true</scroll>
                     <pauseatend>7000</pauseatend>
                     <visible>Player.HasAudio</visible>
@@ -139,7 +139,7 @@
                     <height>38</height>
                     <label>[COLOR white2]$INFO[Videoplayer.Title][/COLOR]</label>
                     <label>[COLOR white3]$INFO[Videoplayer.TVShowTitle][/COLOR]</label>
-                    <font>Font_Reg28_Caps</font>
+                    <font>Font_Reg25_2</font>
                     <scroll>true</scroll>
                     <pauseatend>7000</pauseatend>
                     <visible>!IsEmpty(Videoplayer.TVShowTitle) + Player.HasVideo</visible>
@@ -149,7 +149,7 @@
                     <width>480</width>
                     <height>38</height>
                     <label>$INFO[Videoplayer.Title]</label>
-                    <font>Font_Reg28_Caps</font>
+                    <font>Font_Reg25_2</font>
                     <scroll>true</scroll>
                     <pauseatend>7000</pauseatend>
                     <visible>IsEmpty(Videoplayer.TVShowTitle) + Player.HasVideo + IsEmpty(VideoPlayer.ChannelName)</visible>
@@ -160,7 +160,7 @@
                     <height>38</height>
                     <label>$INFO[Videoplayer.ChannelName]</label>
                     <label>$INFO[Videoplayer.Title]</label>
-                    <font>Font_Reg28_Caps</font>
+                    <font>Font_Reg25_2</font>
                     <scroll>true</scroll>
                     <pauseatend>7000</pauseatend>
                     <visible>Player.HasVideo + !IsEmpty(VideoPlayer.ChannelName)</visible>
