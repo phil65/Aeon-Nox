@@ -54,8 +54,8 @@
                         <control type="image">
                             <width>189</width>
                             <height>268</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture background="true">$VAR[ListPosterVar]</texture>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultVideo.png" background="true">$VAR[ListPosterVar]</texture>
                             <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                             <bordersize>5</bordersize>
                         </control>
@@ -79,18 +79,18 @@
                     </itemlayout>
                     <focusedlayout height="268" width="189" condition="[Container.Content(movies) + !Skin.HasSetting(usecasesinfowall)] | [Container.Content(tvshows) + ![Skin.HasSetting(TVInfoWallLandscape) | Skin.HasSetting(TVInfoWallBanner) | Skin.HasSetting(TVInfoWallLogo)]] | [[Window.IsActive(programs) + !Container.Content(addons)] + !Skin.HasSetting(InfoWallSquare)] | Container.Content(sets) | Container.Content(seasons)">
                         <control type="group">
-                            <animation center="auto" effect="zoom" end="135" reversible="false" start="100" delay="120" time="400" tween="cubic">Focus</animation>
+                            <animation center="auto" effect="zoom" end="135" reversible="false" start="102" delay="50" time="400" tween="cubic">Focus</animation>
 <!--                             <animation center="auto" effect="zoom" end="100" reversible="false" start="135" time="420" tween="cubic">UnFocus</animation>
  -->                            <control type="image">
                                 <width>189</width>
                                 <height>268</height>
                                 <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[ListPosterVar]</texture>
+                                <texture fallback="DefaultVideo.png" background="true">$VAR[ListPosterVar]</texture>
                                 <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
                                 <bordersize>10</bordersize>
                             </control>
                             <control type="image">
-                                <posx>125</posx>
+                                <posx>115</posx>
                                 <posy>5</posy>
                                 <width>60</width>
                                 <height>60</height>
@@ -116,7 +116,7 @@
                             <posy>7</posy>
                             <width>189</width>
                             <height>257</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <aspectratio>stretch</aspectratio>
                             <texture>thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
                         </control>
                         <control type="image">
@@ -143,7 +143,7 @@
                                 <posy>7</posy>
                                 <width>189</width>
                                 <height>257</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <aspectratio>stretch</aspectratio>
                                 <texture>thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
                             </control>
                             <control type="image">
@@ -163,7 +163,7 @@
                                 <control type="image">
                                     <width>285</width>
                                     <height>161</height>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio>scale</aspectratio>
                                     <texture background="true">$INFO[ListItem.Icon]</texture>
                                     <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                                     <bordersize>5</bordersize>
@@ -191,7 +191,7 @@
                             <control type="image">
                                 <width>285</width>
                                 <height>161</height>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <aspectratio>stretch</aspectratio>
                                 <texture background="true" fallback="common/black.png">$VAR[LandscapeThumbVar]</texture>
                                 <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                                 <bordersize>5</bordersize>
@@ -215,7 +215,7 @@
                                 <control type="image">
                                     <width>285</width>
                                     <height>161</height>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio>scale</aspectratio>
                                     <texture background="true">$INFO[ListItem.Icon]</texture>
                                     <bordersize>5</bordersize>
                                 </control>
