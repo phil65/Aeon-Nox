@@ -574,19 +574,6 @@
             </control>
         </control>
     </include>
-    <include name="Furniture_Glow">
-        <control type="image">
-            <posy>-100</posy>
-            <width>1920</width>
-            <height>608</height>
-            <texture colordiffuse="$VAR[ExtendedColorDiffuseVar]" flipy="true">views/showcase_glow.png</texture>
-            <visible>!Control.HasFocus(109)</visible>
-            <include>Animation_OpenClose_Furniture</include>
-            <animation effect="fade" time="350">VisibleChange</animation>
-            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-        </control>
-    </include>
     <include name="WallPanel">
         <control type="group">
             <include>Animation_Widgets</include>
