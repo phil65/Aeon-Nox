@@ -147,45 +147,61 @@
                 <visible>Control.HasFocus(87)</visible>
             </control>
         </control>
-                    <control type="grouplist" id="996">
-                    <posx>200</posx>
-                    <posy>590</posy>
-                    <width>462</width>
-                    <height max="1080">auto</height>
-                    <visible>Control.HasFocus(708)</visible>
-                    <control type="button" id="4458">
-                        <label>$LOCALIZE[31102] [LOWERCASE]$LOCALIZE[31115][/LOWERCASE]</label>
-                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MusicViz.MultiFanart)][/COLOR]</label2>
-                        <include>ContextMenuButton</include>
-                        <onclick>SetProperty(MusicVizBG,True,visualisation)</onclick>
-                        <onclick>ActivateWindow(1134)</onclick>
-                    </control>
-                    <control type="button" id="4449">
-                        <label>31801</label>
-                        <include>ContextMenuButton</include>
-                        <onclick>Skin.ToggleSetting(showvisinfo)</onclick>
-                    </control>
-                    <control type="button" id="4461">
-                        <label>$LOCALIZE[31127]</label>
-                        <!--
-                        <label2>[COLOR $VAR[FontColorVar]]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>-->
-                        <include>ContextMenuButton</include>
-                        <onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
-                    </control>
-                    <control type="button" id="701">
-                        <include>ContextMenuButton</include>
-                        <label>Visualisation Settings</label>701
-                        <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
-                    </control>
-                    <control type="button" id="702">
-                        <include>ContextMenuButton</include>
-                        <label>Select Presets</label>
-                        <onclick>ActivateWindow(122)</onclick>
-                    </control>
-                    <control type="button" id="500">
-                        <include>ContextMenuButton</include>
-                        <label>Visualisation Settings</label>
-                    </control>
-                </control>
+        <control type="grouplist" id="996">
+            <posx>230</posx>
+            <posy>590</posy>
+            <width>462</width>
+            <height>360</height>
+            <visible>Control.HasFocus(708) | ControlGroup(996).HasFocus</visible>
+            <animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="600" tween="cubic" />
+                <effect type="zoom" start="100,0" end="100,100" time="600" center="230,950" tween="cubic" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="600" tween="cubic" />
+                <effect type="zoom" start="100,100" end="100,0" time="600" center="230,950" tween="cubic" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" delay="600" time="600" tween="cubic" />
+                <effect type="zoom" start="100,0" end="100,100" delay="600" time="600" center="230,950" tween="cubic" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="400" tween="cubic" />
+                <effect type="zoom" start="100,100" end="100,0" time="400" center="230,950" tween="cubic" />
+            </animation>
+            <control type="button" id="4458">
+                <label>$LOCALIZE[31102] [LOWERCASE]$LOCALIZE[31115][/LOWERCASE]</label>
+                <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MusicViz.MultiFanart)][/COLOR]</label2>
+                <include>ContextMenuButton</include>
+                <onclick>SetProperty(MusicVizBG,True,visualisation)</onclick>
+                <onclick>ActivateWindow(1134)</onclick>
+            </control>
+            <control type="button" id="4449">
+                <label>31801</label>
+                <include>ContextMenuButton</include>
+                <onclick>Skin.ToggleSetting(showvisinfo)</onclick>
+            </control>
+            <control type="button" id="4461">
+                <label>$LOCALIZE[31127]</label>
+                <!--
+                <label2>[COLOR $VAR[FontColorVar]]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>-->
+                <include>ContextMenuButton</include>
+                <onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+            </control>
+            <control type="button" id="701">
+                <include>ContextMenuButton</include>
+                <label>Visualisation Settings</label>701
+                <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+            </control>
+            <control type="button" id="702">
+                <include>ContextMenuButton</include>
+                <label>Select Presets</label>
+                <onclick>ActivateWindow(122)</onclick>
+            </control>
+            <control type="button" id="500">
+                <include>ContextMenuButton</include>
+                <label>Visualisation Settings</label>
+            </control>
+        </control>
     </controls>
 </window>

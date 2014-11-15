@@ -597,7 +597,8 @@
             <itemgap>-25</itemgap>
             <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
-            <onup>87</onup>
+            <onup condition="!Control.HasFocus(708)">87</onup>
+            <onup condition="Control.HasFocus(708)">500</onup>
             <ondown condition="!Window.IsActive(playercontrols)">40</ondown>
             <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
             <onleft>650</onleft>
