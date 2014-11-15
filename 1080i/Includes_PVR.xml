@@ -328,69 +328,61 @@
             <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
         </control>
         <!--Channel logo-->
-        <control type="group" id="2">
-            <animation effect="slide" time="600" start="-400,0" easing="out" tween="cubic">WindowOpen</animation>
-            <animation effect="slide" time="600" end="-400,0" easing="in" tween="cubic">WindowClose</animation>
-            <control type="image" id="3">
-                <posx>77</posx>
-                <posy>805</posy>
-                <width>250</width>
-                <height>200</height>
-                <align>center</align>
-                <texture>$INFO[VideoPlayer.Cover]</texture>
-                <aspectratio>keep</aspectratio>
-            </control>
+        <control type="image">
+            <posx>77</posx>
+            <posy>805</posy>
+            <width>250</width>
+            <height>200</height>
+            <align>center</align>
+            <texture>$INFO[VideoPlayer.Cover]</texture>
+            <aspectratio>keep</aspectratio>
         </control>
         <!--Top Info (ChannelNr, Name, Date, Time & Back-end info)-->
-        <control type="group">
-            <control type="label">
-                <posx>380</posx>
-                <posy>803</posy>
-                <width>350</width>
-                <height>68</height>
-                <align>left</align>
-                <font>Font_Bold56</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <label>$INFO[VideoPlayer.ChannelNumber]</label>
-                <scroll>true</scroll>
-            </control>
-            <control type="label">
-                <posx>480</posx>
-                <posy>803</posy>
-                <width>800</width>
-                <height>68</height>
-                <align>left</align>
-                <font>Font_Bold56</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <label>$INFO[VideoPlayer.ChannelName]</label>
-                <scroll>true</scroll>
-            </control>
-            <!--Active backend info (DVBS\DVBS2\IPTV)-->
-            <control type="group">
-                <control type="label">
-                    <posx>380</posx>
-                    <posy>845</posy>
-                    <width>1500</width>
-                    <height>38</height>
-                    <font>Font_Bold24</font>
-                    <align>left</align>
-                    <textcolor>grey2</textcolor>
-                    <label>$INFO[Window(Home).Property(PVR_SatellitePos)]  $INFO[Window(Home).Property(PVR_SatelliteName)]  DVB-S2  $INFO[Window(Home).Property(PVR_Modulation)]  $INFO[Window(Home).Property(PVR_Transponder)] MHz  $INFO[Window(Home).Property(PVR_Polarization)]  $INFO[Window(Home).Property(PVR_FEC)]  $INFO[Window(Home).Property(PVR_Frequency)]</label>
-                    <visible>substring(PVR.ActStreamDevice,DVB-S2 #)</visible>
-                </control>
-                <control type="label">
-                    <posx>380</posx>
-                    <posy>845</posy>
-                    <width>1500</width>
-                    <height>38</height>
-                    <font>Font_Bold24</font>
-                    <align>left</align>
-                    <textcolor>grey2</textcolor>
-                    <label>$INFO[Pvr.BackendName] $INFO[Pvr.BackendVersion]</label>
-                    <visible>!substring(PVR.ActStreamDevice,DVB-S2 #) | !substring(PVR.ActStreamDevice,DVB-S #)</visible>
-                    <visible>false</visible>
-                </control>
-            </control>
+        <control type="label">
+            <posx>380</posx>
+            <posy>803</posy>
+            <width>350</width>
+            <height>68</height>
+            <align>left</align>
+            <font>Font_Bold56</font>
+            <textcolor>$VAR[FontColorVar]</textcolor>
+            <label>$INFO[VideoPlayer.ChannelNumber]</label>
+            <scroll>true</scroll>
+        </control>
+        <control type="label">
+            <posx>480</posx>
+            <posy>803</posy>
+            <width>800</width>
+            <height>68</height>
+            <align>left</align>
+            <font>Font_Bold56</font>
+            <textcolor>$VAR[FontColorVar]</textcolor>
+            <label>$INFO[VideoPlayer.ChannelName]</label>
+            <scroll>true</scroll>
+        </control>
+        <!--Active backend info (DVBS\DVBS2\IPTV)-->
+        <control type="label">
+            <posx>380</posx>
+            <posy>845</posy>
+            <width>1500</width>
+            <height>38</height>
+            <font>Font_Bold24</font>
+            <align>left</align>
+            <textcolor>grey2</textcolor>
+            <label>$INFO[Window(Home).Property(PVR_SatellitePos)]  $INFO[Window(Home).Property(PVR_SatelliteName)]  DVB-S2  $INFO[Window(Home).Property(PVR_Modulation)]  $INFO[Window(Home).Property(PVR_Transponder)] MHz  $INFO[Window(Home).Property(PVR_Polarization)]  $INFO[Window(Home).Property(PVR_FEC)]  $INFO[Window(Home).Property(PVR_Frequency)]</label>
+            <visible>substring(PVR.ActStreamDevice,DVB-S2 #)</visible>
+        </control>
+        <control type="label">
+            <posx>380</posx>
+            <posy>845</posy>
+            <width>1500</width>
+            <height>38</height>
+            <font>Font_Bold24</font>
+            <align>left</align>
+            <textcolor>grey2</textcolor>
+            <label>$INFO[Pvr.BackendName] $INFO[Pvr.BackendVersion]</label>
+            <visible>!substring(PVR.ActStreamDevice,DVB-S2 #) | !substring(PVR.ActStreamDevice,DVB-S #)</visible>
+            <visible>false</visible>
         </control>
         <!--Middle Info (Start\End times, Current\Next EPG, Progress-bar, Recording)-->
         <control type="group">
@@ -516,7 +508,6 @@
             </control>
         </control>
         <!--Bottom right Info (Stream status, SNR & Signal, Time-shift)-->
-        <control type="group">
             <control type="group">
                 <visible>!substring(PVR.ActStreamStatus,TIMESHIFT)</visible>
                 <control type="label">
@@ -553,7 +544,6 @@
                     <label>TIMESHIFT</label>
                 </control>
             </control>
-        </control>
         <!--Media flags-->
         <control type="group">
             <posx>1550</posx>
@@ -605,16 +595,8 @@
         <control type="group">
             <posx>65</posx>
             <posy>1017</posy>
-            <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x01)</visible>
-                <posx>0</posx>
-                <width>50</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>S</label>
-            </control>
+        <control type="grouplist">
+            <orientation>horizontal</orientation>
             <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x01)</visible>
                 <posx>0</posx>
@@ -626,38 +608,16 @@
                 <label>S</label>
             </control>
             <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x05)</visible>
-                <posx>30</posx>
-                <width>50</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>V</label>
-            </control>
-            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x05)</visible>
-                <posx>30</posx>
                 <width>50</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
                 <align>left</align>
                 <textcolor>green</textcolor>
                 <label>V</label>
-            </control>
-            <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x06)</visible>
-                <posx>63</posx>
-                <width>50</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>I</label>
             </control>
             <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x06)</visible>
-                <posx>63</posx>
                 <width>50</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
@@ -666,38 +626,16 @@
                 <label>I</label>
             </control>
             <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x09)</visible>
-                <posx>85</posx>
-                <width>50</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>ND</label>
-            </control>
-            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x09)</visible>
-                <posx>85</posx>
                 <width>50</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
                 <align>left</align>
                 <textcolor>green</textcolor>
                 <label>ND</label>
-            </control>
-            <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x0B)</visible>
-                <posx>135</posx>
-                <width>50</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>CO</label>
             </control>
             <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x0B)</visible>
-                <posx>135</posx>
                 <width>50</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
@@ -706,38 +644,16 @@
                 <label>CO</label>
             </control>
             <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x0D)</visible>
-                <posx>180</posx>
-                <width>50</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>CW</label>
-            </control>
-            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x0D)</visible>
-                <posx>180</posx>
                 <width>50</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
                 <align>left</align>
                 <textcolor>green</textcolor>
                 <label>CW</label>
-            </control>
-            <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x17)</visible>
-                <posx>230</posx>
-                <width>70</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>B</label>
             </control>
             <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x17)</visible>
-                <posx>230</posx>
                 <width>70</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
@@ -746,18 +662,7 @@
                 <label>B</label>
             </control>
             <control type="label">
-                <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x18)</visible>
-                <posx>258</posx>
-                <width>50</width>
-                <height>38</height>
-                <font>Font_Bold24</font>
-                <align>left</align>
-                <textcolor>white6</textcolor>
-                <label>N</label>
-            </control>
-            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x18)</visible>
-                <posx>258</posx>
                 <width>50</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
@@ -766,7 +671,6 @@
                 <label>N</label>
             </control>
             <control type="label">
-                <posx>320</posx>
                 <width>1000</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
@@ -776,7 +680,6 @@
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x)</visible>
             </control>
             <control type="label">
-                <posx>320</posx>
                 <width>1000</width>
                 <height>38</height>
                 <font>Font_Bold24</font>
@@ -785,6 +688,7 @@
                 <label>FTA</label>
                 <visible>substring(PVR.ActStreamEncryptionName,(0000)) + !substring(Window(Home).Property(PVR_ECM_caid),0x)</visible>
             </control>
+        </control>
             <control type="group">
                 <!--Tuner info-->
                 <posx>1094</posx>
@@ -803,9 +707,9 @@
                     <height>38</height>
                     <font>Font_Bold24</font>
                     <align>left</align>
-                    <textcolor>green</textcolor>
+                    <textcolor>white2</textcolor>
                     <label>A</label>
-                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#1)">Conditional</animation>
+                    <animation effect="fade" start="100" end="30" time="0" condition="!substring(PVR.ActStreamDevice,#1)">Conditional</animation>
                 </control>
                 <control type="label">
                     <posx>320</posx>
@@ -813,9 +717,9 @@
                     <height>38</height>
                     <font>Font_Bold24</font>
                     <align>left</align>
-                    <textcolor>green</textcolor>
+                    <textcolor>white2</textcolor>
                     <label>B</label>
-                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#2)">Conditional</animation>
+                    <animation effect="fade" start="100" end="30" time="0" condition="!substring(PVR.ActStreamDevice,#2)">Conditional</animation>
                 </control>
                 <control type="label">
                     <posx>345</posx>
@@ -823,9 +727,9 @@
                     <height>38</height>
                     <font>Font_Bold24</font>
                     <align>left</align>
-                    <textcolor>green</textcolor>
+                    <textcolor>white2</textcolor>
                     <label>C</label>
-                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#3)">Conditional</animation>
+                    <animation effect="fade" start="100" end="30" time="0" condition="!substring(PVR.ActStreamDevice,#3)">Conditional</animation>
                 </control>
                 <control type="label">
                     <posx>370</posx>
@@ -833,9 +737,9 @@
                     <height>38</height>
                     <font>Font_Bold24</font>
                     <align>left</align>
-                    <textcolor>green</textcolor>
+                    <textcolor>white2</textcolor>
                     <label>D</label>
-                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#4)">Conditional</animation>
+                    <animation effect="fade" start="100" end="30" time="0" condition="!substring(PVR.ActStreamDevice,#4)">Conditional</animation>
                 </control>
             </control>
         </control>
