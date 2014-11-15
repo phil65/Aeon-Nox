@@ -198,8 +198,8 @@
                             <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
                         </control>
                         <control type="image">
-                            <posx>735</posx>
-                            <posy>6</posy>
+                            <posx>736</posx>
+                            <posy>5</posy>
                             <width>90</width>
                             <height>90</height>
                             <texture>$VAR[OverlayVisibility0]</texture>
@@ -217,6 +217,7 @@
                 </itemlayout>
                 <focusedlayout height="220" width="960" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
                     <control type="group">
+                        <animation effect="zoom" center="480,110" start="100" end="110" time="280" tween="back" reversible="false">Focus</animation>
                         <posy>100</posy>
                         <posx>65</posx>
                         <control type="image">
