@@ -912,17 +912,22 @@
                 <control type="group">
                     <width>120</width>
                     <posx>-20</posx>
-                    <control type="image">
-                        <texture>flags/IMDB.png</texture>
-                        <include>AudioFlagsVars</include>
-                    </control>
                     <control type="label">
-                        <posy>22</posy>
+                        <posy>5</posy>
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
                         <label fallback="?">$INFO[ListItem.Rating]</label>
                         <font>Font_Bold40</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+                    <control type="label">
+                        <posy>34</posy>
+                        <width>135</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                        <font>Font_Reg22_Caps</font>
                         <textcolor>floor</textcolor>
                     </control>
                 </control>
