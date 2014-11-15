@@ -375,19 +375,24 @@
                 <control type="group">
                     <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
                     <animation effect="slide" end="-975" condition="Control.IsVisible(512)">Conditional</animation>
-                    <control type="image">
-                        <posx>1600</posx>
-                        <texture>flags/IMDB.png</texture>
-                        <include>AudioFlagsVars</include>
-                    </control>
                     <control type="label">
                         <posx>1600</posx>
-                        <posy>21</posy>
+                        <posy>5</posy>
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
                         <label fallback="?">$INFO[ListItem.Rating]</label>
                         <font>Font_Bold40</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>1600</posx>
+                        <posy>35</posy>
+                        <width>135</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                        <font>Font_Reg22_Caps</font>
                         <textcolor>floor</textcolor>
                     </control>
                     <control type="image">
