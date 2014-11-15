@@ -93,13 +93,6 @@
                         <control type="group">
                             <visible>!IsEmpty(ListItem.Top250)</visible>
                             <posy>-30</posy>
-                            <control type="image">
-                                <posx>-20</posx>
-                                <width>120</width>
-                                <height>120</height>
-                                <texture colordiffuse="white2">common/imdb.png</texture>
-                                <include>AudioFlagsVars</include>
-                            </control>
                             <control type="label">
                                 <posx>-20</posx>
                                 <posy>-13</posy>
@@ -276,20 +269,21 @@
                             <control type="group">
                                 <width>155</width>
                                 <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)</visible>
-                                <control type="image">
-                                    <posy>5</posy>
-                                    <width>155</width>
-                                    <height>67</height>
-                                    <texture colordiffuse="white2">flags/IMDB.png</texture>
-                                    <aspectratio>keep</aspectratio>
-                                </control>
                                 <control type="label">
-                                    <posy>29</posy>
+                                    <posy>12</posy>
                                     <width>155</width>
                                     <height>38</height>
                                     <align>center</align>
                                     <label fallback="?">$INFO[ListItem.Rating]</label>
                                     <font>Font_Bold34</font>
+                                </control>
+                                <control type="label">
+                                    <posy>37</posy>
+                                    <width>155</width>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label fallback="?">$INFO[ListItem.Votes] Votes</label>
+                                    <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
                             <control type="image">
@@ -308,21 +302,21 @@
                             <control type="group">
                                 <width>155</width>
                                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
-                                <control type="image">
-                                    <posy>5</posy>
+                                <control type="label">
+                                    <posy>12</posy>
                                     <width>155</width>
-                                    <height>68</height>
-                                    <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="white2">flags/time.png</texture>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label fallback="?">$INFO[ListItem.Duration]</label>
+                                    <font>Font_Bold34</font>
                                 </control>
                                 <control type="label">
-                                    <posx>0</posx>
-                                    <posy>18</posy>
+                                    <posy>37</posy>
                                     <width>155</width>
-                                    <height>60</height>
+                                    <height>38</height>
                                     <align>center</align>
-                                    <label>$INFO[ListItem.Duration]</label>
-                                    <font>Font_Bold34</font>
+                                    <label>Minutes</label>
+                                    <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
                             <control type="image">
@@ -334,20 +328,21 @@
                             <control type="group">
                                 <visible>!Container.Content(episodes)</visible>
                                 <width>155</width>
-                                <control type="image">
-                                    <posy>5</posy>
+                                <control type="label">
+                                    <posy>12</posy>
                                     <width>155</width>
-                                    <height>68</height>
-                                    <aspectratio>keep</aspectratio>
-                                    <texture colordiffuse="white2">flags/year.png</texture>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label fallback="?">$INFO[ListItem.Year]</label>
+                                    <font>Font_Bold34</font>
                                 </control>
                                 <control type="label">
-                                    <posy>18</posy>
+                                    <posy>37</posy>
                                     <width>155</width>
-                                    <height>60</height>
+                                    <height>38</height>
                                     <align>center</align>
-                                    <label fallback="-">$INFO[ListItem.Year]</label>
-                                    <font>Font_Bold34</font>
+                                    <label>Year</label>
+                                    <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
                             <control type="image">
