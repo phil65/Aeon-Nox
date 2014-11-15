@@ -721,7 +721,7 @@
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28</font>
+                                    <font>Font_Reg25_2</font>
                                     <textcolor>grey2</textcolor>
                                 </control>
                                 <control type="image">
@@ -752,7 +752,7 @@
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28</font>
+                                    <font>Font_Reg25_2</font>
                                     <textcolor>grey2</textcolor>
                                     <visible>!Control.HasFocus(5010)</visible>
                                 </control>
@@ -763,7 +763,7 @@
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28</font>
+                                    <font>Font_Reg25_2</font>
                                     <textcolor>$VAR[FontColorVar]</textcolor>
                                     <visible>Control.HasFocus(5010)</visible>
                                 </control>
@@ -1942,7 +1942,7 @@
                 <height>34</height>
                 <posy>420</posy>
                 <align>center</align>
-                <font>Font_Reg28</font>
+                <font>Font_Reg25_2</font>
                 <label>$INFO[ListItem.Label]</label>
             </control>
             <control type="label">
@@ -2010,7 +2010,7 @@
                 <height>34</height>
                 <posy>420</posy>
                 <align>center</align>
-                <font>Font_Reg28</font>
+                <font>Font_Reg25_2</font>
                 <label>$INFO[ListItem.Label]</label>
             </control>
             <control type="label">
@@ -2234,18 +2234,6 @@
                         <itemlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),bannerlayout)">
                             <include>WidgetBannerLayout</include>
                         </itemlayout>
-                        <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),logolayout)">
-                            <include>WidgetLogoLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),logolayout)">
-                            <include>WidgetLogoLayout</include>
-                            <control type="image">
-                                <width>532</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
                         <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),clearartlayout)">
                             <include>WidgetClearArtLayout</include>
                         </itemlayout>
@@ -2310,7 +2298,7 @@
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28</font>
+                                    <font>Font_Reg25_2</font>
                                     <textcolor>grey2</textcolor>
                                 </control>
                                 <control type="image">
@@ -2341,7 +2329,7 @@
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28</font>
+                                    <font>Font_Reg25_2</font>
                                     <textcolor>grey2</textcolor>
                                     <visible>!Control.HasFocus(6010)</visible>
                                 </control>
@@ -2352,7 +2340,7 @@
                                     <height>50</height>
                                     <align>center</align>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28</font>
+                                    <font>Font_Reg25_2</font>
                                     <textcolor>$VAR[FontColorVar]</textcolor>
                                     <visible>Control.HasFocus(6010)</visible>
                                 </control>
@@ -2792,7 +2780,7 @@
                 <width>400</width>
                 <height>210</height>
                 <label>$INFO[ListItem.Plot]$INFO[ListItem.Album_Description]$INFO[ListItem.Artist_Description]$INFO[ListItem.Property(Addon.Description)]</label>
-                <font>Font_Reg28</font>
+                <font>Font_Reg25_2</font>
                 <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
             <control type="image">
@@ -2882,7 +2870,7 @@
                 <width>355</width>
                 <height>205</height>
                 <label>$INFO[ListItem.Plot]$INFO[ListItem.Property(Description)]</label>
-                <font>Font_Reg28</font>
+                <font>Font_Reg25_2</font>
                 <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
         </control>
@@ -2954,7 +2942,7 @@
             <width>300</width>
             <height>170</height>
             <label>$INFO[ListItem.Plot]</label>
-            <font>Font_Reg28</font>
+            <font>Font_Reg25_2</font>
             <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
     </include>
@@ -3083,7 +3071,7 @@
             <height>105</height>
             <align>center</align>
             <label>[UPPERCASE]$INFO[ListItem.Episode,,: ][/UPPERCASE]$INFO[ListItem.Label]</label>
-            <font>Font_Reg28</font>
+            <font>Font_Reg25_2</font>
             <visible>!IsEmpty(ListItem.Episode)</visible>
         </control>
     </include>
@@ -3121,55 +3109,6 @@
             <align>center</align>
             <label>$INFO[ListItem.Label2] - $INFO[ListItem.Year]</label>
             <font>Font_Reg29</font>
-            <textcolor>grey</textcolor>
-        </control>
-    </include>
-    <include name="WidgetLogoLayout">
-        <control type="image">
-            <posx>10</posx>
-            <posy>4</posy>
-            <width>512</width>
-            <height>340</height>
-            <aspectratio align="center">keep</aspectratio>
-            <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(clearlogo)]</texture>
-            <visible>!IsEmpty(ListItem.Art(clearlogo))</visible>
-        </control>
-        <control type="group">
-            <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
-            <control type="image">
-                <posx>10</posx>
-                <posy>4</posy>
-                <width>512</width>
-                <height>340</height>
-                <aspectratio align="center">keep</aspectratio>
-                <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Art(fanart)]</texture>
-            </control>
-            <control type="image">
-                <posx>10</posx>
-                <posy>140</posy>
-                <width>512</width>
-                <height>60</height>
-                <texture>common/bgcolor.png</texture>
-                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-            </control>
-            <control type="label">
-                <posx>10</posx>
-                <posy>140</posy>
-                <width>512</width>
-                <height>60</height>
-                <font>Font_Bold37_Caps</font>
-                <align>center</align>
-                <label>$INFO[ListItem.Label]</label>
-            </control>
-        </control>
-        <control type="label">
-            <posx>0</posx>
-            <posy>316</posy>
-            <width>532</width>
-            <height>30</height>
-            <align>center</align>
-            <label>$VAR[WidgetSubTitleVar]</label>
-            <font>Font_Reg25_2</font>
             <textcolor>grey</textcolor>
         </control>
     </include>

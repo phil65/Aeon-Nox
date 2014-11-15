@@ -22,9 +22,10 @@
                 <posx>400</posx>
                 <posy>375</posy>
                 <control type="image">
-                    <posx>-152</posx>
-                    <width>1455</width>
-                    <height>426</height>
+                    <posx>-150</posx>
+                    <posy>20</posy>
+                    <width>1425</width>
+                    <height>400</height>
                     <texture colordiffuse="$VAR[AreaColorVar]">dialogs/addsource_back_glow.png</texture>
                     <include>PanelGlowFade</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
@@ -101,7 +102,6 @@
                     6: panel2square
                     7: panel2episode
                     8: keeparpanel
-                    9: panellogolayout
                     10: panelclearartlayout
                     11: panelbannerlayout
                     12: panellandscape
@@ -214,18 +214,6 @@
                         <onfocus>SetProperty(WidgetType,keeparpanel,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_8_)</visible>
-                    </control>
-                    <control type="button" id="18">
-                        <width>292</width>
-                        <height>62</height>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>31059</label>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panellogolayout,skinsettings)</onfocus>
-                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
-                        <visible>Substring(Window(home).Property(AllowedStyles),_9_)</visible>
                     </control>
                     <control type="button" id="19">
                         <width>292</width>
