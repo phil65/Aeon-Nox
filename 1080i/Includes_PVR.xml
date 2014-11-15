@@ -318,44 +318,19 @@
     </include>
     <!--Main LiveTV Infobar-->
     <include name="FullScreenInfoBarLiveTV">
-        <animation effect="slide" time="600" start="0,200" easing="out" tween="back">WindowOpen</animation>
-        <animation effect="slide" time="600" end="0,200" delay="300" easing="in" tween="back">WindowClose</animation>
-        <animation effect="slide" time="600" start="0,200" easing="out" tween="back">Visible</animation>
-        <animation effect="slide" time="600" end="0,200" delay="300" easing="in" tween="back">Hidden</animation>
-        <!--Main background-->
-        <control type="group" id="1">
-            <top>785</top>
-            <height>300</height>
-            <width>1920</width>
-            <control type="image" id="1">
-                <top>-10</top>
-                <width>1920</width>
-                <height>300</height>
-                <texture border="35">osd/osd_settings_back.png</texture>
-            </control>
-            <control type="image" id="1">
-                <top>96</top>
-                <left>380</left>
-                <width>1480</width>
-                <height>3</height>
-                <texture border="0">new_pvr/osd_line_white.png</texture>
-                <colordiffuse>$VAR[FontColorVar]</colordiffuse>
-            </control>
-            <control type="image" id="1">
-                <top>228</top>
-                <left>60</left>
-                <width>1805</width>
-                <height>3</height>
-                <texture border="0">new_pvr/osd_line_white.png</texture>
-                <colordiffuse>$VAR[FontColorVar]</colordiffuse>
-            </control>
+        <animation effect="slide" time="600" start="0,200" easing="out" tween="cubic">WindowOpen</animation>
+        <animation effect="slide" time="600" end="0,200" easing="in" tween="cubic">WindowClose</animation>
+        <control type="image">
+            <posy>750</posy>
+            <posx>-1000</posx>
+            <width>3920</width>
+            <height>330</height>
+            <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
         </control>
         <!--Channel logo-->
         <control type="group" id="2">
-            <animation effect="slide" time="600" start="-400,0" delay="300" easing="out" tween="back">Visible</animation>
-            <animation effect="slide" time="600" end="-400,0" easing="in" tween="back">Hidden</animation>
-            <animation effect="slide" time="600" start="-400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
-            <animation effect="slide" time="600" end="-400,0" easing="in" tween="back">WindowClose</animation>
+            <animation effect="slide" time="600" start="-400,0" easing="out" tween="cubic">WindowOpen</animation>
+            <animation effect="slide" time="600" end="-400,0" easing="in" tween="cubic">WindowClose</animation>
             <control type="image" id="3">
                 <posx>77</posx>
                 <posy>805</posy>
@@ -367,8 +342,8 @@
             </control>
         </control>
         <!--Top Info (ChannelNr, Name, Date, Time & Back-end info)-->
-        <control type="group" id="1">
-            <control type="label" id="1">
+        <control type="group">
+            <control type="label">
                 <posx>380</posx>
                 <posy>803</posy>
                 <width>350</width>
@@ -379,7 +354,7 @@
                 <label>$INFO[VideoPlayer.ChannelNumber]</label>
                 <scroll>true</scroll>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <posx>480</posx>
                 <posy>803</posy>
                 <width>800</width>
@@ -390,39 +365,9 @@
                 <label>$INFO[VideoPlayer.ChannelName]</label>
                 <scroll>true</scroll>
             </control>
-            <control type="label" id="1">
-                <posx>1630</posx>
-                <posy>803</posy>
-                <width>240</width>
-                <height>68</height>
-                <align>center</align>
-                <font>Font_Bold56</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <label>$INFO[System.Time(hh:mm xx)]</label>
-            </control>
-            <control type="label" id="1">
-                <posx>1620</posx>
-                <posy>788</posy>
-                <width>250</width>
-                <height>68</height>
-                <align>right</align>
-                <font>Font_Bold16</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <label>$INFO[System.Date(DDD)]</label>
-            </control>
-            <control type="label" id="1">
-                <posx>1620</posx>
-                <posy>818</posy>
-                <width>250</width>
-                <height>68</height>
-                <align>right</align>
-                <font>Font_Bold16</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <label>$INFO[System.Date(dd.mm)]</label>
-            </control>
             <!--Active backend info (DVBS\DVBS2\IPTV)-->
             <control type="group">
-                <control type="label" id="1">
+                <control type="label">
                     <posx>380</posx>
                     <posy>845</posy>
                     <width>1500</width>
@@ -433,18 +378,7 @@
                     <label>$INFO[Window(Home).Property(PVR_SatellitePos)]  $INFO[Window(Home).Property(PVR_SatelliteName)]  DVB-S2  $INFO[Window(Home).Property(PVR_Modulation)]  $INFO[Window(Home).Property(PVR_Transponder)] MHz  $INFO[Window(Home).Property(PVR_Polarization)]  $INFO[Window(Home).Property(PVR_FEC)]  $INFO[Window(Home).Property(PVR_Frequency)]</label>
                     <visible>substring(PVR.ActStreamDevice,DVB-S2 #)</visible>
                 </control>
-                <control type="label" id="1">
-                    <posx>380</posx>
-                    <posy>845</posy>
-                    <width>1500</width>
-                    <height>38</height>
-                    <font>Font_Bold24</font>
-                    <align>left</align>
-                    <textcolor>grey2</textcolor>
-                    <label>$INFO[Window(Home).Property(PVR_SatellitePos)]  $INFO[Window(Home).Property(PVR_SatelliteName)]  DVB-S  $INFO[Window(Home).Property(PVR_Modulation)]  $INFO[Window(Home).Property(PVR_Transponder)] MHz  $INFO[Window(Home).Property(PVR_Polarization)]  $INFO[Window(Home).Property(PVR_FEC)]  $INFO[Window(Home).Property(PVR_Frequency)]</label>
-                    <visible>substring(PVR.ActStreamDevice,DVB-S #)</visible>
-                </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>380</posx>
                     <posy>845</posy>
                     <width>1500</width>
@@ -459,9 +393,9 @@
             </control>
         </control>
         <!--Middle Info (Start\End times, Current\Next EPG, Progress-bar, Recording)-->
-        <control type="group" id="1">
+        <control type="group">
             <visible>VideoPlayer.HasEpg</visible>
-            <control type="label" id="1">
+            <control type="label">
                 <posx>380</posx>
                 <posy>895</posy>
                 <width>150</width>
@@ -472,7 +406,7 @@
                 <label>$INFO[VideoPlayer.StartTime]</label>
                 <visible>!IsEmpty(VideoPlayer.Title)</visible>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <posx>535</posx>
                 <posy>895</posy>
                 <width>865</width>
@@ -484,10 +418,10 @@
                 <visible>!IsEmpty(VideoPlayer.Title)</visible>
                 <visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
             </control>
-            <control type="group" id="1">
+            <control type="group">
                 <!--Recording logo and labels-->
                 <visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
-                <control type="image" id="1">
+                <control type="image">
                     <posx>499</posx>
                     <posy>896</posy>
                     <width>40</width>
@@ -495,7 +429,7 @@
                     <texture>pvr/PVR-IsRecording.png</texture>
                     <animation effect="fade" start="100" end="40" time="960" pulse="true" condition="true">conditional</animation>
                 </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>535</posx>
                     <posy>895</posy>
                     <width>865</width>
@@ -507,7 +441,7 @@
                     <visible>!IsEmpty(VideoPlayer.Title)</visible>
                 </control>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <posx>1550</posx>
                 <posy>895</posy>
                 <width>250</width>
@@ -515,52 +449,50 @@
                 <font>Font_Bold37</font>
                 <align>right</align>
                 <textcolor>white6</textcolor>
-                <!--
-                <label>$INFO[Window(Home).Property(PVR_MinutesToEnd)]</label>-->
                 <label>$INFO[VideoPlayer.TimeRemaining(hh:mm)]</label>
                 <visible>!IsEmpty(VideoPlayer.Title)</visible>
             </control>
-            <control type="label" id="1">
-                <posx>380</posx>
-                <posy>965</posy>
-                <width>150</width>
-                <height>38</height>
-                <font>Font_Reg35</font>
-                <align>left</align>
-                <textcolor>grey</textcolor>
-                <label>$INFO[VideoPlayer.NextStartTime]</label>
+            <control type="group">
                 <visible>!IsEmpty(VideoPlayer.NextTitle)</visible>
+                <control type="label">
+                    <posx>380</posx>
+                    <posy>965</posy>
+                    <width>150</width>
+                    <height>38</height>
+                    <font>Font_Reg35</font>
+                    <align>left</align>
+                    <textcolor>grey</textcolor>
+                    <label>$INFO[VideoPlayer.NextStartTime]</label>
+                </control>
+                <control type="label">
+                    <posx>535</posx>
+                    <posy>965</posy>
+                    <width>880</width>
+                    <height>38</height>
+                    <font>Font_Reg35</font>
+                    <align>left</align>
+                    <textcolor>grey</textcolor>
+                    <scroll>true</scroll>
+                    <label>$INFO[VideoPlayer.NextTitle]</label>
+                </control>
+                <control type="label">
+                    <posx>1550</posx>
+                    <posy>965</posy>
+                    <width>250</width>
+                    <height>38</height>
+                    <font>Font_Reg35</font>
+                    <align>right</align>
+                    <textcolor>white6</textcolor>
+                    <label>$INFO[Window(Home).Property(PVR_NextMinutes)]</label>
+                </control>
             </control>
-            <control type="label" id="1">
-                <posx>535</posx>
-                <posy>965</posy>
-                <width>880</width>
-                <height>38</height>
-                <font>Font_Reg35</font>
-                <align>left</align>
-                <textcolor>grey</textcolor>
-                <scroll>true</scroll>
-                <label>$INFO[VideoPlayer.NextTitle]</label>
-                <visible>!IsEmpty(VideoPlayer.NextTitle)</visible>
-            </control>
-            <control type="label" id="1">
-                <posx>1550</posx>
-                <posy>965</posy>
-                <width>250</width>
-                <height>38</height>
-                <font>Font_Reg35</font>
-                <align>right</align>
-                <textcolor>white6</textcolor>
-                <label>$INFO[Window(Home).Property(PVR_NextMinutes)]</label>
-                <visible>!IsEmpty(VideoPlayer.NextTitle)</visible>
-            </control>
-            <control type="progress" id="1">
+            <control type="progress">
                 <posx>380</posx>
                 <posy>940</posy>
                 <width>1175</width>
                 <height>16</height>
                 <info>Player.Progress</info>
-                <midtexture border="0">new_pvr/texturebg_white.png</midtexture>
+                <midtexture>new_pvr/texturebg_white.png</midtexture>
                 <texturebg border="3,0,3,0">new_pvr/texturebg_border_white.png</texturebg>
                 <lefttexture>-</lefttexture>
                 <righttexture>-</righttexture>
@@ -570,7 +502,7 @@
         <control type="group">
             <!--Dummy no-epg label-->
             <visible>!VideoPlayer.HasEpg</visible>
-            <control type="label" id="1">
+            <control type="label">
                 <posx>380</posx>
                 <posy>930</posy>
                 <width>865</width>
@@ -584,10 +516,10 @@
             </control>
         </control>
         <!--Bottom right Info (Stream status, SNR & Signal, Time-shift)-->
-        <control type="group" id="1">
-            <control type="group" id="1">
+        <control type="group">
+            <control type="group">
                 <visible>!substring(PVR.ActStreamStatus,TIMESHIFT)</visible>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>1570</posx>
                     <posy>1017</posy>
                     <width>250</width>
@@ -597,7 +529,7 @@
                     <textcolor>white6</textcolor>
                     <label>SNR: $INFO[PVR.ActStreamSNR]</label>
                 </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>1720</posx>
                     <posy>1017</posy>
                     <width>250</width>
@@ -608,9 +540,9 @@
                     <label>AGC: $INFO[PVR.ActStreamSignal]</label>
                 </control>
             </control>
-            <control type="group" id="1">
+            <control type="group">
                 <visible>substring(PVR.ActStreamStatus,TIMESHIFT)</visible>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>1660</posx>
                     <posy>1017</posy>
                     <width>250</width>
@@ -623,16 +555,12 @@
             </control>
         </control>
         <!--Media flags-->
-        <control type="group" id="1">
-            <animation effect="slide" time="600" start="400,0" delay="300" easing="out" tween="back">WindowOpen</animation>
-            <animation effect="slide" time="600" end="400,0" easing="in" tween="back">WindowClose</animation>
-            <animation effect="slide" time="600" start="400,0" delay="300" easing="out" tween="back">Visible</animation>
-            <animation effect="slide" time="600" end="400,0" easing="in" tween="back">Hidden</animation>
+        <control type="group">
             <posx>1550</posx>
             <posy>895</posy>
             <height>140</height>
             <width>200</width>
-            <control type="image" id="1">
+            <control type="image">
                 <posx>25</posx>
                 <posy>-7</posy>
                 <width>65</width>
@@ -640,7 +568,7 @@
                 <aspectratio align="center">keep</aspectratio>
                 <texture colordiffuse="white">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
             </control>
-            <control type="image" id="1">
+            <control type="image">
                 <posx>120</posx>
                 <posy>-7</posy>
                 <width>65</width>
@@ -648,7 +576,7 @@
                 <aspectratio align="center">keep</aspectratio>
                 <texture colordiffuse="white">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
             </control>
-            <control type="image" id="1">
+            <control type="image">
                 <posx>215</posx>
                 <posy>-13</posy>
                 <width>75</width>
@@ -656,7 +584,7 @@
                 <aspectratio align="center">keep</aspectratio>
                 <texture colordiffuse="white">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
             </control>
-            <control type="image" id="1">
+            <control type="image">
                 <posx>50</posx>
                 <posy>52</posy>
                 <width>100</width>
@@ -664,7 +592,7 @@
                 <aspectratio align="center">keep</aspectratio>
                 <texture colordiffuse="white">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
             </control>
-            <control type="image" id="1">
+            <control type="image">
                 <posx>200</posx>
                 <posy>40</posy>
                 <width>65</width>
@@ -674,10 +602,10 @@
             </control>
         </control>
         <!--Encryption & Tuners-->
-        <control type="group" id="1">
+        <control type="group">
             <posx>65</posx>
             <posy>1017</posy>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x01)</visible>
                 <posx>0</posx>
                 <width>50</width>
@@ -687,7 +615,7 @@
                 <textcolor>white6</textcolor>
                 <label>S</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x01)</visible>
                 <posx>0</posx>
                 <width>50</width>
@@ -697,7 +625,7 @@
                 <textcolor>green</textcolor>
                 <label>S</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x05)</visible>
                 <posx>30</posx>
                 <width>50</width>
@@ -707,7 +635,7 @@
                 <textcolor>white6</textcolor>
                 <label>V</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x05)</visible>
                 <posx>30</posx>
                 <width>50</width>
@@ -717,7 +645,7 @@
                 <textcolor>green</textcolor>
                 <label>V</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x06)</visible>
                 <posx>63</posx>
                 <width>50</width>
@@ -727,7 +655,7 @@
                 <textcolor>white6</textcolor>
                 <label>I</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x06)</visible>
                 <posx>63</posx>
                 <width>50</width>
@@ -737,7 +665,7 @@
                 <textcolor>green</textcolor>
                 <label>I</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x09)</visible>
                 <posx>85</posx>
                 <width>50</width>
@@ -747,7 +675,7 @@
                 <textcolor>white6</textcolor>
                 <label>ND</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x09)</visible>
                 <posx>85</posx>
                 <width>50</width>
@@ -757,7 +685,7 @@
                 <textcolor>green</textcolor>
                 <label>ND</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x0B)</visible>
                 <posx>135</posx>
                 <width>50</width>
@@ -767,7 +695,7 @@
                 <textcolor>white6</textcolor>
                 <label>CO</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x0B)</visible>
                 <posx>135</posx>
                 <width>50</width>
@@ -777,7 +705,7 @@
                 <textcolor>green</textcolor>
                 <label>CO</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x0D)</visible>
                 <posx>180</posx>
                 <width>50</width>
@@ -787,7 +715,7 @@
                 <textcolor>white6</textcolor>
                 <label>CW</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x0D)</visible>
                 <posx>180</posx>
                 <width>50</width>
@@ -797,7 +725,7 @@
                 <textcolor>green</textcolor>
                 <label>CW</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x17)</visible>
                 <posx>230</posx>
                 <width>70</width>
@@ -807,7 +735,7 @@
                 <textcolor>white6</textcolor>
                 <label>B</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x17)</visible>
                 <posx>230</posx>
                 <width>70</width>
@@ -817,7 +745,7 @@
                 <textcolor>green</textcolor>
                 <label>B</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>!substring(Window(Home).Property(PVR_ECM_caid),0x18)</visible>
                 <posx>258</posx>
                 <width>50</width>
@@ -827,7 +755,7 @@
                 <textcolor>white6</textcolor>
                 <label>N</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x18)</visible>
                 <posx>258</posx>
                 <width>50</width>
@@ -837,7 +765,7 @@
                 <textcolor>green</textcolor>
                 <label>N</label>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <posx>320</posx>
                 <width>1000</width>
                 <height>38</height>
@@ -847,7 +775,7 @@
                 <label>Caid: $INFO[Window(Home).Property(PVR_ECM_caid)]  Source: $INFO[Window(Home).Property(PVR_ECM_from)]  Hops: $INFO[Window(Home).Property(PVR_ECM_hops)]  Time: $INFO[Window(Home).Property(PVR_ECM_time)] ms</label>
                 <visible>substring(Window(Home).Property(PVR_ECM_caid),0x)</visible>
             </control>
-            <control type="label" id="1">
+            <control type="label">
                 <posx>320</posx>
                 <width>1000</width>
                 <height>38</height>
@@ -857,10 +785,10 @@
                 <label>FTA</label>
                 <visible>substring(PVR.ActStreamEncryptionName,(0000)) + !substring(Window(Home).Property(PVR_ECM_caid),0x)</visible>
             </control>
-            <control type="group" id="1">
+            <control type="group">
                 <!--Tuner info-->
                 <posx>1094</posx>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>200</posx>
                     <width>150</width>
                     <height>38</height>
@@ -869,17 +797,7 @@
                     <textcolor>grey2</textcolor>
                     <label>Tuner:</label>
                 </control>
-                <control type="label" id="1">
-                    <posx>295</posx>
-                    <width>50</width>
-                    <height>38</height>
-                    <font>Font_Bold24</font>
-                    <align>left</align>
-                    <textcolor>grey2</textcolor>
-                    <label>A</label>
-                    <visible>!substring(PVR.ActStreamDevice,#1)</visible>
-                </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>295</posx>
                     <width>50</width>
                     <height>38</height>
@@ -887,19 +805,9 @@
                     <align>left</align>
                     <textcolor>green</textcolor>
                     <label>A</label>
-                    <visible>substring(PVR.ActStreamDevice,#1)</visible>
+                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#1)">Conditional</animation>
                 </control>
-                <control type="label" id="1">
-                    <posx>320</posx>
-                    <width>50</width>
-                    <height>38</height>
-                    <font>Font_Bold24</font>
-                    <align>left</align>
-                    <textcolor>grey2</textcolor>
-                    <label>B</label>
-                    <visible>!substring(PVR.ActStreamDevice,#2)</visible>
-                </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>320</posx>
                     <width>50</width>
                     <height>38</height>
@@ -907,19 +815,9 @@
                     <align>left</align>
                     <textcolor>green</textcolor>
                     <label>B</label>
-                    <visible>substring(PVR.ActStreamDevice,#2)</visible>
+                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#2)">Conditional</animation>
                 </control>
-                <control type="label" id="1">
-                    <posx>345</posx>
-                    <width>50</width>
-                    <height>38</height>
-                    <font>Font_Bold24</font>
-                    <align>left</align>
-                    <textcolor>grey2</textcolor>
-                    <label>C</label>
-                    <visible>!substring(PVR.ActStreamDevice,#3)</visible>
-                </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>345</posx>
                     <width>50</width>
                     <height>38</height>
@@ -927,19 +825,9 @@
                     <align>left</align>
                     <textcolor>green</textcolor>
                     <label>C</label>
-                    <visible>substring(PVR.ActStreamDevice,#3)</visible>
+                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#3)">Conditional</animation>
                 </control>
-                <control type="label" id="1">
-                    <posx>370</posx>
-                    <width>50</width>
-                    <height>38</height>
-                    <font>Font_Bold24</font>
-                    <align>left</align>
-                    <textcolor>grey2</textcolor>
-                    <label>D</label>
-                    <visible>!substring(PVR.ActStreamDevice,#4)</visible>
-                </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>370</posx>
                     <width>50</width>
                     <height>38</height>
@@ -947,7 +835,7 @@
                     <align>left</align>
                     <textcolor>green</textcolor>
                     <label>D</label>
-                    <visible>substring(PVR.ActStreamDevice,#4)</visible>
+                    <animation effect="fade" start="100" end="50" time="0" condition="substring(PVR.ActStreamDevice,#4)">Conditional</animation>
                 </control>
             </control>
         </control>
