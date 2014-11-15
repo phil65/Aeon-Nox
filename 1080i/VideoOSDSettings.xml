@@ -2,34 +2,24 @@
 <window>
     <defaultcontrol>5</defaultcontrol>
     <coordinates>
-        <posx>399</posx>
-        <posy>64</posy>
+        <posx>0</posx>
+        <posy>0</posy>
         <system>1</system>
     </coordinates>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="group">
-            <animation effect="fade" start="100" end="0" time="320" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation>
-            <control type="image">
-                <posx>4</posx>
-                <width>1114</width>
-                <height>952</height>
-                <texture colordiffuse="$VAR[AreaColorVar]">osd/osd_settings_back_glow.png</texture>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <include>PanelGlowFade</include>
-            </control>
-            <control type="image">
-                <posx>4</posx>
-                <width>1114</width>
-                <height>952</height>
-                <texture colordiffuse="$VAR[DialogColorVar]">osd/osd_settings_back.png</texture>
-            </control>
-            <control type="image">
-                <posx>22</posx>
-                <posy>40</posy>
-                <width>1078</width>
-                <height>60</height>
-                <texture border="5">osd/osd_settings_buttonnf.png</texture>
+            <control type="group">
+                <control type="image">
+                    <posx>-40</posx>
+                    <width>760</width>
+                    <height>1080</height>
+                    <texture colordiffuse="$VAR[DialogColorVar]">dialogs/context_middle.png</texture>
+                </control>
+                <control type="group">
+                    <posx>670</posx>
+                    <include>Neon_VerticalBar</include>
+                </control>
             </control>
             <control type="label">
                 <posx>60</posx>
@@ -61,10 +51,10 @@
                 <textcolor>$VAR[FontColorVar]</textcolor>
             </control> -->
             <control type="grouplist" id="5">
-                <posx>21</posx>
+                <posx>0</posx>
                 <posy>100</posy>
-                <width>1080</width>
-                <height>800</height>
+                <width>688</width>
+                <height>1020</height>
                 <aligny>center</aligny>
                 <pagecontrol>60</pagecontrol>
                 <onleft>60</onleft>
@@ -72,49 +62,38 @@
                 <onup>5</onup>
                 <ondown>5</ondown>
             </control>
-            <control type="scrollbar" id="60">
-                <posx>1080</posx>
-                <posy>105</posy>
-                <width>46</width>
-                <height>540</height>
-                <include>Animation_VerticalScrollBar</include>
-                <onleft>5</onleft>
-                <onright>5</onright>
-                <ondown>61</ondown>
-                <onup>61</onup>
-            </control>
         </control>
         <control type="sliderex" id="13">
-            <height>50</height>
+            <height>60</height>
             <width>1172</width>
-            <textoffsetx>45</textoffsetx>
+            <textoffsetx>20</textoffsetx>
             <font>Font_Reg30</font>
             <textcolor>grey2</textcolor>
         </control>
         <control type="button" id="7">
             <width>1172</width>
-            <height>50</height>
-            <textoffsetx>45</textoffsetx>
+            <height>60</height>
+            <textoffsetx>20</textoffsetx>
             <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
             <font>Font_Reg30</font>
             <textcolor>grey2</textcolor>
         </control>
         <control type="radiobutton" id="8">
             <width>1172</width>
-            <height>50</height>
-            <textoffsetx>45</textoffsetx>
+            <height>60</height>
+            <textoffsetx>20</textoffsetx>
             <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
             <font>Font_Reg30</font>
             <textcolor>grey2</textcolor>
-            <radioposx>934</radioposx>
+            <radioposx>954</radioposx>
         </control>
         <control type="spincontrolex" id="9">
-            <height>50</height>
-            <textoffsetx>45</textoffsetx>
+            <height>60</height>
+            <textoffsetx>20</textoffsetx>
             <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
             <font>Font_Reg30</font>
             <textcolor>grey2</textcolor>
-            <spinposx>13</spinposx>
+            <spinposx>-13</spinposx>
         </control>
     </controls>
 </window>

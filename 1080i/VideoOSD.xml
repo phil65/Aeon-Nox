@@ -14,7 +14,7 @@
                 <effect type="zoom" end="50" start="100" time="440" delay="0" center="auto" tween="cubic" />
             </animation>
             <animation effect="slide" end="0,218" time="240" delay="120" tween="quadratic">WindowClose</animation>
-            <animation effect="slide" end="0,218" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1118)">Conditional</animation>
+            <animation effect="slide" end="0,218" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)">Conditional</animation>
             <control type="image">
                 <posy>-200</posy>
                 <posx>-1000</posx>
@@ -201,7 +201,7 @@
             </control>
         </control>
         <control type="group">
-            <animation effect="slide" end="0,260" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1118)">Conditional</animation>
+            <animation effect="slide" end="0,260" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)">Conditional</animation>
             <visible>!Window.IsActive(script-HomeWindow Script-fullscreeninfo.xml)</visible>
             <include condition="VideoPlayer.Content(LiveTV)">FullScreenInfoBarLiveTV</include>
         </control>

@@ -10,14 +10,14 @@
     <controls>
         <control type="image">
             <width>1322</width>
-            <height>722</height>
+            <height>750</height>
             <texture colordiffuse="$VAR[AreaColorVar]">osd/osd_settings_back_glow.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
         </control>
         <control type="image">
             <width>1322</width>
-            <height>722</height>
+            <height>750</height>
             <texture colordiffuse="$VAR[DialogColorVar]">osd/osd_settings_back.png</texture>
         </control>
         <control type="image">
@@ -58,33 +58,39 @@
             <itemgap>30</itemgap>
             <control type="button" id="2">
                 <width>315</width>
-                <height>60</height>
+                <height>90</height>
                 <textoffsetx>0</textoffsetx>
                 <align>center</align>
                 <label>294</label>
                 <textcolor>grey2</textcolor>
                 <visible>Control.IsEnabled(2)</visible>
+                <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
             </control>
             <control type="button" id="4">
                 <width>315</width>
-                <height>60</height>
+                <height>90</height>
                 <textoffsetx>0</textoffsetx>
                 <align>center</align>
                 <label>20406</label>
                 <textcolor>grey2</textcolor>
                 <visible>Control.IsEnabled(4)</visible>
+                <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
             </control>
             <control type="button" id="3">
                 <width>315</width>
-                <height>60</height>
+                <height>90</height>
                 <align>center</align>
                 <label>296</label>
                 <textcolor>grey2</textcolor>
+                <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
             </control>
         </control>
         <control type="label">
             <posx>1214</posx>
-            <posy>658</posy>
+            <posy>680</posy>
             <width>315</width>
             <height>60</height>
             <align>right</align>

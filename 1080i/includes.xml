@@ -1006,7 +1006,7 @@
             <visible>no</visible>
         </control>
         <control type="group">
-            <visible>!Skin.HasSetting(DisableVideoThumb) + !substring(Control.GetLabel(888777),defaultvideo)</visible>
+            <visible>!substring(Control.GetLabel(888777),defaultvideo)</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
             <control type="group">
                 <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
@@ -1182,18 +1182,6 @@
                 <label>$INFO[VideoPlayer.Duration]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>white6</textcolor>
-                <visible>!Skin.HasSetting(PreferRemaining)</visible>
-            </control>
-            <control type="label">
-                <posx>1530</posx>
-                <posy>128</posy>
-                <width>1140</width>
-                <height>38</height>
-                <align>right</align>
-                <label>$INFO[Player.TimeRemaining,- ]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>white6</textcolor>
-                <visible>Skin.HasSetting(PreferRemaining)</visible>
             </control>
         </control>
     </include>
@@ -1257,17 +1245,6 @@
                 <label>$INFO[Player.Duration]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>osdseek</textcolor>
-                <visible>!Skin.HasSetting(PreferRemaining)</visible>
-            </control>
-            <control type="label">
-                <posx>135r</posx>
-                <posy>45</posy>
-                <width>300</width>
-                <height>42</height>
-                <label>$INFO[Player.TimeRemaining,- ]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>osdseek</textcolor>
-                <visible>Skin.HasSetting(PreferRemaining)</visible>
             </control>
         </control>
     </include>
@@ -1418,13 +1395,6 @@
                 <enable>Player.CanRecord</enable>
                 <visible>VideoPlayer.Content(livetv)</visible>
                 <animation effect="fade" start="100" end="50" time="80" condition="!Player.CanRecord">Conditional</animation>
-            </control>
-            <control type="radiobutton" id="705">
-                <textureradioon>osd/buttons/OSDSettingsNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDSettingsNF.png</textureradiooff>
-                <label>31026</label>
-                <include>ClassicOSDButton</include>
-                <onclick>ActivateWindow(1118)</onclick>
             </control>
         </control>
     </include>
