@@ -80,15 +80,13 @@
                 <effect type="fade" time="240" start="100" end="0" />
                 <effect type="slide" time="240" end="0,135" easing="in" tween="cubic" />
             </animation>
-            <control type="image">
-                <posy>188r</posy>
-                <width>1920</width>
-                <height>188</height>
-                <texture colordiffuse="$VAR[DialogColorVar]">osd/osd_back.png</texture>
-            </control>
-            <control type="group">
-                <posy>860</posy>
-                <include>Neon_Topbar</include>
+                                <control type="image">
+                <posy>800</posy>
+                <width>2100</width>
+                <height>280</height>
+                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
+                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
             </control>
             <control type="image">
                 <posx>22</posx>
@@ -183,6 +181,7 @@
                 <label>$VAR[TriPanelValue2Var]</label>
                 <textcolor>white3</textcolor>
                 <scroll>true</scroll>
+                <font>Font_Reg28_2</font>
                 <visible>!Container.Content(seasons)</visible>
             </control>
             <control type="label">
@@ -193,6 +192,7 @@
                 <label>$INFO[ListItem.TvShowTitle]</label>
                 <textcolor>white3</textcolor>
                 <scroll>true</scroll>
+                <font>Font_Reg28_2</font>
                 <visible>Container.Content(seasons)</visible>
             </control>
             <control type="label">
@@ -203,6 +203,7 @@
                 <label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.RatingAndVotes, • ]</label>
                 <textcolor>white3</textcolor>
                 <scroll>true</scroll>
+                <font>Font_Reg28_2</font>
                 <visible>Container.Content(movies) | Container.Content(sets)</visible>
             </control>
             <control type="label">
@@ -213,6 +214,7 @@
                 <label>$INFO[ListItem.Label2] [LOWERCASE]$INFO[ListItem.Property(UnWatchedEpisodes),($LOCALIZE[16101]: ,)][/LOWERCASE]</label>
                 <textcolor>white3</textcolor>
                 <scroll>true</scroll>
+                <font>Font_Reg28_2</font>
                 <visible>Container.Content(tvshows)</visible>
             </control>
             <control type="label">
@@ -223,6 +225,7 @@
                 <label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</label>
                 <textcolor>white3</textcolor>
                 <scroll>true</scroll>
+                <font>Font_Reg28_2</font>
                 <visible>Container.Content(seasons)</visible>
             </control>
         </control>
