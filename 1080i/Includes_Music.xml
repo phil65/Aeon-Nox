@@ -602,28 +602,17 @@
             <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
             <onleft>650</onleft>
             <onright>650</onright>
+            <control type="radiobutton" id="708">
+                <textureradioon>osd/buttons/OSDSkinNF.png</textureradioon>
+                <textureradiooff>osd/buttons/OSDSkinNF.png</textureradiooff>
+                <include>ClassicOSDButtonMusic</include>
+                <onclick>-</onclick>
+            </control>
             <control type="radiobutton" id="700">
                 <textureradioon>osd/buttons/OSDPlaylistNF.png</textureradioon>
                 <textureradiooff>osd/buttons/OSDPlaylistNF.png</textureradiooff>
                 <include>ClassicOSDButtonMusic</include>
                 <onclick>ActivateWindow(MusicPlaylist)</onclick>
-            </control>
-            <control type="radiobutton" id="500">
-                <textureradioon>osd/buttons/OSDVizNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDVizNF.png</textureradiooff>
-                <include>ClassicOSDButtonMusic</include>
-            </control>
-            <control type="radiobutton" id="701">
-                <textureradioon>osd/buttons/OSDSettingsNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDSettingsNF.png</textureradiooff>
-                <include>ClassicOSDButtonMusic</include>
-                <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
-            </control>
-            <control type="radiobutton" id="702">
-                <textureradioon>osd/buttons/OSDVideoNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDVideoNF.png</textureradiooff>
-                <include>ClassicOSDButtonMusic</include>
-                <onclick>ActivateWindow(122)</onclick>
             </control>
             <control type="image" id="2000">
                 <width>100</width>
@@ -691,13 +680,6 @@
                 <include>ClassicOSDButtonMusic</include>
                 <selected>Playlist.IsRandom</selected>
                 <onclick>PlayerControl(Random)</onclick>
-            </control>
-            <control type="radiobutton" id="708">
-                <textureradioon>osd/buttons/OSDSkinNF.png</textureradioon>
-                <textureradiooff>osd/buttons/OSDSkinNF.png</textureradiooff>
-                <include>ClassicOSDButtonMusic</include>
-                <onclick>Dialog.Close(musicosd)</onclick>
-                <onclick>ActivateWindow(1117)</onclick>
             </control>
         </control>
     </include>
