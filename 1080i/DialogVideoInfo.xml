@@ -621,18 +621,6 @@
                                 <include>Furniture_FlagUpright</include>
                                 <visible>!IsEmpty(Control.GetLabel(900013))</visible>
                             </control>
-                            <control type="image" id="90013">
-                                <posy>5</posy>
-                                <width>126</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$INFO[Window.Property(AudioCodec.2),flags/audio/]$INFO[Window.Property(AudioChannels.2),,.png]</texture>
-                                <visible>!IsEmpty(Control.GetLabel(90013)) + ![Stringcompare(Window.Property(AudioCodec.1),Window.Property(AudioCodec.2)) + Stringcompare(Window.Property(AudioChannels.1),Window.Property(AudioChannels.2))]</visible>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                                <visible>Control.IsVisible(90013)</visible>
-                            </control>
                             <control type="image" id="900014">
                                 <posy>5</posy>
                                 <width>80</width>
@@ -1163,6 +1151,7 @@
                     <textcolor>white5</textcolor>
                     <scroll>true</scroll>
                     <haspath>true</haspath>
+                    <visible>ControlGroup(6000).HasFocus | ControlGroup(6100).HasFocus</visible>
                 </control>
                 <control type="image">
                     <posx>709</posx>

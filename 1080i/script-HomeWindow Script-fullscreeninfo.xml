@@ -143,7 +143,7 @@
                 </control>
                 <control type="image">
                     <posx>1745</posx>
-                    <texture fallback="flags/audio/defaultsound.png">flags/audio/$INFO[VideoPlayer.AudioCodec]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+                    <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
                     <include>OSDFlagVars</include>
                 </control>
             </control>
@@ -383,7 +383,7 @@
                         <width>161</width>
                         <height>70</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture colordiffuse="FF7c7c7c" fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+                        <texture colordiffuse="FF7c7c7c" fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
                     </control>
                     <control type="image">
                         <include>Furniture_FlagUpright</include>
