@@ -1564,17 +1564,22 @@
                         <width>160</width>
                         <height>64</height>
                         <visible>IsEmpty(Window(home).Property(NextTitle))</visible>
-                        <control type="image">
-                            <texture>flags/time.png</texture>
-                            <include>WidgetFlagVars</include>
-                        </control>
                         <control type="label">
-                            <posy>21</posy>
+                            <posy>6</posy>
                             <width>160</width>
                             <height>38</height>
                             <align>center</align>
                             <label fallback="?">$INFO[Window(home).Property(Duration)]</label>
                             <font>Font_Bold34</font>
+                            <textcolor>floor</textcolor>
+                        </control>
+                        <control type="label">
+                            <posy>32</posy>
+                            <width>160</width>
+                            <height>38</height>
+                            <align>center</align>
+                            <label>Minutes</label>
+                            <font>Font_Reg22_Caps</font>
                             <textcolor>floor</textcolor>
                         </control>
                     </control>
@@ -1587,17 +1592,22 @@
                         <width>160</width>
                         <height>64</height>
                         <visible>IsEmpty(Window(home).Property(NextTitle))</visible>
-                        <control type="image">
-                            <texture>flags/IMDB.png</texture>
-                            <include>WidgetFlagVars</include>
-                        </control>
                         <control type="label">
-                            <posy>21</posy>
+                            <posy>6</posy>
                             <width>160</width>
                             <height>38</height>
                             <align>center</align>
                             <label fallback="?">$INFO[Window(home).Property(Rating)]</label>
                             <font>Font_Bold34</font>
+                            <textcolor>floor</textcolor>
+                        </control>
+                        <control type="label">
+                            <posy>32</posy>
+                            <width>160</width>
+                            <height>38</height>
+                            <align>center</align>
+                            <label>$INFO[Window(home).Property(Votes)] Votes</label>
+                            <font>Font_Reg22_Caps</font>
                             <textcolor>floor</textcolor>
                         </control>
                     </control>
