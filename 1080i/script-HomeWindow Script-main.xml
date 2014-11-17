@@ -11,6 +11,35 @@
     <onunload>ClearProperty(PanelWidgetInfo,Home)</onunload>
     <onunload>ClearProperty(PanelWidget2Info,Home)</onunload>
     <controls>
+        <control type="label" id="4321">
+            <label>$VAR[WidgetTypeVar]</label>
+            <include>HiddenObject</include>
+        </control>
+        <control type="label" id="4322">
+            <label>$VAR[MultiFanartVar]</label>
+            <include>HiddenObject</include>
+        </control>
+        <control type="label" id="4328">
+            <label>$VAR[LiveCasesVar]</label>
+            <include>HiddenObject</include>
+        </control>
+        <control type="label" id="4323">
+            <label>$VAR[LibraryStatsVar]</label>
+            <include>HiddenObject</include>
+        </control>
+        <include>BackgroundFadeLabels</include>
+        <control type="label" id="4325">
+            <label>$VAR[Widget2TypeVar]</label>
+            <include>HiddenObject</include>
+        </control>
+        <control type="label" id="4326">
+            <label>$VAR[InfoLineVar]</label>
+            <include>HiddenObject</include>
+        </control>
+        <control type="label" id="4327">
+            <label>$VAR[SubMenuVar]</label>
+            <include>HiddenObject</include>
+        </control>
         <control type="button" id="9004">
             <include>HiddenObject</include>
             <onfocus condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
@@ -43,7 +72,6 @@
             <onfocus condition="Substring(Control.GetLabel(4325),movie) + IsEmpty(Container(6010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6010).ListItem.Property(ID)],imdbid=$INFO[Container(6010).ListItem.Property(imdbid)])</onfocus>
             <onfocus>RunScript(script.home,container=6010,focuscontrol=5055)</onfocus>
         </control>
-        <include>MainMenuCommonContent</include>
         <!--Fanart-->
         <control type="group">
             <control type="group">

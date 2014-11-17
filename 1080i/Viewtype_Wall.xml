@@ -4,23 +4,23 @@
         <control type="group">
             <posx>100</posx>
             <posy>200</posy>
-        <control type="image">
-            <posx>12</posx>
-            <posy>11</posy>
-            <width>250</width>
-            <height>250</height>
-            <aspectratio scalediffuse="false">scale</aspectratio>
-            <texture background="true" diffuse="thumbs/boxes/cdcover_mask.png" fallback="DefaultAudio.png">$VAR[ListAlbumVar]</texture>
+            <control type="image">
+                <posx>12</posx>
+                <posy>11</posy>
+                <width>250</width>
+                <height>250</height>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <texture background="true" diffuse="thumbs/boxes/cdcover_mask.png" fallback="DefaultAudio.png">$VAR[ListAlbumVar]</texture>
+            </control>
+            <control type="image">
+                <posx>148</posx>
+                <posy>6</posy>
+                <width>50</width>
+                <height>50</height>
+                <texture>$VAR[OverlayVisibility0]</texture>
+            </control>
+            <include>UnwatchedIcon</include>
         </control>
-        <control type="image">
-            <posx>148</posx>
-            <posy>6</posy>
-            <width>50</width>
-            <height>50</height>
-            <texture>$VAR[OverlayVisibility0]</texture>
-        </control>
-        <include>UnwatchedIcon</include>
-    </control>
     </include>
     <include name="Viewtype_Wall">
         <control type="group">
@@ -35,6 +35,18 @@
                 <onleft>500</onleft>
                 <onright>9000</onright>
             </control>
+                                    <control type="image">
+                            <posx>75</posx>
+                            <posy>135</posy>
+                            <width>440</width>
+                            <height>410</height>
+                            <visible>Container.Content(artists) | StringCompare(Container.FolderName,youtube)</visible>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                            <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
+                            <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3)">Conditional</animation>
+                            <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
+                            <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
+                        </control>
             <control type="panel" id="500">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -52,117 +64,232 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <orientation>vertical</orientation>
-                <itemlayout height="268" width="275" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + [Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]">
-                    <control type="image">
-                        <posx>5</posx>
-                        <width>265</width>
-                        <height>185</height>
-                        <aspectratio aligny="top">keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
-                        <bordersize>5</bordersize>
-                    </control>
-                    <control type="image">
-                        <posx>5</posx>
-                        <width>265</width>
-                        <height>185</height>
-                        <texture background="true">common/bgcolor.png</texture>
-                        <bordersize>5</bordersize>
-                        <animation effect="fade" start="100" end="25" time="0" condition="true">Conditional</animation>
-                    </control>
+                <itemlayout height="390" width="440" condition="StringCompare(Container.FolderName,youtube)">
                     <control type="group">
-                        <visible>!Container.Content(artists)</visible>
+                        <posx>75</posx>
+                        <posy>180</posy>
+                        <control type="image">
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>220</height>
+                            <aspectratio aligny="center">scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
+                            <bordersize>5</bordersize>
+                        </control>
+                        <control type="image">
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>220</height>
+                            <texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>30</posx>
+                            <posy>175</posy>
+                            <width>380</width>
+                            <height>40</height>
+                            <texture colordiffuse="black">home/nav_back_shadow.png</texture>
+                        </control>
                         <control type="label">
-                            <posy>195</posy>
-                            <width>275</width>
-                            <textoffsetx>15</textoffsetx>
+                            <posx>35</posx>
+                            <posy>193</posy>
+                            <width>440</width>
                             <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Reg26</font>
-                            <textcolor>grey2</textcolor>
+                            <font>Font_Reg25_2</font>
+                            <textcolor>grey</textcolor>
                         </control>
-                        <control type="label">
-                            <posx>275</posx>
-                            <posy>195</posy>
-                            <width>276</width>
-                            <textoffsetx>15</textoffsetx>
-                            <align>right</align>
-                            <label>$INFO[ListItem.Rating]</label>
-                            <font>Font_Reg26</font>
-                            <textcolor>grey2</textcolor>
+                        <control type="image">
+                            <posx>260</posx>
+                            <posy>185</posy>
+                            <width>150</width>
+                            <height>30</height>
+                            <texture colordiffuse="grey">$INFO[ListItem.Rating,stars/,.png]</texture>
+                            <include>Animation_HomeWidget</include>
                         </control>
-                        <control type="label">
+                        <control type="textbox">
+                            <posx>20</posx>
                             <posy>230</posy>
-                            <width>276</width>
+                            <height>100</height>
+                            <width>400</width>
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Reg26</font>
+                            <align>center</align>
+                            <font>Font_Reg25_2</font>
                             <textcolor>grey2</textcolor>
                         </control>
-                    </control>
-                    <control type="label">
-                        <posx>138</posx>
-                        <posy>210</posy>
-                        <width>276</width>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>grey2</textcolor>
-                        <visible>Container.Content(artists)</visible>
+                                                <control type="label">
+                            <posx>30</posx>
+                            <posy>-13</posy>
+                            <width>380</width>
+                            <height>5</height>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Date]</label>
+                            <font>Font_Reg22_2</font>
+                            <shadowcolor>floorshadow</shadowcolor>
+                            <textcolor>floor</textcolor>
+                        </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="268" width="275" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + [Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]">
-                    <control type="image">
-                        <width>275</width>
-                        <height>268</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                    </control>
-                    <control type="image">
-                        <posx>5</posx>
-                        <width>265</width>
-                        <height>185</height>
-                        <aspectratio aligny="top">keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
-                        <bordersize>5</bordersize>
-                    </control>
+                <focusedlayout height="390" width="440" condition="StringCompare(Container.FolderName,youtube)">
                     <control type="group">
-                        <visible>!Container.Content(artists)</visible>
+                        <posx>75</posx>
+                        <posy>180</posy>
+<!--                         <control type="image">
+                            <posy>-45</posy>
+                            <width>440</width>
+                            <height>410</height>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                        </control> -->
+                        <control type="image">
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>220</height>
+                            <aspectratio aligny="center">scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
+                            <bordersize>5</bordersize>
+                        </control>
+                    <control type="image">
+                        <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
+                        <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>220</height>
+                            <texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
+                    </control>
+                        <control type="image">
+                            <posx>30</posx>
+                            <posy>175</posy>
+                            <width>380</width>
+                            <height>40</height>
+                            <texture colordiffuse="black">home/nav_back_shadow.png</texture>
+                        </control>
                         <control type="label">
-                            <posy>195</posy>
-                            <width>276</width>
-                            <textoffsetx>15</textoffsetx>
+                            <posx>35</posx>
+                            <posy>193</posy>
+                            <width>440</width>
                             <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Reg26</font>
+                            <font>Font_Reg25_2</font>
+                            <textcolor>grey</textcolor>
                         </control>
-                        <control type="label">
-                            <posx>276</posx>
-                            <posy>195</posy>
-                            <width>276</width>
-                            <textoffsetx>15</textoffsetx>
-                            <align>right</align>
-                            <label>$INFO[ListItem.Rating]</label>
-                            <font>Font_Reg26</font>
+                        <control type="image">
+                            <posx>260</posx>
+                            <posy>185</posy>
+                            <width>150</width>
+                            <height>30</height>
+                            <texture colordiffuse="grey">$INFO[ListItem.Rating,stars/,.png]</texture>
+                            <include>Animation_HomeWidget</include>
                         </control>
-                        <control type="label">
+                        <control type="textbox">
+                            <posx>20</posx>
                             <posy>230</posy>
-                            <width>276</width>
-                            <textoffsetx>15</textoffsetx>
+                            <height>100</height>
+                            <width>400</width>
+                            <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Reg26</font>
+                        <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
+                        <animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
+                            <font>Font_Reg25_2</font>
                             <scroll>true</scroll>
                         </control>
+                        <control type="label">
+                            <posx>30</posx>
+                            <posy>-13</posy>
+                            <width>380</width>
+                            <height>5</height>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Date]</label>
+                            <font>Font_Reg22_2</font>
+                            <shadowcolor>floorshadow</shadowcolor>
+                            <textcolor>floor</textcolor>
+                        </control>
                     </control>
-                    <control type="label">
-                        <posx>138</posx>
-                        <posy>210</posy>
-                        <width>276</width>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <visible>Container.Content(artists)</visible>
+                </focusedlayout>
+                <itemlayout height="390" width="440" condition="Container.Content(artists)">
+                  <control type="group">
+                        <posx>75</posx>
+                        <posy>160</posy>
+                        <control type="image">
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>360</height>
+                            <aspectratio aligny="center">scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
+                            <bordersize>5</bordersize>
+                        </control>
+                        <control type="image">
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>360</height>
+                            <texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>30</posx>
+                            <posy>305</posy>
+                            <width>380</width>
+                            <height>50</height>
+                            <texture colordiffuse="black">home/nav_back_shadow.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>20</posx>
+                            <posy>287</posy>
+                            <height>100</height>
+                            <width>400</width>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[ListItem.Label]</label>
+                            <align>center</align>
+                            <font>Font_Reg28_2</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="390" width="440" condition="Container.Content(artists)">
+                    <control type="group">
+                        <posx>75</posx>
+                        <posy>160</posy>
+<!--                         <control type="image">
+                            <posy>-45</posy>
+                            <width>440</width>
+                            <height>410</height>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                        </control> -->
+                        <control type="image">
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>360</height>
+                            <aspectratio aligny="center">scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
+                            <bordersize>5</bordersize>
+                        </control>
+                    <control type="image">
+                        <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
+                        <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
+                            <posx>25</posx>
+                            <width>390</width>
+                            <height>360</height>
+                            <texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
+                    </control>
+                        <control type="image">
+                            <posx>30</posx>
+                            <posy>305</posy>
+                            <width>380</width>
+                            <height>50</height>
+                            <texture colordiffuse="black">home/nav_back_shadow.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>20</posx>
+                            <posy>287</posy>
+                            <height>100</height>
+                            <width>400</width>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Label]</label>
+                        <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
+                        <animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
+                            <font>Font_Reg28_2</font>
+                            <scroll>true</scroll>
+                        </control>
                     </control>
                 </focusedlayout>
                 <itemlayout height="220" width="960" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
@@ -317,10 +444,117 @@
                         </control>
                     </control>
                 </focusedlayout>
-                <itemlayout width="361" height="361" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + ![Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]">
+                <itemlayout height="268" width="350" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(artists) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + Skin.HasSetting(titlewall)">
+                    <control type="image">
+                        <posx>5</posx>
+                        <width>340</width>
+                        <height>185</height>
+                        <aspectratio aligny="top">keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
+                        <bordersize>5</bordersize>
+                    </control>
+                    <control type="image">
+                        <posx>5</posx>
+                        <width>340</width>
+                        <height>185</height>
+                        <texture background="true">common/bgcolor.png</texture>
+                        <bordersize>5</bordersize>
+                        <animation effect="fade" start="100" end="25" time="0" condition="true">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <posy>195</posy>
+                        <width>350</width>
+                        <textoffsetx>15</textoffsetx>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <font>Font_Reg26</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>350</posx>
+                        <posy>195</posy>
+                        <width>276</width>
+                        <textoffsetx>15</textoffsetx>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Rating]</label>
+                        <font>Font_Reg26</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posy>230</posy>
+                        <width>276</width>
+                        <textoffsetx>15</textoffsetx>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>Font_Reg26</font>
+                        <textcolor>grey2</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>138</posx>
+                        <posy>210</posy>
+                        <width>276</width>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>Font_Reg26</font>
+                        <textcolor>grey2</textcolor>
+                        <visible>Container.Content(artists)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="268" width="350" condition="![Container.Content(movies) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + Skin.HasSetting(titlewall)">
+                    <control type="image">
+                        <width>350</width>
+                        <height>268</height>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>5</posx>
+                        <width>340</width>
+                        <height>185</height>
+                        <aspectratio aligny="top">keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
+                        <bordersize>5</bordersize>
+                    </control>
+                    <control type="label">
+                        <posy>195</posy>
+                        <width>350</width>
+                        <textoffsetx>15</textoffsetx>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <font>Font_Reg26</font>
+                    </control>
+                    <control type="label">
+                        <posx>276</posx>
+                        <posy>195</posy>
+                        <width>350</width>
+                        <textoffsetx>15</textoffsetx>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Rating]</label>
+                        <font>Font_Reg26</font>
+                    </control>
+                    <control type="label">
+                        <posy>230</posy>
+                        <width>350</width>
+                        <textoffsetx>15</textoffsetx>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>Font_Reg26</font>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="label">
+                        <posx>138</posx>
+                        <posy>210</posy>
+                        <width>350</width>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>Font_Reg26</font>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
+                        <visible>Container.Content(artists)</visible>
+                    </control>
+                </focusedlayout>
+                <itemlayout width="361" height="361">
                     <include>WallIcons</include>
                 </itemlayout>
-                <focusedlayout width="361" height="361" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + ![Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]">
+                <focusedlayout width="361" height="361">
                     <control type="group">
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="250,350" start="100" end="140" time="320" tween="cubic" />
@@ -328,18 +562,6 @@
                         <include>WallIcons</include>
                     </control>
                 </focusedlayout>
-            </control>
-            <control type="label">
-                <posx>150</posx>
-                <posy>1022</posy>
-                <width>1622</width>
-                <height>5</height>
-                <align>center</align>
-                <label>$INFO[ListItem.Plot]</label>
-                <font>Font_ShowcaseMainLabel2_Caps</font>
-                <shadowcolor>floorshadow</shadowcolor>
-                <textcolor>floor</textcolor>
-                <visible>StringCompare(Container.FolderName,youtube)</visible>
             </control>
         </control>
     </include>

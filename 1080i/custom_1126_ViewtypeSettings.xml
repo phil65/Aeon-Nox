@@ -240,14 +240,6 @@
                     <visible>![Stringcompare(Window(home).Property(actualViewtype),Landscape) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
                     <visible>[[Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners)] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv) + Stringcompare(Window(home).Property(actualViewtype),TriPanel)]]</visible>
                 </control>
-                <control type="radiobutton" id="1643">
-                    <label>$LOCALIZE[31282]</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(usecasesinfowall)</onclick>
-                    <selected>Skin.HasSetting(usecasesinfowall)</selected>
-                    <enable>![[Skin.HasSetting(TVInfoWallBanner) | Skin.HasSetting(TVInfoWallLandscape)] + Container.Content(tvshows)]</enable>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),AddonWall) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]</visible>
-                </control>
                 <control type="button" id="1694">
                     <label>$LOCALIZE[31191]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[TVShowIconVar][/COLOR]</label2>
