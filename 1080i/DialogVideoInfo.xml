@@ -43,19 +43,24 @@
                 </control>
                 <control type="grouplist">
                     <orientation>vertical</orientation>
-                        <posx>875</posx>
-                        <posy>240</posy>
-                        <itemgap>1</itemgap>
-                        <ondown>5000</ondown>
-                        <onup>5000</onup>
+                    <posx>875</posx>
+                    <posy>240</posy>
+                    <itemgap>1</itemgap>
+                    <ondown>5000</ondown>
+                    <onup>5000</onup>
                     <control type="button" id="130">
                         <width>980</width>
                         <height>43</height>
                         <texturenofocus>-</texturenofocus>
                         <label>-</label>
-                        <onclick>SetProperty(ListType,Director,home)</onclick>
-                        <onfocus>SetProperty(ContainerTitle,$INFO[ListItem.Director],home)</onfocus>
-                        <onclick>SetFocus(601)</onclick>
+                        <label></label>
+                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
+                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.metadata.actors,$INFO[ListItem.Director]))</onclick>
+                        <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31096])</onclick>
+                        <onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)|ActivateWindow(1168))</onclick>
+                        <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31197])</onclick>
+                        <onclick>SetProperty(Dialog.2.BuiltIn,SetFocus(13)|Action(Select))</onclick>
+                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
                         <enable>!IsEmpty(ListItem.Director)</enable>
                     </control>
                     <control type="button" id="131">
@@ -63,9 +68,11 @@
                         <height>41</height>
                         <texturenofocus>-</texturenofocus>
                         <label>-</label>
-                        <onclick>SetProperty(ListType,Writer,home)</onclick>
-                        <onfocus>SetProperty(ContainerTitle,$INFO[ListItem.Writer],home)</onfocus>
-                        <onclick>SetFocus(601)</onclick>
+                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
+                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.metadata.actors,$INFO[ListItem.Writer]))</onclick>
+                        <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31096])</onclick>
+                        <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Writer],home)|ActivateWindow(1168))</onclick>
+                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Writer])</onclick>
                         <enable>!IsEmpty(ListItem.Writer)</enable>
                     </control>
                     <control type="button" id="132">
@@ -73,7 +80,7 @@
                         <height>217</height>
                         <texturenofocus>-</texturenofocus>
                         <label>-</label>
-                    <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[ListItem.Plot]')</onclick>
+                        <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[ListItem.Plot]')</onclick>
                         <enable>!IsEmpty(ListItem.Plot)</enable>
                     </control>
                 </control>
@@ -789,92 +796,17 @@
                     <height>217</height>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
-                    <onclick>SetProperty(ListType,Actors,home)</onclick>
-                    <onclick>SetProperty(ContainerTitle,$INFO[Container(50).ListItem.Label],home)</onclick>
-                    <onclick>SetFocus(601)</onclick>
+                    <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
+                    <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.metadata.actors,$INFO[Container(50).ListItem.Label]))</onclick>
+                    <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31096])</onclick>
+                    <onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(listcontent,$INFO[Container(50).ListItem.Label],home)|ActivateWindow(1168))</onclick>
+                    <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31197])</onclick>
+                    <onclick>SetProperty(Dialog.2.BuiltIn,SetFocus(13)|Action(Select))</onclick>
+                    <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[Container(50).ListItem.Label])</onclick>
                     <onleft>Control.Move(50,-1)</onleft>
                     <onright>Control.Move(50,1)</onright>
                     <onup>5000</onup>
                     <ondown>5000</ondown>
-                </control>
-                <control type="group">
-                    <control type="label">
-                        <posx>891</posx>
-                        <posy>320</posy>
-                        <width>1000</width>
-                        <height>60</height>
-                        <align>left</align>
-                        <label>$INFO[Window(home).Property(ContainerTitle)]</label>
-                        <font>Font_Bold30</font>
-                        <visible>Control.HasFocus(601)</visible>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                    </control>
-                    <control type="panel" id="601">
-                        <posx>876</posx>
-                        <posy>370</posy>
-                        <width>820</width>
-                        <height>177</height>
-                        <onleft>5000</onleft>
-                        <visible allowhiddenfocus="true">Control.HasFocus(601)</visible>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <animation effect="slide" start="0,0" end="2000,0" time="0" condition="!Control.HasFocus(601)">Conditional</animation>
-                        <onright>5000</onright>
-                        <onup>131</onup>
-                        <ondown>600</ondown>
-                        <scrolltime>200</scrolltime>
-                        <orientation>vertical</orientation>
-                        <itemlayout height="35" width="555">
-                            <control type="label">
-                                <width>555</width>
-                                <height>30</height>
-                                <textoffsetx>15</textoffsetx>
-                                <font>Font_Reg28_2</font>
-                                <info>ListItem.Label</info>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout height="35" width="555">
-                            <control type="image">
-                                <width>555</width>
-                                <height>37</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                                <visible>Control.HasFocus(601)</visible>
-                            </control>
-                            <control type="label">
-                                <width>555</width>
-                                <height>30</height>
-                                <textoffsetx>15</textoffsetx>
-                                <font>Font_Reg28_2</font>
-                                <info>ListItem.Label</info>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <item>
-                                <label>31197</label>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Actors)">SetFocus(50)</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">SetFocus(13)</onclick>
-                                <onclick>Action(Select)</onclick>
-                                <onclick>SetFocus(600)</onclick>
-                                <visible>!Stringcompare(Window(home).Property(ListType),Writer)</visible>
-                            </item>
-                            <item>
-                                <label>31172</label>
-                                <onclick>RunScript(script.metadata.actors,$ESCINFO[Window(home).Property(ContainerTitle)])</onclick>
-                                <onclick>SetFocus(600)</onclick>
-                                <!--
-                                <onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(ContainerTitle)])</onclick>-->
-                                <visible>System.HasAddon(script.extendedinfo)</visible>
-                            </item>
-                            <item>
-                                <label>31096</label>
-                                <onclick>SetProperty(listcontent,$ESCINFO[Window(home).Property(ContainerTitle)],home)</onclick>
-                                <onclick>ActivateWindow(1168)</onclick>
-                            </item>
-                            <item>
-                                <label>31066</label>
-                                <onclick>SetFocus(600)</onclick>
-                            </item>
-                        </content>
-                    </control>
                 </control>
                 <control type="list" id="50">
                     <posx>770</posx>
@@ -887,17 +819,16 @@
                     <ondown>5000</ondown>
                     <scrolltime>200</scrolltime>
                     <orientation>horizontal</orientation>
-                    <animation effect="fade" start="100" end="0" time="160" condition="Control.HasFocus(601)">Conditional</animation>
                     <animation effect="fade" start="0" end="100" time="300" delay="1000">WindowOpen</animation>
                     <itemlayout height="400" width="300">
-                                                    <control type="image">
-                                <posy>0</posy>
-                                <posx>20</posx>
-                                <width>300</width>
-                                <height>400</height>
-                                <texture border="40">buttons/roundedbutton-nofocus.png</texture>
-                                <include>PanelGlowFade</include>
-                    </control>
+                        <control type="image">
+                            <posy>0</posy>
+                            <posx>20</posx>
+                            <width>300</width>
+                            <height>400</height>
+                            <texture border="40">buttons/roundedbutton-nofocus.png</texture>
+                            <include>PanelGlowFade</include>
+                        </control>
                         <control type="group">
                             <posx>37</posx>
                             <posy>18</posy>
@@ -930,23 +861,23 @@
                         </control>
                     </itemlayout>
                     <focusedlayout height="400" width="300">
-                                                    <control type="image">
-                                <posy>0</posy>
-                                <posx>20</posx>
-                                <width>300</width>
-                                <height>400</height>
-                                <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
-                                <include>PanelGlowFade</include>
-                                <visible>Control.HasFocus(600)</visible>
-                               </control>
-                                                    <control type="image">
-                                <posy>0</posy>
-                                <posx>20</posx>
-                                <width>300</width>
-                                <height>400</height>
-                                <texture border="40">buttons/roundedbutton-nofocus.png</texture>
-                                <visible>!Control.HasFocus(600)</visible>
-                               </control>
+                        <control type="image">
+                            <posy>0</posy>
+                            <posx>20</posx>
+                            <width>300</width>
+                            <height>400</height>
+                            <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
+                            <include>PanelGlowFade</include>
+                            <visible>Control.HasFocus(600)</visible>
+                        </control>
+                        <control type="image">
+                            <posy>0</posy>
+                            <posx>20</posx>
+                            <width>300</width>
+                            <height>400</height>
+                            <texture border="40">buttons/roundedbutton-nofocus.png</texture>
+                            <visible>!Control.HasFocus(600)</visible>
+                        </control>
                         <control type="group">
                             <posx>37</posx>
                             <posy>18</posy>
@@ -981,27 +912,27 @@
                         </control>
                     </focusedlayout>
                 </control>
-                            <control type="image">
-                                <!--
-                                <posx>825</posx>
-                                <posy>68</posy>-->
-                                <posx>1780</posx>
-                                <posy>670</posy>
-                                <width>370</width>
-                                <height>370</height>
-                                <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                                <!--
-                                <visible>!ControlGroup(6000).HasFocus</visible>-->
-                                <animation type="WindowOpen" reversible="false">
-                                    <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
-                                    <effect type="rotate" start="0" center="1965,855" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
-                                    <effect type="zoom" start="100" center="1965,855" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
-                                </animation>
-                                <animation type="WindowClose" reversible="false">
-                                    <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
-                                    <effect type="rotate" start="0" center="1965,855" end="-720" time="700" tween="quadratic" easing="out" />
-                                </animation>
-                            </control>
+                <control type="image">
+                    <!--
+                    <posx>825</posx>
+                    <posy>68</posy>-->
+                    <posx>1780</posx>
+                    <posy>670</posy>
+                    <width>370</width>
+                    <height>370</height>
+                    <texture background="true">$INFO[ListItem.Art(discart)]</texture>
+                    <!--
+                    <visible>!ControlGroup(6000).HasFocus</visible>-->
+                    <animation type="WindowOpen" reversible="false">
+                        <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
+                        <effect type="rotate" start="0" center="1965,855" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
+                        <effect type="zoom" start="100" center="1965,855" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
+                    </animation>
+                    <animation type="WindowClose" reversible="false">
+                        <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
+                        <effect type="rotate" start="0" center="1965,855" end="-720" time="700" tween="quadratic" easing="out" />
+                    </animation>
+                </control>
                 <control type="grouplist" id="5000">
                     <posx>807</posx>
                     <posy>560</posy>
