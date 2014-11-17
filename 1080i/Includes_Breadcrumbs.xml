@@ -29,9 +29,11 @@
                 <width>900</width>
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
+                                <animation effect="slide" start="0,0" end="355,0" time="300" tween="cubic" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                 <visible>![Player.HasMedia + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
                 <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <control type="image">
+                    <animation effect="fade" start="100" end="0" time="300" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                     <width>41</width>
                     <height>41</height>
                     <posx>-2</posx>
