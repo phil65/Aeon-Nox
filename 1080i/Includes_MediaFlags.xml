@@ -204,7 +204,7 @@
             <visible>Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
             <visible>![SubString(Container.FolderPath,addons://) | SubString(Container.FolderPath,plugin.video)]</visible>
             <posy>1000</posy>
-                                <control type="image">
+            <control type="image">
                 <posy>-280</posy>
                 <width>1920</width>
                 <height>367</height>
@@ -218,7 +218,7 @@
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <control type="group">
-                    <!--left part -->
+                    <!--left part-->
                     <animation effect="slide" end="1070" condition="Control.IsVisible(516)">Conditional</animation>
                     <control type="image">
                         <!--Source logo-->
@@ -267,7 +267,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <!--right part -->
+                    <!--right part-->
                     <animation effect="slide" end="-930" condition="Control.IsVisible(512)">Conditional</animation>
                     <control type="image">
                         <!--AspectRatio logo-->
@@ -541,26 +541,26 @@
         </control>
     </include>
     <include name="MusicMediaFlags">
+        <control type="image">
+            <posy>713</posy>
+            <width>1920</width>
+            <height>367</height>
+            <visible>Control.IsVisible(500) | Control.IsVisible(512)</visible>
+            <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
+            <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+            <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
+        </control>
         <control type="group">
             <posy>988</posy>
             <visible>!Control.IsVisible(506)</visible>
             <include>Animation_FlagSlideDown</include>
-                                <control type="image">
-                <posy>-275</posy>
-                <width>1920</width>
-                <height>367</height>
-                <visible>Control.IsVisible(500) | Control.IsVisible(512)</visible>
-                <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
-                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
-                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
-            </control>
             <control type="group">
                 <visible>Container.Content(artists) + !IsEmpty(ListItem.DBID)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <animation effect="slide" end="30,-20" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50)">Conditional</animation>
                 <control type="group">
-                    <animation effect="slide" end="1190" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
+                    <animation effect="slide" end="1190" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(512)">Conditional</animation>
                     <control type="group">
                         <!--totals-->
                         <posx>150</posx>
@@ -608,7 +608,7 @@
                 <control type="group">
                     <!--artist newest/oldest-->
                     <posx>1500</posx>
-                    <animation effect="slide" end="-1190" time="0" condition="Control.IsVisible(512) | Control.IsVisible(514)">Conditional</animation>
+                    <animation effect="slide" end="-1190" time="0" condition="Control.IsVisible(514)">Conditional</animation>
                     <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                     <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                     <control type="label">
@@ -656,7 +656,7 @@
                 <animation effect="slide" end="5,-30" time="0" condition="Control.IsVisible(50)">Conditional</animation>
                 <animation effect="slide" end="100,0" time="0" condition="Control.IsVisible(53)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="0" condition="Control.IsVisible(506)">Conditional</animation>
-                <!-- Rating -->
+                <!--Rating-->
                 <control type="group">
                     <animation effect="slide" end="1210,0" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
                     <control type="image">
@@ -674,7 +674,7 @@
                         <include>AudioFlagsVars</include>
                     </control>
                     <control type="group">
-                        <!-- Year -->
+                        <!--Year-->
                         <posx>285</posx>
                         <visible>!Control.IsVisible(50) + !Control.IsVisible(53)</visible>
                         <control type="label">
@@ -698,7 +698,7 @@
                 </control>
                 <control type="group">
                     <animation effect="slide" end="-1080,0" time="0" condition="Control.IsVisible(514)">Conditional</animation>
-                    <!-- Label -->
+                    <!--Label-->
                     <control type="group">
                         <posx>1480</posx>
                         <posy>11</posy>
@@ -747,8 +747,8 @@
                         </control>
                     </control>
                     <control type="group">
-                        <!-- Genre -->
-                            <posx>1743</posx>
+                        <!--Genre-->
+                        <posx>1743</posx>
                         <animation effect="fade" time="200">VisibleChange</animation>
                         <visible>!Control.IsVisible(53)</visible>
                         <control type="image">
@@ -780,17 +780,17 @@
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <posx>20</posx>
-                                <control type="group">
-                    <!-- Genre -->
+                <control type="group">
+                    <!--Genre-->
                     <visible>!IsEmpty(ListItem.Genre)</visible>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <posx>1203</posx>
                     <control type="image">
                         <width>175</width>
                         <height>88</height>
-                            <posy>6</posy>
-                            <texture colordiffuse="floor">defaulticons/DefaultAddonMusic.png</texture>
-                            <aspectratio>keep</aspectratio>
+                        <posy>6</posy>
+                        <texture colordiffuse="floor">defaulticons/DefaultAddonMusic.png</texture>
+                        <aspectratio>keep</aspectratio>
                         <animation effect="fade" start="100" end="30" time="40" condition="true">Conditional</animation>
                     </control>
                     <control type="label">
@@ -806,7 +806,7 @@
                         <textcolor>floor</textcolor>
                     </control>
                 </control>
-                 <!-- Rating -->
+                <!--Rating-->
                 <control type="image">
                     <posx>1380</posx>
                     <width>135</width>
@@ -816,7 +816,7 @@
                     <visible>!IsEmpty(ListItem.StarRating)</visible>
                     <animation effect="fade" time="200">VisibleChange</animation>
                 </control>
-                <!-- Codec -->
+                <!--Codec-->
                 <control type="image">
                     <posx>1540</posx>
                     <posy>10</posy>
@@ -825,7 +825,7 @@
                     <visible>Container.Content(Songs)</visible>
                 </control>
                 <control type="group">
-                    <!-- Year -->
+                    <!--Year-->
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <visible>!IsEmpty(ListItem.Year)</visible>
                     <posx>1725</posx>
