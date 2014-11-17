@@ -41,7 +41,7 @@
                 <posy>105</posy>
                 <width>440</width>
                 <height>430</height>
-                <visible>Control.IsVisible(500)</visible>
+                <visible>Control.HasFocus(500)</visible>
                 <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | StringCompare(Container.FolderName,youtube)</visible>
                 <animation effect="fade" time="320" delay="300">Visible</animation>
                 <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
@@ -55,7 +55,7 @@
                 <posy>112</posy>
                 <width>310</width>
                 <height>440</height>
-                <visible>Control.IsVisible(500)</visible>
+                <visible>Control.HasFocus(500)</visible>
                 <visible>Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)</visible>
                 <animation effect="fade" time="320" delay="300">Visible</animation>
                 <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
