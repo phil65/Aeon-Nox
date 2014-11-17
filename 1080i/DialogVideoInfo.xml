@@ -17,21 +17,16 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <texture>info/info_rightpanelbottom.png</texture>
-                <visible>IsEmpty(ListItem.Art(fanart))</visible>
-            </control>
-            <control type="image">
-                <posx>729</posx>
-                <width>1192</width>
-                <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$VAR[DialogVideoInfoFanartVar]</texture>
             </control>
             <control type="image">
                 <posx>729</posx>
                 <width>1192</width>
+                <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
                 <height>1080</height>
-                <texture colordiffuse="$VAR[DialogColorVar]">info/info_rightpaneltop.png</texture>
+                <aspectratio align="center">scale</aspectratio>
+                <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
             </control>
             <!--Buttons-->
             <control type="group">
@@ -1193,16 +1188,6 @@
                 <height>1080</height>
                 <aspectratio aligny="top">scale</aspectratio>
                 <texture background="true" fallback="info/movieinfogradient.png">$VAR[VideoInfoPosterVar]</texture>
-            </control>
-            <control type="image">
-                <posx>709</posx>
-                <width>40</width>
-                <height>1080</height>
-                <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_down.png</texture>
-                <animation effect="fade" time="320" delay="408">Visible</animation>
-                <animation effect="fade" time="80">Hidden</animation>
-                <include>TopbarPulseAnimationRight</include>
-                <visible>!Skin.HasSetting(DisableGlowbar) + IsEmpty(Window(movieinformation).Property(FanartZoom))</visible>
             </control>
         </control>
     </controls>
