@@ -447,6 +447,10 @@
         <value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Description)]</value>
         <value>$INFO[ListItem.Plot]</value>
     </variable>
+    <variable name="PlotOutlineVar">
+        <value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+        <value>$INFO[ListItem.Plot]</value>
+    </variable>
     <variable name="GlobalPlotVar">
         <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
         <value condition="System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors)]">$INFO[Window.Property(current.actor.biography)]</value>
@@ -1389,10 +1393,6 @@
         <value condition="Window.IsActive(script-globalsearch-main.xml)">common/DefaultSearch.png</value>
         <value condition="Window.IsActive(PVR)">pvr/TVIcon.png</value>
         <value>common/puzzle_icon.png</value>
-    </variable>
-    <variable name="VideoInfoPosterVar">
-        <value condition="[[Control.HasFocus(601) + Stringcompare(Window(home).Property(ListType),Actors)] | Control.HasFocus(600)] + !IsEmpty(Container(50).ListItem.Thumb)">$INFO[Container(50).ListItem.Thumb]</value>
-        <value>$VAR[PosterVar]</value>
     </variable>
     <variable name="1159PosterVar">
         <value condition="Control.HasFocus(8001)">$INFO[Container(8001).ListItem.Icon]</value>
