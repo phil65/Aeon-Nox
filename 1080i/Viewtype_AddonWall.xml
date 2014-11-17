@@ -75,12 +75,24 @@
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
-<!--                         <control type="image">
+                        <control type="image">
+                            <posx>-23</posx>
+                            <posy>3</posy>
+                            <width>238</width>
+                            <height>334</height>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <texture background="true">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
+                            <fadetime>50</fadetime>
+                            <visible>Skin.HasSetting(infowallcases) + Container.Content(movies)</visible>
+                            <animation effect="fade" time="200">VisibleChange</animation>
+                        </control>
+                        <!--
+                        <control type="image">
                             <width>250</width>
                             <height>375</height>
                             <aspectratio>scale</aspectratio>
                             <texture colordiffuse="60FFFFFF">common/bgcolor.png</texture>
-                        </control> -->
+                        </control>-->
                         <control type="image">
                             <posx>144</posx>
                             <posy>30</posy>
@@ -121,6 +133,17 @@
                             <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
+                        </control>
+                        <control type="image">
+                            <posx>-23</posx>
+                            <posy>3</posy>
+                            <width>238</width>
+                            <height>334</height>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <texture background="true">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
+                            <fadetime>50</fadetime>
+                            <visible>Skin.HasSetting(infowallcases) + Container.Content(movies)</visible>
+                            <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="image">
                             <posx>144</posx>
@@ -383,7 +406,7 @@
                 </control>
                 <control type="group">
                     <visible>[Control.IsVisible(8827) + !Container.OnNext + !Container.OnPrevious + Stringcompare(Control.GetLabel(8827),empty.png)] | !Control.IsVisible(8827)</visible>
-                        <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
+                    <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
                     <control type="label">
                         <posx>1265</posx>
                         <posy>145</posy>
@@ -409,15 +432,14 @@
                         <animation effect="fade" end="100" time="80" delay="80" reversible="false">Visible</animation>
                         <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
                     </control>
-
                 </control>
-                                    <control type="image">
-                        <posx>1250</posx>
-                        <posy>200</posy>
-                        <width>720</width>
-                        <height>60</height>
-                        <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                    </control>
+                <control type="image">
+                    <posx>1250</posx>
+                    <posy>200</posy>
+                    <width>720</width>
+                    <height>60</height>
+                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
+                </control>
                 <control type="group">
                     <control type="textbox">
                         <posx>1265</posx>
