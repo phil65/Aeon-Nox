@@ -71,6 +71,15 @@
         </control>
     </include>
     <include name="FloorLabels">
+                    <control type="image">
+                <posy>717</posy>
+                <width>1920</width>
+                <height>367</height>
+                <visible>Control.IsVisible(500) | Control.IsVisible(512)</visible>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
+                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
+            </control>
         <control type="group">
             <animation effect="fade" end="100" time="80" delay="80" reversible="false">Visible</animation>
             <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
@@ -109,12 +118,12 @@
                 <content>plugin://script.extendedinfo?info=sortletters&amp;&amp;path=$INFO[Container.FolderPath]</content>
             </control>
             <control type="label">
-                <posy>1037</posy>
+                <posy>1033</posy>
                 <width>1100</width>
                 <align>center</align>
                 <aligny>top</aligny>
                 <label>$VAR[SecondLabelVar]</label>
-                <font>Font_Reg28_Caps</font>
+                <font>Font_Reg28_2</font>
                 <shadowcolor>floorshadow</shadowcolor>
                 <textcolor>white</textcolor>
                 <visible>!Control.IsVisible(24000)</visible>
@@ -122,12 +131,12 @@
                 <animation effect="fade" time="350">VisibleChange</animation>
             </control>
             <control type="label">
-                <posy>990</posy>
+                <posy>985</posy>
                 <width>1100</width>
                 <align>center</align>
                 <aligny>top</aligny>
                 <label>$VAR[FirstLabelVar]</label>
-                <font>Font_ShowcaseMainLabel2_Caps</font>
+                <font>Font_Reg42_2</font>
                 <shadowcolor>floorshadow</shadowcolor>
                 <textcolor>floor</textcolor>
                 <scroll>true</scroll>

@@ -204,15 +204,6 @@
             <visible>Control.IsVisible(508) | [Control.IsVisible(503) + !Skin.HasSetting(landscapeonelogo)]  | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516)</visible>
             <visible>![SubString(Container.FolderPath,addons://) | SubString(Container.FolderPath,plugin.video)]</visible>
             <posy>1000</posy>
-            <control type="image">
-                <posy>-280</posy>
-                <width>1920</width>
-                <height>367</height>
-                <visible>Control.IsVisible(500) | Control.IsVisible(512)</visible>
-                <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
-                <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
-                <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
-            </control>
             <control type="group">
                 <visible>!ListItem.IsFolder</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
@@ -541,15 +532,6 @@
         </control>
     </include>
     <include name="MusicMediaFlags">
-        <control type="image">
-            <posy>713</posy>
-            <width>1920</width>
-            <height>367</height>
-            <visible>Control.IsVisible(500) | Control.IsVisible(512)</visible>
-            <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
-            <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
-            <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
-        </control>
         <control type="group">
             <posy>988</posy>
             <visible>!Control.IsVisible(506)</visible>
