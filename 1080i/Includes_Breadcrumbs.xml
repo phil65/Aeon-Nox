@@ -30,10 +30,13 @@
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                                 <animation effect="slide" start="0,0" end="355,0" time="300" tween="cubic" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+                                <animation effect="slide" start="0,0" end="-180,0" time="350" tween="cubic" easing="in" condition="Window.IsActive(1121)">Conditional</animation>
+                                <animation effect="slide" start="0,0" end="80,0" time="350" tween="cubic" easing="in" condition="Window.IsActive(1126)">Conditional</animation>
+                                <animation effect="slide" start="0,0" end="530,0" time="350" tween="cubic" easing="in" condition="Window.IsActive(mediafilter)">Conditional</animation>
                 <visible>![Player.HasMedia + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
                 <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 <control type="image">
-                    <animation effect="fade" start="100" end="0" time="300" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="300" condition="ControlGroup(9000).HasFocus | Window.IsActive(mediafilter)">Conditional</animation>
                     <width>41</width>
                     <height>41</height>
                     <posx>-2</posx>
