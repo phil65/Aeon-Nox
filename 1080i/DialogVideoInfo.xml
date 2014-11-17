@@ -981,97 +981,52 @@
                         <visible>Container.Content(movies) + ![substring(Container.FolderPath,plugin://) + substring(Container.FolderPath,trailer)]</visible>
                     </control>
                     <control type="button" id="100">
-                        <description>Extras</description>
                         <include>DialogVideoInfoButton</include>
                         <label>$LOCALIZE[31020]</label>
                         <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
                         <visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
                     </control>
-                    <!--
-                    <control type="button" id="111">
-                        <description>Similar Window</description>
+                    <control type="button" id="445">
                         <include>DialogVideoInfoButton</include>
-                        <label>$LOCALIZE[31925]</label>
-                        <onclick>SetProperty(WidgetType,onlinemovie,home)</onclick>
-                        <onclick condition="Container.Content(movies)">RunScript(script.extendedinfo,info=similarlocal,info=movielists,info=studio,info=set,dbid=$INFO[ListItem.DBID],studio=$INFO[ListItem.Studio],silent=False)</onclick>
-                        <onclick condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=studio,info=directormovies,info=writermovies,director=$INFO[ListItem.Director],writer=$INFO[ListItem.Writer],dbid=$INFO[ListItem.DBID],studio=$INFO[ListItem.Studio],type=show,silent=False)</onclick>
-                        <onclick>ActivateWindow(1166)</onclick>
-                        <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-                    </control>-->
-                    <control type="grouplist" id="6100">
-                        <width>285</width>
-                        <orientation>vertical</orientation>
-                        <itemgap>-30</itemgap>
-                        <visible>!Skin.HasSetting(kioskmode)</visible>
-                        <control type="button" id="6">
-                            <label>$LOCALIZE[184]</label>
-                            <include>DialogVideoInfoButton</include>
-                            <onright>6000</onright>
-                            <visible>!substring(Container.FolderPath,plugin://)</visible>
-                        </control>
-                        <control type="button" id="441">
-                            <animation effect="zoom" start="100,0" end="100,100" time="300" easing="out" tween="cubic">VisibleChange</animation>
-                            <label>31030</label>
-                            <onright>6000</onright>
-                            <include>DialogVideoInfoButton</include>
-                            <visible>ControlGroup(6100).HasFocus</visible>
-                            <onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
-                            <visible>System.HasAddon(script.libraryeditor) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
-                        </control>
-                    </control>
-                    <control type="grouplist" id="6000">
-                        <width>285</width>
-                        <itemgap>-30</itemgap>
-                        <orientation>vertical</orientation>
+                        <label>Manage</label>
+                        <onclick>SetProperty(Dialog.1.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.2.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.3.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.4.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.5.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.6.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.7.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.8.Label,-)</onclick>
+                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[184])</onclick>
+                        <onclick>SetProperty(Dialog.1.BuiltIn,SendClick(6))</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]))</onclick>
+                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.2.Label,$LOCALIZE[413])</onclick>
+                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
+                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID]))</onclick>
+                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.4.Label,$LOCALIZE[14061])</onclick>
+                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
+                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=movie, dbid=$INFO[ListItem.DBID]))</onclick>
+                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.5.Label,$LOCALIZE[31467])</onclick>
+                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
+                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID]))</onclick>
+                        <onclick>SetProperty(Dialog.6.Label,$LOCALIZE[13511])</onclick>
+                        <onclick>SetProperty(Dialog.6.BuiltIn,SendClick(10))</onclick>
+                        <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.Label,$LOCALIZE[31365])</onclick>
+                        <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.BuiltIn,RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle]))</onclick>
+                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.8.Label,$LOCALIZE[31468])</onclick>
+                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.8.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs))</onclick>
+                        <onclick>RunScript(script.toolbox,info=selectdialog,header=Choose Action)</onclick>
                         <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
+                    </control>
                         <control type="button" id="10">
                             <label>$LOCALIZE[13511]</label>
-                            <include>DialogVideoInfoButton</include>
+                            <include>HiddenObject</include>
                         </control>
-                        <control type="button" id="5052">
-                            <include>DialogVideoInfoButton</include>
-                            <label>$LOCALIZE[413]</label>
-                            <visible>ControlGroup(6000).HasFocus</visible>
-                            <animation effect="zoom" start="100,0" end="100,100" time="300" easing="out" tween="cubic">VisibleChange</animation>
-                            <visible>[Container.Content(tvshows) | Container.Content(movies)]</visible>
-                            <onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-                            <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID])</onclick>
+                        <control type="button" id="6">
+                            <label>$LOCALIZE[13511]</label>
+                            <include>HiddenObject</include>
                         </control>
-                        <control type="button" id="5053">
-                            <include>DialogVideoInfoButton</include>
-                            <label>$LOCALIZE[14061]</label>
-                            <animation effect="zoom" start="100,0" end="100,100" center="0,-50" time="300" easing="out" tween="cubic">VisibleChange</animation>
-                            <visible>ControlGroup(6000).HasFocus</visible>
-                            <visible>[Container.Content(tvshows) | Container.Content(movies)]</visible>
-                            <onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-                            <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-                        </control>
-                        <control type="button" id="21">
-                            <label>$LOCALIZE[31467]</label>
-                            <include>DialogVideoInfoButton</include>
-                            <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
-                            <onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
-                            <animation effect="zoom" start="100,0" end="100,100" center="0,-100" time="300" easing="out" tween="cubic">VisibleChange</animation>
-                            <visible>ControlGroup(6000).HasFocus</visible>
-                            <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-                        </control>
-                        <control type="button" id="23">
-                            <label>$LOCALIZE[31365]</label>
-                            <include>DialogVideoInfoButton</include>
-                            <onclick>RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
-                            <animation effect="zoom" start="100,0" end="100,100" time="300" center="0,-150" easing="out" tween="cubic">VisibleChange</animation>
-                            <visible>ControlGroup(6000).HasFocus</visible>
-                            <visible>Container.Content(tvshows) + system.hasaddon(script.tvtunes)</visible>
-                        </control>
-                        <control type="button" id="24">
-                            <label>$LOCALIZE[31468]</label>
-                            <include>DialogVideoInfoButton</include>
-                            <onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs)</onclick>
-                            <animation effect="zoom" start="100,0" end="100,100" center="0,-150" time="300" easing="out" tween="cubic">VisibleChange</animation>
-                            <visible>ControlGroup(6000).HasFocus</visible>
-                            <visible>Container.Content(movies) + !substring(Container.FolderPath,plugin://)</visible>
-                        </control>
-                    </control>
                 </control>
                 <control type="label">
                     <posx>825</posx>
