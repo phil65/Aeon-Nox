@@ -35,18 +35,20 @@
                 <onleft>500</onleft>
                 <onright>9000</onright>
             </control>
-                                    <control type="image">
-                            <posx>75</posx>
-                            <posy>135</posy>
-                            <width>440</width>
-                            <height>410</height>
-                            <visible>Container.Content(artists) | StringCompare(Container.FolderName,youtube)</visible>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                            <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
-                            <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3)">Conditional</animation>
-                            <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
-                            <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
-                        </control>
+            <control type="image">
+                <posx>75</posx>
+                <posy>135</posy>
+                <width>440</width>
+                <height>410</height>
+                <visible>Control.IsVisible(500)</visible>
+                <visible>Container.Content(artists) | StringCompare(Container.FolderName,youtube)</visible>
+                <animation effect="fade" time="320" delay="300">Visible</animation>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
+            </control>
             <control type="panel" id="500">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -58,7 +60,7 @@
                 <viewtype label="31234">icon</viewtype>
                 <pagecontrol>72</pagecontrol>
                 <preloaditems>2</preloaditems>
-                <scrolltime tween="quadratic">200</scrolltime>
+                <scrolltime tween="quadratic">300</scrolltime>
                 <onleft>9000</onleft>
                 <onright>72</onright>
                 <onup>500</onup>
@@ -117,7 +119,7 @@
                             <font>Font_Reg25_2</font>
                             <textcolor>grey2</textcolor>
                         </control>
-                                                <control type="label">
+                        <control type="label">
                             <posx>30</posx>
                             <posy>-13</posy>
                             <width>380</width>
@@ -134,12 +136,17 @@
                     <control type="group">
                         <posx>75</posx>
                         <posy>180</posy>
-<!--                         <control type="image">
+                        <animation type="Focus">
+                             <effect type="zoom" time="150" start="95" end="100" center="245,260" />
+                             <effect type="zoom" time="150" start="105" end="100" delay="150" center="245,260" />
+                         </animation>
+                        <!--
+                        <control type="image">
                             <posy>-45</posy>
                             <width>440</width>
                             <height>410</height>
                             <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                        </control> -->
+                        </control>-->
                         <control type="image">
                             <posx>25</posx>
                             <width>390</width>
@@ -149,14 +156,14 @@
                             <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                             <bordersize>5</bordersize>
                         </control>
-                    <control type="image">
-                        <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
-                        <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
+                        <control type="image">
+                            <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
+                            <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
                             <posx>25</posx>
                             <width>390</width>
                             <height>220</height>
                             <texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
-                    </control>
+                        </control>
                         <control type="image">
                             <posx>30</posx>
                             <posy>175</posy>
@@ -187,8 +194,8 @@
                             <width>400</width>
                             <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
-                        <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
-                        <animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
+                            <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
+                            <animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
                             <font>Font_Reg25_2</font>
                             <scroll>true</scroll>
                         </control>
@@ -206,7 +213,7 @@
                     </control>
                 </focusedlayout>
                 <itemlayout height="390" width="440" condition="Container.Content(artists)">
-                  <control type="group">
+                    <control type="group">
                         <posx>75</posx>
                         <posy>160</posy>
                         <control type="image">
@@ -248,12 +255,17 @@
                     <control type="group">
                         <posx>75</posx>
                         <posy>160</posy>
-<!--                         <control type="image">
+                        <animation type="Focus">
+                             <effect type="zoom" time="150" start="95" end="100" center="245,260" />
+                             <effect type="zoom" time="150" start="105" end="100" delay="150" center="245,260" />
+                         </animation>
+                        <!--
+                        <control type="image">
                             <posy>-45</posy>
                             <width>440</width>
                             <height>410</height>
                             <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                        </control> -->
+                        </control>-->
                         <control type="image">
                             <posx>25</posx>
                             <width>390</width>
@@ -263,14 +275,14 @@
                             <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                             <bordersize>5</bordersize>
                         </control>
-                    <control type="image">
-                        <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
-                        <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
+                        <control type="image">
+                            <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
+                            <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
                             <posx>25</posx>
                             <width>390</width>
                             <height>360</height>
                             <texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
-                    </control>
+                        </control>
                         <control type="image">
                             <posx>30</posx>
                             <posy>320</posy>
@@ -285,8 +297,8 @@
                             <width>400</width>
                             <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
-                        <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
-                        <animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
+                            <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
+                            <animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
                             <font>Font_Reg28_2</font>
                             <scroll>true</scroll>
                         </control>
