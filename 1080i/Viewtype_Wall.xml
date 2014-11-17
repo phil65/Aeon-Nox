@@ -50,6 +50,23 @@
                 <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
                 <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
             </control>
+            <control type="image">
+                <posx>35</posx>
+                <posy>112</posy>
+                <width>310</width>
+                <height>440</height>
+                <visible>Control.IsVisible(500)</visible>
+                <visible>Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)</visible>
+                <animation effect="fade" time="320" delay="300">Visible</animation>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
+                <animation effect="slide" end="255,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6)">Conditional</animation>
+                <animation effect="slide" end="255,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5)">Conditional</animation>
+                <animation effect="slide" end="255,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4)">Conditional</animation>
+                <animation effect="slide" end="255,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3)">Conditional</animation>
+                <animation effect="slide" end="255,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
+                <animation effect="slide" end="255,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
+            </control>
             <control type="panel" id="500">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -290,8 +307,8 @@
                     <control type="group">
                         <posy>150</posy>
                         <posx>80</posx>
-                        <animation effect="zoom" center="176,300" start="100" end="130" time="280" tween="back" reversible="false">Focus</animation>
-                        <animation effect="zoom" center="176,300" start="130" end="100" time="200" tween="cubic" reversible="false">UnFocus</animation>
+                        <animation effect="zoom" center="176,300" start="100" end="127" time="280" tween="back" reversible="false">Focus</animation>
+                        <animation effect="zoom" center="176,300" start="127" end="100" time="200" tween="cubic" reversible="false">UnFocus</animation>
                         <control type="image">
                             <posx>11</posx>
                             <posy>30</posy>
