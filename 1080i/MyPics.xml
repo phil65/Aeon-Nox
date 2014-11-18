@@ -31,6 +31,16 @@
             </control>
         </control>
         <include>VideoBackground</include>
+        <control type="image">
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
+            <include>FullscreenDimensions</include>
+            <include>Animation_WindowFade200</include>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+            <animation effect="fade" end="100" time="320" delay="80">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
+            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511)</visible>
+            <visible>Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(512) | Control.IsVisible(500)</visible>
+        </control>
         <include>Furniture_Showcase</include>
         <control type="group">
             <animation effect="slide" end="0,650" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
