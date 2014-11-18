@@ -79,6 +79,14 @@
             <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
             <animation condition="true" effect="fade" end="70" pulse="true" start="100" time="2000">conditional</animation>
         </control>
+        <control type="image">
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
+            <include>FullscreenDimensions</include>
+            <include>Animation_WindowFade200</include>
+            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+            <animation effect="fade" end="100" time="320" delay="80">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
+        </control>
         <control type="group">
             <control type="group">
                 <posx>500</posx>

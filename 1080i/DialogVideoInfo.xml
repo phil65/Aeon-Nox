@@ -81,7 +81,8 @@
                         <height>217</height>
                         <texturenofocus>-</texturenofocus>
                         <label>-</label>
-                        <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[ListItem.Plot]')</onclick>
+                        <onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$ESCINFO[ListItem.Plot],home)</onclick>
+                        <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
                         <enable>!IsEmpty(ListItem.Plot)</enable>
                     </control>
                 </control>
