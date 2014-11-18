@@ -619,7 +619,7 @@
                         <visible>!Container.Content(songs)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout height="100" condition="!Skin.HasSetting(slimlist)">
+                <itemlayout height="100" condition="!Skin.HasSetting(slimlist) + ![Container.Content(addons) | Container.Content(albums) | Container.Content(songs) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">
                     <control type="image">
                         <posy>40</posy>
                         <width>1140</width>
@@ -670,7 +670,7 @@
                         <texture>$VAR[SmallListIconVar]</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout height="100" condition="!Skin.HasSetting(slimlist)">
+                <focusedlayout height="100" condition="!Skin.HasSetting(slimlist) + ![Container.Content(addons) | Container.Content(albums) | Container.Content(songs) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">
                     <control type="image">
                         <posy>40</posy>
                         <width>1140</width>
