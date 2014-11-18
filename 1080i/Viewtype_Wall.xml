@@ -14,10 +14,10 @@
                 <onright>9000</onright>
             </control>
             <control type="image">
-                <posx>75</posx>
-                <posy>105</posy>
-                <width>440</width>
-                <height>430</height>
+                <posx>70</posx>
+                <posy>101</posy>
+                <width>454</width>
+                <height>444</height>
                 <visible>Control.HasFocus(500)</visible>
                 <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | StringCompare(Container.FolderName,youtube)</visible>
                 <animation effect="fade" time="320" delay="300">Visible</animation>
@@ -124,8 +124,10 @@
                         <posx>75</posx>
                         <posy>130</posy>
                         <animation type="Focus">
-                            <effect type="zoom" time="150" start="95" end="100" center="245,260" />
-                            <effect type="zoom" time="150" start="105" end="100" delay="150" center="245,260" />
+                            <effect type="zoom" time="150" start="100" end="105" center="245,260" />
+                        </animation>
+                        <animation type="UnFocus">
+                            <effect type="zoom" time="150" start="105" end="100" center="245,260" />
                         </animation>
                         <!--
                         <control type="image">
@@ -159,10 +161,10 @@
                             <texture colordiffuse="black">common/bgcolor.png</texture>
                         </control>
                         <control type="label">
-                            <posx>20</posx>
+                            <posx>30</posx>
                             <posy>307</posy>
                             <height>100</height>
-                            <width>400</width>
+                            <width>380</width>
                             <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
                             <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
