@@ -885,12 +885,6 @@
                     <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">Select</onclick>
                     <visible>Control.IsVisible(9900) + !Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
                 </control>
-                <control type="button" id="7566">
-                    <include>HiddenObject</include>
-                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onfocus>
-                    <onfocus condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
-                </control>
             </control>
             <include>FloorLabels</include>
             <include>FloorFlags</include>

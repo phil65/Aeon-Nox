@@ -51,8 +51,7 @@
                 <include>ContextMenuButton</include>
                 <label>$VAR[ContextMenuTrailerButtonLabelVar]</label>
                 <visible>Container.Content(movies) | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]</visible>
-                <onclick condition="Container.Content(movies) + !IsEmpty(ListItem.Trailer)">Dialog.Close(106)</onclick>
-                <onclick condition="Container.Content(movies) + !IsEmpty(ListItem.Trailer)">SetFocus(7566)</onclick>
+                <onclick condition="Container.Content(movies) + !IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
                 <onclick condition="Container.Content(movies) + IsEmpty(ListItem.Trailer)">SetProperty(listcontent,$INFO[ListItem.Title] Trailer,home)</onclick>
                 <onclick condition="Container.Content(movies) + IsEmpty(ListItem.Trailer)">ActivateWindow(1168)</onclick>
                 <onclick condition="!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)">PlayMedia($ESCINFO[Window.Property(SongToMusicVideo.Path)])</onclick>

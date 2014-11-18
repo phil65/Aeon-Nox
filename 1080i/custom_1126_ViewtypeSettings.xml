@@ -532,8 +532,8 @@
                     <label>$LOCALIZE[31176]</label>
                     <include>Objects_MediaMenuLabelAlt2</include>
                     <enable>no</enable>
+                    <visible>Control.IsVisible(1637) | Control.IsVisible(266)</visible>
                 </control>
-                <!--Watched/New Overlay-->
                 <control type="button" id="1637">
                     <label>$LOCALIZE[31242]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[FlagLabelVar][/COLOR]</label2>
@@ -552,14 +552,6 @@
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(preferplot)</onclick>
                     <visible>Window.IsActive(videolibrary) + !Stringcompare(Window(home).Property(actualViewtype),Shift)</visible>
-                </control>
-                <control type="radiobutton" id="267">
-                    <label>31279</label>
-                    <selected>Skin.HasSetting(fstrailer)</selected>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(fstrailer)</onclick>
-                    <visible>Container.Content(movies)</visible>
-                    <visible>!Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Banners) | [Stringcompare(Window(home).Property(actualViewtype),Landscape) + !Skin.HasSetting(landscapeonelogo)] | Stringcompare(Window(home).Property(actualViewtype),AddonWall)</visible>
                 </control>
             </control>
         </control>
