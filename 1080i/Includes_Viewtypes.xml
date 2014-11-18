@@ -545,43 +545,6 @@
             <onclick>SetFocus(50)</onclick>
             <onback>50</onback>
         </control>
-        <control type="group">
-            <posx>20</posx>
-            <posy>-1020</posy>
-            <visible>Control.HasFocus(109)</visible>
-            <include>Animation_WindowFade200</include>
-            <animation type="Visible">
-                <effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" end="100" time="240" />
-            </animation>
-            <animation type="Hidden">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <control type="image">
-                <width>130</width>
-                <height>80</height>
-                <texture colordiffuse="$VAR[AreaColorVar]">dialogs/dialog_back_shadow.png</texture>
-                <include>PanelGlowFade</include>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            </control>
-            <control type="image">
-                <width>130</width>
-                <height>80</height>
-                <texture colordiffuse="$VAR[DialogColorVar]">dialogs/dialog_back.png</texture>
-                <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
-            </control>
-            <control type="label">
-                <posx>15</posx>
-                <width>100</width>
-                <height>74</height>
-                <align>center</align>
-                <label>31888</label>
-                <font>Font_Reg22</font>
-                <textcolor>grey2</textcolor>
-                <wrapmultiline>true</wrapmultiline>
-            </control>
-        </control>
     </include>
     <include name="ReloadWindowOnClick">
         <onclick condition="Window.IsActive(addonbrowser)">SetProperty(activewindow,addons,home)</onclick>
