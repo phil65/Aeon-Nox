@@ -13,6 +13,21 @@
                 <onleft>512</onleft>
                 <onright>9000</onright>
             </control>
+            <control type="image">
+                <posx>13</posx>
+                <posy>135</posy>
+                <width>290</width>
+                <height>400</height>
+                <visible>Control.HasFocus(512)</visible>
+                <visible>Container.Content(movies)</visible>
+                <animation effect="fade" time="320" delay="300">Visible</animation>
+                <animation effect="fade" time="320" delay="300">WindowOpen</animation>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                <animation effect="slide" end="0,361" time="300" tween="cubic" easing="inout" condition="Container(512).Row(1)">Conditional</animation>
+                <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3)">Conditional</animation>
+                <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2)">Conditional</animation>
+                <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2) | Container(512).Column(1)">Conditional</animation>
+            </control>
             <control type="panel" id="512">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -110,8 +125,8 @@
                     <control type="group">
                         <posx>50</posx>
                         <posy>150</posy>
-                        <animation center="auto" effect="zoom" end="135" reversible="false" start="102" delay="50" time="400" tween="cubic">Focus</animation>
-                        <animation center="auto" effect="zoom" end="100" reversible="false" start="135" time="300" tween="cubic">UnFocus</animation>
+                        <animation center="auto" effect="zoom" end="117" reversible="false" start="102" delay="50" time="400" tween="cubic">Focus</animation>
+                        <animation center="auto" effect="zoom" end="100" reversible="false" start="117" time="300" tween="cubic">UnFocus</animation>
                         <!--
                         <animation center="auto" effect="zoom" end="100" reversible="false" start="135" time="420" tween="cubic">UnFocus</animation>-->
                         <control type="image">
