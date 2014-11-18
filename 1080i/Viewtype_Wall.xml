@@ -5,12 +5,11 @@
             <visible>Control.IsVisible(500)</visible>
             <include>Animation_Widgets</include>
             <control type="scrollbar" id="72">
-                <posx>1850</posx>
+                <posx>1860</posx>
                 <posy>132</posy>
                 <width>46</width>
                 <height>802</height>
                 <texturesliderbackground colordiffuse="$VAR[AreaColorVar]">views/scrollbarbacklist.png</texturesliderbackground>
-                <include>Animation_VerticalScrollBar</include>
                 <onleft>500</onleft>
                 <onright>9000</onright>
             </control>
@@ -178,12 +177,14 @@
                         <posy>100</posy>
                         <posx>65</posx>
                         <control type="image">
-                            <width>831</width>
-                            <height>161</height>
+                            <posx>-5</posx>
+                            <posy>-5</posy>
+                            <width>841</width>
+                            <height>171</height>
                             <aspectratio align="center">scale</aspectratio>
                             <texture background="true">$VAR[BannerVar]</texture>
-                            <bordersize>5</bordersize>
-                            <bordertexture border="5" colordiffuse="black">views/addonwall_select.png</bordertexture>
+                     <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                       <bordersize>10</bordersize>
                         </control>
                         <control type="image">
                             <posx>30</posx>
@@ -227,7 +228,6 @@
                     <control type="group">
                         <animation type="Focus">
                             <effect type="zoom" time="150" start="100" end="105" center="500,210" />
-                            <effect type="zoom" time="150" start="105" end="100" delay="150" center="500,210" />
                         </animation>
                         <animation type="UnFocus">
                             <effect type="zoom" time="150" start="105" end="100" center="500,210" />
@@ -235,12 +235,14 @@
                                                                         <posy>100</posy>
                         <posx>65</posx>
                         <control type="image">
-                            <width>831</width>
-                            <height>161</height>
+                            <posx>-5</posx>
+                            <posy>-5</posy>
+                            <width>841</width>
+                            <height>171</height>
                             <aspectratio align="center">scale</aspectratio>
                             <texture background="true">$VAR[BannerVar]</texture>
-                            <bordersize>5</bordersize>
-                            <bordertexture border="5" colordiffuse="black">views/addonwall_select.png</bordertexture>
+                     <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                        <bordersize>10</bordersize>
                         </control>
                         <control type="image">
                             <posx>30</posx>
