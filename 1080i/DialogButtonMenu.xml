@@ -34,7 +34,7 @@
                     <height>39</height>
                     <texture colordiffuse="$VAR[SpotColorVar2]">$VAR[ShutdownTopVar]</texture>
                 </control>
-                <control type="radiobutton" id="1">
+                <control type="radiobutton" id="1000">
                     <label>$LOCALIZE[13012]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <onclick>Quit()</onclick>
@@ -43,7 +43,7 @@
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/close.png</textureradiooff>
                     <visible>System.ShowExitButton</visible>
                 </control>
-                <control type="radiobutton" id="2">
+                <control type="radiobutton" id="1001">
                     <label>$LOCALIZE[13016]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <onclick>Powerdown()</onclick>
@@ -52,7 +52,7 @@
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/poweroff.png</textureradiooff>
                     <visible>System.CanPowerDown</visible>
                 </control>
-                <control type="radiobutton" id="3">
+                <control type="radiobutton" id="1002">
                     <label>$LOCALIZE[20144]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
@@ -62,7 +62,7 @@
                     <visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
                     <visible>!System.HasAlarm(shutdowntimer)</visible>
                 </control>
-                <control type="radiobutton" id="15">
+                <control type="radiobutton" id="1003">
                     <label>$LOCALIZE[31428] [B]$INFO[System.Alarmpos][/B]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(15)</selected>
@@ -71,7 +71,7 @@
                     <onclick>CancelAlarm(shutdowntimer)</onclick>
                     <visible>System.HasAlarm(shutdowntimer)</visible>
                 </control>
-                <control type="radiobutton" id="5">
+                <control type="radiobutton" id="1004">
                     <label>$LOCALIZE[13011]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(5)</selected>
@@ -80,7 +80,7 @@
                     <onclick>Suspend()</onclick>
                     <visible>System.CanSuspend</visible>
                 </control>
-                <control type="radiobutton" id="10">
+                <control type="radiobutton" id="1005">
                     <label>$LOCALIZE[13010]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(10)</selected>
@@ -89,7 +89,7 @@
                     <onclick>Hibernate()</onclick>
                     <visible>System.CanHibernate + !System.CanSuspend</visible>
                 </control>
-                <control type="radiobutton" id="6">
+                <control type="radiobutton" id="1006">
                     <label>$LOCALIZE[13013]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(6)</selected>
@@ -98,7 +98,7 @@
                     <onclick>Reset()</onclick>
                     <visible>System.CanReboot</visible>
                 </control>
-                <control type="radiobutton" id="4">
+                <control type="radiobutton" id="1007">
                     <label>$LOCALIZE[13391]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(4)</selected>
@@ -107,7 +107,7 @@
                     <onclick>EjectTray()</onclick>
                     <visible>System.HasMediadvd + System.Platform.ATV2</visible>
                 </control>
-                <control type="radiobutton" id="7">
+                <control type="radiobutton" id="1008">
                     <label>$INFO[system.profilename,$LOCALIZE[20126] ]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <textureradioon colordiffuse="white2">special://skin/extras/icons/lock.png</textureradioon>
@@ -118,7 +118,7 @@
                     <visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
                     <visible>System.Loggedon</visible>
                 </control>
-                <control type="radiobutton" id="8">
+                <control type="radiobutton" id="1009">
                     <label>$VAR[MasterLockLabelVar]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(8)</selected>
@@ -127,7 +127,7 @@
                     <onclick>xbmc.mastermode</onclick>
                     <visible>System.HasLocks</visible>
                 </control>
-                <control type="radiobutton" id="9">
+                <control type="radiobutton" id="1010">
                     <label>$LOCALIZE[5]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(9)</selected>
@@ -135,7 +135,7 @@
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/controlpanel3.png</textureradiooff>
                     <onclick>ActivateWindow(Settings,return)</onclick>
                 </control>
-                <control type="radiobutton" id="12">
+                <control type="radiobutton" id="1011">
                     <label>$LOCALIZE[10003]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(12)</selected>
@@ -143,7 +143,7 @@
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/filemanager.png</textureradiooff>
                     <onclick>ActivateWindow(FileManager)</onclick>
                 </control>
-                <control type="radiobutton" id="14">
+                <control type="radiobutton" id="1012">
                     <label>$LOCALIZE[1036]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(14)</selected>
@@ -151,7 +151,7 @@
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/star.png</textureradiooff>
                     <onclick>ActivateWindow(Favourites)</onclick>
                 </control>
-                <control type="radiobutton" id="21">
+                <control type="radiobutton" id="1013">
                     <label>$LOCALIZE[13016]</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <selected>Control.HasFocus(21)</selected>
@@ -159,7 +159,7 @@
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/poweroff.png</textureradiooff>
                     <visible>!System.CanPowerDown</visible>
                 </control>
-                <control type="image" id="19">
+                <control type="image" id="3000">
                     <posy>699</posy>
                     <width>488</width>
                     <height>41</height>
