@@ -32,22 +32,10 @@
                 </control>
             </control>
         </control>
-        <control type="button">
-            <animation effect="slide" end="0,100" time="400" tween="cubic" delay="160" condition="Player.HasMedia">Conditional</animation>
-            <include>HiddenObject</include>
-            <hitrect x="0" y="200" w="1920" h="945" />
-            <onfocus>Dialog.Close(playercontrols)</onfocus>
-        </control>
-        <control type="group">
-            <visible>Player.HasMedia + !VideoPlayer.Content(LiveTV)</visible>
-            <include>BottomProgressBar</include>
-        </control>
         <control type="group">
             <posx>0</posx>
-            <posy>-450</posy>
-            <animation effect="slide" start="700,0" end="0,0" time="500" tween="cubic" delay="1000">WindowOpen</animation>
-            <animation effect="slide" end="700,0" time="500" tween="cubic">WindowClose</animation>
-            <include>NextTracksList</include>
+            <posy>0</posy>
+            <include>NowPlayingInfo</include>
         </control>
     </controls>
 </window>
