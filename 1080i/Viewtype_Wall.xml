@@ -175,117 +175,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout height="220" width="920" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
-                    <control type="group">
-                        <posy>100</posy>
-                        <posx>65</posx>
-                        <control type="image">
-                            <posx>-5</posx>
-                            <posy>-5</posy>
-                            <width>841</width>
-                            <height>171</height>
-                            <aspectratio align="center">scale</aspectratio>
-                            <texture background="true">$VAR[BannerVar]</texture>
-                     <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-                       <bordersize>10</bordersize>
-                        </control>
-                        <control type="image">
-                            <posx>30</posx>
-                            <posy>18</posy>
-                            <width>831</width>
-                            <height>121</height>
-                            <aspectratio align="left">keep</aspectratio>
-                            <texture background="true">$VAR[LogoVarList]</texture>
-                            <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
-                        </control>
-                        <control type="label">
-                            <posx>8</posx>
-                            <posy>8</posy>
-                            <width>816</width>
-                            <height>146</height>
-                            <align>center</align>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Bold40</font>
-                            <shadowcolor>black</shadowcolor>
-                            <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
-                        </control>
-                        <control type="image">
-                            <posx>736</posx>
-                            <posy>5</posy>
-                            <width>90</width>
-                            <height>90</height>
-                            <texture>$VAR[OverlayVisibility0]</texture>
-                        </control>
-                        <include>UnwatchedIcon</include>
-                        <control type="image">
-                            <width>831</width>
-                            <height>161</height>
-                            <aspectratio align="center">stretch</aspectratio>
-                            <texture>common/bgcolor.png</texture>
-                            <animation effect="fade" start="100" end="50" time="40" condition="true">Conditional</animation>
-                            <bordersize>5</bordersize>
-                        </control>
-                    </control>
+                    <include>BannerItemLayout</include>
                 </itemlayout>
                 <focusedlayout height="220" width="920" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
-                    <control type="group">
-                        <animation type="Focus">
-                            <effect type="zoom" time="150" start="100" end="105" center="500,210" />
-                        </animation>
-                        <animation type="UnFocus">
-                            <effect type="zoom" time="150" start="105" end="100" center="500,210" />
-                        </animation>
-                                                                        <posy>100</posy>
-                        <posx>65</posx>
-                        <control type="image">
-                            <posx>-5</posx>
-                            <posy>-5</posy>
-                            <width>841</width>
-                            <height>171</height>
-                            <aspectratio align="center">scale</aspectratio>
-                            <texture background="true">$VAR[BannerVar]</texture>
-                     <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-                        <bordersize>10</bordersize>
-                        </control>
-                        <control type="image">
-                            <posx>30</posx>
-                            <posy>18</posy>
-                            <width>831</width>
-                            <height>121</height>
-                            <aspectratio align="left">keep</aspectratio>
-                            <texture background="true">$VAR[LogoVarList]</texture>
-                            <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
-                        </control>
-                        <control type="label">
-                            <posx>8</posx>
-                            <posy>8</posy>
-                            <width>816</width>
-                            <height>146</height>
-                            <align>center</align>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font_Bold40</font>
-                            <shadowcolor>black</shadowcolor>
-                            <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
-                        </control>
-                        <include>UnwatchedIcon</include>
-                        <control type="image">
-                            <posx>735</posx>
-                            <posy>5</posy>
-                            <width>90</width>
-                            <height>90</height>
-                            <texture>$VAR[OverlayVisibility0]</texture>
-                        </control>
-                        <control type="image">
-                        <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
-                                            <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
-
-                            <width>831</width>
-                            <height>161</height>
-                            <aspectratio align="center">stretch</aspectratio>
-                            <texture>common/bgcolor.png</texture>
-                            <animation effect="fade" start="100" end="50" time="40" condition="true">Conditional</animation>
-                            <bordersize>5</bordersize>
-                        </control>
-                    </control>
+                    <include>BannerFocusedLayout</include>
                 </focusedlayout>
                 <itemlayout width="297" height="390" condition="[[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)]]">
                     <control type="group">
@@ -454,7 +347,7 @@
                         <visible>Container.Content(artists)</visible>
                     </control>
                 </focusedlayout>
-          </control>
+            </control>
         </control>
     </include>
     <include name="WallYoutubeLayouts">
@@ -590,5 +483,117 @@
                 </control>
             </control>
         </focusedlayout>
+    </include>
+    <include name="BannerItemLayout">
+        <control type="group">
+            <posy>100</posy>
+            <posx>65</posx>
+            <control type="image">
+                <posx>-5</posx>
+                <posy>-5</posy>
+                <width>841</width>
+                <height>171</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture background="true">$VAR[BannerVar]</texture>
+                <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                <bordersize>10</bordersize>
+            </control>
+            <control type="image">
+                <posx>30</posx>
+                <posy>18</posy>
+                <width>831</width>
+                <height>121</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture background="true">$VAR[LogoVarList]</texture>
+                <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
+            </control>
+            <control type="label">
+                <posx>8</posx>
+                <posy>8</posy>
+                <width>816</width>
+                <height>146</height>
+                <align>center</align>
+                <label>$INFO[ListItem.Label]</label>
+                <font>Font_Bold40</font>
+                <shadowcolor>black</shadowcolor>
+                <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
+            </control>
+            <control type="image">
+                <posx>736</posx>
+                <posy>5</posy>
+                <width>90</width>
+                <height>90</height>
+                <texture>$VAR[OverlayVisibility0]</texture>
+            </control>
+            <include>UnwatchedIcon</include>
+            <control type="image">
+                <width>831</width>
+                <height>161</height>
+                <aspectratio align="center">stretch</aspectratio>
+                <texture>common/bgcolor.png</texture>
+                <animation effect="fade" start="100" end="50" time="40" condition="true">Conditional</animation>
+                <bordersize>5</bordersize>
+            </control>
+        </control>
+    </include>
+    <include name="BannerFocusedLayout">
+        <control type="group">
+            <animation type="Focus">
+                <effect type="zoom" time="150" start="100" end="105" center="500,210" />
+            </animation>
+            <animation type="UnFocus">
+                <effect type="zoom" time="150" start="105" end="100" center="500,210" />
+            </animation>
+            <posy>100</posy>
+            <posx>65</posx>
+            <control type="image">
+                <posx>-5</posx>
+                <posy>-5</posy>
+                <width>841</width>
+                <height>171</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture background="true">$VAR[BannerVar]</texture>
+                <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                <bordersize>10</bordersize>
+            </control>
+            <control type="image">
+                <posx>30</posx>
+                <posy>18</posy>
+                <width>831</width>
+                <height>121</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture background="true">$VAR[LogoVarList]</texture>
+                <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner))</visible>
+            </control>
+            <control type="label">
+                <posx>8</posx>
+                <posy>8</posy>
+                <width>816</width>
+                <height>146</height>
+                <align>center</align>
+                <label>$INFO[ListItem.Label]</label>
+                <font>Font_Bold40</font>
+                <shadowcolor>black</shadowcolor>
+                <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
+            </control>
+            <include>UnwatchedIcon</include>
+            <control type="image">
+                <posx>735</posx>
+                <posy>5</posy>
+                <width>90</width>
+                <height>90</height>
+                <texture>$VAR[OverlayVisibility0]</texture>
+            </control>
+            <control type="image">
+                <animation effect="fade" time="300" start="100" end="0" delay="100">Focus</animation>
+                <animation effect="fade" time="300" start="0" end="100">UnFocus</animation>
+                <width>831</width>
+                <height>161</height>
+                <aspectratio align="center">stretch</aspectratio>
+                <texture>common/bgcolor.png</texture>
+                <animation effect="fade" start="100" end="50" time="40" condition="true">Conditional</animation>
+                <bordersize>5</bordersize>
+            </control>
+        </control>
     </include>
 </includes>
