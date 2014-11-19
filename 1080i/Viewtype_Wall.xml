@@ -51,7 +51,7 @@
                 <posy>67</posy>
                 <width>936</width>
                 <height>228</height>
-                <visible>Control.HasFocus(500)</visible>
+                <visible>Control.HasFocus(500) | Control.HasFocus(20000) | Control.HasFocus(20001)</visible>
                 <visible>[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]</visible>
                 <animation effect="fade" time="320" delay="300">Visible</animation>
                 <animation effect="fade" time="320" delay="300">WindowOpen</animation>
@@ -61,6 +61,18 @@
                 <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3)">Conditional</animation>
                 <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3) | Container(500).Row(2)">Conditional</animation>
                 <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3) | Container(500).Row(2) | Container(500).Row(1)">Conditional</animation>
+            </control>
+            <control type="button" id="20000">
+                <include>HiddenObject</include>
+                <animation effect="fade" time="500" start="100" end="0">Focus</animation>
+                <onfocus>SetFocus(500)</onfocus>
+                <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
+            </control>
+            <control type="button" id="20001">
+                <include>HiddenObject</include>
+                <animation effect="fade" time="500" start="100" end="0">Focus</animation>
+                <onfocus>SetFocus(500)</onfocus>
+                <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
             </control>
             <control type="panel" id="500">
                 <posx>0</posx>
@@ -76,8 +88,16 @@
                 <scrolltime tween="quadratic">300</scrolltime>
                 <onleft>9000</onleft>
                 <onright>72</onright>
-                <onup>500</onup>
-                <ondown>500</ondown>
+                <onup>20000</onup>
+                <ondown>20001</ondown>
+                        <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
+            <effect type="slide" end="0,-30" time="60" tween="sine" />
+            <effect type="slide" end="0,30" time="180" tween="sine" delay="80" />
+        </animation>
+                        <animation type="Conditional" condition="Control.IsVisible(20001)" reversible="false">
+            <effect type="slide" end="0,30" time="60" tween="sine" />
+            <effect type="slide" end="0,-30" time="180" tween="sine" delay="80" />
+        </animation>
                 <orientation>vertical</orientation>
                 <include>WallYoutubeLayouts</include>
                 <itemlayout height="410" width="440" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums)">
