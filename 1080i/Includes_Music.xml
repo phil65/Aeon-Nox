@@ -442,7 +442,7 @@
                 <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
             </control>
             <control type="group">
-                <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" delay="1000" condition="SubString(Window(Visualisation).Property(ArtistSlideshow),resources/black) | Window.IsActive(musicosd) | Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
                 <control type="image">
                     <posx>945</posx>
                     <posy>-525</posy>
@@ -451,7 +451,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</texture>
                 </control>
-                <control type="multiimage" id="8888">
+                <control type="multiimage">
                     <posx>955</posx>
                     <posy>-515</posy>
                     <width>798</width>
@@ -463,7 +463,7 @@
             </control>
         </control>
         <control type="image">
-            <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!IsEmpty(Player.Art(fanart)) + SubString(Control.GetLabel(8888),black-hd.jpg) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
+            <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!IsEmpty(Player.Art(fanart)) + SubString(Window(Visualisation).Property(ArtistSlideshow),resources/black) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
             <posx>1269</posx>
             <posy>-525</posy>
             <width>494</width>
