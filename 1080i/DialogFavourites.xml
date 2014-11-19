@@ -8,268 +8,66 @@
     </coordinates>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
-        <include>DialogBackFade</include>
         <control type="image">
-            <posx>157</posx>
-            <posy>80</posy>
-            <width>1608</width>
-            <height>922</height>
-            <texture colordiffuse="$VAR[AreaColorVar]">osd/osd_settings_back_glow.png</texture>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <include>PanelGlowFade</include>
-        </control>
-        <control type="image">
-            <posx>157</posx>
-            <posy>80</posy>
-            <width>1608</width>
-            <height>922</height>
-            <texture colordiffuse="$VAR[DialogColorVar]">osd/osd_settings_back.png</texture>
-        </control>
-        <control type="image">
-            <posx>175</posx>
-            <posy>132</posy>
-            <width>1572</width>
-            <height>60</height>
-            <texture border="5">osd/osd_settings_buttonnf.png</texture>
-        </control>
-        <control type="image">
-            <posx>175</posx>
-            <posy>874</posy>
-            <width>1572</width>
-            <height>60</height>
-            <texture border="5">osd/osd_settings_buttonnf.png</texture>
-            <visible>!Skin.HasSetting(ThumbsFavorites)</visible>
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
+            <include>FullscreenDimensions</include>
+            <animation effect="fade" end="100" time="560">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
         </control>
         <control type="label">
-            <posx>220</posx>
-            <posy>125</posy>
+            <posx>103</posx>
+            <posy>29</posy>
             <width>1000</width>
             <height>60</height>
-            <label>$LOCALIZE[1036]</label>
+            <label>$LOCALIZE[1036][CR]$INFO[Container(450).NumItems,, $LOCALIZE[31025]]</label>
             <font>Font_Bold33</font>
+            <visible>Stringcompare(Container(450).CurrentPage,1)</visible>
             <textcolor>$VAR[FontColorVar]</textcolor>
         </control>
-        <control type="button" id="449">
-            <posx>1293</posx>
-            <posy>125</posy>
-            <width>446</width>
-            <height>60</height>
-            <textoffsetx>20</textoffsetx>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-            <texturenofocus>-</texturenofocus>
-            <label>$LOCALIZE[31272]</label>
-            <label2>[COLOR $VAR[FontColorVar]]$VAR[FavoritesListTypeVar][/COLOR]</label2>
-            <font>Font_Bold33</font>
-            <textcolor>grey2</textcolor>
-            <onclick condition="Stringcompare(Skin.String(FavoritesListType),1) | IsEmpty(Skin.String(FavoritesListType))">Skin.SetString(FavoritesListType,2)</onclick>
-            <onclick condition="Stringcompare(Skin.String(FavoritesListType),3)">Skin.SetString(FavoritesListType,1)</onclick>
-            <onclick condition="Stringcompare(Skin.String(FavoritesListType),2)">Skin.SetString(FavoritesListType,3)</onclick>
-            <onclick condition="Stringcompare(Skin.String(FavoritesListType),1)">Skin.SetString(FavoritesListType,2)</onclick>
+            <control type="image">
+                <posx>70</posx>
+                <posy>101</posy>
+                <width>454</width>
+                <height>444</height>
+                <visible>Control.HasFocus(450)</visible>
+                <animation effect="fade" time="320" delay="300">Visible</animation>
+                <animation effect="fade" time="320" delay="300">WindowOpen</animation>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(450).Row(1)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3) | Container(450).Column(2)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(450).Column(3) | Container(450).Column(2) | Container(450).Column(1)">Conditional</animation>
+            </control>
+        <control type="panel" id="450">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
             <onleft>450</onleft>
             <onright>61</onright>
             <onup>450</onup>
             <ondown>450</ondown>
-        </control>
-        <control type="panel" id="450">
-            <posx>185</posx>
-            <posy>192</posy>
-            <width>1599</width>
-            <height>740</height>
-            <onleft>61</onleft>
-            <onright>449</onright>
-            <onup>450</onup>
-            <ondown>450</ondown>
+            <preloaditems>2</preloaditems>
             <pagecontrol>61</pagecontrol>
             <scrolltime tween="sine">200</scrolltime>
             <orientation>vertical</orientation>
-            <itemlayout height="60" width="550" condition="Stringcompare(Skin.String(FavoritesListType),1) | IsEmpty(Skin.String(FavoritesListType))">
-                <control type="image">
-                    <width>550</width>
-                    <height>60</height>
-                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                </control>
-                <control type="label">
-                    <posx>45</posx>
-                    <width>550</width>
-                    <height>60</height>
-                    <font>Font_Reg30_2</font>
-                    <textcolor>grey</textcolor>
-                    <info>ListItem.Label</info>
-                </control>
-            </itemlayout>
-            <focusedlayout height="60" width="550" condition="Stringcompare(Skin.String(FavoritesListType),1) | IsEmpty(Skin.String(FavoritesListType))">
-                <control type="image">
-                    <width>550</width>
-                    <height>60</height>
-                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                </control>
-                <control type="image">
-                    <width>550</width>
-                    <height>60</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                    <visible>Control.HasFocus(450)</visible>
-                </control>
-                <control type="label">
-                    <posx>45</posx>
-                    <width>550</width>
-                    <height>60</height>
-                    <font>Font_Reg30_2</font>
-                    <info>ListItem.Label</info>
-                </control>
-            </focusedlayout>
-            <itemlayout height="90" width="800" condition="Stringcompare(Skin.String(FavoritesListType),2)">
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>30</posy>
-                    <width>750</width>
-                    <height>60</height>
-                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                </control>
-                <control type="label">
-                    <posx>150</posx>
-                    <width>600</width>
-                    <height>90</height>
-                    <font>Font_Reg38</font>
-                    <textcolor>grey2</textcolor>
-                    <info>ListItem.Label</info>
-                </control>
-                <control type="image">
-                    <posx>52</posx>
-                    <posy>8</posy>
-                    <width>75</width>
-                    <height>75</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[Listitem.Icon]</texture>
-                </control>
-            </itemlayout>
-            <focusedlayout height="90" width="800" condition="Stringcompare(Skin.String(FavoritesListType),2)">
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>30</posy>
-                    <width>750</width>
-                    <height>60</height>
-                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                </control>
-                <control type="image">
-                    <width>765</width>
-                    <height>90</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                    <visible>Control.HasFocus(450)</visible>
-                </control>
-                <control type="label">
-                    <posx>150</posx>
-                    <width>600</width>
-                    <height>90</height>
-                    <font>Font_Reg38</font>
-                    <info>ListItem.Label</info>
-                </control>
-                <control type="image">
-                    <posx>52</posx>
-                    <posy>8</posy>
-                    <width>75</width>
-                    <height>75</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[Listitem.Icon]</texture>
-                </control>
-            </focusedlayout>
-            <itemlayout height="185" width="790" condition="Stringcompare(Skin.String(FavoritesListType),3)">
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>125</posy>
-                    <width>750</width>
-                    <height>60</height>
-                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                </control>
-                <control type="label">
-                    <posx>205</posx>
-                    <width>580</width>
-                    <height>185</height>
-                    <font>Font_Reg38</font>
-                    <textcolor>grey2</textcolor>
-                    <info>ListItem.Label</info>
-                </control>
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>5</posy>
-                    <width>175</width>
-                    <height>175</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[Listitem.Icon]</texture>
-                </control>
-            </itemlayout>
-            <focusedlayout height="185" width="790" condition="Stringcompare(Skin.String(FavoritesListType),3)">
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>125</posy>
-                    <width>750</width>
-                    <height>60</height>
-                    <texture border="5">osd/osd_settings_buttonnf.png</texture>
-                </control>
-                <control type="image">
-                    <width>765</width>
-                    <height>185</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                    <visible>Control.HasFocus(450)</visible>
-                </control>
-                <control type="label">
-                    <posx>205</posx>
-                    <width>580</width>
-                    <height>185</height>
-                    <font>Font_Reg38</font>
-                    <info>ListItem.Label</info>
-                </control>
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>5</posy>
-                    <width>175</width>
-                    <height>175</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[Listitem.Icon]</texture>
-                </control>
-            </focusedlayout>
+                <itemlayout height="410" width="440">
+                    <include>SquareWallitemLayout</include>
+                </itemlayout>
+                <focusedlayout height="410" width="440">
+                    <include>SquareWallFocusedLayout</include>
+                </focusedlayout>
         </control>
-        <control type="image">
-            <posx>1069</posx>
-            <posy>275</posy>
-            <width>575</width>
-            <height>575</height>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$INFO[Container(450).Listitem.Icon]</texture>
-            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-            <bordersize>7</bordersize>
-            <visible>Stringcompare(Skin.String(FavoritesListType),2)</visible>
-        </control>
-        <control type="image">
-            <posx>1289</posx>
-            <posy>275</posy>
-            <width>445</width>
-            <height>445</height>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$INFO[Container(450).Listitem.Icon]</texture>
-            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-            <bordersize>7</bordersize>
-            <visible>Stringcompare(Skin.String(FavoritesListType),1) | IsEmpty(Skin.String(FavoritesListType))</visible>
-        </control>
-        <control type="label">
-            <posx>1634</posx>
-            <posy>935</posy>
-            <width>315</width>
-            <height>60</height>
-            <align>right</align>
-            <aligny>bottom</aligny>
-            <label>$INFO[Container(450).NumItems,, $LOCALIZE[31025]]$INFO[Container(450).CurrentPage, - $LOCALIZE[31024] (]$INFO[Container(450).NumPages,/,)]</label>
-            <font>Font_Reg25</font>
-            <textcolor>grey2</textcolor>
-        </control>
-        <control type="group">
-            <posx>200</posx>
             <control type="scrollbar" id="61">
-                <include>Objects_CommonSettingsScrollbar</include>
+                <posx>1860</posx>
+                <posy>132</posy>
+                <width>46</width>
+                <height>802</height>
+                <texturesliderbackground colordiffuse="$VAR[AreaColorVar]">views/scrollbarbacklist.png</texturesliderbackground>
                 <onleft>450</onleft>
                 <onright>450</onright>
                 <ondown>61</ondown>
                 <onup>61</onup>
             </control>
-        </control>
     </controls>
 </window>
