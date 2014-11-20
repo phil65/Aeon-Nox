@@ -590,18 +590,15 @@
             <animation effect="fade" time="350">VisibleChange</animation>
         </control>
     </include>
-    <include name="Topbar">
-        <control type="image">
-            <posy>854</posy>
-            <include>Topbar</include>
-        </control>
-    </include>
     <include name="Neon_LowList">
         <control type="image">
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <animation effect="fade" time="350">VisibleChange</animation>
             <posy>735</posy>
-            <include>Topbar</include>
+        <width>1920</width>
+        <height>40</height>
+        <animation effect="zoom" start="100,100" end="300,100" center="1920,20" time="3000" pulse="true" tween="cubic" easing="inout" condition="true">Conditional</animation>
+        <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_right.png</texture>
         </control>
     </include>
     <include name="Neon_Home">
