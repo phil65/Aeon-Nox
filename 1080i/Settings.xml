@@ -22,15 +22,6 @@
                 <posy>50</posy>
                 <width>1815</width>
                 <height>1120</height>
-                <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <include>PanelGlowFade</include>
-            </control>
-            <control type="image">
-                <posx>52</posx>
-                <posy>50</posy>
-                <width>1815</width>
-                <height>1120</height>
                 <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
             </control>
             <control type="image">
@@ -39,6 +30,19 @@
                 <width>1815</width>
                 <height>1120</height>
                 <texture>wall/wall_bg_reflection.png</texture>
+            </control>
+            <control type="image">
+                <posx>55</posx>
+                <posy>118</posy>
+                <width>475</width>
+                <height>292</height>
+                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                <animation effect="slide" end="0,270" time="300" tween="cubic" easing="inout" condition="Container(9000).Row(2)">Conditional</animation>
+                <animation effect="slide" end="0,270" time="300" tween="cubic" easing="inout" condition="Container(9000).Row(2) | Container(9000).Row(1)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(9000).Column(4)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(9000).Column(4) | Container(9000).Column(3)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(9000).Column(4) | Container(9000).Column(3) | Container(9000).Column(2)">Conditional</animation>
+                <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(9000).Column(4) | Container(9000).Column(3) | Container(9000).Column(2) | Container(9000).Column(1)">Conditional</animation>
             </control>
             <control type="panel" id="9000">
                 <posx>92</posx>
@@ -77,45 +81,58 @@
                 </itemlayout>
                 <focusedlayout height="270" width="440">
                     <control type="group">
-                                                   <animation type="Focus" reversible="false">
-                                <effect type="zoom" center="auto" start="100" end="125" time="320" tween="cubic" />
-                            </animation>
-                    <control type="image">
-                        <aspectratio>keep</aspectratio>
-                        <width>400</width>
-                        <height>250</height>
-                        <texture colordiffuse="$VAR[AreaColorVar]">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="5">button-nofocus.png</bordertexture>
-                        <bordersize>5</bordersize>
-                    </control>
-                    <control type="image">
-                        <posy>5</posy>
-                        <width>400</width>
-                        <height>240</height>
-                        <texture border="20" colordiffuse="$VAR[FocusTextureColorVar]">views/addonwall_select.png</texture>
-                        <animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
-                    </control>
-                    <control type="textbox">
-                        <posx>10</posx>
-                        <posy>10</posy>
-                                                   <animation type="Focus" reversible="false">
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="auto" start="100" end="105" time="300" tween="sine" />
+                        </animation>
+                        <animation type="UnFocus" reversible="false">
+                            <effect type="zoom" center="auto" start="105" end="100" time="300" tween="sine" />
+                        </animation>
+                        <control type="image">
+                            <aspectratio>keep</aspectratio>
+                            <width>400</width>
+                            <height>250</height>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="5">button-nofocus.png</bordertexture>
+                            <bordersize>5</bordersize>
+                        </control>
+                        <control type="image">
+                            <aspectratio>keep</aspectratio>
+                            <width>400</width>
+                            <height>250</height>
+                            <texture colordiffuse="$VAR[AreaColorVar]">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="5">button-nofocus.png</bordertexture>
+                            <bordersize>5</bordersize>
+                                                        <animation type="Focus" reversible="true">
                                 <effect type="fade" start="0" end="100" delay="1000" time="500" tween="cubic" />
                             </animation>
-                        <width>380</width>
-                        <height>140</height>
+                            <animation type="UnFocus" reversible="true">
+                                <effect type="fade" start="100" end="0" time="500" tween="cubic" />
+                            </animation>
+                        </control>
+                        <control type="textbox">
+                            <posx>10</posx>
+                            <posy>20</posy>
+                            <animation type="Focus" reversible="true">
+                                <effect type="fade" start="0" end="100" delay="1000" time="500" tween="cubic" />
+                            </animation>
+                            <animation type="UnFocus" reversible="true">
+                                <effect type="fade" start="100" end="0" time="500" tween="cubic" />
+                            </animation>
+                            <width>380</width>
+                            <height>140</height>
                             <autoscroll delay="3000" time="AutoScrollTime" repeat="8001">true</autoscroll>
-                        <label>$INFO[ListItem.Property(Description)]</label>
-                        <font>Font_Reg25_2</font>
-                        <align>center</align>
+                            <label>$INFO[ListItem.Property(Description)]</label>
+                            <font>Font_Reg25_2</font>
+                            <align>center</align>
+                        </control>
+                        <control type="label">
+                            <width>400</width>
+                            <height>400</height>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg40</font>
+                            <align>center</align>
+                        </control>
                     </control>
-                    <control type="label">
-                        <width>400</width>
-                        <height>400</height>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg40</font>
-                        <align>center</align>
-                    </control>
-                </control>
                 </focusedlayout>
                 <content>
                     <item id="1">
@@ -195,15 +212,15 @@
                     </item>
                 </content>
             </control>
-<!--             <control type="textbox">
+            <!--
+            <control type="textbox">
                 <posx>555</posx>
                 <posy>810</posy>
                 <width>1200</width>
                 <height>210</height>
                 <label>$INFO[Container(9000).ListItem.Property(description)]</label>
                 <font>Font_Reg32</font>
-            </control> -->
-        </control>
+            </control>--></control>
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>BreadcrumbsContent</include>
