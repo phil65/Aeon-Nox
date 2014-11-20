@@ -901,10 +901,9 @@
                         <content>
                             <item>
                                 <label>31172</label>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Actors)">RunScript(script.metadata.actors,$INFO[Container(150).Listitem.Label])</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">RunScript(script.metadata.actors,$INFO[ListItem.Director])</onclick>
-                                <onclick condition="Stringcompare(Window(home).Property(ListType),Writer)">RunScript(script.metadata.actors,$INFO[ListItem.Writer])</onclick>
-                                <visible>System.HasAddon(script.metadata.actors)</visible>
+                                <onclick condition="Stringcompare(Window(home).Property(ListType),Actors)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(150).Listitem.Label])</onclick>
+                                <onclick condition="Stringcompare(Window(home).Property(ListType),Director)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director])</onclick>
+                                <onclick condition="Stringcompare(Window(home).Property(ListType),Writer)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
                                 <onclick>SetFocus(600)</onclick>
                             </item>
                             <item>

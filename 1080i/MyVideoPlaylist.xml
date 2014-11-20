@@ -2,7 +2,7 @@
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
-    <views>50,51,52,501,57,512,500</views>
+    <views>50,51,52,501,57,512</views>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
     <controls>
         <control type="multiimage">
@@ -35,7 +35,7 @@
             <animation effect="fade" end="100" time="440" delay="160">Visible</animation>
             <animation effect="fade" start="100" end="0" time="80">Hidden</animation>
             <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
-            <visible>Control.IsVisible(512) | Control.IsVisible(500) | Control.IsVisible(7550)</visible>
+            <visible>Control.IsVisible(512) | Control.IsVisible(7550)</visible>
         </control>
         <include>Furniture_Showcase</include>
         <control type="group">
@@ -45,15 +45,13 @@
                 <!-- view id = 50 -->
                 <include>CommonRootView</include>
                 <!--view id = 52-->
-                <include condition="!Skin.HasSetting(DisableTriPanelVL)">TriPanel</include>
+                <include>TriPanel</include>
                 <!-- view id = 501 Showcase-->
-                <include condition="!Skin.HasSetting(DisableShowCaseVL)">Showcase</include>
+                <include>Showcase</include>
                 <!-- view id = 57-->
-                <include condition="!Skin.HasSetting(DisableShiftVL)">ShiftView</include>
-                <!-- view id = 500 -->
-                <include condition="!Skin.HasSetting(DisableWallVL)">Viewtype_Wall</include>
+                <include>ShiftView</include>
                 <!-- view id = 512-->
-                <include condition="!Skin.HasSetting(DisableInfoWallVL)">AddonWall</include>
+                <include>AddonWall</include>
             </control>
             <include>FloorLabels</include>
             <include>FloorFlags</include>

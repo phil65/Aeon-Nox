@@ -21,8 +21,7 @@
             <control type="button" id="2001">
                 <include>ContextMenuButton</include>
                 <label>$VAR[ContextMenuLabel2001]</label>
-                <onclick>RunScript(script.metadata.actors,$ESCINFO[ListItem.Label])</onclick>
-                <visible>System.HasAddon(script.metadata.actors)</visible>
+                <onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</onclick>
                 <visible>Container.Content(Actors) | Container.Content(Directors) | Container.Content(Artists)</visible>
             </control>
             <control type="button" id="2066">

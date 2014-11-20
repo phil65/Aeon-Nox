@@ -2,7 +2,6 @@
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
-    <onload condition="System.HasAddon(script.metadata.actors) + !IsEmpty(Window(home).Property(BrowseActors))">RunScript(script.metadata.actors,backend)</onload>
     <onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
     <onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload>ClearProperty(BrowseActors,home)</onload>
@@ -600,12 +599,12 @@
                 <!--view id = 50-->
                 <include>CommonRootView</include>
                 <!--view id = 52-->
-                <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">PostersView</include>
-                <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanel</include>
+                <include>PostersView</include>
+                <include>TriPanel</include>
                 <!--view id = 53-->
-                <include condition="IsEmpty(Skin.String(DisableTriPanelVL))">TriPanelSquare</include>
+                <include>TriPanelSquare</include>
                 <!--view id = 500-->
-                <include condition="IsEmpty(Skin.String(DisableWallVL))">Viewtype_Wall</include>
+                <include>Viewtype_Wall</include>
                 <!--view id = 501 Showcase-->
                 <include condition="IsEmpty(Skin.String(DisableShowCaseVL))">Showcase</include>
                 <!--view id = 508 Bannerview-->
@@ -614,7 +613,7 @@
                 <include condition="IsEmpty(Skin.String(DisableLandscapeVL))">MediaListView3</include>
                 <!--view id = 504 Showcase DVD-->
                 <!--view id = 511-->
-                <include condition="IsEmpty(Skin.String(DisableLowListVL))">LowList</include>
+                <include>LowList</include>
                 <!--view id = 57-->
                 <include condition="IsEmpty(Skin.String(DisableShiftVL))">ShiftView</include>
                 <!--view id = 509-->
@@ -888,7 +887,7 @@
             </control>
             <include>FloorLabels</include>
             <include>FloorFlags</include>
-            <include condition="!Skin.HasSetting(DisableShiftVL) |!Skin.HasSetting(DisableTriPanelVL)">Posters_Furniture</include>
+            <include>Posters_Furniture</include>
             <control type="group">
                 <animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview) + Control.IsVisible(57)">Conditional</animation>
                 <animation effect="slide" end="-642.5,0" time="320" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
