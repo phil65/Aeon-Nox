@@ -15,6 +15,9 @@
             </control>
             <control type="group">
                 <visible>Control.HasFocus(500) | Control.HasFocus(20000) | Control.HasFocus(20001)</visible>
+                    <animation effect="fade" time="320" delay="300">WindowOpen</animation>
+                <animation effect="fade" time="250" delay="300">Visible</animation>
+                <animation effect="fade" time="250">Hidden</animation>
                 <control type="image">
                     <posx>70</posx>
                     <posy>101</posy>
@@ -22,7 +25,6 @@
                     <height>444</height>
                     <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | StringCompare(Container.FolderName,youtube)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
-                    <animation effect="fade" time="320" delay="300">WindowOpen</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
                     <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
                     <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3)">Conditional</animation>
@@ -36,7 +38,6 @@
                     <height>440</height>
                     <visible>[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)]</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
-                    <animation effect="fade" time="320" delay="300">WindowOpen</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
                     <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
                     <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6)">Conditional</animation>
@@ -53,7 +54,6 @@
                     <height>228</height>
                     <visible>[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
-                    <animation effect="fade" time="320" delay="300">WindowOpen</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
                     <animation effect="slide" end="920,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(1)">Conditional</animation>
                     <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4)">Conditional</animation>
@@ -65,13 +65,15 @@
             <control type="button" id="20000">
                 <include>HiddenObject</include>
                 <animation effect="fade" time="500" start="100" end="0">Focus</animation>
-                <onfocus>SetFocus(500)</onfocus>
+                <onfocus>SetFocus(50)</onfocus>
+                <onclick>-</onclick>
                 <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
             </control>
             <control type="button" id="20001">
                 <include>HiddenObject</include>
                 <animation effect="fade" time="500" start="100" end="0">Focus</animation>
-                <onfocus>SetFocus(500)</onfocus>
+                <onfocus>SetFocus(50)</onfocus>
+                <onclick>-</onclick>
                 <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
             </control>
             <control type="panel" id="500">
@@ -79,7 +81,7 @@
                 <posy>0</posy>
                 <width>1920</width>
                 <height>1080</height>
-                <visible>!IsEmpty(Container.FolderPath) | Window.IsActive(videoplaylist)</visible>
+                <visible>!IsEmpty(Container.FolderPath)</visible>
                 <visible>![!IsEmpty(Skin.String(DisableWallVL)) + Window.IsActive(videos)]</visible>
                 <visible>!Container.Content(songs)</visible>
                 <viewtype label="31234">icon</viewtype>
