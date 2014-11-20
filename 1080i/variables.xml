@@ -1343,6 +1343,7 @@
         <value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)">$INFO[ListItem.Rating,stars/,.png]</value>
     </variable>
     <variable name="BreadcrumbsLabel2Var">
+        <value condition="Window.IsActive(weather)"> / $INFO[Window(Weather).Property(Location)]</value>
         <value condition="Stringcompare(Container.Folderpath,special://skin/extras/Playlists/MoviesInProgress.xsp)"> / $LOCALIZE[31335]</value>
         <value>$INFO[Container.FolderName, / ]</value>
     </variable>
