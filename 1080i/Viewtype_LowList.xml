@@ -16,39 +16,16 @@
                 <control type="group">
                     <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                     <control type="group">
-                        <visible>Container.Content(movies) + Skin.HasSetting(lowlisttagline) + !IsEmpty(ListItem.Tagline)</visible>
-                        <animation type="Visible">
-                            <effect type="zoom" end="100,100" start="100,0" time="320" easing="in" tween="cubic" center="960,755" />
-                        </animation>
-                        <animation type="Hidden">
-                            <effect type="zoom" end="100,0" start="100,100" time="320" tween="cubic" center="960,755" />
-                        </animation>
-                        <control type="image">
-                            <posx>333</posx>
-                            <posy>667</posy>
-                            <width>1173</width>
-                            <height>87</height>
-                            <texture border="150,0,150,0">osd/osd_bottom_bar.png</texture>
-                        </control>
-                        <control type="label">
-                            <posx>453</posx>
-                            <posy>711</posy>
-                            <height>40</height>
-                            <width>985</width>
-                            <label>$INFO[ListItem.Tagline]</label>
-                            <font>Font_Reg33_Caps</font>
-                            <textcolor>FF000000</textcolor>
-                            <scroll>true</scroll>
-                        </control>
-                    </control>
-                    <control type="group">
                         <animation effect="slide" end="-655,0" time="120" condition="!Control.IsVisible(9900)">Conditional</animation>
                         <control type="image">
-                            <posy>710</posy>
-                            <width>1920</width>
+                            <posx>-10</posx>
+                            <posy>744</posy>
+                            <width>1940</width>
                             <height>651</height>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture>views/lowlist_panelback.png</texture>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <texture>diffuseoverlay.png</texture>
+                            <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                            <bordersize>10</bordersize>
                             <animation effect="fade" start="100" end="80" time="40" condition="!Skin.HasSetting(listpanelthin)">Conditional</animation>
                             <animation effect="fade" start="100" end="35" time="40" condition="Skin.HasSetting(listpanelthin)">Conditional</animation>
                         </control>
@@ -436,7 +413,7 @@
                         <posy>-20</posy>
                         <width>830</width>
                         <height>110</height>
-                <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
+                        <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
                         <include>PanelGlowFade</include>
                         <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(511)">Conditional</animation>
                     </control>
@@ -594,9 +571,11 @@
     <include name="LowListHeightHigh">
         <height>480</height>
         <focusposition>3</focusposition>
+        <movement>2</movement>
     </include>
     <include name="LowListHeightLow">
         <height>330</height>
-        <focusposition>1</focusposition>
+        <focusposition>2</focusposition>
+        <movement>1</movement>
     </include>
 </includes>
