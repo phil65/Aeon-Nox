@@ -18,18 +18,6 @@
                     <control type="group">
                         <animation effect="slide" end="-655,0" time="120" condition="!Control.IsVisible(9900)">Conditional</animation>
                         <control type="image">
-                            <posx>-10</posx>
-                            <posy>744</posy>
-                            <width>1940</width>
-                            <height>651</height>
-                            <aspectratio aligny="top">scale</aspectratio>
-                            <texture>diffuseoverlay.png</texture>
-                            <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-                            <bordersize>10</bordersize>
-                            <animation effect="fade" start="100" end="80" time="40" condition="!Skin.HasSetting(listpanelthin)">Conditional</animation>
-                            <animation effect="fade" start="100" end="35" time="40" condition="Skin.HasSetting(listpanelthin)">Conditional</animation>
-                        </control>
-                        <control type="image">
                             <posx>1420</posx>
                             <posy>473</posy>
                             <width>500</width>
@@ -52,6 +40,18 @@
                             <fadetime>400</fadetime>
                             <animation effect="fade" time="350">VisibleChange</animation>
                             <visible>!Skin.HasSetting(lowlistclearart) + [Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]</visible>
+                        </control>
+                        <control type="image">
+                            <posx>-10</posx>
+                            <posy>744</posy>
+                            <width>1940</width>
+                            <height>651</height>
+                            <aspectratio aligny="top">scale</aspectratio>
+                            <texture>diffuseoverlay.png</texture>
+                            <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                            <bordersize>10</bordersize>
+                            <animation effect="fade" start="100" end="80" time="40" condition="!Skin.HasSetting(listpanelthin)">Conditional</animation>
+                            <animation effect="fade" start="100" end="35" time="40" condition="Skin.HasSetting(listpanelthin)">Conditional</animation>
                         </control>
                     </control>
                     <control type="image">
