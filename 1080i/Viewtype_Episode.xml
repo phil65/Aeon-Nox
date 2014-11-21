@@ -41,7 +41,6 @@
                 <visible>![!IsEmpty(Skin.String(DisableEpisodeVL)) + Window.IsActive(videos)]</visible>
                 <animation effect="slide" end="-40,0" time="240" tween="cubic" easing="inout" condition="Control.HasFocus(61)">Conditional</animation>
                 <animation effect="slide" end="-40,0" time="240" tween="cubic" easing="inout" condition="Container.Content(episodes)">Conditional</animation>
-                <animation effect="slide" end="0,-29" time="160" condition="Container(514).Row(6) + [Skin.HasSetting(episodebanner) | Skin.HasSetting(episodelogo)] + Container.Content(tvshows)">Conditional</animation>
                 <include condition="Window.IsActive(musiclibrary)">EpisodeViewtypeMusicLayouts</include>
                 <include condition="!Window.IsActive(musiclibrary)">EpisodeViewtypeVideoLayouts</include>
             </control>
