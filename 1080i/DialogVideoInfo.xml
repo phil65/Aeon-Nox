@@ -3,17 +3,27 @@
     <defaultcontrol always="true">8</defaultcontrol>
     <onload>ClearProperty(Budget,home)</onload>
     <onload>ClearProperty(SeasonDescription,home)</onload>
+    <onload>RunScript(script.toolbox,info=blur,id=$VAR[PosterVar],radius=30)</onload>
     <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID],silent=True)</onload>
     <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(FanartZoom,movieinformation)</onunload>
     <controls>
+            <control type="image">
+                <posx>0</posx>
+                <width>1920</width>
+                <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
+                <height>1080</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+                <include>Animation_WindowFade200</include>
+            </control>
         <control type="group">
             <control type="button" id="2600">
                 <include>HiddenObject</include>
                 <visible>Window.IsVisible(script-Actors-DialogVideoInfo.xml) | Window.IsVisible(DialogTextViewer.xml) | Window.IsVisible(script-Actors-DialogInfo.xml)</visible>
             </control>
-            <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine">WindowOpen</animation>
+            <animation effect="slide" start="3042,0" end="0,0" time="1300" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine">WindowClose</animation>
             <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
@@ -22,15 +32,15 @@
                 <width>1192</width>
                 <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
-                <texture fallback="common/black.png" background="true">$VAR[DialogVideoInfoFanartVar]</texture>
+                <texture fallback="common/black.png" background="true">$INFO[Window(home).Property(ImageFilter)]</texture>
             </control>
             <control type="image">
                 <posx>729</posx>
                 <width>1192</width>
-                <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
+                <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
                 <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
-                <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">diffuseoverlay.png</texture>
             </control>
             <!--Buttons-->
             <control type="group">
@@ -57,6 +67,7 @@
                         <width>1010</width>
                         <height>43</height>
                         <texturenofocus>-</texturenofocus>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">views/tripanel/listselect_fo.png</texturefocus>
                         <label>-</label>
                         <label></label>
                         <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
@@ -72,6 +83,7 @@
                         <width>1010</width>
                         <height>41</height>
                         <texturenofocus>-</texturenofocus>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">views/tripanel/listselect_fo.png</texturefocus>
                         <label>-</label>
                         <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
                         <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer]))</onclick>
@@ -84,6 +96,7 @@
                         <width>1010</width>
                         <height>217</height>
                         <texturenofocus>-</texturenofocus>
+                        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">views/tripanel/listselect_fo.png</texturefocus>
                         <label>-</label>
                         <onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$ESCINFO[ListItem.Plot],home)</onclick>
                         <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
@@ -880,7 +893,7 @@
                                 <width>270</width>
                                 <height>360</height>
                                 <animation effect="zoom" start="100" end="112,110" time="40" condition="true">Conditional</animation>
-                                <texture border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texture>
+                                <texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">buttons/roundedbutton-focus.png</texture>
                                 <include>PanelGlowFade</include>
                                 <visible>Control.HasFocus(600)</visible>
                             </control>
@@ -1058,7 +1071,7 @@
                     <posx>709</posx>
                     <width>40</width>
                     <height>1080</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">common/topbar_top.png</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/topbar_top.png</texture>
                     <include>TopbarPulseAnimationLeft</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
@@ -1067,7 +1080,7 @@
                     <posy>571</posy>
                     <width>30</width>
                     <height>30</height>
-                    <texture colordiffuse="$VAR[FocusTextureColorVar]" flipx="true">arrowright.png</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" flipx="true">arrowright.png</texture>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
                     <visible>Container(5000).HasPrevious+ ControlGroup(5000).HasFocus</visible>
@@ -1077,7 +1090,7 @@
                     <posy>571</posy>
                     <width>30</width>
                     <height>30</height>
-                    <texture colordiffuse="$VAR[FocusTextureColorVar]">arrowright.png</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">arrowright.png</texture>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
                     <visible>Container(5000).HasNext+ ControlGroup(5000).HasFocus</visible>
@@ -1085,7 +1098,7 @@
             </control>
         </control>
         <control type="group">
-            <animation effect="slide" start="-729,0" end="0,0" time="450" tween="sine">WindowOpen</animation>
+            <animation effect="slide" start="-729,0" end="0,0" delay="600" time="450" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="-729,0" time="450" tween="sine">WindowClose</animation>
             <animation effect="slide" start="-729,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-729,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
