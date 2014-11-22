@@ -3,8 +3,8 @@
     <defaultcontrol always="true">8</defaultcontrol>
     <onload>ClearProperty(Budget,home)</onload>
     <onload>ClearProperty(SeasonDescription,home)</onload>
-    <onload>RunScript(script.toolbox,info=blur,id=$VAR[PosterVar],radius=30,prefix=VideoInfo)</onload>
-    <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID],silent=True)</onload>
+    <onload>RunScript(script.toolbox,info=blur,id='"$VAR[PosterVar]"',radius=30,prefix=VideoInfo)</onload>
+    <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID])</onload>
     <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(FanartZoom,movieinformation)</onunload>
@@ -843,40 +843,35 @@
                     </animation>
                     <itemlayout height="400" width="280">
                         <control type="group">
-                            <posx>30</posx>
                             <control type="image">
                                 <posy>0</posy>
-                                <posx>20</posx>
-                                <width>270</width>
-                                <height>360</height>
-                                <animation effect="zoom" start="100" end="112,110" time="40" condition="true">Conditional</animation>
+                                <posx>50</posx>
+                                <width>280</width>
+                                <height>380</height>
                                 <texture border="40">buttons/roundedbutton-nofocus.png</texture>
                             </control>
                             <control type="group">
-                                <posx>37</posx>
+                                <posx>77</posx>
                                 <posy>18</posy>
                                 <control type="image">
-                                    <posx>10</posx>
                                     <posy>10</posy>
-                                    <width>246</width>
-                                    <height>340</height>
+                                    <width>224</width>
+                                    <height>325</height>
                                     <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
                                     <aspectratio aligny="center">scale</aspectratio>
                                     <fadetime>0</fadetime>
                                 </control>
                                 <control type="image">
-                                    <width>246</width>
-                                    <posx>10</posx>
+                                    <width>224</width>
                                     <height>70</height>
-                                    <posy>280</posy>
+                                    <posy>267</posy>
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                 </control>
                                 <control type="textbox">
-                                    <width>246</width>
-                                    <posx>10</posx>
+                                    <width>228</width>
                                     <height>69</height>
-                                    <posy>280</posy>
+                                    <posy>267</posy>
                                     <align>center</align>
                                     <font>Font_Reg25_2</font>
                                     <info>ListItem.Label</info>
@@ -886,52 +881,46 @@
                     </itemlayout>
                     <focusedlayout height="400" width="280">
                         <control type="group">
-                            <posx>30</posx>
                             <control type="image">
                                 <posy>0</posy>
-                                <posx>20</posx>
-                                <width>270</width>
-                                <height>360</height>
-                                <animation effect="zoom" start="100" end="112,110" time="40" condition="true">Conditional</animation>
+                                <posx>50</posx>
+                                <width>280</width>
+                                <height>380</height>
                                 <texture border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-focus.png</texture>
                                 <include>PanelGlowFade</include>
                                 <visible>Control.HasFocus(600)</visible>
                             </control>
                             <control type="image">
                                 <posy>0</posy>
-                                <posx>20</posx>
-                                <width>270</width>
-                                <height>360</height>
-                                <animation effect="zoom" start="100" end="112,110" time="40" condition="true">Conditional</animation>
+                                <posx>50</posx>
+                                <width>280</width>
+                                <height>380</height>
                                 <texture border="40">buttons/roundedbutton-nofocus.png</texture>
                                 <visible>!Control.HasFocus(600)</visible>
                             </control>
                             <control type="group">
-                                <posx>37</posx>
+                                <posx>77</posx>
                                 <posy>18</posy>
                                 <control type="image">
-                                    <posx>10</posx>
                                     <posy>10</posy>
-                                    <width>246</width>
-                                    <height>340</height>
+                                    <width>224</width>
+                                    <height>325</height>
                                     <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
                                     <aspectratio aligny="center">scale</aspectratio>
                                     <fadetime>0</fadetime>
                                 </control>
                                 <control type="image">
-                                    <width>246</width>
-                                    <posx>10</posx>
+                                    <width>224</width>
                                     <height>70</height>
-                                    <posy>280</posy>
+                                    <posy>267</posy>
                                     <texture>common/bgcolor.png</texture>
                                     <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
                                     <animation effect="fade" start="100" end="80" time="40" condition="Control.HasFocus(600)">Conditional</animation>
                                 </control>
                                 <control type="textbox">
-                                    <width>246</width>
-                                    <posx>10</posx>
+                                    <width>228</width>
                                     <height>69</height>
-                                    <posy>280</posy>
+                                    <posy>267</posy>
                                     <align>center</align>
                                     <font>Font_Reg25_2</font>
                                     <info>ListItem.Label</info>
@@ -1103,10 +1092,14 @@
             <animation effect="slide" start="-729,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-729,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <control type="image">
-                <width>729</width>
-                <height>1080</height>
+                <posx>-10</posx>
+                <posy>-10</posy>
+                <width>749</width>
+                <height>1100</height>
                 <aspectratio aligny="top">scale</aspectratio>
                 <texture background="true" fallback="info/movieinfogradient.png">$VAR[PosterVar]</texture>
+                              <bordertexture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                <bordersize>10</bordersize>
             </control>
         </control>
     </controls>
