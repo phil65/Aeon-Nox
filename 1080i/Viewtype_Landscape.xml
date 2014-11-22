@@ -66,7 +66,7 @@
             <width>90</width>
             <height>90</height>
             <texture>$VAR[OverlayVisibility0]</texture>
-            <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
+            <visible>![Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
         </control>
         <control type="group">
             <posx>-20</posx>
@@ -86,9 +86,7 @@
                 <onleft>503</onleft>
                 <onright>503</onright>
                 <onup>7000</onup>
-                <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">610</ondown>
-                <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !IsEmpty(ListItem.Trailer)">9000</ondown>
-                <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + IsEmpty(ListItem.Trailer)">7000</ondown>
+                <ondown>610</ondown>
                 <orientation>horizontal</orientation>
                 <viewtype label="$LOCALIZE[31150]">BigWrap</viewtype>
                 <pagecontrol>61</pagecontrol>
@@ -99,10 +97,10 @@
                 <visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(artists)]</visible>
                 <include>Animation_OpenCloseZoom_New</include>
                 <animation effect="slide" end="52" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeclearart)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]">Conditional</animation>
-                <itemlayout width="495" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | [Container.Content(artists) + !Skin.HasSetting(landscapeonelogo)]">
+                <itemlayout width="495" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo)] + [Container.Content(tvshows) | Container.Content(movies)]] | Container.Content(artists)">
                     <include>LandscapeThumbs</include>
                 </itemlayout>
-                <focusedlayout width="600" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | [Container.Content(artists) + !Skin.HasSetting(landscapeonelogo)]">
+                <focusedlayout width="600" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | Container.Content(artists)">
                     <control type="group">
                         <posx>57</posx>
                         <animation effect="zoom" center="auto" start="100" end="122" time="240" tween="quadratic" reversible="false">Focus</animation>
@@ -123,8 +121,6 @@
                         <include>LandscapeLogoLayout</include>
                     </control>
                 </focusedlayout>
-                <itemlayout width="516" height="450" condition="Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]"></itemlayout>
-                <focusedlayout width="516" height="450" condition="Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]"></focusedlayout>
                 <itemlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
                     <include>LandscapeClearArtLayout</include>
                 </itemlayout>
@@ -138,22 +134,8 @@
             </control>
             <control type="group">
                 <include>Animation_WindowFade200</include>
-                <control type="image" id="8822">
-                    <posx>650</posx>
-                    <posy>810</posy>
-                    <width>635</width>
-                    <height>245</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="empty.png">$VAR[LogoVar]</texture>
-                    <fadetime>200</fadetime>
-                    <include>Animation_OpenCloseZoom_New</include>
-                    <animation effect="fade" delay="240" time="240" reversible="false">Hidden</animation>
-                    <animation effect="fade" delay="160" end="100" time="240" condition="!Stringcompare(Control.GetLabel(8822),empty.png)">Conditional</animation>
-                    <visible>Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]</visible>
-                    <visible>![Container.OnNext | Container.OnPrevious]</visible>
-                </control>
                 <control type="label">
-                    <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
+                    <visible>![Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]</visible>
                     <visible>!ControlGroup(24000).HasFocus</visible>
                     <animation effect="fade" time="200">VisibleChange</animation>
                     <animation effect="slide" end="0,-30" time="240" condition="Control.HasFocus(61) | Control.IsVisible(24000)">Conditional</animation>
@@ -184,40 +166,17 @@
                 </control>
             </control>
         </control>
-        <control type="group">
+        <control type="image">
             <visible>Control.IsVisible(503)</visible>
             <animation effect="slide" tween="cubic" easing="inout" time="400" start="0,-200" end="0,0">VisibleChange</animation>
-            <control type="image">
-                <posy>-130</posy>
-                <width>1920</width>
-                <height>220</height>
-                <texture>views/logo_tagline_gradient.png</texture>
-                <visible>![Container.Content(movies) + IsEmpty(ListItem.TagLine)]</visible>
-                <visible>Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]</visible>
-                <animation effect="fade" time="200">VisibleChange</animation>
-            </control>
-            <control type="label">
-                <width>1920</width>
-                <align>center</align>
-                <aligny>bottom</aligny>
-                <label>$VAR[LandscapeLogoLabelVar]</label>
-                <font>Font_Bold33</font>
-                <shadowcolor>black</shadowcolor>
-                <animation effect="fade" time="200">VisibleChange</animation>
-                <scroll>true</scroll>
-                <scrollspeed>30</scrollspeed>
-                <visible>Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)] + !Control.HasFocus(61)</visible>
-            </control>
-            <control type="image">
-                <posx>200r</posx>
-                <posy>0</posy>
-                <width>200</width>
-                <height>200</height>
-                <texture>$INFO[ListItem.Overlay,thumbs/]</texture>
-                <visible>[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)]</visible>
-                <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
-                <animation effect="fade" time="200">VisibleChange</animation>
-            </control>
+            <posx>200r</posx>
+            <posy>0</posy>
+            <width>200</width>
+            <height>200</height>
+            <texture>$INFO[ListItem.Overlay,thumbs/]</texture>
+            <visible>Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo)</visible>
+            <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
+            <animation effect="fade" time="200">VisibleChange</animation>
         </control>
     </include>
     <include name="LandscapeLogoLayout">

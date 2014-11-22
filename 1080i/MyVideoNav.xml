@@ -89,13 +89,13 @@
             <include>DelayAnimations</include>
         </control>
         <control type="image">
-            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
             <animation effect="fade" end="100" time="440" delay="160">Visible</animation>
             <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
-            <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+            <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
             <visible>!Control.HasFocus(109)</visible>
             <visible>Control.IsVisible(512) | Control.IsVisible(500) | Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(52)</visible>
         </control>
@@ -135,7 +135,7 @@
                 <texture background="true">$VAR[LogoVar]</texture>
                 <fadetime>300</fadetime>
                 <animation effect="fade" start="100" end="17" time="40" condition="true">Conditional</animation>
-                <visible>![[Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)] + Control.IsVisible(503) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)]]</visible>
+                <visible>![[Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)] + Control.IsVisible(503) + Skin.HasSetting(landscapelogo)]</visible>
                 <visible>!Control.isVisible(8822)</visible>
                 <animation type="Conditional" condition="Stringcompare(Control.GetLabel(4420),fanart) | Container.Content(seasons) | Container.Content(episodes)">
                     <effect type="slide" end="-480,160" time="0" />

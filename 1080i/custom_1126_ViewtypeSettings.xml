@@ -193,28 +193,18 @@
                     <label>$LOCALIZE[31959]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[LandscapeTypeLabelVar][/COLOR]</label2>
                     <include>ViewtypeSettingsButton</include>
-                    <onclick condition="!Skin.HasSetting(landscapelogo) + !Skin.HasSetting(landscapeonelogo) + !Skin.HasSetting(landscapeclearart)">Skin.SetBool(landscapeonelogo)</onclick>
-                    <onclick condition="Skin.HasSetting(landscapeonelogo)">Skin.SetBool(landscapelogo)</onclick>
-                    <onclick condition="Skin.HasSetting(landscapeonelogo)">Skin.Reset(landscapeonelogo)</onclick>
+                    <onclick condition="!Skin.HasSetting(landscapelogo) + !Skin.HasSetting(landscapeclearart)">Skin.SetBool(landscapelogo)</onclick>
                     <onclick condition="Skin.HasSetting(landscapelogo)">Skin.SetBool(landscapeclearart)</onclick>
                     <onclick condition="Skin.HasSetting(landscapelogo)">Skin.Reset(landscapelogo)</onclick>
                     <onclick condition="Skin.HasSetting(landscapeclearart)">Skin.Reset(landscapeclearart)</onclick>
                     <visible>[Container.Content(tvshows) | Container.Content(movies)] + Stringcompare(Window(home).Property(actualViewtype),Landscape)</visible>
-                </control>
-                <control type="radiobutton" id="16555">
-                    <label>31059</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick condition="Skin.HasSetting(landscapelogo)">Skin.Reset(landscapelogo)</onclick>
-                    <onclick>Skin.ToggleSetting(landscapeonelogo)</onclick>
-                    <selected>Skin.HasSetting(landscapeonelogo)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),Landscape) + Container.Content(artists)</visible>
                 </control>
                 <control type="radiobutton" id="1636">
                     <label>31811</label>
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(altfloor)</onclick>
                     <selected>Skin.HasSetting(altfloor)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),Landscape) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)] + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)]</visible>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),Landscape) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)] + Skin.HasSetting(landscapelogo)]</visible>
                 </control>
                 <control type="radiobutton" id="1634">
                     <label>$LOCALIZE[31285]</label>
@@ -229,7 +219,7 @@
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(unwatchedicon)</onclick>
                     <selected>Skin.HasSetting(unwatchedicon)</selected>
-                    <visible>![Stringcompare(Window(home).Property(actualViewtype),Landscape) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
+                    <visible>![Stringcompare(Window(home).Property(actualViewtype),Landscape) + Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
                     <visible>[[Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners)] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv) + Stringcompare(Window(home).Property(actualViewtype),TriPanel)]]</visible>
                 </control>
                 <control type="button" id="1694">
