@@ -169,7 +169,7 @@
 						<width>800</width>
 						<height>327</height>
 						<label>$INFO[Container(50).ListItem.Plot]</label>
-						<font>Font_Reg30_2</font>
+						<font>Font_Reg30</font>
 						<shadowcolor>black</shadowcolor>
 						<textcolor>white6</textcolor>
 						<autoscroll time="5000" delay="2000" repeat="5000">true</autoscroll>
@@ -179,7 +179,7 @@
 						<width>550</width>
 						<height>327</height>
 						<label>$INFO[Container(50).ListItem.Plot]</label>
-						<font>Font_Reg30_2</font>
+						<font>Font_Reg30</font>
 						<shadowcolor>black</shadowcolor>
 						<textcolor>white6</textcolor>
 						<autoscroll time="5000" delay="2000" repeat="5000">true</autoscroll>
@@ -190,8 +190,7 @@
 						<top>10</top>
 						<width>250</width>
 						<height>320</height>
-						<align>center</align>
-						<aspectratio>keep</aspectratio>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
 						<texture>$INFO[Container(50).ListItem.PlotOutline]</texture>
 						<visible>SubString(Container(50).ListItem.PlotOutline,"http://",Left) | SubString(Container(50).ListItem.PlotOutline,"https://",Left)</visible>
 					</control>
@@ -503,7 +502,7 @@
 						<width>800</width>
 						<height>327</height>
 						<label>$INFO[Container(51).ListItem.Plot]</label>
-						<font>Font_Reg30_2</font>
+						<font>Font_Reg30</font>
 						<shadowcolor>black</shadowcolor>
 						<textcolor>white6</textcolor>
 						<autoscroll time="5000" delay="2000" repeat="5000">true</autoscroll>
@@ -513,7 +512,7 @@
 						<width>550</width>
 						<height>327</height>
 						<label>$INFO[Container(51).ListItem.Plot]</label>
-						<font>Font_Reg30_2</font>
+						<font>Font_Reg30</font>
 						<shadowcolor>black</shadowcolor>
 						<textcolor>white6</textcolor>
 						<autoscroll time="5000" delay="2000" repeat="5000">true</autoscroll>
@@ -524,8 +523,7 @@
 						<top>10</top>
 						<width>250</width>
 						<height>320</height>
-						<align>center</align>
-						<aspectratio>keep</aspectratio>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
 						<texture>$INFO[Container(51).ListItem.PlotOutline]</texture>
 						<visible>SubString(Container(51).ListItem.PlotOutline,"http://",Left) | SubString(Container(51).ListItem.PlotOutline,"https://",Left)</visible>
 					</control>
@@ -581,19 +579,19 @@
 							<top>1</top>
 							<width>720</width>
 							<height>40</height>
-							<label>$INFO[ListItem.Label]</label>
-							<font>Font_Bold33</font>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<font>Font_Reg31</font>
 							<animation effect="slide" end="0,30" condition="!ListItem.HasEpg">Conditional</animation>
 						</control>
 						<control type="group">
 							<visible>ListItem.HasEpg</visible>
 							<control type="label">
 								<left>170</left>
-								<top>42</top>
+								<top>44</top>
 								<width>630</width>
 								<height>22</height>
 								<label>$INFO[ListItem.Title]</label>
-								<font>Font_Reg30_2</font>
+								<font>Font_Reg28</font>
 								<textcolor>$VAR[FontColorVar]</textcolor>
 							</control>
 							<control type="label">
@@ -672,20 +670,20 @@
 							<top>1</top>
 							<width>720</width>
 							<height>40</height>
-							<label>$INFO[ListItem.Label]</label>
-							<font>Font_Bold33</font>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<font>Font_Reg31</font>
 							<animation effect="slide" end="0,30" condition="!ListItem.HasEpg">Conditional</animation>
 						</control>
 						<control type="group">
 							<visible>ListItem.HasEpg</visible>
 							<control type="label">
 								<left>170</left>
-								<top>42</top>
+								<top>44</top>
 								<width>630</width>
 								<height>22</height>
 								<textcolor>white</textcolor>
 								<label>$INFO[ListItem.Title]</label>
-								<font>Font_Reg30_2</font>
+								<font>Font_Reg28</font>
 							</control>
 							<control type="label">
 								<left>170</left>

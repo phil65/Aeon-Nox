@@ -15,7 +15,7 @@
 			<texture colordiffuse="$VAR[DialogColorVar]">settings/settings_panelback2.png</texture>
         </control>
 		<control type="group">
-			<left>20</left>
+			<left>16</left>
 			<top>40</top>
 			<control type="grouplist" id="90500">
 				<description>menu area</description>
@@ -33,7 +33,6 @@
 					<label>Fullscreen</label>
 					<font>Font_Bold28</font>
 					<texturenofocus>-</texturenofocus>
-					<texturefocus>-</texturefocus>
 					<textcolor>grey</textcolor>
                     <focusedcolor>white</focusedcolor>
 					<onright>90501</onright>
@@ -45,7 +44,6 @@
 					<label>Guide</label>
 					<font>Font_Bold28</font>
 					<texturenofocus>-</texturenofocus>
-					<texturefocus>-</texturefocus>
 					<textcolor>grey</textcolor>
                     <focusedcolor>white</focusedcolor>
 					<onright>90502</onright>
@@ -57,7 +55,6 @@
 					<label>Sideblade</label>
 					<font>Font_Bold28</font>
 					<texturenofocus>-</texturenofocus>
-					<texturefocus>-</texturefocus>
 					<textcolor>grey</textcolor>
                     <focusedcolor>white</focusedcolor>
 					<onright>90503</onright>
@@ -66,10 +63,18 @@
 		</control>
 		<control type="group">
 			<left>258</left>
-			<top>40</top>
+			<top>30</top>
 			<visible>Control.HasFocus(1) | ControlGroup(90500).HasFocus(1)</visible>
+			<control type="label" id="200">
+				<height>30</height>
+				<width>750</width>
+				<label>[B]Fullscreen[/B]</label>
+				<align>center</align>
+				<font>Font_Reg30_Caps</font>
+			</control>
 			<control type="grouplist" id="90501">
 				<description>Fullscreen options</description>
+				<top>30</top>
 				<width>800</width>
 				<height>630</height>
 				<itemgap>1</itemgap>
@@ -105,6 +110,13 @@
 					<label>Infobar</label>
 					<aligny>center</aligny>
 				</control>
+				<control type="button" id="401">
+					<description>Infobar types</description>
+					<width>756</width>
+					<label>Infobar type:</label>
+					<label2>[COLOR selected]$VAR[LiveTvInfobarTypeOptionsLabelVar][/COLOR]</label2>
+					<onclick>$VAR[LiveTvInfobarTypeOptionsClickVar]</onclick>
+				</control>
 				<control type="radiobutton" id="406">
 					<label>Hide encryption information</label>
 					<onclick>Skin.ToggleSetting(infobar_hidetencrypt)</onclick>
@@ -127,10 +139,18 @@
 		</control>
 		<control type="group">
 			<left>258</left>
-			<top>40</top>
+			<top>30</top>
 			<visible>Control.HasFocus(2) | ControlGroup(90500).HasFocus(2)</visible>
+			<control type="label" id="200">
+				<height>30</height>
+				<width>750</width>
+				<label>[B]Guide[/B]</label>
+				<align>center</align>
+				<font>Font_Reg30_Caps</font>
+			</control>
 			<control type="grouplist" id="90502">
 				<description>Guide options</description>
+				<top>30</top>
 				<width>800</width>
 				<height>630</height>
 				<itemgap>1</itemgap>
@@ -150,17 +170,25 @@
 					<description>Epg timeline channel list</description>
 					<width>756</width>
 					<label>Channels display type:</label>
-					<label2>[COLOR selected]$VAR[LiveTvModOptionsLabelVar][/COLOR]</label2>
-					<onclick>$VAR[LiveTvModOptionsClickVar]</onclick>
+					<label2>[COLOR selected]$VAR[LiveTvGuideTypeOptionsLabelVar][/COLOR]</label2>
+					<onclick>$VAR[LiveTvGuideTypeOptionsClickVar]</onclick>
 				</control>
 			</control>
 		</control>
 		<control type="group">
 			<left>258</left>
-			<top>40</top>
+			<top>30</top>
 			<visible>Control.HasFocus(3) | ControlGroup(90500).HasFocus(3)</visible>
+			<control type="label" id="200">
+				<height>30</height>
+				<width>750</width>
+				<label>[B]Sideblade[/B]</label>
+				<align>center</align>
+				<font>Font_Reg30_Caps</font>
+			</control>
 			<control type="grouplist" id="90503">
 				<description>Sideblade options</description>
+				<top>50</top>
 				<width>800</width>
 				<height>630</height>
 				<itemgap>1</itemgap>

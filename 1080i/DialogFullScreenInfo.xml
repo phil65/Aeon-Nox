@@ -326,7 +326,8 @@
         </control>
         <control type="group">
             <visible>VideoPlayer.Content(LiveTV) + Control.IsVisible(9005)</visible>
-            <include condition="VideoPlayer.Content(livetv)">FullScreenInfoBarLiveTV</include>
+			<include condition="IsEmpty(Skin.String(LiveTV.InfobarType)) | StringCompare(Skin.String(LiveTV.InfobarType),2)">FullScreenInfoBarLiveTV</include>
+			<include condition="StringCompare(Skin.String(LiveTV.InfobarType),1)">FullScreenInfoBarLiveTV_Compact</include>
         </control>
     </controls>
 </window>
