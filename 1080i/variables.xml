@@ -449,6 +449,10 @@
         <value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
         <value>$INFO[ListItem.Plot]</value>
     </variable>
+    <variable name="ScriptPlotOutlineVar">
+        <value condition="!IsEmpty(Window(home).Property(PlotOutline))">$INFO[Window(home).Property(PlotOutline)]</value>
+        <value>$INFO[Window(home).Property(Plot)]</value>
+    </variable>
     <variable name="GlobalPlotVar">
         <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
         <value condition="Container.Content(seasons)">$INFO[Container.ShowPlot]</value>
