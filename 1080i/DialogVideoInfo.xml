@@ -24,7 +24,7 @@
         <control type="group">
             <control type="button" id="2600">
                 <include>HiddenObject</include>
-                <visible>Window.IsVisible(script-Actors-DialogVideoInfo.xml) | Window.IsVisible(DialogTextViewer.xml) | Window.IsVisible(script-Actors-DialogInfo.xml)</visible>
+                <visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(DialogTextViewer.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
             </control>
             <animation effect="slide" start="3042,0" end="0,0" time="1300" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine">WindowClose</animation>
@@ -133,18 +133,20 @@
                 </control>
                 <!--Movie info-->
                 <control type="group">
+                    <posx>825</posx>
+                    <posy>68</posy>
+                    <control type="group">
+                        <animation type="WindowOpen" reversible="false">
+                            <effect type="fade" start="0" end="100" delay="0" time="0" tween="cubic" />
+                            <effect type="slide" start="0,80" end="0,0" delay="460" time="960" tween="cubic" />
+                        </animation>
                     <control type="grouplist">
-                        <posy>68</posy>
-                        <posx>825</posx>
+                        <posx>0</posx>
                         <posy>-15</posy>
                         <width>1018</width>
                         <height>200</height>
                         <aligny>top</aligny>
                         <itemgap>0</itemgap>
-                        <animation type="WindowOpen" reversible="false">
-                            <effect type="fade" start="0" end="100" delay="0" time="0" tween="cubic" />
-                            <effect type="slide" start="0,80" end="0,0" delay="460" time="960" tween="cubic" />
-                        </animation>
                         <orientation>vertical</orientation>
                         <control type="label">
                             <width>1018</width>
@@ -238,6 +240,7 @@
                             <textcolor>grey</textcolor>
                             <visible>Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)</visible>
                         </control>
+                    </control>
                     </control>
                     <!--First Row-->
                     <control type="group">
