@@ -4,11 +4,11 @@
     <onload>ClearProperty(Budget,home)</onload>
     <onload>ClearProperty(SeasonDescription,home)</onload>
     <onload>RunScript(script.toolbox,info=blur,id='"$VAR[PosterVar]"',radius=20,prefix=VideoInfo)</onload>
-    <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID])</onload>
-    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
+<!--     <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID])</onload>
+ -->    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
-    <onunload>ClearProperty(ImageColor,home)</onunload>
-    <onunload>ClearProperty(ImageFilter,home)</onunload>
+    <onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
+    <onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
     <controls>
         <control type="image">
             <posx>0</posx>
