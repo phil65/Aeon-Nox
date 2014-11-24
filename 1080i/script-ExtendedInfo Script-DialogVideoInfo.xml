@@ -245,12 +245,13 @@
                                 <aspectratio align="center">keep</aspectratio>
                                 <texture colordiffuse="white2" fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                             </control>
-                            <control type="image">
-                                <height>79</height>
-                                <include>Furniture_FlagUpright</include>
-                            </control>
                             <control type="group">
                                 <width>155</width>
+                                <visible>!Stringcompare(Window(home).Property(movie.Rating),0.0) + !IsEmpty(Window(home).Property(movie.Rating))</visible>
+                                <control type="image">
+                                    <height>79</height>
+                                    <include>Furniture_FlagUpright</include>
+                                </control>
                                 <control type="label">
                                     <posy>12</posy>
                                     <width>155</width>
@@ -264,22 +265,23 @@
                                     <width>155</width>
                                     <height>38</height>
                                     <align>center</align>
-                                    <label fallback="?">$INFO[Window(home).Property(movie.Votes),, Votes]</label>
+                                    <label fallback="Rating">$INFO[Window(home).Property(movie.Votes),, Votes]</label>
                                     <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
-                            <control type="image">
-                                <height>79</height>
-                                <include>Furniture_FlagUpright</include>
-                            </control>
                             <control type="group">
                                 <width>155</width>
+                                <visible>!Stringcompare(Window(home).Property(movie.Duration),0) + !IsEmpty(Window(home).Property(movie.Duration))</visible>
+                                <control type="image">
+                                    <height>79</height>
+                                    <include>Furniture_FlagUpright</include>
+                                </control>
                                 <control type="label">
                                     <posy>12</posy>
                                     <width>155</width>
                                     <height>38</height>
                                     <align>center</align>
-                                    <label fallback="?">$INFO[ListItem.Duration]</label>
+                                    <label>$INFO[Window(home).Property(movie.Duration)]</label>
                                     <font>Font_Bold34</font>
                                 </control>
                                 <control type="label">
