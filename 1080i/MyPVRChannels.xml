@@ -777,7 +777,8 @@
 						<height>146</height>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>66FFFFFF</colordiffuse>
-						<texture border="10" background="true">new_pvr/pvr_box.png</texture>
+                        <animation effect="zoom" start="100" end="110,130" time="0" condition="true" center="auto">Conditional</animation>
+						<texture border="40">buttons/roundedbutton-nofocus.png</texture>
 					</control>
 					<control type="label">
                         <left>14</left>
@@ -840,19 +841,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="155" width="445">
-					<control type="group">
-						<animation type="Focus">
-							<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" />
-						</animation>
-						<control type="image">
-							<left>4</left>
-							<top>11</top>
-							<width>434</width>
-							<height>145</height>
-							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$VAR[AreaColorVar]" border="50" background="true">featured/panel_featured_overlay.png</texture>
-						</control>
-					</control>
 					<control type="image">
 						<left>4</left>
 						<top>10</top>
@@ -860,7 +848,8 @@
 						<height>146</height>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>BFFFFFFF</colordiffuse>
-						<texture border="10" background="true">new_pvr/pvr_box.png</texture>
+                        <animation effect="zoom" start="100" end="110,130" time="0" condition="true" center="auto">Conditional</animation>
+						<texture colordiffuse="$VAR[AreaColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
 					</control>
 					<control type="image">
 						<left>335</left>
