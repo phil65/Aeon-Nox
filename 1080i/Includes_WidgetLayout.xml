@@ -3016,12 +3016,14 @@
             <control type="group">
                 <visible>IsEmpty(ListItem.Art(banner))</visible>
                 <control type="image">
-                    <posx>20</posx>
-                    <posy>8</posy>
-                    <width>758</width>
-                    <height>140</height>
+                    <posx>10</posx>
+                    <posy>-2</posy>
+                    <width>778</width>
+                    <height>160</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture diffuse="thumbs/banner_mask.png" fallback="common/bgcolor.png">$INFO[ListItem.Art(fanart)]</texture>
+                    <texture fallback="common/bgcolor.png">$INFO[ListItem.Art(fanart)]</texture>
+                                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                <bordersize>10</bordersize>
                 </control>
                 <control type="image">
                     <posx>30</posx>
