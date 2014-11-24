@@ -3,9 +3,9 @@
     <defaultcontrol always="true">5000</defaultcontrol>
     <onload>ClearProperty(Budget,home)</onload>
     <onunload>ClearProperty(FanartZoom,movieinformation)</onunload>
-        <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
+    <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
     <controls>
-         <control type="image">
+        <control type="image">
             <posx>0</posx>
             <width>1920</width>
             <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
@@ -191,7 +191,6 @@
                                     <width>995</width>
                                     <height>40</height>
                                     <label>$INFO[Window(home).Property(movie.Genre)]</label>
-                                    <label>$INFO[Window(home).Property(movie.Budget),Budget: ]</label>
                                     <font>Font_Reg28_2</font>
                                     <textcolor>grey</textcolor>
                                     <scrollspeed>20</scrollspeed>
@@ -313,6 +312,31 @@
                                     <height>38</height>
                                     <align>center</align>
                                     <label>Year</label>
+                                    <font>Font_Reg22_Caps</font>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <width>200</width>
+                                <visible>!IsEmpty(Window(home).Property(movie.Budget))</visible>
+                                <control type="image">
+                                    <posy>1</posy>
+                                    <height>79</height>
+                                    <include>Furniture_FlagUpright</include>
+                                </control>
+                                <control type="label">
+                                    <posy>12</posy>
+                                    <width>200</width>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label fallback="?">$INFO[Window(home).Property(movie.Budget)] $</label>
+                                    <font>Font_Bold28</font>
+                                </control>
+                                <control type="label">
+                                    <posy>37</posy>
+                                    <width>200</width>
+                                    <height>38</height>
+                                    <align>center</align>
+                                    <label>Budget</label>
                                     <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
@@ -766,6 +790,5 @@
                 <bordersize>10</bordersize>
             </control>
         </control>
-
     </controls>
 </window>
