@@ -31,12 +31,21 @@
             <include>FullscreenDimensions</include>
         </control>
         <control type="image">
-            <posx>920</posx>
+            <posx>910</posx>
             <posy>603</posy>
-            <width>80</width>
-            <height>80</height>
+            <width>100</width>
+            <height>100</height>
             <texture colordiffuse="$VAR[AreaColorVar]">spinner.png</texture>
             <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="true">Conditional</animation>
+            <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
+        </control>
+        <control type="image">
+            <posx>925</posx>
+            <posy>618</posy>
+            <width>70</width>
+            <height>70</height>
+            <texture flipx="true" colordiffuse="$VAR[AreaColorVar]">spinner.png</texture>
+            <animation effect="rotate" end="360" center="auto" time="2000" loop="true" reversible="false" condition="true">Conditional</animation>
             <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
         </control>
         <control type="image">
@@ -45,7 +54,7 @@
             <width>512</width>
             <height>180</height>
             <aspectratio>keep</aspectratio>
-            <texture colordiffuse="$VAR[AreaColorVar]">XBMC_Logo.png</texture>
+            <texture flipx="true" colordiffuse="$VAR[AreaColorVar]">XBMC_Logo.png</texture>
             <colordiffuse>white</colordiffuse>
         </control>
         <control type="videowindow">
