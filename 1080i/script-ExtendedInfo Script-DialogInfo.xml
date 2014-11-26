@@ -152,7 +152,7 @@
                                     <align>center</align>
                                     <font>Font_Reg25_2</font>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <textcolor>$INFO[Window(home).Property(ActorInfo.ImageColor)]</textcolor>
+                                    <textcolor>green</textcolor>
                                     <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                                 </control>
                             </control>
@@ -199,26 +199,26 @@
                             </control>
                             <control type="textbox">
                                 <width>246</width>
-                                <posx>10</posx>
+                                <posx>47</posx>
                                 <height>69</height>
-                                <posy>280</posy>
+                                <posy>298</posy>
                                 <align>center</align>
                                 <font>Font_Reg25_2</font>
                                 <info>ListItem.Label</info>
-                                <visible>IsEmpty(ListItem.Property(DBID))</visible>
                                 <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                                <textcolor>green</textcolor>
+                                <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                             </control>
                             <control type="textbox">
                                 <width>246</width>
-                                <posx>10</posx>
+                                <posx>47</posx>
                                 <height>69</height>
-                                <posy>280</posy>
+                                <posy>298</posy>
                                 <align>center</align>
                                 <font>Font_Reg25_2</font>
-                                <label>$INFO[ListItem.Label]</label>
-                                <textcolor>$INFO[Window(home).Property(ActorInfo.ImageColor)]</textcolor>
-                                <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                                <info>ListItem.Label</info>
                                 <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                                <visible>IsEmpty(ListItem.Property(DBID))</visible>
                             </control>
                         </control>
                     </focusedlayout>
