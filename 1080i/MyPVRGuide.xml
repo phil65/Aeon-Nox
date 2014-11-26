@@ -183,18 +183,18 @@
                     </control>
                 </focusedchannellayout>
                 <itemlayout height="60" width="60">
+					<control type="image" id="1">
+                        <width>60</width>
+                        <height>60</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture border="3">$INFO[ListItem.Property(GenreType),epg-genres/,.png]</texture>
+                    </control>
                     <control type="image" id="2">
                         <width>60</width>
                         <height>60</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture border="3">$INFO[ListItem.Genre,epg-genres/,.png]</texture>
-                    </control>
-                    <control type="image" id="3">
-                        <width>60</width>
-                        <height>60</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture border="3" fallback="epg-genres/0.png">$INFO[ListItem.Property(GenreType),epg-genres/,.png]</texture>
-                        <visible>!Control.IsVisible(2)</visible>
+                        <texture border="3" fallback="epg-genres/0.png">$INFO[ListItem.Genre,epg-genres/,.png]</texture>
+						<visible>!Control.IsVisible(1)</visible>
                     </control>
                     <control type="label" id="1">
                         <left>9</left>
