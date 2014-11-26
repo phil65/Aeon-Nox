@@ -42,7 +42,7 @@
         </control>
         <control type="button" id="9004">
             <include>HiddenObject</include>
-            <onfocus condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
+            <onfocus condition="Window.Previous(home) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
             <onfocus>SetProperty(Widget1Type,$INFO[Container(9000).ListItem.Property(Widget)],home)</onfocus>
             <onfocus>SetProperty(Widget2Type,$INFO[Container(9000).ListItem.Property(Widget2)],home)</onfocus>
             <onfocus>SetProperty(Widget1Title,$INFO[Container(9000).ListItem.Property(WidgetTitle)],home)</onfocus>
