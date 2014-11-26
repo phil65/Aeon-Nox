@@ -23,7 +23,7 @@
                     <posy>101</posy>
                     <width>454</width>
                     <height>444</height>
-                    <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | StringCompare(Container.FolderName,youtube)</visible>
+                    <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors) | StringCompare(Container.FolderName,youtube)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
                     <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
@@ -107,10 +107,10 @@
                 <focusedlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube)">
                     <include>YoutubeFocusedLayout</include>
                 </focusedlayout>
-                <itemlayout height="410" width="440" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums)">
+                <itemlayout height="410" width="440" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors)">
                     <include>SquareWallitemLayout</include>
                 </itemlayout>
-                <focusedlayout height="410" width="440" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums)">
+                <focusedlayout height="410" width="440" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors)">
                     <include>SquareWallFocusedLayout</include>
                 </focusedlayout>
                 <itemlayout height="220" width="920" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
@@ -179,7 +179,7 @@
                         </control>
                     </control>
                 </focusedlayout>
-                <itemlayout height="268" width="350" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(artists) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)]]">
+                <itemlayout height="268" width="350" condition="Window.IsActive(pictures)">
                     <control type="image">
                         <posx>5</posx>
                         <width>340</width>
@@ -235,7 +235,7 @@
                         <visible>Container.Content(artists)</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout height="268" width="350" condition="![Container.Content(movies) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)]]">
+                <focusedlayout height="268" width="350" condition="Window.IsActive(pictures)">
                     <control type="image">
                         <width>350</width>
                         <height>268</height>
