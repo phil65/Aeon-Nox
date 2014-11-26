@@ -101,7 +101,12 @@
                     <effect type="slide" end="0,-30" time="180" tween="sine" delay="80" />
                 </animation>
                 <orientation>vertical</orientation>
-                <include>WallYoutubeLayouts</include>
+                <itemlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube)">
+                    <include>YoutubeItemLayout</include>
+                </itemlayout>
+                <focusedlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube)">
+                    <include>YoutubeFocusedLayout</include>
+                </focusedlayout>
                 <itemlayout height="410" width="440" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums)">
                     <include>SquareWallitemLayout</include>
                 </itemlayout>
@@ -284,8 +289,7 @@
             </control>
         </control>
     </include>
-    <include name="WallYoutubeLayouts">
-        <itemlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube)">
+    <include name="YoutubeItemLayout">
             <control type="group">
                 <posx>75</posx>
                 <posy>160</posy>
@@ -343,8 +347,8 @@
                     <textcolor>floor</textcolor>
                 </control>
             </control>
-        </itemlayout>
-        <focusedlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube)">
+    </include>
+    <include name="YoutubeFocusedLayout">
             <control type="group">
                 <posx>75</posx>
                 <posy>160</posy>
@@ -416,7 +420,6 @@
                     <textcolor>floor</textcolor>
                 </control>
             </control>
-        </focusedlayout>
     </include>
     <include name="BannerItemLayout">
         <control type="group">
