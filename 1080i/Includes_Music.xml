@@ -459,18 +459,18 @@
                     <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
                     <fadetime>FanartCrossfadeTime</fadetime>
                 </control>
+                <control type="image">
+                    <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!IsEmpty(Player.Art(fanart)) + SubString(Window(Visualisation).Property(ArtistSlideshow),resources/black) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
+                    <posx>955</posx>
+                    <posy>-515</posy>
+                    <width>798</width>
+                    <height>474</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true">$INFO[Player.Art(fanart)]</texture>
+                    <bordertexture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                    <bordersize>10</bordersize>
+                </control>
             </control>
-        </control>
-        <control type="image">
-            <animation effect="fade" start="0" end="100" time="200" delay="1000" condition="!IsEmpty(Player.Art(fanart)) + SubString(Window(Visualisation).Property(ArtistSlideshow),resources/black) + !Window.IsActive(musicosd) + !Window.IsActive(script-cu-lrclyrics-main.xml)">Conditional</animation>
-            <posx>1269</posx>
-            <posy>-525</posy>
-            <width>494</width>
-            <height>494</height>
-            <aspectratio>scale</aspectratio>
-            <texture background="true">$INFO[Player.Art(fanart)]</texture>
-            <bordertexture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-            <bordersize>10</bordersize>
         </control>
         <control type="group">
             <posy>854</posy>
