@@ -45,26 +45,18 @@
                 <aspectratio align="center">scale</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">diffuseoverlay.png</texture>
             </control>
-            <!--Buttons-->
             <control type="group">
-                <!--
-                <animation effect="slide" end="0,-300" time="320" tween="quadratic" condition="Control.HasFocus(600)">Conditional</animation>-->
                 <posx>-40</posx>
                 <control type="button" id="13">
-                    <posx>991</posx>
-                    <posy>284</posy>
-                    <width>854</width>
-                    <height>42</height>
+                    <include>HiddenObject</include>
                     <texturenofocus>-</texturenofocus>
                     <label>-</label>
-                    <ondown>600</ondown>
-                    <visible>!IsEmpty(ListItem.Director)</visible>
                 </control>
                 <control type="grouplist">
                     <orientation>vertical</orientation>
                     <posx>800</posx>
-                    <posy>240</posy>
-                    <itemgap>15</itemgap>
+                    <posy>220</posy>
+                    <itemgap>10</itemgap>
                     <ondown>5000</ondown>
                     <onup>5000</onup>
                     <control type="radiobutton" id="130">
@@ -117,6 +109,7 @@
                     </control>
                     <control type="group" id="140">
                     <height>255</height>
+                        <visible>!IsEmpty(ListItem.Plot) | !IsEmpty(ListItem.TagLine)</visible>
                     <control type="radiobutton" id="132">
                         <width>1120</width>
                         <height>255</height>
@@ -132,7 +125,6 @@
                         <label>-</label>
                         <onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$ESCINFO[ListItem.Plot],home)</onclick>
                         <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
-                        <enable>!IsEmpty(ListItem.Plot)</enable>
                     </control>
                     <control type="textbox" id="800">
                         <posx>93</posx>
@@ -259,6 +251,7 @@
                     </control>
                     <!--First Row-->
                     <control type="group">
+                        <posy>-15</posy>
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
                             <effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,170" tween="cubic" />
@@ -506,7 +499,7 @@
                             <effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,872" tween="cubic" />
                         </animation>
                         <posy>66</posy>
-                        <visible>false</visible>
+                        <visible>true</visible>
                         <control type="image">
                             <posy>872</posy>
                             <width>1042</width>
@@ -777,7 +770,7 @@
                 </control>
                 <control type="list" id="50">
                     <posx>750</posx>
-                    <posy>670</posy>
+                    <posy>630</posy>
                     <width>1180</width>
                     <height>600</height>
                     <onleft>600</onleft>
@@ -897,7 +890,7 @@
                 </control>-->
                 <control type="grouplist" id="5000">
                     <posx>800</posx>
-                    <posy>595</posy>
+                    <posy>560</posy>
                     <width>1130</width>
                     <height>400</height>
                     <onleft>5000</onleft>

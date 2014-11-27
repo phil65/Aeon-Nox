@@ -112,6 +112,7 @@
                     </control>
                     <control type="group" id="140">
                     <height>255</height>
+                    <visible>!IsEmpty(Window(home).Property(movie.Plot)) | !IsEmpty(Window(home).Property(movie.TagLine))</visible>
                     <control type="radiobutton" id="132">
                         <width>1120</width>
                         <height>255</height>
@@ -127,7 +128,6 @@
                         <label>-</label>
                         <onclick>SetProperty(Text,[B]$ESCINFO[Window(home).Property(movie.TagLine),,[CR]][/B]$ESCINFO[Window(home).Property(movie.Plot)],home)</onclick>
                         <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
-                        <visible>!IsEmpty(Window(home).Property(movie.Plot))</visible>
                     </control>
                     <control type="textbox" id="800">
                         <posx>93</posx>
