@@ -4,17 +4,17 @@
     <onunload>ClearProperty(AddonInfo.ImageColor,home)</onunload>
     <onunload>ClearProperty(AddonInfo.ImageFilter,home)</onunload>
     <defaultcontrol always="true">9000</defaultcontrol>
-    <animation type="WindowOpen" reversible="false" condition="!Window.Previous(addonsettings)">
+    <animation type="WindowOpen" reversible="false">
         <effect type="zoom" start="150" end="100" center="960,540" delay="300" time="400" tween="cubic" />
         <effect type="fade" end="100" delay="300" time="400" />
     </animation>
-    <animation type="WindowClose" reversible="false" condition="!Window.Next(addonsettings)">
+    <animation type="WindowClose" reversible="false">
         <effect type="fade" start="100" end="0" time="240" />
         <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
     </animation>
     <controls>
         <control type="group">
-            <visible>![Window.IsVisible(addonsettings) | Window.IsVisible(textviewer)]</visible>
+            <visible>!Window.IsVisible(textviewer)</visible>
             <include>Animation_DialogPopupVisibleChange</include>
             <control type="image">
                 <posx>0</posx>
