@@ -23,48 +23,65 @@
                         <effect type="fade" time="160" start="100" end="0" />
                         <effect type="slide" time="160" end="0,98" easing="in" tween="cubic" />
                     </animation>
-            <control type="image">
-                <posy>-200</posy>
-                <posx>-1000</posx>
-                <width>3920</width>
-                <height>330</height>
-                <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
-            </control>
-                <control type="progress">
-                    <animation effect="fade" end="0" time="200">WindowClose</animation>
-                    <posx>83</posx>
-                    <posy>0</posy>
-                    <width>1754</width>
-                    <height>15</height>
-                    <info>Player.ProgressCache</info>
+                    <control type="image">
+                        <posy>-200</posy>
+                        <posx>-1000</posx>
+                        <width>3920</width>
+                        <height>330</height>
+                        <texture colordiffuse="black">home/nowplaying_shadow.png</texture>
+                    </control>
+                    <control type="progress">
+                        <animation effect="fade" end="0" time="200">WindowClose</animation>
+                        <posx>83</posx>
+                        <posy>0</posy>
+                        <width>1754</width>
+                        <height>15</height>
+                        <info>Player.ProgressCache</info>
                         <animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
-                    <texturebg colordiffuse="$VAR[AreaColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                    <midtexture colordiffuse="$VAR[AreaColorVar]">new_pvr/texturebg_white.png</midtexture>
-                </control>
-                <control type="progress">
-                    <animation effect="fade" end="0" time="200">WindowClose</animation>
-                    <posx>83</posx>
-                    <posy>0</posy>
-                    <width>1754</width>
-                    <height>15</height>
-                    <info>Player.Progress</info>
-                    <texturebg colordiffuse="$VAR[AreaColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                    <midtexture colordiffuse="$VAR[AreaColorVar]">new_pvr/texturebg_white.png</midtexture>
-                </control>
-                <control type="label">
-                    <posx>1840</posx>
-                    <posy>-55</posy>
-                    <width>400</width>
-                    <height>75</height>
-                    <align>right</align>
-                    <aligny>bottom</aligny>
-                    <label>$VAR[PlayerTimeLabelVar]</label>
-                    <font>Font_Bold37_Caps</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>white3</textcolor>
-                    <animation effect="fade" start="0" end="100" delay="200" time="200">WindowOpen</animation>
-                    <animation effect="fade" end="0" time="200">WindowClose</animation>
-                </control>
+                        <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                        <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
+                    </control>
+                    <control type="progress">
+                        <animation effect="fade" end="0" time="200">WindowClose</animation>
+                        <posx>83</posx>
+                        <posy>0</posy>
+                        <width>1754</width>
+                        <height>15</height>
+                        <info>Player.Progress</info>
+                        <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                        <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
+                    </control>
+                    <control type="label" id="1">
+                        <posx>80</posx>
+                        <posy>-55</posy>
+                        <width>400</width>
+                        <height>75</height>
+                        <aligny>bottom</aligny>
+                        <align>left</align>
+                        <animation effect="slide" start="-225,0" end="0,0" time="160">WindowOpen</animation>
+                        <animation effect="slide" end="-225,0" time="160">WindowClose</animation>
+                        <animation effect="slide" start="-225,0" end="0,0" time="160">Visible</animation>
+                        <animation effect="slide" end="-225,0" time="160">Hidden</animation>
+                        <label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
+                        <font>Font_Bold37_Caps</font>
+                        <shadowcolor>black</shadowcolor>
+                        <textcolor>white3</textcolor>
+                        <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
+                    </control>
+                    <control type="label">
+                        <posx>1840</posx>
+                        <posy>-55</posy>
+                        <width>400</width>
+                        <height>75</height>
+                        <align>right</align>
+                        <aligny>bottom</aligny>
+                        <label>$VAR[PlayerTimeLabelVar]</label>
+                        <font>Font_Bold37_Caps</font>
+                        <shadowcolor>black</shadowcolor>
+                        <textcolor>white3</textcolor>
+                        <animation effect="fade" start="0" end="100" delay="200" time="200">WindowOpen</animation>
+                        <animation effect="fade" end="0" time="200">WindowClose</animation>
+                    </control>
                 </control>
                 <control type="grouplist">
                     <posx>30</posx>
@@ -97,35 +114,6 @@
                         <texture colordiffuse="FFe5e5e5">osd/ff.png</texture>
                         <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
                         <visible>Player.Forwarding</visible>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>-390</posx>
-                    <posy>1038</posy>
-                    <width>748</width>
-                    <height>42</height>
-                    <animation effect="slide" start="-225,0" end="0,0" time="160">WindowOpen</animation>
-                    <animation effect="slide" end="-225,0" time="160">WindowClose</animation>
-                    <animation effect="slide" start="-225,0" end="0,0" time="160">Visible</animation>
-                    <animation effect="slide" end="-225,0" time="160">Hidden</animation>
-                    <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
-                    <control type="image">
-                        <posx>240</posx>
-                        <posy>-45</posy>
-                        <width>513</width>
-                        <height>87</height>
-                        <texture>osd/osd_bottom_bar.png</texture>
-                    </control>
-                    <control type="label" id="1">
-                        <posx>668</posx>
-                        <width>748</width>
-                        <height>42</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
-                        <font>Font_Reg33_Caps</font>
-                        <shadowcolor>88e5e5e5</shadowcolor>
-                        <textcolor>FF363636</textcolor>
-                        <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                     </control>
                 </control>
             </control>
@@ -169,7 +157,7 @@
                 </control>
             </control>
             <control type="group" id="4003">
-                <visible>!Window.IsVisible(107)</visible>
+                <visible>!Window.IsVisible(infodialog)</visible>
                 <visible>Player.Paused</visible>
                 <visible>!Control.IsVisible(4001) + !Control.IsVisible(4002)</visible>
                 <animation type="Visible">
@@ -210,7 +198,7 @@
                 <control type="image">
                     <width>1920</width>
                     <height>135</height>
-                    <texture colordiffuse="$VAR[DialogColorVar]" flipy="true">osd/osd_back.png</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" flipy="true">osd/osd_back.png</texture>
                 </control>
                 <control type="group">
                     <posy>84</posy>

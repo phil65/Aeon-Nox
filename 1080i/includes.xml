@@ -1026,7 +1026,7 @@
                     <posy>581</posy>
                     <width>333</width>
                     <height>503</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">thumbs/thumb_glass_shadow.png</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">thumbs/thumb_glass_shadow.png</texture>
                     <include>PanelGlowFade</include>
                 </control>
                 <control type="image">
@@ -1074,6 +1074,8 @@
             <posy>1002</posy>
             <width>1140</width>
             <height>22</height>
+                                                <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
             <animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
             <info>Player.ProgressCache</info>
         </control>
@@ -1083,6 +1085,8 @@
             <width>1140</width>
             <height>22</height>
             <info>Player.Progress</info>
+                                                <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+                            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
         </control>
         <control type="fadelabel">
             <posx>390</posx>
@@ -1097,7 +1101,7 @@
             <label>$INFO[VideoPlayer.Writer,[COLOR bcicon]$LOCALIZE[31157][/COLOR] ]</label>
             <label>$INFO[VideoPlayer.Director,[COLOR bcicon]$LOCALIZE[31156][/COLOR] ]</label>
             <font>Font_Reg30_2</font>
-            <textcolor>$VAR[FontColorVar]</textcolor>
+            <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
             <scroll>true</scroll>
             <scrollspeed>70</scrollspeed>
             <pauseatend>5000</pauseatend>
@@ -1114,7 +1118,7 @@
             <label>$INFO[VideoPlayer.Director,[COLOR bcicon]$LOCALIZE[31156][/COLOR] ]</label>
             <label>$INFO[VideoPlayer.premiered,[COLOR bcicon]$LOCALIZE[20416]: [/COLOR]]</label>
             <font>Font_Reg30_2</font>
-            <textcolor>$VAR[FontColorVar]</textcolor>
+            <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
             <scroll>true</scroll>
             <scrollspeed>70</scrollspeed>
             <pauseatend>5000</pauseatend>
@@ -1151,7 +1155,7 @@
                     <posy>110</posy>
                     <width>180</width>
                     <height>36</height>
-                    <texture colordiffuse="$VAR[FontColorVar]">$INFO[VideoPlayer.Rating,stars/,.png]</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">$INFO[VideoPlayer.Rating,stars/,.png]</texture>
                 </control>
             </control>
         </control>
@@ -1251,7 +1255,7 @@
         </control>
     </include>
     <include name="ClassicOSDButton">
-        <texturefocus colordiffuse="$VAR[FocusTextureColorVar]">osd/buttons/focus.png</texturefocus>
+        <texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]">osd/buttons/focus.png</texturefocus>
         <width>125</width>
         <animation center="62,62" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
         <height>123</height>
@@ -1404,7 +1408,7 @@
             <control type="image">
                 <width>1332</width>
                 <height>612</height>
-                <texture colordiffuse="$VAR[AreaColorVar]" border="50">featured/panel_featured_shadow.png</texture>
+                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="50">featured/panel_featured_shadow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
                 <animation effect="fade" time="350">VisibleChange</animation>

@@ -82,7 +82,7 @@
                 <aligny>top</aligny>
                 <label>$VAR[VideoPlayerSubTitleVar]</label>
                 <font>Font_Reg30_2</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
+                <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                 <scroll>true</scroll>
             </control>
             <control type="group">
@@ -191,14 +191,14 @@
         </control>
         <control type="group" id="9005">
 			<include>Animation_DialogPopupOpenClose</include>
-            <description>Fullscreen Info dialog for LiveTV</description>		
+            <description>Fullscreen Info dialog for LiveTV</description>
             <visible>VideoPlayer.Content(LiveTV) + ![Control.IsVisible(9001) | Control.IsVisible(9002)]</visible>
 			<top>40</top>
             <control type="image">
                 <left>260</left>
                 <width>1400</width>
                 <height>800</height>
-                <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
+                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">wall/wall_bg.png</texture>
             </control>
             <control type="group">
                 <left>300</left>
@@ -210,13 +210,13 @@
                     <label>$INFO[VideoPlayer.ChannelName]</label>
                     <font>Font_Reg38</font>
 					<height>40</height>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <textcolor>$INFO[Window(home).Property(ImageColor)]</textcolor>
                 </control>
                 <control type="image">
                     <top>106</top>
                     <width>1320</width>
                     <height>1</height>
-                    <texture colordiffuse="$VAR[FontColorVar]">new_pvr/osd_back_pvr_line_white.png</texture>
+                    <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/osd_back_pvr_line_white.png</texture>
                 </control>
                 <control type="image">
                     <left>1050</left>
