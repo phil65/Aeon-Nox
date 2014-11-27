@@ -777,7 +777,7 @@
 						<height>146</height>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>66FFFFFF</colordiffuse>
-                        <animation effect="zoom" start="100" end="110,130" time="0" condition="true" center="auto">Conditional</animation>
+                        <animation effect="zoom" start="100" end="110,135" time="0" condition="true" center="auto">Conditional</animation>
 						<texture border="40">buttons/roundedbutton-nofocus.png</texture>
 					</control>
 					<control type="label">
@@ -809,14 +809,14 @@
 						<control type="label">
 							<width>420</width>
 							<height>30</height>
-							<font>Font_Reg30</font>
+							<font>Font_Reg29</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Title]</label>
 						</control>
 						<control type="progress">
-							<top>37</top>
+							<top>36</top>
 							<width>408</width>
 							<height>6</height>
 							<info>ListItem.Progress</info>
@@ -831,9 +831,9 @@
 							<top>44</top>
 							<width>400</width>
 							<height>30</height>
-							<font>Font_Reg29</font>
+							<font>Font_Reg28</font>
 							<align>left</align>
-							<textcolor>grey3</textcolor>
+							<textcolor>grey2</textcolor>
 							<selectedcolor>grey2</selectedcolor>
 							<label>$LOCALIZE[19031]: $INFO[ListItem.NextTitle]</label>
 							<visible>true</visible>
@@ -847,8 +847,8 @@
 						<width>434</width>
 						<height>146</height>
 						<aspectratio>stretch</aspectratio>
-						<colordiffuse>BFFFFFFF</colordiffuse>
-                        <animation effect="zoom" start="100" end="110,130" time="0" condition="true" center="auto">Conditional</animation>
+                        <animation effect="zoom" start="100" end="110,135" time="0" condition="true" center="auto">Conditional</animation>
+						<animation effect="fade" start="10" end="50" time="300" easing="in">Focus</animation>
 						<texture colordiffuse="$VAR[AreaColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
 					</control>
 					<control type="image">
@@ -879,19 +879,19 @@
 						<control type="label">
 							<width>420</width>
 							<height>30</height>
-							<font>Font_Reg30</font>
+							<font>Font_Reg29</font>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Title]</label>
 						</control>
 						<control type="progress">
-							<top>37</top>
+							<top>36</top>
 							<width>408</width>
 							<height>6</height>
 							<info>ListItem.Progress</info>
 							<visible>!IsEmpty(ListItem.Title)</visible>
 							<midtexture colordiffuse="$VAR[FontColorVar]">new_pvr/texturebg_white.png</midtexture>
-							<texturebg colordiffuse="white3">new_pvr/texturebg.png</texturebg>
+							<texturebg>new_pvr/texturebg.png</texturebg>
 							<lefttexture>-</lefttexture>
 							<righttexture>-</righttexture>
 						</control>
@@ -900,9 +900,9 @@
 							<top>44</top>
 							<width>400</width>
 							<height>30</height>
-							<font>Font_Reg29</font>
+							<font>Font_Reg28</font>
 							<align>left</align>
-							<textcolor>grey2</textcolor>
+							<textcolor>grey</textcolor>
 							<selectedcolor>grey</selectedcolor>
 							<label>$LOCALIZE[19031]: $INFO[ListItem.NextTitle]</label>
 						</control>
@@ -911,11 +911,11 @@
 			</control>
 			<control type="scrollbar" id="60">
 				<left>1842</left>
-				<top>0</top>
+				<top>95</top>
 				<width>46</width>
 				<height>625</height>
 				<onleft>52</onleft>
-				<onleft>52</onleft>
+				<onright>52</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
