@@ -51,8 +51,7 @@
                 <progresstexture border="0,60,18,14">new_pvr/PVR-EpgProgressIndicator2.png</progresstexture>
                 <rulerlayout height="45" width="1400">
                     <control type="label">
-                        <left>0</left>
-                        <top>-2</top>
+                        <top>2</top>
                         <width>500</width>
                         <height>45</height>
                         <font>Font_Reg18</font>
@@ -299,7 +298,6 @@
                 <height>227</height>
                 <width>400</width>
                 <control type="group">
-                    <visible>!Player.HasVideo</visible>
                     <control type="image">
                         <left>100</left>
                         <top>35</top>
@@ -567,7 +565,6 @@
                 <height>227</height>
                 <width>400</width>
                 <control type="group">
-                    <visible>!Player.HasVideo</visible>
                     <control type="image">
                         <left>100</left>
                         <top>35</top>
@@ -958,6 +955,7 @@
                     <viewtype label="19029">list</viewtype>
                     <pagecontrol>75</pagecontrol>
                     <scrolltime>200</scrolltime>
+					<visible>Player.HasVideo</visible>
                     <itemlayout height="60">
                         <control type="image">
                             <left>-45</left>
