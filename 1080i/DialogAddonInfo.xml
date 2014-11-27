@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
+    <onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Icon]"',radius=20,prefix=AddonInfo)</onload>
+    <onunload>ClearProperty(AddonInfo.ImageColor,home)</onunload>
+    <onunload>ClearProperty(AddonInfo.ImageFilter,home)</onunload>
     <defaultcontrol always="true">9000</defaultcontrol>
     <animation type="WindowOpen" reversible="false" condition="!Window.Previous(addonsettings)">
-        <effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
-        <effect type="fade" end="100" time="240" />
+        <effect type="zoom" start="150" end="100" center="960,540" delay="300" time="400" tween="cubic" />
+        <effect type="fade" end="100" delay="300" time="400" />
     </animation>
     <animation type="WindowClose" reversible="false" condition="!Window.Next(addonsettings)">
         <effect type="fade" start="100" end="0" time="240" />
@@ -13,23 +16,38 @@
         <control type="group">
             <visible>![Window.IsVisible(addonsettings) | Window.IsVisible(textviewer)]</visible>
             <include>Animation_DialogPopupVisibleChange</include>
-            <include>DialogBackFade</include>
-            <include>Furniture_SettingsBackPanel</include>
-            <control type="label">
-                <posx>358</posx>
-                <posy>120</posy>
-                <width>1491</width>
-                <align>center</align>
-                <aligny>top</aligny>
-                <label>$INFO[ListItem.Property(Addon.Name),$LOCALIZE[24003] - ]</label>
-                <font>Font_ShowcaseMainLabel2</font>
+            <control type="image">
+                <posx>0</posx>
+                <width>1920</width>
+                <height>1080</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture fallback="common/black.png" background="true">$INFO[Window(home).Property(AddonInfo.ImageFilter)]</texture>
             </control>
             <control type="image">
-                <posx>1581</posx>
+                <posx>0</posx>
+                <width>1920</width>
+                <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+                <height>1080</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">diffuseoverlay.png</texture>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>80</posy>
+                <width>1920</width>
+                <align>center</align>
+                <aligny>top</aligny>
+                <label>$INFO[ListItem.Property(Addon.Name)]</label>
+                <font>Font_Bold56</font>
+            </control>
+            <control type="image">
+                <posx>1300</posx>
                 <posy>180</posy>
-                <width>210</width>
-                <height>210</height>
+                <width>512</width>
+                <height>512</height>
                 <texture background="true">$INFO[ListItem.Icon]</texture>
+                  <bordertexture colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                   <bordersize>10</bordersize>
             </control>
             <control type="group">
                 <posx>387</posx>
@@ -40,7 +58,7 @@
                     <height>38</height>
                     <label>$LOCALIZE[146]</label>
                     <font>Font_Reg32</font>
-                    <textcolor>grey2</textcolor>
+                    <textcolor>$INFO[Window(home).Property(AddonInfo.ImageColor)]</textcolor>
                 </control>
                 <control type="label">
                     <posx>300</posx>
@@ -57,7 +75,7 @@
                     <height>38</height>
                     <label>$LOCALIZE[21863]:</label>
                     <font>Font_Reg32</font>
-                    <textcolor>grey2</textcolor>
+                    <textcolor>$INFO[Window(home).Property(AddonInfo.ImageColor)]</textcolor>
                 </control>
                 <control type="label">
                     <posx>300</posx>
@@ -75,7 +93,7 @@
                     <height>38</height>
                     <label>$LOCALIZE[24051]</label>
                     <font>Font_Reg32</font>
-                    <textcolor>grey2</textcolor>
+                    <textcolor>$INFO[Window(home).Property(AddonInfo.ImageColor)]</textcolor>
                 </control>
                 <control type="label">
                     <posx>300</posx>
@@ -93,7 +111,7 @@
                     <height>38</height>
                     <label>$LOCALIZE[563]:</label>
                     <font>Font_Reg32</font>
-                    <textcolor>grey2</textcolor>
+                    <textcolor>$INFO[Window(home).Property(AddonInfo.ImageColor)]</textcolor>
                 </control>
                 <control type="image">
                     <posx>261</posx>
@@ -110,7 +128,7 @@
                     <height>38</height>
                     <label>$LOCALIZE[20037]:</label>
                     <font>Font_Reg32</font>
-                    <textcolor>grey2</textcolor>
+                    <textcolor>$INFO[Window(home).Property(AddonInfo.ImageColor)]</textcolor>
                 </control>
                 <control type="fadelabel">
                     <posx>300</posx>
@@ -122,12 +140,6 @@
                     <font>Font_Reg29</font>
                     <pauseatend>2000</pauseatend>
                 </control>
-                <control type="image">
-                    <posy>168</posy>
-                    <width>1469</width>
-                    <height>74</height>
-                    <texture>settings/settings_separator.png</texture>
-                </control>
                 <control type="label">
                     <posx>30</posx>
                     <posy>255</posy>
@@ -135,13 +147,13 @@
                     <height>38</height>
                     <label>$LOCALIZE[21821]</label>
                     <font>Font_Reg32</font>
-                    <textcolor>grey2</textcolor>
+                    <textcolor>$INFO[Window(home).Property(AddonInfo.ImageColor)]</textcolor>
                 </control>
                 <control type="group">
                     <control type="textbox" id="400">
                         <posx>30</posx>
                         <posy>292</posy>
-                        <width>1380</width>
+                        <width>850</width>
                         <height>396</height>
                         <label>$INFO[ListItem.Property(Addon.Description)]</label>
                         <font>Font_Reg32</font>
@@ -155,7 +167,7 @@
                         <include>Animation_VerticalScrollBar</include>
                         <onleft>9000</onleft>
                         <onright>9000</onright>
-                        <texturesliderbackground colordiffuse="$VAR[AreaColorVar]">views/scrollbarbacklist.png</texturesliderbackground>
+                        <texturesliderbackground colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">views/scrollbarbacklist.png</texturesliderbackground>
                     </control>
                     <control type="label">
                         <posx>30</posx>
@@ -164,12 +176,13 @@
                         <height>38</height>
                         <label>$LOCALIZE[24052]</label>
                         <font>Font_Reg32</font>
-                        <textcolor>orange</textcolor>
+                        <textcolor>$INFO[Window(home).Property(AddonInfo.ImageColor)]</textcolor>
+                        <visible>!IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
                     </control>
                     <control type="label">
                         <posx>30</posx>
                         <posy>735</posy>
-                        <width>1380</width>
+                        <width>850</width>
                         <height>60</height>
                         <label>$INFO[ListItem.Property(Addon.Disclaimer)]</label>
                         <font>Font_Info</font>
@@ -189,10 +202,12 @@
                 <ondown>9000</ondown>
                 <control type="button" id="12">
                     <width>334</width>
-                    <height>74</height>
+                    <height>100</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturenofocus>-</texturenofocus>
+                    <align>center</align>
+                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     <label>518</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
@@ -200,10 +215,12 @@
                 </control>
                 <control type="button" id="9">
                     <width>334</width>
-                    <height>74</height>
+                    <height>100</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturenofocus>-</texturenofocus>
+                    <align>center</align>
+                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     <label>24020</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
@@ -211,10 +228,12 @@
                 </control>
                 <control type="button" id="8">
                     <width>334</width>
-                    <height>74</height>
+                    <height>100</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturenofocus>-</texturenofocus>
+                    <align>center</align>
+                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     <label>24069</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
@@ -222,43 +241,51 @@
                 </control>
                 <control type="button" id="6">
                     <width>334</width>
-                    <height>74</height>
+                    <height>100</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     <label>24022</label>
+                    <align>center</align>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="7">
                     <width>334</width>
-                    <height>74</height>
+                    <height>100</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     <label>24021</label>
+                    <align>center</align>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="11">
                     <width>334</width>
-                    <height>74</height>
+                    <height>100</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     <label>24048</label>
+                    <align>center</align>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
                     <focusedcolor>white2</focusedcolor>
                 </control>
                 <control type="button" id="10">
                     <width>334</width>
-                    <height>74</height>
+                    <height>100</height>
                     <textoffsetx>20</textoffsetx>
                     <textoffsety>18</textoffsety>
-                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(AddonInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
+                    <align>center</align>
                     <label>24036</label>
                     <font>Font_Bold34</font>
                     <textcolor>grey</textcolor>
