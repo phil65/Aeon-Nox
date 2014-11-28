@@ -689,6 +689,8 @@
                         <label>$LOCALIZE[20410]</label>
                         <include>DialogVideoInfoScriptButton</include>
                         <visible>!IsEmpty(Window(home).Property(movie.Trailer))</visible>
+                        <onclick>Action(Close)</onclick>
+                        <onclick>PlayMedia($ESCINFO[Window(home).Property(movie.Trailer)])</onclick>
                         <visible>![substring(Container.FolderPath,plugin://) + substring(Container.FolderPath,trailer)]</visible>
                     </control>
                     <control type="button" id="440">
