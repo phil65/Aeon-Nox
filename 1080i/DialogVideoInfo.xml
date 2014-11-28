@@ -4,8 +4,9 @@
     <onload>ClearProperty(Budget,home)</onload>
     <onload>ClearProperty(SeasonDescription,home)</onload>
     <onload>RunScript(script.toolbox,info=blur,id='"$VAR[PosterVar]"',radius=20,prefix=VideoInfo)</onload>
-<!--     <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID])</onload>
- -->    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
+    <!--
+    <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,type=movie,dbid=$INFO[ListItem.DBID])</onload>-->
+    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
     <onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
@@ -107,35 +108,69 @@
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Writer])</onclick>
                         <visible>!IsEmpty(ListItem.Writer)</visible>
                     </control>
-                    <control type="group" id="140">
-                    <height>255</height>
-                        <visible>!IsEmpty(ListItem.Plot) | !IsEmpty(ListItem.TagLine)</visible>
-                    <control type="radiobutton"  id="132">
+                    <control type="radiobutton" id="135">
                         <width>1120</width>
-                        <height>255</height>
+                        <height>43</height>
                         <radioposx>30</radioposx>
                         <radioposy>-8</radioposy>
-                        <radiowidth>46</radiowidth>
-                        <onup>131</onup>
-                        <ondown>5000</ondown>
-                        <textureradioon colordiffuse="white">defaulticons/DefaultAddonTvInfo.png</textureradioon>
-                        <textureradiooff colordiffuse="white">defaulticons/DefaultAddonTvInfo.png</textureradiooff>
+                        <radiowidth>50</radiowidth>
+                        <textoffsetx>90</textoffsetx>
+                        <textoffsety>20</textoffsety>
+                        <aligny>bottom</aligny>
+                        <label fallback="31003">$INFO[ListItem.Premiered,$LOCALIZE[20416]: ]</label>
+                        <font>Font_Reg28_2</font>
+                        <textureradioon colordiffuse="white">defaulticons/DefaultInProgressShows.png</textureradioon>
+                        <textureradiooff colordiffuse="white">defaulticons/DefaultInProgressShows.png</textureradiooff>
                         <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
                         <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                        <label>-</label>
-                        <onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$ESCINFO[ListItem.Plot],home)</onclick>
-                        <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
+                        <visible>Container.Content(tvshows)</visible>
                     </control>
-                    <control type="textbox" id="800">
-                        <posx>93</posx>
-                        <posy>20</posy>
-                        <width>980</width>
-                        <height>210</height>
-                        <align>left</align>
-                        <label fallback="31003">[B]$INFO[ListItem.TagLine,,[CR]][/B]$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$VAR[PlotOutlineVar]</label>
+                    <control type="radiobutton" id="136">
+                        <width>1120</width>
+                        <height>43</height>
+                        <radioposx>30</radioposx>
+                        <radioposy>-8</radioposy>
+                        <radiowidth>50</radiowidth>
+                        <textoffsetx>90</textoffsetx>
+                        <textoffsety>20</textoffsety>
+                        <aligny>bottom</aligny>
+                        <label fallback="31397">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E]$INFO[Window(Home).Property(NextAired.LatestTitle),:  ]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
                         <font>Font_Reg28_2</font>
-                        <autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <textureradioon colordiffuse="white">defaulticons/DefaultCountry.png</textureradioon>
+                        <textureradiooff colordiffuse="white">defaulticons/DefaultCountry.png</textureradiooff>
+                        <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                        <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                        <visible>Container.Content(tvshows)</visible>
                     </control>
+                    <control type="group" id="140">
+                        <height>255</height>
+                        <visible>!IsEmpty(ListItem.Plot) | !IsEmpty(ListItem.TagLine)</visible>
+                        <control type="radiobutton"  id="132">
+                            <width>1120</width>
+                            <height>255</height>
+                            <radioposx>30</radioposx>
+                            <radioposy>-8</radioposy>
+                            <radiowidth>46</radiowidth>
+                            <onup>136</onup>
+                            <ondown>5000</ondown>
+                            <textureradioon colordiffuse="white">defaulticons/DefaultAddonTvInfo.png</textureradioon>
+                            <textureradiooff colordiffuse="white">defaulticons/DefaultAddonTvInfo.png</textureradiooff>
+                            <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
+                            <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
+                            <label>-</label>
+                            <onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$ESCINFO[ListItem.Plot],home)</onclick>
+                            <onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
+                        </control>
+                        <control type="textbox" id="800">
+                            <posx>93</posx>
+                            <posy>20</posy>
+                            <width>980</width>
+                            <height>210</height>
+                            <align>left</align>
+                            <label fallback="31003">[B]$INFO[ListItem.TagLine,,[CR]][/B]$INFO[Window(home).Property(SeasonDescription),[B]Season Info:[/B][CR],[CR][CR][B]Show Info:[/B][CR]]$VAR[PlotOutlineVar]</label>
+                            <font>Font_Reg28_2</font>
+                            <autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        </control>
                     </control>
                 </control>
                 <!--Movie info-->
@@ -147,107 +182,107 @@
                             <effect type="fade" start="0" end="100" delay="0" time="0" tween="cubic" />
                             <effect type="slide" start="0,80" end="0,0" delay="460" time="960" tween="cubic" />
                         </animation>
-                    <control type="grouplist">
-                        <posx>0</posx>
-                        <posy>-15</posy>
-                        <width>1018</width>
-                        <height>200</height>
-                        <aligny>top</aligny>
-                        <itemgap>0</itemgap>
-                        <orientation>vertical</orientation>
-                        <control type="label">
-                            <width>1018</width>
-                            <height>50</height>
-                            <label>$INFO[ListItem.Title]</label>
-                            <font>Font_Bold56</font>
-                            <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(movies) | Container.Content(tvshows)] + IsEmpty(ListItem.Genre)">Conditional</animation>
-                            <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(musicvideos) + IsEmpty(ListItem.Artist)]">Conditional</animation>
-                            <scroll>true</scroll>
-                            <visible>!Control.IsVisible(13000)</visible>
-                        </control>
-                        <control type="label" id="13000">
-                            <width>1018</width>
-                            <height>50</height>
-                            <label>Season $INFO[Window(home).Property(SeasonNumber)]</label>
-                            <font>Font_Reg57_Caps</font>
-                            <scroll>true</scroll>
-                            <visible>!Container.Content(movies) + !Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
-                        </control>
                         <control type="grouplist">
                             <posx>0</posx>
-                            <posy>0</posy>
+                            <posy>-15</posy>
                             <width>1018</width>
-                            <height>50</height>
+                            <height>200</height>
                             <aligny>top</aligny>
                             <itemgap>0</itemgap>
-                            <orientation>horizontal</orientation>
-                            <usecontrolcoords>true</usecontrolcoords>
-                            <visible>[Container.Content(movies) | Container.Content(tvshows)] + !IsEmpty(ListItem.Genre)</visible>
-                            <control type="image" id="12020">
+                            <orientation>vertical</orientation>
+                            <control type="label">
+                                <width>1018</width>
+                                <height>50</height>
+                                <label>$INFO[ListItem.Title]</label>
+                                <font>Font_Bold56</font>
+                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(movies) | Container.Content(tvshows)] + IsEmpty(ListItem.Genre)">Conditional</animation>
+                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(musicvideos) + IsEmpty(ListItem.Artist)]">Conditional</animation>
+                                <scroll>true</scroll>
+                                <visible>!Control.IsVisible(13000)</visible>
+                            </control>
+                            <control type="label" id="13000">
+                                <width>1018</width>
+                                <height>50</height>
+                                <label>Season $INFO[Window(home).Property(SeasonNumber)]</label>
+                                <font>Font_Reg57_Caps</font>
+                                <scroll>true</scroll>
+                                <visible>!Container.Content(movies) + !Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
+                            </control>
+                            <control type="grouplist">
                                 <posx>0</posx>
-                                <posy>6</posy>
-                                <width>42</width>
-                                <height>35</height>
-                                <aspectratio aligny="center" align="left">keep</aspectratio>
-                                <texture colordiffuse="AAFFFFFF" background="true">$VAR[CountryFlagVar]</texture>
-                                <fadetime>200</fadetime>
-                                <visible>!IsEmpty(Control.GetLabel(12020))</visible>
+                                <posy>0</posy>
+                                <width>1018</width>
+                                <height>50</height>
+                                <aligny>top</aligny>
+                                <itemgap>0</itemgap>
+                                <orientation>horizontal</orientation>
+                                <usecontrolcoords>true</usecontrolcoords>
+                                <visible>[Container.Content(movies) | Container.Content(tvshows)] + !IsEmpty(ListItem.Genre)</visible>
+                                <control type="image" id="12020">
+                                    <posx>0</posx>
+                                    <posy>6</posy>
+                                    <width>42</width>
+                                    <height>35</height>
+                                    <aspectratio aligny="center" align="left">keep</aspectratio>
+                                    <texture colordiffuse="AAFFFFFF" background="true">$VAR[CountryFlagVar]</texture>
+                                    <fadetime>200</fadetime>
+                                    <visible>!IsEmpty(Control.GetLabel(12020))</visible>
+                                </control>
+                                <control type="label">
+                                    <width>995</width>
+                                    <height>40</height>
+                                    <label>$INFO[Window(home).Property(NextAired.Classification),,  -  ]$INFO[ListItem.Genre]</label>
+                                    <font>Font_Reg28_2</font>
+                                    <textcolor>grey</textcolor>
+                                    <scroll>true</scroll>
+                                    <visible>Container.Content(tvshows)</visible>
+                                </control>
+                                <control type="fadelabel">
+                                    <width>995</width>
+                                    <height>40</height>
+                                    <label>$INFO[ListItem.Genre]</label>
+                                    <label>$INFO[Window(home).Property(Budget),Budget: ]</label>
+                                    <font>Font_Reg28_2</font>
+                                    <textcolor>grey</textcolor>
+                                    <scrollspeed>20</scrollspeed>
+                                    <pauseatend>5000</pauseatend>
+                                    <scrollout>false</scrollout>
+                                    <visible>Container.Content(movies) + [IsEmpty(ListItem.OriginalTitle) | Stringcompare(ListItem.OriginalTitle,ListItem.Title)]</visible>
+                                </control>
+                                <control type="fadelabel">
+                                    <width>995</width>
+                                    <height>40</height>
+                                    <label>$INFO[ListItem.Genre]</label>
+                                    <label>$INFO[ListItem.OriginalTitle]</label>
+                                    <label>$INFO[Window(home).Property(Budget),Budget: ]</label>
+                                    <font>Font_Reg28_2</font>
+                                    <textcolor>grey</textcolor>
+                                    <scrollspeed>20</scrollspeed>
+                                    <pauseatend>5000</pauseatend>
+                                    <scrollout>false</scrollout>
+                                    <visible>Container.Content(movies) + !IsEmpty(ListItem.OriginalTitle) + !Stringcompare(ListItem.OriginalTitle,ListItem.Title)</visible>
+                                </control>
                             </control>
                             <control type="label">
-                                <width>995</width>
+                                <width>1018</width>
                                 <height>40</height>
-                                <label>$INFO[Window(home).Property(NextAired.Classification),,  -  ]$INFO[ListItem.Genre]</label>
-                                <font>Font_Reg28_2</font>
+                                <aligny>bottom</aligny>
+                                <label>$INFO[ListItem.Artist]</label>
+                                <font>Font_Reg32</font>
                                 <textcolor>grey</textcolor>
                                 <scroll>true</scroll>
-                                <visible>Container.Content(tvshows)</visible>
+                                <visible>Container.Content(musicvideos) + !IsEmpty(ListItem.Artist)</visible>
                             </control>
-                            <control type="fadelabel">
-                                <width>995</width>
+                            <control type="label">
+                                <width>1018</width>
                                 <height>40</height>
-                                <label>$INFO[ListItem.Genre]</label>
-                                <label>$INFO[Window(home).Property(Budget),Budget: ]</label>
-                                <font>Font_Reg28_2</font>
+                                <aligny>bottom</aligny>
+                                <label>$INFO[ListItem.TvShowTitle]</label>
+                                <font>Font_Reg32</font>
                                 <textcolor>grey</textcolor>
-                                <scrollspeed>20</scrollspeed>
-                                <pauseatend>5000</pauseatend>
-                                <scrollout>false</scrollout>
-                                <visible>Container.Content(movies) + [IsEmpty(ListItem.OriginalTitle) | Stringcompare(ListItem.OriginalTitle,ListItem.Title)]</visible>
-                            </control>
-                            <control type="fadelabel">
-                                <width>995</width>
-                                <height>40</height>
-                                <label>$INFO[ListItem.Genre]</label>
-                                <label>$INFO[ListItem.OriginalTitle]</label>
-                                <label>$INFO[Window(home).Property(Budget),Budget: ]</label>
-                                <font>Font_Reg28_2</font>
-                                <textcolor>grey</textcolor>
-                                <scrollspeed>20</scrollspeed>
-                                <pauseatend>5000</pauseatend>
-                                <scrollout>false</scrollout>
-                                <visible>Container.Content(movies) + !IsEmpty(ListItem.OriginalTitle) + !Stringcompare(ListItem.OriginalTitle,ListItem.Title)</visible>
+                                <visible>Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)</visible>
                             </control>
                         </control>
-                        <control type="label">
-                            <width>1018</width>
-                            <height>40</height>
-                            <aligny>bottom</aligny>
-                            <label>$INFO[ListItem.Artist]</label>
-                            <font>Font_Reg32</font>
-                            <textcolor>grey</textcolor>
-                            <scroll>true</scroll>
-                            <visible>Container.Content(musicvideos) + !IsEmpty(ListItem.Artist)</visible>
-                        </control>
-                        <control type="label">
-                            <width>1018</width>
-                            <height>40</height>
-                            <aligny>bottom</aligny>
-                            <label>$INFO[ListItem.TvShowTitle]</label>
-                            <font>Font_Reg32</font>
-                            <textcolor>grey</textcolor>
-                            <visible>Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)</visible>
-                        </control>
-                    </control>
                     </control>
                     <!--First Row-->
                     <control type="group">
@@ -423,73 +458,6 @@
                                     <wrapmultiline>true</wrapmultiline>
                                     <visible>IsEmpty(Control.GetLabel(800011))</visible>
                                 </control>
-                            </control>
-                        </control>
-                    </control>
-                    <!--Horizontal Info Labels-->
-                    <control type="grouplist">
-                        <orientation>vertical</orientation>
-                        <posy>190</posy>
-                        <posx>3</posx>
-                        <height>1000</height>
-                        <control type="grouplist">
-                            <!--Premiered + Studio-->
-                            <orientation>horizontal</orientation>
-                            <itemgap>12</itemgap>
-                            <height>43</height>
-                            <visible>Container.Content(tvshows)</visible>
-                            <usecontrolcoords>true</usecontrolcoords>
-                            <!--
-                            <control type="label">
-                                <posx>4</posx>
-                                <width>165</width>
-                                <height>44</height>
-                                <label>$LOCALIZE[31005]:</label>
-                                <font>Font_Reg28_2</font>
-                                <textcolor>grey</textcolor>
-                            </control>-->
-                            <control type="image">
-                                <width>50</width>
-                                <height>45</height>
-                                <posy>2</posy>
-                                <aspectratio align="center">keep</aspectratio>
-                                <texture colordiffuse="white">defaulticons/DefaultCountry.png</texture>
-                            </control>
-                            <control type="label">
-                                <width>840</width>
-                                <height>44</height>
-                                <label fallback="31003">$INFO[ListItem.Premiered,$LOCALIZE[20416]: ]</label>
-                                <font>Font_Reg28_2</font>
-                            </control>
-                        </control>
-                        <control type="grouplist">
-                            <!--NextEpisodeVar-->
-                            <height>43</height>
-                            <itemgap>12</itemgap>
-                            <visible>Container.Content(tvshows)</visible>
-                            <orientation>horizontal</orientation>
-                            <usecontrolcoords>true</usecontrolcoords>
-                            <!--
-                            <control type="label">
-                                <posx>4</posx>
-                                <width>165</width>
-                                <height>44</height>
-                                <label>$LOCALIZE[210]</label>
-                                <font>Font_Reg28_2</font>
-                                <textcolor>grey</textcolor>
-                            </control>-->
-                            <control type="image">
-                                <width>50</width>
-                                <posy>2</posy>
-                                <height>45</height>
-                                <aspectratio align="center">keep</aspectratio>
-                                <texture colordiffuse="white">defaulticons/DefaultInProgressShows.png</texture>
-                            </control>
-                            <control type="label">
-                                <width>840</width>
-                                <height>44</height>
-                                <label fallback="31397">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E]$INFO[Window(Home).Property(NextAired.LatestTitle),:  ]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
-                                <font>Font_Reg28_2</font>
                             </control>
                         </control>
                     </control>
