@@ -727,8 +727,8 @@
                         <onclick>SetProperty(Dialog.8.Label,-)</onclick>
                         <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[184])</onclick>
                         <onclick>SetProperty(Dialog.1.BuiltIn,SendClick(6))</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + !IsEmpty(ListItem.DBID))">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + !IsEmpty(ListItem.DBID))">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[Window(home).Property(movie.DBID)]))</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor) + !IsEmpty(Window(home).Property(movie.DBID))">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor) + !IsEmpty(Window(home).Property(movie.DBID))">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[Window(home).Property(movie.DBID)]))</onclick>
                         <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.2.Label,$LOCALIZE[413])</onclick>
                         <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
                         <onclick condition="Container.Content(movies)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
