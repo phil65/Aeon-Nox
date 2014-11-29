@@ -671,11 +671,15 @@
                     <control type="button" id="8">
                         <label>$LOCALIZE[208]</label>
                         <include>DialogVideoInfoScriptButton</include>
+                        <onclick>Action(Close)</onclick>
+                        <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window(home).Property(movie.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                     </control>
                     <control type="button" id="9">
                         <label>$LOCALIZE[13404] $INFO[Window(home).Property(movie.PercentPlayed),(,%)]</label>
                         <include>DialogVideoInfoScriptButton</include>
-                        <visible>Control.IsEnabled(9)</visible>
+                        <onclick>Action(Close)</onclick>
+                        <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window(home).Property(movie.DBID)],resume=true)</onclick>
                     </control>
                     <control type="button" id="20">
                         <label>$LOCALIZE[31284]</label>
