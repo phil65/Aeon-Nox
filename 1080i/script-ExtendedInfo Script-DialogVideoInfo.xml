@@ -680,6 +680,7 @@
                         <include>DialogVideoInfoScriptButton</include>
                         <onclick>Action(Close)</onclick>
                         <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window(home).Property(movie.DBID)],resume=true)</onclick>
+                        <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                     </control>
                     <control type="button" id="20">
                         <label>$LOCALIZE[31284]</label>
