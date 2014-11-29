@@ -727,23 +727,20 @@
                         <onclick>SetProperty(Dialog.8.Label,-)</onclick>
                         <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[184])</onclick>
                         <onclick>SetProperty(Dialog.1.BuiltIn,SendClick(6))</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + !IsEmpty(Window(home).Property(movie.DBID))">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + !IsEmpty(Window(home).Property(movie.DBID))">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[Window(home).Property(movie.DBID)]))</onclick>
-                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.2.Label,$LOCALIZE[413])</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
-                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.4.Label,$LOCALIZE[14061])</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=tvshow, dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=movie, dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
-                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.5.Label,$LOCALIZE[31467])</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom, mediatype=tvshow, dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[Window(home).Property(movie.DBID)]))</onclick>
+                        <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[413])</onclick>
+                        <onclick>SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
+                        <onclick>SetProperty(Dialog.4.Label,$LOCALIZE[14061])</onclick>
+                        <onclick>SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=movie, dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
+                        <onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31467])</onclick>
+                        <onclick>SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)]))</onclick>
                         <onclick>SetProperty(Dialog.6.Label,$LOCALIZE[13511])</onclick>
                         <onclick>SetProperty(Dialog.6.BuiltIn,SendClick(10))</onclick>
-                        <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.Label,$LOCALIZE[31365])</onclick>
-                        <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.BuiltIn,RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[Window(home).Property(movie.FilenameAndPath)]&amp;tvname=$INFO[Window(home).Property(movie.TVShowTitle)]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.8.Label,$LOCALIZE[31468])</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.8.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)],extrathumbs))</onclick>
+                        <onclick condition="system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.Label,$LOCALIZE[31365])</onclick>
+                        <onclick condition="system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.BuiltIn,RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[Window(home).Property(movie.FilenameAndPath)]&amp;tvname=$INFO[Window(home).Property(movie.TVShowTitle)]))</onclick>
+                        <onclick>SetProperty(Dialog.8.Label,$LOCALIZE[31468])</onclick>
+                        <onclick>SetProperty(Dialog.8.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)],extrathumbs))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=Choose Action)</onclick>
                         <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
                         <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
