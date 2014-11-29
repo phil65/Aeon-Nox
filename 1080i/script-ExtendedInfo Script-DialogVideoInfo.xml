@@ -689,6 +689,7 @@
                         <onclick>Dialog.Close(MovieInformation)</onclick>
                         <onclick>RunScript(script.cinema.experience)</onclick>
                         <visible>system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
+                        <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                     </control>
                     <control type="button" id="11">
                         <label>$LOCALIZE[20410]</label>
@@ -711,6 +712,7 @@
                         <label>$LOCALIZE[31020]</label>
                         <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[Window(home).Property(movie.FilenameAndPath)]")</onclick>
                         <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
+                        <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                     </control>
                     <control type="button" id="445">
                         <include>DialogVideoInfoScriptButton</include>
@@ -744,14 +746,7 @@
                         <onclick condition="Container.Content(movies)">SetProperty(Dialog.8.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[Window(home).Property(movie.DBID)],extrathumbs))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=Choose Action)</onclick>
                         <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
-                    </control>
-                    <control type="button" id="10">
-                        <label>$LOCALIZE[13511]</label>
-                        <include>HiddenObject</include>
-                    </control>
-                    <control type="button" id="6">
-                        <label>$LOCALIZE[13511]</label>
-                        <include>HiddenObject</include>
+                        <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                     </control>
                 </control>
                 <control type="label">
