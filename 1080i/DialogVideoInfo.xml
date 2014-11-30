@@ -198,7 +198,7 @@
                                 <height>50</height>
                                 <label>$INFO[ListItem.Title]</label>
                                 <font>Font_Bold56</font>
-                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(movies) | Container.Content(tvshows)] + IsEmpty(ListItem.Genre)">Conditional</animation>
+                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="Container.Content(tvshows) + IsEmpty(ListItem.Genre)">Conditional</animation>
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(musicvideos) + IsEmpty(ListItem.Artist)]">Conditional</animation>
                                 <scroll>true</scroll>
                                 <visible>!Control.IsVisible(13000)</visible>
@@ -209,7 +209,7 @@
                                 <label>Season $INFO[Window(home).Property(SeasonNumber)]</label>
                                 <font>Font_Reg57_Caps</font>
                                 <scroll>true</scroll>
-                                <visible>!Container.Content(movies) + !Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
+                                <visible>!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
                             </control>
                             <control type="grouplist">
                                 <posx>0</posx>
@@ -220,7 +220,7 @@
                                 <itemgap>0</itemgap>
                                 <orientation>horizontal</orientation>
                                 <usecontrolcoords>true</usecontrolcoords>
-                                <visible>[Container.Content(movies) | Container.Content(tvshows)] + !IsEmpty(ListItem.Genre)</visible>
+                                <visible>Container.Content(tvshows) + !IsEmpty(ListItem.Genre)</visible>
                                 <control type="image" id="12020">
                                     <posx>0</posx>
                                     <posy>6</posy>
@@ -239,31 +239,6 @@
                                     <textcolor>grey</textcolor>
                                     <scroll>true</scroll>
                                     <visible>Container.Content(tvshows)</visible>
-                                </control>
-                                <control type="fadelabel">
-                                    <width>995</width>
-                                    <height>40</height>
-                                    <label>$INFO[ListItem.Genre]</label>
-                                    <label>$INFO[Window(home).Property(Budget),Budget: ]</label>
-                                    <font>Font_Reg28_2</font>
-                                    <textcolor>grey</textcolor>
-                                    <scrollspeed>20</scrollspeed>
-                                    <pauseatend>5000</pauseatend>
-                                    <scrollout>false</scrollout>
-                                    <visible>Container.Content(movies) + [IsEmpty(ListItem.OriginalTitle) | Stringcompare(ListItem.OriginalTitle,ListItem.Title)]</visible>
-                                </control>
-                                <control type="fadelabel">
-                                    <width>995</width>
-                                    <height>40</height>
-                                    <label>$INFO[ListItem.Genre]</label>
-                                    <label>$INFO[ListItem.OriginalTitle]</label>
-                                    <label>$INFO[Window(home).Property(Budget),Budget: ]</label>
-                                    <font>Font_Reg28_2</font>
-                                    <textcolor>grey</textcolor>
-                                    <scrollspeed>20</scrollspeed>
-                                    <pauseatend>5000</pauseatend>
-                                    <scrollout>false</scrollout>
-                                    <visible>Container.Content(movies) + !IsEmpty(ListItem.OriginalTitle) + !Stringcompare(ListItem.OriginalTitle,ListItem.Title)</visible>
                                 </control>
                             </control>
                             <control type="label">
@@ -346,16 +321,16 @@
                                 <height>67</height>
                                 <aspectratio align="center">keep</aspectratio>
                                 <texture colordiffuse="white2" fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-                                <visible>Container.Content(movies) | Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+                                <visible>Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
                             </control>
                             <control type="image">
                                 <height>79</height>
                                 <include>Furniture_FlagUpright</include>
-                                <visible>Container.Content(movies) | Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+                                <visible>Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
                             </control>
                             <control type="group">
                                 <width>155</width>
-                                <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)</visible>
+                                <visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
                                 <control type="label">
                                     <posy>12</posy>
                                     <width>155</width>
@@ -376,7 +351,7 @@
                             <control type="image">
                                 <height>79</height>
                                 <include>Furniture_FlagUpright</include>
-                                <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows)</visible>
+                                <visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
                             </control>
                             <control type="image">
                                 <posy>5</posy>
@@ -388,7 +363,7 @@
                             </control>
                             <control type="group">
                                 <width>155</width>
-                                <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                                <visible>Container.Content(episodes)</visible>
                                 <control type="label">
                                     <posy>12</posy>
                                     <width>155</width>
@@ -439,7 +414,7 @@
                                 <visible>Control.IsVisible(3300)</visible>
                             </control>
                             <control type="group" id="3300">
-                                <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(musicvideos)</visible>
+                                <visible>Container.Content(episodes) | Container.Content(tvshows) | Container.Content(musicvideos)</visible>
                                 <visible>!IsEmpty(ListItem.Studio)</visible>
                                 <width>175</width>
                                 <posx>20</posx>
@@ -485,7 +460,7 @@
                             <orientation>horizontal</orientation>
                             <itemgap>25</itemgap>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(MusicVideos)</visible>
+                            <visible>Container.Content(episodes) | Container.Content(MusicVideos)</visible>
                             <control type="image" id="900011">
                                 <posy>5</posy>
                                 <width>100</width>
@@ -887,33 +862,11 @@
                         <include>DialogVideoInfoButton</include>
                         <visible>Control.IsEnabled(9)</visible>
                     </control>
-                    <control type="button" id="20">
-                        <label>$LOCALIZE[31284]</label>
-                        <include>DialogVideoInfoButton</include>
-                        <onclick>Playlist.Clear</onclick>
-                        <onclick>Dialog.Close(MovieInformation)</onclick>
-                        <onclick>RunScript(script.cinema.experience)</onclick>
-                        <visible>Container.Content(Movies) + system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
-                    </control>
-                    <control type="button" id="11">
-                        <label>$LOCALIZE[20410]</label>
-                        <include>DialogVideoInfoButton</include>
-                        <visible>!IsEmpty(ListItem.Trailer)</visible>
-                        <visible>Container.Content(movies) + ![substring(Container.FolderPath,plugin://) + substring(Container.FolderPath,trailer)]</visible>
-                    </control>
-                    <control type="button" id="440">
-                        <label>$LOCALIZE[31886]</label>
-                        <include>DialogVideoInfoButton</include>
-                        <visible>IsEmpty(ListItem.Trailer)</visible>
-                        <onclick>SetProperty(listcontent,$INFO[ListItem.Label] Trailer,home)</onclick>
-                        <onclick>ActivateWindow(1168)</onclick>
-                        <visible>Container.Content(movies) + ![substring(Container.FolderPath,plugin://) + substring(Container.FolderPath,trailer)]</visible>
-                    </control>
                     <control type="button" id="100">
                         <include>DialogVideoInfoButton</include>
                         <label>$LOCALIZE[31020]</label>
                         <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
-                        <visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
+                        <visible>System.HasAddon(script.videoextras) + [Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
                     </control>
                     <control type="button" id="445">
                         <include>DialogVideoInfoButton</include>
@@ -928,23 +881,18 @@
                         <onclick>SetProperty(Dialog.8.Label,-)</onclick>
                         <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[184])</onclick>
                         <onclick>SetProperty(Dialog.1.BuiltIn,SendClick(6))</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.2.Label,$LOCALIZE[413])</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
+                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]))</onclick>
+                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.2.Label,$LOCALIZE[413])</onclick>
                         <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.4.Label,$LOCALIZE[14061])</onclick>
+                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.4.Label,$LOCALIZE[14061])</onclick>
                         <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=movie, dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(tvshows) | Container.Content(movies)">SetProperty(Dialog.5.Label,$LOCALIZE[31467])</onclick>
+                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.5.Label,$LOCALIZE[31467])</onclick>
                         <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID]))</onclick>
                         <onclick>SetProperty(Dialog.6.Label,$LOCALIZE[13511])</onclick>
                         <onclick>SetProperty(Dialog.6.BuiltIn,SendClick(10))</onclick>
                         <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.Label,$LOCALIZE[31365])</onclick>
                         <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.BuiltIn,RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle]))</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.8.Label,$LOCALIZE[31468])</onclick>
-                        <onclick condition="Container.Content(movies)">SetProperty(Dialog.8.BuiltIn,RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=Choose Action)</onclick>
                         <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
                     </control>
