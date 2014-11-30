@@ -170,7 +170,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <height>500</height>
+                        <height>440</height>
                         <control type="label">
                             <posx>25</posx>
                             <width>500</width>
@@ -187,13 +187,41 @@
                             <onleft>250</onleft>
                             <onright>250</onright>
                             <onup>250</onup>
-                            <ondown>132</ondown>
+                            <ondown>450</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
                             <orientation>horizontal</orientation>
                             <preloaditems>2</preloaditems>
                             <include>DialogVideoInfoYoutubeList</include>
+                        </control>
+                    </control>
+                                        <control type="group" id="4500">
+                        <height>450</height>
+                        <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Artwork</label>
+                        </control>
+                        <control type="panel" id="450">
+                            <posy>30</posy>
+                            <posx>-45</posx>
+                            <width>1170</width>
+                            <height>600</height>
+                            <onleft>9000</onleft>
+                            <onright>9000</onright>
+                            <onup>350</onup>
+                            <ondown>132</ondown>
+                            <scrolltime>200</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
+                            </animation>
+                            <include>DialogVideoInfoMovieLayout</include>
                         </control>
                     </control>
                 </control>
