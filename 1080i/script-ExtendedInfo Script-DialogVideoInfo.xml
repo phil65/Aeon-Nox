@@ -340,7 +340,7 @@
                             <onleft>50</onleft>
                             <onright>50</onright>
                             <onup>50</onup>
-                            <ondown>350</ondown>
+                            <ondown>250</ondown>
                             <scrolltime>200</scrolltime>
                             <orientation>horizontal</orientation>
                             <animation type="WindowOpen" reversible="false">
@@ -436,6 +436,113 @@
                             </focusedlayout>
                         </control>
                     </control>
+                    <control type="group" id="50113">
+                        <height>400</height>
+                        <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+                        <control type="panel" id="250">
+                            <posx>-50</posx>
+                            <posy>-20</posy>
+                            <width>1180</width>
+                            <height>400</height>
+                            <onleft>50</onleft>
+                            <onright>50</onright>
+                            <onup>50</onup>
+                            <ondown>350</ondown>
+                            <scrolltime>200</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
+                            </animation>
+                            <itemlayout height="400" width="280">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>280</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="group">
+                                        <posx>77</posx>
+                                        <posy>18</posy>
+                                        <control type="image">
+                                            <posy>10</posy>
+                                            <width>224</width>
+                                            <height>325</height>
+                                            <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+                                            <aspectratio aligny="center">scale</aspectratio>
+                                            <fadetime>0</fadetime>
+                                        </control>
+                                        <control type="image">
+                                            <width>224</width>
+                                            <height>70</height>
+                                            <posy>267</posy>
+                                            <texture>common/bgcolor.png</texture>
+                                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                        </control>
+                                        <control type="textbox">
+                                            <width>228</width>
+                                            <height>69</height>
+                                            <posy>267</posy>
+                                            <align>center</align>
+                                            <font>Font_Reg25_2</font>
+                                            <info>ListItem.Label</info>
+                                        </control>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="280">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>280</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texture>
+                                        <include>PanelGlowFade</include>
+                                        <visible>Control.HasFocus(250)</visible>
+                                    </control>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>280</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
+                                        <visible>!Control.HasFocus(250)</visible>
+                                    </control>
+                                    <control type="group">
+                                        <posx>77</posx>
+                                        <posy>18</posy>
+                                        <control type="image">
+                                            <posy>10</posy>
+                                            <width>224</width>
+                                            <height>325</height>
+                                            <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+                                            <aspectratio aligny="center">scale</aspectratio>
+                                            <fadetime>0</fadetime>
+                                        </control>
+                                        <control type="image">
+                                            <width>224</width>
+                                            <height>70</height>
+                                            <posy>267</posy>
+                                            <texture>common/bgcolor.png</texture>
+                                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                            <animation effect="fade" start="100" end="80" time="40" condition="Control.HasFocus(500)">Conditional</animation>
+                                        </control>
+                                        <control type="textbox">
+                                            <width>228</width>
+                                            <height>69</height>
+                                            <posy>267</posy>
+                                            <align>center</align>
+                                            <font>Font_Reg25_2</font>
+                                            <info>ListItem.Label</info>
+                                            <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                                        </control>
+                                    </control>
+                                </control>
+                            </focusedlayout>
+                        </control>
+                    </control>
                     <control type="group">
                         <height>500</height>
                         <control type="label">
@@ -453,7 +560,7 @@
                             <height>700</height>
                             <onleft>250</onleft>
                             <onright>250</onright>
-                            <onup>150</onup>
+                            <onup>250</onup>
                             <ondown>132</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
