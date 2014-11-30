@@ -14,6 +14,16 @@
             <visible>!Control.Isvisible(2600)</visible>
             <animation effect="fade" time="250">VisibleChange</animation>
         </control>
+<!--         <control type="image">
+            <posx>0</posx>
+            <width>1920</width>
+            <height>1080</height>
+            <aspectratio align="center">scale</aspectratio>
+            <texture>$INFO[Window(home).Property(movie.Logo)]</texture>
+            <include>Animation_WindowFade200</include>
+            <visible>!Control.Isvisible(2600)</visible>
+            <animation effect="fade" time="250">VisibleChange</animation>
+        </control> -->
         <control type="group">
             <control type="button" id="2600">
                 <include>HiddenObject</include>
@@ -346,94 +356,7 @@
                             <animation type="WindowOpen" reversible="false">
                                 <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
                             </animation>
-                            <itemlayout height="400" width="280">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>224</width>
-                                            <height>70</height>
-                                            <posy>267</posy>
-                                            <texture>common/bgcolor.png</texture>
-                                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>69</height>
-                                            <posy>267</posy>
-                                            <align>center</align>
-                                            <font>Font_Reg25_2</font>
-                                            <info>ListItem.Label</info>
-                                        </control>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="280">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <include>PanelGlowFade</include>
-                                        <visible>Control.HasFocus(150)</visible>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                        <visible>!Control.HasFocus(150)</visible>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>224</width>
-                                            <height>70</height>
-                                            <posy>267</posy>
-                                            <texture>common/bgcolor.png</texture>
-                                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                            <animation effect="fade" start="100" end="80" time="40" condition="Control.HasFocus(500)">Conditional</animation>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>69</height>
-                                            <posy>267</posy>
-                                            <align>center</align>
-                                            <font>Font_Reg25_2</font>
-                                            <info>ListItem.Label</info>
-                                            <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
-                                        </control>
-                                    </control>
-                                </control>
-                            </focusedlayout>
+                            <include>DialogVideoInfoMovieLayout</include>
                         </control>
                     </control>
                     <control type="group" id="50113">
@@ -453,94 +376,7 @@
                             <animation type="WindowOpen" reversible="false">
                                 <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
                             </animation>
-                            <itemlayout height="400" width="280">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>224</width>
-                                            <height>70</height>
-                                            <posy>267</posy>
-                                            <texture>common/bgcolor.png</texture>
-                                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>69</height>
-                                            <posy>267</posy>
-                                            <align>center</align>
-                                            <font>Font_Reg25_2</font>
-                                            <info>ListItem.Label</info>
-                                        </control>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="400" width="280">
-                                <control type="group">
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <include>PanelGlowFade</include>
-                                        <visible>Control.HasFocus(250)</visible>
-                                    </control>
-                                    <control type="image">
-                                        <posy>0</posy>
-                                        <posx>50</posx>
-                                        <width>280</width>
-                                        <height>380</height>
-                                        <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                        <visible>!Control.HasFocus(250)</visible>
-                                    </control>
-                                    <control type="group">
-                                        <posx>77</posx>
-                                        <posy>18</posy>
-                                        <control type="image">
-                                            <posy>10</posy>
-                                            <width>224</width>
-                                            <height>325</height>
-                                            <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-                                            <aspectratio aligny="center">scale</aspectratio>
-                                            <fadetime>0</fadetime>
-                                        </control>
-                                        <control type="image">
-                                            <width>224</width>
-                                            <height>70</height>
-                                            <posy>267</posy>
-                                            <texture>common/bgcolor.png</texture>
-                                            <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                            <animation effect="fade" start="100" end="80" time="40" condition="Control.HasFocus(500)">Conditional</animation>
-                                        </control>
-                                        <control type="textbox">
-                                            <width>228</width>
-                                            <height>69</height>
-                                            <posy>267</posy>
-                                            <align>center</align>
-                                            <font>Font_Reg25_2</font>
-                                            <info>ListItem.Label</info>
-                                            <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
-                                        </control>
-                                    </control>
-                                </control>
-                            </focusedlayout>
+                            <include>DialogVideoInfoMovieLayout</include>
                         </control>
                     </control>
                     <include>DialogVideoInfoYoutubeList</include>

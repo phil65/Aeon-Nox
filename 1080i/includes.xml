@@ -28,100 +28,212 @@
     <include file="Includes_PVR.xml" />
     <include file="script-skinshortcuts-includes.xml" />
     <constant name="AutoScrollTime">2000</constant>
+    <include name="DialogVideoInfoMovieLayout">
+        <itemlayout height="400" width="280">
+            <control type="group">
+                <control type="image">
+                    <posy>0</posy>
+                    <posx>50</posx>
+                    <width>280</width>
+                    <height>380</height>
+                    <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                </control>
+                <control type="group">
+                    <posx>77</posx>
+                    <posy>18</posy>
+                    <control type="image">
+                        <posy>10</posy>
+                        <width>224</width>
+                        <height>325</height>
+                        <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+                        <aspectratio aligny="center">scale</aspectratio>
+                        <fadetime>0</fadetime>
+                    </control>
+                    <control type="image">
+                        <width>224</width>
+                        <height>68</height>
+                        <posy>267</posy>
+                        <texture>common/bgcolor.png</texture>
+                        <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                    </control>
+                    <control type="textbox">
+                        <width>228</width>
+                        <height>69</height>
+                        <posy>267</posy>
+                        <align>center</align>
+                        <font>Font_Reg25_2</font>
+                        <info>ListItem.Label</info>
+                        <textcolor>green</textcolor>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+                    <control type="textbox">
+                        <width>228</width>
+                        <height>69</height>
+                        <posy>267</posy>
+                        <align>center</align>
+                        <font>Font_Reg25_2</font>
+                        <info>ListItem.Label</info>
+                        <visible>IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout height="400" width="280">
+            <control type="group">
+                <control type="image">
+                    <posy>0</posy>
+                    <posx>50</posx>
+                    <width>280</width>
+                    <height>380</height>
+                    <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                </control>
+                <control type="image">
+                    <posy>0</posy>
+                    <posx>50</posx>
+                    <width>280</width>
+                    <height>380</height>
+                    <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                    <include>PanelGlowFade</include>
+                    <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                    <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                </control>
+                <control type="group">
+                    <posx>77</posx>
+                    <posy>18</posy>
+                    <control type="image">
+                        <posy>10</posy>
+                        <width>224</width>
+                        <height>325</height>
+                        <texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+                        <aspectratio aligny="center">scale</aspectratio>
+                        <fadetime>0</fadetime>
+                    </control>
+                    <control type="image">
+                        <width>224</width>
+                        <height>68</height>
+                        <posy>267</posy>
+                        <texture>common/bgcolor.png</texture>
+                        <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                    </control>
+                    <control type="textbox">
+                        <width>228</width>
+                        <height>69</height>
+                        <posy>267</posy>
+                        <align>center</align>
+                        <font>Font_Reg25_2</font>
+                        <info>ListItem.Label</info>
+                        <textcolor>green</textcolor>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+                    <control type="textbox">
+                        <width>228</width>
+                        <height>69</height>
+                        <posy>267</posy>
+                        <align>center</align>
+                        <font>Font_Reg25_2</font>
+                        <info>ListItem.Label</info>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                        <visible>IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+                </control>
+            </control>
+        </focusedlayout>
+    </include>
     <include name="DialogVideoInfoYoutubeList">
-                            <control type="group">
-                        <height>500</height>
-                        <control type="label">
-                            <posx>25</posx>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>Font_Bold37_Caps</font>
-                            <label>Youtube Videos</label>
+        <control type="group">
+            <height>500</height>
+            <control type="label">
+                <posx>25</posx>
+                <width>500</width>
+                <height>25</height>
+                <aligny>center</aligny>
+                <font>Font_Bold37_Caps</font>
+                <label>Youtube Videos</label>
+            </control>
+            <control type="panel" id="350">
+                <posx>-45</posx>
+                <posy>30</posy>
+                <width>1170</width>
+                <height>700</height>
+                <onleft>250</onleft>
+                <onright>250</onright>
+                <onup>250</onup>
+                <ondown>132</ondown>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime>300</scrolltime>
+                <focusposition>0</focusposition>
+                <orientation>horizontal</orientation>
+                <preloaditems>2</preloaditems>
+                <itemlayout height="410" width="373">
+                    <control type="image">
+                        <posy>0</posy>
+                        <posx>50</posx>
+                        <width>373</width>
+                        <height>380</height>
+                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                    </control>
+                    <control type="group">
+                        <posx>77</posx>
+                        <posy>18</posy>
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>320</width>
+                            <height>200</height>
+                            <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                            <aspectratio aligny="center">scale</aspectratio>
+                            <fadetime>0</fadetime>
                         </control>
-                        <control type="panel" id="350">
-                            <posx>-45</posx>
-                            <posy>30</posy>
-                            <width>1170</width>
-                            <height>700</height>
-                            <onleft>250</onleft>
-                            <onright>250</onright>
-                            <onup>250</onup>
-                            <ondown>132</ondown>
-                            <pagecontrol>60</pagecontrol>
-                            <scrolltime>300</scrolltime>
-                            <focusposition>0</focusposition>
-                            <orientation>horizontal</orientation>
-                            <preloaditems>2</preloaditems>
-                            <itemlayout height="410" width="373">
-                                <control type="image">
-                                    <posy>0</posy>
-                                    <posx>50</posx>
-                                    <width>373</width>
-                                    <height>380</height>
-                                    <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
-                                </control>
-                                <control type="group">
-                                    <posx>77</posx>
-                                    <posy>18</posy>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>320</width>
-                                        <height>200</height>
-                                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                        <aspectratio aligny="center">scale</aspectratio>
-                                        <fadetime>0</fadetime>
-                                    </control>
-                                    <control type="textbox">
-                                        <width>323</width>
-                                        <height>69</height>
-                                        <posy>227</posy>
-                                        <align>center</align>
-                                        <font>Font_Reg25_2</font>
-                                        <info>ListItem.Label</info>
-                                    </control>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="410" width="373">
-                                <control type="image">
-                                    <posy>0</posy>
-                                    <posx>50</posx>
-                                    <width>373</width>
-                                    <height>380</height>
-                                    <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posy>0</posy>
-                                    <posx>50</posx>
-                                    <width>373</width>
-                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
-                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
-                                    <height>380</height>
-                                    <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
-                                </control>
-                                <control type="group">
-                                    <posx>77</posx>
-                                    <posy>18</posy>
-                                    <control type="image">
-                                        <posy>10</posy>
-                                        <width>320</width>
-                                        <height>200</height>
-                                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
-                                        <aspectratio aligny="center">scale</aspectratio>
-                                        <fadetime>0</fadetime>
-                                    </control>
-                                    <control type="textbox">
-                                        <width>323</width>
-                                        <height>69</height>
-                                        <posy>227</posy>
-                                        <align>center</align>
-                                        <font>Font_Reg25_2</font>
-                                        <info>ListItem.Label</info>
-                                    </control>
-                                </control>
-                            </focusedlayout>
+                        <control type="textbox">
+                            <width>323</width>
+                            <height>69</height>
+                            <posy>227</posy>
+                            <align>center</align>
+                            <font>Font_Reg25_2</font>
+                            <info>ListItem.Label</info>
                         </control>
                     </control>
+                </itemlayout>
+                <focusedlayout height="410" width="373">
+                    <control type="image">
+                        <posy>0</posy>
+                        <posx>50</posx>
+                        <width>373</width>
+                        <height>380</height>
+                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                    </control>
+                    <control type="image">
+                        <posy>0</posy>
+                        <posx>50</posx>
+                        <width>373</width>
+                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                        <height>380</height>
+                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                    </control>
+                    <control type="group">
+                        <posx>77</posx>
+                        <posy>18</posy>
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>320</width>
+                            <height>200</height>
+                            <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                            <aspectratio aligny="center">scale</aspectratio>
+                            <fadetime>0</fadetime>
+                        </control>
+                        <control type="textbox">
+                            <width>323</width>
+                            <height>69</height>
+                            <posy>227</posy>
+                            <align>center</align>
+                            <font>Font_Reg25_2</font>
+                            <info>ListItem.Label</info>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
     </include>
     <include name="Dialogs_Group">
         <posx>579</posx>
@@ -1169,8 +1281,8 @@
             <posy>1002</posy>
             <width>1140</width>
             <height>22</height>
-                                                <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
+            <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
             <animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
             <info>Player.ProgressCache</info>
         </control>
@@ -1180,8 +1292,8 @@
             <width>1140</width>
             <height>22</height>
             <info>Player.Progress</info>
-                                                <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
-                            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
+            <texturebg colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="3">new_pvr/texturebg_border_white.png</texturebg>
+            <midtexture colordiffuse="$INFO[Window(home).Property(ImageColor)]">new_pvr/texturebg_white.png</midtexture>
         </control>
         <control type="fadelabel">
             <posx>390</posx>
@@ -1432,7 +1544,7 @@
                 <onclick>PlayerControl(Next)</onclick>
                 <visible>!VideoPlayer.Content(livetv) + IntegerGreaterThan(Playlist.Length(video),1)</visible>
             </control>
-                        <control type="radiobutton" id="70040">
+            <control type="radiobutton" id="70040">
                 <include>ClassicOSDButton</include>
                 <textureradioon>osd/buttons/OSDPlaylistNF.png</textureradioon>
                 <textureradiooff>osd/buttons/OSDPlaylistNF.png</textureradiooff>
