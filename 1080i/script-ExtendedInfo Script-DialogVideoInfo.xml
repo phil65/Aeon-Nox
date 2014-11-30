@@ -14,7 +14,8 @@
             <visible>!Control.Isvisible(2600)</visible>
             <animation effect="fade" time="250">VisibleChange</animation>
         </control>
-<!--         <control type="image">
+        <!--
+        <control type="image">
             <posx>0</posx>
             <width>1920</width>
             <height>1080</height>
@@ -23,7 +24,7 @@
             <include>Animation_WindowFade200</include>
             <visible>!Control.Isvisible(2600)</visible>
             <animation effect="fade" time="250">VisibleChange</animation>
-        </control> -->
+        </control>-->
         <control type="group">
             <control type="button" id="2600">
                 <include>HiddenObject</include>
@@ -236,9 +237,17 @@
                     </control>
                     <control type="group" id="50111">
                         <height>400</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Cast</label>
+                        </control>
                         <control type="panel" id="50">
                             <posx>-50</posx>
-                            <posy>-20</posy>
+                            <posy>20</posy>
                             <width>1180</width>
                             <height>400</height>
                             <onleft>50</onleft>
@@ -341,10 +350,18 @@
                         </control>
                     </control>
                     <control type="group" id="50112">
-                        <height>400</height>
+                        <height>440</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Similar Movies</label>
+                        </control>
                         <control type="panel" id="150">
                             <posx>-50</posx>
-                            <posy>-20</posy>
+                            <posy>20</posy>
                             <width>1180</width>
                             <height>400</height>
                             <onleft>50</onleft>
@@ -360,11 +377,19 @@
                         </control>
                     </control>
                     <control type="group" id="50113">
-                        <height>400</height>
+                        <height>440</height>
                         <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Movies from same set</label>
+                        </control>
                         <control type="panel" id="250">
                             <posx>-50</posx>
-                            <posy>-20</posy>
+                            <posy>20</posy>
                             <width>1180</width>
                             <height>400</height>
                             <onleft>50</onleft>
@@ -380,7 +405,6 @@
                         </control>
                     </control>
                     <include>DialogVideoInfoYoutubeList</include>
-
                 </control>
                 <!--Movie info-->
                 <control type="group">
