@@ -8,7 +8,7 @@
     <onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID])</onload>
     <onload condition="Container.Content(movies)">Dialog.Close(movieinformation)</onload>
     <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
-    <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
+    <onload condition="System.HasAddon(script.videoextras) + !Container.Content(movies)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
     <onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
     <controls>
