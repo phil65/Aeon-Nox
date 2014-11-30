@@ -82,7 +82,7 @@
                         <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
                         <label>$INFO[Window(home).Property(movie.Studio)]</label>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[Window(home).Property(movie.Studio)])</onclick>
-                        <enable>!IsEmpty(Window(home).Property(movie.Studio))</enable>
+                        <visible>!IsEmpty(Window(home).Property(movie.Studio))</visible>
                     </control>
                     <control type="radiobutton" id="130">
                         <width>1120</width>
@@ -107,7 +107,7 @@
                         <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31197])</onclick>
                         <onclick>SetProperty(Dialog.2.BuiltIn,SetFocus(13)|Action(Select))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[Window(home).Property(movie.Director)])</onclick>
-                        <enable>!IsEmpty(Window(home).Property(movie.Director))</enable>
+                        <visible>!IsEmpty(Window(home).Property(movie.Director))</visible>
                     </control>
                     <control type="radiobutton" id="131">
                         <animation effect="fade" start="100" end="0" time="0" condition="IsEmpty(Window(home).Property(movie.Writer))">Conditional</animation>
