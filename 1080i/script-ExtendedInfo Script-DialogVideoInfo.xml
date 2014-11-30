@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <defaultcontrol always="true">5000</defaultcontrol>
+    <defaultcontrol always="true">4000</defaultcontrol>
     <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
     <onunload>ClearProperty(movie.ImageColor,home)</onunload>
     <onunload>ClearProperty(movie.ImageFilter,home)</onunload>
@@ -66,7 +66,7 @@
                     <ondown>600</ondown>
                     <visible>!IsEmpty(Window(home).Property(movie.Director))</visible>
                 </control>
-                <control type="grouplist">
+                <control type="grouplist" id="4000">
                     <orientation>vertical</orientation>
                     <posx>800</posx>
                     <posy>240</posy>
