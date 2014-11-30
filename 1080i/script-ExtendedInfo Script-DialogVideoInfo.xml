@@ -2,6 +2,8 @@
 <window>
     <defaultcontrol always="true">5000</defaultcontrol>
     <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
+    <onunload>ClearProperty(movie.ImageColor,home)</onunload>
+    <onunload>ClearProperty(movie.ImageFilter,home)</onunload>
     <controls>
         <control type="image">
             <posx>0</posx>
