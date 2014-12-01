@@ -439,7 +439,7 @@
                         </animation>
                         <posy>66</posy>
                         <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
-                        <height>100</height>
+                        <height>130</height>
                         <control type="image">
                             <posx>30</posx>
                             <posy>0</posy>
@@ -586,6 +586,7 @@
                             <posx>30</posx>
                             <posy>71</posy>
                             <width>950</width>
+                            <height>30</height>
                             <label>$INFO[Window(home).Property(movie.FileNameAndPath)]</label>
                             <font>Font_Reg22</font>
                             <textcolor>white5</textcolor>
@@ -745,7 +746,7 @@
                     </control>
                     <control type="group">
                         <visible>IntegerGreaterThan(Container(550).NumItems,0)</visible>
-                        <height>500</height>
+                        <height>300</height>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -786,7 +787,7 @@
                             <onleft>550</onleft>
                             <onright>550</onright>
                             <onup>350</onup>
-                            <ondown>129</ondown>
+                            <ondown>650</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
@@ -852,6 +853,128 @@
                                         <align>center</align>
                                         <font>Font_Reg25_2</font>
                                         <info>ListItem.Label</info>
+                                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                                    </control>
+                                </control>
+                            </focusedlayout>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
+                        <height>300</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <posy>6</posy>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold28</font>
+                            <label>Releases</label>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>130</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(650).HasPrevious + Control.HasFocus(650)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1100</posx>
+                            <posy>130</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(650).HasNext + Control.HasFocus(650)</visible>
+                        </control>
+                        <control type="panel" id="650">
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                            </animation>
+                            <posx>-45</posx>
+                            <posy>30</posy>
+                            <width>1170</width>
+                            <height>700</height>
+                            <onleft>650</onleft>
+                            <onright>650</onright>
+                            <onup>550</onup>
+                            <ondown>129</ondown>
+                            <pagecontrol>60</pagecontrol>
+                            <scrolltime>300</scrolltime>
+                            <focusposition>0</focusposition>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout height="400" width="230">
+                                <control type="group">
+                                    <posx>50</posx>
+                                                                        <control type="image">
+                                        <posy>0</posy>
+                                        <width>200</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>28</posy>
+                                        <width>200</width>
+                                        <height>70</height>
+                                        <texture>$INFO[ListItem.Property(iso_3166_1,flags/language/,.png]</texture>
+                                        <aspectratio aligny="center" align="center">keep</aspectratio>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>100</posy>
+                                        <width>160</width>
+                                        <height>69</height>
+                                        <align>center</align>
+                                        <font>Font_Reg25_2</font>
+                                        <label>$INFO[ListItem.Property(release_date)][CR]$INFO[ListItem.Property(certification)]</label>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="230">
+                                <control type="group">
+                                    <posx>50</posx>
+                                                                        <control type="image">
+                                        <posy>0</posy>
+                                        <width>200</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <width>200</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                                        <include>PanelGlowFade</include>
+                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                                    </control>
+                                    <control type="label">
+                                        <posy>28</posy>
+                                        <width>200</width>
+                                        <height>70</height>
+                                        <align>center</align>
+                                        <label>$INFO[ListItem.Property(iso_3166_1)]</label>
+                                    </control>
+                                    <control type="image">
+                                        <posy>28</posy>
+                                        <width>200</width>
+                                        <height>70</height>
+                                        <texture>$INFO[ListItem.Property(iso_3166_1,flags/language/,.png]</texture>
+                                        <aspectratio aligny="center" align="center">keep</aspectratio>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>100</posy>
+                                        <width>160</width>
+                                        <height>69</height>
+                                        <align>center</align>
+                                        <font>Font_Reg25_2</font>
+                                        <label>$INFO[ListItem.Property(release_date)][CR]$INFO[ListItem.Property(certification)]</label>
                                         <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
                                     </control>
                                 </control>
