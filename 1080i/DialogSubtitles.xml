@@ -104,45 +104,27 @@
                             <texture border="5">osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="image">
-                            <posx>16</posx>
-                            <posy>12</posy>
-                            <width>53</width>
-                            <height>36</height>
-                            <texture>$INFO[ListItem.Thumb,subtitles/,.png]</texture>
-                        </control>
-                        <control type="label">
-                            <posx>55</posx>
-                            <width>105</width>
-                            <height>54</height>
-                            <font>Font_Reg30_2</font>
-                            <textcolor>grey2</textcolor>
-                            <info>ListItem.Label</info>
+                            <posx>40</posx>
+                            <posy>8</posy>
+                            <width>45</width>
+                            <height>45</height>
+                            <texture>$INFO[ListItem.Thumb,flags/language/,.png]</texture>
                         </control>
                         <control type="image">
-                            <posx>195</posx>
+                            <posx>120</posx>
                             <posy>21</posy>
                             <width>60</width>
-                            <height>18</height>
+                            <height>22</height>
                             <texture>subtitles/icon_sync.png</texture>
-                            <visible>ListItem.property(sync)</visible>
+                            <visible>!IsEmpty(ListItem.property(sync))</visible>
                         </control>
                         <control type="label">
-                            <posx>195</posx>
-                            <width>825</width>
+                            <posx>220</posx>
+                            <width>780</width>
                             <height>54</height>
                             <font>Font_Reg30_2</font>
                             <textcolor>grey2</textcolor>
-                            <info>ListItem.Label2</info>
-                            <visible>!ListItem.property(sync)</visible>
-                        </control>
-                        <control type="label">
-                            <posx>270</posx>
-                            <width>750</width>
-                            <height>54</height>
-                            <font>Font_Reg30_2</font>
-                            <textcolor>grey2</textcolor>
-                            <info>ListItem.Label2</info>
-                            <visible>ListItem.property(sync)</visible>
+                            <label>$INFO[ListItem.Label2]</label>
                         </control>
                         <control type="image">
                             <posx>1025</posx>
@@ -167,43 +149,27 @@
                             <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             <visible>Control.HasFocus(120)</visible>
                         </control>
-                        <control type="label">
-                            <posx>55</posx>
-                            <width>105</width>
-                            <height>54</height>
-                            <font>Font_Reg30_2</font>
-                            <info>ListItem.Label</info>
+                        <control type="image">
+                            <posx>40</posx>
+                            <posy>8</posy>
+                            <width>45</width>
+                            <height>45</height>
+                            <texture>$INFO[ListItem.Thumb,flags/language/,.png]</texture>
                         </control>
                         <control type="image">
-                            <posx>16</posx>
-                            <posy>12</posy>
-                            <width>53</width>
-                            <height>36</height>
-                            <texture>$INFO[ListItem.Thumb,subtitles/,.png]</texture>
-                        </control>
-                        <control type="image">
-                            <posx>195</posx>
+                            <posx>120</posx>
                             <posy>21</posy>
                             <width>60</width>
-                            <height>18</height>
+                            <height>22</height>
                             <texture>subtitles/icon_sync.png</texture>
-                            <visible>ListItem.property(sync)</visible>
+                            <visible>!IsEmpty(ListItem.property(sync))</visible>
                         </control>
                         <control type="label">
-                            <posx>195</posx>
-                            <width>825</width>
+                            <posx>220</posx>
+                            <width>780</width>
                             <height>54</height>
                             <font>Font_Reg30_2</font>
                             <info>ListItem.Label2</info>
-                            <visible>!ListItem.property(sync)</visible>
-                        </control>
-                        <control type="label">
-                            <posx>270</posx>
-                            <width>750</width>
-                            <height>54</height>
-                            <font>Font_Reg30_2</font>
-                            <info>ListItem.Label2</info>
-                            <visible>ListItem.property(sync)</visible>
                         </control>
                         <control type="image">
                             <posx>1025</posx>
