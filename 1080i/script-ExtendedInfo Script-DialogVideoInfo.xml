@@ -60,8 +60,8 @@
                     <orientation>vertical</orientation>
                     <scrolltime tween="sine">400</scrolltime>
                     <posx>800</posx>
-                    <posy>240</posy>
-                    <itemgap>15</itemgap>
+                    <posy>214</posy>
+                    <itemgap>12</itemgap>
                     <ondown>4000</ondown>
                     <onup>4000</onup>
                     <control type="radiobutton" id="129">
@@ -74,7 +74,7 @@
                         <textoffsety>20</textoffsety>
                         <aligny>bottom</aligny>
                         <font>Font_Reg28_2</font>
-       <!--                  $INFO[Window(home).Property(movie.Studio),flags/studios/,.png] -->
+                        <!--$INFO[Window(home).Property(movie.Studio),flags/studios/,.png]-->
                         <animation effect="fade" start="100" end="0" time="0" condition="IsEmpty(Window(home).Property(movie.Studio))">Conditional</animation>
                         <textureradioon colordiffuse="white">defaulticons/DefaultStudios.png</textureradioon>
                         <textureradiooff colordiffuse="white">defaulticons/DefaultStudios.png</textureradiooff>
@@ -133,7 +133,7 @@
                         <visible>!IsEmpty(Window(home).Property(movie.Writer))</visible>
                     </control>
                     <control type="group" id="140">
-                        <height>255</height>
+                        <height>250</height>
                         <visible>!IsEmpty(Window(home).Property(movie.Plot)) | !IsEmpty(Window(home).Property(movie.TagLine))</visible>
                         <control type="radiobutton" id="132">
                             <width>1120</width>
@@ -163,7 +163,7 @@
                         </control>
                     </control>
                     <control type="group" id="50000">
-                        <height>70</height>
+                        <height>43</height>
                         <control type="image">
                             <posx>-50</posx>
                             <posy>0</posy>
@@ -273,10 +273,11 @@
                         <height>400</height>
                         <control type="label">
                             <posx>25</posx>
+                            <posy>6</posy>
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                            <font>Font_Bold37_Caps</font>
+                            <font>Font_Bold28</font>
                             <label>Cast</label>
                         </control>
                         <control type="image">
@@ -346,7 +347,7 @@
                                             <posy>267</posy>
                                             <align>center</align>
                                             <font>Font_Reg25_2</font>
-                                            <info>ListItem.Label</info>
+                                            <label>$INFO[ListItem.Label]$INFO[ListItem.Property(character),[COLOR grey][CR] $LOCALIZE[20347] ,[/COLOR]]</label>
                                         </control>
                                     </control>
                                 </control>
@@ -395,7 +396,7 @@
                                             <posy>267</posy>
                                             <align>center</align>
                                             <font>Font_Reg25_2</font>
-                                            <info>ListItem.Label</info>
+                                            <label>$INFO[ListItem.Label]$INFO[ListItem.Property(character),[COLOR grey][CR] $LOCALIZE[20347] ,[/COLOR]]</label>
                                             <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
                                         </control>
                                     </control>
@@ -408,10 +409,11 @@
                         <height>440</height>
                         <control type="label">
                             <posx>25</posx>
+                            <posy>6</posy>
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                            <font>Font_Bold37_Caps</font>
+                            <font>Font_Bold28</font>
                             <label>Similar Movies</label>
                         </control>
                         <control type="image">
@@ -451,15 +453,167 @@
                             <include>DialogVideoInfoMovieLayout</include>
                         </control>
                     </control>
+                    <control type="group">
+                        <animation type="WindowOpen" reversible="false">
+                            <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
+                            <effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,872" tween="cubic" />
+                        </animation>
+                        <posy>66</posy>
+                        <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
+                        <height>100</height>
+                        <control type="image">
+                            <posx>30</posx>
+                            <posy>0</posy>
+                            <width>1042</width>
+                            <height>1</height>
+                            <texture>info/infopanel_line.png</texture>
+                        </control>
+                        <control type="grouplist">
+                            <posx>20</posx>
+                            <posy>0</posy>
+                            <width>1045</width>
+                            <height>90</height>
+                            <orientation>horizontal</orientation>
+                            <itemgap>25</itemgap>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <control type="image" id="900011">
+                                <posy>5</posy>
+                                <width>100</width>
+                                <height>62</height>
+                                <aspectratio>keep</aspectratio>
+                                <texture colordiffuse="white2">$VAR[SourceFlagVar,flags/source/,.png]</texture>
+                                <visible>!IsEmpty(Control.GetLabel(900011))</visible>
+                            </control>
+                            <control type="image" id="900012">
+                                <posy>5</posy>
+                                <width>100</width>
+                                <height>62</height>
+                                <aspectratio>keep</aspectratio>
+                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.VideoCodec),flags/source/,.png]</texture>
+                                <visible>IsEmpty(Control.GetLabel(900011))</visible>
+                                <visible>!IsEmpty(Control.GetLabel(900012))</visible>
+                            </control>
+                            <control type="image">
+                                <include>Furniture_FlagUpright</include>
+                                <visible>!IsEmpty(Control.GetLabel(900012)) | !IsEmpty(Control.GetLabel(900011))</visible>
+                            </control>
+                            <control type="image" id="900013">
+                                <posy>5</posy>
+                                <width>126</width>
+                                <height>62</height>
+                                <aspectratio>keep</aspectratio>
+                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.AudioCodec),flags/audio/,.png]</texture>
+                                <visible>!IsEmpty(Control.GetLabel(900013))</visible>
+                            </control>
+                            <control type="image">
+                                <include>Furniture_FlagUpright</include>
+                                <visible>!IsEmpty(Control.GetLabel(900013))</visible>
+                            </control>
+                            <control type="image" id="900014">
+                                <posy>5</posy>
+                                <width>80</width>
+                                <height>62</height>
+                                <aspectratio>keep</aspectratio>
+                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.VideoResolution),flags/resolution/,.png]</texture>
+                                <visible>!IsEmpty(Control.GetLabel(900014))</visible>
+                            </control>
+                            <control type="image">
+                                <include>Furniture_FlagUpright</include>
+                                <visible>!IsEmpty(Control.GetLabel(900014))</visible>
+                            </control>
+                            <control type="image" id="900015">
+                                <posy>5</posy>
+                                <width>80</width>
+                                <height>62</height>
+                                <aspectratio>keep</aspectratio>
+                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.VideoAspect),flags/aspectratio/,.png]</texture>
+                                <visible>!IsEmpty(Control.GetLabel(900015))</visible>
+                            </control>
+                            <control type="image">
+                                <include>Furniture_FlagUpright</include>
+                                <visible>!IsEmpty(Control.GetLabel(900015))</visible>
+                            </control>
+                            <control type="image">
+                                <posy>5</posy>
+                                <width>100</width>
+                                <height>62</height>
+                                <aspectratio aligny="center" align="center">keep</aspectratio>
+                                <texture colordiffuse="white2">flags/cc.png</texture>
+                                <visible>!IsEmpty(Window(home).Property(movie.SubtitleLanguage)) + IsEmpty(Window.Property(SubtitleLanguage.1))</visible>
+                            </control>
+                            <!--Language flags-->
+                            <control type="grouplist">
+                                <orientation>vertical</orientation>
+                                <usecontrolcoords>true</usecontrolcoords>
+                                <control type="grouplist" id="11000">
+                                    <posy>12</posy>
+                                    <width>600</width>
+                                    <height>25</height>
+                                    <align>left</align>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                    <itemgap>2</itemgap>
+                                    <orientation>horizontal</orientation>
+                                    <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+                                    <control type="label">
+                                        <width>110</width>
+                                        <height>24</height>
+                                        <align>right</align>
+                                        <posy>3</posy>
+                                        <label>$LOCALIZE[445]:</label>
+                                        <font>Font_Reg19_Caps</font>
+                                    </control>
+                                    <include>LanguageFlags</include>
+                                </control>
+                                <!--Subtitle flags-->
+                                <control type="grouplist" id="12000">
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                    <width>600</width>
+                                    <height>25</height>
+                                    <align>left</align>
+                                    <itemgap>2</itemgap>
+                                    <visible>Control.IsVisible(11000)</visible>
+                                    <orientation>horizontal</orientation>
+                                    <control type="label">
+                                        <width>110</width>
+                                        <posy>3</posy>
+                                        <height>24</height>
+                                        <align>right</align>
+                                        <aligny>bottom</aligny>
+                                        <label>$LOCALIZE[287]:</label>
+                                        <font>Font_Reg19_Caps</font>
+                                    </control>
+                                    <control type="label">
+                                        <width min="20" max="150">auto</width>
+                                        <height>24</height>
+                                        <align>left</align>
+                                        <aligny>bottom</aligny>
+                                        <label>31003</label>
+                                        <textcolor>grey</textcolor>
+                                        <font>Font_Reg19_Caps</font>
+                                        <visible>IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
+                                    </control>
+                                    <include>SubtitleFlags</include>
+                                </control>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <posx>30</posx>
+                            <posy>71</posy>
+                            <width>1042</width>
+                            <height>1</height>
+                            <texture>info/infopanel_line.png</texture>
+                        </control>
+                    </control>
                     <control type="group" id="50113">
                         <height>440</height>
                         <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
                         <control type="label">
                             <posx>25</posx>
+                            <posy>6</posy>
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                            <font>Font_Bold37_Caps</font>
+                            <font>Font_Bold28</font>
                             <label>Movies from same set</label>
                         </control>
                         <control type="image">
@@ -501,14 +655,14 @@
                     </control>
                     <control type="group" id="50215">
                         <height>440</height>
-
                         <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
                         <control type="label">
                             <posx>25</posx>
+                            <posy>6</posy>
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                            <font>Font_Bold37_Caps</font>
+                            <font>Font_Bold28</font>
                             <label>Lists from MovieDB Users</label>
                         </control>
                         <control type="image">
@@ -552,10 +706,11 @@
                         <height>500</height>
                         <control type="label">
                             <posx>25</posx>
+                            <posy>6</posy>
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                            <font>Font_Bold37_Caps</font>
+                            <font>Font_Bold28</font>
                             <label>Youtube Videos</label>
                         </control>
                         <control type="image">
@@ -602,40 +757,40 @@
                 <!--Movie info-->
                 <control type="group" id="33000">
                     <posx>825</posx>
-                    <posy>68</posy>
+                    <posy>42</posy>
                     <visible>Container(4000).HasPrevious + !IsEmpty(Window(home).Property(movie.Banner))</visible>
-            <animation effect="fade" time="250">VisibleChange</animation>
-<!--
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>370</width>
-                    <height>370</height>
-                    <texture background="true">$INFO[Window(home).Property(movie.DiscArt)]</texture>
-                    <animation type="WindowOpen" reversible="false">
-                        <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
-                        <effect type="rotate" start="0" center="185,185" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
-                        <effect type="zoom" start="100" center="185,185" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
-                    </animation>
-                    <animation type="WindowClose" reversible="false">
-                        <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
-                        <effect type="rotate" start="0" center="185,185" end="-720" time="700" tween="quadratic" easing="out" />
-                    </animation>
-                </control> -->
-                <control type="image">
-                    <posx>-4</posx>
-                    <posy>-114</posy>
-                    <width>1078</width>
-                    <height>370</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true">$INFO[Window(home).Property(movie.Banner)]</texture>
-                </control>
+                    <animation effect="fade" time="250">VisibleChange</animation>
+                    <!--
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>370</width>
+                        <height>370</height>
+                        <texture background="true">$INFO[Window(home).Property(movie.DiscArt)]</texture>
+                        <animation type="WindowOpen" reversible="false">
+                            <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
+                            <effect type="rotate" start="0" center="185,185" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
+                            <effect type="zoom" start="100" center="185,185" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
+                        </animation>
+                        <animation type="WindowClose" reversible="false">
+                            <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
+                            <effect type="rotate" start="0" center="185,185" end="-720" time="700" tween="quadratic" easing="out" />
+                        </animation>
+                    </control>-->
+                    <control type="image">
+                        <posx>-4</posx>
+                        <posy>-114</posy>
+                        <width>1078</width>
+                        <height>370</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[Window(home).Property(movie.Banner)]</texture>
+                    </control>
                 </control>
                 <control type="group">
                     <posx>825</posx>
                     <posy>68</posy>
                     <visible>!Container(4000).HasPrevious | IsEmpty(Window(home).Property(movie.Banner))</visible>
-            <animation effect="fade" time="250">VisibleChange</animation>
+                    <animation effect="fade" time="250">VisibleChange</animation>
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="0" time="0" tween="cubic" />
@@ -657,7 +812,7 @@
                         </control>
                         <control type="grouplist">
                             <posx>0</posx>
-                            <posy>-15</posy>
+                            <posy>-20</posy>
                             <animation effect="slide" start="0,0" end="90,0" time="0" condition="!IsEmpty(Window(home).Property(movie.Top250))">Conditional</animation>
                             <width>1018</width>
                             <height>200</height>
@@ -666,7 +821,7 @@
                             <orientation>vertical</orientation>
                             <control type="label">
                                 <width>1018</width>
-                                <height>50</height>
+                                <height>42</height>
                                 <label>$INFO[Window(home).Property(movie.Title)]</label>
                                 <font>Font_Bold56</font>
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="IsEmpty(Window(home).Property(movie.Genre))">Conditional</animation>
@@ -721,6 +876,7 @@
                     </control>
                     <!--First Row-->
                     <control type="group">
+                        <posy>-20</posy>
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
                             <effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,170" tween="cubic" />
@@ -880,156 +1036,7 @@
                             </control>
                         </control>
                     </control>
-                    <control type="group">
-                        <animation type="WindowOpen" reversible="false">
-                            <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
-                            <effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,872" tween="cubic" />
-                        </animation>
-                        <posy>66</posy>
-                        <visible>false</visible>
-                        <control type="image">
-                            <posy>872</posy>
-                            <width>1042</width>
-                            <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                        </control>
-                        <control type="grouplist">
-                            <posx>-10</posx>
-                            <posy>872</posy>
-                            <width>1045</width>
-                            <height>90</height>
-                            <orientation>horizontal</orientation>
-                            <itemgap>25</itemgap>
-                            <usecontrolcoords>true</usecontrolcoords>
-                            <control type="image" id="900011">
-                                <posy>5</posy>
-                                <width>100</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$VAR[SourceFlagVar,flags/source/,.png]</texture>
-                                <visible>!IsEmpty(Control.GetLabel(900011))</visible>
-                            </control>
-                            <control type="image" id="900012">
-                                <posy>5</posy>
-                                <width>100</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.VideoCodec),flags/source/,.png]</texture>
-                                <visible>IsEmpty(Control.GetLabel(900011))</visible>
-                                <visible>!IsEmpty(Control.GetLabel(900012))</visible>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                                <visible>!IsEmpty(Control.GetLabel(900012)) | !IsEmpty(Control.GetLabel(900011))</visible>
-                            </control>
-                            <control type="image" id="900013">
-                                <posy>5</posy>
-                                <width>126</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.AudioCodec),flags/audio/,.png]</texture>
-                                <visible>!IsEmpty(Control.GetLabel(900013))</visible>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                                <visible>!IsEmpty(Control.GetLabel(900013))</visible>
-                            </control>
-                            <control type="image" id="900014">
-                                <posy>5</posy>
-                                <width>80</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.VideoResolution),flags/resolution/,.png]</texture>
-                                <visible>!IsEmpty(Control.GetLabel(900014))</visible>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                                <visible>!IsEmpty(Control.GetLabel(900014))</visible>
-                            </control>
-                            <control type="image" id="900015">
-                                <posy>5</posy>
-                                <width>80</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$INFO[Window(home).Property(movie.VideoAspect),flags/aspectratio/,.png]</texture>
-                                <visible>!IsEmpty(Control.GetLabel(900015))</visible>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                                <visible>!IsEmpty(Control.GetLabel(900015))</visible>
-                            </control>
-                            <control type="image">
-                                <posy>5</posy>
-                                <width>100</width>
-                                <height>62</height>
-                                <aspectratio aligny="center" align="center">keep</aspectratio>
-                                <texture colordiffuse="white2">flags/cc.png</texture>
-                                <visible>!IsEmpty(Window(home).Property(movie.SubtitleLanguage)) + IsEmpty(Window.Property(SubtitleLanguage.1))</visible>
-                            </control>
-                            <!--Language flags-->
-                            <control type="grouplist">
-                                <orientation>vertical</orientation>
-                                <usecontrolcoords>true</usecontrolcoords>
-                                <control type="grouplist" id="11000">
-                                    <posy>12</posy>
-                                    <width>600</width>
-                                    <height>25</height>
-                                    <align>left</align>
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                    <itemgap>2</itemgap>
-                                    <orientation>horizontal</orientation>
-                                    <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-                                    <control type="label">
-                                        <width>110</width>
-                                        <height>24</height>
-                                        <align>right</align>
-                                        <posy>3</posy>
-                                        <label>$LOCALIZE[445]:</label>
-                                        <font>Font_Reg19_Caps</font>
-                                    </control>
-                                    <include>LanguageFlags</include>
-                                </control>
-                                <!--Subtitle flags-->
-                                <control type="grouplist" id="12000">
-                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                                    <width>600</width>
-                                    <height>25</height>
-                                    <align>left</align>
-                                    <itemgap>2</itemgap>
-                                    <visible>Control.IsVisible(11000)</visible>
-                                    <orientation>horizontal</orientation>
-                                    <control type="label">
-                                        <width>110</width>
-                                        <posy>3</posy>
-                                        <height>24</height>
-                                        <align>right</align>
-                                        <aligny>bottom</aligny>
-                                        <label>$LOCALIZE[287]:</label>
-                                        <font>Font_Reg19_Caps</font>
-                                    </control>
-                                    <control type="label">
-                                        <width min="20" max="150">auto</width>
-                                        <height>24</height>
-                                        <align>left</align>
-                                        <aligny>bottom</aligny>
-                                        <label>31003</label>
-                                        <textcolor>grey</textcolor>
-                                        <font>Font_Reg19_Caps</font>
-                                        <visible>IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
-                                    </control>
-                                    <include>SubtitleFlags</include>
-                                </control>
-                            </control>
-                        </control>
-                        <control type="image">
-                            <posy>943</posy>
-                            <width>1042</width>
-                            <height>1</height>
-                            <texture>info/infopanel_line.png</texture>
-                        </control>
-                    </control>
                 </control>
-
                 <control type="label">
                     <posx>825</posx>
                     <posy>1033</posy>
@@ -1041,7 +1048,6 @@
                     <haspath>true</haspath>
                     <visible>ControlGroup(6000).HasFocus | ControlGroup(6100).HasFocus</visible>
                 </control>
-
             </control>
         </control>
         <control type="group">
