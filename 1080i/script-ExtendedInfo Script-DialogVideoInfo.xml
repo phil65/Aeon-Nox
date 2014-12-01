@@ -164,6 +164,26 @@
                     </control>
                     <control type="group" id="50000">
                         <height>70</height>
+                        <control type="image">
+                            <posx>-50</posx>
+                            <posy>0</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="fade" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(5000).HasPrevious + ControlGroup(5000).HasFocus</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1130</posx>
+                            <posy>0</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="fade" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(5000).HasNext + ControlGroup(5000).HasFocus</visible>
+                        </control>
                         <control type="grouplist" id="5000">
                             <posx>0</posx>
                             <posy>-25</posy>
@@ -252,17 +272,37 @@
                         <visible>IntegerGreaterThan(Container(50).NumItems,0)</visible>
                         <height>400</height>
                         <control type="label">
-                            <posx>25</posx>
+                            <posx>-75</posx>
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
                             <font>Font_Bold37_Caps</font>
                             <label>Cast</label>
                         </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(50).HasPrevious + Control.HasFocus(50)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1093</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(50).HasNext + Control.HasFocus(50)</visible>
+                        </control>
                         <control type="panel" id="50">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1180</width>
+                            <width>1166</width>
                             <height>400</height>
                             <onleft>50</onleft>
                             <onright>50</onright>
@@ -374,10 +414,30 @@
                             <font>Font_Bold37_Caps</font>
                             <label>Similar Movies</label>
                         </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(150).HasPrevious + Control.HasFocus(150)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1093</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(150).HasNext + Control.HasFocus(150)</visible>
+                        </control>
                         <control type="panel" id="150">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1180</width>
+                            <width>1166</width>
                             <height>400</height>
                             <onleft>150</onleft>
                             <onright>150</onright>
@@ -402,10 +462,30 @@
                             <font>Font_Bold37_Caps</font>
                             <label>Movies from same set</label>
                         </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(250).HasPrevious + Control.HasFocus(250)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1093</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(250).HasNext + Control.HasFocus(250)</visible>
+                        </control>
                         <control type="panel" id="250">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1180</width>
+                            <width>1166</width>
                             <height>400</height>
                             <onleft>250</onleft>
                             <onright>250</onright>
@@ -431,10 +511,30 @@
                             <font>Font_Bold37_Caps</font>
                             <label>Lists from MovieDB Users</label>
                         </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(450).HasPrevious + Control.HasFocus(450)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1093</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(450).HasNext + Control.HasFocus(450)</visible>
+                        </control>
                         <control type="panel" id="450">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1180</width>
+                            <width>1166</width>
                             <height>400</height>
                             <onleft>450</onleft>
                             <onright>450</onright>
@@ -457,6 +557,26 @@
                             <aligny>center</aligny>
                             <font>Font_Bold37_Caps</font>
                             <label>Youtube Videos</label>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(350).HasPrevious + Control.HasFocus(350)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1100</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(350).HasNext + Control.HasFocus(350)</visible>
                         </control>
                         <control type="panel" id="350">
                             <animation type="WindowOpen" reversible="false">
@@ -904,26 +1024,7 @@
                     <haspath>true</haspath>
                     <visible>ControlGroup(6000).HasFocus | ControlGroup(6100).HasFocus</visible>
                 </control>
-                <control type="image">
-                    <posx>778</posx>
-                    <posy>622</posy>
-                    <width>28</width>
-                    <height>28</height>
-                    <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                    <animation effect="fade" time="200">VisibleChange</animation>
-                    <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                    <visible>Container(5000).HasPrevious + ControlGroup(5000).HasFocus</visible>
-                </control>
-                <control type="image">
-                    <posx>1912</posx>
-                    <posy>622</posy>
-                    <width>28</width>
-                    <height>28</height>
-                    <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
-                    <animation effect="fade" time="200">VisibleChange</animation>
-                    <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                    <visible>Container(5000).HasNext + ControlGroup(5000).HasFocus</visible>
-                </control>
+
             </control>
         </control>
         <control type="group">
