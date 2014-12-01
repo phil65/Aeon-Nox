@@ -2,7 +2,8 @@
 <window>
     <defaultcontrol always="true">4000</defaultcontrol>
     <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
-    <onunload>ClearProperty(movie.ImageColor,home)</onunload>
+<!--     <onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window(home).Property(movie.DBID))">XBMC.RunScript(script.videoextras,check,"$INFO[Window(home).Property(FilenameAndPath)]")</onload>
+ -->    <onunload>ClearProperty(movie.ImageColor,home)</onunload>
     <onunload>ClearProperty(movie.ImageFilter,home)</onunload>
     <controls>
         <control type="image">
@@ -232,7 +233,7 @@
                                 <include>DialogVideoInfoScriptButton</include>
                                 <label>$LOCALIZE[31020]</label>
                                 <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[Window(home).Property(movie.FilenameAndPath)]")</onclick>
-                                <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
+                                <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
                                 <visible>!IsEmpty(Window(home).Property(movie.FilenameAndPath))</visible>
                             </control>
                             <control type="button" id="445">
@@ -599,6 +600,16 @@
                             <width>1042</width>
                             <height>1</height>
                             <texture>info/infopanel_line.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>30</posx>
+                            <posy>71</posy>
+                            <width>950</width>
+                            <label>$INFO[Window(home).Property(movie.FileNameAndPath)]</label>
+                            <font>Font_Reg22</font>
+                            <textcolor>white5</textcolor>
+                            <scroll>true</scroll>
+                            <haspath>true</haspath>
                         </control>
                     </control>
                     <control type="group" id="50113">
@@ -1033,17 +1044,6 @@
                             </control>
                         </control>
                     </control>
-                </control>
-                <control type="label">
-                    <posx>825</posx>
-                    <posy>1033</posy>
-                    <width>950</width>
-                    <label>$INFO[Window(home).Property(movie.FileNameAndPath)]</label>
-                    <font>Font_Reg22</font>
-                    <textcolor>white5</textcolor>
-                    <scroll>true</scroll>
-                    <haspath>true</haspath>
-                    <visible>ControlGroup(6000).HasFocus | ControlGroup(6100).HasFocus</visible>
                 </control>
             </control>
         </control>
