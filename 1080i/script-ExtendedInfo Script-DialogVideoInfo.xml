@@ -2,8 +2,9 @@
 <window>
     <defaultcontrol always="true">4000</defaultcontrol>
     <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
-<!--     <onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window(home).Property(movie.DBID))">XBMC.RunScript(script.videoextras,check,"$INFO[Window(home).Property(FilenameAndPath)]")</onload>
- -->    <onunload>ClearProperty(movie.ImageColor,home)</onunload>
+    <!--
+    <onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window(home).Property(movie.DBID))">XBMC.RunScript(script.videoextras,check,"$INFO[Window(home).Property(FilenameAndPath)]")</onload>-->
+    <onunload>ClearProperty(movie.ImageColor,home)</onunload>
     <onunload>ClearProperty(movie.ImageFilter,home)</onunload>
     <controls>
         <control type="image">
@@ -65,26 +66,6 @@
                     <itemgap>12</itemgap>
                     <ondown>4000</ondown>
                     <onup>4000</onup>
-                    <control type="radiobutton" id="129">
-                        <width>1120</width>
-                        <height>43</height>
-                        <radioposx>33</radioposx>
-                        <radioposy>-8</radioposy>
-                        <radiowidth>40</radiowidth>
-                        <textoffsetx>90</textoffsetx>
-                        <textoffsety>20</textoffsety>
-                        <aligny>bottom</aligny>
-                        <font>Font_Reg28_2</font>
-                        <!--$INFO[Window(home).Property(movie.Studio),flags/studios/,.png]-->
-                        <animation effect="fade" start="100" end="0" time="0" condition="IsEmpty(Window(home).Property(movie.Studio))">Conditional</animation>
-                        <textureradioon colordiffuse="white">defaulticons/DefaultStudios.png</textureradioon>
-                        <textureradiooff colordiffuse="white">defaulticons/DefaultStudios.png</textureradiooff>
-                        <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                        <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                        <label>$INFO[Window(home).Property(movie.Studio)]</label>
-                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[Window(home).Property(movie.Studio)])</onclick>
-                        <visible>!IsEmpty(Window(home).Property(movie.Studio))</visible>
-                    </control>
                     <control type="radiobutton" id="130">
                         <width>1120</width>
                         <height>43</height>
@@ -711,7 +692,8 @@
                         </control>
                     </control>
                     <control type="group">
-                        <height>500</height>
+                        <visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
+                        <height>460</height>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -752,13 +734,128 @@
                             <onleft>350</onleft>
                             <onright>350</onright>
                             <onup>450</onup>
-                            <ondown>129</ondown>
+                            <ondown>550</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
                             <orientation>horizontal</orientation>
                             <preloaditems>2</preloaditems>
                             <include>DialogVideoInfoYoutubeList</include>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(550).NumItems,0)</visible>
+                        <height>500</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <posy>6</posy>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold28</font>
+                            <label>Production Companies</label>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>130</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(550).HasPrevious + Control.HasFocus(550)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1100</posx>
+                            <posy>130</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(550).HasNext + Control.HasFocus(550)</visible>
+                        </control>
+                        <control type="panel" id="550">
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                            </animation>
+                            <posx>-45</posx>
+                            <posy>30</posy>
+                            <width>1170</width>
+                            <height>700</height>
+                            <onleft>550</onleft>
+                            <onright>550</onright>
+                            <onup>350</onup>
+                            <ondown>129</ondown>
+                            <pagecontrol>60</pagecontrol>
+                            <scrolltime>300</scrolltime>
+                            <focusposition>0</focusposition>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout height="400" width="373">
+                                <control type="group">
+                                    <posx>50</posx>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <width>373</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>28</posy>
+                                        <width>373</width>
+                                        <height>100</height>
+                                        <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
+                                        <aspectratio aligny="center" align="center">keep</aspectratio>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>122</posy>
+                                        <width>330</width>
+                                        <height>69</height>
+                                        <align>center</align>
+                                        <font>Font_Reg25_2</font>
+                                        <info>ListItem.Label</info>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="373">
+                                <control type="group">
+                                    <posx>50</posx>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <width>373</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <width>373</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                                        <include>PanelGlowFade</include>
+                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                                    </control>
+                                    <control type="image">
+                                        <posy>28</posy>
+                                        <width>373</width>
+                                        <height>100</height>
+                                        <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
+                                        <aspectratio aligny="center" align="center">keep</aspectratio>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>122</posy>
+                                        <width>330</width>
+                                        <height>69</height>
+                                        <align>center</align>
+                                        <font>Font_Reg25_2</font>
+                                        <info>ListItem.Label</info>
+                                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                                    </control>
+                                </control>
+                            </focusedlayout>
                         </control>
                     </control>
                 </control>
