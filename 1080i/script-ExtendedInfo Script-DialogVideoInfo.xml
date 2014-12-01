@@ -589,7 +589,7 @@
                             <onleft>350</onleft>
                             <onright>350</onright>
                             <onup>450</onup>
-                            <ondown>130</ondown>
+                            <ondown>129</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
@@ -600,9 +600,42 @@
                     </control>
                 </control>
                 <!--Movie info-->
+                <control type="group" id="33000">
+                    <posx>825</posx>
+                    <posy>68</posy>
+                    <visible>Container(4000).HasPrevious + !IsEmpty(Window(home).Property(movie.Banner))</visible>
+            <animation effect="fade" time="250">VisibleChange</animation>
+<!--
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>370</width>
+                    <height>370</height>
+                    <texture background="true">$INFO[Window(home).Property(movie.DiscArt)]</texture>
+                    <animation type="WindowOpen" reversible="false">
+                        <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
+                        <effect type="rotate" start="0" center="185,185" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
+                        <effect type="zoom" start="100" center="185,185" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
+                    </animation>
+                    <animation type="WindowClose" reversible="false">
+                        <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
+                        <effect type="rotate" start="0" center="185,185" end="-720" time="700" tween="quadratic" easing="out" />
+                    </animation>
+                </control> -->
+                <control type="image">
+                    <posx>-4</posx>
+                    <posy>-120</posy>
+                    <width>1078</width>
+                    <height>370</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Window(home).Property(movie.Banner)]</texture>
+                </control>
+                </control>
                 <control type="group">
                     <posx>825</posx>
                     <posy>68</posy>
+                    <visible>!Container(4000).HasPrevious | IsEmpty(Window(home).Property(movie.Banner))</visible>
+            <animation effect="fade" time="250">VisibleChange</animation>
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="0" time="0" tween="cubic" />
@@ -996,23 +1029,7 @@
                         </control>
                     </control>
                 </control>
-                <!--
-                <control type="image">
-                    <posx>1780</posx>
-                    <posy>670</posy>
-                    <width>370</width>
-                    <height>370</height>
-                    <texture background="true">$INFO[Window(home).Property(movie.DiscArt)]</texture>
-                    <animation type="WindowOpen" reversible="false">
-                        <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
-                        <effect type="rotate" start="0" center="1965,855" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
-                        <effect type="zoom" start="100" center="1965,855" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
-                    </animation>
-                    <animation type="WindowClose" reversible="false">
-                        <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
-                        <effect type="rotate" start="0" center="1965,855" end="-720" time="700" tween="quadratic" easing="out" />
-                    </animation>
-                </control>-->
+
                 <control type="label">
                     <posx>825</posx>
                     <posy>1033</posy>
