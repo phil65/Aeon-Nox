@@ -48,7 +48,7 @@
             <control type="image">
                 <posx>729</posx>
                 <width>1192</width>
-                <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+                <animation effect="fade" start="100" end="65" time="0" condition="true">Conditional</animation>
                 <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">diffuseoverlay.png</texture>
@@ -243,7 +243,7 @@
                                 <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.7.Label,$LOCALIZE[31030])</onclick>
                                 <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.7.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[Window(home).Property(movie.DBID)]))</onclick>
                                 <onclick>RunScript(script.toolbox,info=selectdialog,header=Choose Action)</onclick>
-                                <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
+                                <visible>!Skin.HasSetting(kioskmode)</visible>
                                 <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                             </control>
                         </control>
@@ -1223,7 +1223,7 @@
                     </control>
                     <control type="group">
                         <visible>IntegerGreaterThan(Container(950).NumItems,0)</visible>
-                        <height>150</height>
+                        <height>430</height>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -1233,26 +1233,6 @@
                             <font>Font_Bold28</font>
                             <label>Keywords</label>
                         </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>70</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(950).HasPrevious + Control.HasFocus(950)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>1100</posx>
-                            <posy>70</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(950).HasNext + Control.HasFocus(950)</visible>
-                        </control>
                         <control type="panel" id="950">
                             <animation type="WindowOpen" reversible="false">
                                 <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
@@ -1260,7 +1240,7 @@
                             <posx>-45</posx>
                             <posy>30</posy>
                             <width>1170</width>
-                            <height>700</height>
+                            <height>400</height>
                             <onleft>950</onleft>
                             <onright>950</onright>
                             <onup>850</onup>
@@ -1268,9 +1248,9 @@
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
-                            <orientation>horizontal</orientation>
+                            <orientation>vertical</orientation>
                             <preloaditems>2</preloaditems>
-                            <itemlayout height="400" width="280">
+                            <itemlayout height="100" width="280">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1279,14 +1259,15 @@
                                         <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
                                     </control>
                                     <control type="label">
-                                        <width>280</width>
+                                        <posx>20</posx>
+                                        <width>240</width>
                                         <height>100</height>
                                         <align>center</align>
                                         <label>$INFO[ListItem.Label]</label>
                                     </control>
                                 </control>
                             </itemlayout>
-                            <focusedlayout height="400" width="280">
+                            <focusedlayout height="100" width="280">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1303,7 +1284,8 @@
                                         <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
                                     </control>
                                     <control type="label">
-                                        <width>280</width>
+                                        <posx>20</posx>
+                                        <width>240</width>
                                         <height>100</height>
                                         <align>center</align>
                                         <label>$INFO[ListItem.Label]</label>
