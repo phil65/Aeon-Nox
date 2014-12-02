@@ -28,19 +28,19 @@
                 <effect type="fade" start="100" end="0" time="240" />
             </animation>
                 <control type="image">
-                    <posx>35</posx>
-                    <posy>112</posy>
-                    <width>310</width>
-                    <height>440</height>
+                    <posx>25</posx>
+                    <posy>107</posy>
+                    <width>330</width>
+                    <height>432</height>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                    <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
+                    <animation effect="slide" end="0,420" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="384,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6)">Conditional</animation>
+                    <animation effect="slide" end="384,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5)">Conditional</animation>
+                    <animation effect="slide" end="384,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4)">Conditional</animation>
+                    <animation effect="slide" end="384,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3)">Conditional</animation>
+                    <animation effect="slide" end="384,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
+                    <animation effect="slide" end="384,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
                 </control>
             <control type="panel" id="500">
                 <posx>0</posx>
@@ -56,7 +56,7 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <orientation>vertical</orientation>
-               <itemlayout width="297" height="390">
+               <itemlayout width="384" height="425">
                     <control type="group">
                         <posy>150</posy>
                         <posx>80</posx>
@@ -79,22 +79,22 @@
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
                         </control>
-                        <control type="progress">
-                            <posx>15</posx>
-                            <posy>332</posy>
-                            <width>190</width>
-                            <height>10</height>
-                            <info>ListItem.PercentPlayed</info>
-                            <visible>!IsEmpty(ListItem.PercentPlayed) + !Stringcompare(ListItem.PercentPlayed,0)</visible>
+                        <control type="textbox">
+                            <width>228</width>
+                            <height>69</height>
+                            <posy>320</posy>
+                            <align>center</align>
+                            <font>Font_Reg25_2</font>
+                            <label>$INFO[ListItem.Label]</label>
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout width="297" height="390">
+                <focusedlayout width="384" height="425">
                     <control type="group">
                         <posy>150</posy>
                         <posx>80</posx>
-                        <animation effect="zoom" center="176,300" start="100" end="127" time="280" tween="back" reversible="false">Focus</animation>
-                        <animation effect="zoom" center="176,300" start="127" end="100" time="200" tween="cubic" reversible="false">UnFocus</animation>
+                        <animation effect="zoom" center="176,340" start="100" end="127" time="280" tween="back" reversible="false">Focus</animation>
+                        <animation effect="zoom" center="176,340" start="127" end="100" time="200" tween="cubic" reversible="false">UnFocus</animation>
                         <control type="image">
                             <posx>11</posx>
                             <posy>30</posy>
@@ -115,6 +115,17 @@
                             <bordersize>19.5</bordersize>
                         </control>
                     </control>
+                        <control type="textbox">
+                        <posx>80</posx>
+                                                   <width>228</width>
+                            <height>69</height>
+                            <posy>470</posy>
+                            <align>center</align>
+                            <font>Font_Reg25_2</font>
+                            <label>$INFO[ListItem.Label]</label>
+                        <animation effect="slide" start="0,0" end="0,50" time="280" tween="back" reversible="false">Focus</animation>
+                        <animation effect="slide" start="0,50" end="0" time="200" tween="cubic" reversible="false">UnFocus</animation>
+                        </control>
                 </focusedlayout>
             </control>
         </control>
