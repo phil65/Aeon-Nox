@@ -35,28 +35,26 @@
                 <visible>Window.IsVisible(DialogTextViewer.xml)</visible>
             </control>
             <animation effect="slide" start="3042,0" end="0,0" time="1300" tween="sine">WindowOpen</animation>
-            <animation effect="slide" end="1242,0" time="450" tween="sine">WindowClose</animation>
+            <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
+            <animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
             <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>729</posx>
-                <width>1192</width>
+                <width>1950</width>
                 <height>1080</height>
-                <aspectratio align="center">scale</aspectratio>
                 <texture fallback="common/black.png" background="true">$INFO[Window(home).Property(movie.ImageFilter)]</texture>
             </control>
             <control type="image">
                 <posx>729</posx>
-                <width>1192</width>
+                <width>1950</width>
                 <animation effect="fade" start="100" end="65" time="0" condition="true">Conditional</animation>
                 <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">diffuseoverlay.png</texture>
             </control>
-            <!--Buttons-->
             <control type="group">
-                <!--
-                <animation effect="slide" end="0,-300" time="320" tween="quadratic" condition="Control.HasFocus(600)">Conditional</animation>-->
                 <posx>-40</posx>
                 <control type="grouplist" id="4000">
                     <orientation>vertical</orientation>
@@ -66,55 +64,7 @@
                     <itemgap>17</itemgap>
                     <ondown>4000</ondown>
                     <onup>4000</onup>
-                    <!--
-                    <control type="radiobutton" id="130">
-                        <width>1120</width>
-                        <height>43</height>
-                        <radioposx>30</radioposx>
-                        <radioposy>-8</radioposy>
-                        <radiowidth>50</radiowidth>
-                        <textoffsetx>90</textoffsetx>
-                        <textoffsety>20</textoffsety>
-                        <aligny>bottom</aligny>
-                        <font>Font_Reg28_2</font>
-                        <animation effect="fade" start="100" end="0" time="0" condition="IsEmpty(Window(home).Property(movie.Director))">Conditional</animation>
-                        <textureradioon colordiffuse="white">common/director-icon.png</textureradioon>
-                        <textureradiooff colordiffuse="white">common/director-icon.png</textureradiooff>
-                        <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                        <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                        <label>$INFO[Window(home).Property(movie.Director)]</label>
-                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
-                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(movie.Director)]))</onclick>
-                        <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31096])</onclick>
-                        <onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(listcontent,$INFO[Window(home).Property(movie.Director)],home)|ActivateWindow(1168))</onclick>
-                        <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31197])</onclick>
-                        <onclick>SetProperty(Dialog.2.BuiltIn,SetFocus(13)|Action(Select))</onclick>
-                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[Window(home).Property(movie.Director)])</onclick>
-                        <visible>!IsEmpty(Window(home).Property(movie.Director))</visible>
-                    </control>
-                    <control type="radiobutton" id="131">
-                        <animation effect="fade" start="100" end="0" time="0" condition="IsEmpty(Window(home).Property(movie.Writer))">Conditional</animation>
-                        <width>1120</width>
-                        <height>43</height>
-                        <radioposx>30</radioposx>
-                        <radioposy>-8</radioposy>
-                        <radiowidth>50</radiowidth>
-                        <textoffsetx>90</textoffsetx>
-                        <textoffsety>20</textoffsety>
-                        <aligny>bottom</aligny>
-                        <font>Font_Reg28_2</font>
-                        <textureradioon colordiffuse="white">common/writer-icon.png</textureradioon>
-                        <textureradiooff colordiffuse="white">common/writer-icon.png</textureradiooff>
-                        <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                        <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                        <label>$INFO[Window(home).Property(movie.Writer)]</label>
-                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31172])</onclick>
-                        <onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(movie.Writer)]))</onclick>
-                        <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31096])</onclick>
-                        <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[Window(home).Property(movie.Writer)],home)|ActivateWindow(1168))</onclick>
-                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[Window(home).Property(movie.Writer)])</onclick>
-                        <visible>!IsEmpty(Window(home).Property(movie.Writer))</visible>
-                    </control>-->
+                    <width>2100</width>
                     <control type="group" id="140">
                         <height>250</height>
                         <visible>!IsEmpty(Window(home).Property(movie.Plot)) | !IsEmpty(Window(home).Property(movie.TagLine))</visible>
@@ -445,7 +395,7 @@
                         <control type="panel" id="50">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1166</width>
+                            <width>1930</width>
                             <height>400</height>
                             <onleft>50</onleft>
                             <onright>50</onright>
@@ -456,7 +406,7 @@
                             <animation type="WindowOpen" reversible="false">
                                 <effect type="slide" start="0,2080" end="0,0" delay="0" tween="sine" time="1800" />
                             </animation>
-                            <itemlayout height="400" width="280">
+                            <itemlayout height="400" width="270">
                                 <control type="group">
                                     <control type="image">
                                         <posy>0</posy>
@@ -494,7 +444,7 @@
                                     </control>
                                 </control>
                             </itemlayout>
-                            <focusedlayout height="400" width="280">
+                            <focusedlayout height="400" width="270">
                                 <control type="group">
                                     <control type="image">
                                         <posy>0</posy>
@@ -580,7 +530,7 @@
                         <control type="panel" id="750">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1166</width>
+                            <width>1930</width>
                             <height>400</height>
                             <onleft>50</onleft>
                             <onright>50</onright>
@@ -591,7 +541,7 @@
                             <animation type="WindowOpen" reversible="false">
                                 <effect type="slide" start="0,2080" end="0,0" delay="0" tween="sine" time="1800" />
                             </animation>
-                            <itemlayout height="400" width="280">
+                            <itemlayout height="400" width="270">
                                 <control type="group">
                                     <control type="image">
                                         <posy>0</posy>
@@ -636,7 +586,7 @@
                                     </control>
                                 </control>
                             </itemlayout>
-                            <focusedlayout height="400" width="280">
+                            <focusedlayout height="400" width="270">
                                 <control type="group">
                                     <control type="image">
                                         <posy>0</posy>
@@ -729,7 +679,7 @@
                         <control type="panel" id="150">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1166</width>
+                            <width>1930</width>
                             <height>400</height>
                             <onleft>150</onleft>
                             <onright>150</onright>
@@ -778,7 +728,7 @@
                         <control type="panel" id="250">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1166</width>
+                            <width>1930</width>
                             <height>400</height>
                             <onleft>250</onleft>
                             <onright>250</onright>
@@ -827,7 +777,7 @@
                         <control type="panel" id="450">
                             <posx>-50</posx>
                             <posy>20</posy>
-                            <width>1166</width>
+                            <width>1930</width>
                             <height>400</height>
                             <onleft>450</onleft>
                             <onright>450</onright>
@@ -879,7 +829,7 @@
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
-                            <width>1170</width>
+                            <width>1940</width>
                             <height>700</height>
                             <onleft>350</onleft>
                             <onright>350</onright>
@@ -931,7 +881,7 @@
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
-                            <width>1170</width>
+                            <width>1940</width>
                             <height>700</height>
                             <onleft>550</onleft>
                             <onright>550</onright>
@@ -1046,7 +996,7 @@
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
-                            <width>1170</width>
+                            <width>1940</width>
                             <height>700</height>
                             <onleft>650</onleft>
                             <onright>650</onright>
@@ -1057,7 +1007,7 @@
                             <focusposition>0</focusposition>
                             <orientation>horizontal</orientation>
                             <preloaditems>2</preloaditems>
-                            <itemlayout height="400" width="230">
+                            <itemlayout height="400" width="240">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1084,7 +1034,7 @@
                                     </control>
                                 </control>
                             </itemlayout>
-                            <focusedlayout height="400" width="230">
+                            <focusedlayout height="400" width="240">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1168,7 +1118,7 @@
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
-                            <width>1170</width>
+                            <width>1940</width>
                             <height>700</height>
                             <onleft>850</onleft>
                             <onright>850</onright>
@@ -1179,7 +1129,7 @@
                             <focusposition>0</focusposition>
                             <orientation>horizontal</orientation>
                             <preloaditems>2</preloaditems>
-                            <itemlayout height="400" width="280">
+                            <itemlayout height="400" width="270">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1195,7 +1145,7 @@
                                     </control>
                                 </control>
                             </itemlayout>
-                            <focusedlayout height="400" width="280">
+                            <focusedlayout height="400" width="270">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1239,7 +1189,7 @@
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
-                            <width>1170</width>
+                            <width>1940</width>
                             <height>400</height>
                             <onleft>950</onleft>
                             <onright>950</onright>
@@ -1250,7 +1200,7 @@
                             <focusposition>0</focusposition>
                             <orientation>vertical</orientation>
                             <preloaditems>2</preloaditems>
-                            <itemlayout height="100" width="280">
+                            <itemlayout height="100" width="270">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1267,7 +1217,7 @@
                                     </control>
                                 </control>
                             </itemlayout>
-                            <focusedlayout height="100" width="280">
+                            <focusedlayout height="100" width="270">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1298,39 +1248,40 @@
                 <!--Movie info-->
                 <control type="group" id="33000">
                     <posx>825</posx>
-                    <posy>42</posy>
-                    <visible>Container(4000).HasPrevious + !IsEmpty(Window(home).Property(movie.Banner))</visible>
+                    <posy>22</posy>
+                    <visible>!Control.HasFocus(132) + !ControlGroup(5000).HasFocus + !IsEmpty(Window(home).Property(movie.Logo))</visible>
                     <animation effect="fade" time="250">VisibleChange</animation>
-                    <!--
-                    <control type="image">
-                        <posx>0</posx>
+
+<!--                     <control type="image">
+                    <visible>!Control.HasFocus(132) + !ControlGroup(5000).HasFocus + !IsEmpty(Window(home).Property(movie.Logo))</visible>
+                        <posx>1500</posx>
                         <posy>0</posy>
-                        <width>370</width>
-                        <height>370</height>
+                        <width>230</width>
+                        <height>230</height>
                         <texture background="true">$INFO[Window(home).Property(movie.DiscArt)]</texture>
-                        <animation type="WindowOpen" reversible="false">
+                        <animation type="Visible" reversible="false">
                             <effect type="slide" start="-1610,0" end="0" delay="800" time="1120" tween="quadratic" easing="out" />
-                            <effect type="rotate" start="0" center="185,185" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
-                            <effect type="zoom" start="100" center="185,185" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
+                            <effect type="rotate" start="0" center="1615,115" end="-720" delay="800" time="1120" tween="quadratic" easing="out" />
+                            <effect type="zoom" start="100" center="1615,115" end="108" delay="2120" time="140" tween="quadratic" easing="out" />
                         </animation>
-                        <animation type="WindowClose" reversible="false">
+                        <animation type="Hidden" reversible="false">
                             <effect type="slide" start="0,0" end="4600" time="700" tween="quadratic" easing="out" />
-                            <effect type="rotate" start="0" center="185,185" end="-720" time="700" tween="quadratic" easing="out" />
+                            <effect type="rotate" start="0" center="1615,115" end="-720" time="700" tween="quadratic" easing="out" />
                         </animation>
-                    </control>-->
+                    </control> -->
                     <control type="image">
-                        <posx>-4</posx>
-                        <posy>-114</posy>
+                        <posx>330</posx>
+                        <posy>-40</posy>
                         <width>1078</width>
-                        <height>370</height>
+                        <height>250</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[Window(home).Property(movie.Banner)]</texture>
+                        <texture background="true">$INFO[Window(home).Property(movie.Logo)]</texture>
                     </control>
                 </control>
                 <control type="group">
                     <posx>825</posx>
                     <posy>68</posy>
-                    <visible>!Container(4000).HasPrevious | IsEmpty(Window(home).Property(movie.Banner))</visible>
+                    <visible>!Control.IsVisible(33000)</visible>
                     <animation effect="fade" time="250">VisibleChange</animation>
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
@@ -1565,9 +1516,10 @@
         </control>
         <control type="group">
             <animation effect="slide" start="-729,0" end="0,0" delay="600" time="450" tween="sine">WindowOpen</animation>
-            <animation effect="slide" end="-729,0" time="450" tween="sine">WindowClose</animation>
+            <animation effect="slide" end="-729,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
             <animation effect="slide" start="-729,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-729,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>-10</posx>
                 <posy>-10</posy>
