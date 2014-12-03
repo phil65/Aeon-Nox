@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
+        <onload condition="IsEmpty(Window(home).Property(WindowColor))">SetProperty(WindowColor,$INFO[Window(home).Property(WindowColor)],home)</onload>
+    <onunload>ClearProperty(WindowColor,home)</onunload>
     <coordinates>
         <posx>0</posx>
         <posy>0</posy>
@@ -24,14 +26,21 @@
                 <effect type="fade" start="100" end="0" time="240" />
             </animation>
             <visible>!Window.IsActive(startup)</visible>
-            <include>DialogBackFade</include>
+        <control type="image">
+            <texture colordiffuse="$INFO[Window(home).Property(WindowColor)]">diffuseoverlay.png</texture>
+            <include>FullscreenDimensions</include>
+            <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
+            <animation effect="fade" start="100" end="0" time="240" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
+            <animation effect="fade" end="100" time="560">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
+        </control>
             <control type="image">
                 <posx>910</posx>
                 <posy>503</posy>
                 <width>100</width>
                 <height>100</height>
                 <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="true">Conditional</animation>
-                <texture colordiffuse="$VAR[AreaColorVar]">spinner.png</texture>
+                <texture colordiffuse="$INFO[Window(home).Property(WindowColor)]">spinner.png</texture>
                 <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
             </control>
             <control type="image">
@@ -40,7 +49,7 @@
                 <width>70</width>
                 <height>70</height>
                 <animation effect="rotate" end="360" center="auto" time="2000" loop="true" reversible="false" condition="true">Conditional</animation>
-                <texture flipx="true" colordiffuse="$VAR[AreaColorVar]">spinner.png</texture>
+                <texture flipx="true" colordiffuse="$INFO[Window(home).Property(WindowColor)]">spinner.png</texture>
                 <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
             </control>
         </control>
