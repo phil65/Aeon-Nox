@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(actor.thumb)]"',radius=20,prefix=ActorInfo)</onload>
-    <defaultcontrol always="true">150</defaultcontrol>
+    <defaultcontrol always="true">4000</defaultcontrol>
     <controls>
         <control type="group">
             <!--left side-->
-            <animation effect="slide" start="-729,0" end="0,0" delay="600" time="450" tween="sine">WindowOpen</animation>
-            <animation effect="slide" end="-729,0" time="450" tween="sine">WindowClose</animation>
-            <animation effect="slide" start="-729,0" end="0,0" time="320" tween="quadratic">VisibleChange</animation>
+            <animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
+            <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
+            <animation effect="slide" start="-1500,0" end="0,0" time="900" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <width>729</width>
                 <height>1080</height>
@@ -29,20 +31,27 @@
             </control>
         </control>
         <control type="group">
+            <control type="button" id="2600">
+                <include>HiddenObject</include>
+                <visible>Window.IsVisible(DialogTextViewer.xml)</visible>
+            </control>
+            <animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
+            <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
+            <animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
+            <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <!--right side-->
-            <animation effect="slide" start="3042,0" end="0,0" time="1300" tween="sine">WindowOpen</animation>
-            <animation effect="slide" end="1242,0" time="450" tween="sine">WindowClose</animation>
-            <animation effect="slide" start="1192,0" end="0,0" time="320" tween="quadratic">VisibleChange</animation>
             <control type="image">
                 <posx>729</posx>
-                <width>1192</width>
+                <width>1950</width>
                 <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
                 <texture fallback="common/black.png" background="true">$INFO[Window(home).Property(ActorInfo.ImageFilter)]</texture>
             </control>
             <control type="image">
                 <posx>729</posx>
-                <width>1192</width>
+                <width>1950</width>
                 <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
                 <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
@@ -61,17 +70,24 @@
                 <animation effect="slide" end="0,-360" time="300" tween="sine" condition="Control.HasFocus(350) | Control.HasFocus(250) | Control.HasFocus(150)">Conditional</animation>-->
                 <control type="label">
                     <posx>-40</posx>
-                    <posy>-22</posy>
+                    <posy>-15</posy>
                     <height>60</height>
                     <width>1050</width>
                     <label>$INFO[Window(home).Property(actor.title)]</label>
                     <font>Font_Bold56</font>
                     <scroll>true</scroll>
                 </control>
-                <control type="grouplist">
+                <control type="image">
+                    <posx>-40</posx>
+                    <posy>58</posy>
+                    <width>1042</width>
+                    <height>1</height>
+                    <texture>info/infopanel_line.png</texture>
+                </control>
+                <control type="grouplist" id="4000">
                     <posx>-80</posx>
                     <posy>60</posy>
-                    <width>1200</width>
+                    <width>1950</width>
                     <itemgap>15</itemgap>
                     <height>1000</height>
                     <scrolltime tween="sine">400</scrolltime>
@@ -87,7 +103,6 @@
                     </control>
                     <control type="group" id="140">
                         <height>255</height>
-                        <visible>!IsEmpty(Window(home).Property(actor.Biography))</visible>
                         <control type="radiobutton" id="132">
                             <width>1120</width>
                             <height>255</height>
@@ -128,7 +143,7 @@
                         <control type="panel" id="150">
                             <posy>30</posy>
                             <posx>-45</posx>
-                            <width>1170</width>
+                            <width>1920</width>
                             <height>600</height>
                             <onleft>150</onleft>
                             <onright>150</onright>
@@ -156,7 +171,7 @@
                         <control type="panel" id="250">
                             <posy>30</posy>
                             <posx>-45</posx>
-                            <width>1170</width>
+                            <width>1920</width>
                             <height>600</height>
                             <onleft>9000</onleft>
                             <onright>9000</onright>
@@ -183,7 +198,7 @@
                         <control type="panel" id="350">
                             <posx>-45</posx>
                             <posy>30</posy>
-                            <width>1170</width>
+                            <width>1920</width>
                             <height>700</height>
                             <onleft>250</onleft>
                             <onright>250</onright>
@@ -197,7 +212,7 @@
                             <include>DialogVideoInfoYoutubeList</include>
                         </control>
                     </control>
-                                        <control type="group" id="4500">
+                    <control type="group" id="4500">
                         <height>450</height>
                         <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
                         <control type="label">
@@ -211,7 +226,7 @@
                         <control type="panel" id="450">
                             <posy>30</posy>
                             <posx>-45</posx>
-                            <width>1170</width>
+                            <width>1920</width>
                             <height>600</height>
                             <onleft>9000</onleft>
                             <onright>9000</onright>
@@ -285,7 +300,8 @@
                             <visible>Control.HasFocus(250)</visible>
                         </control>
                     </focusedlayout>
-                </control>--></control>
+                </control>-->
+            </control>
         </control>
     </controls>
 </window>
