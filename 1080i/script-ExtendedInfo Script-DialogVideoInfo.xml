@@ -34,7 +34,7 @@
                 <include>HiddenObject</include>
                 <visible>Window.IsVisible(DialogTextViewer.xml)</visible>
             </control>
-            <animation effect="slide" start="3042,0" end="0,0" time="1300" tween="sine">WindowOpen</animation>
+            <animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
             <animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
             <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
@@ -66,7 +66,7 @@
                     <onup>4000</onup>
                     <width>2100</width>
                     <control type="group" id="140">
-                        <height>250</height>
+                        <height>225</height>
                         <control type="radiobutton" id="132">
                             <width>1120</width>
                             <height>255</height>
@@ -95,10 +95,10 @@
                         </control>
                     </control>
                     <control type="group" id="50000">
-                        <height>63</height>
+                        <height>88</height>
                         <control type="image">
                             <posx>-50</posx>
-                            <posy>0</posy>
+                            <posy>25</posy>
                             <width>28</width>
                             <height>28</height>
                             <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
@@ -108,7 +108,7 @@
                         </control>
                         <control type="image">
                             <posx>1130</posx>
-                            <posy>0</posy>
+                            <posy>25</posy>
                             <width>28</width>
                             <height>28</height>
                             <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
@@ -118,7 +118,7 @@
                         </control>
                         <control type="grouplist" id="5000">
                             <posx>0</posx>
-                            <posy>-25</posy>
+                            <posy>0</posy>
                             <width>1130</width>
                             <height>400</height>
                             <onleft>5000</onleft>
@@ -1074,7 +1074,7 @@
                     </control>
                     <control type="group">
                         <visible>IntegerGreaterThan(Container(850).NumItems,0)</visible>
-                        <height>150</height>
+                        <height>220</height>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -1084,26 +1084,6 @@
                             <font>Font_Bold28</font>
                             <label>Genres</label>
                         </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>70</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
-                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(850).HasPrevious + Control.HasFocus(850)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>1100</posx>
-                            <posy>70</posy>
-                            <width>28</width>
-                            <height>28</height>
-                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
-                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(850).HasNext + Control.HasFocus(850)</visible>
-                        </control>
                         <control type="panel" id="850">
                             <animation type="WindowOpen" reversible="false">
                                 <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
@@ -1111,7 +1091,7 @@
                             <posx>-45</posx>
                             <posy>30</posy>
                             <width>1940</width>
-                            <height>700</height>
+                            <height>200</height>
                             <onleft>850</onleft>
                             <onright>850</onright>
                             <onup>650</onup>
@@ -1119,9 +1099,9 @@
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
-                            <orientation>horizontal</orientation>
+                            <orientation>vertical</orientation>
                             <preloaditems>2</preloaditems>
-                            <itemlayout height="400" width="270">
+                            <itemlayout height="100" width="270">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1137,7 +1117,7 @@
                                     </control>
                                 </control>
                             </itemlayout>
-                            <focusedlayout height="400" width="270">
+                            <focusedlayout height="100" width="270">
                                 <control type="group">
                                     <posx>50</posx>
                                     <control type="image">
@@ -1506,10 +1486,10 @@
             </control>
         </control>
         <control type="group">
-            <animation effect="slide" start="-729,0" end="0,0" delay="600" time="450" tween="sine">WindowOpen</animation>
-            <animation effect="slide" end="-729,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" start="-729,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
-            <animation effect="slide" end="-729,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
+            <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
+            <animation effect="slide" start="-1500,0" end="0,0" time="900" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
+            <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>-10</posx>
