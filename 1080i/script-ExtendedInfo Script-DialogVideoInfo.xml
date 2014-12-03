@@ -7,7 +7,7 @@
     <onunload>ClearProperty(movie.ImageColor,home)</onunload>
     <onunload>ClearProperty(movie.ImageFilter,home)</onunload>
     <controls>
-        <control type="image">
+<!--         <control type="image">
             <posx>0</posx>
             <width>1920</width>
             <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
@@ -17,28 +17,11 @@
             <include>Animation_WindowFade200</include>
             <visible>!Control.Isvisible(2600)</visible>
             <animation effect="fade" time="250">VisibleChange</animation>
-        </control>
-        <!--
-        <control type="image">
-            <posx>0</posx>
-            <width>1920</width>
-            <height>1080</height>
-            <aspectratio align="center">scale</aspectratio>
-            <texture>$INFO[Window(home).Property(movie.Logo)]</texture>
-            <include>Animation_WindowFade200</include>
-            <visible>!Control.Isvisible(2600)</visible>
-            <animation effect="fade" time="250">VisibleChange</animation>
-        </control>-->
+        </control> -->
         <control type="group">
-            <control type="button" id="2600">
-                <include>HiddenObject</include>
-                <visible>Window.IsVisible(DialogTextViewer.xml)</visible>
-            </control>
             <animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
             <animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" start="1242,0" end="0,0" time="450" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
-            <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>729</posx>
@@ -1627,8 +1610,6 @@
         <control type="group">
             <animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
-            <animation effect="slide" start="-1500,0" end="0,0" time="900" tween="sine" condition="!Control.IsVisible(2600)">Conditional</animation>
-            <animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.IsVisible(2600)">Conditional</animation>
             <animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>-10</posx>
