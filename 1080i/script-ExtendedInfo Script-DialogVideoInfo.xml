@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">4000</defaultcontrol>
-    <onload>RunScript(script.toolbox,info=blur,id='"$INFO[Window(home).Property(movie.Poster)]"',radius=20,prefix=movie)</onload>
     <!--
     <onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window(home).Property(movie.DBID))">XBMC.RunScript(script.videoextras,check,"$INFO[Window(home).Property(FilenameAndPath)]")</onload>-->
     <onunload>ClearProperty(movie.ImageColor,home)</onunload>
@@ -10,12 +9,10 @@
 <!--         <control type="image">
             <posx>0</posx>
             <width>1920</width>
-            <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
             <height>1080</height>
             <aspectratio align="center">scale</aspectratio>
-            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+            <texture>$INFO[Window(home).Property(movie.Fanart)]</texture>
             <include>Animation_WindowFade200</include>
-            <visible>!Control.Isvisible(2600)</visible>
             <animation effect="fade" time="250">VisibleChange</animation>
         </control> -->
         <control type="group">
@@ -1409,8 +1406,8 @@
                                 <height>50</height>
                                 <label>$INFO[Window(home).Property(movie.Title)]</label>
                                 <font>Font_Bold56</font>
-                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))">Conditional</animation>
-                                <scroll>true</scroll>
+<!--                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))">Conditional</animation>
+ -->                                <scroll>true</scroll>
                             </control>
                             <control type="grouplist">
                                 <posx>0</posx>
@@ -1421,8 +1418,8 @@
                                 <itemgap>0</itemgap>
                                 <orientation>horizontal</orientation>
                                 <usecontrolcoords>true</usecontrolcoords>
-                                <visible>!Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))</visible>
-                                <control type="image" id="12020">
+<!--                                 <visible>!Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))</visible>
+ -->                                <control type="image" id="12020">
                                     <posx>0</posx>
                                     <posy>6</posy>
                                     <width>42</width>
@@ -1432,10 +1429,11 @@
                                     <fadetime>200</fadetime>
                                     <visible>!IsEmpty(Control.GetLabel(12020))</visible>
                                 </control>
-                                <control type="label">
+                                <control type="fadelabel">
                                     <width>995</width>
                                     <height>40</height>
                                     <label>$INFO[Window(home).Property(movie.OriginalTitle)]</label>
+                                    <label>$INFO[Window(home).Property(movie.Status)]</label>
                                     <font>Font_Reg28_2</font>
                                     <textcolor>grey</textcolor>
                                 </control>
