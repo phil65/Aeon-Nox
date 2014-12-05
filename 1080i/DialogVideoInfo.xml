@@ -7,7 +7,7 @@
 
     <onload condition="Container.Content(movies) + SubString(Container.FolderPath,videodb://)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID])</onload>
     <onload condition="Container.Content(movies) + SubString(Container.FolderPath,videodb://)">Dialog.Close(movieinformation)</onload>
-    <onload condition="Container.Content(movies) + !SubString(Container.FolderPath,videodb://)">SendClick(6)</onload>
+    <onload condition="Container.Content(movies) + !SubString(Container.FolderPath,videodb://)">RunScript(script.toolbox,info=yesnodialog,header=$INFO[ListItem.Label],text=Do you want to re-scrape this movie?,yesaction=SendClick(6),noaction=Action(Close))</onload>
     <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
     <onload condition="System.HasAddon(script.videoextras) + !Container.Content(movies)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
     <onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
