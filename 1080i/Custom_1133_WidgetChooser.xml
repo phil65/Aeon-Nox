@@ -208,6 +208,15 @@
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
+                            <label>Recommended Movies</label>
+                            <onclick>SetProperty(AllowedStyles,_4_5_9_10_11_12_,home)</onclick>
+                            <onclick>SetProperty(CustomYesNoDialog,smartishmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Recommended Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.smartish.widgets?type=movies&amp;reload=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(movies) + System.HasAddon(service.smartish.widgets)</visible>
+                        </item>
+                        <item>
                             <label>$LOCALIZE[31872]</label>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmoviesdefault)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31872])</onclick>
@@ -402,13 +411,22 @@
                             <visible>Library.HasContent(tvshows)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[31464]</label>
+                            <label>In Progress</label>
                             <onclick>SetProperty(AllowedStyles,_2_4_7_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,watchlisttv,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31464])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,In Progress)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,special://skin/extras/Playlists/recommendedepisodes8.xsp)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[31464]</label>
+                            <onclick>SetProperty(AllowedStyles,_4_5_9_10_11_12_,home)</onclick>
+                            <onclick>SetProperty(CustomYesNoDialog,smartishtv,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31464])</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.smartish.widgets?type=episodes&amp;reload=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(tvshows) + System.HasAddon(service.smartish.widgets)</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31873]</label>
@@ -594,6 +612,15 @@
                             <onclick>ActivateWindow(1137)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                             <visible>Library.HasContent(music)</visible>
+                        </item>
+                        <item>
+                            <label>Recommended Albums</label>
+                            <onclick>SetProperty(AllowedStyles,_1_6_,home)</onclick>
+                            <onclick>SetProperty(CustomYesNoDialog,smartishalbums,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Recommended Albums)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.smartish.widgets?type=albums&amp;reload=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(music) + System.HasAddon(service.smartish.widgets)</visible>
                         </item>
                         <item>
                             <label>31817</label>
@@ -1031,11 +1058,20 @@
                         <item>
                             <label>PVR Channels</label>
                             <onclick>SetProperty(AllowedStyles,_2_,home)</onclick>
-                            <onclick>SetProperty(CustomYesNoDialog,randomtv,skinsettings)</onclick>
+                            <onclick>SetProperty(CustomYesNoDialog,pvr,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,PVR Channels)</onclick>
 <!--                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=channels)</onclick>
  -->                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,pvr://channels/tv/all tv channels/)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Recommended PVR Channels</label>
+                            <onclick>SetProperty(AllowedStyles,_2_,home)</onclick>
+                            <onclick>SetProperty(CustomYesNoDialog,smartishalbums,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Recommended Albums)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.smartish.widgets?type=pvr&amp;reload=10)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                            <visible>Library.HasContent(music) + System.HasAddon(service.smartish.widgets)</visible>
                         </item>
                     </content>
                 </control>
