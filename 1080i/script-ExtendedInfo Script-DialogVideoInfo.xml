@@ -4,7 +4,8 @@
     <!--
     <onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window(home).Property(movie.DBID))">XBMC.RunScript(script.videoextras,check,"$INFO[Window(home).Property(FilenameAndPath)]")</onload>-->
     <controls>
-<!--         <control type="image">
+        <!--
+        <control type="image">
             <posx>0</posx>
             <width>1920</width>
             <height>1080</height>
@@ -12,7 +13,7 @@
             <texture>$INFO[Window(home).Property(movie.Fanart)]</texture>
             <include>Animation_WindowFade200</include>
             <animation effect="fade" time="250">VisibleChange</animation>
-        </control> -->
+        </control>-->
         <control type="group">
             <animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
             <animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
@@ -44,9 +45,9 @@
                     <onup>4000</onup>
                     <width>2100</width>
                     <control type="group" id="140">
-                        <height>225</height>
+                        <height>220</height>
                         <control type="radiobutton" id="132">
-                            <width>1120</width>
+                            <width>1085</width>
                             <height>255</height>
                             <radioposx>30</radioposx>
                             <radioposy>-8</radioposy>
@@ -73,10 +74,10 @@
                         </control>
                     </control>
                     <control type="group" id="50000">
-                        <height>88</height>
+                        <height>140</height>
                         <control type="image">
                             <posx>-50</posx>
-                            <posy>25</posy>
+                            <posy>65</posy>
                             <width>28</width>
                             <height>28</height>
                             <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
@@ -85,8 +86,8 @@
                             <visible>Container(5000).HasPrevious + ControlGroup(5000).HasFocus</visible>
                         </control>
                         <control type="image">
-                            <posx>1130</posx>
-                            <posy>25</posy>
+                            <posx>1100</posx>
+                            <posy>65</posy>
                             <width>28</width>
                             <height>28</height>
                             <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
@@ -97,31 +98,47 @@
                         <control type="grouplist" id="5000">
                             <posx>0</posx>
                             <posy>0</posy>
-                            <width>1130</width>
+                            <width>1090</width>
                             <height>400</height>
                             <onleft>5000</onleft>
                             <onright>5000</onright>
                             <onup>132</onup>
                             <ondown>50</ondown>
-                            <itemgap>0</itemgap>
+                            <itemgap>-10</itemgap>
                             <orientation>horizontal</orientation>
                             <scrolltime tween="quadratic">200</scrolltime>
-                            <control type="button" id="8">
+                            <control type="radiobutton" id="8">
                                 <label>$LOCALIZE[208]</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/play.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/play.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
                                 <onclick>Action(Close)</onclick>
                                 <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window(home).Property(movie.DBID)])</onclick>
                                 <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
+                                <onright>9</onright>
                             </control>
-                            <control type="button" id="9">
-                                <label>$LOCALIZE[13404] $INFO[Window(home).Property(movie.PercentPlayed),(,%)]</label>
-                                <include>DialogVideoInfoScriptButton</include>
-                                <onclick>Action(Close)</onclick>
-                                <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window(home).Property(movie.DBID)],resume=true)</onclick>
-                                <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
+                            <control type="group" id="99">
+                                <width>280</width>
+                                <visible>!IsEmpty(Window(home).Property(movie.DBID)) + IntegerGreaterThan(Window(home).Property(movie.PercentPlayed),0)</visible>
+                                <control type="button" id="9">
+                                    <label>$LOCALIZE[13404] $INFO[Window(home).Property(movie.PercentPlayed),(,%)]</label>
+                                    <include>DialogVideoInfoScriptButton</include>
+                                    <onclick>Action(Close)</onclick>
+                                    <onleft>8</onleft>
+                                    <onright>20</onright>
+                                    <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window(home).Property(movie.DBID)],resume=true)</onclick>
+                                </control>
+                                <control type="image">
+                                    <posx>90</posx>
+                                    <posy>10</posy>
+                                    <texture>dialogs/circle/$INFO[Window(home).Property(movie.PercentPlayed)].png</texture>
+                                    <width>100</width>
+                                    <height>100</height>
+                                </control>
                             </control>
-                            <control type="button" id="20">
+                            <control type="radiobutton" id="20">
                                 <label>$LOCALIZE[31284]</label>
+                                <onleft>9</onleft>
                                 <include>DialogVideoInfoScriptButton</include>
                                 <onclick>Playlist.Clear</onclick>
                                 <onclick>Dialog.Close(MovieInformation)</onclick>
@@ -129,24 +146,42 @@
                                 <visible>system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
                                 <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                             </control>
-                            <control type="button" id="11">
+                            <control type="radiobutton" id="11">
                                 <label>$LOCALIZE[20410]</label>
                                 <include>DialogVideoInfoScriptButton</include>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/movieclap.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/movieclap.png</textureradiooff>
                                 <onclick condition="!IsEmpty(Window(home).Property(movie.Trailer))">Action(Close)</onclick>
                                 <onclick condition="!IsEmpty(Window(home).Property(movie.Trailer))">PlayMedia($ESCINFO[Window(home).Property(movie.Trailer)])</onclick>
                                 <onclick condition="IsEmpty(Window(home).Property(movie.Trailer))">SetProperty(listcontent,$INFO[Window(home).Property(movie.Title)] Trailer,home)</onclick>
                                 <onclick condition="IsEmpty(Window(home).Property(movie.Trailer))">ActivateWindow(1168)</onclick>
                                 <visible>![substring(Container.FolderPath,plugin://) + substring(Container.FolderPath,trailer)]</visible>
                             </control>
-                            <control type="button" id="100">
+                            <control type="radiobutton" id="100">
                                 <include>DialogVideoInfoScriptButton</include>
                                 <label>$LOCALIZE[31020]</label>
                                 <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[Window(home).Property(movie.FilenameAndPath)]")</onclick>
                                 <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
                                 <visible>!IsEmpty(Window(home).Property(movie.FilenameAndPath))</visible>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/plus2.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/plus2.png</textureradiooff>
                             </control>
-                            <control type="button" id="445">
+                            <control type="radiobutton" id="6001">
+                                <label>Rate Movie</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/star.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/star.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
+                            </control>
+                            <control type="radiobutton" id="6002">
+                                <label>Already rated</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
+                            <control type="radiobutton" id="445">
+                                <include>DialogVideoInfoScriptButton</include>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/tool2.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/tool2.png</textureradiooff>
                                 <label>Manage</label>
                                 <onclick>SetProperty(Dialog.1.Label,-)</onclick>
                                 <onclick>SetProperty(Dialog.2.Label,-)</onclick>
@@ -173,17 +208,10 @@
                                 <visible>!Skin.HasSetting(kioskmode)</visible>
                                 <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                             </control>
-                            <control type="button" id="6001">
-                                <label>Rate Movie</label>
-                                <include>DialogVideoInfoScriptButton</include>
-                            </control>
-                            <control type="button" id="6002">
-                                <label>Already rated</label>
-                                <include>DialogVideoInfoScriptButton</include>
-                            </control>
                         </control>
                     </control>
-<!--                     <control type="group" id="60000">
+                    <!--
+                    <control type="group" id="60000">
                         <height>88</height>
                         <control type="grouplist" id="6000">
                             <posx>0</posx>
@@ -197,21 +225,20 @@
                             <itemgap>0</itemgap>
                             <orientation>horizontal</orientation>
                             <scrolltime tween="quadratic">200</scrolltime>
-
                             <control type="button" id="6003">
                                 <label>Rating</label>
                                 <include>DialogVideoInfoScriptButton</include>
                             </control>
                         </control>
-                    </control> -->
+                    </control>-->
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
                             <effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,872" tween="cubic" />
                         </animation>
-                        <posy>66</posy>
+                        <posy>60</posy>
                         <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
-                        <height>100</height>
+                        <height>75</height>
                         <control type="image">
                             <posx>30</posx>
                             <posy>0</posy>
@@ -491,8 +518,7 @@
                             <height>1</height>
                             <texture>info/infopanel_line.png</texture>
                         </control>
-                        <!--
-                        <control type="label">
+<!--                         <control type="label">
                             <posx>30</posx>
                             <posy>71</posy>
                             <width>950</width>
@@ -502,7 +528,8 @@
                             <textcolor>white5</textcolor>
                             <scroll>true</scroll>
                             <haspath>true</haspath>
-                        </control>--></control>
+                        </control> -->
+                    </control>
                     <control type="group" id="50111">
                         <visible>IntegerGreaterThan(Container(50).NumItems,0)</visible>
                         <height>400</height>
@@ -1433,8 +1460,9 @@
                                 <height>50</height>
                                 <label>$INFO[Window(home).Property(movie.Title)]</label>
                                 <font>Font_Bold56</font>
-<!--                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))">Conditional</animation>
- -->                                <scroll>true</scroll>
+                                <!--
+                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))">Conditional</animation>-->
+                                <scroll>true</scroll>
                             </control>
                             <control type="grouplist">
                                 <posx>0</posx>
@@ -1445,8 +1473,9 @@
                                 <itemgap>0</itemgap>
                                 <orientation>horizontal</orientation>
                                 <usecontrolcoords>true</usecontrolcoords>
-<!--                                 <visible>!Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))</visible>
- -->                                <control type="image" id="12020">
+                                <!--
+                                <visible>!Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))</visible>-->
+                                <control type="image" id="12020">
                                     <posx>0</posx>
                                     <posy>6</posy>
                                     <width>42</width>
