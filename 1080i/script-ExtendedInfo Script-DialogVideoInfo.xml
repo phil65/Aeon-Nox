@@ -173,8 +173,37 @@
                                 <visible>!Skin.HasSetting(kioskmode)</visible>
                                 <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
                             </control>
+                            <control type="button" id="6001">
+                                <label>Rate Movie</label>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
+                            <control type="button" id="6002">
+                                <label>Already rated</label>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
                         </control>
                     </control>
+<!--                     <control type="group" id="60000">
+                        <height>88</height>
+                        <control type="grouplist" id="6000">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1130</width>
+                            <height>400</height>
+                            <onleft>5000</onleft>
+                            <onright>5000</onright>
+                            <onup>132</onup>
+                            <ondown>50</ondown>
+                            <itemgap>0</itemgap>
+                            <orientation>horizontal</orientation>
+                            <scrolltime tween="quadratic">200</scrolltime>
+
+                            <control type="button" id="6003">
+                                <label>Rating</label>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
+                        </control>
+                    </control> -->
                     <control type="group">
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
@@ -1525,6 +1554,7 @@
                             </control>
                             <control type="group">
                                 <width>220</width>
+                                <visible>!IsEmpty(Window(home).Property(movie.Release_Date))</visible>
                                 <control type="label">
                                     <posy>12</posy>
                                     <width>220</width>
