@@ -180,6 +180,18 @@
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
                             </control>
+                            <control type="radiobutton" id="6003">
+                                <label>Add to favourites</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/star.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/star.png</textureradiooff>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
+                            <control type="radiobutton" id="6004">
+                                <label>Show Favourites</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
                             <control type="radiobutton" id="445">
                                 <include>DialogVideoInfoScriptButton</include>
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/tool2.png</textureradioon>
@@ -206,6 +218,8 @@
                                 <onclick condition="system.hasaddon(script.tvtunes)">SetProperty(Dialog.6.BuiltIn,RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[Window(home).Property(movie.FilenameAndPath)]&amp;tvname=$INFO[Window(home).Property(movie.TVShowTitle)]))</onclick>
                                 <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.7.Label,$LOCALIZE[31030])</onclick>
                                 <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.7.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[Window(home).Property(movie.DBID)]))</onclick>
+                                <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.8.Label,ExtendedInfo Settings)</onclick>
+                                <onclick condition="System.HasAddon(script.libraryeditor)">SetProperty(Dialog.8.BuiltIn,Addon.OpenSettings(script.extendedinfo))</onclick>
                                 <onclick>RunScript(script.toolbox,info=selectdialog,header=Choose Action)</onclick>
                                 <visible>!Skin.HasSetting(kioskmode)</visible>
                                 <visible>!IsEmpty(Window(home).Property(movie.DBID))</visible>
