@@ -100,7 +100,7 @@
                             <radioposx>30</radioposx>
                             <radioposy>-8</radioposy>
                             <radiowidth>46</radiowidth>
-                            <onup>350</onup>
+                            <onup>750</onup>
                             <ondown>150</ondown>
                             <textureradioon colordiffuse="white">defaulticons/DefaultAddonTvInfo.png</textureradioon>
                             <textureradiooff colordiffuse="white">defaulticons/DefaultAddonTvInfo.png</textureradiooff>
@@ -205,8 +205,8 @@
                             <posx>-45</posx>
                             <width>1950</width>
                             <height>600</height>
-                            <onleft>9000</onleft>
-                            <onright>9000</onright>
+                            <onleft>250</onleft>
+                            <onright>250</onright>
                             <onup>150</onup>
                             <ondown>350</ondown>
                             <scrolltime>200</scrolltime>
@@ -281,10 +281,10 @@
                             <posx>-45</posx>
                             <width>1950</width>
                             <height>600</height>
-                            <onleft>9000</onleft>
-                            <onright>9000</onright>
+                            <onleft>450</onleft>
+                            <onright>450</onright>
                             <onup>350</onup>
-                            <ondown>132</ondown>
+                            <ondown>750</ondown>
                             <scrolltime>200</scrolltime>
                             <orientation>horizontal</orientation>
                             <animation type="WindowOpen" reversible="false">
@@ -345,67 +345,88 @@
                             </focusedlayout>
                         </control>
                     </control>
+                    <control type="group" id="7500">
+                        <height>450</height>
+                        <visible>IntegerGreaterThan(Container(750).NumItems,0)</visible>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Fanart</label>
+                        </control>
+                        <control type="panel" id="750">
+                            <posy>30</posy>
+                            <posx>-45</posx>
+                            <width>1950</width>
+                            <height>600</height>
+                            <onleft>750</onleft>
+                            <onright>750</onright>
+                            <onup>450</onup>
+                            <ondown>132</ondown>
+                            <scrolltime>200</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
+                            </animation>
+                            <itemlayout height="400" width="540">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>560</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posx>77</posx>
+                                        <posy>28</posy>
+                                        <width>505</width>
+                                        <height>325</height>
+                                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                                        <aspectratio aligny="center">scale</aspectratio>
+                                        <fadetime>0</fadetime>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="540">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>560</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>560</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                                        <include>PanelGlowFade</include>
+                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                                    </control>
+                                    <control type="group">
+                                        <posx>77</posx>
+                                        <posy>18</posy>
+                                        <control type="image">
+                                            <posy>10</posy>
+                                            <width>505</width>
+                                            <height>325</height>
+                                            <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                                            <aspectratio aligny="center">scale</aspectratio>
+                                            <fadetime>0</fadetime>
+                                        </control>
+                                    </control>
+                                </control>
+                            </focusedlayout>
+                        </control>
+                    </control>
                 </control>
-                <!--
-                <control type="panel" id="250">
-                    <posx>0</posx>
-                    <posy>980</posy>
-                    <animation effect="fade" time="240">Visible</animation>
-                    <animation effect="fade" time="240">Hidden</animation>
-                    <width>1000</width>
-                    <height>450</height>
-                    <onleft>250</onleft>
-                    <onright>250</onright>
-                    <onup>150</onup>
-                    <ondown>350</ondown>
-                    <pagecontrol>60</pagecontrol>
-                    <scrolltime>300</scrolltime>
-                    <focusposition>0</focusposition>
-                    <orientation>horizontal</orientation>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout height="420" width="230">
-                        <control type="image">
-                            <width>214</width>
-                            <height>434</height>
-                            <aspectratio>keep</aspectratio>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                            <bordersize>7</bordersize>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout height="420" width="230">
-                        <control type="image">
-                            <width>214</width>
-                            <height>434</height>
-                            <aspectratio>keep</aspectratio>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                            <bordersize>7</bordersize>
-                            <visible>!Control.HasFocus(250)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>2</posx>
-                            <posy>2</posy>
-                            <width>210</width>
-                            <height>430</height>
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="$INFO[Window(home).Property(ActorInfo.ImageColor)]" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="5">views/addonwall_select.png</bordertexture>
-                            <bordersize>5</bordersize>
-                            <visible>Control.HasFocus(250)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>2</posx>
-                            <posy>2</posy>
-                            <width>210</width>
-                            <height>430</height>
-                            <aspectratio>keep</aspectratio>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                            <bordersize>5</bordersize>
-                            <visible>Control.HasFocus(250)</visible>
-                        </control>
-                    </focusedlayout>
-                </control>--></control>
+            </control>
         </control>
     </controls>
 </window>
