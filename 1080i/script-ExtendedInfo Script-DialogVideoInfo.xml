@@ -1284,7 +1284,7 @@
                             <onleft>850</onleft>
                             <onright>850</onright>
                             <onup>650</onup>
-                            <ondown>950</ondown>
+                            <ondown>1050</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
@@ -1332,6 +1332,81 @@
                             </focusedlayout>
                         </control>
                     </control>
+                   <control type="group">
+                        <visible>IntegerGreaterThan(Container(1050).NumItems,0)</visible>
+                        <height>430</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <posy>6</posy>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold28</font>
+                            <label>Reviews</label>
+                        </control>
+                        <control type="panel" id="1050">
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                            </animation>
+                            <posx>-45</posx>
+                            <posy>30</posy>
+                            <width>1940</width>
+                            <height>400</height>
+                            <onleft>1050</onleft>
+                            <onright>1050</onright>
+                            <onup>850</onup>
+                            <ondown>950</ondown>
+                            <pagecontrol>60</pagecontrol>
+                            <scrolltime>300</scrolltime>
+                            <focusposition>0</focusposition>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout height="400" width="630">
+                                <control type="group">
+                                    <posx>50</posx>
+                                    <control type="image">
+                                        <width>630</width>
+                                        <height>400</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>40</posy>
+                                        <width>590</width>
+                                        <height>320</height>
+                                        <align>center</align>
+                                        <label>$INFO[ListItem.Property(Author),[B],[/B][CR]]$INFO[ListItem.Property(Content)]</label>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="630">
+                                <control type="group">
+                                    <posx>50</posx>
+                                    <control type="image">
+                                        <width>630</width>
+                                        <height>400</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <width>630</width>
+                                        <height>400</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                                        <include>PanelGlowFade</include>
+                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>40</posy>
+                                        <width>590</width>
+                                        <height>320</height>
+                                        <align>center</align>
+                                        <label>$INFO[ListItem.Property(Author),[B],[/B][CR]]$INFO[ListItem.Property(Content)]</label>
+                                    </control>
+                                </control>
+                            </focusedlayout>
+                        </control>
+                    </control>
                     <control type="group">
                         <visible>IntegerGreaterThan(Container(950).NumItems,0)</visible>
                         <height>430</height>
@@ -1354,7 +1429,7 @@
                             <height>400</height>
                             <onleft>950</onleft>
                             <onright>950</onright>
-                            <onup>850</onup>
+                            <onup>1050</onup>
                             <ondown>129</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
@@ -1405,6 +1480,7 @@
                             </focusedlayout>
                         </control>
                     </control>
+
                 </control>
                 <!--Movie info-->
                 <control type="group" id="33000">
