@@ -192,6 +192,12 @@
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
                             </control>
+                            <control type="radiobutton" id="6005">
+                                <label>Add To List</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
                             <control type="radiobutton" id="445">
                                 <include>DialogVideoInfoScriptButton</include>
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/tool2.png</textureradioon>
@@ -968,7 +974,7 @@
                             <onleft>450</onleft>
                             <onright>450</onright>
                             <onup>250</onup>
-                            <ondown>350</ondown>
+                            <ondown>1150</ondown>
                             <scrolltime>200</scrolltime>
                             <orientation>horizontal</orientation>
                             <animation type="WindowOpen" reversible="false">
@@ -977,6 +983,59 @@
                             <include>DialogVideoInfoMovieLayout</include>
                         </control>
                     </control>
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(1150).NumItems,0)</visible>
+                        <height>460</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <posy>6</posy>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold28</font>
+                            <label>Official Videos</label>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(1150).HasPrevious + Control.HasFocus(1150)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1883</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(1150).HasNext + Control.HasFocus(1150)</visible>
+                        </control>
+                        <control type="panel" id="1150">
+                            <animation type="WindowOpen" reversible="false">
+                            <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                            </animation>
+                            <posx>-45</posx>
+                            <posy>30</posy>
+                            <width>1940</width>
+                            <height>700</height>
+                            <onleft>1150</onleft>
+                            <onright>1150</onright>
+                            <onup>450</onup>
+                            <ondown>350</ondown>
+                            <pagecontrol>60</pagecontrol>
+                            <scrolltime>300</scrolltime>
+                            <focusposition>0</focusposition>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>2</preloaditems>
+                            <include>DialogVideoInfoYoutubeList</include>
+                        </control>
+                    </control>
+
                     <control type="group">
                         <visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
                         <height>460</height>
@@ -1011,7 +1070,7 @@
                         </control>
                         <control type="panel" id="350">
                             <animation type="WindowOpen" reversible="false">
-                                <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                            <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
@@ -1019,7 +1078,7 @@
                             <height>700</height>
                             <onleft>350</onleft>
                             <onright>350</onright>
-                            <onup>450</onup>
+                            <onup>1150</onup>
                             <ondown>550</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
