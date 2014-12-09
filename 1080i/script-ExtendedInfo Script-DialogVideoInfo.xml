@@ -1489,7 +1489,7 @@
                             <onleft>950</onleft>
                             <onright>950</onright>
                             <onup>1050</onup>
-                            <ondown>129</ondown>
+                            <ondown>1250</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
                             <focusposition>0</focusposition>
@@ -1539,7 +1539,166 @@
                             </focusedlayout>
                         </control>
                     </control>
-
+                    <control type="group">
+                        <height>450</height>
+                        <visible>IntegerGreaterThan(Container(1250).NumItems,0)</visible>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Artwork</label>
+                        </control>
+                        <control type="panel" id="1250">
+                            <posy>30</posy>
+                            <posx>-45</posx>
+                            <width>1950</width>
+                            <height>600</height>
+                            <onleft>1250</onleft>
+                            <onright>1250</onright>
+                            <onup>950</onup>
+                            <ondown>1350</ondown>
+                            <scrolltime>200</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
+                            </animation>
+                            <itemlayout height="400" width="270">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>280</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posx>77</posx>
+                                        <posy>28</posy>
+                                        <width>224</width>
+                                        <height>325</height>
+                                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                                        <aspectratio aligny="center">scale</aspectratio>
+                                        <fadetime>0</fadetime>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="270">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>280</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>280</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                                        <include>PanelGlowFade</include>
+                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                                    </control>
+                                    <control type="group">
+                                        <posx>77</posx>
+                                        <posy>18</posy>
+                                        <control type="image">
+                                            <posy>10</posy>
+                                            <width>224</width>
+                                            <height>325</height>
+                                            <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                                            <aspectratio aligny="center">scale</aspectratio>
+                                            <fadetime>0</fadetime>
+                                        </control>
+                                    </control>
+                                </control>
+                            </focusedlayout>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>450</height>
+                        <visible>IntegerGreaterThan(Container(1350).NumItems,0)</visible>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Fanart</label>
+                        </control>
+                        <control type="panel" id="1350">
+                            <posy>30</posy>
+                            <posx>-45</posx>
+                            <width>1950</width>
+                            <height>600</height>
+                            <onleft>1350</onleft>
+                            <onright>1350</onright>
+                            <onup>1250</onup>
+                            <ondown>132</ondown>
+                            <scrolltime>200</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
+                            </animation>
+                            <itemlayout height="400" width="540">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>560</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posx>77</posx>
+                                        <posy>28</posy>
+                                        <width>505</width>
+                                        <height>325</height>
+                                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                                        <aspectratio aligny="center">scale</aspectratio>
+                                        <fadetime>0</fadetime>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="540">
+                                <control type="group">
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>560</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <posx>50</posx>
+                                        <width>560</width>
+                                        <height>380</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                                        <include>PanelGlowFade</include>
+                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                                    </control>
+                                    <control type="group">
+                                        <posx>77</posx>
+                                        <posy>18</posy>
+                                        <control type="image">
+                                            <posy>10</posy>
+                                            <width>505</width>
+                                            <height>325</height>
+                                            <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+                                            <aspectratio aligny="center">scale</aspectratio>
+                                            <fadetime>0</fadetime>
+                                        </control>
+                                    </control>
+                                </control>
+                            </focusedlayout>
+                        </control>
+                    </control>
                 </control>
                 <!--Movie info-->
                 <control type="group" id="33000">
