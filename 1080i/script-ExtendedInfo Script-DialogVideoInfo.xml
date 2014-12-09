@@ -39,7 +39,7 @@
                     <orientation>vertical</orientation>
                     <scrolltime tween="sine">400</scrolltime>
                     <posx>800</posx>
-                    <posy>214</posy>
+                    <posy>184</posy>
                     <itemgap>17</itemgap>
                     <ondown>4000</ondown>
                     <onup>4000</onup>
@@ -1569,7 +1569,7 @@
                         <posx>1020</posx>
                         <posy>-20</posy>
                         <width>1078</width>
-                        <height>220</height>
+                        <height>190</height>
                         <aspectratio>keep</aspectratio>
                         <texture background="true">$INFO[Window(home).Property(movie.Logo)]</texture>
                     </control>
@@ -1615,41 +1615,11 @@
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))">Conditional</animation>-->
                                 <scroll>true</scroll>
                             </control>
-                            <control type="grouplist">
-                                <posx>0</posx>
-                                <posy>0</posy>
-                                <width>1018</width>
-                                <height>50</height>
-                                <aligny>top</aligny>
-                                <itemgap>0</itemgap>
-                                <orientation>horizontal</orientation>
-                                <usecontrolcoords>true</usecontrolcoords>
-                                <!--
-                                <visible>!Stringcompare(Window(home).Property(movie.OriginalTitle),Window(home).Property(movie.Title))</visible>-->
-                                <control type="image" id="12020">
-                                    <posx>0</posx>
-                                    <posy>6</posy>
-                                    <width>42</width>
-                                    <height>35</height>
-                                    <aspectratio aligny="center" align="left">keep</aspectratio>
-                                    <texture colordiffuse="AAFFFFFF" background="true">$VAR[CountryFlagVar]</texture>
-                                    <fadetime>200</fadetime>
-                                    <visible>!IsEmpty(Control.GetLabel(12020))</visible>
-                                </control>
-                                <control type="fadelabel">
-                                    <width>995</width>
-                                    <height>40</height>
-                                    <label>$INFO[Window(home).Property(movie.OriginalTitle)]</label>
-                                    <label>$INFO[Window(home).Property(movie.Status)]</label>
-                                    <font>Font_Reg28_2</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                            </control>
                         </control>
                     </control>
                     <!--First Row-->
                     <control type="group">
-                        <posy>-24</posy>
+                        <posy>-54</posy>
                         <animation type="WindowOpen" reversible="false">
                             <effect type="fade" start="0" end="100" delay="460" time="960" tween="cubic" />
                             <effect type="zoom" start="100,0" end="100,100" delay="460" time="960" center="0,170" tween="cubic" />
@@ -1748,7 +1718,7 @@
                                     <width>220</width>
                                     <height>38</height>
                                     <align>center</align>
-                                    <label>Release Date</label>
+                                    <label fallback="Release Date">$INFO[Window(home).Property(movie.Status)]</label>
                                     <font>Font_Reg22_Caps</font>
                                 </control>
                             </control>
