@@ -130,7 +130,7 @@
                             <height>25</height>
                             <aligny>center</aligny>
                             <font>Font_Bold37_Caps</font>
-                            <label>Filmography</label>
+                            <label>Movie actor roles</label>
                         </control>
                         <control type="image">
                             <posx>0</posx>
@@ -178,7 +178,7 @@
                             <height>25</height>
                             <aligny>center</aligny>
                             <font>Font_Bold37_Caps</font>
-                            <label>Filmography (TV)</label>
+                            <label>TV Show actor roles</label>
                         </control>
                         <control type="image">
                             <posx>0</posx>
@@ -208,6 +208,102 @@
                             <onleft>250</onleft>
                             <onright>250</onright>
                             <onup>150</onup>
+                            <ondown>550</ondown>
+                            <scrolltime>200</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
+                            </animation>
+                            <include>DialogVideoInfoMovieLayout</include>
+                        </control>
+                    </control>
+                    <control type="group" id="5500">
+                        <visible>IntegerGreaterThan(Container(550).NumItems,0)</visible>
+                        <height>450</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>Movie crew member</label>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(550).HasPrevious + Control.HasFocus(550)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1883</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(550).HasNext + Control.HasFocus(550)</visible>
+                        </control>
+                        <control type="panel" id="550">
+                            <posy>30</posy>
+                            <posx>-45</posx>
+                            <width>1950</width>
+                            <height>600</height>
+                            <onleft>550</onleft>
+                            <onright>550</onright>
+                            <onup>250</onup>
+                            <ondown>650</ondown>
+                            <scrolltime>200</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,1080" end="0,0" delay="0" tween="sine" time="1300" />
+                            </animation>
+                            <include>DialogVideoInfoMovieLayout</include>
+                        </control>
+                    </control>
+                    <control type="group" id="6500">
+                        <height>450</height>
+                        <visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
+                        <control type="label">
+                            <posx>25</posx>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold37_Caps</font>
+                            <label>TVShow crew member</label>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(650).HasPrevious + Control.HasFocus(650)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1883</posx>
+                            <posy>200</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(650).HasNext + Control.HasFocus(650)</visible>
+                        </control>
+                        <control type="panel" id="650">
+                            <posy>30</posy>
+                            <posx>-45</posx>
+                            <width>1950</width>
+                            <height>600</height>
+                            <onleft>650</onleft>
+                            <onright>650</onright>
+                            <onup>550</onup>
                             <ondown>350</ondown>
                             <scrolltime>200</scrolltime>
                             <orientation>horizontal</orientation>
@@ -255,7 +351,7 @@
                             <height>700</height>
                             <onleft>250</onleft>
                             <onright>250</onright>
-                            <onup>250</onup>
+                            <onup>650</onup>
                             <ondown>450</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
