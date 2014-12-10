@@ -50,6 +50,14 @@
                         <fadetime>0</fadetime>
                     </control>
                     <control type="image">
+                        <width>55</width>
+                        <height>55</height>
+                        <posy>10</posy>
+                        <posx>171</posx>
+                        <texture>flags/local.png</texture>
+                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+                    <control type="image">
                         <width>224</width>
                         <height>68</height>
                         <posy>267</posy>
@@ -63,17 +71,6 @@
                         <align>center</align>
                         <font>Font_Reg25_2</font>
                         <info>ListItem.Label</info>
-                        <textcolor>green</textcolor>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-                    <control type="textbox">
-                        <width>228</width>
-                        <height>69</height>
-                        <posy>267</posy>
-                        <align>center</align>
-                        <font>Font_Reg25_2</font>
-                        <info>ListItem.Label</info>
-                        <visible>IsEmpty(ListItem.Property(DBID))</visible>
                     </control>
                 </control>
             </control>
@@ -107,6 +104,14 @@
                         <texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
                         <aspectratio aligny="center">scale</aspectratio>
                         <fadetime>0</fadetime>
+                    </control>
+                    <control type="image">
+                        <width>55</width>
+                        <height>55</height>
+                        <posy>10</posy>
+                        <posx>171</posx>
+                        <texture>flags/local.png</texture>
+                                            <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                     </control>
                     <control type="image">
                         <width>224</width>
