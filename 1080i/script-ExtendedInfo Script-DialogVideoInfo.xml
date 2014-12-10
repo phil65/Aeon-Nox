@@ -28,7 +28,7 @@
             <control type="image">
                 <posx>729</posx>
                 <width>1950</width>
-                <animation effect="fade" start="100" end="65" time="0" condition="true">Conditional</animation>
+                <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
                 <height>1080</height>
                 <aspectratio align="center">scale</aspectratio>
                 <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">diffuseoverlay.png</texture>
@@ -153,11 +153,6 @@
                                 <include>DialogVideoInfoScriptButton</include>
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/movieclap.png</textureradioon>
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/movieclap.png</textureradiooff>
-                                <onclick condition="!IsEmpty(Window(home).Property(movie.Trailer))">Action(Close)</onclick>
-                                <onclick condition="!IsEmpty(Window(home).Property(movie.Trailer))">PlayMedia($ESCINFO[Window(home).Property(movie.Trailer)])</onclick>
-                                <onclick condition="IsEmpty(Window(home).Property(movie.Trailer))">SetProperty(listcontent,$INFO[Window(home).Property(movie.Title)] Trailer,home)</onclick>
-                                <onclick condition="IsEmpty(Window(home).Property(movie.Trailer))">ActivateWindow(1168)</onclick>
-                                <visible>![substring(Container.FolderPath,plugin://) + substring(Container.FolderPath,trailer)]</visible>
                             </control>
                             <control type="radiobutton" id="100">
                                 <include>DialogVideoInfoScriptButton</include>
