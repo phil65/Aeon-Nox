@@ -154,25 +154,10 @@
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/movieclap.png</textureradioon>
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/movieclap.png</textureradiooff>
                             </control>
-                            <control type="radiobutton" id="100">
-                                <include>DialogVideoInfoScriptButton</include>
-                                <label>$LOCALIZE[31020]</label>
-                                <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[Window(home).Property(movie.FilenameAndPath)]")</onclick>
-                                <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
-                                <visible>!IsEmpty(Window(home).Property(movie.FilenameAndPath))</visible>
-                                <textureradioon colordiffuse="grey">special://skin/extras/icons/plus2.png</textureradioon>
-                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/plus2.png</textureradiooff>
-                            </control>
                             <control type="radiobutton" id="6001">
                                 <label>Rate Movie</label>
-                                <textureradioon colordiffuse="grey">special://skin/extras/icons/star.png</textureradioon>
-                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/star.png</textureradiooff>
-                                <include>DialogVideoInfoScriptButton</include>
-                            </control>
-                            <control type="radiobutton" id="6002">
-                                <label>Rated movies</label>
-                                <textureradioon colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradioon>
-                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/heart.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/heart.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
                             </control>
                             <control type="radiobutton" id="6003">
@@ -181,17 +166,26 @@
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/star.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
                             </control>
-                            <control type="radiobutton" id="6004">
-                                <label>Show Favourites</label>
-                                <textureradioon colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradioon>
-                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
-                                <include>DialogVideoInfoScriptButton</include>
-                            </control>
                             <control type="radiobutton" id="6005">
                                 <label>Add To List</label>
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradioon>
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
+                            </control>
+                            <control type="radiobutton" id="6002">
+                                <label>Show Lists</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/list2.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/list2.png</textureradiooff>
+                                <include>DialogVideoInfoScriptButton</include>
+                            </control>
+                            <control type="radiobutton" id="100">
+                                <include>DialogVideoInfoScriptButton</include>
+                                <label>$LOCALIZE[31020]</label>
+                                <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[Window(home).Property(movie.FilenameAndPath)]")</onclick>
+                                <visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
+                                <visible>!IsEmpty(Window(home).Property(movie.FilenameAndPath))</visible>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/plus2.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/plus2.png</textureradiooff>
                             </control>
                             <control type="radiobutton" id="445">
                                 <include>DialogVideoInfoScriptButton</include>
