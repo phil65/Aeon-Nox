@@ -165,19 +165,29 @@
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/star.png</textureradioon>
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/star.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
+                                <visible>!IsEmpty(Window(home).Property(tmdb_logged_in))</visible>
                             </control>
                             <control type="radiobutton" id="6005">
                                 <label>Add To List</label>
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradioon>
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/checkmark.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
+                                <visible>!IsEmpty(Window(home).Property(tmdb_logged_in))</visible>
                             </control>
                             <control type="radiobutton" id="6002">
                                 <label>Show Lists</label>
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/list2.png</textureradioon>
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/list2.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
+                                <visible>!IsEmpty(Window(home).Property(tmdb_logged_in))</visible>
                             </control>
+<!--                             <control type="radiobutton" id="6004">
+                                <label>Show Rated Movies</label>
+                                <textureradioon colordiffuse="grey">special://skin/extras/icons/list2.png</textureradioon>
+                                <textureradiooff colordiffuse="grey">special://skin/extras/icons/list2.png</textureradiooff>
+                                <include>DialogVideoInfoScriptButton</include>
+                                <enable>IsEmpty(Window(home).Property(tmdb_logged_in))</enable>
+                            </control> -->
                             <control type="radiobutton" id="100">
                                 <include>DialogVideoInfoScriptButton</include>
                                 <label>$LOCALIZE[31020]</label>
