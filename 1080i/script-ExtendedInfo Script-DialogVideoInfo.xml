@@ -1786,6 +1786,122 @@
                             <onleft>550</onleft>
                             <onright>550</onright>
                             <onup>350</onup>
+                            <ondown>1450</ondown>
+                            <pagecontrol>60</pagecontrol>
+                            <scrolltime>300</scrolltime>
+                            <focusposition>0</focusposition>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout height="400" width="373">
+                                <control type="group">
+                                    <posx>50</posx>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <width>373</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>28</posy>
+                                        <posx>30</posx>
+                                        <width>313</width>
+                                        <height>100</height>
+                                        <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
+                                        <aspectratio aligny="center" align="center">keep</aspectratio>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>122</posy>
+                                        <width>330</width>
+                                        <height>69</height>
+                                        <align>center</align>
+                                        <font>Font_Reg25_2</font>
+                                        <info>ListItem.Label</info>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout height="400" width="373">
+                                <control type="group">
+                                    <posx>50</posx>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <width>373</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-nofocus.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posy>0</posy>
+                                        <width>373</width>
+                                        <height>220</height>
+                                        <texture border="40" colordiffuse="$VAR[VideoInfoColorVar]">buttons/roundedbutton-focus.png</texture>
+                                        <animation effect="fade" start="0" end="100" time="160">Focus</animation>
+                                        <animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+                                    </control>
+                                    <control type="image">
+                                        <posy>28</posy>
+                                        <posx>30</posx>
+                                        <width>313</width>
+                                        <height>100</height>
+                                        <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
+                                        <aspectratio aligny="center" align="center">keep</aspectratio>
+                                    </control>
+                                    <control type="textbox">
+                                        <posx>20</posx>
+                                        <posy>122</posy>
+                                        <width>330</width>
+                                        <height>69</height>
+                                        <align>center</align>
+                                        <font>Font_Reg25_2</font>
+                                        <info>ListItem.Label</info>
+                                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8001">true</autoscroll>
+                                    </control>
+                                </control>
+                            </focusedlayout>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <visible>IntegerGreaterThan(Container(1450).NumItems,0)</visible>
+                        <height>300</height>
+                        <control type="label">
+                            <posx>25</posx>
+                            <posy>6</posy>
+                            <width>500</width>
+                            <height>25</height>
+                            <aligny>center</aligny>
+                            <font>Font_Bold28</font>
+                            <label>Networks</label>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>130</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
+                            <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(1450).HasPrevious + Control.HasFocus(1450)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1883</posx>
+                            <posy>130</posy>
+                            <width>28</width>
+                            <height>28</height>
+                            <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
+                            <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
+                            <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+                            <visible>Container(1450).HasNext + Control.HasFocus(1450)</visible>
+                        </control>
+                        <control type="panel" id="1450">
+                            <animation type="WindowOpen" reversible="false">
+                                <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                            </animation>
+                            <posx>-45</posx>
+                            <posy>30</posy>
+                            <width>1940</width>
+                            <height>700</height>
+                            <onleft>1450</onleft>
+                            <onright>1450</onright>
+                            <onup>550</onup>
                             <ondown>650</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
@@ -1901,7 +2017,7 @@
                             <height>700</height>
                             <onleft>650</onleft>
                             <onright>650</onright>
-                            <onup>550</onup>
+                            <onup>1450</onup>
                             <ondown>850</ondown>
                             <pagecontrol>60</pagecontrol>
                             <scrolltime>300</scrolltime>
