@@ -126,8 +126,8 @@
                                     <onclick>Action(Close)</onclick>
                                     <onleft>8</onleft>
                                     <onright>20</onright>
-                            <onup>132</onup>
-                            <ondown>50</ondown>
+                                    <onup>132</onup>
+                                    <ondown>50</ondown>
                                     <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window(home).Property(movie.DBID)],resume=true)</onclick>
                                 </control>
                                 <control type="image">
@@ -181,13 +181,14 @@
                                 <include>DialogVideoInfoScriptButton</include>
                                 <visible>!IsEmpty(Window(home).Property(tmdb_logged_in))</visible>
                             </control>
-<!--                             <control type="radiobutton" id="6004">
+                            <!--
+                            <control type="radiobutton" id="6004">
                                 <label>Show Rated Movies</label>
                                 <textureradioon colordiffuse="grey">special://skin/extras/icons/list2.png</textureradioon>
                                 <textureradiooff colordiffuse="grey">special://skin/extras/icons/list2.png</textureradiooff>
                                 <include>DialogVideoInfoScriptButton</include>
                                 <enable>IsEmpty(Window(home).Property(tmdb_logged_in))</enable>
-                            </control> -->
+                            </control>-->
                             <control type="radiobutton" id="100">
                                 <include>DialogVideoInfoScriptButton</include>
                                 <label>$LOCALIZE[31020]</label>
@@ -539,7 +540,8 @@
                             <height>1</height>
                             <texture>info/infopanel_line.png</texture>
                         </control>
-<!--                         <control type="label">
+                        <!--
+                        <control type="label">
                             <posx>30</posx>
                             <posy>71</posy>
                             <width>950</width>
@@ -549,8 +551,7 @@
                             <textcolor>white5</textcolor>
                             <scroll>true</scroll>
                             <haspath>true</haspath>
-                        </control> -->
-                    </control>
+                        </control>--></control>
                     <control type="group" id="50111">
                         <visible>IntegerGreaterThan(Container(50).NumItems,0)</visible>
                         <height>400</height>
@@ -885,27 +886,48 @@
                         </control>
                     </control>
                     <control type="group" id="50113">
-                        <height>480</height>
+                        <height>440</height>
                         <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
-                        <control type="label">
-                            <posx>25</posx>
-                            <posy>10</posy>
+                            <control type="label">
+                          <posx>25</posx>
+                            <posy>6</posy>
                             <width>500</width>
                             <height>25</height>
-                            <aligny>center</aligny>
-                            <font>Font_Bold28</font>
-                            <label>$INFO[Window(home).Property(movie.set.label)]</label>
-                        </control>
-                        <control type="label">
-                            <posx>30</posx>
-                            <posy>40</posy>
-                            <width>950</width>
-                            <height>30</height>
-                            <label>$INFO[Window(home).Property(movie.set.overview)]</label>
-                            <font>Font_Reg22</font>
-                            <textcolor>white3</textcolor>
-                            <scroll>true</scroll>
-                            <haspath>true</haspath>
+                                <aligny>center</aligny>
+                                <font>Font_Bold28</font>
+                                <label>$INFO[Window(home).Property(movie.set.label)]</label>
+                            </control>
+                        <control type="group">
+                                <posx>1100</posx>
+                            <control type="image">
+                                <posy>60</posy>
+                                <posx>0</posx>
+                                <width>577</width>
+                                <height>325</height>
+                                <texture colordiffuse="FF666666">$INFO[Window(home).Property(movie.set.fanart)]</texture>
+                                <aspectratio aligny="center">scale</aspectratio>
+                                <fadetime>0</fadetime>
+                            </control>
+                            <control type="textbox">
+                                <posx>20</posx>
+                                <posy>60</posy>
+                                <width>537</width>
+                                <height>300</height>
+                                <label>$INFO[Window(home).Property(movie.set.overview)]</label>
+                                <font>Font_Reg25_2</font>
+                                <textcolor>white2</textcolor>
+                                <scroll>true</scroll>
+                                <haspath>true</haspath>
+                            </control>
+                            <control type="image">
+                                <posy>60</posy>
+                                <posx>577</posx>
+                                <width>224</width>
+                                <height>325</height>
+                                <texture>$INFO[Window(home).Property(movie.set.thumb)]</texture>
+                                <aspectratio aligny="center">scale</aspectratio>
+                                <fadetime>0</fadetime>
+                            </control>
                         </control>
                         <control type="image">
                             <posx>0</posx>
@@ -929,8 +951,8 @@
                         </control>
                         <control type="panel" id="250">
                             <posx>-50</posx>
-                            <posy>60</posy>
-                            <width>1930</width>
+                            <posy>30</posy>
+                            <width>1150</width>
                             <height>400</height>
                             <onleft>250</onleft>
                             <onright>250</onright>
@@ -1027,7 +1049,7 @@
                         </control>
                         <control type="panel" id="1150">
                             <animation type="WindowOpen" reversible="false">
-                            <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                                <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
@@ -1045,7 +1067,6 @@
                             <include>DialogVideoInfoYoutubeList</include>
                         </control>
                     </control>
-
                     <control type="group">
                         <visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
                         <height>460</height>
@@ -1080,7 +1101,7 @@
                         </control>
                         <control type="panel" id="350">
                             <animation type="WindowOpen" reversible="false">
-                            <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
+                                <effect type="slide" start="0,2080" end="0,0" delay="1000" tween="sine" time="1300" />
                             </animation>
                             <posx>-45</posx>
                             <posy>30</posy>
@@ -1401,7 +1422,7 @@
                             </focusedlayout>
                         </control>
                     </control>
-                   <control type="group">
+                    <control type="group">
                         <visible>IntegerGreaterThan(Container(1050).NumItems,0)</visible>
                         <height>430</height>
                         <control type="label">
