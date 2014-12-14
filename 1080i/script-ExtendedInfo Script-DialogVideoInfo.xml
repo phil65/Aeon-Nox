@@ -430,28 +430,19 @@
                             <orientation>horizontal</orientation>
                             <itemgap>25</itemgap>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <control type="image" id="900011">
-                                <posy>5</posy>
-                                <width>100</width>
-                                <height>62</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">$VAR[SourceFlagVar,flags/source/,.png]</texture>
-                                <visible>!IsEmpty(Control.GetLabel(900011))</visible>
-                            </control>
                             <control type="image" id="900012">
                                 <posy>5</posy>
                                 <width>100</width>
                                 <height>62</height>
                                 <aspectratio>keep</aspectratio>
                                 <texture colordiffuse="white2">$INFO[Window.Property(movie.VideoCodec),flags/source/,.png]</texture>
-                                <visible>IsEmpty(Control.GetLabel(900011))</visible>
                                 <visible>!IsEmpty(Control.GetLabel(900012))</visible>
                             </control>
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
                                 <texture>views/tripanel/upright.png</texture>
-                                <visible>!IsEmpty(Control.GetLabel(900012)) | !IsEmpty(Control.GetLabel(900011))</visible>
+                                <visible>!IsEmpty(Control.GetLabel(900012))</visible>
                             </control>
                             <control type="image" id="900013">
                                 <posy>5</posy>
