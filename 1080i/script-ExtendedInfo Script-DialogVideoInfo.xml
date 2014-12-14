@@ -103,7 +103,7 @@
                             <onleft>5000</onleft>
                             <onright>5000</onright>
                             <onup>132</onup>
-                            <ondown>50</ondown>
+                            <ondown>1000</ondown>
                             <itemgap>-10</itemgap>
                             <orientation>horizontal</orientation>
                             <scrolltime tween="quadratic">200</scrolltime>
@@ -155,7 +155,7 @@
                                     <onleft>8</onleft>
                                     <onright>20</onright>
                                     <onup>132</onup>
-                                    <ondown>50</ondown>
+                                    <ondown>1000</ondown>
                                     <onclick>RunScript(script.toolbox,info=playmovie,dbid=$INFO[Window.Property(movie.DBID)],resume=true)</onclick>
                                 </control>
                                 <control type="image">
@@ -728,7 +728,7 @@
                             <haspath>true</haspath>
                         </control>--></control>
                     <control type="group" id="50111">
-                        <visible>IntegerGreaterThan(Container(50).NumItems,0)</visible>
+                        <visible>IntegerGreaterThan(Container(1000).NumItems,0)</visible>
                         <height>400</height>
                         <control type="label">
                             <posx>25</posx>
@@ -747,7 +747,7 @@
                             <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]" flipx="true">arrowright.png</texture>
                             <animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
                             <animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(50).HasPrevious + Control.HasFocus(50)</visible>
+                            <visible>Container(1000).HasPrevious + Control.HasFocus(1000)</visible>
                         </control>
                         <control type="image">
                             <posx>1883</posx>
@@ -757,15 +757,15 @@
                             <texture colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">arrowright.png</texture>
                             <animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
                             <animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-                            <visible>Container(50).HasNext + Control.HasFocus(50)</visible>
+                            <visible>Container(1000).HasNext + Control.HasFocus(1000)</visible>
                         </control>
-                        <control type="panel" id="50">
+                        <control type="panel" id="1000">
                             <posx>-50</posx>
                             <posy>20</posy>
                             <width>1930</width>
                             <height>400</height>
-                            <onleft>50</onleft>
-                            <onright>50</onright>
+                            <onleft>1000</onleft>
+                            <onright>1000</onright>
                             <onup>5000</onup>
                             <ondown>750</ondown>
                             <scrolltime>200</scrolltime>
@@ -819,7 +819,7 @@
                                         <width>280</width>
                                         <height>380</height>
                                         <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-focus.png</texture>
-                                        <visible>Control.HasFocus(50)</visible>
+                                        <visible>Control.HasFocus(1000)</visible>
                                     </control>
                                     <control type="image">
                                         <posy>0</posy>
@@ -827,7 +827,7 @@
                                         <width>280</width>
                                         <height>380</height>
                                         <texture border="40" colordiffuse="$INFO[Window(home).Property(movie.ImageColor)]">buttons/roundedbutton-nofocus.png</texture>
-                                        <visible>!Control.HasFocus(50)</visible>
+                                        <visible>!Control.HasFocus(1000)</visible>
                                     </control>
                                     <control type="group">
                                         <posx>77</posx>
@@ -898,9 +898,9 @@
                             <posy>20</posy>
                             <width>1930</width>
                             <height>400</height>
-                            <onleft>50</onleft>
-                            <onright>50</onright>
-                            <onup>50</onup>
+                            <onleft>750</onleft>
+                            <onright>750</onright>
+                            <onup>1000</onup>
                             <ondown>150</ondown>
                             <scrolltime>200</scrolltime>
                             <orientation>horizontal</orientation>
