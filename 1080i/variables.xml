@@ -23,8 +23,8 @@
         <value>$VAR[AreaColorVar]</value>
     </variable>
     <variable name="VideoInfoColorVar">
-        <value condition="Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window(home).Property(ActorInfo.ImageColor)]</value>
-            <value>$INFO[Window(home).Property(movie.ImageColor)]</value>
+        <value condition="Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window.Property(ActorInfo.ImageColor)]</value>
+            <value>$INFO[Window.Property(movie.ImageColor)]</value>
         </variable>
     <variable name="DialogColorVar">
         <value condition="Skin.HasSetting(colordialogs) + !Substring(Skin.CurrentTheme,whit)">$VAR[AreaColorVar]</value>
