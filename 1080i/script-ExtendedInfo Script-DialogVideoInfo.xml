@@ -1173,7 +1173,9 @@
                         </control>
                         <control type="group">
                             <posx>1100</posx>
-                            <control type="image">
+                             <visible>!Container(250).Column(4) + !Container(250).Column(5)</visible>
+                             <animation effect="fade" time="250">VisibleChange</animation>
+                             <control type="image">
                                 <posy>60</posy>
                                 <posx>0</posx>
                                 <width>577</width>
@@ -1226,7 +1228,7 @@
                         <control type="panel" id="250">
                             <posx>-50</posx>
                             <posy>30</posy>
-                            <width>1150</width>
+                            <width>1930</width>
                             <height>400</height>
                             <onleft>250</onleft>
                             <onright>250</onright>
