@@ -68,7 +68,7 @@
                             <width>960</width>
                             <height>210</height>
                             <align>left</align>
-                            <label fallback="31003">$INFO[Window.Property(movie.TagLine),[B],[CR][/B]]$VAR[ScriptPlotOutlineVar]</label>
+                            <label fallback="31003">[B]$ESCINFO[Window.Property(movie.TagLine),,[CR]][/B]$ESCINFO[Window.Property(movie.Plot)]</label>
                             <font>Font_Reg28_2</font>
                             <autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
@@ -1171,40 +1171,6 @@
                             <font>Font_Bold28</font>
                             <label>$INFO[Window.Property(movie.set.label)]</label>
                         </control>
-                        <control type="group">
-                            <posx>1100</posx>
-                             <visible>!Container(250).Column(4) + !Container(250).Column(5)</visible>
-                             <animation effect="fade" time="250">VisibleChange</animation>
-                             <control type="image">
-                                <posy>60</posy>
-                                <posx>0</posx>
-                                <width>577</width>
-                                <height>325</height>
-                                <texture colordiffuse="FF666666">$INFO[Window.Property(movie.set.fanart)]</texture>
-                                <aspectratio aligny="center">scale</aspectratio>
-                                <fadetime>0</fadetime>
-                            </control>
-                            <control type="textbox">
-                                <posx>20</posx>
-                                <posy>60</posy>
-                                <width>537</width>
-                                <height>300</height>
-                                <label>$INFO[Window.Property(movie.set.overview)]</label>
-                                <font>Font_Reg25_2</font>
-                                <textcolor>white2</textcolor>
-                                <scroll>true</scroll>
-                                <haspath>true</haspath>
-                            </control>
-                            <control type="image">
-                                <posy>60</posy>
-                                <posx>577</posx>
-                                <width>224</width>
-                                <height>325</height>
-                                <texture>$INFO[Window.Property(movie.set.thumb)]</texture>
-                                <aspectratio aligny="center">scale</aspectratio>
-                                <fadetime>0</fadetime>
-                            </control>
-                        </control>
                         <control type="image">
                             <posx>0</posx>
                             <posy>200</posy>
@@ -1341,6 +1307,40 @@
                                     </control>
                                 </control>
                             </focusedlayout>
+                        </control>
+                        <control type="group">
+                            <posx>1100</posx>
+                             <visible>!Container(250).Column(4) + !Container(250).Column(5) + !Container(250).Column(6)</visible>
+                             <animation effect="fade" time="250">VisibleChange</animation>
+                             <control type="image">
+                                <posy>60</posy>
+                                <posx>0</posx>
+                                <width>577</width>
+                                <height>325</height>
+                                <texture colordiffuse="FF666666">$INFO[Window.Property(movie.set.fanart)]</texture>
+                                <aspectratio aligny="center">scale</aspectratio>
+                                <fadetime>0</fadetime>
+                            </control>
+                            <control type="textbox">
+                                <posx>20</posx>
+                                <posy>60</posy>
+                                <width>537</width>
+                                <height>300</height>
+                                <label>$INFO[Window.Property(movie.set.overview)]</label>
+                                <font>Font_Reg25_2</font>
+                                <textcolor>white2</textcolor>
+                                <scroll>true</scroll>
+                                <haspath>true</haspath>
+                            </control>
+                            <control type="image">
+                                <posy>60</posy>
+                                <posx>577</posx>
+                                <width>224</width>
+                                <height>325</height>
+                                <texture>$INFO[Window.Property(movie.set.thumb)]</texture>
+                                <aspectratio aligny="center">scale</aspectratio>
+                                <fadetime>0</fadetime>
+                            </control>
                         </control>
                     </control>
                     <control type="group" id="50215">
