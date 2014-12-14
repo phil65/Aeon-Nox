@@ -75,7 +75,6 @@
                         <textoffsety>20</textoffsety>
                         <aligny>bottom</aligny>
                         <font>Font_Reg28_2</font>
-                        <animation effect="fade" start="100" end="0" time="0" condition="Container.Content(tvshows)">Conditional</animation>
                         <textureradioon colordiffuse="white">common/director-icon.png</textureradioon>
                         <textureradiooff colordiffuse="white">common/director-icon.png</textureradiooff>
                         <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
@@ -91,7 +90,6 @@
                         <visible>!IsEmpty(ListItem.Director)</visible>
                     </control>
                     <control type="radiobutton" id="131">
-                        <animation effect="fade" start="100" end="0" time="0" condition="Container.Content(tvshows)">Conditional</animation>
                         <width>1120</width>
                         <height>43</height>
                         <radioposx>30</radioposx>
@@ -112,40 +110,6 @@
                         <onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Writer],home)|ActivateWindow(1168))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Writer])</onclick>
                         <visible>!IsEmpty(ListItem.Writer)</visible>
-                    </control>
-                    <control type="radiobutton" id="135">
-                        <width>1120</width>
-                        <height>43</height>
-                        <radioposx>30</radioposx>
-                        <radioposy>-8</radioposy>
-                        <radiowidth>50</radiowidth>
-                        <textoffsetx>90</textoffsetx>
-                        <textoffsety>20</textoffsety>
-                        <aligny>bottom</aligny>
-                        <label fallback="31003">$INFO[ListItem.Premiered,$LOCALIZE[20416]: ]</label>
-                        <font>Font_Reg28_2</font>
-                        <textureradioon colordiffuse="white">defaulticons/DefaultInProgressShows.png</textureradioon>
-                        <textureradiooff colordiffuse="white">defaulticons/DefaultInProgressShows.png</textureradiooff>
-                        <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                        <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                        <visible>Container.Content(tvshows)</visible>
-                    </control>
-                    <control type="radiobutton" id="136">
-                        <width>1120</width>
-                        <height>43</height>
-                        <radioposx>30</radioposx>
-                        <radioposy>-8</radioposy>
-                        <radiowidth>50</radiowidth>
-                        <textoffsetx>90</textoffsetx>
-                        <textoffsety>20</textoffsety>
-                        <aligny>bottom</aligny>
-                        <label fallback="31397">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E]$INFO[Window(Home).Property(NextAired.LatestTitle),:  ]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
-                        <font>Font_Reg28_2</font>
-                        <textureradioon colordiffuse="white">defaulticons/DefaultCountry.png</textureradioon>
-                        <textureradiooff colordiffuse="white">defaulticons/DefaultCountry.png</textureradiooff>
-                        <texturefocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-focus.png</texturefocus>
-                        <texturenofocus border="40" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">buttons/roundedbutton-nofocus.png</texturenofocus>
-                        <visible>Container.Content(tvshows)</visible>
                     </control>
                     <control type="group" id="140">
                         <height>255</height>
@@ -200,48 +164,9 @@
                                 <height>50</height>
                                 <label>$INFO[ListItem.Title]</label>
                                 <font>Font_Bold56</font>
-                                <animation effect="slide" start="0,0" end="0,30" time="0" condition="Container.Content(tvshows) + IsEmpty(ListItem.Genre)">Conditional</animation>
                                 <animation effect="slide" start="0,0" end="0,30" time="0" condition="[Container.Content(musicvideos) + IsEmpty(ListItem.Artist)]">Conditional</animation>
                                 <scroll>true</scroll>
                                 <visible>!Control.IsVisible(13000)</visible>
-                            </control>
-                            <control type="label" id="13000">
-                                <width>1018</width>
-                                <height>50</height>
-                                <label>Season $INFO[Window(home).Property(SeasonNumber)]</label>
-                                <font>Font_Reg57_Caps</font>
-                                <scroll>true</scroll>
-                                <visible>!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
-                            </control>
-                            <control type="grouplist">
-                                <posx>0</posx>
-                                <posy>0</posy>
-                                <width>1018</width>
-                                <height>50</height>
-                                <aligny>top</aligny>
-                                <itemgap>0</itemgap>
-                                <orientation>horizontal</orientation>
-                                <usecontrolcoords>true</usecontrolcoords>
-                                <visible>Container.Content(tvshows) + !IsEmpty(ListItem.Genre)</visible>
-                                <control type="image" id="12020">
-                                    <posx>0</posx>
-                                    <posy>6</posy>
-                                    <width>42</width>
-                                    <height>35</height>
-                                    <aspectratio aligny="center" align="left">keep</aspectratio>
-                                    <texture colordiffuse="AAFFFFFF" background="true">$VAR[CountryFlagVar]</texture>
-                                    <fadetime>200</fadetime>
-                                    <visible>!IsEmpty(Control.GetLabel(12020))</visible>
-                                </control>
-                                <control type="label">
-                                    <width>995</width>
-                                    <height>40</height>
-                                    <label>$INFO[Window(home).Property(NextAired.Classification),,  -  ]$INFO[ListItem.Genre]</label>
-                                    <font>Font_Reg28_2</font>
-                                    <textcolor>grey</textcolor>
-                                    <scroll>true</scroll>
-                                    <visible>Container.Content(tvshows)</visible>
-                                </control>
                             </control>
                             <control type="label">
                                 <width>1018</width>
@@ -323,16 +248,16 @@
                                 <height>67</height>
                                 <aspectratio align="center">keep</aspectratio>
                                 <texture colordiffuse="white2" fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-                                <visible>Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+                                <visible>Container.Content(MusicVideos) | Container.Content(episodes)</visible>
                             </control>
                             <control type="image">
                                 <height>79</height>
                                 <include>Furniture_FlagUpright</include>
-                                <visible>Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+                                <visible>Container.Content(MusicVideos) | Container.Content(episodes)</visible>
                             </control>
                             <control type="group">
                                 <width>155</width>
-                                <visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
+                                <visible>Container.Content(episodes)</visible>
                                 <control type="label">
                                     <posy>12</posy>
                                     <width>155</width>
@@ -353,15 +278,7 @@
                             <control type="image">
                                 <height>79</height>
                                 <include>Furniture_FlagUpright</include>
-                                <visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
-                            </control>
-                            <control type="image">
-                                <posy>5</posy>
-                                <width>155</width>
-                                <height>68</height>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="white2">tvguide/$INFO[Window(Home).Property(NextAired.StatusID)].png</texture>
-                                <visible>Container.Content(tvshows)</visible>
+                                <visible>Container.Content(episodes)</visible>
                             </control>
                             <control type="group">
                                 <width>155</width>
@@ -416,7 +333,7 @@
                                 <visible>Control.IsVisible(3300)</visible>
                             </control>
                             <control type="group" id="3300">
-                                <visible>Container.Content(episodes) | Container.Content(tvshows) | Container.Content(musicvideos)</visible>
+                                <visible>Container.Content(episodes) | Container.Content(musicvideos)</visible>
                                 <visible>!IsEmpty(ListItem.Studio)</visible>
                                 <width>175</width>
                                 <posx>20</posx>
@@ -583,112 +500,6 @@
                                 </control>
                             </control>
                         </control>
-                        <control type="grouplist">
-                            <orientation>horizontal</orientation>
-                            <visible>Container.Content(tvshows)</visible>
-                            <posx>0</posx>
-                            <posy>872</posy>
-                            <height>200</height>
-                            <control type="group">
-                                <visible>!IsEmpty(ListItem.Property(TotalSeasons))</visible>
-                                <width>135</width>
-                                <control type="label">
-                                    <width>135</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Property(TotalSeasons)]</label>
-                                    <font>Font_Bold40</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                                <control type="label">
-                                    <posy>38</posy>
-                                    <width>135</width>
-                                    <height>30</height>
-                                    <align>center</align>
-                                    <label>$VAR[OneOrMoreSeasonsVar]</label>
-                                    <font>Font_Reg19_Caps</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                            </control>
-                            <control type="group">
-                                <width>135</width>
-                                <control type="label">
-                                    <width>135</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Property(TotalEpisodes)]</label>
-                                    <font>Font_Bold40</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                                <control type="label">
-                                    <posy>38</posy>
-                                    <width>135</width>
-                                    <height>30</height>
-                                    <align>center</align>
-                                    <label>$VAR[OneOrMoreEpisodesVar]</label>
-                                    <font>Font_Reg19_Caps</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                            </control>
-                            <control type="group">
-                                <width>135</width>
-                                <control type="label">
-                                    <width>135</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>[UPPERCASE]$VAR[UnwatchedEpisodesLabelVar][/UPPERCASE]</label>
-                                    <font>Font_Bold40</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                                <control type="label">
-                                    <posy>38</posy>
-                                    <width>135</width>
-                                    <height>30</height>
-                                    <align>center</align>
-                                    <label>$LOCALIZE[16101]</label>
-                                    <font>Font_Reg19_Caps</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                            </control>
-                            <control type="image">
-                                <include>Furniture_FlagUpright</include>
-                            </control>
-                            <control type="image">
-                                <posy>1</posy>
-                                <width>97</width>
-                                <height>75</height>
-                                <aspectratio aligny="top" align="right">keep</aspectratio>
-                                <texture colordiffuse="white">defaulticons/DefaultTVShows.png</texture>
-                            </control>
-                            <control type="group">
-                                <control type="label">
-                                    <posy>8</posy>
-                                    <textoffsetx>5</textoffsetx>
-                                    <width>600</width>
-                                    <height>30</height>
-                                    <align>left</align>
-                                    <label>[UPPERCASE][COLOR white]$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E][/COLOR]$INFO[Window(Home).Property(NextAired.NextTitle),: ][/UPPERCASE]</label>
-                                    <font>Font_Reg26</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                                <control type="label">
-                                    <posy>35</posy>
-                                    <textoffsetx>5</textoffsetx>
-                                    <width>600</width>
-                                    <height>30</height>
-                                    <align>left</align>
-                                    <label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.NextDate),[COLOR white],[/COLOR]: ]$INFO[Window(Home).Property(NextAired.ShortTime)]$INFO[Window(Home).Property(NextAired.Runtime), (, $LOCALIZE[12391])][/UPPERCASE]</label>
-                                    <font>Font_Reg26</font>
-                                    <textcolor>grey</textcolor>
-                                </control>
-                            </control>
-                        </control>
                         <control type="image">
                             <posy>943</posy>
                             <width>1042</width>
@@ -852,13 +663,6 @@
                         <label>$VAR[DialogVideoInfoButtonLabelVar]</label>
                         <include>DialogVideoInfoButton</include>
                     </control>
-                    <control type="button" id="101">
-                        <description>Extras</description>
-                        <include>DialogVideoInfoButton</include>
-                        <label>$LOCALIZE[31924]</label>
-                        <onclick>PlayMedia()</onclick>
-                        <visible>Container.Content(tvshows)</visible>
-                    </control>
                     <control type="button" id="9">
                         <label>$LOCALIZE[13404] $INFO[ListItem.PercentPlayed,(,%)]</label>
                         <include>DialogVideoInfoButton</include>
@@ -868,35 +672,7 @@
                         <include>DialogVideoInfoButton</include>
                         <label>$LOCALIZE[31020]</label>
                         <onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
-                        <visible>System.HasAddon(script.videoextras) + [Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
-                    </control>
-                    <control type="button" id="445">
-                        <include>DialogVideoInfoButton</include>
-                        <label>Manage</label>
-                        <onclick>SetProperty(Dialog.1.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.2.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.3.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.4.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.5.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.6.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.7.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.8.Label,-)</onclick>
-                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[184])</onclick>
-                        <onclick>SetProperty(Dialog.1.BuiltIn,SendClick(6))</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.Label,$LOCALIZE[31030])</onclick>
-                        <onclick condition="System.HasAddon(script.libraryeditor) + [Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">SetProperty(Dialog.3.BuiltIn,RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.2.Label,$LOCALIZE[413])</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.2.BuiltIn,RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.4.Label,$LOCALIZE[14061])</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.4.BuiltIn,RunScript(script.artwork.downloader, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.5.Label,$LOCALIZE[31467])</onclick>
-                        <onclick condition="Container.Content(tvshows)">SetProperty(Dialog.5.BuiltIn,RunScript(script.artwork.downloader,mode=custom, mediatype=tvshow, dbid=$INFO[ListItem.DBID]))</onclick>
-                        <onclick>SetProperty(Dialog.6.Label,$LOCALIZE[13511])</onclick>
-                        <onclick>SetProperty(Dialog.6.BuiltIn,SendClick(10))</onclick>
-                        <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.Label,$LOCALIZE[31365])</onclick>
-                        <onclick condition="Container.Content(tvshows) + system.hasaddon(script.tvtunes)">SetProperty(Dialog.7.BuiltIn,RunScript(script.tvtunes,mode=solo&amp;tvpath=$ESCINFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle]))</onclick>
-                        <onclick>RunScript(script.toolbox,info=selectdialog,header=Choose Action)</onclick>
-                        <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
+                        <visible>System.HasAddon(script.videoextras) + [Container.Content(episodes) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
                     </control>
                     <control type="button" id="10">
                         <label>$LOCALIZE[13511]</label>
