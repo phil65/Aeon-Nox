@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <defaultcontrol always="true">8</defaultcontrol>
+    <defaultcontrol always="true">1200</defaultcontrol>
     <onload>ClearProperty(Budget,home)</onload>
-    <onload condition="!Container.Content(movies)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterVar]"',radius=20,prefix=VideoInfo)</onload>
-    <onload condition="Container.Content(movies) + [SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID])</onload>
-    <onload condition="Container.Content(movies) + [SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp]">Dialog.Close(movieinformation)</onload>
-    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onload>
-    <onload condition="!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)">Dialog.Close(movieinformation)</onload>
-    <onload condition="Container.Content(tvshows) + [SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID])</onload>
-    <onload condition="Container.Content(tvshows) + [SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp]">Dialog.Close(movieinformation)</onload>
-    <onload condition="System.HasAddon(script.videoextras) + !Container.Content(movies)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
+    <onload condition="!Container.Content(movies) + !Container.Content(tvshows)">RunScript(script.toolbox,info=blur,id='"$VAR[PosterVar]"',radius=20,prefix=VideoInfo)</onload>
     <onload condition="Container.Content(movies) + ![SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp]">RunScript(script.toolbox,info=yesnodialog,header=$INFO[ListItem.Label],text=Do you want to re-scrape this movie?,yesaction=SendClick(6),noaction=Action(Close))</onload>
     <onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
     <onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
     <controls>
+        <control type="button" id="1200">
+            <include>HiddenObject</include>
+            <onfocus>Dialog.Close(movieinformation)</onfocus>
+            <onfocus>RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID])</onfocus>
+            <onclick>-</onclick>
+            <visible>Container.Content(movies) + [SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp]</visible>
+        </control>
+        <control type="button" id="1200">
+            <include>HiddenObject</include>
+            <onfocus>Dialog.Close(movieinformation)</onfocus>
+            <onfocus>RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TvShowTitle],season=$INFO[Window(home).Property(SeasonNumber)],silent=True)</onfocus>
+            <onclick>-</onclick>
+            <visible>!Stringcompare(Container.FolderPath,videodb://tvshows/titles/) + Substring(Container.FolderPath,videodb://tvshows/titles/,left) + !Container.Content(episodes)</visible>
+        </control>
+        <control type="button" id="1200">
+            <include>HiddenObject</include>
+            <onfocus>Dialog.Close(movieinformation)</onfocus>
+            <onfocus>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID])</onfocus>
+            <onclick>-</onclick>
+            <visible>Container.Content(tvshows) + [SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp]</visible>
+        </control>
         <control type="group">
             <visible>!Container.Content(movies) + !Container.Content(tvshows)</visible>
         <control type="image">
