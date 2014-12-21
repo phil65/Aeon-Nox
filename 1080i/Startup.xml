@@ -7,6 +7,8 @@
     <onload>RunScript(script.toolbox,daemon=True,radius=30)</onload>
     <onload condition="Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onload>
     <onload condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onload>
+    <onload>PlayMedia(special://skin/extras/intro.mp4,1)</onload>
+    <onunload>PlayerControl(Stop)</onunload>
     <animation type="WindowClose" reversible="false">
         <effect type="fade" start="100" end="0" time="640" />
     </animation>
@@ -17,45 +19,18 @@
         <control type="group">
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
             <control type="button" id="10">
-                <onfocus condition="!System.HasAddon(script.xbmc.intro.movie)">SetFocus(11)</onfocus>
+                <onfocus>SetFocus(11)</onfocus>
                 <onclick>noop</onclick>
             </control>
             <control type="button" id="11">
-                <onclick>noop</onclick>
+                <onup>ReplaceWindow($INFO[System.StartupWindow])</onup>
+                <ondown>ReplaceWindow($INFO[System.StartupWindow])</ondown>
+                <onleft>ReplaceWindow($INFO[System.StartupWindow])</onleft>
+                <onright>ReplaceWindow($INFO[System.StartupWindow])</onright>
+                <onclick>ReplaceWindow($INFO[System.StartupWindow])</onclick>
                 <onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-                <animation effect="fade" start="100" end="0" time="4000">Focus</animation>
+                <animation effect="fade" start="100" end="0" time="10000">Focus</animation>
             </control>
-        </control>
-        <control type="image">
-            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
-            <include>FullscreenDimensions</include>
-        </control>
-        <control type="image">
-            <posx>910</posx>
-            <posy>603</posy>
-            <width>100</width>
-            <height>100</height>
-            <texture colordiffuse="$VAR[AreaColorVar]">spinner.png</texture>
-            <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="true">Conditional</animation>
-            <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
-        </control>
-        <control type="image">
-            <posx>925</posx>
-            <posy>618</posy>
-            <width>70</width>
-            <height>70</height>
-            <texture flipx="true" colordiffuse="$VAR[AreaColorVar]">spinner.png</texture>
-            <animation effect="rotate" end="360" center="auto" time="2000" loop="true" reversible="false" condition="true">Conditional</animation>
-            <animation effect="fade" start="70" time="1200" condition="true" pulse="true">Conditional</animation>
-        </control>
-        <control type="image">
-            <posx>704</posx>
-            <posy>300</posy>
-            <width>512</width>
-            <height>180</height>
-            <aspectratio>keep</aspectratio>
-            <texture colordiffuse="$VAR[AreaColorVar]">XBMC_Logo.png</texture>
-            <colordiffuse>white</colordiffuse>
         </control>
         <control type="videowindow">
             <include>FullscreenDimensions</include>
