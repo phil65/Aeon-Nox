@@ -24,7 +24,7 @@
                 <left>300</left>
                 <top>70</top>
                 <width>1320</width>
-                <height>800</height>
+                <height>860</height>
                 <control type="image">
                     <top>90</top>
                     <width>1042</width>
@@ -125,9 +125,9 @@
                 </control>
                 <control type="grouplist" id="9000">
                     <left>22</left>
-                    <top>645</top>
+                    <top>605</top>
                     <width>1226</width>
-                    <height>60</height>
+                    <height>100</height>
                     <align>center</align>
                     <visible>Window.IsActive(pvrguideinfo)</visible>
                     <itemgap>8</itemgap>
@@ -138,21 +138,41 @@
                     <ondown>60</ondown>
                     <control type="button" id="5">
                         <width>300</width>
-                        <height>52</height>
+                        <height>82</height>
                         <align>center</align>
+                        <aligny>center</aligny>
                         <label>19165</label>
+                       <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                       <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     </control>
                     <control type="button" id="6">
                         <width>300</width>
-                        <height>52</height>
+                        <height>82</height>
                         <align>center</align>
+                        <aligny>center</aligny>
                         <label>-</label>
+                       <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                       <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                     </control>
                     <control type="button" id="7">
                         <width>300</width>
-                        <height>52</height>
+                        <height>82</height>
                         <align>center</align>
+                        <aligny>center</aligny>
                         <label>186</label>
+                       <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                       <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
+                    </control>
+                    <control type="button" id="122">
+                        <width>300</width>
+                        <height>82</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>Extended Info</label>
+                       <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                       <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
+                       <onclick>Action(Close)</onclick>
+                       <onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Title])</onclick>
                     </control>
                 </control>
                 <control type="grouplist" id="9000">
@@ -1053,7 +1073,7 @@
 					<label>$INFO[System.Date(dd.mm.yyyy)]</label>
 				</control>
 			</control>
-            
+
 			<control type="label" id="1">
                 <left>1610</left>
 				<top>110</top>
@@ -1181,9 +1201,9 @@
                 <visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
             </control>
 		</control>
-		
+
     </include>
-	
+
 	<include name="ChannelOSDExtended">
 		<left>60</left>
 		<top>75</top>
