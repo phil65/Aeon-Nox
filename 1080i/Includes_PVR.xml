@@ -204,12 +204,21 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" reversible="false" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         </control>
-        <include>Furniture_SettingsFloor</include>
-        <control type="videowindow">
-            <visible>Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
+		<control type="videowindow" id="65">
+            <visible>Player.HasVideo + [Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)]</visible>
             <include>FullscreenDimensions</include>
-            <visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
         </control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<animation effect="fade" end="100" time="440" delay="160">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="320">Hidden</animation>
+			<animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
+			<animation effect="fade" start="100" end="60" time="0" condition="Player.HasVideo + [Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)]">Conditional</animation>
+		</control>
+		
 	</include>
 	<include name="PVRMediaMenuTop">
 		<control type="label" id="200">
@@ -1073,7 +1082,7 @@
 					<label>$INFO[System.Date(dd.mm.yyyy)]</label>
 				</control>
 			</control>
-
+            
 			<control type="label" id="1">
                 <left>1610</left>
 				<top>110</top>
@@ -1201,9 +1210,9 @@
                 <visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
             </control>
 		</control>
-
+		
     </include>
-
+	
 	<include name="ChannelOSDExtended">
 		<left>60</left>
 		<top>75</top>
@@ -1466,15 +1475,6 @@
 					<textcolor>grey2</textcolor>
 					<align>right</align>
 					<label>- $INFO[Container(11).ListItem.EndTime]</label>
-				</control>
-				<control type="label">
-					<top>20</top>
-					<height>50</height>
-					<left>200</left>
-					<width>100</width>
-					<font>Font_Bold26_Caps</font>
-					<textcolor>grey2</textcolor>
-					<label>$INFO[Container(11).ListItem.VideoCodec,- ,%]</label>
 				</control>
 				<control type="progress">
 					<width>460</width>
