@@ -24,9 +24,7 @@
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
                     <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(512).Row(1)">Conditional</animation>
-                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3)">Conditional</animation>
-                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2)">Conditional</animation>
-                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2) | Container(512).Column(1)">Conditional</animation>
+                    <animation effect="slide" end="470,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(1)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>13</posx>
@@ -71,13 +69,19 @@
                 <scrolltime tween="sine">300</scrolltime>
                 <viewtype label="$LOCALIZE[31283]">icon</viewtype>
                 <pagecontrol>60</pagecontrol>
-                <itemlayout height="410" width="440" condition="Container.Content(episodes)">
+                <itemlayout height="410" width="470" condition="Container.Content(episodes)">
                     <include>YoutubeItemLayout</include>
                 </itemlayout>
-                <focusedlayout height="410" width="440" condition="Container.Content(episodes)">
+                <focusedlayout height="410" width="470" condition="Container.Content(episodes)">
                     <include>YoutubeFocusedLayout</include>
                 </focusedlayout>
-                <itemlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons)]">
+                <itemlayout height="410" width="470" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors)">
+                    <include>SquareWallitemLayout</include>
+                </itemlayout>
+                <focusedlayout height="410" width="470" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors)">
+                    <include>SquareWallFocusedLayout</include>
+                </focusedlayout>
+                <itemlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(addons)]">
                     <control type="image">
                         <posx>60</posx>
                         <posy>180</posy>
@@ -89,7 +93,7 @@
                         <bordersize>6</bordersize>
                     </control>
                 </itemlayout>
-                <focusedlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons)]">
+                <focusedlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(addons)]">
                     <control type="image">
                         <posx>60</posx>
                         <posy>180</posy>
