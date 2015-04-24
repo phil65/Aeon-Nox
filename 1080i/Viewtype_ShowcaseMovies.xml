@@ -495,7 +495,7 @@
             <height>180</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
             <texture>thumbs/boxes/poster_glass_reflect.png</texture>
-            <fadetime>0</fadetime>
+
             <colordiffuse>d1FFFFFF</colordiffuse>
             <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
             <visible>Skin.HasSetting(usecases) + Skin.HasSetting(clearcases) + [container.content(movies) | Container.Content(musicvideos)]</visible>
@@ -506,7 +506,7 @@
         <posy>-22</posy>
         <width>324</width>
         <height>434</height>
-        <fadetime>0</fadetime>
+
         <visible>Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]</visible>
     </include>
     <!--Movie Showcase Variables: Main thumbs-->
@@ -531,19 +531,19 @@
         <height>420</height>
         <align>center</align>
         <aspectratio scalediffuse="false">scale</aspectratio>
-        <fadetime>0</fadetime>
+
         <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
         <bordersize>18</bordersize>
     </include>
     <include name="MovieShowcaseThumbReflectionMain">
         <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-        <fadetime>0</fadetime>
+
         <include>MovieShowcaseThumbReflectionDimensions</include>
         <colordiffuse>52FFFFFF</colordiffuse>
     </include>
     <include name="MovieShowcaseThumbReflection">
         <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-        <fadetime>0</fadetime>
+
         <include>MovieShowcaseThumbReflectionDimensions</include>
         <colordiffuse>d1FFFFFF</colordiffuse>
         <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
@@ -553,7 +553,7 @@
         <posy>10</posy>
         <width>90</width>
         <height>90</height>
-        <fadetime>0</fadetime>
+
         <animation effect="slide" start="0,0" end="6,-3" time="0" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
         <animation effect="slide" start="0,0" end="0,-29" time="0" condition="[container.content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(usecases) + !Skin.HasSetting(clearcases)">Conditional</animation>
     </include>
