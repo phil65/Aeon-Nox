@@ -133,7 +133,7 @@
                 <height>280</height>
                 <aspectratio>keep</aspectratio>
                 <texture background="true">$VAR[LogoVar]</texture>
-                <fadetime>300</fadetime>
+                <fadetime>400</fadetime>
                 <animation effect="fade" start="100" end="17" time="40" condition="true">Conditional</animation>
                 <visible>![[Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)] + Control.IsVisible(503) + Skin.HasSetting(landscapelogo)]</visible>
                 <visible>!Control.isVisible(8822)</visible>
@@ -148,6 +148,7 @@
                 <posy>15</posy>
                 <width>45</width>
                 <height>45</height>
+                <fadetime>400</fadetime>
                 <texture colordiffuse="$VAR[AreaColorVar]">$VAR[WatchedIconVar]</texture>
                 <visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) | Container.ListItem.IsResumable</visible>
             </control>
@@ -156,6 +157,7 @@
                 <posy>20</posy>
                 <width>32</width>
                 <height>32</height>
+                <fadetime>400</fadetime>
                 <texture colordiffuse="CCFFFFFF" background="true">$VAR[CountryFlagVar]</texture>
             </control>
             <control type="group">
@@ -183,6 +185,7 @@
                 <posy>59</posy>
                 <width>818</width>
                 <height>474</height>
+                <fadetime>400</fadetime>
                 <aspectratio>stretch</aspectratio>
                 <texture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</texture>
             </control>
