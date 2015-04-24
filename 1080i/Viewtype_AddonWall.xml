@@ -14,37 +14,49 @@
                 <onright>9000</onright>
             </control>
             <control type="group">
-                                <visible>Control.HasFocus(512) | Control.HasFocus(20000) | Control.HasFocus(20001)</visible>
-
-            <control type="image">
-                <posx>13</posx>
-                <posy>135</posy>
-                <width>290</width>
-                <height>400</height>
-                <visible>[Container.Content(movies) + !Skin.HasSetting(MovieInfoWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVInfoWallBanner)]</visible>
-                <animation effect="fade" time="320" delay="300">Visible</animation>
-                <animation effect="fade" time="320" delay="300">WindowOpen</animation>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                <animation effect="slide" end="0,361" time="300" tween="cubic" easing="inout" condition="Container(512).Row(1)">Conditional</animation>
-                <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3)">Conditional</animation>
-                <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2)">Conditional</animation>
-                <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2) | Container(512).Column(1)">Conditional</animation>
+                <visible>Control.HasFocus(512) | Control.HasFocus(20000) | Control.HasFocus(20001)</visible>
+                <control type="image">
+                    <posx>70</posx>
+                    <posy>101</posy>
+                    <width>454</width>
+                    <height>444</height>
+                    <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors) | Container.Content(episodes) | StringCompare(Container.FolderName,youtube)</visible>
+                    <animation effect="fade" time="320" delay="300">Visible</animation>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                    <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(512).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3)">Conditional</animation>
+                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2)">Conditional</animation>
+                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2) | Container(512).Column(1)">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>13</posx>
+                    <posy>135</posy>
+                    <width>290</width>
+                    <height>400</height>
+                    <visible>[Container.Content(movies) + !Skin.HasSetting(MovieInfoWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVInfoWallBanner)]</visible>
+                    <animation effect="fade" time="320" delay="300">Visible</animation>
+                    <animation effect="fade" time="320" delay="300">WindowOpen</animation>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                    <animation effect="slide" end="0,361" time="300" tween="cubic" easing="inout" condition="Container(512).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3)">Conditional</animation>
+                    <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2)">Conditional</animation>
+                    <animation effect="slide" end="250,0" time="300" tween="cubic" easing="inout" condition="Container(512).Column(3) | Container(512).Column(2) | Container(512).Column(1)">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>64</posx>
+                    <posy>67</posy>
+                    <width>936</width>
+                    <height>228</height>
+                    <visible>[Container.Content(movies) + Skin.HasSetting(MovieInfoWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVInfoWallBanner)]</visible>
+                    <animation effect="fade" time="320" delay="300">Visible</animation>
+                    <animation effect="fade" time="320" delay="300">WindowOpen</animation>
+                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4)">Conditional</animation>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4) | Container(512).Row(3)">Conditional</animation>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4) | Container(512).Row(3) | Container(512).Row(2)">Conditional</animation>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4) | Container(512).Row(3) | Container(512).Row(2) | Container(512).Row(1)">Conditional</animation>
+                </control>
             </control>
-            <control type="image">
-                <posx>64</posx>
-                <posy>67</posy>
-                <width>936</width>
-                <height>228</height>
-                <visible>[Container.Content(movies) + Skin.HasSetting(MovieInfoWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVInfoWallBanner)]</visible>
-                <animation effect="fade" time="320" delay="300">Visible</animation>
-                <animation effect="fade" time="320" delay="300">WindowOpen</animation>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4)">Conditional</animation>
-                <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4) | Container(512).Row(3)">Conditional</animation>
-                <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4) | Container(512).Row(3) | Container(512).Row(2)">Conditional</animation>
-                <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(512).Row(4) | Container(512).Row(3) | Container(512).Row(2) | Container(512).Row(1)">Conditional</animation>
-            </control>
-        </control>
             <control type="panel" id="512">
                 <posx>0</posx>
                 <posy>0</posy>
@@ -59,7 +71,13 @@
                 <scrolltime tween="sine">300</scrolltime>
                 <viewtype label="$LOCALIZE[31283]">icon</viewtype>
                 <pagecontrol>60</pagecontrol>
-                <itemlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">
+                <itemlayout height="410" width="440" condition="Container.Content(episodes)">
+                    <include>YoutubeItemLayout</include>
+                </itemlayout>
+                <focusedlayout height="410" width="440" condition="Container.Content(episodes)">
+                    <include>YoutubeFocusedLayout</include>
+                </focusedlayout>
+                <itemlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos)]">
                     <control type="image">
                         <posx>60</posx>
                         <posy>180</posy>
@@ -71,7 +89,7 @@
                         <bordersize>6</bordersize>
                     </control>
                 </itemlayout>
-                <focusedlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]">
+                <focusedlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos)]">
                     <control type="image">
                         <posx>60</posx>
                         <posy>180</posy>
