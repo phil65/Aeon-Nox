@@ -23,7 +23,7 @@
                     <posy>101</posy>
                     <width>454</width>
                     <height>444</height>
-                    <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors) | StringCompare(Container.FolderName,youtube)</visible>
+                    <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors) | Container.Content(episodes) | StringCompare(Container.FolderName,youtube)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
                     <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
@@ -101,10 +101,10 @@
                     <effect type="slide" end="0,-30" time="180" tween="sine" delay="80" />
                 </animation>
                 <orientation>vertical</orientation>
-                <itemlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube)">
+                <itemlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube) | Container.Content(episodes)">
                     <include>YoutubeItemLayout</include>
                 </itemlayout>
-                <focusedlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube)">
+                <focusedlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube) | Container.Content(episodes)">
                     <include>YoutubeFocusedLayout</include>
                 </focusedlayout>
                 <itemlayout height="410" width="440" condition="Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors)">
@@ -395,6 +395,7 @@
                     <posy>218</posy>
                     <width>130</width>
                     <height>30</height>
+                    <fadetime>0</fadetime>
                     <texture colordiffuse="grey">$INFO[ListItem.Rating,stars/,.png]</texture>
                     <include>Animation_HomeWidget</include>
                 </control>
