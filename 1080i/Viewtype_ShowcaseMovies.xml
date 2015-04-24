@@ -5,6 +5,14 @@
             <visible>Control.IsVisible(501)</visible>
             <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="960,970" condition="Skin.HasSetting(showcasezoom)">Conditional</animation>
             <animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
+            <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
+                <effect type="slide" end="-30" time="60" tween="sine" />
+                <effect type="slide" end="30" time="140" tween="sine" delay="80" />
+            </animation>
+            <animation type="Conditional" condition="Control.IsVisible(20001)" reversible="false">
+                <effect type="slide" end="30" time="60" tween="sine" />
+                <effect type="slide" end="-30" time="140" tween="sine" delay="80" />
+            </animation>
             <control type="group">
                 <camera x="960" y="810" />
                 <control type="group" id="6001">
@@ -409,8 +417,8 @@
                 <height>525</height>
                 <visible>[!Container.Content(episodes) | SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)] + !Container.Content(addons)</visible>
                 <visible>![!IsEmpty(Skin.String(DisableShowcaseVL)) + Window.IsActive(videos)]</visible>
-                <onleft>501</onleft>
-                <onright>501</onright>
+                <onleft>20000</onleft>
+                <onright>20001</onright>
                 <onup>7000</onup>
                 <ondown>610</ondown>
                 <viewtype label="31028">bigwrap</viewtype>

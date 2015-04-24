@@ -6,6 +6,14 @@
             <camera x="960" y="810" />
             <animation effect="zoom" start="100" end="165" time="640" easing="inout" tween="circle" center="960,960" condition="Skin.HasSetting(showcasesquarezoom)">Conditional</animation>
             <animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
+            <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
+                <effect type="slide" end="-30" time="60" tween="sine" />
+                <effect type="slide" end="30" time="140" tween="sine" delay="80" />
+            </animation>
+            <animation type="Conditional" condition="Control.IsVisible(20001)" reversible="false">
+                <effect type="slide" end="30" time="60" tween="sine" />
+                <effect type="slide" end="-30" time="140" tween="sine" delay="80" />
+            </animation>
             <control type="group" id="7007">
                 <posy>580</posy>
                 <visible>Container.OnNext + !Skin.HasSetting(noflowalbum)</visible>
@@ -311,8 +319,8 @@
                 <width>2655</width>
                 <height>525</height>
                 <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(programs) | Window.IsActive(pictures) | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)]</visible>
-                <onleft>509</onleft>
-                <onright>509</onright>
+                <onleft>20000</onleft>
+                <onright>20001</onright>
                 <onup condition="!Window.IsActive(videolibrary) + !Container.Content(years) + !Container.Content(genres)">7000</onup>
                 <onup condition="Window.IsActive(videolibrary) | Container.Content(years) | Container.Content(genres)">9000</onup>
                 <ondown>610</ondown>

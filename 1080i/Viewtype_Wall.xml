@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="Viewtype_Wall">
+        <control type="button" id="20000">
+            <include>HiddenObject</include>
+            <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+            <onfocus>SetFocus(50)</onfocus>
+            <onclick>-</onclick>
+            <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
+        </control>
+        <control type="button" id="20001">
+            <include>HiddenObject</include>
+            <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+            <onfocus>SetFocus(50)</onfocus>
+            <onclick>-</onclick>
+            <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+        </control>
         <control type="group">
             <visible>Control.IsVisible(500)</visible>
             <include>Animation_Widgets</include>
@@ -61,20 +75,6 @@
                     <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3) | Container(500).Row(2)">Conditional</animation>
                     <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3) | Container(500).Row(2) | Container(500).Row(1)">Conditional</animation>
                 </control>
-            </control>
-            <control type="button" id="20000">
-                <include>HiddenObject</include>
-                <animation effect="fade" time="500" start="100" end="0">Focus</animation>
-                <onfocus>SetFocus(50)</onfocus>
-                <onclick>-</onclick>
-                <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
-            </control>
-            <control type="button" id="20001">
-                <include>HiddenObject</include>
-                <animation effect="fade" time="500" start="100" end="0">Focus</animation>
-                <onfocus>SetFocus(50)</onfocus>
-                <onclick>-</onclick>
-                <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
             </control>
             <control type="panel" id="500">
                 <posx>0</posx>
