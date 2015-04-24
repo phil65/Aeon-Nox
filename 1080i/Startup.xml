@@ -6,7 +6,6 @@
     <onload>RunScript(script.skin.info.service)</onload>
     <onload>RunScript(script.toolbox,daemon=True,radius=30)</onload>
     <onload condition="Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onload>
-    <onload condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onload>
     <onload>PlayMedia(special://skin/extras/intro.mp4,1)</onload>
     <onunload>Stop</onunload>
     <animation type="WindowClose" reversible="false">
