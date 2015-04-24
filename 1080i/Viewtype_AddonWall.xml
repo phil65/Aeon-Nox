@@ -33,7 +33,7 @@
                     <posy>135</posy>
                     <width>290</width>
                     <height>400</height>
-                    <visible>[Container.Content(movies) + !Skin.HasSetting(MovieInfoWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVInfoWallBanner)]</visible>
+                    <visible>[Container.Content(movies) + !Skin.HasSetting(MovieInfoWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVInfoWallBanner)] | Container.Content(seasons)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <animation effect="fade" time="320" delay="300">WindowOpen</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
@@ -77,7 +77,7 @@
                 <focusedlayout height="410" width="440" condition="Container.Content(episodes)">
                     <include>YoutubeFocusedLayout</include>
                 </focusedlayout>
-                <itemlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos)]">
+                <itemlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons)]">
                     <control type="image">
                         <posx>60</posx>
                         <posy>180</posy>
@@ -89,7 +89,7 @@
                         <bordersize>6</bordersize>
                     </control>
                 </itemlayout>
-                <focusedlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos)]">
+                <focusedlayout height="361" width="320" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons)]">
                     <control type="image">
                         <posx>60</posx>
                         <posy>180</posy>
