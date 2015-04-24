@@ -44,6 +44,7 @@
                 <posy>135</posy>
                 <width>500</width>
                 <height>500</height>
+                <fadetime>400</fadetime>
                 <aspectratio align="right">keep</aspectratio>
                 <texture background="true">$VAR[cdArtVar]</texture>
                 <visible>Skin.HasSetting(listcdart) + Container.Content(movies) + !SubString(ListItem.FolderPath,videodb://movies/sets/) + !Control.HasFocus(5001)</visible>
@@ -62,6 +63,7 @@
                     <posy>15</posy>
                     <width>500</width>
                     <height>500</height>
+                    <fadetime>400</fadetime>
                     <aspectratio align="right">keep</aspectratio>
                     <texture background="true">$INFO[Window(home).Property(Set.Movie.1.Art(Discart))]</texture>
                     <animation effect="rotate" end="-360" center="auto" time="6400" delay="1200" reversible="false" tween="cubic" easing="inout" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
@@ -72,6 +74,7 @@
                     <posy>135</posy>
                     <width>500</width>
                     <height>500</height>
+                    <fadetime>400</fadetime>
                     <aspectratio align="right">keep</aspectratio>
                     <texture background="true">$INFO[Window(home).Property(Set.Movie.2.Art(Discart))]</texture>
                     <animation effect="rotate" end="-360" center="auto" time="6400" delay="1600" reversible="false" tween="cubic" easing="inout" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
@@ -82,6 +85,7 @@
                     <posy>255</posy>
                     <width>500</width>
                     <height>500</height>
+                    <fadetime>400</fadetime>
                     <aspectratio align="right">keep</aspectratio>
                     <texture background="true">$INFO[Window(home).Property(Set.Movie.3.Art(Discart))]</texture>
                     <animation effect="rotate" end="-360" center="auto" time="6400" delay="2000" reversible="false" tween="cubic" easing="inout" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
@@ -107,7 +111,6 @@
                 <height>764</height>
                 <aspectratio scalediffuse="false">scale</aspectratio>
                 <texture diffuse="thumbs/movieposter_mask.png">common/bgcolor.png</texture>
-                <fadetime>IconCrossfadeTime2</fadetime>
             </control>
             <control type="image">
                 <posx>-19</posx>
@@ -152,6 +155,7 @@
                     <posy>-7</posy>
                     <width>525</width>
                     <height>780</height>
+                    <fadetime>400</fadetime>
                     <aspectratio aligny="bottom">keep</aspectratio>
                     <texture colordiffuse="FF000000" background="true">$INFO[ListItem.Icon]</texture>
 
@@ -162,6 +166,7 @@
                     <posy>-7</posy>
                     <width>525</width>
                     <height>780</height>
+                    <fadetime>400</fadetime>
                     <aspectratio aligny="bottom">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.Icon]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
