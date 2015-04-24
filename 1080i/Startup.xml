@@ -8,7 +8,7 @@
     <onload condition="Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onload>
     <onload condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onload>
     <onload>PlayMedia(special://skin/extras/intro.mp4,1)</onload>
-    <onunload>PlayerControl(Stop)</onunload>
+    <onunload>Stop</onunload>
     <animation type="WindowClose" reversible="false">
         <effect type="fade" start="100" end="0" time="640" />
     </animation>
@@ -29,8 +29,8 @@
                 <onright>ReplaceWindow($INFO[System.StartupWindow])</onright>
                 <onclick>ReplaceWindow($INFO[System.StartupWindow])</onclick>
                 <onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-    <onunfocus>PlayerControl(Stop)</onunfocus>
-                <animation effect="fade" start="100" end="0" time="10000">Focus</animation>
+<!--                 <onunfocus>Stop</onunfocus>
+ -->                <animation effect="fade" start="100" end="0" time="10000">Focus</animation>
             </control>
         </control>
         <control type="videowindow">
