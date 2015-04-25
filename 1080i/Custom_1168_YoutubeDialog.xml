@@ -8,7 +8,7 @@
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
         </control>
-                <control type="group">
+        <control type="group">
             <posy>0</posy>
             <visible>!Window.IsActive(busydialog)</visible>
             <animation type="WindowOpen" reversible="false">
@@ -59,9 +59,15 @@
                 <focusedlayout height="410" width="440">
                     <include>YoutubeFocusedLayout</include>
                 </focusedlayout>
-                    <content>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$INFO[Window(Home).Property(listcontent)]</content>
+                <content>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$INFO[Window(Home).Property(listcontent)]</content>
             </control>
-                        <control type="image">
+            <control type="image">
+                <posy>717</posy>
+                <width>1920</width>
+                <height>367</height>
+                <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
+            </control>
+            <control type="image">
                 <posx>10</posx>
                 <posy>18</posy>
                 <width>360</width>
