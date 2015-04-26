@@ -3,7 +3,7 @@
     <defaultcontrol always="true">9004</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
-    <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music|trailers|tvguide|featured|favourites|maps|custom1|custom2|custom3|custom4)</onload>
+    <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=weather|movies|settings|shutdown|tvshows|livetv|musicvideos|pictures|programs|dvd|videos|music|trailers|tvguide|favourites|maps|custom1|custom2|custom3|custom4)</onload>
     <onload condition="!Window.Previous(startup) + System.HasAddon(plugin.image.mypicsdb)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
     <onload condition="!Window.Previous(startup) + System.HasAddon(plugin.image.mypicsdb)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
     <onload condition="!Window.Previous(startup)">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>

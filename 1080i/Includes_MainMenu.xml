@@ -373,27 +373,6 @@
             <icon fallback="special://skin/backgrounds/pictures/">$INFO[Skin.String(PicturesHomeItem.MultiFanart)]</icon>
             <visible>IsEmpty(Skin.String(PicturesHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
         </item>
-        <item id="27">
-            <label fallback="31163">$INFO[Skin.String(FeaturedHomeItem.Label)]</label>
-            <property name="Path" fallback="RunScript(script.home,window=featured)">$INFO[Skin.String(FeaturedHomeItem.Path)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(FeaturedHomeItem.Type)]</property>
-            <property name="submenuVisibility" fallback="featured">$INFO[Skin.String(FeaturedHomeItem.SubMenu)]</property>
-            <property name="InfoLine" fallback="none">$INFO[Skin.String(FeaturedHomeItem.InfoLine)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/icons/star.png">$INFO[Skin.String(FeaturedHomeItem.Icon)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(FeaturedHomeItem.Disable)]</property>
-            <property name="BackgroundOverlay">$INFO[Skin.String(FeaturedHomeItem.BackgroundOverlay)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(FeaturedHomeItem.Widget2Title)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(FeaturedHomeItem.WidgetTitle)]</property>
-            <property name="Widget2">$INFO[Skin.String(FeaturedHomeItem.Widget2)]</property>
-            <property name="Widget">$INFO[Skin.String(FeaturedHomeItem.Widget)]</property>
-            <property name="Widget2Content">$INFO[Skin.String(FeaturedHomeItem.Widget2Content)]</property>
-            <property name="WidgetContent">$INFO[Skin.String(FeaturedHomeItem.WidgetContent)]</property>
-            <property name="ID">FeaturedHomeItem</property>
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],FeaturedHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <icon fallback="special://skin/backgrounds/featured/">$INFO[Skin.String(FeaturedHomeItem.MultiFanart)]</icon>
-            <visible>IsEmpty(Skin.String(FeaturedHomeItem.Disable)) | !IsEmpty(Window(home).Property(EditMode))</visible>
-        </item>
         <item id="6">
             <label fallback="24027">$INFO[Skin.String(WeatherHomeItem.Label)]</label>
             <property name="Path" fallback="ActivateWindow(Weather)">$INFO[Skin.String(WeatherHomeItem.Path)]</property>
