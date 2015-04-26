@@ -2,7 +2,7 @@
 <includes>
     <include name="ShowcaseSquareInfoPanel">
         <control type="group" id="7679">
-            <posy>75</posy>
+            <posy>40</posy>
             <width>1920</width>
             <height>750</height>
             <visible>Window.IsActive(1112) | Control.IsVisible(199) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
@@ -17,25 +17,9 @@
                 <effect type="slide" start="0,0" end="0,-1200" time="300" tween="cubic" easing="in"/>
             </animation>
             <animation effect="slide" start="0,-1200" end="0,0" time="440" delay="640" tween="cubic">WindowOpen</animation>
-            <animation effect="slide" end="0,-32" time="440" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
             <animation effect="slide" end="0,112" time="440" tween="cubic" condition="Control.IsVisible(57) + Skin.HasSetting(smallshiftview)">Conditional</animation>
-            <animation effect="slide" end="0,20" time="440" tween="cubic" condition="Control.IsVisible(503)">Conditional</animation>
             <animation effect="slide" end="0,-1200" time="320" tween="cubic">WindowClose</animation>
             <control type="group">
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>1050</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]">wall/wall_bg_glow.png</texture>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>PanelGlowFade</include>
-                </control>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>1050</height>
-                    <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
-                </control>
                 <control type="image">
                     <posx>112</posx>
                     <posy>7</posy>
