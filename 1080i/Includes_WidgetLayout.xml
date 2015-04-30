@@ -948,11 +948,12 @@
                 <onleft>5010</onleft>
                 <onright>5012</onright>
                 <include>NavigationWidget1</include>
+                <onclick condition="Substring(Control.GetLabel(4321),movies) + !IsEmpty(Container(5002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5002).ListItem.Property(DBID)])</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),movies) + IsEmpty(Container(5002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5002).ListItem.DBID])</onclick>
                 <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,randomtv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,watchlistmovies,home)</onclick>
                 <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
-                <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick>RunScript(script.home,container=5002,focuscontrol=5055)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),music)">RunScript(script.home,container=5002,focuscontrol=5055)</onclick>
                 <visible>IntegerGreaterThan(Container(5002).NumItems,0)</visible>
             </control>
             <control type="button" id="5010">
@@ -966,11 +967,12 @@
                 <onleft>5012</onleft>
                 <onright>5011</onright>
                 <include>NavigationWidget1</include>
-                <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),movies) + !IsEmpty(Container(5001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5001).ListItem.Property(DBID)])</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),movies) + IsEmpty(Container(5001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5001).ListItem.DBID])</onclick>
                 <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
                 <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
-                <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick>RunScript(script.home,container=5001,focuscontrol=5055)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),music)">RunScript(script.home,container=5001,focuscontrol=5055)</onclick>
             </control>
             <control type="button" id="5012">
                 <posx>1001</posx>
@@ -983,11 +985,12 @@
                 <onleft>5011</onleft>
                 <onright>5010</onright>
                 <include>NavigationWidget1</include>
-                <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(WidgetType,recentmovies,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),movies) + !IsEmpty(Container(5003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5003).ListItem.Property(DBID)])</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),movies) + IsEmpty(Container(5003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5003).ListItem.DBID])</onclick>
                 <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,recenttv,home)</onclick>
                 <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
-                <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick>RunScript(script.home,container=5003,focuscontrol=5055)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4321),music)">RunScript(script.home,container=5003,focuscontrol=5055)</onclick>
                 <visible>IntegerGreaterThan(Container(5003).NumItems,0)</visible>
             </control>
             <control type="group">
@@ -1966,11 +1969,12 @@
                 <onleft>6010</onleft>
                 <onright>6012</onright>
                 <include>NavigationWidget2</include>
+                <onclick condition="Substring(Control.GetLabel(4325),movies) + !IsEmpty(Container(6002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6002).ListItem.Property(DBID)])</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),movies) + IsEmpty(Container(6002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6002).ListItem.DBID])</onclick>
                 <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,randomtv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,watchlistmovies,home)</onclick>
                 <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
-                <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick>RunScript(script.home,container=6002,focuscontrol=5055)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),music)">RunScript(script.home,container=6002,focuscontrol=5055)</onclick>
                 <visible>IntegerGreaterThan(Container(6002).NumItems,0)</visible>
             </control>
             <control type="button" id="6010">
@@ -1985,11 +1989,12 @@
                 <include>NavigationWidget2</include>
                 <onleft>6012</onleft>
                 <onright>6011</onright>
-                <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,randommovies,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),movies) + !IsEmpty(Container(6001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6001).ListItem.Property(DBID)])</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),movies) + IsEmpty(Container(6001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6001).ListItem.DBID])</onclick>
                 <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
                 <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
-                <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick>RunScript(script.home,container=6001,focuscontrol=5055)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),music)">RunScript(script.home,container=6001,focuscontrol=5055)</onclick>
             </control>
             <control type="button" id="6012">
                 <posx>1001</posx>
@@ -2001,11 +2006,12 @@
                 <onleft>6011</onleft>
                 <onright>6010</onright>
                 <include>NavigationWidget2</include>
-                <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(WidgetType,recentmovies,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),movies) + !IsEmpty(Container(6003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6003).ListItem.Property(DBID)])</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),movies) + IsEmpty(Container(6003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6003).ListItem.DBID])</onclick>
                 <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,recenttv,home)</onclick>
                 <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
-                <onclick>SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick>RunScript(script.home,container=6003,focuscontrol=5055)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
+                <onclick condition="Substring(Control.GetLabel(4325),music)">RunScript(script.home,container=6003,focuscontrol=5055)</onclick>
                 <visible>IntegerGreaterThan(Container(6003).NumItems,0)</visible>
             </control>
             <control type="group">
