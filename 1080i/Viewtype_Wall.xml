@@ -50,7 +50,7 @@
                     <posy>121</posy>
                     <width>360</width>
                     <height>380</height>
-                    <visible>Container.Content() | Container.Content(files) | [Window.IsActive(videolibrary) + Container.Content(genres)] | Container.Content(tags) | Container.Content(countries)</visible>
+                    <visible>Container.Content() | Container.Content(files) | [Window.IsActive(videolibrary) + Container.Content(genres)] | Container.Content(tags) | Container.Content(countries) | Container.Content(studios)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
                     <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
@@ -120,10 +120,10 @@
                 <focusedlayout height="410" width="440" condition="StringCompare(Container.FolderName,youtube) | Container.Content(episodes)">
                     <include>YoutubeFocusedLayout</include>
                 </focusedlayout>
-                <itemlayout height="410" width="345" condition="Container.Content() | Container.Content(files) | [Window.IsActive(videolibrary) + Container.Content(genres)] | Container.Content(tags) | Container.Content(countries)">
+                <itemlayout height="410" width="345" condition="Container.Content() | Container.Content(files) | [Window.IsActive(videolibrary) + Container.Content(genres)] | Container.Content(tags) | Container.Content(countries) | Container.Content(studios)">
                     <include>IconWallItemLayout</include>
                 </itemlayout>
-                <focusedlayout height="410" width="345" condition="Container.Content() | Container.Content(files) | [Window.IsActive(videolibrary) + Container.Content(genres)] | Container.Content(tags) | Container.Content(countries)">
+                <focusedlayout height="410" width="345" condition="Container.Content() | Container.Content(files) | [Window.IsActive(videolibrary) + Container.Content(genres)] | Container.Content(tags) | Container.Content(countries) | Container.Content(studios)">
                     <control type="group">
                         <animation type="Focus">
                             <effect type="zoom" time="150" start="100" end="108" center="245,350" />
@@ -671,8 +671,8 @@
                 <posy>70</posy>
                 <width>150</width>
                 <height>150</height>
-                <aspectratio aligny="center">scale</aspectratio>
-                <texture background="true">$VAR[SmallListIconVar]</texture>
+                <aspectratio aligny="center">keep</aspectratio>
+                <texture background="true" fallback="flags/studios/default-studio.png">$VAR[IconWallVar]</texture>
             </control>
             <control type="textbox">
                 <posx>35</posx>

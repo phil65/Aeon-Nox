@@ -2083,6 +2083,13 @@
         <value condition="SubString(ListItem.Icon,Default,left)">defaulticons/$INFO[ListItem.Icon]</value>
         <value>defaulticons/$INFO[ListItem.ActualIcon]</value>
     </variable>
+    <variable name="IconWallVar">
+        <value condition="Container.Content(songs)">$INFO[ListItem.DiscNumber,flags/discnumber/,.png]</value>
+        <value condition="Container.Content(studios)">$INFO[ListItem.Label,flags/studios/,.png]</value>
+        <value condition="Container.Content(countries)">$INFO[ListItem.Label,flags/language/,.png]</value>
+        <value condition="SubString(ListItem.Icon,Default,left)">defaulticons/$INFO[ListItem.Icon]</value>
+        <value>defaulticons/$INFO[ListItem.ActualIcon]</value>
+    </variable>
     <variable name="LiveBGCase">
         <value condition="Substring(Control.GetLabel(4322),clearcase)">$INFO[Skin.String(LiveBGCase)]</value>
         <value>$INFO[Skin.String(LiveBGCase)]</value>
