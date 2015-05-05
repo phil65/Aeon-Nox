@@ -864,22 +864,6 @@
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.SubMenu)]</value>
         <value>$INFO[Container(9000).ListItem.Property(submenuVisibility)]</value>
     </variable>
-    <variable name="WeatherWidgetBackVar">
-        <value condition="Substring(Control.GetLabel(4321),default)">keyboard/numeric_back.png</value>
-        <value>-</value>
-    </variable>
-    <variable name="WeatherWidget2BackVar">
-        <value condition="Substring(Control.GetLabel(4325),default)">keyboard/numeric_back.png</value>
-        <value>-</value>
-    </variable>
-    <variable name="PanelWidgetBackVar">
-        <value condition="Substring(Control.GetLabel(4321),default)">featured/panel_featured.png</value>
-        <value>-</value>
-    </variable>
-    <variable name="PanelWidget2BackVar">
-        <value condition="Substring(Control.GetLabel(4325),default)">featured/panel_featured.png</value>
-        <value>-</value>
-    </variable>
     <variable name="MusicFanartVar">
         <value condition="!Skin.HasSetting(NoMusicLibraryFanart) + [Container.Content(genres) | Container.Content(years)]">$INFO[Control.GetLabel(4324)]</value>
         <value condition="!Skin.HasSetting(NoMusicLibraryFanart) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
