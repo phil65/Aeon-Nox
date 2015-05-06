@@ -318,10 +318,26 @@
                         <label>$LOCALIZE[31164]: $LOCALIZE[584]</label>
                         <altlabel>$LOCALIZE[31164]: $LOCALIZE[585]</altlabel>
                     </control>
+                    <control type="radiobutton" id="31">
+                        <label>587</label>
+                        <textureradioon>special://skin/extras/icons/filter.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/filter.png</textureradiooff>
+                        <selected>Container.Filtered</selected>
+                        <include>Objects_MediaMenuButtonIcons</include>
+                        <onclick>SetFocus(50)</onclick>
+                        <visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+                    </control>
                     <control type="label" id="202">
                         <label>31026</label>
                         <aligny>center</aligny>
                         <include>Objects_MediaMenuLabelAlt2</include>
+                    </control>
+                    <control type="radiobutton" id="6">
+                        <label>19051</label>
+                        <textureradioon>special://skin/extras/icons/controlpanel.png</textureradioon>
+                        <textureradiooff>special://skin/extras/icons/controlpanel.png</textureradiooff>
+                        <include>Objects_MediaMenuButtonIcons</include>
+                        <visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
                     </control>
                     <control type="radiobutton" id="1664">
                         <label>31876</label>
