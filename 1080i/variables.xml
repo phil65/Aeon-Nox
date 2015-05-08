@@ -21,10 +21,6 @@
         <value condition="Substring(Skin.CurrentTheme,whit)">FFAAAAAA</value>
         <value>$VAR[AreaColorVar]</value>
     </variable>
-    <variable name="VideoInfoColorVar">
-        <value condition="Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window.Property(ActorInfo.ImageColor)]</value>
-            <value>$INFO[Window.Property(movie.ImageColor)]</value>
-        </variable>
     <variable name="DialogColorVar">
         <value condition="Skin.HasSetting(colordialogs) + !Substring(Skin.CurrentTheme,whit)">$VAR[AreaColorVar]</value>
         <value>FFFFFFFF</value>
@@ -44,10 +40,6 @@
     <variable name="ExtendedColorVar">
         <value condition="Skin.HasSetting(colorpanels)">$VAR[AreaColorVar]</value>
         <value>FFFFFFFF</value>
-    </variable>
-    <variable name="QuickNavButtonLabelVar">
-        <value condition="IsEmpty(Window(home).Property(quicknavsetup))">$LOCALIZE[31860]</value>
-        <value>$LOCALIZE[13009]</value>
     </variable>
     <variable name="SourceFlagVar">
         <value condition="StringCompare(ListItem.FileExtension,iso) | StringCompare(ListItem.FileExtension,ifo)">dvd</value>
@@ -76,51 +68,6 @@
         <value condition="Player.Forwarding8x | Player.Rewinding8x">8x</value>
         <value condition="Player.Forwarding16x | Player.Rewinding16x">16x</value>
         <value condition="Player.Forwarding32x | Player.Rewinding32x">32x</value>
-    </variable>
-    <variable name="WidgetRatingFlagVar">
-        <value condition="substring(Window(home).Property(mpaa),TV-G)">TV-G_Certificate_US</value>
-        <value condition="substring(Window(home).Property(mpaa),TV-PG)">TV-PG_Certificate_US</value>
-        <value condition="substring(Window(home).Property(mpaa),TV-14)">TV-14_Certificate_US</value>
-        <value condition="substring(Window(home).Property(mpaa),TV-MA)">TV-MA_Certificate_US</value>
-        <value condition="substring(Window(home).Property(mpaa),TV-Y7)">tv-y7</value>
-        <value condition="substring(Window(home).Property(mpaa),TV-Y)">tv-y</value>
-        <value condition="SubString(Window(home).Property(mpaa),US:G) | SubString(Window(home).Property(mpaa),USA:G) | SubString(Window(home).Property(mpaa),Rated G)">MPAA_G_Certificate_US</value>
-        <value condition="SubString(Window(home).Property(mpaa),PG-13)">MPAA_PG-13_Certificate_US</value>
-        <value condition="Substring(Window(home).Property(mpaa),Rated PG) | StringCompare(Window(home).Property(mpaa),PG)">MPAA_PG_Certificate_US</value>
-        <value condition="SubString(Window(home).Property(mpaa),US:R) | SubString(Window(home).Property(mpaa),USA:R) | SubString(Window(home).Property(mpaa),Rated R) | StringCompare(Window(home).Property(mpaa),R)">MPAA_R_Certificate_US</value>
-        <value condition="SubString(Window(home).Property(mpaa),NC-17)">MPAA_NC-17_Certificate_US</value>
-        <value condition="SubString(Window(home).Property(mpaa),UK:U)">BBFC_U_Certificate_UK</value>
-        <value condition="SubString(Window(home).Property(mpaa),UK:PG)">BBFC_PG_Certificate_UK</value>
-        <value condition="SubString(Window(home).Property(mpaa),UK:12A)">BBFC_12A_Certificate_UK</value>
-        <value condition="SubString(Window(home).Property(mpaa),UK:12)">BBFC_12_Certificate_UK</value>
-        <value condition="SubString(Window(home).Property(mpaa),UK:15)">BBFC_15_Certificate_UK</value>
-        <value condition="SubString(Window(home).Property(mpaa),UK:18)">BBFC_18_Certificate_UK</value>
-        <value condition="SubString(Window(home).Property(mpaa),besorolás alatt)">HU_BA</value>
-        <value condition="SubString(Window(home).Property(mpaa),korhatárra való tekintett nélkül megtekintetheto)">HU_KN</value>
-        <value condition="SubString(Window(home).Property(mpaa),12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">HU_12</value>
-        <value condition="SubString(Window(home).Property(mpaa),16 éven aluliak számára nem ajánlott)">HU_16</value>
-        <value condition="SubString(Window(home).Property(mpaa),18 éven aluliak számára nem ajánlott)">HU_18</value>
-        <value condition="substring(Window(home).Property(mpaa),France:U) | Substring(Window(home).Property(mpaa),partir de)">csaU</value>
-        <value condition="substring(Window(home).Property(mpaa),France:-10) | Substring(Window(home).Property(mpaa),Interdit aux moins de 10 ans) | Substring(Window(home).Property(mpaa),des propos ou des images peuvent heurter)">csa10</value>
-        <value condition="substring(Window(home).Property(mpaa),France:-12) | Substring(Window(home).Property(mpaa),Interdit aux moins de 12 ans)">csa12</value>
-        <value condition="substring(Window(home).Property(mpaa),France:-16) | Substring(Window(home).Property(mpaa),Interdit aux moins de 16 ans)">csa16</value>
-        <value condition="substring(Window(home).Property(mpaa),France:-18) | Substring(Window(home).Property(mpaa),Interdit aux moins de 18 ans)">csa18</value>
-        <value condition="substring(Window(home).Property(mpaa),전체)">KR_Certificate_All</value>
-        <value condition="substring(Window(home).Property(mpaa),12세)">KR_Certificate_12</value>
-        <value condition="substring(Window(home).Property(mpaa),15세)">KR_Certificate_15</value>
-        <value condition="substring(Window(home).Property(mpaa),불가)">KR_Certificate_18</value>
-        <value condition="substring(Window(home).Property(mpaa),제한)">KR_Certificate_R</value>
-        <value condition="substring(Window(home).Property(mpaa),Livre)">MPAA_Brazil_Livre</value>
-        <value condition="substring(Window(home).Property(mpaa),Brazil:10) | substring(Window(home).Property(mpaa),10 anos)">MPAA_Brazil_10</value>
-        <value condition="substring(Window(home).Property(mpaa),Brazil:12) | substring(Window(home).Property(mpaa),12 anos)">MPAA_Brazil_12</value>
-        <value condition="substring(Window(home).Property(mpaa),Brazil:14) | substring(Window(home).Property(mpaa),14 anos)">MPAA_Brazil_14</value>
-        <value condition="substring(Window(home).Property(mpaa),Brazil:16) | substring(Window(home).Property(mpaa),16 anos)">MPAA_Brazil_16</value>
-        <value condition="substring(Window(home).Property(mpaa),Brazil:18) | substring(Window(home).Property(mpaa),18 anos)">MPAA_Brazil_18</value>
-        <value condition="SubString(Window(home).Property(mpaa),6)">FSK-6</value>
-        <value condition="SubString(Window(home).Property(mpaa),12)">FSK-12</value>
-        <value condition="SubString(Window(home).Property(mpaa),16)">FSK-16</value>
-        <value condition="SubString(Window(home).Property(mpaa),18)">FSK-18</value>
-        <value condition="SubString(Window(home).Property(mpaa),Germany) | SubString(Window(home).Property(mpaa),FSK) | SubString(Window(home).Property(mpaa),o.A) | SubString(Window(home).Property(mpaa),Rated 0)">FSK-0</value>
     </variable>
     <variable name="RatingFlagVar">
         <value condition="substring(ListItem.mpaa,TV-G)">TV-G_Certificate_US</value>
@@ -321,13 +268,6 @@
         <value condition="!IsEmpty(Skin.String(MusicVideosBackground))">$INFO[Skin.String(MusicVideosBackground)]</value>
         <value>special://skin/backgrounds/musicvideos/</value>
     </variable>
-    <variable name="NodeFanartVar">
-        <value>$INFO[Control.GetLabel(4324)]</value>
-        <!--         <value condition="!Skin.HasSetting(livenodecovers)">$INFO[Control.GetLabel(4324)]</value>
- -->
-        <value condition="!IsEmpty(Skin.String(LiveBG))">INFO[Skin.String(LiveBG)]</value>
-        <value>special://skin/backgrounds/speakergrill.jpg</value>
-    </variable>
     <variable name="MovieFanartVar">
         <value condition="!IsEmpty(Window(Home).Property(Detail.Movie.1.Art(fanart))) + !Skin.HasSetting(NoVideoLibraryFanart) + ListItem.IsFolder + !IsEmpty(ListItem.DBID)">$INFO[Control.GetLabel(4324)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart) + !IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
@@ -365,10 +305,6 @@
     <variable name="NowPlayingBackGroundVar">
         <value condition="ControlGroup(450).HasFocus">special://skin/backgrounds/music/</value>
         <value>special://skin/backgrounds/videos/</value>
-    </variable>
-    <variable name="NowPlayingPlayLabelVar">
-        <value condition="Player.Paused">$LOCALIZE[31043]</value>
-        <value>$LOCALIZE[31040]</value>
     </variable>
     <!--Infopanel variables-->
     <variable name="InfoPanelLayoutVar">
@@ -615,10 +551,6 @@
         <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.characterart)]</value>
         <value condition="!IsEmpty(ListItem.Art(characterart))">$INFO[ListItem.Art(characterart)]</value>
         <value>$INFO[ListItem.Art(clearlogo)]</value>
-    </variable>
-    <variable name="CharacterArtVar">
-        <value condition="Container.Content(episodes)">$INFO[ListItem.Art(tvshow.characterart)]</value>
-        <value>$INFO[ListItem.Art(characterart)]</value>
     </variable>
     <variable name="TVGuideInfoFanart">
         <value condition="IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">special://skin/backgrounds/tvguide/</value>
@@ -1446,11 +1378,6 @@
         <value condition="Substring(Control.GetLabel(4325),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic6012.Content))">$INFO[Skin.String(FeaturedMusic6012.Content)]</value>
         <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/Playlists/recentalbums8.xsp</value>
     </variable>
-    <variable name="HomeinfoPanelPosterVar">
-        <value condition="!IsEmpty(Window(home).Property(poster))">$INFO[Window(home).Property(poster)]</value>
-        <value condition="!IsEmpty(Window(home).Property(tvshow.poster))">$INFO[Window(home).Property(tvshow.poster)]</value>
-        <value>$INFO[Window(home).Property(Icon)]</value>
-    </variable>
     <variable name="WidgetListTargetVar">
         <value condition="Substring(Container(9000).ListItem.Property(Widget),addons1)">video</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),addons2)">music</value>
@@ -1846,11 +1773,6 @@
         <value condition="Container.Content(Directors)">$LOCALIZE[31080]</value>
         <value>$LOCALIZE[21891]</value>
     </variable>
-    <variable name="InfoPanelTypeVar">
-        <value condition="Skin.HasSetting(infopanel2columns)">$LOCALIZE[31863]</value>
-        <value condition="Skin.HasSetting(infopanelfanart)">$LOCALIZE[20445]</value>
-        <value>$LOCALIZE[31175]</value>
-    </variable>
     <variable name="BigFanIconVar">
         <value condition="Container.Content(seasons) + !IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
         <value condition="Skin.HasSetting(bigfanclearart) + !IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
@@ -1925,18 +1847,9 @@
         <value condition="!IsEmpty(Window(home).Property(Addon.Description))">$INFO[Window(home).Property(Addon.Description)]</value>
         <value>$INFO[Window(home).Property(Description)]</value>
     </variable>
-
-    <variable name="NowPlayingMultiImageVar">
-        <value condition="System.HasAddon(script.artistslideshow)">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</value>
-        <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
-    </variable>
     <variable name="NowPlayingPlayIconVar">
         <value condition="Player.Playing">home/nowplaying/nowplaying_arrow.png</value>
         <value>home/nowplaying/nowplaying_pause.png</value>
-    </variable>
-    <variable name="NowPlayingPlayLabelVar">
-        <value condition="Player.Playing">$LOCALIZE[31040]</value>
-        <value>$LOCALIZE[31043]</value>
     </variable>
     <variable name="InfoPanelStyleVar">
         <value condition="Control.IsVisible(501) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
