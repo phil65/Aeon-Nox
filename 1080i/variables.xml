@@ -197,10 +197,6 @@
         <value condition="SubString(Container.FolderPath,videodb://recentlyaddedepisodes/,left) | Container.Content(songs)">[COLOR grey]$INFO[ListItem.TrackNumber,,: ][/COLOR]$INFO[ListItem.Title]</value>
         <value>$INFO[ListItem.Label]</value>
     </variable>
-    <variable name="DialogVideoInfoFanartVar">
-        <value condition="!IsEmpty(ListItem.Art(season.fanart))">$INFO[ListItem.Art(season.fanart)]</value>
-        <value>$INFO[ListItem.Art(fanart)]</value>
-    </variable>
     <variable name="DialogVideoInfoButtonLabelVar">
         <value condition="Container.Content(tvshows) | Container.Content(seasons)">$LOCALIZE[502]</value>
         <value>$LOCALIZE[208]</value>
@@ -301,10 +297,6 @@
     <variable name="LiveTVFanartVar">
         <value condition="!IsEmpty(Skin.String(LiveTVBackground))">$INFO[Skin.String(LiveTVBackground)]</value>
         <value>special://skin/backgrounds/livetv/</value>
-    </variable>
-    <variable name="NowPlayingBackGroundVar">
-        <value condition="ControlGroup(450).HasFocus">special://skin/backgrounds/music/</value>
-        <value>special://skin/backgrounds/videos/</value>
     </variable>
     <!--Infopanel variables-->
     <variable name="InfoPanelLayoutVar">
@@ -594,10 +586,6 @@
         <value condition="Skin.HasSetting(glasshome)">home/homemenu_back_glass.png</value>
         <value condition="Skin.HasSetting(classichome)">home/homemenu_back.png</value>
         <value>home/homemenu_back_nox.png</value>
-    </variable>
-    <variable name="HomeOSDLabelVar">
-        <value condition="Player.HasDuration">$INFO[Player.Time]  /  $INFO[Player.Duration]</value>
-        <value>$INFO[Player.Time]</value>
     </variable>
     <variable name="StyleLabelVar">
         <value condition="Skin.HasSetting(glasshome)">$LOCALIZE[31684]</value>
@@ -1253,18 +1241,6 @@
         <value condition="Container.Content(seasons) + !IsEmpty(ListItem.Property(TotalEpisodes))">[B]$INFO[ListItem.Property(TotalEpisodes)][/B][CR]$VAR[OneOrMoreEpisodesVar]</value>
         <value>$INFO[ListItem.Label2]</value>
     </variable>
-    <variable name="ListLabel5Var">
-        <value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber]</value>
-        <value condition="Container.Content(episodes)">$INFO[ListItem.Episode]</value>
-    </variable>
-    <variable name="ListImage1Var">
-        <value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | [Window.IsActive(programs) + !Container.Content(addons)]">$INFO[ListItem.Studio,flags/studios/,.png]</value>
-        <value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</value>
-    </variable>
-    <variable name="StarImageVar">
-        <value condition="Container.Content(albums) | Container.Content(songs)">$INFO[ListItem.StarRating]</value>
-        <value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)">$INFO[ListItem.Rating,stars/,.png]</value>
-    </variable>
     <variable name="BreadcrumbsLabel2Var">
         <value condition="Window.IsActive(weather)"> / $INFO[Window(Weather).Property(Location)]</value>
         <value condition="Stringcompare(Container.Folderpath,special://skin/extras/Playlists/MoviesInProgress.xsp)"> / $LOCALIZE[31335]</value>
@@ -1403,11 +1379,6 @@
         <value condition="Stringcompare(Skin.String(LibraryStructure),2)">[UPPERCASE]$LOCALIZE[557]/$LOCALIZE[562] - $LOCALIZE[558]/[/UPPERCASE]</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),3)">[UPPERCASE]$LOCALIZE[557]/$LOCALIZE[558] ($LOCALIZE[562])/[/UPPERCASE]</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),4)">[UPPERCASE]$LOCALIZE[557] - $LOCALIZE[558] ($LOCALIZE[562])/[/UPPERCASE]</value>
-    </variable>
-    <variable name="FavoritesListTypeVar">
-        <value condition="Stringcompare(Skin.String(FavoritesListType),1) | IsEmpty(Skin.String(FavoritesListType))">$LOCALIZE[31165]</value>
-        <value condition="Stringcompare(Skin.String(FavoritesListType),2)">$LOCALIZE[31175]</value>
-        <value>$LOCALIZE[31959]</value>
     </variable>
     <variable name="ListPosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
@@ -1685,40 +1656,6 @@
         <value condition="Substring(Control.GetLabel(4328),caserecentalbums,left)">special://skin/extras/Playlists/recentalbums8.xsp</value>
         <value condition="Substring(Control.GetLabel(4328),casemostplayedalbums,left)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
     </variable>
-    <variable name="BackgroundContentVar">
-        <value condition="Substring(Control.GetLabel(4322),randomartists)">special://skin/extras/Playlists/randomartists8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),randomalbums)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),recentalbums)">special://skin/extras/Playlists/recentalbums8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),watchlistalbums)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),recentmovies)">special://skin/extras/Playlists/recentmovies8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),randommovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),watchlistmovies)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),recentmusicvideos)">special://skin/extras/Playlists/recentmusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),randommusicvideos)">special://skin/extras/Playlists/randommusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),watchlistmusicvideos)">special://skin/extras/Playlists/recommendedmusicvideos8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),randomtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),recentvideos)">plugin://service.library.data.provider?type=recentvideos&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4322),recenttv)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4322),watchlisttv)">special://skin/extras/Playlists/recommendedepisodes8.xsp</value>
-<!--         <value condition="Substring(Control.GetLabel(4322),flickr)">plugin://script.extendedinfo?info=flickr</value>
- -->        <value condition="Substring(Control.GetLabel(4322),comingsoonmovies)">plugin://script.extendedinfo?info=comingsoon</value>
-        <value condition="Substring(Control.GetLabel(4322),intheatersmovies)">plugin://script.extendedinfo?info=intheaters</value>
-        <value condition="Substring(Control.GetLabel(4322),boxofficemovies)">plugin://script.extendedinfo?info=boxoffice</value>
-        <value condition="Substring(Control.GetLabel(4322),toprentalsmovies)">plugin://script.extendedinfo?info=toprentals</value>
-        <value condition="Substring(Control.GetLabel(4322),openingmovies)">plugin://script.extendedinfo?info=opening</value>
-        <value condition="Substring(Control.GetLabel(4322),trendingshows)">plugin://script.extendedinfo?info=trendingshows</value>
-        <value condition="Substring(Control.GetLabel(4322),trendingmovies)">plugin://script.extendedinfo?info=trendingmovies</value>
-        <value condition="Substring(Control.GetLabel(4322),incinemasmovies)">plugin://script.extendedinfo?info=incinemas</value>
-        <value condition="Substring(Control.GetLabel(4322),upcomingmovies)">plugin://script.extendedinfo?info=upcoming</value>
-        <value condition="Substring(Control.GetLabel(4322),premiereshows)">plugin://script.extendedinfo?info=premiereshows</value>
-        <value condition="Substring(Control.GetLabel(4322),trailersmovies)">plugin://plugin.video.the.trailers/apple/movies/</value>
-        <value condition="Substring(Control.GetLabel(4322),://)">$INFO[Control.GetLabel(4322)]</value>
-<!--         <value condition="Substring(Control.GetLabel(4322),randompics)">bla</value>
-        <value condition="Substring(Control.GetLabel(4322),recentpics)">bla</value>
-        <value condition="Substring(Control.GetLabel(4322),thebigpicture)">bla</value>
-        <value condition="Substring(Control.GetLabel(4322),mostplayedroms)">bla</value>
-        <value condition="Substring(Control.GetLabel(4322),nextaired)">bla</value> -->
-    </variable>
     <variable name="NowPlayingTextBoxLabelVar">
         <value condition="Window.IsActive(visualisation) + !Skin.HasSetting(activatepanelrotation)">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[24016]:  [COLOR white6],[/COLOR][CR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[24017]: [COLOR white6],[/COLOR][CR]]$INFO[Window(visualisation).Property(ArtistSlideshow.ArtistBiography),$LOCALIZE[21887]:  [COLOR white6],[/COLOR]]</value>
         <value condition="!IsEmpty(MusicPlayer.Property(Album_Description))">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[24016]:  [COLOR white6],[/COLOR][CR]]</value>
@@ -1808,10 +1745,6 @@
         <value condition="Stringcompare(Skin.String(LibraryStructure),4)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)] - $INFO[Container(5010).ListItem.Label] $INFO[Window(home).Property(Year),(,)\cdart.png]</value>
         <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)]\$INFO[Container(5010).ListItem.Label,,\cdart.png]</value>
     </variable>
-    <variable name="ContextMiddleVar">
-        <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_middle_glow.png</value>
-        <value>dialogs/context_middle.png</value>
-    </variable>
     <variable name="ShutdownTopVar">
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_top_shutdown_glow.png</value>
         <value>dialogs/context_top_shutdown.png</value>
@@ -1846,10 +1779,6 @@
         <value condition="!IsEmpty(Window(home).Property(Artist_Description))">$INFO[Window(home).Property(Artist_Description)]</value>
         <value condition="!IsEmpty(Window(home).Property(Addon.Description))">$INFO[Window(home).Property(Addon.Description)]</value>
         <value>$INFO[Window(home).Property(Description)]</value>
-    </variable>
-    <variable name="NowPlayingPlayIconVar">
-        <value condition="Player.Playing">home/nowplaying/nowplaying_arrow.png</value>
-        <value>home/nowplaying/nowplaying_pause.png</value>
     </variable>
     <variable name="InfoPanelStyleVar">
         <value condition="Control.IsVisible(501) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
