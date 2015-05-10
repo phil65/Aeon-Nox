@@ -14,7 +14,7 @@
             <include>HiddenObject</include>
             <onfocus>RunScript(script.home,container=8010,focuscontrol=5015)</onfocus>
         </control>
-        <control id="5014" typ="button">
+        <control id="5014" type="button">
             <include>HiddenObject</include>
             <texturenofocus>-</texturenofocus>
             <onfocus>SetProperty(WidgetType,onlinealbum,home)</onfocus>
@@ -385,7 +385,6 @@
                                             <posy>70</posy>
                                             <width>175</width>
                                             <height>105</height>
-                                            <posy>6</posy>
                                             <texture colordiffuse="white2">defaulticons/DefaultAddonMusic.png</texture>
                                             <aspectratio>keep</aspectratio>
                                             <animation condition="true" effect="fade" end="30" start="100" time="40">Conditional</animation>
@@ -841,7 +840,6 @@
                                     <aspectratio>scale</aspectratio>
                                     <texture>$INFO[Container(8010).ListItem.Property(GoogleMap)]</texture>
                                     <fadetime>750</fadetime>
-                                    <timeperimage>5000</timeperimage>
                                 </control>
                             </control>
                             <control id="8010" type="panel">
@@ -994,7 +992,6 @@
                                 <aspectratio>scale</aspectratio>
                                 <texture fallback="DefaultArtist.png">$INFO[Container(5010).ListItem.Icon]</texture>
                                 <fadetime>750</fadetime>
-                                <timeperimage>5000</timeperimage>
                             </control>
                             <control id="5010" type="panel">
                                 <posx>430</posx>

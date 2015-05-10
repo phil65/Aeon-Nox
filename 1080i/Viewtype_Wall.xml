@@ -5,14 +5,14 @@
             <include>HiddenObject</include>
             <animation effect="fade" time="300" start="100" end="0">Focus</animation>
             <onfocus>SetFocus(50)</onfocus>
-            <onclick>-</onclick>
+            <onclick>noop</onclick>
             <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
         </control>
         <control type="button" id="20001">
             <include>HiddenObject</include>
             <animation effect="fade" time="300" start="100" end="0">Focus</animation>
             <onfocus>SetFocus(50)</onfocus>
-            <onclick>-</onclick>
+            <onclick>noop</onclick>
             <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
         </control>
         <control type="group">
@@ -356,7 +356,6 @@
                 <posy>242</posy>
                 <height>104</height>
                 <width>400</width>
-                <textoffsetx>15</textoffsetx>
                 <label>$INFO[ListItem.Label]</label>
                 <align>center</align>
                 <font>Font_Reg25_2</font>
@@ -433,7 +432,6 @@
                 <animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
                 <animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
                 <font>Font_Reg25_2</font>
-                <scroll>true</scroll>
             </control>
             <control type="label">
                 <posx>30</posx>
@@ -679,7 +677,6 @@
                 <posy>250</posy>
                 <height>90</height>
                 <width>280</width>
-                <textoffsetx>15</textoffsetx>
                 <label>$INFO[ListItem.Label]</label>
                 <align>center</align>
                 <font>Font_Reg32</font>
