@@ -423,23 +423,6 @@
         <textcolor>grey2</textcolor>
         <spinposx>8</spinposx>
     </include>
-    <include name="Default_SettingSliderButton">
-        <width>1469</width>
-        <height>74</height>
-        <font>Font_Reg30_2</font>
-        <textcolor>grey2</textcolor>
-        <textoffsetx>40</textoffsetx>
-        <aligny>center</aligny>
-        <texturenofocus border="5">osd/osd_settings_buttonnf.png</texturenofocus>
-        <selectedcolor>$VAR[AreaColorVar]</selectedcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <sliderwidth>150</sliderwidth>
-        <sliderheight>20</sliderheight>
-        <texturesliderbar border="22,1,22,1">settings/slider_back.png</texturesliderbar>
-        <textureslidernib>settings/orb_nofo.png</textureslidernib>
-        <textureslidernibfocus>settings/orb_fo.png</textureslidernibfocus>
-        <focusedcolor>white</focusedcolor>
-    </include>
     <include name="Default_SettingButtonShort">
         <width>734</width>
         <height>74</height>
@@ -475,15 +458,6 @@
         <font>Font_Reg30_2</font>
         <textcolor>grey2</textcolor>
         <radioposx>1020</radioposx>
-    </include>
-    <include name="Objects_NowPlayingSettingsButton">
-        <width>672</width>
-        <height>60</height>
-        <textoffsetx>25</textoffsetx>
-        <texturenofocus border="3">osd/osd_settings_buttonnf.png</texturenofocus>
-        <font>Font_Reg30_2</font>
-        <textcolor>grey2</textcolor>
-        <radioposx>550</radioposx>
     </include>
     <include name="Objects_LetterButton">
         <width>32</width>
@@ -1027,69 +1001,6 @@
                 <label>$INFO[VideoPlayer.Duration]</label>
                 <font>Font_Reg30_2</font>
                 <textcolor>white6</textcolor>
-            </control>
-        </control>
-    </include>
-    <include name="BottomProgressBar">
-        <control type="group">
-            <posy>993</posy>
-            <animation type="WindowOpen">
-                <effect type="fade" time="160" end="100" />
-                <effect type="slide" time="160" start="0,98" end="0,0" tween="cubic" />
-            </animation>
-            <animation type="WindowClose">
-                <effect type="fade" time="160" start="100" end="0" />
-                <effect type="slide" time="160" end="0,98" easing="in" tween="cubic" />
-            </animation>
-            <control type="image">
-                <posx>-80</posx>
-                <width>2080</width>
-                <height>87</height>
-                <texture colordiffuse="$VAR[ExtendedColorVar]" border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
-            </control>
-            <control type="progress" id="23">
-                <posx>150</posx>
-                <posy>57</posy>
-                <width>1620</width>
-                <height>20</height>
-                <animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
-                <info>Player.ProgressCache</info>
-            </control>
-            <control type="progress" id="23">
-                <posx>150</posx>
-                <posy>57</posy>
-                <width>1620</width>
-                <height>20</height>
-                <info>Player.Progress</info>
-            </control>
-            <control type="slider" id="87">
-                <posx>150</posx>
-                <posy>57</posy>
-                <width>1620</width>
-                <height>20</height>
-                <action>seek</action>
-                <texturesliderbar>-</texturesliderbar>
-                <textureslidernib>-</textureslidernib>
-                <textureslidernibfocus>-</textureslidernibfocus>
-            </control>
-            <control type="label">
-                <posx>135</posx>
-                <posy>45</posy>
-                <width>300</width>
-                <height>42</height>
-                <align>right</align>
-                <label>$INFO[Player.Time]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>osdseek</textcolor>
-            </control>
-            <control type="label">
-                <posx>135r</posx>
-                <posy>45</posy>
-                <width>300</width>
-                <height>42</height>
-                <label>$INFO[Player.Duration]</label>
-                <font>Font_Reg30_2</font>
-                <textcolor>osdseek</textcolor>
             </control>
         </control>
     </include>
