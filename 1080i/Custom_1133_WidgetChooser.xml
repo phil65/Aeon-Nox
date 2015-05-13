@@ -207,10 +207,10 @@
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
-                            <label>Recommended Movies</label>
+                            <label>$LOCALIZE[31078]</label>
                             <onclick>SetProperty(AllowedStyles,_4_5_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,smartishmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Recommended Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31078])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.smartish.widgets?type=movies&amp;reload=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(movies) + System.HasAddon(service.smartish.widgets)</visible>
@@ -232,10 +232,10 @@
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
-                            <label>In Cinema</label>
+                            <label>$LOCALIZE[31083]</label>
                             <onclick>SetProperty(AllowedStyles,_4_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,incinemasmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,In Cinema)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31083])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=incinemas)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
@@ -256,34 +256,34 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>InTheaters Movies</label>
+                            <label>$LOCALIZE[31079]</label>
                             <onclick>SetProperty(AllowedStyles,_4_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,intheatersmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,InTheaters Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31079])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=intheaters)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>Opening Movies</label>
+                            <label>$LOCALIZE[31087]</label>
                             <onclick>SetProperty(AllowedStyles,_4_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,openingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Opening Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31087])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=opening)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>Upcoming Movies</label>
+                            <label>$LOCALIZE[31076]</label>
                             <onclick>SetProperty(AllowedStyles,_4_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,upcomingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Upcoming Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31076])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=upcoming)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
-                            <label>Top Rated Movies</label>
+                            <label>$LOCALIZE[31077]</label>
                             <onclick>SetProperty(AllowedStyles,_4_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,topratedmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Top Rated Movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31077])</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=topratedmovies)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
@@ -433,21 +433,6 @@
                             <visible>Library.HasContent(tvshows)</visible>
                             <onclick>Dialog.Close(1133)</onclick>
                         </item>
-                        <!--
-                        <item>
-                            <label>$LOCALIZE[31883]</label>
-                            <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31883])</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item>-->
-<!--                         <item>
-                            <label>31819</label>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31819])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=nextaired)</onclick>
-                            <onclick>SetProperty(CustomYesNoDialog,nextairedtv,skinsettings)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>Library.HasContent(tvshows)</visible>
-                        </item> -->
                         <item>
                             <label>$LOCALIZE[31884]</label>
                             <onclick>SetProperty(AllowedStyles,_2_4_7_9_10_11_12_,home)</onclick>
@@ -955,14 +940,6 @@
                         </control>
                     </focusedlayout>
                     <content>
-<!--                         <item>
-                            <label>$LOCALIZE[31070]</label>
-                            <onclick>SetProperty(AllowedStyles,_1_6_,home)</onclick>
-                            <onclick>SetProperty(CustomYesNoDialog,randomaddons,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31070])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=cyanide)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                        </item> -->
                         <item>
                             <label>$LOCALIZE[1043]</label>
                             <onclick>SetProperty(AllowedStyles,_1_6_,home)</onclick>
@@ -1003,14 +980,6 @@
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>!IsEmpty(Weather.Plugin)</visible>
                         </item>
-<!--                         <item>
-                            <label>31183</label>
-                            <onclick>SetProperty(CustomYesNoDialog,wundergroundpanel,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Weather Wunderground)</onclick>
-                            <onclick>SetProperty(AllowedStyles,None,home)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>SubString(Weather.Plugin,weather.wunderground)</visible>
-                        </item> -->
                         <item>
                             <label>$LOCALIZE[10007]</label>
                             <onclick>SetProperty(CustomYesNoDialog,systemclassic,skinsettings)</onclick>
@@ -1018,14 +987,6 @@
                             <onclick>SetProperty(AllowedStyles,_0_,home)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
-<!--                         <item>
-                            <label>31327</label>
-                            <onclick>SetProperty(CustomYesNoDialog,mostplayedroms,skinsettings)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Most Played ROMs)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=mostplayedroms)</onclick>
-                            <onclick>ActivateWindow(1137)</onclick>
-                            <visible>System.HasAddon(script.games.rom.collection.browser)</visible>
-                        </item> -->
                         <item>
                             <label>Youtube Most Popular Today</label>
                             <onclick>SetProperty(AllowedStyles,_2_6_,home)</onclick>
@@ -1047,8 +1008,7 @@
                             <onclick>SetProperty(AllowedStyles,_2_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,pvr,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,PVR Channels)</onclick>
-<!--                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=channels)</onclick>
- -->                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,pvr://channels/tv/all tv channels/)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,pvr://channels/tv/all tv channels/)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
