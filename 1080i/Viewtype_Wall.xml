@@ -205,113 +205,6 @@
                         </control>
                     </control>
                 </focusedlayout>
-                <itemlayout height="268" width="350" condition="Window.IsActive(pictures)">
-                    <control type="image">
-                        <posx>5</posx>
-                        <width>340</width>
-                        <height>185</height>
-                        <aspectratio aligny="top">keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
-                        <bordersize>5</bordersize>
-                    </control>
-                    <control type="image">
-                        <posx>5</posx>
-                        <width>340</width>
-                        <height>185</height>
-                        <texture background="true">common/bgcolor.png</texture>
-                        <bordersize>5</bordersize>
-                        <animation effect="fade" start="100" end="25" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <posy>195</posy>
-                        <width>350</width>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[ListItem.Label2]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>350</posx>
-                        <posy>195</posy>
-                        <width>276</width>
-                        <textoffsetx>15</textoffsetx>
-                        <align>right</align>
-                        <label>$INFO[ListItem.Rating]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posy>230</posy>
-                        <width>276</width>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>138</posx>
-                        <posy>210</posy>
-                        <width>276</width>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>grey2</textcolor>
-                        <visible>Container.Content(artists)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="268" width="350" condition="Window.IsActive(pictures)">
-                    <control type="image">
-                        <width>350</width>
-                        <height>268</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                    </control>
-                    <control type="image">
-                        <posx>5</posx>
-                        <width>340</width>
-                        <height>185</height>
-                        <aspectratio aligny="top">keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
-                        <bordersize>5</bordersize>
-                    </control>
-                    <control type="label">
-                        <posy>195</posy>
-                        <width>350</width>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[ListItem.Label2]</label>
-                        <font>Font_Reg26</font>
-                    </control>
-                    <control type="label">
-                        <posx>276</posx>
-                        <posy>195</posy>
-                        <width>350</width>
-                        <textoffsetx>15</textoffsetx>
-                        <align>right</align>
-                        <label>$INFO[ListItem.Rating]</label>
-                        <font>Font_Reg26</font>
-                    </control>
-                    <control type="label">
-                        <posy>230</posy>
-                        <width>350</width>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg26</font>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="label">
-                        <posx>138</posx>
-                        <posy>210</posy>
-                        <width>350</width>
-                        <textoffsetx>15</textoffsetx>
-                        <align>center</align>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font_Reg26</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <visible>Container.Content(artists)</visible>
-                    </control>
-                </focusedlayout>
             </control>
         </control>
     </include>
@@ -659,10 +552,20 @@
             <posx>75</posx>
             <posy>130</posy>
             <control type="image">
-                <posx>25</posx>
-                <width>300</width>
-                <height>300</height>
-                <texture>buttons/roundedbutton-nofocus.png</texture>
+                <posx>30</posx>
+                <posy>20</posy>
+                <width>290</width>
+                <height>251</height>
+                <texture border="40">buttons/roundedbutton-nofocus.png</texture>
+            </control>
+            <control type="image">
+                <posx>55</posx>
+                <posy>50</posy>
+                <width>240</width>
+                <height>192</height>
+                <aspectratio aligny="center">keep</aspectratio>
+                <texture background="true" fallback="flags/studios/default-studio.png">$INFO[ListItem.Thumb]</texture>
+                <visible>Window.IsActive(pictures)</visible>
             </control>
             <control type="image">
                 <posx>100</posx>
@@ -671,6 +574,7 @@
                 <height>150</height>
                 <aspectratio aligny="center">keep</aspectratio>
                 <texture background="true" fallback="flags/studios/default-studio.png">$VAR[IconWallVar]</texture>
+                <visible>!Window.IsActive(pictures)</visible>
             </control>
             <control type="textbox">
                 <posx>35</posx>
