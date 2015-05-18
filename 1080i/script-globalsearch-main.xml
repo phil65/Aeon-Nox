@@ -56,7 +56,7 @@
             <control type="group">
                 <animation effect="fade" time="280" delay="800">WindowOpen</animation>
                 <animation effect="fade" time="200" condition="[Window.Next(home) | Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow)]">WindowClose</animation>
-                <animation effect="fade" time="200" delay="1120" condition="Control.IsVisible(510) + [Window.Next(home) | Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow)]">WindowClose</animation>
+                <animation effect="fade" time="200" delay="1120" condition="Window.Next(home) | Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow)">WindowClose</animation>
                 <include>CommonMediaPlayingBackground</include>
                 <include>Furniture_SettingsFloor</include>
             </control>

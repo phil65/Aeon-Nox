@@ -288,8 +288,6 @@
     </variable>
     <variable name="WeatherFanartVar">
         <value condition="Control.HasFocus(7500)">$INFO[Container(7500).ListItem.Property(Fanart)]</value>
-        <value condition="Control.HasFocus(7502)">$INFO[Container(7502).ListItem.Property(Fanart)]</value>
-        <value condition="Control.HasFocus(7503)">$INFO[Container(7503).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(7504)">$INFO[Container(7504).ListItem.Property(Fanart)]</value>
         <value condition="!IsEmpty(Weather.FanartCode)">$INFO[Weather.FanartCode,http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/]</value>
         <value>special://skin/backgrounds/weather/</value>
@@ -713,7 +711,7 @@
         <value>$LOCALIZE[20360]</value>
     </variable>
     <variable name="HomeWidgetFanartVar">
-        <value condition="[ControlGroup(5020).HasFocus | ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
+        <value condition="[ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
         <value condition="Control.HasFocus(5010) + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5010) + Substring(Container(9000).ListItem.Property(Widget),featured) + !IsEmpty(Container(5001).ListItem.Art(fanart))">$INFO[Container(5001).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5012) + !IsEmpty(Container(5003).ListItem.Art(fanart))">$INFO[Container(5003).ListItem.Art(fanart)]</value>
