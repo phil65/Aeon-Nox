@@ -193,7 +193,7 @@
                             <onclick>SetProperty(AllowedStyles,_4_5_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,recentmovies,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31323])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,special://skin/extras/Playlists/recentmovies8.xsp)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=latestdbmovies)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(movies)</visible>
                         </item>
@@ -202,7 +202,7 @@
                             <onclick>SetProperty(AllowedStyles,_4_5_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,randommovies,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31222])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=randomdbmovies&amp;&amp;reload=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(movies)</visible>
                         </item>
@@ -227,7 +227,7 @@
                             <onclick>SetProperty(AllowedStyles,_4_5_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,watchlistmovies,skinsettings)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31335])</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,special://skin/extras/Playlists/recommendedmovies8.xsp)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=inprogressdbmovies)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(movies)</visible>
                         </item>
