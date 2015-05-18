@@ -61,7 +61,7 @@
             <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
             <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
             <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4321)],home)</onfocus>
-            <onfocus condition="Substring(Control.GetLabel(4321),movie) + IsEmpty(Container(5010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(5010).ListItem.Property(ID)],imdbid=$INFO[Container(5010).ListItem.Property(imdbid)])</onfocus>
+            <onfocus condition="Substring(Control.GetLabel(4321),movie) + IsEmpty(Container(5010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(5010).ListItem.Property(ID)],imdb_id=$INFO[Container(5010).ListItem.Property(imdb_id)])</onfocus>
             <onfocus>RunScript(script.home,container=5010,focuscontrol=5055)</onfocus>
         </control>
         <control type="button" id="6014">
@@ -69,7 +69,7 @@
             <onfocus>SetProperty(PanelWidget2Info,true,home)</onfocus>
             <onfocus>SetProperty(WidgetPosition,Widget2,home)</onfocus>
             <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4325)],home)</onfocus>
-            <onfocus condition="Substring(Control.GetLabel(4325),movie) + IsEmpty(Container(6010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6010).ListItem.Property(ID)],imdbid=$INFO[Container(6010).ListItem.Property(imdbid)])</onfocus>
+            <onfocus condition="Substring(Control.GetLabel(4325),movie) + IsEmpty(Container(6010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6010).ListItem.Property(ID)],imdb_id=$INFO[Container(6010).ListItem.Property(imdb_id)])</onfocus>
             <onfocus>RunScript(script.home,container=6010,focuscontrol=5055)</onfocus>
         </control>
         <!--Fanart-->
