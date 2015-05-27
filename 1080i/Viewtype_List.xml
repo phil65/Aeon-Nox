@@ -144,7 +144,7 @@
             <visible>Control.IsVisible(50)</visible>
             <include>Animation_ListSlideRight</include>
             <include condition="Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist)">CDArtFlip</include>
-            <include condition="Window.IsActive(videolibrary) | Window.IsActive(programs)">ListIconPoster</include>
+            <include condition="Window.IsActive(videos) | Window.IsActive(programs)">ListIconPoster</include>
             <control type="group" id="40003">
                 <posx>1296</posx>
                 <posy>165</posy>
@@ -286,7 +286,7 @@
                     <texture colordiffuse="$VAR[AreaColorVar]">views/listpanel_detailwide.png</texture>
                     <visible>[StringCompare(Container.SortMethod,$LOCALIZE[562]) + Container.Content(movies)] | [Container.Content(addons) + StringCompare(Container.SortMethod,$LOCALIZE[551])]</visible>
                     <visible>Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(addons)</visible>
-                    <animation effect="slide" end="38" condition="!Window.IsActive(videolibrary) + !Container.Content(musicvideos)">Conditional</animation>
+                    <animation effect="slide" end="38" condition="!Window.IsActive(videos) + !Container.Content(musicvideos)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>1086</posx>

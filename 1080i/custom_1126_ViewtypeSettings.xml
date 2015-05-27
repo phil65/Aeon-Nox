@@ -122,7 +122,7 @@
                     <include>ReloadWindowOnClick</include>
                     <onclick>SetFocus(9000)</onclick>
                     <selected>Skin.HasSetting(nohighlist)</selected>
-                    <visible>Window.IsActive(videolibrary) + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
+                    <visible>Window.IsActive(videos) + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
                 </control>
                 <control type="radiobutton" id="16307">
                     <label>$LOCALIZE[31812]</label>
@@ -179,7 +179,7 @@
                     <onclick condition="Skin.HasSetting(bigfanlogo)">Skin.SetBool(bigfanlandscape)</onclick>
                     <onclick condition="Skin.HasSetting(bigfanlogo)">Skin.Reset(bigfanlogo)</onclick>
                     <onclick condition="!Skin.HasSetting(bigfanclearart) + !Skin.HasSetting(bigfanlogo) + Skin.HasSetting(bigfanlandscape)">Skin.Reset(bigfanlandscape)</onclick>
-                    <visible>Window.IsActive(videolibrary) + Stringcompare(Window(home).Property(actualViewtype),BigFan) + !Container.Content(genres)</visible>
+                    <visible>Window.IsActive(videos) + Stringcompare(Window(home).Property(actualViewtype),BigFan) + !Container.Content(genres)</visible>
                 </control>
                 <!--Landscape Options-->
                 <control type="button" id="1639">
@@ -533,7 +533,7 @@
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[PreferPlotSettingsVar][/COLOR]</label2>
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(preferplot)</onclick>
-                    <visible>Window.IsActive(videolibrary) + !Stringcompare(Window(home).Property(actualViewtype),Shift)</visible>
+                    <visible>Window.IsActive(videos) + !Stringcompare(Window(home).Property(actualViewtype),Shift)</visible>
                 </control>
             </control>
         </control>
