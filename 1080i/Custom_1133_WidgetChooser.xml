@@ -296,6 +296,22 @@
                             <onclick>ActivateWindow(1137)</onclick>
                         </item>
                         <item>
+                            <label>Rated movies</label>
+                            <onclick>SetProperty(AllowedStyles,_4_9_10_11_12_,home)</onclick>
+                            <onclick>SetProperty(CustomYesNoDialog,ratedmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Rated movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=ratedmovies)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
+                            <label>Starred movies</label>
+                            <onclick>SetProperty(AllowedStyles,_4_9_10_11_12_,home)</onclick>
+                            <onclick>SetProperty(CustomYesNoDialog,starredmovies,skinsettings)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,Starred movies)</onclick>
+                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://script.extendedinfo?info=starredmovies)</onclick>
+                            <onclick>ActivateWindow(1137)</onclick>
+                        </item>
+                        <item>
                             <label>$LOCALIZE[31050]</label>
                             <onclick>SetProperty(AllowedStyles,_4_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,trendingmovies,skinsettings)</onclick>
