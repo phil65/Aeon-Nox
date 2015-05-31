@@ -62,12 +62,6 @@
                 <onclick condition="Substring(ListItem.Property(Addon.ID),script.,left)">Runscript($INFO[ListItem.Property(Addon.ID)])</onclick>
                 <onclick condition="Substring(ListItem.Property(Addon.ID),plugin.,left)">RunAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
             </control>
-            <control type="button" id="2071">
-                <include>ContextMenuButton</include>
-                <label>Search for Concerts</label>
-                <visible>Container.Content(artists)</visible>
-                <onclick>RunScript(script.maps.browser,artist=$INFO[ListItem.Artist])</onclick>
-            </control>
         </control>
         <control type="button" id="1000">
             <width>462</width>
