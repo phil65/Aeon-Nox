@@ -584,6 +584,12 @@
                             <height>51</height>
                 <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             <include>PanelGlowFade</include>
+                                <animation type="Focus" condition="Container(52).OnNext + !Container(52).OnScrollNext" reversible="false">
+                                    <effect type="slide" start="0,-51" end="0,0" time="200" tween="sine" easing="out" />
+                                </animation>
+                                <animation type="Focus" condition="Container(52).OnPrevious + !Container(52).OnScrollPrevious" reversible="false">
+                                    <effect type="slide" start="0,51" end="0,0" time="200" tween="sine" easing="out" />
+                                </animation>
                             <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(52)">Conditional</animation>
                         </control>
                         <control type="label">
@@ -627,7 +633,7 @@
                             <visible>IsEmpty(ListItem.Year) + !Container.Content(episodes) + ![Window.IsActive(programs) + !IsEmpty(ListItem.Premiered)]</visible>
                         </control>
                     </focusedlayout>
-                    <itemlayout condition="Skin.HasSetting(tripanelbiglist) + ![[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]]" height="96">
+                    <itemlayout condition="Skin.HasSetting(tripanelbiglist) + ![[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]]" height="95.5">
                         <control type="image">
                             <posy>36</posy>
                             <width>842</width>
@@ -639,13 +645,13 @@
                             <control type="image">
                                 <posx>24</posx>
                                 <width>2</width>
-                                <height>96</height>
+                                <height>95.5</height>
                                 <texture>views/tripanel/upright.png</texture>
                             </control>
                             <control type="image">
                                 <posx>109</posx>
                                 <width>2</width>
-                                <height>96</height>
+                                <height>95.5</height>
                                 <texture>views/tripanel/upright.png</texture>
                             </control>
                         </control>
@@ -703,7 +709,7 @@
                             <visible>IsEmpty(ListItem.Year)</visible>
                         </control>
                     </itemlayout>
-                    <focusedlayout condition="Skin.HasSetting(tripanelbiglist) + ![[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]]" height="96">
+                    <focusedlayout condition="Skin.HasSetting(tripanelbiglist) + ![[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]]" height="95.5">
                         <control type="image">
                             <posy>36</posy>
                             <width>842</width>
@@ -715,22 +721,28 @@
                             <control type="image">
                                 <posx>24</posx>
                                 <width>2</width>
-                                <height>96</height>
+                                <height>95.5</height>
                                 <texture>views/tripanel/upright.png</texture>
                             </control>
                             <control type="image">
                                 <posx>109</posx>
                                 <width>2</width>
-                                <height>96</height>
+                                <height>95.5</height>
                                 <texture>views/tripanel/upright.png</texture>
                             </control>
                         </control>
                         <control type="image">
                             <posy>0</posy>
                             <width>842</width>
-                            <height>96</height>
+                            <height>95.5</height>
                 <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             <include>PanelGlowFade</include>
+                                <animation type="Focus" condition="Container(52).OnNext + !Container(52).OnScrollNext" reversible="false">
+                                    <effect type="slide" start="0,-95.5" end="0,0" time="200" tween="sine" easing="out" />
+                                </animation>
+                                <animation type="Focus" condition="Container(52).OnPrevious + !Container(52).OnScrollPrevious" reversible="false">
+                                    <effect type="slide" start="0,95.5" end="0,0" time="200" tween="sine" easing="out" />
+                                </animation>
                             <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(52)">Conditional</animation>
                         </control>
                         <control type="label">
