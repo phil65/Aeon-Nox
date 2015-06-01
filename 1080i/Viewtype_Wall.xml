@@ -28,7 +28,7 @@
                 <onright>9000</onright>
             </control>
             <control type="group">
-                <visible>Control.HasFocus(500) | Control.HasFocus(20000) | Control.HasFocus(20001)</visible>
+                <visible>Control.HasFocus(50) | Control.HasFocus(20000) | Control.HasFocus(20001)</visible>
                 <animation effect="fade" time="250" delay="300">Visible</animation>
                 <animation effect="fade" time="250">Hidden</animation>
                 <control type="image">
@@ -39,10 +39,10 @@
                     <visible>Container.Content(artists) | Container.Content(addons) | Container.Content(albums) | Container.Content(actors) | Container.Content(episodes) | StringCompare(Container.FolderName,youtube)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                    <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
-                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3)">Conditional</animation>
-                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
-                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
+                    <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(50).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(3)">Conditional</animation>
+                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(3) | Container(50).Column(2)">Conditional</animation>
+                    <animation effect="slide" end="440,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(3) | Container(50).Column(2) | Container(50).Column(1)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>70</posx>
@@ -52,11 +52,11 @@
                     <visible>Container.Content() | Container.Content(files) | [Window.IsActive(videos) + Container.Content(genres)] | Container.Content(tags) | Container.Content(countries) | Container.Content(studios)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                    <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
-                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(4)">Conditional</animation>
-                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(4) | Container(500).Column(3)">Conditional</animation>
-                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
-                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
+                    <animation effect="slide" end="0,410" time="300" tween="cubic" easing="inout" condition="Container(50).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(4)">Conditional</animation>
+                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(4) | Container(50).Column(3)">Conditional</animation>
+                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(4) | Container(50).Column(3) | Container(50).Column(2)">Conditional</animation>
+                    <animation effect="slide" end="345,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(4) | Container(50).Column(3) | Container(50).Column(2) | Container(50).Column(1)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>35</posx>
@@ -66,13 +66,13 @@
                     <visible>[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(sets)</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                    <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2)">Conditional</animation>
-                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(6) | Container(500).Column(5) | Container(500).Column(4) | Container(500).Column(3) | Container(500).Column(2) | Container(500).Column(1)">Conditional</animation>
+                    <animation effect="slide" end="0,390" time="300" tween="cubic" easing="inout" condition="Container(50).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(6)">Conditional</animation>
+                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(6) | Container(50).Column(5)">Conditional</animation>
+                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(6) | Container(50).Column(5) | Container(50).Column(4)">Conditional</animation>
+                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(6) | Container(50).Column(5) | Container(50).Column(4) | Container(50).Column(3)">Conditional</animation>
+                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(6) | Container(50).Column(5) | Container(50).Column(4) | Container(50).Column(3) | Container(50).Column(2)">Conditional</animation>
+                    <animation effect="slide" end="297,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(6) | Container(50).Column(5) | Container(50).Column(4) | Container(50).Column(3) | Container(50).Column(2) | Container(50).Column(1)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>14</posx>
@@ -82,11 +82,11 @@
                     <visible>[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]</visible>
                     <animation effect="fade" time="320" delay="300">Visible</animation>
                     <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
-                    <animation effect="slide" end="920,0" time="300" tween="cubic" easing="inout" condition="Container(500).Column(1)">Conditional</animation>
-                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4)">Conditional</animation>
-                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3)">Conditional</animation>
-                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3) | Container(500).Row(2)">Conditional</animation>
-                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(500).Row(4) | Container(500).Row(3) | Container(500).Row(2) | Container(500).Row(1)">Conditional</animation>
+                    <animation effect="slide" end="920,0" time="300" tween="cubic" easing="inout" condition="Container(50).Column(1)">Conditional</animation>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(50).Row(4)">Conditional</animation>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(50).Row(4) | Container(50).Row(3)">Conditional</animation>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(50).Row(4) | Container(50).Row(3) | Container(50).Row(2)">Conditional</animation>
+                    <animation effect="slide" end="0,220" time="300" tween="cubic" easing="inout" condition="Container(50).Row(4) | Container(50).Row(3) | Container(50).Row(2) | Container(50).Row(1)">Conditional</animation>
                 </control>
             </control>
             <control type="panel" id="50">
