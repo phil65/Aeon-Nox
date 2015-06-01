@@ -25,7 +25,7 @@
         <control type="button" id="1200">
             <include>HiddenObject</include>
             <onfocus>Dialog.Close(movieinformation)</onfocus>
-            <onfocus>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID])</onfocus>
+            <onfocus>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onfocus>
             <onclick>noop</onclick>
             <visible>Container.Content(tvshows) + Control.IsVisible(5111)</visible>
         </control>
