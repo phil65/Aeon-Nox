@@ -97,7 +97,7 @@
             <animation effect="fade" start="100" end="0" time="320">Hidden</animation>
             <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>Control.IsVisible(512) | Control.IsVisible(500) | Control.IsVisible(7550) | Control.IsVisible(50) | Control.IsVisible(52)</visible>
+            <visible>Control.IsVisible(512) | Control.IsVisible(500) | Control.IsVisible(7550) | Control.IsVisible(52)</visible>
         </control>
         <control type="group" id="7550">
             <posy>39</posy>
@@ -638,8 +638,6 @@
                 <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="960,970" condition="Control.IsVisible(501) + Skin.HasSetting(showcasezoom)">Conditional</animation>
                 <animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="160,970" condition="Control.IsVisible(52) + Stringcompare(Skin.String(TriPanelPosition),2)">Conditional</animation>
                 <animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="960,970" condition="Control.IsVisible(52) + Stringcompare(Skin.String(TriPanelPosition),1)">Conditional</animation>
-                <!--
-                <animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="160,970" condition="Control.IsVisible(50)">Conditional</animation>-->
                 <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="460,985" condition="Control.IsVisible(52) + Stringcompare(Skin.String(TriPanelPosition),4)">Conditional</animation>
                 <animation type="WindowClose" reversible="false">
                     <effect type="fade" start="100" end="0" time="240" />

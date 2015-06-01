@@ -432,11 +432,9 @@
         </control>
         <control type="group">
             <include>Animation_FlagSlideDown</include>
-            <visible>Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(514)</visible>
+            <visible>Control.IsVisible(511) | Control.IsVisible(514)</visible>
             <visible>Control.IsVisible(9900) + ![SubString(Container.FolderPath,addons://) | SubString(Container.FolderPath,plugin.video)]</visible>
             <animation effect="slide" end="-1220" condition="Control.IsVisible(514)">Conditional</animation>
-            <animation effect="slide" end="0,-30" time="240" tween="cubic" easing="inout" condition="Control.IsVisible(50)">Conditional</animation>
-            <animation effect="slide" end="-50,0" time="240" tween="cubic" easing="inout" condition="Control.IsVisible(50) + !Skin.HasSetting(slimlist)">Conditional</animation>
             <posy>1004</posy>
             <control type="image">
                 <posx>1255</posx>
@@ -448,7 +446,6 @@
                 <fadetime>IconCrossfadeTime2</fadetime>
                 <animation effect="fade" time="200">VisibleChange</animation>
                 <visible>!IsEmpty(ListItem.Thumb)</visible>
-                <visible>![Control.IsVisible(50) + !Skin.HasSetting(slimlist)]</visible>
                 <visible>Container.Content(tvshows) | [Container.Content(seasons) + ListItem.IsFolder]</visible>
             </control>
             <control type="image">
@@ -532,9 +529,9 @@
                 <visible>Container.Content(artists) + !IsEmpty(ListItem.DBID)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
-                <animation effect="slide" end="30,-20" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50)">Conditional</animation>
+                <animation effect="slide" end="30,-20" time="0" condition="Control.IsVisible(53)">Conditional</animation>
                 <control type="group">
-                    <animation effect="slide" end="1190" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(512)">Conditional</animation>
+                    <animation effect="slide" end="1190" time="0" condition="Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(512)">Conditional</animation>
                     <control type="group">
                         <!--totals-->
                         <posx>150</posx>
@@ -627,19 +624,18 @@
                 <visible>Container.Content(albums) + !IsEmpty(ListItem.DBID)</visible>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
-                <animation effect="slide" end="5,-30" time="0" condition="Control.IsVisible(50)">Conditional</animation>
                 <animation effect="slide" end="100,0" time="0" condition="Control.IsVisible(53)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="0" condition="Control.IsVisible(506)">Conditional</animation>
                 <!--Rating-->
                 <control type="group">
-                    <animation effect="slide" end="1210,0" time="0" condition="Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(57)">Conditional</animation>
+                    <animation effect="slide" end="1210,0" time="0" condition="Control.IsVisible(53) | Control.IsVisible(57)">Conditional</animation>
                     <control type="image">
                         <posx>0</posx>
                         <width>135</width>
                         <height>88</height>
                         <texture colordiffuse="floor" fallback="flags/music/rating/rating0.png">$INFO[ListItem.StarRating,flags/music/rating/]</texture>
                         <fadetime>IconCrossfadeTime2</fadetime>
-                        <visible>![Control.IsVisible(53) | Control.IsVisible(50)]</visible>
+                        <visible>!Control.IsVisible(53)</visible>
                     </control>
                     <control type="image">
                         <posx>130</posx>
@@ -650,7 +646,7 @@
                     <control type="group">
                         <!--Year-->
                         <posx>285</posx>
-                        <visible>!Control.IsVisible(50) + !Control.IsVisible(53)</visible>
+                        <visible>!Control.IsVisible(53)</visible>
                         <control type="label">
                             <width>135</width>
                             <height>65</height>

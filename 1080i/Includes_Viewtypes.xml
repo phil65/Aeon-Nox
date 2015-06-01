@@ -22,7 +22,7 @@
                     <posy>874</posy>
                     <width>1490</width>
                     <height>206</height>
-                    <visible>!Control.IsVisible(50) + !Control.IsVisible(52)</visible>
+                    <visible>!Control.IsVisible(52)</visible>
                     <animation effect="fade" time="350">VisibleChange</animation>
                     <texture colordiffuse="$VAR[AreaColorVar]">views/showcase_spot.png</texture>
                     <animation effect="fade" start="100" end="50" time="240" condition="!Control.IsVisible(52) + !Control.IsVisible(53) + [ControlGroup(9000).HasFocus | Control.HasFocus(60) | Control.HasFocus(70) | Control.HasFocus(62) | Control.HasFocus(61)]">Conditional</animation>
@@ -37,9 +37,8 @@
                     <height>206</height>
                     <texture colordiffuse="$VAR[AreaColorVar]">views/list_spot.png</texture>
                     <animation effect="slide" time="160" end="190" tween="cubic" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
-                    <animation effect="slide" time="160" end="60" tween="cubic" condition="Control.IsVisible(50) + Window.IsActive(musiclibrary)">Conditional</animation>
                     <animation effect="fade" time="350">VisibleChange</animation>
-                    <visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53)</visible>
+                    <visible>Control.IsVisible(52) | Control.IsVisible(53)</visible>
                     <visible>!Container.Content(years) + !Container.Content(playlists)</visible>
                 </control>
             </control>
@@ -56,7 +55,7 @@
                 <height>206</height>
                 <texture colordiffuse="$VAR[SpotColorVar2]">views/panel_spot.png</texture>
                 <include>Animation_OpenClose_Furniture</include>
-                <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(508)</visible>
+                <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(500) | Control.IsVisible(508)</visible>
             </control>
             <include>Neon_Floor</include>
         </control>
@@ -414,7 +413,7 @@
             <height>72</height>
             <texture>views/showcase_gradient.png</texture>
             <include>Animation_CommonFade</include>
-            <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
+            <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
         </control>
         <control type="grouplist">
             <animation effect="slide" start="0,70" end="0" delay="50" time="340" tween="cubic">VisibleChange</animation>
@@ -534,7 +533,7 @@
             <width>1920</width>
             <height>224</height>
             <texture border="1">home/homemenu_gradient.png</texture>
-            <visible>Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53)</visible>
+            <visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(53)</visible>
         </control>
         <control type="button" id="109">
             <include>HiddenObject</include>
