@@ -29,7 +29,6 @@
             </control>
             <control type="group">
                 <visible>Control.HasFocus(500) | Control.HasFocus(20000) | Control.HasFocus(20001)</visible>
-                <animation effect="fade" time="320" delay="300">WindowOpen</animation>
                 <animation effect="fade" time="250" delay="300">Visible</animation>
                 <animation effect="fade" time="250">Hidden</animation>
                 <control type="image">
@@ -97,7 +96,7 @@
                 <height>1080</height>
                 <visible>![!IsEmpty(Skin.String(DisableWallVL)) + Window.IsActive(videos)]</visible>
                 <visible>!Container.Content(songs)</visible>
-                <viewtype label="31234">icon</viewtype>
+                <viewtype label="31234">list</viewtype>
                 <pagecontrol>72</pagecontrol>
                 <preloaditems>2</preloaditems>
                 <scrolltime tween="sine">300</scrolltime>
