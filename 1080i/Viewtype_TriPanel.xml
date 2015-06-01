@@ -119,7 +119,6 @@
                     <posy>490</posy>
                     <visible>Skin.HasSetting(tripanelextrafanart)</visible>
                     <animation effect="zoom" start="100" end="92" time="640" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
-
                     <control type="image">
                         <posx>-9</posx>
                         <posy>77</posy>
@@ -231,7 +230,7 @@
                     <height>1080</height>
                     <texture colordiffuse="$VAR[DialogColorVar]">views/tripanel/info_panel.png</texture>
                 </control>
-                <!-- Runtime label -->
+                <!--Runtime label-->
                 <control type="grouplist">
                     <posx>100</posx>
                     <posy>121</posy>
@@ -428,8 +427,8 @@
                                 <width>786</width>
                                 <height>142</height>
                                 <texture background="true">thumbs/banner_shadow_in.png</texture>
-                                <!--<animation effect="fade" time="50" delay="150" start="50" end="0">Focus</animation>-->
-                            </control>
+                                <!--
+                                <animation effect="fade" time="50" delay="150" start="50" end="0">Focus</animation>--></control>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]" height="147">
@@ -582,14 +581,14 @@
                             <posy>0</posy>
                             <width>842</width>
                             <height>51</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             <include>PanelGlowFade</include>
-                                <animation type="Focus" condition="Container(52).OnNext + !Container(52).OnScrollNext" reversible="false">
-                                    <effect type="slide" start="0,-51" end="0,0" time="200" tween="sine" easing="out" />
-                                </animation>
-                                <animation type="Focus" condition="Container(52).OnPrevious + !Container(52).OnScrollPrevious" reversible="false">
-                                    <effect type="slide" start="0,51" end="0,0" time="200" tween="sine" easing="out" />
-                                </animation>
+                            <animation type="Focus" condition="Container(52).OnNext + !Container(52).OnScrollNext" reversible="false">
+                                <effect type="slide" start="0,-51" end="0,0" time="200" tween="sine" easing="out" />
+                            </animation>
+                            <animation type="Focus" condition="Container(52).OnPrevious + !Container(52).OnScrollPrevious" reversible="false">
+                                <effect type="slide" start="0,51" end="0,0" time="200" tween="sine" easing="out" />
+                            </animation>
                             <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(52)">Conditional</animation>
                         </control>
                         <control type="label">
@@ -735,14 +734,14 @@
                             <posy>0</posy>
                             <width>842</width>
                             <height>95.5</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                             <include>PanelGlowFade</include>
-                                <animation type="Focus" condition="Container(52).OnNext + !Container(52).OnScrollNext" reversible="false">
-                                    <effect type="slide" start="0,-95.5" end="0,0" time="200" tween="sine" easing="out" />
-                                </animation>
-                                <animation type="Focus" condition="Container(52).OnPrevious + !Container(52).OnScrollPrevious" reversible="false">
-                                    <effect type="slide" start="0,95.5" end="0,0" time="200" tween="sine" easing="out" />
-                                </animation>
+                            <animation type="Focus" condition="Container(52).OnNext + !Container(52).OnScrollNext" reversible="false">
+                                <effect type="slide" start="0,-95.5" end="0,0" time="200" tween="sine" easing="out" />
+                            </animation>
+                            <animation type="Focus" condition="Container(52).OnPrevious + !Container(52).OnScrollPrevious" reversible="false">
+                                <effect type="slide" start="0,95.5" end="0,0" time="200" tween="sine" easing="out" />
+                            </animation>
                             <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(52)">Conditional</animation>
                         </control>
                         <control type="label">
@@ -806,8 +805,8 @@
                     <ondown>70</ondown>
                     <onright>52</onright>
                     <onleft>52</onleft>
-                    <!--<animation effect="fade" time="0" start="100" end="20" condition="!Control.HasFocus(70)">Conditional</animation>-->
-                </control>
+                    <!--
+                    <animation effect="fade" time="0" start="100" end="20" condition="!Control.HasFocus(70)">Conditional</animation>--></control>
             </control>
         </control>
     </include>
@@ -825,7 +824,7 @@
                 <control type="group" id="5801">
                     <visible>Container(52).OnPrevious</visible>
                     <animation effect="slide" end="0,0" time="200" reversible="false">Hidden</animation>
-                    <!-- Hide Far Right Thumb On Move Previous -->
+                    <!--Hide Far Right Thumb On Move Previous-->
                     <control type="group">
                         <posx>1731</posx>
                         <posy>498</posy>
@@ -845,7 +844,6 @@
                                 <height>242</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem9Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>27</posx>
@@ -854,7 +852,6 @@
                                 <height>242</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem9Var]</texture>
-
                             </control>
                             <control type="image">
                                 <width>216</width>
@@ -871,7 +868,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 2 to 3-->
+                    <!--Move Panel 2 to 3-->
                     <control type="group">
                         <posx>354</posx>
                         <posy>278</posy>
@@ -888,7 +885,6 @@
                                 <height>586</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>68</posx>
@@ -897,7 +893,6 @@
                                 <height>586</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
-
                             </control>
                             <control type="image">
                                 <width>525</width>
@@ -914,7 +909,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 1 to 2-->
+                    <!--Move Panel 1 to 2-->
                     <control type="group">
                         <posx>-26</posx>
                         <posy>246</posy>
@@ -931,7 +926,6 @@
                                 <height>636</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>74</posx>
@@ -940,7 +934,6 @@
                                 <height>636</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-
                             </control>
                             <control type="image">
                                 <width>570</width>
@@ -957,7 +950,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 1 to 2 -->
+                    <!--Move Panel 1 to 2-->
                     <control type="group">
                         <posx>-26</posx>
                         <posy>246</posy>
@@ -978,7 +971,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 1 to 2 -->
+                    <!--Move Panel 1 to 2-->
                     <control type="group">
                         <posx>-26</posx>
                         <posy>246</posy>
@@ -1002,7 +995,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Show Far Left Thumb On Move Previous -->
+                    <!--Show Far Left Thumb On Move Previous-->
                     <control type="group">
                         <posx>-218</posx>
                         <posy>246</posy>
@@ -1023,7 +1016,6 @@
                                 <height>636</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>74</posx>
@@ -1032,7 +1024,6 @@
                                 <height>636</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-
                             </control>
                             <control type="image">
                                 <width>570</width>
@@ -1053,7 +1044,7 @@
                 <control type="group" id="5802">
                     <visible>Container(52).OnNext</visible>
                     <animation effect="slide" end="0,0" time="200" reversible="false">Hidden</animation>
-                    <!-- Show Far Right Thumb On Move Next -->
+                    <!--Show Far Right Thumb On Move Next-->
                     <control type="group">
                         <posx>1731</posx>
                         <posy>498</posy>
@@ -1074,7 +1065,6 @@
                                 <height>242</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>27</posx>
@@ -1083,7 +1073,6 @@
                                 <height>242</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
-
                             </control>
                             <control type="image">
                                 <width>216</width>
@@ -1100,7 +1089,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 3 to 2-->
+                    <!--Move Panel 3 to 2-->
                     <control type="group">
                         <posx>669</posx>
                         <posy>308</posy>
@@ -1117,7 +1106,6 @@
                                 <height>537</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>62</posx>
@@ -1126,7 +1114,6 @@
                                 <height>537</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-
                             </control>
                             <control type="image">
                                 <width>482</width>
@@ -1143,7 +1130,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 2 to 1-->
+                    <!--Move Panel 2 to 1-->
                     <control type="group">
                         <posx>354</posx>
                         <posy>278</posy>
@@ -1160,7 +1147,6 @@
                                 <height>586</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>68</posx>
@@ -1169,7 +1155,6 @@
                                 <height>586</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>375</posx>
@@ -1180,7 +1165,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 2 to 1-->
+                    <!--Move Panel 2 to 1-->
                     <control type="group">
                         <posx>354</posx>
                         <posy>278</posy>
@@ -1204,7 +1189,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Move Panel 2 to 1-->
+                    <!--Move Panel 2 to 1-->
                     <control type="group">
                         <posx>354</posx>
                         <posy>278</posy>
@@ -1225,7 +1210,7 @@
                             </control>
                         </control>
                     </control>
-                    <!-- Hide Far Left Thumb On Move Next -->
+                    <!--Hide Far Left Thumb On Move Next-->
                     <control type="group">
                         <posx>16</posx>
                         <posy>308</posy>
@@ -1244,7 +1229,6 @@
                                 <height>636</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>30</posx>
@@ -1253,7 +1237,6 @@
                                 <height>636</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posy>624</posy>
@@ -1271,88 +1254,84 @@
                         </control>
                     </control>
                 </control>
-                <!-- Static Panels -->
+                <!--Static Panels-->
                 <control type="group" id="5800">
                     <visible>!Control.IsVisible(5801) + !Control.IsVisible(5802)</visible>
-                    <!-- Panel 3 -->
+                    <!--Panel 3-->
                     <control type="group">
                         <posx>669</posx>
                         <posy>308</posy>
                         <width>482</width>
                         <height>1125</height>
-                            <visible>!IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
-                            <control type="image">
-                                <posx>62</posx>
-                                <posy>52</posy>
-                                <width>358</width>
-                                <height>537</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
-
-                            </control>
-                            <control type="image">
-                                <posx>62</posx>
-                                <posy>588</posy>
-                                <width>358</width>
-                                <height>537</height>
-                                <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
-                                <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
-
-                            </control>
-                            <control type="image">
-                                <width>482</width>
-                                <height>784</height>
-                                <aspectratio>scale</aspectratio>
-                                <texture colordiffuse="$VAR[AreaColorVar]" background="false">thumbs/poster_overlay.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>344</posx>
-                                <posy>54</posy>
-                                <width>75</width>
-                                <height>75</height>
-                                <texture>$VAR[OverlayVisibility2]</texture>
-                            </control>
+                        <visible>!IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
+                        <control type="image">
+                            <posx>62</posx>
+                            <posy>52</posy>
+                            <width>358</width>
+                            <height>537</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>62</posx>
+                            <posy>588</posy>
+                            <width>358</width>
+                            <height>537</height>
+                            <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                            <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
+                        </control>
+                        <control type="image">
+                            <width>482</width>
+                            <height>784</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture colordiffuse="$VAR[AreaColorVar]" background="false">thumbs/poster_overlay.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>344</posx>
+                            <posy>54</posy>
+                            <width>75</width>
+                            <height>75</height>
+                            <texture>$VAR[OverlayVisibility2]</texture>
+                        </control>
                     </control>
-                    <!-- Panel 2 -->
+                    <!--Panel 2-->
                     <control type="group">
                         <posx>354</posx>
                         <posy>278</posy>
                         <width>525</width>
                         <height>1228</height>
-                            <visible>!IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
-                            <control type="image">
-                                <posx>68</posx>
-                                <posy>57</posy>
-                                <width>392</width>
-                                <height>586</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-
-                            </control>
-                            <control type="image">
-                                <posx>68</posx>
-                                <posy>642</posy>
-                                <width>392</width>
-                                <height>586</height>
-                                <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
-                                <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
-
-                            </control>
-                            <control type="image">
-                                <width>525</width>
-                                <height>856</height>
-                                <aspectratio>scale</aspectratio>
-                                <texture colordiffuse="$VAR[AreaColorVar]" background="false">thumbs/poster_overlay.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>375</posx>
-                                <posy>57</posy>
-                                <width>82</width>
-                                <height>82</height>
-                                <texture>$VAR[OverlayVisibility1]</texture>
-                            </control>
+                        <visible>!IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
+                        <control type="image">
+                            <posx>68</posx>
+                            <posy>57</posy>
+                            <width>392</width>
+                            <height>586</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>68</posx>
+                            <posy>642</posy>
+                            <width>392</width>
+                            <height>586</height>
+                            <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                            <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
+                        </control>
+                        <control type="image">
+                            <width>525</width>
+                            <height>856</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture colordiffuse="$VAR[AreaColorVar]" background="false">thumbs/poster_overlay.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>375</posx>
+                            <posy>57</posy>
+                            <width>82</width>
+                            <height>82</height>
+                            <texture>$VAR[OverlayVisibility1]</texture>
+                        </control>
                     </control>
-                    <!-- Panel 1 -->
+                    <!--Panel 1-->
                     <control type="group">
                         <posx>-26</posx>
                         <posy>246</posy>
@@ -1367,7 +1346,6 @@
                                 <height>636</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-
                             </control>
                             <control type="image">
                                 <posx>74</posx>
@@ -1376,7 +1354,6 @@
                                 <height>636</height>
                                 <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-
                             </control>
                             <control type="image">
                                 <width>570</width>
