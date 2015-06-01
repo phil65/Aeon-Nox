@@ -8,7 +8,7 @@
         <system>1</system>
     </coordinates>
     <controls>
-        <!-- background -->
+        <!--background-->
         <control type="multiimage" id="75">
             <imagepath background="true" fallback="special://skin/backgrounds/programs/">$INFO[ListItem.Property(background)]</imagepath>
             <fadetime>600</fadetime>
@@ -34,7 +34,7 @@
             <animation effect="fade" start="100" end="0" time="80">Hidden</animation>
             <visible>Control.IsVisible(52)</visible>
         </control>
-        <!-- Furniture -->
+        <!--Furniture-->
         <control type="group">
             <visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(53)</visible>
             <include>Animation_OpenCloseZoom_New</include>
@@ -42,7 +42,7 @@
                 <posy>39</posy>
                 <width>1920</width>
                 <height>750</height>
-                <!-- info pane -->
+                <!--info pane-->
                 <control type="image">
                     <posx>112</posx>
                     <width>1695</width>
@@ -276,9 +276,9 @@
             </control>
             <include>Neon_Floor</include>
         </control>
-        <!-- gamelist groups -->
+        <!--gamelist groups-->
         <control type="group" id="200">
-            <!-- gamelists without video support from id 55-58-->
+            <!--gamelists without video support from id 55-58-->
             <control type="group">
                 <visible>Control.IsVisible(50)</visible>
                 <control type="fixedlist" id="50">
@@ -1988,7 +1988,7 @@
                     </focusedlayout>
                 </control>
             </control>
-            <!-- gamelist 57 -->
+            <!--gamelist 57-->
             <control type="group">
                 <visible>Control.IsVisible(57)</visible>
                 <control type="fixedlist" id="57">
@@ -2107,7 +2107,20 @@
                 <control type="group">
                     <posy>-20</posy>
                     <include>Animation_ListSlideLeft</include>
-                    <include>ListPanel</include>
+                    <control type="image">
+                        <posx>92</posx>
+                        <posy>110</posy>
+                        <width>1132</width>
+                        <height>1030</height>
+                        <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>92</posx>
+                        <posy>110</posy>
+                        <width>1132</width>
+                        <height>1030</height>
+                        <texture>wall/wall_bg_reflection.png</texture>
+                    </control>
                     <control type="image">
                         <posx>990</posx>
                         <posy>123</posy>
@@ -2192,7 +2205,7 @@
                                 <posy>-1</posy>
                                 <width>1118</width>
                                 <height>98</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                 <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(58)">Conditional</animation>
                             </control>
                             <control type="label">
@@ -2270,7 +2283,7 @@
                                 <posx>10</posx>
                                 <width>1116</width>
                                 <height>58</height>
-                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
                                 <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(58)">Conditional</animation>
                             </control>
                             <control type="label">
@@ -2388,7 +2401,7 @@
                 <animation effect="zoom" start="70" end="100" center="auto" tween="back" time="320" condition="Control.HasFocus(2200) | Control.IsVisible(4050)">Conditional</animation>
                 <texturesliderbar border="20,0,20,0">views/scrollbarnub-nofocus.png</texturesliderbar>
                 <texturesliderbarfocus colordiffuse="$VAR[FocusTextureColorVar]" border="20,0,20,0">views/scrollbarnub-focus.png</texturesliderbarfocus>
-            <texturesliderbackground colordiffuse="$VAR[AreaColorVar]">views/scrollbarbacklist2.png</texturesliderbackground>
+                <texturesliderbackground colordiffuse="$VAR[AreaColorVar]">views/scrollbarbacklist2.png</texturesliderbackground>
                 <onup>50</onup>
                 <ondown condition="!Control.IsVisible(500)">109</ondown>
                 <ondown condition="Control.IsVisible(500)">50</ondown>
@@ -2403,7 +2416,7 @@
             <visible>![Control.IsVisible(57) | Control.IsVisible(52)]</visible>
         </control>
         <include>BreadcrumbsContent</include>
-        <!-- Media Menu -->
+        <!--Media Menu-->
         <control type="group" id="9000">
             <control type="group">
                 <posx>-400</posx>
@@ -2532,7 +2545,7 @@
                     <control type="group">
                         <posx>450</posx>
                         <posy>0</posy>
-                        <!-- Console filter -->
+                        <!--Console filter-->
                         <control type="label">
                             <description>Consoles</description>
                             <posx>0</posx>
@@ -2603,7 +2616,7 @@
                                 </control>
                             </focusedlayout>
                         </control>
-                        <!-- Genre filter -->
+                        <!--Genre filter-->
                         <control type="label">
                             <description>Genre</description>
                             <posx>315</posx>
@@ -2674,7 +2687,7 @@
                                 </control>
                             </focusedlayout>
                         </control>
-                        <!-- Year filter -->
+                        <!--Year filter-->
                         <control type="label">
                             <description>Year</description>
                             <posx>630</posx>
@@ -2745,7 +2758,7 @@
                                 </control>
                             </focusedlayout>
                         </control>
-                        <!-- Publisher filter -->
+                        <!--Publisher filter-->
                         <control type="label">
                             <description>Publisher</description>
                             <posx>945</posx>
@@ -2816,7 +2829,7 @@
                                 </control>
                             </focusedlayout>
                         </control>
-                        <!-- Character filter -->
+                        <!--Character filter-->
                         <control type="label">
                             <description>Character</description>
                             <posx>1260</posx>
@@ -2892,7 +2905,7 @@
                 <include>QuickNavLabel</include>
             </control>
         </control>
-        <!-- Messages -->
+        <!--Messages-->
         <control type="label" id="4000">
             <label></label>
             <posx>10</posx>

@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <include name="CDArtFlip">
+        <control type="group">
+            <posx>1304</posx>
+            <posy>195</posy>
+            <visible>!IsEmpty(ListItem.Artist)</visible>
+            <visible>[Container.Content(songs) + !Skin.HasSetting(cdartfliplist)] | [Container.Content(albums) + !Skin.HasSetting(albumcdartfliplist)]</visible>
+            <animation effect="slide" time="560" start="0,225" end="0,0" tween="cubic">VisibleChange</animation>
+            <animation effect="slide" time="560" start="0,225" end="0,0" tween="cubic">WindowOpen</animation>
+            <animation effect="slide" time="240" end="0,225" tween="cubic">WindowClose</animation>
+            <control type="image">
+                <width>495</width>
+                <height>495</height>
+                <aspectratio aligny="bottom" align="center">keep</aspectratio>
+                <fadetime>400</fadetime>
+                <texture background="true" fallback="common/cdart/vinyl.png">$VAR[cdARTVar]</texture>
+                <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="StringCompare(ListItem.Album,MusicPlayer.Album) + !IsEmpty(ListItem.Thumb) + Player.HasAudio">Conditional</animation>
+            </control>
+        </control>
+    </include>
     <include name="TriPanel">
         <control type="group">
             <posy>100</posy>
