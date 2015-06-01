@@ -5,7 +5,7 @@
             <include>Animation_OpenClose_Furniture</include>
             <animation effect="fade" time="350">VisibleChange</animation>
             <animation effect="slide" end="0,400" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
-            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(500) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | Control.IsVisible(512)]</visible>
+            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(50) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | Control.IsVisible(512)]</visible>
             <animation effect="fade" start="100" end="0" delay="200" time="240">WindowClose</animation>
             <control type="image">
                 <posy>472</posy>
@@ -55,7 +55,7 @@
                 <height>206</height>
                 <texture colordiffuse="$VAR[SpotColorVar2]">views/panel_spot.png</texture>
                 <include>Animation_OpenClose_Furniture</include>
-                <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(500) | Control.IsVisible(508)</visible>
+                <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(508)</visible>
             </control>
             <include>Neon_Floor</include>
         </control>
@@ -73,7 +73,7 @@
                 <posy>717</posy>
                 <width>1920</width>
                 <height>367</height>
-                <visible>Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(514)</visible>
+                <visible>Control.IsVisible(50) | Control.IsVisible(512) | Control.IsVisible(514)</visible>
                 <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
                 <animation effect="slide" time="300" start="0,0" end="0,50" tween="cubic" condition="Control.IsVisible(514)">Conditional</animation>
                 <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
@@ -82,7 +82,7 @@
         <control type="group">
             <animation effect="fade" end="100" time="80" delay="80" reversible="false">Visible</animation>
             <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
-            <visible>Control.IsVisible(509) | [Control.IsVisible(500) + !StringCompare(Container.FolderName,youtube)] | Control.IsVisible(508) | Control.IsVisible(501)</visible>
+            <visible>Control.IsVisible(509) | [Control.IsVisible(50) + !StringCompare(Container.FolderName,youtube)] | Control.IsVisible(508) | Control.IsVisible(501)</visible>
             <visible>[Control.IsVisible(8822) + !Container.OnNext + !Container.OnPrevious + Stringcompare(Control.GetLabel(8822),empty.png)] | !Control.IsVisible(8822) | Container.Content(seasons) | Container.Content(albums)</visible>
             <include>Animation_WindowFade200</include>
             <posx>410</posx>
@@ -399,8 +399,8 @@
             <width>1920</width>
             <height>540</height>
             <onup>50</onup>
-            <ondown condition="!Control.IsVisible(500)">109</ondown>
-            <ondown condition="Control.IsVisible(500)">50</ondown>
+            <ondown condition="!Control.IsVisible(50)">109</ondown>
+            <ondown condition="Control.IsVisible(50)">50</ondown>
             <onright>24000</onright>
             <onleft>24000</onleft>
             <orientation>horizontal</orientation>
@@ -515,11 +515,11 @@
             <width>975</width>
             <!--
             <visible>![SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>-->
-            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(508) | Control.IsVisible(50) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
             <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(61)">Conditional</animation>
             <onup>50</onup>
-            <ondown condition="!Control.IsVisible(500)">109</ondown>
-            <ondown condition="Control.IsVisible(500)">50</ondown>
+            <ondown condition="!Control.IsVisible(50)">109</ondown>
+            <ondown condition="Control.IsVisible(50)">50</ondown>
             <orientation>horizontal</orientation>
             <animation effect="zoom" start="70" end="100" center="auto" tween="back" time="320" condition="Control.HasFocus(61)">Conditional</animation>
             <texturesliderbar>-</texturesliderbar>

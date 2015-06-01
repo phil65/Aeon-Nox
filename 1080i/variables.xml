@@ -187,7 +187,7 @@
         <value condition="Window.IsActive(programs) + !Container.Content(addons)">$INFO[ListItem.Genre]</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.Genre]</value>
         <value condition="Skin.HasSetting(wallgenre) + Container.Content(movies)">$INFO[ListItem.Genre]</value>
-        <value condition="Window.IsActive(pictures) + [Control.IsVisible(501) | Control.IsVisible(500)]">$INFO[ListItem.FolderName]</value>
+        <value condition="Window.IsActive(pictures) + [Control.IsVisible(501) | Control.IsVisible(50)]">$INFO[ListItem.FolderName]</value>
         <value condition="SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="Container.Content(songs)">$INFO[ListItem.Artist]$INFO[ListItem.Album, - ]</value>
         <value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
