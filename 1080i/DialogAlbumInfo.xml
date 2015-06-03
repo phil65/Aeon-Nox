@@ -663,27 +663,27 @@
                         <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
                         <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
                     </animation>-->
-                                            <control type="label">
-                            <posx>100</posx>
-                            <posy>50</posy>
-                            <width>500</width>
-                            <height>25</height>
-                            <aligny>center</aligny>
-                            <font>font14</font>
-                            <label>Music videos</label>
-                        </control>
+                    <control type="label">
+                        <posx>100</posx>
+                        <posy>50</posy>
+                        <width>500</width>
+                        <height>25</height>
+                        <aligny>center</aligny>
+                        <font>font14</font>
+                        <label>Music videos</label>
+                    </control>
                     <control id="10010" type="panel">
                         <animation type="WindowOpen">
                             <effect type="fade" end="100" delay="320" time="160" />
                         </animation>
-                        <posx>-65</posx>
+                        <posx>0</posx>
                         <posy>25</posy>
-                        <width>470</width>
+                        <width>1920</width>
                         <height>420</height>
-                        <onup>10012</onup>
-                        <ondown>10012</ondown>
-                        <onleft>5010</onleft>
-                        <onright>10011</onright>
+                        <onup>5010</onup>
+                        <ondown>11010</ondown>
+                        <onleft>10010</onleft>
+                        <onright>10010</onright>
                         <orientation>horizontal</orientation>
                         <scrolltime tween="quadratic">200</scrolltime>
                         <preloaditems>2</preloaditems>
@@ -716,22 +716,32 @@
                 <control id="1000" type="group">
                     <width>2325</width>
                     <height>800</height>
+                    <!--
                     <animation condition="!ControlGroup(11000).HasFocus" type="Conditional">
                         <effect easing="inout" end="80" start="100" time="400" tween="cubic" type="fade"/>
                         <effect center="auto" easing="inout" end="70" start="100" time="400" tween="cubic" type="zoom"/>
-                    </animation>
-                    <control id="10010" type="list">
+                    </animation>-->
+                    <control type="label">
+                        <posx>100</posx>
+                        <posy>50</posy>
+                        <width>500</width>
+                        <height>25</height>
+                        <aligny>center</aligny>
+                        <font>font14</font>
+                        <label>Youtube videos</label>
+                    </control>
+                    <control id="11010" type="list">
                         <animation type="WindowOpen">
                             <effect type="fade" end="100" delay="320" time="160" />
                         </animation>
-                        <posx>-65</posx>
+                        <posx>0</posx>
                         <posy>25</posy>
-                        <width>470</width>
+                        <width>1920</width>
                         <height>420</height>
-                        <onup>10012</onup>
-                        <ondown>10012</ondown>
-                        <onleft>5010</onleft>
-                        <onright>10011</onright>
+                        <onup>10010</onup>
+                        <ondown>7010</ondown>
+                        <onleft>11010</onleft>
+                        <onright>11010</onright>
                         <orientation>horizontal</orientation>
                         <scrolltime tween="quadratic">200</scrolltime>
                         <preloaditems>2</preloaditems>
@@ -757,44 +767,8 @@
                             </control>
                             <include>SquareWallFocusedLayout</include>
                         </focusedlayout>
-                        <content>plugin://script.extendedinfo?info=musicvideos&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+                        <content>$VAR[YouTubeContentVar]</content>
                     </control>
-                </control>
-                <control id="10011" type="panel">
-                    <posx>430</posx>
-                    <posy>-22</posy>
-                    <width>800</width>
-                    <height>490</height>
-                    <onup>10012</onup>
-                    <ondown>10012</ondown>
-                    <onright>11010</onright>
-                    <onleft>10010</onleft>
-                    <orientation>vertical</orientation>
-                    <pagecontrol>60</pagecontrol>
-                    <scrolltime easing="inout" tween="cubic">400</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout height="240" width="245">
-                        <include>MusicVisPanelLayout</include>
-                        <control type="image">
-                            <posy>10</posy>
-                            <width>240</width>
-                            <height>240</height>
-                            <texture colordiffuse="55FFFFFF" border="6">common/bgcolor.png</texture>
-                            <visible>Control.HasFocus(10011)</visible>
-                            <animation effect="fade" time="350">VisibleChange</animation>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout height="240" width="245">
-                        <include>MusicVisPanelLayout</include>
-                        <control type="image">
-                            <posy>10</posy>
-                            <width>236</width>
-                            <height>238</height>
-                            <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                            <visible>Control.HasFocus(10011)</visible>
-                        </control>
-                    </focusedlayout>
-                    <content>$VAR[YouTubeContentVar]</content>
                 </control>
             </control>
         </control>
