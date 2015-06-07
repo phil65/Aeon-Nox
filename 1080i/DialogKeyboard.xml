@@ -3,21 +3,21 @@
     <defaultcontrol>300</defaultcontrol>
     <coordinates>
         <system>1</system>
-        <left>200</left>
-        <top>230</top>
+        <left>340</left>
+        <top>200</top>
     </coordinates>
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="image" id="0">
             <top>0</top>
-            <width>1400</width>
+            <width>1240</width>
             <height>560</height>
             <texture border="40,100,40,100">keyboard/keyboard_back.png</texture>
         </control>
         <control type="label" id="311">
             <left>0</left>
             <top>25</top>
-            <width>1400</width>
+            <width>1240</width>
             <height>50</height>
             <align>center</align>
             <textoffsetx>15</textoffsetx>
@@ -27,21 +27,23 @@
         <control type="edit" id="312">
             <left>30</left>
             <top>480</top>
-            <width>1260</width>
+            <width>1180</width>
             <height>50</height>
             <align>center</align>
             <textcolor>white2</textcolor>
             <texturefocus>-</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
-        <control type="group">
+        <control type="group" id="5000">
             <left>30</left>
             <top>70</top>
             <width>1720</width>
-            <height>400</height>
-            <!--Row 1-->
+            <height>450</height>
+<!--             <animation effect="slide" start="0,0" end="0,-50" tween="sine" time="240" condition="!IntegerGreaterThan(Container(9091).NumItems,0)">Conditional</animation>
+ -->            <!--Row 1-->
             <control type="grouplist">
                 <orientation>horizontal</orientation>
+                <itemgap>-15</itemgap>
                 <control type="button" id="309">
                     <description>Layout</description>
                     <label>1006</label>
@@ -114,6 +116,7 @@
             <control type="grouplist">
                 <orientation>horizontal</orientation>
                 <top>80</top>
+                <itemgap>-15</itemgap>
                 <control type="togglebutton" id="304">
                     <description>Symbols</description>
                     <label>@#!*</label>
@@ -196,6 +199,7 @@
             <control type="grouplist">
                 <orientation>horizontal</orientation>
                 <top>160</top>
+                <itemgap>-15</itemgap>
                 <control type="togglebutton" id="303">
                     <description>Caps</description>
                     <label>20179</label>
@@ -269,6 +273,7 @@
             <control type="grouplist">
                 <orientation>horizontal</orientation>
                 <top>240</top>
+                <itemgap>-15</itemgap>
                 <control type="togglebutton" id="302">
                     <description>Shift</description>
                     <label>$LOCALIZE[20178]</label>
@@ -342,41 +347,127 @@
             <control type="grouplist">
                 <orientation>horizontal</orientation>
                 <top>320</top>
+                <itemgap>-15</itemgap>
                 <control type="button" id="300">
                     <label>$LOCALIZE[20177]</label>
                     <onup>302</onup>
-                    <ondown>304</ondown>
+                    <ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">309</ondown>
+                    <ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
                     <include>Objects_DoubleKeyOff</include>
                 </control>
                 <control type="button" id="32">
-                    <width>550</width>
+                    <width>455</width>
                     <label>$LOCALIZE[20182]</label>
                     <onup>160</onup>
-                    <ondown>100</ondown>
+                    <ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">100</ondown>
+                    <ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
                     <include>Objects_DoubleKeyOff</include>
                 </control>
                 <control type="button" id="305">
                     <label>&lt;</label>
                     <onup>166</onup>
-                    <ondown>106</ondown>
+                    <ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">106</ondown>
+                    <ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
                     <width>120</width>
                     <include>Objects_SingleKeyOff</include>
                 </control>
                 <control type="button" id="306">
                     <label>&gt;</label>
                     <onup>167</onup>
-                    <ondown>107</ondown>
+                    <ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">107</ondown>
+                    <ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
                     <width>120</width>
                     <include>Objects_SingleKeyOff</include>
                 </control>
                 <control type="button" id="8">
                     <description>Backspace</description>
-                    <width>260</width>
+                    <width>240</width>
                     <label>20181</label>
                     <onup>170</onup>
-                    <ondown>110</ondown>
+                    <ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">109</ondown>
+                    <ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
                     <include>Objects_DoubleKeyOff</include>
                 </control>
+            </control>
+        </control>
+        <control type="group">
+            <top>550</top>
+            <animation type="Conditional" reversible="false" condition="IntegerGreaterThan(Container(9091).NumItems,0)">
+            <effect type="zoom" start="80" end="100" center="960,540" delay="160" tween="back" time="240" />
+            <effect type="fade" delay="160" end="100" time="240" />
+        </animation>
+        <animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(9091).NumItems,0)">
+            <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
+            <effect type="fade" start="100" end="0" time="240" />
+        </animation>
+            <control type="image">
+                <top>0</top>
+                <width>1240</width>
+                <height>250</height>
+                <texture flipy="true">keyboard/keyboard_back.png</texture>
+            </control>
+            <control type="panel" id="9091">
+                <left>30</left>
+                <top>30</top>
+                <width>1180</width>
+                <height>708</height>
+                <onleft>9091</onleft>
+                <onright>9091</onright>
+                <!--
+                <onright>Action(Close)</onright>-->
+                <onup>5000</onup>
+                <ondown>5000</ondown>
+                <onback>noop</onback>
+                <orientation>vertical</orientation>
+                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <itemlayout height="55" width="393">
+                    <control type="image">
+                        <left>0</left>
+                        <top>-5</top>
+                        <width>393</width>
+                        <height>85</height>
+                        <texture border="40">buttons/roundedbutton-nofocus.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>25</left>
+                        <top>-9</top>
+                        <width>330</width>
+                        <height>85</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="55" width="393">
+                    <control type="image">
+                        <left>0</left>
+                        <top>-5</top>
+                        <width>393</width>
+                        <height>85</height>
+                        <texture border="40">buttons/roundedbutton-nofocus.png</texture>
+                        <visible>!Control.HasFocus(9091)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>-5</top>
+                        <width>393</width>
+                        <height>85</height>
+                        <texture colordiffuse="$VAR[FocusTextureColorVar]" border="40">buttons/roundedbutton-focus.png</texture>
+                        <visible>Control.HasFocus(9091)</visible>
+                    </control>
+                    <control type="label">
+                        <left>25</left>
+                        <top>-9</top>
+                        <width>330</width>
+                        <height>85</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </focusedlayout>
+                <content>plugin://script.extendedinfo?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=9</content>
             </control>
         </control>
     </controls>
