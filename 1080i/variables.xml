@@ -700,7 +700,7 @@
     </variable>
     <variable name="OneOrMoreSeasonsVar">
         <value condition="StringCompare(ListItem.Property(TotalSeasons),1)">$LOCALIZE[20373]</value>
-        <value>$LOCALIZE[33054]</value>
+        <value condition="IntegerGreaterThan(ListItem.Property(TotalSeasons),1)">$LOCALIZE[33054]</value>
     </variable>
     <variable name="UnwatchedEpisodesLabelVar">
         <value condition="StringCompare(ListItem.Property(TotalEpisodes),ListItem.Property(UnwatchedEpisodes))">$LOCALIZE[593]</value>
@@ -708,7 +708,7 @@
     </variable>
     <variable name="OneOrMoreEpisodesVar">
         <value condition="StringCompare(ListItem.Property(TotalEpisodes),1)">$LOCALIZE[20359]</value>
-        <value>$LOCALIZE[20360]</value>
+        <value condition="IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)">$LOCALIZE[20360]</value>
     </variable>
     <variable name="HomeWidgetFanartVar">
         <value condition="[ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
