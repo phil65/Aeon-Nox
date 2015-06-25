@@ -365,7 +365,7 @@
                     <visible>!Window.IsActive(musicplaylisteditor)</visible>
                 </control>
                 <control type="radiobutton" id="3">
-                    <label>103</label>
+                    <description>Sort Button</description>
                     <textureradioon colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/list1.png</textureradioon>
                     <textureradiooff colordiffuse="grey">special://skin/extras/icons/list1.png</textureradiooff>
                     <selected>Control.HasFocus(3)</selected>
@@ -377,7 +377,7 @@
                     <textureradioonnofocus colordiffuse="grey">special://skin/extras/icons/orderdown.png</textureradioonnofocus>
                     <textureradioofffocus colordiffuse="$VAR[FocusTextureColorVar]">special://skin/extras/icons/orderup.png</textureradioofffocus>
                     <textureradiooffnofocus colordiffuse="grey">special://skin/extras/icons/orderup.png</textureradiooffnofocus>
-                    <selected>Substring(Control.GetLabel(4),$LOCALIZE[584])</selected>
+                    <selected>Container.SortDirection(ascending)</selected>
                     <label>$INFO[Control.GetLabel(4)]</label>
                     <onclick>SendClick(4)</onclick>
                     <include>Objects_MediaMenuButtonIcons</include>
