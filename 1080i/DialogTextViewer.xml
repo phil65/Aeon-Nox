@@ -2,18 +2,16 @@
 <window>
     <defaultcontrol always="true">61</defaultcontrol>
     <include>Animation_DialogPopupOpenClose</include>
-    <onload condition="IsEmpty(Window.Property(WindowColor))">SetProperty(WindowColor,$VAR[AreaColorVar],home)</onload>
-    <onunload>ClearProperty(WindowColor,home)</onunload>
     <controls>
         <control type="group">
         <control type="image">
-            <texture colordiffuse="$INFO[Window.Property(WindowColor)]">common/white.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">common/white.png</texture>
             <include>FullscreenDimensions</include>
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
         </control>
         <control type="image">
-            <texture colordiffuse="$INFO[Window.Property(WindowColor)]">diffuseoverlay.png</texture>
+            <texture colordiffuse="$VAR[AreaColorVar]">diffuseoverlay.png</texture>
             <include>FullscreenDimensions</include>
                         <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
             <animation effect="fade" end="100" time="560">WindowOpen</animation>
