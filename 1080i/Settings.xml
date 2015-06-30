@@ -6,31 +6,22 @@
     <controls>
         <include>CommonSettingsBackground</include>
         <include>CommonMediaPlayingBackground</include>
-        <include>Furniture_SettingsFloor</include>
+                                <control type="image" id="5999">
+                    <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+                    <animation effect="fade" time="200">WindowOpen</animation>
+                    <animation effect="fade" time="200">WindowClose</animation>
+                    <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+                    <include>FullscreenDimensions</include>
+                </control>
         <control type="group">
-            <animation type="WindowOpen" reversible="false" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(systeminfo) | Window.Previous(skinsettings)]">
+            <animation type="WindowOpen" reversible="false">
                 <effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
                 <effect type="fade" end="100" time="240" />
             </animation>
-            <animation type="WindowClose" reversible="false" condition="![Window.Next(SettingsCategory.xml) | Window.Next(systeminfo) | Window.Next(skinsettings)]">
+            <animation type="WindowClose" reversible="false">
                 <effect type="fade" start="100" end="0" time="240" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
-            <animation effect="zoom" end="91" center="960,360" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
-            <control type="image">
-                <posx>52</posx>
-                <posy>50</posy>
-                <width>1815</width>
-                <height>1120</height>
-                <texture colordiffuse="$VAR[DialogColorVar]">wall/wall_bg.png</texture>
-            </control>
-            <control type="image">
-                <posx>52</posx>
-                <posy>50</posy>
-                <width>1815</width>
-                <height>1120</height>
-                <texture>wall/wall_bg_reflection.png</texture>
-            </control>
             <control type="image">
                 <posx>55</posx>
                 <posy>118</posy>
