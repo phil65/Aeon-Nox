@@ -6,13 +6,13 @@
     <controls>
         <include>CommonSettingsBackground</include>
         <include>CommonMediaPlayingBackground</include>
-                                <control type="image" id="5999">
-                    <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-                    <animation effect="fade" time="200">WindowOpen</animation>
-                    <animation effect="fade" time="200">WindowClose</animation>
-                    <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
-                    <include>FullscreenDimensions</include>
-                </control>
+        <control type="image" id="5999">
+            <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+            <animation effect="fade" time="200">WindowOpen</animation>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <texture colordiffuse="$VAR[DialogColorVar]">diffuseoverlay.png</texture>
+            <include>FullscreenDimensions</include>
+        </control>
         <control type="group">
             <animation type="WindowOpen" reversible="false">
                 <effect type="zoom" start="150" end="100" center="960,540" time="240" tween="cubic" />
@@ -54,13 +54,6 @@
                         <bordertexture border="5">button-nofocus.png</bordertexture>
                         <bordersize>5</bordersize>
                     </control>
-                    <control type="image">
-                        <posy>13</posy>
-                        <posx>5</posx>
-                        <width>390</width>
-                        <height>220</height>
-                        <texture colordiffuse="55FFFFFF">common/bgcolor.png</texture>
-                    </control>
                     <control type="label">
                         <width>400</width>
                         <height>400</height>
@@ -93,7 +86,7 @@
                             <texture colordiffuse="$VAR[AreaColorVar]">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="5">button-nofocus.png</bordertexture>
                             <bordersize>5</bordersize>
-                                                        <animation type="Focus" reversible="true">
+                            <animation type="Focus" reversible="true">
                                 <effect type="fade" start="0" end="100" delay="1000" time="500" tween="cubic" />
                             </animation>
                             <animation type="UnFocus" reversible="true">
@@ -204,14 +197,15 @@
                 </content>
             </control>
             <!--
-            <control type="textbox">
-                <posx>555</posx>
-                <posy>810</posy>
-                <width>1200</width>
-                <height>210</height>
-                <label>$INFO[Container(9000).ListItem.Property(description)]</label>
-                <font>Font_Reg32</font>
-            </control>--></control>
+                 <control type="textbox">
+                 <posx>555</posx>
+                 <posy>810</posy>
+                 <width>1200</width>
+                 <height>210</height>
+                 <label>$INFO[Container(9000).ListItem.Property(description)]</label>
+                 <font>Font_Reg32</font>
+                 </control> -->
+        </control>
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>BreadcrumbsContent</include>
