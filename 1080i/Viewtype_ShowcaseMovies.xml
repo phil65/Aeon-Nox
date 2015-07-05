@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <constant name="listitem7_posx">1635</constant>
     <constant name="listitem6_posx">1500</constant>
     <constant name="listitem5_posx">1365</constant>
     <constant name="listitem4_posx">1230</constant>
     <constant name="listitem3_posx">1095</constant>
     <constant name="listitem2_posx">960</constant>
     <constant name="listitem1_posx">825</constant>
+    <constant name="listitem0_posx">758</constant>
     <constant name="listitem-1_posx">690</constant>
     <constant name="listitem-2_posx">555</constant>
     <constant name="listitem-3_posx">420</constant>
     <constant name="listitem-4_posx">285</constant>
     <constant name="listitem-5_posx">150</constant>
     <constant name="listitem-6_posx">15</constant>
+    <constant name="listitem-7_posx">-120</constant>
+
+    <constant name="listitem7_rot_center">2100</constant>
+    <constant name="listitem6_rot_center">1965</constant>
+    <constant name="listitem5_rot_center">1830</constant>
+    <constant name="listitem4_rot_center">1695</constant>
+    <constant name="listitem3_rot_center">1560</constant>
+    <constant name="listitem2_rot_center">1425</constant>
+    <constant name="listitem1_rot_center">1290</constant>
+    <constant name="listitem-1_rot_center">540</constant>
+    <constant name="listitem-2_rot_center">405</constant>
+    <constant name="listitem-3_rot_center">270</constant>
+    <constant name="listitem-4_rot_center">135</constant>
+    <constant name="listitem-5_rot_center">0</constant>
+    <constant name="listitem-6_rot_center">-135</constant>
+    <constant name="listitem-7_rot_center">-270</constant>
+
     <constant name="rotate">55</constant>
     <constant name="neg_rotate">-55</constant>
+
     <include name="Showcase">
         <control type="group">
             <visible>Control.IsVisible(501)</visible>
@@ -40,7 +60,7 @@
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-6_posx" />
                             <param name="rotate_degree" value="neg_rotate" />
-                            <param name="rotate_center" value="-135" />
+                            <param name="rotate_center" value="listitem-6_rot_center" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-7).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-7Var]" />
                             <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-7Var]" />
@@ -50,7 +70,7 @@
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-5_posx" />
                         <param name="rotate_degree" value="neg_rotate" />
-                        <param name="rotate_center" value="0" />
+                        <param name="rotate_center" value="listitem-5_rot_center" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-6Var]" />
                         <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-6Var]" />
@@ -58,7 +78,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-4_posx" />
-                        <param name="rotate_center" value="135" />
+                        <param name="rotate_center" value="listitem-4_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-5Var]" />
@@ -67,7 +87,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-3_posx" />
-                        <param name="rotate_center" value="270" />
+                        <param name="rotate_center" value="listitem-3_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-4Var]" />
@@ -76,7 +96,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-2_posx" />
-                        <param name="rotate_center" value="405" />
+                        <param name="rotate_center" value="listitem-2_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-3Var]" />
@@ -85,7 +105,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-1_posx" />
-                        <param name="rotate_center" value="540" />
+                        <param name="rotate_center" value="listitem-1_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-2Var]" />
@@ -96,8 +116,8 @@
                         <visible>!Container.OnNext</visible>
                         <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
                         <include name="ShowCaseItem">
-                            <param name="group_posx" value="1635" />
-                            <param name="rotate_center" value="2100" />
+                            <param name="group_posx" value="listitem7_posx" />
+                            <param name="rotate_center" value="listitem7_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem6Var]" />
@@ -107,7 +127,7 @@
                     </control>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem6_posx" />
-                        <param name="rotate_center" value="1965" />
+                        <param name="rotate_center" value="listitem6_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem5Var]" />
@@ -116,7 +136,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem5_posx" />
-                        <param name="rotate_center" value="1830" />
+                        <param name="rotate_center" value="listitem5_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem4Var]" />
@@ -125,7 +145,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem4_posx" />
-                        <param name="rotate_center" value="1695" />
+                        <param name="rotate_center" value="listitem4_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem3Var]" />
@@ -134,7 +154,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem3_posx" />
-                        <param name="rotate_center" value="1560" />
+                        <param name="rotate_center" value="listitem3_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem2Var]" />
@@ -142,8 +162,8 @@
                         <param name="overlay_image" value="$VAR[OverlayVisibility2]" />
                     </include>
                     <include name="ShowCaseItem">
-                        <param name="group_posx" value="960" />
-                        <param name="rotate_center" value="1425" />
+                        <param name="group_posx" value="listitem2_posx" />
+                        <param name="rotate_center" value="listitem2_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem1Var]" />
@@ -155,10 +175,10 @@
                         <animation effect="slide" end="75,0" time="200" reversible="false">Hidden</animation>
                         <control type="group">
                             <visible>Container.OnNext</visible>
-                            <animation effect="rotatey" center="1290" end="neg_rotate" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
+                            <animation effect="rotatey" center="listitem1_rot_center" end="neg_rotate" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
                             <include name="ShowCaseItem">
                                 <param name="group_posx" value="listitem1_posx" />
-                                <param name="rotate_center" value="1290" />
+                                <param name="rotate_center" value="listitem1_rot_center" />
                                 <param name="rotate_degree" value="rotate" />
                                 <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)" />
                                 <param name="item_image" value="$VAR[ShowcaseItem0Var]" />
@@ -170,7 +190,7 @@
                             <visible>Container.OnNext</visible>
                             <animation effect="rotatey" center="608" end="neg_rotate" time="200" reversible="false" tween="quadratic">Hidden</animation>
                             <include name="ShowCaseItem">
-                                <param name="group_posx" value="758" />
+                                <param name="group_posx" value="listitem0_posx" />
                                 <param name="rotate_center" value="0" />
                                 <param name="rotate_degree" value="0" />
                                 <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)" />
@@ -191,7 +211,7 @@
                         <animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem6_posx" />
-                            <param name="rotate_center" value="1965" />
+                            <param name="rotate_center" value="listitem6_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(7).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem7Var]" />
@@ -201,7 +221,7 @@
                     </control>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem5_posx" />
-                        <param name="rotate_center" value="1830" />
+                        <param name="rotate_center" value="listitem5_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem6Var]" />
@@ -210,7 +230,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem4_posx" />
-                        <param name="rotate_center" value="1695" />
+                        <param name="rotate_center" value="listitem4_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem5Var]" />
@@ -219,7 +239,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem3_posx" />
-                        <param name="rotate_center" value="1560" />
+                        <param name="rotate_center" value="listitem3_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem4Var]" />
@@ -227,8 +247,8 @@
                         <param name="overlay_image" value="$VAR[OverlayVisibility4]" />
                     </include>
                     <include name="ShowCaseItem">
-                        <param name="group_posx" value="960" />
-                        <param name="rotate_center" value="1425" />
+                        <param name="group_posx" value="listitem2_posx" />
+                        <param name="rotate_center" value="listitem2_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem3Var]" />
@@ -237,7 +257,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem1_posx" />
-                        <param name="rotate_center" value="1290" />
+                        <param name="rotate_center" value="listitem1_rot_center" />
                         <param name="rotate_degree" value="rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem2Var]" />
@@ -248,8 +268,8 @@
                         <visible>!Container.OnPrevious</visible>
                         <animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
                         <include name="ShowCaseItem">
-                            <param name="group_posx" value="-120" />
-                            <param name="rotate_center" value="-270" />
+                            <param name="group_posx" value="listitem-7_posx" />
+                            <param name="rotate_center" value="listitem-7_rot_center" />
                             <param name="rotate_degree" value="neg_rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-6Var]" />
@@ -259,7 +279,7 @@
                     </control>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-6_posx" />
-                        <param name="rotate_center" value="-135" />
+                        <param name="rotate_center" value="listitem-6_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-5Var]" />
@@ -268,7 +288,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-5_posx" />
-                        <param name="rotate_center" value="0" />
+                        <param name="rotate_center" value="listitem-5_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-4Var]" />
@@ -277,7 +297,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-4_posx" />
-                        <param name="rotate_center" value="135" />
+                        <param name="rotate_center" value="listitem-4_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-3Var]" />
@@ -286,7 +306,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-3_posx" />
-                        <param name="rotate_center" value="270" />
+                        <param name="rotate_center" value="listitem-3_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-2Var]" />
@@ -295,7 +315,7 @@
                     </include>
                     <include name="ShowCaseItem">
                         <param name="group_posx" value="listitem-2_posx" />
-                        <param name="rotate_center" value="405" />
+                        <param name="rotate_center" value="listitem-2_rot_center" />
                         <param name="rotate_degree" value="neg_rotate" />
                         <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)" />
                         <param name="item_image" value="$VAR[ShowcaseItem-1Var]" />
@@ -307,10 +327,10 @@
                         <animation effect="slide" end="-75,0" time="200" reversible="false">Hidden</animation>
                         <control type="group">
                             <visible>Container.OnPrevious</visible>
-                            <animation effect="rotatey" center="540" end="rotate" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
+                            <animation effect="rotatey" center="listitem-1_rot_center" end="rotate" time="200" reversible="false" tween="quadratic" easing="in">Hidden</animation>
                             <include name="ShowCaseItem">
                                 <param name="group_posx" value="listitem-1_posx" />
-                                <param name="rotate_center" value="540" />
+                                <param name="rotate_center" value="listitem-1_rot_center" />
                                 <param name="rotate_degree" value="neg_rotate" />
                                 <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)" />
                                 <param name="item_image" value="$VAR[ShowcaseItem0Var]" />
@@ -322,7 +342,7 @@
                             <visible>Container.OnPrevious</visible>
                             <animation effect="rotatey" center="1223" end="rotate" time="200" reversible="false" tween="quadratic">Hidden</animation>
                             <include name="ShowCaseItem">
-                                <param name="group_posx" value="758" />
+                                <param name="group_posx" value="listitem0_posx" />
                                 <param name="rotate_center" value="0" />
                                 <param name="rotate_degree" value="0" />
                                 <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)" />
@@ -360,12 +380,12 @@
                         <animation effect="slide" time="240" end="818" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="818" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="-135" end="rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-6_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="-1028" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-6_posx" />
-                            <param name="rotate_center" value="-135" />
+                            <param name="rotate_center" value="listitem-6_rot_center" />
                             <param name="rotate_degree" value="neg_rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-6).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-6Var]" />
@@ -377,12 +397,12 @@
                         <animation effect="slide" time="240" end="682" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="682" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="0" end="rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-5_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="-866" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-5_posx" />
-                            <param name="rotate_center" value="0" />
+                            <param name="rotate_center" value="listitem-5_rot_center" />
                             <param name="rotate_degree" value="neg_rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-5).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-5Var]" />
@@ -394,12 +414,12 @@
                         <animation effect="slide" time="240" end="548" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="548" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="135" end="rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-4_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="-704" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-4_posx" />
-                            <param name="rotate_center" value="135" />
+                            <param name="rotate_center" value="listitem-4_rot_center" />
                             <param name="rotate_degree" value="neg_rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-4).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-4Var]" />
@@ -411,12 +431,12 @@
                         <animation effect="slide" time="240" end="412" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="412" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="270" end="rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-3_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="-543" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-3_posx" />
-                            <param name="rotate_center" value="270" />
+                            <param name="rotate_center" value="listitem-3_rot_center" />
                             <param name="rotate_degree" value="neg_rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-3).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-3Var]" />
@@ -428,12 +448,12 @@
                         <animation effect="slide" time="240" end="278" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="278" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="405" end="rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-2_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="-384" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-2_posx" />
-                            <param name="rotate_center" value="405" />
+                            <param name="rotate_center" value="listitem-2_rot_center" />
                             <param name="rotate_degree" value="neg_rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-2).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-2Var]" />
@@ -445,12 +465,12 @@
                         <animation effect="slide" time="240" end="142" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="142" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="540" end="rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-1_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="-226" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-1_posx" />
-                            <param name="rotate_center" value="540" />
+                            <param name="rotate_center" value="listitem-1_rot_center" />
                             <param name="rotate_degree" value="neg_rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(-1).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem-1Var]" />
@@ -462,12 +482,12 @@
                         <animation effect="slide" time="240" end="-818" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-818" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1965" end="neg_rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem6_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="1028" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem6_posx" />
-                            <param name="rotate_center" value="1965" />
+                            <param name="rotate_center" value="listitem6_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(6).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem6Var]" />
@@ -479,12 +499,12 @@
                         <animation effect="slide" time="240" end="-682" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-682" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1830" end="neg_rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem5_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="866" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem5_posx" />
-                            <param name="rotate_center" value="1830" />
+                            <param name="rotate_center" value="listitem5_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(5).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem5Var]" />
@@ -496,12 +516,12 @@
                         <animation effect="slide" time="240" end="-548" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-548" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1695" end="neg_rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem4_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="704" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem4_posx" />
-                            <param name="rotate_center" value="1695" />
+                            <param name="rotate_center" value="listitem4_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(4).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem4Var]" />
@@ -513,12 +533,12 @@
                         <animation effect="slide" time="240" end="-412" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-412" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1560" end="neg_rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem3_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="543" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem3_posx" />
-                            <param name="rotate_center" value="1560" />
+                            <param name="rotate_center" value="listitem3_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(3).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem3Var]" />
@@ -530,12 +550,12 @@
                         <animation effect="slide" time="240" end="-278" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-278" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1425" end="neg_rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem2_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="384" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
-                            <param name="group_posx" value="960" />
-                            <param name="rotate_center" value="1425" />
+                            <param name="group_posx" value="listitem2_posx" />
+                            <param name="rotate_center" value="listitem2_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(2).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem2Var]" />
@@ -547,12 +567,12 @@
                         <animation effect="slide" time="240" end="-142" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="640" delay="240" end="0" start="-142" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="1290" end="neg_rotate" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem1_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
                             <effect type="slide" end="226" time="640" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem1_posx" />
-                            <param name="rotate_center" value="1290" />
+                            <param name="rotate_center" value="listitem1_rot_center" />
                             <param name="rotate_degree" value="rotate" />
                             <param name="group_visible" value="!IsEmpty(Container(501).ListItemNoWrap(1).FolderPath)" />
                             <param name="item_image" value="$VAR[ShowcaseItem1Var]" />
@@ -561,7 +581,7 @@
                         </include>
                     </control>
                     <control type="group">
-                        <posx>758</posx>
+                        <posx>listitem0_posx</posx>
                         <control type="group">
                             <visible>!IsEmpty(Container(501).ListItemNoWrap(0).FolderPath)</visible>
                             <control type="image">
