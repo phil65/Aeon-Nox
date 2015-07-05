@@ -34,6 +34,11 @@
     <constant name="listitem-6_rot_center">-135</constant>
     <constant name="listitem-7_rot_center">-270</constant>
 
+    <constant name="onprevious_rot_center">1223</constant>
+    <constant name="onprevious_slide">-75</constant>
+    <constant name="onnext_rot_center">608</constant>
+    <constant name="onnext_slide">75</constant>
+
     <constant name="rotate">55</constant>
     <constant name="neg_rotate">-55</constant>
 
@@ -180,7 +185,7 @@
                     </include>
                     <control type="group">
                         <visible>Container.OnNext</visible>
-                        <animation effect="slide" end="75,0" time="slide_time" reversible="false">Hidden</animation>
+                        <animation effect="slide" end="onnext_slide,0" time="slide_time" reversible="false">Hidden</animation>
                         <control type="group">
                             <visible>Container.OnNext</visible>
                             <animation effect="rotatey" center="listitem1_rot_center" end="neg_rotate" time="slide_time" reversible="false" tween="quadratic" easing="in">Hidden</animation>
@@ -196,7 +201,7 @@
                         </control>
                         <control type="group">
                             <visible>Container.OnNext</visible>
-                            <animation effect="rotatey" center="608" end="neg_rotate" time="slide_time" reversible="false" tween="quadratic">Hidden</animation>
+                            <animation effect="rotatey" center="onnext_rot_center" end="neg_rotate" time="slide_time" reversible="false" tween="quadratic">Hidden</animation>
                             <include name="ShowCaseItem">
                                 <param name="group_posx" value="listitem0_posx" />
                                 <param name="rotate_center" value="0" />
@@ -332,7 +337,7 @@
                     </include>
                     <control type="group">
                         <visible>Container.OnPrevious</visible>
-                        <animation effect="slide" end="-75,0" time="slide_time" reversible="false">Hidden</animation>
+                        <animation effect="slide" end="onprevious_slide,0" time="slide_time" reversible="false">Hidden</animation>
                         <control type="group">
                             <visible>Container.OnPrevious</visible>
                             <animation effect="rotatey" center="listitem-1_rot_center" end="rotate" time="slide_time" reversible="false" tween="quadratic" easing="in">Hidden</animation>
@@ -348,7 +353,7 @@
                         </control>
                         <control type="group">
                             <visible>Container.OnPrevious</visible>
-                            <animation effect="rotatey" center="1223" end="rotate" time="slide_time" reversible="false" tween="quadratic">Hidden</animation>
+                            <animation effect="rotatey" center="onprevious_rot_center" end="rotate" time="slide_time" reversible="false" tween="quadratic">Hidden</animation>
                             <include name="ShowCaseItem">
                                 <param name="group_posx" value="listitem0_posx" />
                                 <param name="rotate_center" value="0" />
