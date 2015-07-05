@@ -95,14 +95,7 @@
                     <include>ViewtypeSettingsButton</include>
                     <onclick>Skin.ToggleSetting(noflow)</onclick>
                     <selected>Skin.HasSetting(noflow)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) + ![Container.Content(tvshows) | Container.Content(seasons)]</visible>
-                </control>
-                <control type="radiobutton" id="1627">
-                    <label>$LOCALIZE[31168]</label>
-                    <include>ViewtypeSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(noflowtv)</onclick>
-                    <selected>Skin.HasSetting(noflowtv)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies)</visible>
                 </control>
                 <control type="button" id="1641">
                     <label>$LOCALIZE[31248]</label>

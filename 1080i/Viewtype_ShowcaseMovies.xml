@@ -65,7 +65,7 @@
                 <posy>570</posy>
                 <camera x="960" y="810" />
                 <control type="group" id="6001">
-                    <visible>Container.OnNext + !Control.IsVisible(961)</visible>
+                    <visible>Container.OnNext + !Skin.HasSetting(noflow)</visible>
                     <animation effect="slide" end="scroll_left,0" time="slide_time" reversible="false">Hidden</animation>
                     <control type="group">
                         <visible>Container.OnNext</visible>
@@ -215,7 +215,7 @@
                     </control>
                 </control>
                 <control type="group" id="6002">
-                    <visible>Container.OnPrevious + !Control.IsVisible(961)</visible>
+                    <visible>Container.OnPrevious + !Skin.HasSetting(noflow)</visible>
                     <animation effect="slide" end="scroll_right,0" time="slide_time" reversible="false">Hidden</animation>
                     <control type="group">
                         <visible>Container.OnPrevious</visible>
@@ -367,13 +367,8 @@
                 <control type="button" id="960">
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
-                    <visible>!Control.IsVisible(961)</visible>
+                    <visible>!Skin.HasSetting(noflow)</visible>
                     <animation effect="fade" start="100" end="0" time="windowopen_anim_time">Hidden</animation>
-                </control>
-                <control type="button" id="961">
-                    <texturefocus>-</texturefocus>
-                    <texturenofocus>-</texturenofocus>
-                    <visible>[Skin.HasSetting(noflow) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
                 </control>
                 <control type="group" id="6000">
                     <animation type="WindowOpen" reversible="false">
@@ -388,7 +383,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="818" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="818" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem-6_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="-1028" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -405,7 +400,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="682" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="682" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem-5_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="-866" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -422,7 +417,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="548" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="548" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem-4_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="-704" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -439,7 +434,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="412" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="412" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem-3_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="-543" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -456,7 +451,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="278" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="278" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem-2_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="-384" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -473,7 +468,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="142" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="142" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem-1_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="-226" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -490,7 +485,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="-818" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-818" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem6_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="1028" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -507,7 +502,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="-682" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-682" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem5_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="866" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -524,7 +519,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="-548" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-548" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem4_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="704" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -541,7 +536,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="-412" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-412" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem3_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="543" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -558,7 +553,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="-278" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-278" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem2_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="384" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -575,7 +570,7 @@
                     <control type="group">
                         <animation effect="slide" time="240" end="-142" tween="cubic" easing="in">WindowClose</animation>
                         <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-142" tween="cubic">WindowOpen</animation>
-                        <animation type="Conditional" condition="Control.IsVisible(961)">
+                        <animation type="Conditional" condition="Skin.HasSetting(noflow)">
                             <effect type="rotatey" center="listitem1_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
                             <effect type="slide" end="226" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
@@ -630,7 +625,7 @@
                 <orientation>horizontal</orientation>
                 <preloaditems>2</preloaditems>
                 <include>Animation_OpenCloseZoom_New</include>
-                <itemlayout height="600" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
+                <itemlayout height="600" width="294" condition="Skin.HasSetting(noflow) + !Control.IsVisible(6000)">
                     <control type="group">
                         <posy>30</posy>
                         <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
@@ -655,7 +650,7 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="525" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
+                <focusedlayout height="525" width="294" condition="Skin.HasSetting(noflow) + !Control.IsVisible(6000)">
                     <control type="group">
                         <posy>30</posy>
                         <animation effect="fade" time="0" delay="windowopen_anim_time">Visible</animation>
@@ -679,10 +674,10 @@
                         </control>
                     </control>
                 </focusedlayout>
-                <itemlayout height="600" width="100" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></itemlayout>
-                <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></focusedlayout>
-                <itemlayout height="600" width="200" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></itemlayout>
-                <focusedlayout height="525" width="858" condition="![Control.IsVisible(961) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></focusedlayout>
+                <itemlayout height="600" width="100" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></itemlayout>
+                <focusedlayout height="525" width="858" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + !Skin.HasSetting(showcasezoom)"></focusedlayout>
+                <itemlayout height="600" width="200" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></itemlayout>
+                <focusedlayout height="525" width="858" condition="![Skin.HasSetting(noflow) + !Control.IsVisible(6000)] + Skin.HasSetting(showcasezoom)"></focusedlayout>
             </control>
         </control>
     </include>

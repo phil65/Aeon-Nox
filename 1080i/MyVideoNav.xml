@@ -471,7 +471,7 @@
                         <animation effect="fade" start="100" end="0" time="880" condition="Player.HasVideo">Conditional</animation>
                         <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         <visible>!Control.IsVisible(503)</visible>
-                        <visible>[[Skin.HasSetting(noflow) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]]</visible>
+                        <visible>Skin.HasSetting(noflow)</visible>
                     </control>
                     <control type="textbox">
                             <font>Font_Reg28_2</font>
