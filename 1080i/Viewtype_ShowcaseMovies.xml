@@ -528,7 +528,6 @@
                             <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase2Var]" />
                             <param name="overlay_image" value="$VAR[OverlayVisibility2]" />
                         </include>
-
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="-142" tween="cubic" easing="in">WindowClose</animation>
@@ -546,7 +545,6 @@
                             <param name="cover_image" value="thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase1Var]" />
                             <param name="overlay_image" value="$VAR[OverlayVisibility1]" />
                         </include>
-
                     </control>
                     <control type="group">
                         <posx>758</posx>
@@ -557,10 +555,7 @@
                                 <include>MovieShowcaseThumb</include>
                             </control>
                             <include>MovieShowcaseGlassOverlay</include>
-                            <control type="image">
-                                <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                                <include>MovieShowcaseThumbReflectionMain</include>
-                            </control>
+                            <include>MovieShowcaseThumbReflectionMain</include>
                             <include>MovieShowcaseThumbReflectionDVD</include>
                             <control type="image">
                                 <texture>thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase0Var]</texture>
@@ -629,10 +624,7 @@
                             <include>MovieShowcaseThumb</include>
                         </control>
                         <include>MovieShowcaseGlassOverlay</include>
-                        <control type="image">
-                            <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-                            <include>MovieShowcaseThumbReflectionMain</include>
-                        </control>
+                        <include>MovieShowcaseThumbReflectionMain</include>
                         <include>MovieShowcaseThumbReflectionDVD</include>
                         <control type="image">
                             <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
@@ -717,9 +709,12 @@
         <bordersize>18</bordersize>
     </include>
     <include name="MovieShowcaseThumbReflectionMain">
-        <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-        <include>MovieShowcaseThumbReflectionDimensions</include>
-        <colordiffuse>52FFFFFF</colordiffuse>
+        <control type="image">
+            <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+            <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+            <include>MovieShowcaseThumbReflectionDimensions</include>
+            <colordiffuse>52FFFFFF</colordiffuse>
+        </control>
     </include>
     <include name="MovieShowcaseThumbReflection">
         <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
@@ -739,10 +734,10 @@
     <include name="MovieShowcaseGlassOverlay">
         <control type="image">
             <texture diffuse="thumbs/thumb_mask.png">thumbs/thumb_glass.png</texture>
-        <posx>17</posx>
-        <posy>10</posy>
-        <width>262</width>
-        <height>384</height>
+            <posx>17</posx>
+            <posy>10</posy>
+            <width>262</width>
+            <height>384</height>
             <visible>![Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]]</visible>
         </control>
     </include>
