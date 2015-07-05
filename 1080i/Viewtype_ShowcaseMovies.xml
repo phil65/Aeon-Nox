@@ -40,10 +40,12 @@
     <constant name="slide_time">200</constant>
     <constant name="fadeout_time">200</constant>
 
+    <constant name="windowopen_anim_time">640</constant>
+
     <include name="Showcase">
         <control type="group">
             <visible>Control.IsVisible(501)</visible>
-            <animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="960,970" condition="Skin.HasSetting(showcasezoom)">Conditional</animation>
+            <animation effect="zoom" start="100" end="195" time="windowopen_anim_time" easing="inout" tween="circle" center="960,970" condition="Skin.HasSetting(showcasezoom)">Conditional</animation>
             <animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
             <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
                 <effect type="slide" end="30" time="60" tween="sine" />
@@ -363,7 +365,7 @@
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <visible>!Control.IsVisible(961)</visible>
-                    <animation effect="fade" start="100" end="0" time="640">Hidden</animation>
+                    <animation effect="fade" start="100" end="0" time="windowopen_anim_time">Hidden</animation>
                 </control>
                 <control type="button" id="961">
                     <texturefocus>-</texturefocus>
@@ -384,10 +386,10 @@
                     <visible>!Control.IsVisible(6001) + !Control.IsVisible(6002) + Control.IsVisible(960)</visible>
                     <control type="group">
                         <animation effect="slide" time="240" end="818" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="818" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="818" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem-6_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-1028" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-6_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-1028" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-6_posx" />
@@ -401,10 +403,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="682" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="682" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="682" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem-5_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-866" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-5_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-866" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-5_posx" />
@@ -418,10 +420,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="548" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="548" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="548" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem-4_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-704" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-4_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-704" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-4_posx" />
@@ -435,10 +437,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="412" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="412" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="412" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem-3_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-543" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-3_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-543" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-3_posx" />
@@ -452,10 +454,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="278" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="278" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="278" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem-2_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-384" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-2_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-384" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-2_posx" />
@@ -469,10 +471,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="142" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="142" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="142" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem-1_rot_center" end="rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="-226" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem-1_rot_center" end="rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="-226" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-1_posx" />
@@ -486,10 +488,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="-818" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-818" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-818" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem6_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="1028" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem6_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="1028" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem6_posx" />
@@ -503,10 +505,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="-682" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-682" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-682" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem5_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="866" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem5_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="866" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem5_posx" />
@@ -520,10 +522,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="-548" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-548" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-548" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem4_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="704" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem4_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="704" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem4_posx" />
@@ -537,10 +539,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="-412" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-412" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-412" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem3_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="543" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem3_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="543" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem3_posx" />
@@ -554,10 +556,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="-278" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-278" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-278" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem2_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="384" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem2_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="384" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem2_posx" />
@@ -571,10 +573,10 @@
                     </control>
                     <control type="group">
                         <animation effect="slide" time="240" end="-142" tween="cubic" easing="in">WindowClose</animation>
-                        <animation effect="slide" time="640" delay="240" end="0" start="-142" tween="cubic">WindowOpen</animation>
+                        <animation effect="slide" time="windowopen_anim_time" delay="240" end="0" start="-142" tween="cubic">WindowOpen</animation>
                         <animation type="Conditional" condition="Control.IsVisible(961)">
-                            <effect type="rotatey" center="listitem1_rot_center" end="neg_rotate" time="640" tween="cubic" easing="inout" />
-                            <effect type="slide" end="226" time="640" tween="cubic" easing="inout" />
+                            <effect type="rotatey" center="listitem1_rot_center" end="neg_rotate" time="windowopen_anim_time" tween="cubic" easing="inout" />
+                            <effect type="slide" end="226" time="windowopen_anim_time" tween="cubic" easing="inout" />
                         </animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem1_posx" />
@@ -631,7 +633,7 @@
                     <control type="group">
                         <posy>30</posy>
                         <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
-                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <animation effect="fade" time="0" delay="windowopen_anim_time">Visible</animation>
                         <control type="image">
                             <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             <include>MovieShowcaseThumb</include>
@@ -655,7 +657,7 @@
                 <focusedlayout height="525" width="294" condition="Control.IsVisible(961) + !Control.IsVisible(6000)">
                     <control type="group">
                         <posy>30</posy>
-                        <animation effect="fade" time="0" delay="640">Visible</animation>
+                        <animation effect="fade" time="0" delay="windowopen_anim_time">Visible</animation>
                         <animation effect="zoom" start="100" end="120" center="147,345" time="240" reversible="false" tween="cubic">Focus</animation>
                         <animation effect="zoom" start="120" end="100" center="147,345" time="240" reversible="false" tween="cubic">UnFocus</animation>
                         <animation effect="zoom" start="100" end="90" center="147,345" time="240" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + [container.content(movies) | Container.Content(musicvideos)]">Conditional</animation>
