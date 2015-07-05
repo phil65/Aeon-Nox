@@ -33,39 +33,6 @@
             <animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
         </control>
     </include>
-    <include name="ShiftSquareThumbsSmall">
-        <control type="image">
-            <posx>8</posx>
-            <posy>190</posy>
-            <width>150</width>
-            <height>150</height>
-
-            <aspectratio scalediffuse="false">scale</aspectratio>
-            <texture background="true" diffuse="thumbs/cdcover_mask.png" fallback="DefaultAudio.png">$VAR[ListAlbumVar]</texture>
-        </control>
-        <control type="image">
-            <posx>-12</posx>
-            <posy>170</posy>
-            <width>190</width>
-            <height>190</height>
-
-            <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-            <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_aa.png</texture>
-            <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-            <bordersize>20</bordersize>
-        </control>
-        <control type="image">
-            <posx>8</posx>
-            <posy>335</posy>
-            <width>150</width>
-            <height>150</height>
-
-            <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
-            <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png" fallback="DefaultAudio.png">$VAR[ListAlbumVar]</texture>
-            <animation effect="fade" start="100" end="30" time="160">Focus</animation>
-            <animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
-        </control>
-    </include>
     <include name="ShiftPosterThumbs">
         <control type="image">
             <posx>8</posx>
@@ -111,51 +78,6 @@
             <include>UnwatchedIcon</include>
         </control>
     </include>
-    <include name="ShiftPosterThumbsSmall">
-        <control type="image">
-            <posx>8</posx>
-            <posy>150</posy>
-            <width>150</width>
-            <height>225</height>
-
-            <aspectratio scalediffuse="false">stretch</aspectratio>
-            <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-        </control>
-        <control type="image">
-            <posx>-11.5</posx>
-            <posy>130.5</posy>
-            <width>189</width>
-            <height>264</height>
-
-            <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
-            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-            <bordersize>19.5</bordersize>
-        </control>
-        <control type="image">
-            <posx>8</posx>
-            <posy>381</posy>
-            <width>150</width>
-            <height>225</height>
-
-            <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
-            <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-            <animation effect="fade" start="100" end="30" time="160">Focus</animation>
-            <animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
-        </control>
-        <control type="image">
-            <posx>103.5</posx>
-            <posy>150</posy>
-            <width>55</width>
-            <height>55</height>
-
-            <texture>$VAR[OverlayVisibility0]</texture>
-        </control>
-        <control type="group">
-            <posx>5</posx>
-            <posy>150</posy>
-            <include>UnwatchedIcon</include>
-        </control>
-    </include>
     <include name="ShiftProgramThumbs">
         <control type="group">
             <visible>[Window.IsActive(programs) + !Container.Content(addons)]</visible>
@@ -186,21 +108,6 @@
             <include>ShiftSquareThumbs</include>
         </control>
     </include>
-    <include name="ShiftThumbsSmall">
-        <control type="group">
-            <visible>[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(episodes) + SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)] | Container.Content(musicvideos) | [Window.IsActive(videos) + Container.content(genres)] | [Window.IsActive(videos) + Container.Content(files)]]</visible>
-            <animation effect="zoom" center="auto" start="100" end="130" time="160" tween="quadratic">Focus</animation>
-            <animation effect="zoom" center="auto" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
-            <include>ShiftPosterThumbsSmall</include>
-        </control>
-        <control type="group">
-            <posy>50</posy>
-            <visible>![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(episodes) + SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)] | Container.Content(musicvideos) | [Window.IsActive(videos) + Container.content(genres)] | [Window.IsActive(videos) + Container.Content(files)]]</visible>
-            <animation effect="zoom" center="50,300" start="100" end="130" time="160" tween="quadratic">Focus</animation>
-            <animation effect="zoom" center="50,300" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
-            <include>ShiftSquareThumbsSmall</include>
-        </control>
-    </include>
     <include name="ShiftView">
         <control type="group">
             <animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
@@ -210,7 +117,6 @@
                 <posy>300</posy>
                 <width>2100</width>
                 <height>750</height>
-                <animation effect="slide" end="120,270" time="0" condition="Skin.HasSetting(smallshiftview) + !Window.IsActive(programs)">Conditional</animation>
                 <onleft>57</onleft>
                 <onright>57</onright>
                 <onup condition="!Window.IsActive(musiclibrary) | !Control.IsVisible(7000)">9000</onup>
@@ -226,11 +132,11 @@
                 <visible>![!IsEmpty(Skin.String(DisableShiftVL)) + Window.IsActive(videos)]</visible>
                 <visible>Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist) | Window.isActive(programs) | Window.isActive(addonbrowser) | [Window.IsActive(videos) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://recentlyaddedepisodes/)]]</visible>
                 <animation effect="fade" start="100" end="0" time="320" condition="Control.HasFocus(110)">Conditional</animation>
-                <itemlayout width="315" height="750" condition="!Skin.HasSetting(smallshiftview) | Window.IsActive(programs)">
+                <itemlayout width="315" height="750">
                     <include condition="!Window.IsActive(programs)">ShiftThumbs</include>
                     <include condition="Window.IsActive(programs)">ShiftProgramThumbs</include>
                 </itemlayout>
-                <focusedlayout width="315" height="750" condition="!Skin.HasSetting(smallshiftview) | Window.IsActive(programs)">
+                <focusedlayout width="315" height="750">
                     <control type="image">
                         <posx>-35</posx>
                         <posy>140</posy>
@@ -249,19 +155,12 @@
                         <include condition="Window.IsActive(programs)">ShiftProgramThumbs</include>
                     </control>
                 </focusedlayout>
-                <itemlayout width="157" height="500" condition="Skin.HasSetting(smallshiftview) + !Window.IsActive(programs)">
-                    <include>ShiftThumbsSmall</include>
-                </itemlayout>
-                <focusedlayout width="157" height="500" condition="Skin.HasSetting(smallshiftview) + !Window.IsActive(programs)">
-                    <include>ShiftThumbsSmall</include>
-                </focusedlayout>
             </control>
             <control type="group">
                 <include>Animation_OpenCloseZoom</include>
                 <animation effect="fade" start="100" end="0" time="0" condition="Control.IsVisible(506)">Conditional</animation>
                 <visible>[Control.IsVisible(8822) + !Container.OnScrollNext + !Container.OnScrollPrevious] | !Control.IsVisible(8822)</visible>
                 <visible>![[[Skin.HasSetting(movielogosfloor) + Container.Content(movies)] | [Skin.HasSetting(artistslogosfloor) + Container.Content(artists)] | [[Skin.HasSetting(tvshowlogosfloor) | Skin.HasSetting(tvshowbannersfloor)] + Container.Content(tvshows)]] + !Stringcompare(Control.GetLabel(8822),empty.png)]</visible>
-                <animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview)">Conditional</animation>
                 <animation effect="fade" end="100" time="80" delay="80" reversible="false">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
                 <control type="image">

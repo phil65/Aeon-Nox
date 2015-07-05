@@ -105,7 +105,7 @@
             <height>750</height>
             <visible>Window.IsActive(1112) | Control.IsVisible(197) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>Control.IsVisible(9900)</visible>
-            <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(501) | [Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]</visible>
+            <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(501)</visible>
             <animation type="Visible">
                 <effect type="fade" delay="300" end="100" time="360" />
                 <effect type="slide" start="0,-1200" end="0,0" time="600" tween="cubic"/>
@@ -117,7 +117,6 @@
             <animation effect="slide" end="0,45" time="320" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
             <animation effect="fade" time="200">WindowOpen</animation>
             <animation effect="slide" end="0,-1000" time="240" easing="in" tween="cubic">WindowClose</animation>
-            <animation effect="slide" end="0,60" time="400" easing="in" tween="cubic" condition="[Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]">Conditional</animation>
             <control type="image">
                 <posx>112</posx>
                 <posy>5</posy>
@@ -878,7 +877,6 @@
             <include>FloorFlags</include>
             <include>Posters_Furniture</include>
             <control type="group">
-                <animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview) + Control.IsVisible(57)">Conditional</animation>
                 <animation effect="slide" end="-642.5,0" time="320" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
                 <animation effect="fade" delay="240" time="240" reversible="false">Hidden</animation>
                 <animation effect="fade" delay="160" end="100" time="240" condition="!Stringcompare(Control.GetLabel(8822),empty.png)">Conditional</animation>
