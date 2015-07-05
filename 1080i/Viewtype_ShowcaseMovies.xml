@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <constant name="scroll_left">-135</constant>
+    <constant name="scroll_right">135</constant>
+
     <constant name="listitem7_posx">1635</constant>
     <constant name="listitem6_posx">1500</constant>
     <constant name="listitem5_posx">1365</constant>
@@ -35,6 +38,7 @@
     <constant name="neg_rotate">-55</constant>
 
     <constant name="slide_time">200</constant>
+    <constant name="fadeout_time">200</constant>
 
     <include name="Showcase">
         <control type="group">
@@ -55,10 +59,10 @@
                     <posx>55</posx>
                     <posy>570</posy>
                     <visible>Container.OnNext + !Control.IsVisible(961)</visible>
-                    <animation effect="slide" end="-135,0" time="slide_time" reversible="false">Hidden</animation>
+                    <animation effect="slide" end="scroll_left,0" time="slide_time" reversible="false">Hidden</animation>
                     <control type="group">
                         <visible>Container.OnNext</visible>
-                        <animation effect="fade" start="100" end="0" time="slide_time" reversible="false">Hidden</animation>
+                        <animation effect="fade" start="100" end="0" time="fadeout_time" reversible="false">Hidden</animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-6_posx" />
                             <param name="rotate_degree" value="neg_rotate" />
@@ -116,7 +120,7 @@
                     </include>
                     <control type="group">
                         <visible>!Container.OnNext</visible>
-                        <animation effect="fade" end="100" time="slide_time" reversible="false">Visible</animation>
+                        <animation effect="fade" end="100" time="fadeout_time" reversible="false">Visible</animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem7_posx" />
                             <param name="rotate_center" value="listitem7_rot_center" />
@@ -207,7 +211,7 @@
                     <posx>55</posx>
                     <posy>570</posy>
                     <visible>Container.OnPrevious + !Control.IsVisible(961)</visible>
-                    <animation effect="slide" end="135,0" time="slide_time" reversible="false">Hidden</animation>
+                    <animation effect="slide" end="scroll_right,0" time="slide_time" reversible="false">Hidden</animation>
                     <control type="group">
                         <visible>Container.OnPrevious</visible>
                         <animation effect="fade" start="100" end="0" time="slide_time" reversible="false">Hidden</animation>
@@ -268,7 +272,7 @@
                     </include>
                     <control type="group">
                         <visible>!Container.OnPrevious</visible>
-                        <animation effect="fade" end="100" time="slide_time" reversible="false">Visible</animation>
+                        <animation effect="fade" end="100" time="fadeout_time" reversible="false">Visible</animation>
                         <include name="ShowCaseItem">
                             <param name="group_posx" value="listitem-7_posx" />
                             <param name="rotate_center" value="listitem-7_rot_center" />
