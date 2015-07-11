@@ -191,32 +191,6 @@
         <alttexturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus_glow.png</alttexturefocus>
         <alttexturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_nofocus_glow.png</alttexturenofocus>
     </include>
-    <include name="ShutdownNoGlowAlt">
-        <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus2.png</texturefocus>
-        <texturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/shutdown_nofocus2.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus2.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="$VAR[DialogColorVar]">dialogs/shutdown_nofocus2.png</alttexturenofocus>
-    </include>
-    <include name="ShutdownGlowAlt">
-        <texturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus_glow2.png</texturefocus>
-        <texturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_nofocus_glow2.png</texturenofocus>
-        <alttexturefocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_focus_glow2.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="$VAR[SpotColorVar2]">dialogs/shutdown_nofocus_glow2.png</alttexturenofocus>
-    </include>
-    <include name="Objects_ContextMenuButton">
-        <width>462</width>
-        <height>59</height>
-        <textoffsetx>30</textoffsetx>
-        <textoffsety>8</textoffsety>
-        <align>center</align>
-        <aligny>top</aligny>
-        <font>Font_Reg33_Caps</font>
-        <textcolor>context</textcolor>
-        <disabledcolor>$VAR[SpotColorVar2]</disabledcolor>
-        <focusedcolor>white2</focusedcolor>
-        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlowAlt</include>
-        <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlowAlt</include>
-    </include>
     <include name="ContextMenuButton">
         <width>462</width>
         <height>58</height>
@@ -1131,32 +1105,6 @@
                 <enable>Player.CanRecord</enable>
                 <visible>VideoPlayer.Content(livetv)</visible>
                 <animation effect="fade" start="100" end="50" time="80" condition="!Player.CanRecord">Conditional</animation>
-            </control>
-        </control>
-    </include>
-    <include name="FeaturedPanel">
-        <control type="group">
-            <animation effect="zoom" end="100,90" center="960,400" time="0" condition="!Window.IsActive(script-HomeWindow Script-featured.xml)">Conditional</animation>
-            <control type="image">
-                <width>1332</width>
-                <height>612</height>
-                <texture colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="50">featured/panel_featured_shadow.png</texture>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <include>PanelGlowFade</include>
-                <animation effect="fade" time="350">VisibleChange</animation>
-            </control>
-            <control type="image">
-                <width>1332</width>
-                <height>612</height>
-                <texture colordiffuse="$VAR[DialogColorVar]">featured/panel_featured.png</texture>
-            </control>
-            <control type="image">
-                <posx>21</posx>
-                <posy>593</posy>
-                <width>1290</width>
-                <height>119</height>
-                <texture>featured/panel_featured_reflect.png</texture>
-                <visible>Window.IsActive(script-HomeWindow Script-featured.xml)</visible>
             </control>
         </control>
     </include>

@@ -216,13 +216,6 @@
                             <visible>Library.HasContent(movies) + System.HasAddon(service.smartish.widgets)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[31872]</label>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmoviesdefault)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31872])</onclick>
-                            <visible>Library.HasContent(movies)</visible>
-                            <onclick>Dialog.Close(1133)</onclick>
-                        </item>
-                        <item>
                             <label>$LOCALIZE[31335]</label>
                             <onclick>SetProperty(AllowedStyles,_4_5_9_10_11_12_,home)</onclick>
                             <onclick>SetProperty(CustomYesNoDialog,watchlistmovies,skinsettings)</onclick>
@@ -443,13 +436,6 @@
                             <visible>Library.HasContent(tvshows) + System.HasAddon(service.smartish.widgets)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[31873]</label>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredtvdefault)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31873])</onclick>
-                            <visible>Library.HasContent(tvshows)</visible>
-                            <onclick>Dialog.Close(1133)</onclick>
-                        </item>
-                        <item>
                             <label>$LOCALIZE[31884]</label>
                             <onclick>SetProperty(AllowedStyles,_2_4_7_9_10_11_12_,home)</onclick>
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31884])</onclick>
@@ -592,14 +578,6 @@
                             <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Content,plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(music)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31874]</label>
-                            <visible>Library.HasContent(music)</visible>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)],featuredmusicdefault)</onclick>
-                            <onclick>Skin.SetString($INFO[Window(skinsettings).Property(WidgetTargetPrefix)].$INFO[Window(skinsettings).Property(WidgetSelection)]Title,$LOCALIZE[31068])</onclick>
-                            <visible>Library.HasContent(music)</visible>
-                            <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31326]</label>

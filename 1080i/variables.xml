@@ -259,7 +259,7 @@
     <variable name="MusicVideosFanartVar">
         <value condition="Skin.HasSetting(NoVideoLibraryFanartMusicVideos) + !IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MusicVideosBackground)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanartMusicVideos)">special://skin/backgrounds/musicvideos/</value>
-        <value condition="!IsEmpty(ListItem.Art(extrafanart1)) + Skin.HasSetting(extrafanartmusicvideos)">$INFO[Control.GetLabel(4325)]</value>
+        <value condition="!IsEmpty(ListItem.Art(extrafanart1)) + Skin.HasSetting(extrafanartmusicvideos)">$INFO[Window(home).Property(Widget2Type)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="!IsEmpty(Skin.String(MusicVideosBackground))">$INFO[Skin.String(MusicVideosBackground)]</value>
         <value>special://skin/backgrounds/musicvideos/</value>
@@ -268,7 +268,7 @@
         <value condition="!IsEmpty(Window(Home).Property(Detail.Movie.1.Art(fanart))) + !Skin.HasSetting(NoVideoLibraryFanart) + ListItem.IsFolder + !IsEmpty(ListItem.DBID)">$INFO[Control.GetLabel(4324)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart) + !IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart)">special://skin/backgrounds/movies/</value>
-        <value condition="!IsEmpty(ListItem.Art(extrafanart1)) + Skin.HasSetting(extrafanartmovies)">$INFO[Control.GetLabel(4325)]</value>
+        <value condition="!IsEmpty(ListItem.Art(extrafanart1)) + Skin.HasSetting(extrafanartmovies)">$INFO[Window(home).Property(Widget2Type)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="!IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
         <value>special://skin/backgrounds/movies/</value>
@@ -276,7 +276,7 @@
     <variable name="TVShowFanartVar">
         <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows) + IsEmpty(Skin.String(TVShowsBackground))">special://skin/backgrounds/tvshows/</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)">$INFO[Skin.String(TVShowsBackground)]</value>
-        <value condition="!IsEmpty(ListItem.Art(extrafanart1)) + Skin.HasSetting(extrafanarttvshows)">$INFO[Control.GetLabel(4325)]</value>
+        <value condition="!IsEmpty(ListItem.Art(extrafanart1)) + Skin.HasSetting(extrafanarttvshows)">$INFO[Window(home).Property(Widget2Type)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="!IsEmpty(Skin.String(TVShowsBackground))">$INFO[Skin.String(TVShowsBackground)]</value>
         <value>special://skin/backgrounds/tvshows/</value>
@@ -608,7 +608,6 @@
     </variable>
     <variable name="FurniturePositionVar">
         <value condition="Stringcompare(Window.Property(actualItem),LibraryStats) + Skin.HasSetting(totalshomehigh)">$LOCALIZE[393]</value>
-        <value condition="Stringcompare(Window.Property(actualItem),RSS) + Skin.HasSetting(rsshomelow)">$LOCALIZE[391]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
     <!--InfoWall variables-->
@@ -664,10 +663,6 @@
         <value condition="!IsEmpty(ListItem.Year)">$INFO[ListItem.Year]$INFO[ListItem.Rating, • ]$INFO[ListItem.Duration, • , Minutes]</value>
         <value condition="!IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode,,:] $INFO[ListItem.Label]</value>
     </variable>
-    <variable name="WidgetTypeLabelVar">
-        <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
-        <value>$INFO[Window(home).Property(Widget1Title)]</value>
-    </variable>
     <variable name="WidgetConfigLabelVar">
         <value condition="Stringcompare(Window(skinsettings).Property(WidgetSelection),Widget)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
         <value>$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
@@ -676,22 +671,6 @@
         <value condition="Stringcompare(Window(home).Property(Transparency),default)">$LOCALIZE[31685]</value>
         <value condition="Stringcompare(Window(home).Property(Transparency),glass)">$LOCALIZE[31684]</value>
         <value>$LOCALIZE[16018]</value>
-    </variable>
-    <variable name="ClassicWidgetImageVar">
-        <value condition="[Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),movie)] + !IsEmpty(Container(5010).ListItem.Art(landscape))">$INFO[Container(5010).ListItem.Art(landscape)]</value>
-        <value condition="[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
-        <value condition="!IsEmpty(Container(5010).ListItem.Icon)">$INFO[Container(5010).ListItem.Icon]</value>
-        <value>$INFO[Container(5010).ListItem.Thumb]</value>
-    </variable>
-    <variable name="ClassicWidget2ImageVar">
-        <value condition="[Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),movie)] + !IsEmpty(Container(6010).ListItem.Art(landscape))">$INFO[Container(6010).ListItem.Art(landscape)]</value>
-        <value condition="[Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo)] + !IsEmpty(Container(6010).ListItem.Art(fanart))">$INFO[Container(6010).ListItem.Art(fanart)]</value>
-        <value condition="!IsEmpty(Container(6010).ListItem.Icon)">$INFO[Container(6010).ListItem.Icon]</value>
-        <value>$INFO[Container(6010).ListItem.Thumb]</value>
-    </variable>
-    <variable name="Widget2TypeLabelVar">
-        <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
-        <value>$INFO[Window(home).Property(Widget2Title)]</value>
     </variable>
     <variable name="MusicOSDRepeatClassicButtonVar">
         <value condition="Playlist.IsRepeatOne">osd/buttons/OSDRepeatOneNF.png</value>
@@ -713,11 +692,10 @@
     <variable name="HomeWidgetFanartVar">
         <value condition="[ControlGroup(5030).HasFocus] + !IsEmpty(Window(home).Property(Fanart))">$INFO[Window(home).Property(Fanart)]</value>
         <value condition="Control.HasFocus(5010) + !IsEmpty(Container(5010).ListItem.Art(fanart))">$INFO[Container(5010).ListItem.Art(fanart)]</value>
-        <value condition="Control.HasFocus(5010) + Substring(Container(9000).ListItem.Property(Widget),featured) + !IsEmpty(Container(5001).ListItem.Art(fanart))">$INFO[Container(5001).ListItem.Art(fanart)]</value>
+
         <value condition="Control.HasFocus(5012) + !IsEmpty(Container(5003).ListItem.Art(fanart))">$INFO[Container(5003).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(5011) + !IsEmpty(Container(5002).ListItem.Art(fanart))">$INFO[Container(5002).ListItem.Art(fanart)]</value>
         <value condition="[Control.HasFocus(6010) | ControlGroup(6014).HasFocus] + !IsEmpty(Container(6010).ListItem.Art(fanart))">$INFO[Container(6010).ListItem.Art(fanart)]</value>
-        <value condition="Control.HasFocus(6010) + Substring(Container(9000).ListItem.Property(Widget2),featured) + !IsEmpty(Container(6001).ListItem.Art(fanart))">$INFO[Container(6001).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(6012) + !IsEmpty(Container(6003).ListItem.Art(fanart))">$INFO[Container(6003).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(6011) + !IsEmpty(Container(6002).ListItem.Art(fanart))">$INFO[Container(6002).ListItem.Art(fanart)]</value>
         <value condition="Player.HasAudio + Skin.HasSetting(musicfanarthome) + Window.IsActive(script-HomeWindow Script-main.xml) + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
@@ -762,15 +740,7 @@
  -->        <value condition="!Substring(Control.GetLabel(4322),/) + !Substring(Control.GetLabel(4322),\)">$INFO[Control.GetLabel(4324)]</value>
         <value>$VAR[MultiFanartVar]</value>
     </variable>
-    <variable name="WidgetTypeVar">
-        <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget)]</value>
-        <value>$INFO[Window(home).Property(Widget1Type)]</value>
-    </variable>
-    <variable name="Widget2TypeVar">
-        <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2)]</value>
-        <value>$INFO[Window(home).Property(Widget2Type)]</value>
-    </variable>
-    <variable name="InfoLineVar">
+        <variable name="InfoLineVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.InfoLine)]</value>
         <value>$INFO[Container(9000).ListItem.Property(InfoLine)]</value>
     </variable>
@@ -1281,54 +1251,6 @@
         <value condition="Control.HasFocus(8006)">Top Rated Movies</value>
         <value condition="Control.HasFocus(8007)">In Cinemas Movies</value>
     </variable>
-    <variable name="FeaturedWidgetLeftContentVar">
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5010.Content))">$INFO[Skin.String(FeaturedMovies5010.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://script.extendedinfo?info=randomdbmovies&amp;&amp;reload=10</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5010.Content))">$INFO[Skin.String(FeaturedTV5010.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/Playlists/recommendedepisodes8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5010.Content))">$INFO[Skin.String(FeaturedMusic5010.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
-    </variable>
-    <variable name="FeaturedWidgetMiddleContentVar">
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5011.Content))">$INFO[Skin.String(FeaturedMovies5011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://script.extendedinfo?info=inprogressdbmovies</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5011.Content))">$INFO[Skin.String(FeaturedTV5011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5011.Content))">$INFO[Skin.String(FeaturedMusic5011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
-    </variable>
-    <variable name="FeaturedWidgetRightContentVar">
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies5012.Content))">$INFO[Skin.String(FeaturedMovies5012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmovies)">plugin://script.extendedinfo?info=latestdbmovies</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredtv) + !IsEmpty(Skin.String(FeaturedTV5012.Content))">$INFO[Skin.String(FeaturedTV5012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredtv)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic5012.Content))">$INFO[Skin.String(FeaturedMusic5012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4321),featuredmusic)">special://skin/extras/Playlists/recentalbums8.xsp</value>
-    </variable>
-    <variable name="FeaturedWidget2LeftContentVar">
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies6010.Content))">$INFO[Skin.String(FeaturedMovies6010.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredtv) + !IsEmpty(Skin.String(FeaturedTV6010.Content))">$INFO[Skin.String(FeaturedTV6010.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredtv)">special://skin/extras/Playlists/recommendedepisodes8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic6010.Content))">$INFO[Skin.String(FeaturedMusic6010.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">plugin://service.library.data.provider?type=randomalbums&amp;reload=10&amp;limit=10</value>
-    </variable>
-    <variable name="FeaturedWidget2MiddleContentVar">
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies6011.Content))">$INFO[Skin.String(FeaturedMovies6011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">special://skin/extras/Playlists/recommendedmovies8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredtv) + !IsEmpty(Skin.String(FeaturedTV6011.Content))">$INFO[Skin.String(FeaturedTV6011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredtv)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=10&amp;limit=10</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic6011.Content))">$INFO[Skin.String(FeaturedMusic6011.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
-    </variable>
-    <variable name="FeaturedWidget2RightContentVar">
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Skin.String(FeaturedMovies6012.Content))">$INFO[Skin.String(FeaturedMovies6012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmovies)">special://skin/extras/Playlists/recentmovies8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredtv) + !IsEmpty(Skin.String(FeaturedTV6012.Content))">$INFO[Skin.String(FeaturedTV6012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredtv)">special://skin/extras/Playlists/recentepisodes8.xsp</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic) + !IsEmpty(Skin.String(FeaturedMusic6012.Content))">$INFO[Skin.String(FeaturedMusic6012.Content)]</value>
-        <value condition="Substring(Control.GetLabel(4325),featuredmusic)">special://skin/extras/Playlists/recentalbums8.xsp</value>
-    </variable>
     <variable name="WidgetListTargetVar">
         <value condition="Substring(Container(9000).ListItem.Property(Widget),addons1)">video</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),addons2)">music</value>
@@ -1583,18 +1505,6 @@
         <value condition="[Skin.HasSetting(NoVideoLibraryFanartMusicVideos)  + Container.Content(musicvideos)] | [Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(NoVideoLibraryFanart)  + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]">$LOCALIZE[106]</value>
         <value>$LOCALIZE[107]</value>
     </variable>
-    <variable name="Widget1ContentVar">
-        <value condition="!IsEmpty(Window(home).Property(update))">-</value>
-        <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetContent)]</value>
-        <value condition="!IsEmpty(Window(home).Property(Widget1Content))">$INFO[Window(home).Property(Widget1Content)]</value>
-        <value>plugin://script.extendedinfo?</value>
-    </variable>
-    <variable name="Widget2ContentVar">
-        <value condition="!IsEmpty(Window(home).Property(update))">-</value>
-        <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Content)]</value>
-        <value condition="!IsEmpty(Window(home).Property(Widget2Content))">$INFO[Window(home).Property(Widget2Content)]</value>
-        <value>plugin://script.extendedinfo?</value>
-    </variable>
     <variable name="LiveCasesVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.BackgroundOverlay)]</value>
         <value condition="!IsEmpty(Container(9000).ListItem.Property(BackgroundOverlay))">$INFO[Container(9000).ListItem.Property(BackgroundOverlay)]</value>
@@ -1748,7 +1658,7 @@
         <value>$INFO[Listitem.TagLine]</value>
     </variable>
     <variable name="WidgetTextboxVar">
-        <value condition="Substring(Window(home).Property(WidgetType),pics)">$INFO[Window(home).Property(Fanart)]</value>
+        <value condition="Substring(Window(home).Property(Widget1Type),pics)">$INFO[Window(home).Property(Fanart)]</value>
         <value condition="!IsEmpty(Window(home).Property(Plot))">$INFO[Window(home).Property(Plot)]</value>
         <value condition="!IsEmpty(Window(home).Property(Album_Description))">$INFO[Window(home).Property(Album_Description)]</value>
         <value condition="!IsEmpty(Window(home).Property(Artist_Description))">$INFO[Window(home).Property(Artist_Description)]</value>

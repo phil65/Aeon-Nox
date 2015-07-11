@@ -10,42 +10,6 @@
     <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
     <include>Animation_OpenCloseZoom_New</include>
     <controls>
-        <control id="9023" type="button">
-            <include>HiddenObject</include>
-            <onfocus>RunScript(script.home,container=8010,focuscontrol=5015)</onfocus>
-        </control>
-        <control id="5014" type="button">
-            <include>HiddenObject</include>
-            <texturenofocus>-</texturenofocus>
-            <onfocus>SetProperty(WidgetType,onlinealbum,home)</onfocus>
-            <onfocus>Runscript(script.extendedinfo,info=extendedalbuminfo,id=$INFO[Container(6010).ListItem.Property(Id)],silent=False)</onfocus>
-            <onfocus>SetFocus(6010)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-            <animation delay="140" effect="fade" reversible="false" time="1">Hidden</animation>
-            <visible>Control.HasFocus(6010)</visible>
-        </control>
-        <control id="5014" type="button">
-            <include>HiddenObject</include>
-            <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-            <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
-            <onfocus>SetProperty(WidgetType,artists,home)</onfocus>
-            <onfocus>RunScript(script.home,container=5010,focuscontrol=5015)</onfocus>
-            <animation delay="140" effect="fade" reversible="false" time="1">Hidden</animation>
-            <visible>Control.HasFocus(5010)</visible>
-        </control>
-        <control id="5015" type="button">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(40)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-        </control>
-        <control id="9025" type="button">
-            <include>HiddenObject</include>
-            <texturenofocus>-</texturenofocus>
-            <onfocus>SetProperty(WidgetType,onlinealbum,home)</onfocus>
-            <onfocus>Runscript(script.extendedinfo,info=albuminfo,id=$INFO[Container(6010).ListItem.Property(Id)],silent=False)</onfocus>
-            <onfocus>SetFocus(6010)</onfocus>
-            <onfocus>ActivateWindow(1165)</onfocus>
-        </control>
         <control type="fadelabel" id="4324">
             <pauseatend>7500</pauseatend>
             <width>11479</width>
@@ -144,7 +108,6 @@
                     <effect center="960,540" delay="560" end="40" start="100" time="740" tween="back" type="zoom"/>
                     <effect delay="560" end="0" start="100" time="440" type="fade"/>
                 </animation>
-                <visible>!Window.IsActive(1165)</visible>
                 <scrolltime easing="inout" tween="cubic">500</scrolltime>
                 <orientation>vertical</orientation>
                 <itemgap>-200</itemgap>

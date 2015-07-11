@@ -4,7 +4,7 @@
     <onload>Dialog.Close(1133)</onload>
     <onload>SetProperty(Transparency,default,home)</onload>
     <onunload>ClearProperty(CustomYesNoDialog,skinsettings)</onunload>
-    <onunload>ClearProperty(WidgetType,skinsettings)</onunload>
+    <onunload>ClearProperty(Widget1Type,skinsettings)</onunload>
     <coordinates>
         <posx>0</posx>
         <posy>0</posy>
@@ -13,7 +13,7 @@
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="label" id="12112">
-            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(home).Property(Transparency)]$INFO[Window(home).Property(PreviewWidget)]</label>
+            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(Widget1Type)]$INFO[Window(home).Property(Transparency)]$INFO[Window(home).Property(PreviewWidget)]</label>
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
         <control type="group">
@@ -114,7 +114,7 @@
                         <label>Default</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>ClearProperty(WidgetType,skinsettings)</onfocus>
+                        <onfocus>ClearProperty(Widget1Type,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_0_)</visible>
                     </control>
@@ -126,7 +126,7 @@
                         <label>31804</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panelcoversquare,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panelcoversquare,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_1_)</visible>
                     </control>
@@ -138,7 +138,7 @@
                         <label>31804</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panelcoverepisode,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panelcoverepisode,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_2_)</visible>
                     </control>
@@ -150,7 +150,7 @@
                         <label>31804</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panel,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panel,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_3_)</visible>
                     </control>
@@ -162,7 +162,7 @@
                         <label>31060</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panelcoverposter,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panelcoverposter,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_4_)</visible>
                     </control>
@@ -174,7 +174,7 @@
                         <label>31065</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panel2poster,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panel2poster,skinsettings)</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_5_)</visible>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                     </control>
@@ -186,7 +186,7 @@
                         <label>31065</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panel2square,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panel2square,skinsettings)</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_6_)</visible>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                     </control>
@@ -198,7 +198,7 @@
                         <label>31065</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panel2episode,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panel2episode,skinsettings)</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_7_)</visible>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                     </control>
@@ -210,7 +210,7 @@
                         <label>31150</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,keeparpanel,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,keeparpanel,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_8_)</visible>
                     </control>
@@ -222,7 +222,7 @@
                         <label>31086</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panelclearartlayout,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panelclearartlayout,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_10_)</visible>
                     </control>
@@ -234,7 +234,7 @@
                         <label>31058</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panelbannerlayout,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panelbannerlayout,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_11_)</visible>
                     </control>
@@ -246,7 +246,7 @@
                         <label>31150</label>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
-                        <onfocus>SetProperty(WidgetType,panellandscape,skinsettings)</onfocus>
+                        <onfocus>SetProperty(Widget1Type,panellandscape,skinsettings)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <visible>Substring(Window(home).Property(AllowedStyles),_12_)</visible>
                     </control>

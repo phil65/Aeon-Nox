@@ -8,10 +8,10 @@
         <hitrect x="-238" y="475" w="2400" h="130" />
         <onleft>9000</onleft>
         <onright>9000</onright>
-        <onup condition="Control.IsVisible(4444)">4444</onup>
-        <onup condition="!Control.IsVisible(4444) + Control.IsVisible(4445)">4445</onup>
-        <onup condition="!Control.IsVisible(4444) + !Control.IsVisible(4445)">SetFocus(9000)</onup>
-        <ondown>9010</ondown>
+        <onup condition="Control.IsVisible(5010)">5010</onup>
+<!--         <onup condition="!Control.IsVisible(4444) + Control.IsVisible(4445)">4445</onup>
+        <onup condition="!Control.IsVisible(4444) + !Control.IsVisible(4445)">SetFocus(9000)</onup> -->
+        <ondown>5010</ondown>
         <scrolltime tween="quadratic">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
@@ -131,10 +131,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(FavouritesHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(FavouritesHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(FavouritesHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(FavouritesHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(FavouritesHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(FavouritesHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(FavouritesHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(FavouritesHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(FavouritesHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(FavouritesHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(FavouritesHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(FavouritesHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(FavouritesHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(FavouritesHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(FavouritesHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(FavouritesHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(FavouritesHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(FavouritesHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(FavouritesHomeItem.Widget6Content)]</property>
             <property name="ID">FavouritesHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],FavouritesHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -152,10 +164,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(SearchHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(SearchHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(SearchHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(SearchHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(SearchHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(SearchHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(SearchHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(SearchHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(SearchHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(SearchHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(SearchHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(SearchHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(SearchHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(SearchHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(SearchHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(SearchHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(SearchHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(SearchHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(SearchHomeItem.Widget6Content)]</property>
             <property name="ID">SearchHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],SearchHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -174,10 +198,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(ProgramsHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(ProgramsHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(ProgramsHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(ProgramsHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(ProgramsHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(ProgramsHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(ProgramsHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(ProgramsHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(ProgramsHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(ProgramsHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(ProgramsHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(ProgramsHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(ProgramsHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(ProgramsHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(ProgramsHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(ProgramsHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(ProgramsHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(ProgramsHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(ProgramsHomeItem.Widget6Content)]</property>
             <property name="ID">ProgramsHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],ProgramsHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -195,10 +231,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(VideosHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(VideosHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(VideosHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(VideosHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(VideosHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(VideosHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(VideosHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(VideosHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(VideosHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(VideosHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(VideosHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(VideosHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(VideosHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(VideosHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(VideosHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(VideosHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(VideosHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(VideosHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(VideosHomeItem.Widget6Content)]</property>
             <property name="ID">VideosHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],VideosHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -216,10 +264,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(MovieHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(MovieHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(MovieHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(MovieHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(MovieHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(MovieHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(MovieHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(MovieHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(MovieHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(MovieHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(MovieHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(MovieHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(MovieHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(MovieHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(MovieHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(MovieHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(MovieHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(MovieHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(MovieHomeItem.Widget6Content)]</property>
             <property name="ID">MovieHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MovieHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -237,10 +297,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(TrailerHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(TrailerHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(TrailerHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(TrailerHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(TrailerHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(TrailerHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(TrailerHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(TrailerHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(TrailerHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(TrailerHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(TrailerHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(TrailerHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(TrailerHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(TrailerHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(TrailerHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(TrailerHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(TrailerHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(TrailerHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(TrailerHomeItem.Widget6Content)]</property>
             <property name="ID">TrailerHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TrailerHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -258,10 +330,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(TVShowHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(TVShowHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(TVShowHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(TVShowHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(TVShowHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(TVShowHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(TVShowHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(TVShowHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(TVShowHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(TVShowHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(TVShowHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(TVShowHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(TVShowHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(TVShowHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(TVShowHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(TVShowHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(TVShowHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(TVShowHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(TVShowHomeItem.Widget6Content)]</property>
             <property name="ID">TVShowHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TVShowHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -279,10 +363,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(TVGuideHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(TVGuideHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(TVGuideHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(TVGuideHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(TVGuideHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(TVGuideHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(TVGuideHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(TVGuideHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(TVGuideHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(TVGuideHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(TVGuideHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(TVGuideHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(TVGuideHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(TVGuideHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(TVGuideHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(TVGuideHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(TVGuideHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(TVGuideHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(TVGuideHomeItem.Widget6Content)]</property>
             <property name="ID">TVGuideHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],TVGuideHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -300,10 +396,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(LiveTVHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(LiveTVHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(LiveTVHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(LiveTVHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(LiveTVHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(LiveTVHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(LiveTVHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(LiveTVHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(LiveTVHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(LiveTVHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(LiveTVHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(LiveTVHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(LiveTVHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(LiveTVHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(LiveTVHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(LiveTVHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(LiveTVHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(LiveTVHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(LiveTVHomeItem.Widget6Content)]</property>
             <property name="ID">LiveTVHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],LiveTVHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -321,10 +429,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(MusicHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(MusicHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(MusicHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(MusicHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(MusicHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(MusicHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(MusicHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(MusicHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(MusicHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(MusicHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(MusicHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(MusicHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(MusicHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(MusicHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(MusicHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(MusicHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(MusicHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(MusicHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(MusicHomeItem.Widget6Content)]</property>
             <property name="ID">MusicHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MusicHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -342,10 +462,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(MusicVideosHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(MusicVideosHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(MusicVideosHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(MusicVideosHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(MusicVideosHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(MusicVideosHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(MusicVideosHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(MusicVideosHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(MusicVideosHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(MusicVideosHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(MusicVideosHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(MusicVideosHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(MusicVideosHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(MusicVideosHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(MusicVideosHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(MusicVideosHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(MusicVideosHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(MusicVideosHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(MusicVideosHomeItem.Widget6Content)]</property>
             <property name="ID">MusicVideosHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MusicVideosHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -363,10 +495,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(PicturesHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(PicturesHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(PicturesHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(PicturesHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(PicturesHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(PicturesHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(PicturesHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(PicturesHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(PicturesHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(PicturesHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(PicturesHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(PicturesHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(PicturesHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(PicturesHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(PicturesHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(PicturesHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(PicturesHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(PicturesHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(PicturesHomeItem.Widget6Content)]</property>
             <property name="ID">PicturesHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],PicturesHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -384,10 +528,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(WeatherHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(WeatherHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(WeatherHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(WeatherHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(WeatherHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(WeatherHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(WeatherHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(WeatherHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(WeatherHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(WeatherHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(WeatherHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(WeatherHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(WeatherHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(WeatherHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(WeatherHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(WeatherHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(WeatherHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(WeatherHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(WeatherHomeItem.Widget6Content)]</property>
             <property name="ID">WeatherHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],WeatherHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -405,10 +561,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(MapsBrowserHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(MapsBrowserHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(MapsBrowserHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(MapsBrowserHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(MapsBrowserHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(MapsBrowserHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(MapsBrowserHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(MapsBrowserHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(MapsBrowserHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(MapsBrowserHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(MapsBrowserHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(MapsBrowserHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(MapsBrowserHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(MapsBrowserHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(MapsBrowserHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(MapsBrowserHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(MapsBrowserHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(MapsBrowserHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(MapsBrowserHomeItem.Widget6Content)]</property>
             <property name="ID">MapsBrowserHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],MapsBrowserHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -426,10 +594,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(SettingsHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(SettingsHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(SettingsHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(SettingsHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(SettingsHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(SettingsHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(SettingsHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(SettingsHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(SettingsHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(SettingsHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(SettingsHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(SettingsHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(SettingsHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(SettingsHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(SettingsHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(SettingsHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(SettingsHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(SettingsHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(SettingsHomeItem.Widget6Content)]</property>
             <property name="ID">SettingsHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],SettingsHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -447,10 +627,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(ShutdownHomeItem.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(ShutdownHomeItem.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(ShutdownHomeItem.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(ShutdownHomeItem.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(ShutdownHomeItem.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(ShutdownHomeItem.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(ShutdownHomeItem.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(ShutdownHomeItem.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(ShutdownHomeItem.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(ShutdownHomeItem.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(ShutdownHomeItem.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(ShutdownHomeItem.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(ShutdownHomeItem.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(ShutdownHomeItem.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(ShutdownHomeItem.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(ShutdownHomeItem.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(ShutdownHomeItem.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(ShutdownHomeItem.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(ShutdownHomeItem.Widget6Content)]</property>
             <property name="ID">ShutdownHomeItem</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],ShutdownHomeItem,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -468,10 +660,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(CustomHomeItem1.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(CustomHomeItem1.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(CustomHomeItem1.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(CustomHomeItem1.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(CustomHomeItem1.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(CustomHomeItem1.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(CustomHomeItem1.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(CustomHomeItem1.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(CustomHomeItem1.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(CustomHomeItem1.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(CustomHomeItem1.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(CustomHomeItem1.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(CustomHomeItem1.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(CustomHomeItem1.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(CustomHomeItem1.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(CustomHomeItem1.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(CustomHomeItem1.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(CustomHomeItem1.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(CustomHomeItem1.Widget6Content)]</property>
             <property name="ID">CustomHomeItem1</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],CustomHomeItem1,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -489,10 +693,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(CustomHomeItem2.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(CustomHomeItem2.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(CustomHomeItem2.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(CustomHomeItem2.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(CustomHomeItem2.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(CustomHomeItem2.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(CustomHomeItem2.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(CustomHomeItem2.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(CustomHomeItem2.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(CustomHomeItem2.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(CustomHomeItem2.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(CustomHomeItem2.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(CustomHomeItem2.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(CustomHomeItem2.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(CustomHomeItem2.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(CustomHomeItem2.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(CustomHomeItem2.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(CustomHomeItem2.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(CustomHomeItem2.Widget6Content)]</property>
             <property name="ID">CustomHomeItem2</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],CustomHomeItem2,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -510,10 +726,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(CustomHomeItem3.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(CustomHomeItem3.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(CustomHomeItem3.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(CustomHomeItem3.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(CustomHomeItem3.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(CustomHomeItem3.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(CustomHomeItem3.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(CustomHomeItem3.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(CustomHomeItem3.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(CustomHomeItem3.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(CustomHomeItem3.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(CustomHomeItem3.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(CustomHomeItem3.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(CustomHomeItem3.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(CustomHomeItem3.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(CustomHomeItem3.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(CustomHomeItem3.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(CustomHomeItem3.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(CustomHomeItem3.Widget6Content)]</property>
             <property name="ID">CustomHomeItem3</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],CustomHomeItem3,home)</onclick>
             <onclick>SetFocus(9006)</onclick>
@@ -531,10 +759,22 @@
             <property name="BackgroundOverlay">$INFO[Skin.String(CustomHomeItem4.BackgroundOverlay)]</property>
             <property name="Widget2Title">$INFO[Skin.String(CustomHomeItem4.Widget2Title)]</property>
             <property name="WidgetTitle">$INFO[Skin.String(CustomHomeItem4.WidgetTitle)]</property>
+            <property name="Widget3Title">$INFO[Skin.String(CustomHomeItem4.Widget3Title)]</property>
+            <property name="Widget4Title">$INFO[Skin.String(CustomHomeItem4.Widget4Title)]</property>
+            <property name="Widget5Title">$INFO[Skin.String(CustomHomeItem4.Widget5Title)]</property>
+            <property name="Widget6Title">$INFO[Skin.String(CustomHomeItem4.Widget6Title)]</property>
             <property name="Widget2">$INFO[Skin.String(CustomHomeItem4.Widget2)]</property>
             <property name="Widget">$INFO[Skin.String(CustomHomeItem4.Widget)]</property>
+            <property name="Widget3">$INFO[Skin.String(CustomHomeItem4.Widget3)]</property>
+            <property name="Widget4">$INFO[Skin.String(CustomHomeItem4.Widget4)]</property>
+            <property name="Widget5">$INFO[Skin.String(CustomHomeItem4.Widget5)]</property>
+            <property name="Widget6">$INFO[Skin.String(CustomHomeItem4.Widget6)]</property>
             <property name="Widget2Content">$INFO[Skin.String(CustomHomeItem4.Widget2Content)]</property>
             <property name="WidgetContent">$INFO[Skin.String(CustomHomeItem4.WidgetContent)]</property>
+            <property name="Widget3Content">$INFO[Skin.String(CustomHomeItem4.Widget3Content)]</property>
+            <property name="Widget4Content">$INFO[Skin.String(CustomHomeItem4.Widget4Content)]</property>
+            <property name="Widget5Content">$INFO[Skin.String(CustomHomeItem4.Widget5Content)]</property>
+            <property name="Widget6Content">$INFO[Skin.String(CustomHomeItem4.Widget6Content)]</property>
             <property name="ID">CustomHomeItem4</property>
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],CustomHomeItem4,home)</onclick>
             <onclick>SetFocus(9006)</onclick>

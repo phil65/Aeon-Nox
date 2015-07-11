@@ -8,12 +8,11 @@
     <onload condition="!Window.Previous(startup) + System.HasAddon(plugin.image.mypicsdb)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
     <onload condition="!Window.Previous(startup)">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
     <onload>RunScript(script.extendedinfo,info=favourites)</onload>
-    <onunload>ClearProperty(PanelWidgetInfo,Home)</onunload>
-    <onunload>ClearProperty(PanelWidget2Info,Home)</onunload>
     <controls>
-        <control type="label" id="4321">
-            <label>$VAR[WidgetTypeVar]</label>
+        <control type="button" id="9006">
             <include>HiddenObject</include>
+            <onfocus>SetFocus(9000)</onfocus>
+            <onfocus>$INFO[Container(9000).ListItem.Property(Path)]</onfocus>
         </control>
         <control type="label" id="4322">
             <label>$VAR[MultiFanartVar]</label>
@@ -28,10 +27,6 @@
             <include>HiddenObject</include>
         </control>
         <include>BackgroundFadeLabels</include>
-        <control type="label" id="4325">
-            <label>$VAR[Widget2TypeVar]</label>
-            <include>HiddenObject</include>
-        </control>
         <control type="label" id="4326">
             <label>$VAR[InfoLineVar]</label>
             <include>HiddenObject</include>
@@ -45,34 +40,25 @@
             <onfocus condition="Window.Previous(home) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
             <onfocus>SetProperty(Widget1Type,$INFO[Container(9000).ListItem.Property(Widget)],home)</onfocus>
             <onfocus>SetProperty(Widget2Type,$INFO[Container(9000).ListItem.Property(Widget2)],home)</onfocus>
+            <onfocus>SetProperty(Widget3Type,$INFO[Container(9000).ListItem.Property(Widget3)],home)</onfocus>
+            <onfocus>SetProperty(Widget4Type,$INFO[Container(9000).ListItem.Property(Widget4)],home)</onfocus>
+            <onfocus>SetProperty(Widget5Type,$INFO[Container(9000).ListItem.Property(Widget5)],home)</onfocus>
+            <onfocus>SetProperty(Widget6Type,$INFO[Container(9000).ListItem.Property(Widget6)],home)</onfocus>
             <onfocus>SetProperty(Widget1Title,$INFO[Container(9000).ListItem.Property(WidgetTitle)],home)</onfocus>
             <onfocus>SetProperty(Widget2Title,$INFO[Container(9000).ListItem.Property(Widget2Title)],home)</onfocus>
+            <onfocus>SetProperty(Widget3Title,$INFO[Container(9000).ListItem.Property(Widget3Title)],home)</onfocus>
+            <onfocus>SetProperty(Widget4Title,$INFO[Container(9000).ListItem.Property(Widget4Title)],home)</onfocus>
+            <onfocus>SetProperty(Widget5Title,$INFO[Container(9000).ListItem.Property(Widget5Title)],home)</onfocus>
+            <onfocus>SetProperty(Widget6Title,$INFO[Container(9000).ListItem.Property(Widget6Title)],home)</onfocus>
             <onfocus>SetProperty(Widget1Content,$INFO[Container(9000).ListItem.Property(WidgetContent)],home)</onfocus>
             <onfocus>SetProperty(Widget2Content,$INFO[Container(9000).ListItem.Property(Widget2Content)],home)</onfocus>
+            <onfocus>SetProperty(Widget3Content,$INFO[Container(9000).ListItem.Property(Widget3Content)],home)</onfocus>
+            <onfocus>SetProperty(Widget4Content,$INFO[Container(9000).ListItem.Property(Widget4Content)],home)</onfocus>
+            <onfocus>SetProperty(Widget5Content,$INFO[Container(9000).ListItem.Property(Widget5Content)],home)</onfocus>
+            <onfocus>SetProperty(Widget6Content,$INFO[Container(9000).ListItem.Property(Widget6Content)],home)</onfocus>
             <onfocus>SetFocus(9000)</onfocus>
         </control>
-        <control type="button" id="9006">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(9000)</onfocus>
-            <onfocus>$INFO[Container(9000).ListItem.Property(Path)]</onfocus>
-        </control>
-        <control type="button" id="5014">
-            <include>HiddenObject</include>
-            <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-            <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
-            <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4321)],home)</onfocus>
-            <onfocus condition="Substring(Control.GetLabel(4321),movie) + IsEmpty(Container(5010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(5010).ListItem.Property(ID)],imdb_id=$INFO[Container(5010).ListItem.Property(imdb_id)])</onfocus>
-            <onfocus>RunScript(script.home,container=5010,focuscontrol=5055)</onfocus>
-        </control>
-        <control type="button" id="6014">
-            <include>HiddenObject</include>
-            <onfocus>SetProperty(PanelWidget2Info,true,home)</onfocus>
-            <onfocus>SetProperty(WidgetPosition,Widget2,home)</onfocus>
-            <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4325)],home)</onfocus>
-            <onfocus condition="Substring(Control.GetLabel(4325),movie) + IsEmpty(Container(6010).ListItem.DBID)">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6010).ListItem.Property(ID)],imdb_id=$INFO[Container(6010).ListItem.Property(imdb_id)])</onfocus>
-            <onfocus>RunScript(script.home,container=6010,focuscontrol=5055)</onfocus>
-        </control>
-        <!--Fanart-->
+        <!-- Fanart -->
         <control type="group">
             <control type="group">
                 <include>Animation_WindowFade200</include>
@@ -193,19 +179,19 @@
                     <visible>Player.HasVideo</visible>
                     <include>Animation_CommonFade</include>
                     <!--
-                    <control type="image">
-                        <animation effect="zoom" end="40" center="-70,675" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                        <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
-                        <include>Animation_CommonFade</include>
-                        <visible>!IsEmpty(VideoPlayer.Cover)</visible>
-                        <posx>16</posx>
-                        <posy>710</posy>
-                        <width>480</width>
-                        <height>300</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture>$INFO[VideoPlayer.Cover]</texture>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                    </control>-->
+                         <control type="image">
+                         <animation effect="zoom" end="40" center="-70,675" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
+                         <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
+                         <include>Animation_CommonFade</include>
+                         <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+                         <posx>16</posx>
+                         <posy>710</posy>
+                         <width>480</width>
+                         <height>300</height>
+                         <aspectratio>scale</aspectratio>
+                         <texture>$INFO[VideoPlayer.Cover]</texture>
+                         <fadetime>IconCrossfadeTime</fadetime>
+                         </control> -->
                     <control type="textbox">
                         <aligny>top</aligny>
                         <posx>0</posx>
@@ -249,35 +235,35 @@
                     <visible>!IsEmpty(VideoPlayer.Cover)</visible>
                 </control>
                 <!--
-                <control type="grouplist">
-                    <visible>VideoPlayer.Content(movies)</visible>
-                    <posx>825</posx>
-                    <posy>710</posy>
-                    <width>855</width>
-                    <height>1080</height>
-                    <orientation>vertical</orientation>
-                    <control type="label">
-                        <width>830</width>
-                        <height>26</height>
-                        <align>right</align>
-                        <label>$INFO[VideoPlayer.Genre]  [COLOR $VAR[FontColorVar]]  -  Genre[/COLOR]</label>
-                        <font>Font_Reg22_2</font>
-                    </control>
-                    <control type="label">
-                        <width>830</width>
-                        <height>26</height>
-                        <align>right</align>
-                        <label>$INFO[VideoPlayer.Director]  [COLOR $VAR[FontColorVar]]  -  Director[/COLOR]</label>
-                        <font>Font_Reg22_2</font>
-                    </control>
-                    <control type="label">
-                        <width>830</width>
-                        <height>26</height>
-                        <align>right</align>
-                        <label>$INFO[VideoPlayer.Writer]  [COLOR $VAR[FontColorVar]]  -  Writer[/COLOR]</label>
-                        <font>Font_Reg22_2</font>
-                    </control>
-                </control>-->
+                     <control type="grouplist">
+                     <visible>VideoPlayer.Content(movies)</visible>
+                     <posx>825</posx>
+                     <posy>710</posy>
+                     <width>855</width>
+                     <height>1080</height>
+                     <orientation>vertical</orientation>
+                     <control type="label">
+                     <width>830</width>
+                     <height>26</height>
+                     <align>right</align>
+                     <label>$INFO[VideoPlayer.Genre]  [COLOR $VAR[FontColorVar]]  -  Genre[/COLOR]</label>
+                     <font>Font_Reg22_2</font>
+                     </control>
+                     <control type="label">
+                     <width>830</width>
+                     <height>26</height>
+                     <align>right</align>
+                     <label>$INFO[VideoPlayer.Director]  [COLOR $VAR[FontColorVar]]  -  Director[/COLOR]</label>
+                     <font>Font_Reg22_2</font>
+                     </control>
+                     <control type="label">
+                     <width>830</width>
+                     <height>26</height>
+                     <align>right</align>
+                     <label>$INFO[VideoPlayer.Writer]  [COLOR $VAR[FontColorVar]]  -  Writer[/COLOR]</label>
+                     <font>Font_Reg22_2</font>
+                     </control>
+                     </control> -->
                 <control type="grouplist">
                     <visible>VideoPlayer.Content(LiveTV)</visible>
                     <posx>1055</posx>
@@ -306,85 +292,17 @@
                 </control>
             </control>
             <!--
-            <control type="textbox">
-                <posx>550</posx>
-                <posy>280</posy>
-                <width>570</width>
-                <height>311</height>
-                <aligny>top</aligny>
-                <label>$VAR[NowPlayingTextBoxLabelVar]</label>
-                <font>Font_Reg26</font>
-                <textcolor>white6</textcolor>
-                <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-            </control>--></control>
-        <control type="group">
-            <posy>602</posy>
-            <visible>!Skin.HasSetting(DisableRSS)</visible>
-            <visible>!Player.HasMedia</visible>
-            <visible>System.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)</visible>
-            <visible>!Control.HasFocus(9010) | Skin.HasSetting(rsshomelow)</visible>
-            <animation effect="slide" delay="980" start="0,50" time="240" condition="Skin.HasSetting(rsshomelow)">WindowOpen</animation>
-            <animation effect="slide" end="0,50" time="200" condition="Skin.HasSetting(rsshomelow)">WindowClose</animation>
-            <animation effect="slide" start="0,50" time="240" condition="Skin.HasSetting(rsshomelow)">Visible</animation>
-            <animation effect="slide" end="0,50" time="240" condition="Skin.HasSetting(rsshomelow)">Hidden</animation>
-            <animation type="WindowOpen" condition="!Skin.HasSetting(rsshomelow)">
-                <effect type="fade" delay="980" end="100" time="200" />
-                <effect type="slide" start="0,-50" end="0,0" delay="800" time="480" />
-            </animation>
-            <animation type="WindowClose" condition="!Skin.HasSetting(rsshomelow)">
-                <effect type="fade" end="0" time="130" />
-                <effect type="slide" start="0,0" end="0,-50" time="200" />
-            </animation>
-            <animation type="Visible" reversible="false" condition="!Skin.HasSetting(rsshomelow)">
-                <effect type="fade" end="100" time="240" />
-                <effect type="slide" start="0,-40" end="0,0" time="240" tween="cubic" easing="inout" />
-            </animation>
-            <animation type="Hidden" reversible="false" condition="!Skin.HasSetting(rsshomelow)">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="slide" end="0,-40" time="240" tween="cubic" easing="inout" />
-            </animation>
-            <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
-            <animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Window.IsActive(skinsettings) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
-            <control type="group">
-                <animation effect="slide" end="0,437" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                <control type="image">
-                    <posy>2</posy>
-                    <width>1920</width>
-                    <height>87</height>
-                    <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
-                    <animation condition="true" effect="fade" end="80" pulse="true" start="100" time="2000">conditional</animation>
-                    <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                    <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                </control>
-                <control type="group">
-                    <control type="label">
-                        <posy>1</posy>
-                        <width>1920</width>
-                        <height>40</height>
-                        <textoffsetx>5</textoffsetx>
-                        <label>[COLOR=C0C0C0C0][B]$INFO[Window(home).Property(NextAired.1.Label),,  ][/B][/COLOR]$INFO[Window(home).Property(NextAired.1.AirTime),,  ]$INFO[Window(home).Property(NextAired.1.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.1.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.1.Status),(,)  ]$INFO[Window(home).Property(NextAired.2.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.2.AirTime),,  ]$INFO[Window(home).Property(NextAired.2.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.2.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.2.Status),(,)  ]$INFO[Window(home).Property(NextAired.3.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.3.AirTime),,  ]$INFO[Window(home).Property(NextAired.3.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.3.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.3.Status),(,)  ]$INFO[Window(home).Property(NextAired.4.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.4.AirTime),,  ]$INFO[Window(home).Property(NextAired.4.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.4.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.4.Status),(,)  ]$INFO[Window(home).Property(NextAired.5.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.5.AirTime),,  ]$INFO[Window(home).Property(NextAired.5.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.5.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.5.Status),(,)  ]$INFO[Window(home).Property(NextAired.6.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.6.AirTime),,  ]$INFO[Window(home).Property(NextAired.6.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.6.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.6.Status),(,)  ]$INFO[Window(home).Property(NextAired.7.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.7.AirTime),,  ]$INFO[Window(home).Property(NextAired.7.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.7.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.7.Status),(,)  ]$INFO[Window(home).Property(NextAired.8.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.8.AirTime),,  ]$INFO[Window(home).Property(NextAired.8.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.8.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.8.Status),(,)  ]$INFO[Window(home).Property(NextAired.9.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.9.AirTime),,  ]$INFO[Window(home).Property(NextAired.9.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.9.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.9.Status),(,)  ]$INFO[Window(home).Property(NextAired.10.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.10.AirTime),,  ]$INFO[Window(home).Property(NextAired.10.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.10.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.10.Status),(,)  ,    •    ][COLOR=C0C0C0C0][B]$INFO[Window(Home).Property(NextAired.NextTitle),,  ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate),,  •    ][COLOR=C0C0C0C0][B]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</label>
-                        <font>Font_Reg26_2</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <scroll>true</scroll>
-                        <wrapmultiline>false</wrapmultiline>
-                        <scrollspeed>40</scrollspeed>
-                        <visible>Skin.HasSetting(ActorBirthdayRSS)</visible>
-                    </control>
-                    <control type="rss">
-                        <posy>1</posy>
-                        <width>1920</width>
-                        <height>40</height>
-                        <font>Font_Reg26_2</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <urlset>1</urlset>
-                        <headlinecolor>grey</headlinecolor>
-                        <highlightcolor>$VAR[FontColorVar]</highlightcolor>
-                        <titlecolor>$VAR[FontColorVar]</titlecolor>
-                        <scrollspeed>40</scrollspeed>
-                        <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
-                    </control>
-                </control>
-            </control>
+                 <control type="textbox">
+                 <posx>550</posx>
+                 <posy>280</posy>
+                 <width>570</width>
+                 <height>311</height>
+                 <aligny>top</aligny>
+                 <label>$VAR[NowPlayingTextBoxLabelVar]</label>
+                 <font>Font_Reg26</font>
+                 <textcolor>white6</textcolor>
+                 <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                 </control> -->
         </control>
         <control type="grouplist" id="4010">
             <orientation>horizontal</orientation>
@@ -393,54 +311,54 @@
             <align>center</align>
             <posy>970</posy>
             <!--
-            <control type="group">
-                <width>70</width>
-                <control type="button" id="4020">
-                    <width>100</width>
-                    <posx>-13</posx>
-                    <height>93</height>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <onleft>4023</onleft>
-                    <onright>4021</onright>
-                    <onup>9000</onup>
-                    <ondown>9000</ondown>
-                    <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
-                </control>
-                <control type="image">
-                    <posy>22</posy>
-                    <height>45</height>
-                    <align>center</align>
-                    <aligny>top</aligny>
-                    <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="grey2">special://skin/extras/icons/poweroff.png</texture>
-                </control>
-            </control>
-            <control type="group">
-                <width>70</width>
-                <control type="button" id="4021">
-                    <width>100</width>
-                    <posx>-13</posx>
-                    <height>93</height>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <onleft>4020</onleft>
-                    <onright>4022</onright>
-                    <onup>9000</onup>
-                    <ondown>9000</ondown>
-                    <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
-                </control>
-                <control type="image">
-                    <posy>22</posy>
-                    <height>45</height>
-                    <align>center</align>
-                    <aligny>top</aligny>
-                    <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="grey2">special://skin/extras/icons/magnifier.png</texture>
-                </control>
-            </control>-->
+                 <control type="group">
+                 <width>70</width>
+                 <control type="button" id="4020">
+                 <width>100</width>
+                 <posx>-13</posx>
+                 <height>93</height>
+                 <align>center</align>
+                 <aligny>center</aligny>
+                 <onleft>4023</onleft>
+                 <onright>4021</onright>
+                 <onup>9000</onup>
+                 <ondown>9000</ondown>
+                 <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                 <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
+                 </control>
+                 <control type="image">
+                 <posy>22</posy>
+                 <height>45</height>
+                 <align>center</align>
+                 <aligny>top</aligny>
+                 <aspectratio>keep</aspectratio>
+                 <texture colordiffuse="grey2">special://skin/extras/icons/poweroff.png</texture>
+                 </control>
+                 </control>
+                 <control type="group">
+                 <width>70</width>
+                 <control type="button" id="4021">
+                 <width>100</width>
+                 <posx>-13</posx>
+                 <height>93</height>
+                 <align>center</align>
+                 <aligny>center</aligny>
+                 <onleft>4020</onleft>
+                 <onright>4022</onright>
+                 <onup>9000</onup>
+                 <ondown>9000</ondown>
+                 <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
+                 <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
+                 </control>
+                 <control type="image">
+                 <posy>22</posy>
+                 <height>45</height>
+                 <align>center</align>
+                 <aligny>top</aligny>
+                 <aspectratio>keep</aspectratio>
+                 <texture colordiffuse="grey2">special://skin/extras/icons/magnifier.png</texture>
+                 </control>
+                 </control> -->
             <control type="group">
                 <width>70</width>
                 <visible>Player.HasMedia</visible>
@@ -521,45 +439,9 @@
                 </control>
             </control>
         </control>
-        <!--
-        <control type="group">
-            <control type="image">
-                <posx>698</posx>
-                <posy>1003</posy>
-                <width>525</width>
-                <height>87</height>
-                <texture>osd/osd_top_bar.png</texture>
-            </control>
-            <control type="grouplist">
-                <posx>765</posx>
-                <posy>1048</posy>
-                <width>380</width>
-                <align>center</align>
-                <itemgap>0</itemgap>
-                <orientation>horizontal</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <control type="image">
-                    <posy>-5</posy>
-                    <width>45</width>
-                    <height>45</height>
-                    <texture colordiffuse="black">dialogs/circle/$INFO[Window(Home).Property(RecommendedMovie.1.PercentPlayed)].png</texture>
-                    <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
-                </control>
-                <control type="label">
-                    <posy>2</posy>
-                    <width min="50" max="600">auto</width>
-                    <height>30</height>
-                    <label>[UPPERCASE]$INFO[Window(Home).Property(RecommendedMovie.1.Title)][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>black</textcolor>
-                    <scroll>false</scroll>
-                    <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
-                </control>
-            </control>
-        </control>-->
         <control type="group">
             <control type="group">
-                <posy>466</posy>
+                <posy>-242</posy>
                 <control type="list" id="43260">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -643,89 +525,10 @@
             <control type="group">
                 <include>FullscreenDimensions</include>
                 <include>Animation_OpenCloseZoom</include>
-                <posy>330</posy>
+                <posy>-380</posy>
                 <control type="group">
                     <animation effect="zoom" end="80" center="960,520" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                    <!--Submenu-->
-                    <control type="image">
-                        <posx>935</posx>
-                        <posy>613</posy>
-                        <width>50</width>
-                        <height>15</height>
-                        <texture colordiffuse="white">arrowdown.png</texture>
-                        <visible>Control.HasFocus(9000) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
-                        <animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
-                    </control>
-                    <control type="group" id="9001">
-                        <animation effect="zoom" end="120" center="960,610" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                        <animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) | !IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
-                        <animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) | !IntegerGreaterThan(Container(9010).NumItems,0)">conditional</animation>
-                        <control type="image">
-                            <posx>190</posx>
-                            <posy>612</posy>
-                            <width>1540</width>
-                            <height>87</height>
-                            <texture colordiffuse="$VAR[ExtendedColorVar]">home/submenubar_shadow.png</texture>
-                        </control>
-                        <control type="fixedlist" id="9010">
-                            <posx>285</posx>
-                            <posy>605</posy>
-                            <width>1350</width>
-                            <height>50</height>
-                            <onleft>9010</onleft>
-                            <onright>9010</onright>
-                            <orientation>horizontal</orientation>
-                            <focusposition>2</focusposition>
-                            <hitrect x="-238" y="0" w="2400" h="130" />
-                            <scrolltime tween="quadratic">300</scrolltime>
-                            <onup>9000</onup>
-                            <onback>SetFocus(9000)</onback>
-                            <ondown>4010</ondown>
-                            <itemlayout width="270" height="50">
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <width>260</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28_Caps</font>
-                                    <textcolor>grey2</textcolor>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout width="270" height="50">
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <width>260</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28_Caps</font>
-                                    <textcolor>grey2</textcolor>
-                                    <animation effect="zoom" center="135,25" start="100" end="130" time="160" tween="quadratic">Focus</animation>
-                                    <animation effect="zoom" center="135,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
-                                    <scroll>true</scroll>
-                                </control>
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <width>260</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg28_Caps</font>
-                                    <textcolor>$VAR[FontColorVar]</textcolor>
-                                    <animation effect="zoom" center="135,25" start="100" end="130" time="160" tween="quadratic">Focus</animation>
-                                    <animation effect="zoom" center="135,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
-                                    <scroll>true</scroll>
-                                    <animation effect="fade" time="200">VisibleChange</animation>
-                                    <visible>Control.HasFocus(9010)</visible>
-                                </control>
-                            </focusedlayout>
-                            <content>
-                                <include>skinshortcuts-submenu</include>
-                            </content>
-                        </control>
-                    </control>
-                    <!--Home Menu Bar-->
+                    <!-- Home Menu Bar -->
                     <control type="group">
                         <animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                         <control type="image">
@@ -743,24 +546,6 @@
                             <texture colordiffuse="$VAR[AreaColorVar]">home/homemenu_back_glow.png</texture>
                             <include>PanelGlowFade</include>
                         </control>
-                    </control>
-                    <!--focus first widget-->
-                    <control type="button" id="4444">
-                        <include>HiddenObject</include>
-                        <onfocus condition="Control.IsVisible(5000)">SetFocus(5000)</onfocus>
-                        <onfocus>SetProperty(WidgetPosition,Widget1,home)</onfocus>
-                        <visible>Control.IsVisible(5000)</visible>
-                        <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-                        <visible>!Substring(Control.GetLabel(4321),system)</visible>
-                    </control>
-                    <!--focus second widget-->
-                    <control type="button" id="4445">
-                        <include>HiddenObject</include>
-                        <onfocus>SetProperty(WidgetPosition,Widget2,home)</onfocus>
-                        <onfocus condition="Control.IsVisible(6000)">SetFocus(6000)</onfocus>
-                        <visible>Control.IsVisible(6000)</visible>
-                        <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-                        <visible>!Substring(Control.GetLabel(4325),system)</visible>
                     </control>
                     <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
                     <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
@@ -785,56 +570,66 @@
                 </control>
             </control>
         </control>
-        <control type="group">
-            <visible>IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
-            <animation type="Visible">
-                <effect type="zoom" delay="400" start="150" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" delay="400" end="100" time="240" />
-            </animation>
-            <animation type="Hidden">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <include>HomePanelWidget</include>
-            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget</include>
-            <include>RecentWidget</include>
-        </control>
-        <control type="group">
-            <visible>IsEmpty(Window(home).Property(PanelWidgetInfo))</visible>
-            <animation type="Visible">
-                <effect type="zoom" delay="400" start="150" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" delay="400" end="100" time="240" />
-            </animation>
-            <animation type="Hidden">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <include>HomePanelWidget2</include>
-            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget2</include>
-            <include>RecentWidget2</include>
-        </control>
-        <control type="group">
-            <posx>135</posx>
-            <include>Animation_OpenCloseZoom</include>
-            <posy>389</posy>
-            <width>1920</width>
-            <height>825</height>
-            <animation type="Conditional" condition="true">
-                <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
-            </animation>
-            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <visible>!IsEmpty(Window(home).Property(WidgetType))</visible>
-            <visible>[!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
-            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">
-                <include>Animation_LargePanelFlipUp1</include>
-            </animation>
-            <animation type="Hidden" reversible="false">
-                <include>Animation_LargePanelFlipDown2</include>
-            </animation>
-            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">
-                <include>Animation_LargePanelFlipUp1</include>
-            </animation>
-            <include>WidgetInfoPanel</include>
+        <control type="grouplist" id="4444">
+            <orientation>vertical</orientation>
+            <itemgap>0</itemgap>
+            <height>800</height>
+            <posy>520</posy>
+            <ondown>9000</ondown>
+            <include name="HomePanelWidget">
+                <param name="id" value="5010"/>
+                <param name="group_id" value="5022"/>
+                <param name="WidgetType" value="Window(home).Property(Widget1Type)"/>
+                <param name="WidgetTypeLabel" value="$INFO[Window(home).Property(Widget1Title)]"/>
+                <param name="OnUp" value="9000"/>
+                <param name="OnDown" value="6022"/>
+                <param name="WidgetPath" value="Window(home).Property(Widget1Content)"/>
+            </include>
+            <include name="HomePanelWidget">
+                <param name="id" value="6010"/>
+                <param name="group_id" value="6022"/>
+                <param name="WidgetType" value="Window(home).Property(Widget2Type)"/>
+                <param name="WidgetTypeLabel" value="$INFO[Window(home).Property(Widget2Title)]"/>
+                <param name="OnUp" value="5010"/>
+                <param name="OnDown" value="7022"/>
+                <param name="WidgetPath" value="Window(home).Property(Widget2Content)"/>
+            </include>
+            <include name="HomePanelWidget">
+                <param name="id" value="7010"/>
+                <param name="group_id" value="7022"/>
+                <param name="WidgetType" value="Window(home).Property(Widget3Type)"/>
+                <param name="WidgetTypeLabel" value="$INFO[Window(home).Property(Widget3Title)]"/>
+                <param name="OnUp" value="6010"/>
+                <param name="OnDown" value="8022"/>
+                <param name="WidgetPath" value="Window(home).Property(Widget3Content)"/>
+            </include>
+            <include name="HomePanelWidget">
+                <param name="id" value="8010"/>
+                <param name="group_id" value="8022"/>
+                <param name="WidgetType" value="Window(home).Property(Widget4Type)"/>
+                <param name="WidgetTypeLabel" value="$INFO[Window(home).Property(Widget4Title)]"/>
+                <param name="OnUp" value="7010"/>
+                <param name="OnDown" value="10022"/>
+                <param name="WidgetPath" value="Window(home).Property(Widget4Content)"/>
+            </include>
+            <include name="HomePanelWidget">
+                <param name="id" value="10010"/>
+                <param name="group_id" value="10022"/>
+                <param name="WidgetType" value="Window(home).Property(Widget5Type)"/>
+                <param name="WidgetTypeLabel" value="$INFO[Window(home).Property(Widget5Title)]"/>
+                <param name="OnUp" value="8010"/>
+                <param name="OnDown" value="11022"/>
+                <param name="WidgetPath" value="Window(home).Property(Widget5Content)"/>
+            </include>
+            <include name="HomePanelWidget">
+                <param name="id" value="11010"/>
+                <param name="group_id" value="11022"/>
+                <param name="WidgetType" value="Window(home).Property(Widget6Type)"/>
+                <param name="WidgetTypeLabel" value="$INFO[Window(home).Property(Widget6Title)]"/>
+                <param name="OnUp" value="10010"/>
+                <param name="OnDown" value="9000"/>
+                <param name="WidgetPath" value="Window(home).Property(Widget6Content)"/>
+            </include>
         </control>
         <control type="group">
             <control type="image">
@@ -857,7 +652,6 @@
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
                     <imagepath>$INFO[Window(weather).Property(MapPath)]</imagepath>
-
                     <include>FullscreenDimensions</include>
                     <timeperimage>500</timeperimage>
                     <pauseatend>1000</pauseatend>
@@ -887,18 +681,58 @@
                     <texture>weather/key2.png</texture>
                 </control>
             </control>
-            <control type="button" id="22222">
-                <include>HiddenObject</include>
-                <onleft condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">Control.Move(5010,-1)</onleft>
-                <onright condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">Control.Move(5010,1)</onright>
-                <onup condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">SetFocus(5010)</onup>
-                <ondown condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">SetFocus(5010)</ondown>
-                <onback condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">SetFocus(5010)</onback>
-                <onleft condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">Control.Move(6010,-1)</onleft>
-                <onright condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">Control.Move(6010,1)</onright>
-                <onup condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">SetFocus(6010)</onup>
-                <ondown condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">SetFocus(6010)</ondown>
-                <onback condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">SetFocus(6010)</onback>
+        </control>
+        <control type="group">
+            <posy>1039</posy>
+            <visible>!Skin.HasSetting(DisableRSS)</visible>
+            <visible>!Player.HasMedia</visible>
+            <visible>System.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)</visible>
+            <animation effect="slide" delay="980" start="0,50" time="240">WindowOpen</animation>
+            <animation effect="slide" end="0,50" time="200">WindowClose</animation>
+            <animation effect="slide" start="0,50" time="240">Visible</animation>
+            <animation effect="slide" end="0,50" time="240">Hidden</animation>
+            <control type="image">
+                <posy>-47</posy>
+                <width>1920</width>
+                <height>87</height>
+                <texture colordiffuse="black" flipy="true">home/nav_back_shadow.png</texture>
+                <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="True">Conditional</animation>
+            </control>
+                            <control type="image">
+                    <posy>-170</posy>
+                    <width>1920</width>
+                    <height>270</height>
+                    <texture colordiffuse="$VAR[AreaColorVar]">views/diffuse_bottom.png</texture>
+                    <visible>!Player.HasVideo</visible>
+                </control>
+
+            <control type="group">
+                <control type="label">
+                    <posy>1</posy>
+                    <width>1920</width>
+                    <height>40</height>
+                    <textoffsetx>5</textoffsetx>
+                    <label>[COLOR=C0C0C0C0][B]$INFO[Window(home).Property(NextAired.1.Label),,  ][/B][/COLOR]$INFO[Window(home).Property(NextAired.1.AirTime),,  ]$INFO[Window(home).Property(NextAired.1.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.1.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.1.Status),(,)  ]$INFO[Window(home).Property(NextAired.2.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.2.AirTime),,  ]$INFO[Window(home).Property(NextAired.2.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.2.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.2.Status),(,)  ]$INFO[Window(home).Property(NextAired.3.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.3.AirTime),,  ]$INFO[Window(home).Property(NextAired.3.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.3.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.3.Status),(,)  ]$INFO[Window(home).Property(NextAired.4.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.4.AirTime),,  ]$INFO[Window(home).Property(NextAired.4.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.4.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.4.Status),(,)  ]$INFO[Window(home).Property(NextAired.5.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.5.AirTime),,  ]$INFO[Window(home).Property(NextAired.5.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.5.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.5.Status),(,)  ]$INFO[Window(home).Property(NextAired.6.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.6.AirTime),,  ]$INFO[Window(home).Property(NextAired.6.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.6.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.6.Status),(,)  ]$INFO[Window(home).Property(NextAired.7.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.7.AirTime),,  ]$INFO[Window(home).Property(NextAired.7.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.7.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.7.Status),(,)  ]$INFO[Window(home).Property(NextAired.8.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.8.AirTime),,  ]$INFO[Window(home).Property(NextAired.8.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.8.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.8.Status),(,)  ]$INFO[Window(home).Property(NextAired.9.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.9.AirTime),,  ]$INFO[Window(home).Property(NextAired.9.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.9.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.9.Status),(,)  ]$INFO[Window(home).Property(NextAired.10.Label),  •    [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.10.AirTime),,  ]$INFO[Window(home).Property(NextAired.10.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.10.Network),$LOCALIZE[31173]  ,  ]$INFO[Window(home).Property(NextAired.10.Status),(,)  ,    •    ][COLOR=C0C0C0C0][B]$INFO[Window(Home).Property(NextAired.NextTitle),,  ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate),,  •    ][COLOR=C0C0C0C0][B]$INFO[Window(Home).Property(NextAired.LatestTitle),,  ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</label>
+                    <font>Font_Reg26_2</font>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <scroll>true</scroll>
+                    <wrapmultiline>false</wrapmultiline>
+                    <scrollspeed>40</scrollspeed>
+                    <visible>Skin.HasSetting(ActorBirthdayRSS)</visible>
+                </control>
+                <control type="rss">
+                    <posy>1</posy>
+                    <width>1920</width>
+                    <height>40</height>
+                    <font>Font_Reg26_2</font>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <urlset>1</urlset>
+                    <headlinecolor>grey</headlinecolor>
+                    <highlightcolor>$VAR[FontColorVar]</highlightcolor>
+                    <titlecolor>$VAR[FontColorVar]</titlecolor>
+                    <scrollspeed>40</scrollspeed>
+                    <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
+                </control>
             </control>
         </control>
     </controls>

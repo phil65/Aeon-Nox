@@ -49,14 +49,12 @@
                 <onback>Dialog.Close(1131)</onback>
             </control>
             <control type="button" id="13">
-            <posy>936</posy>
+            <posy>1036</posy>
             <width>1920</width>
             <height>60</height>
             <texturenofocus colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texturenofocus>
             <animation effect="fade" start="100" end="0" time="320" condition="!Control.HasFocus(13)">Conditional</animation>
             <animation effect="fade" start="100" end="25" time="320" condition="Window.IsActive(1130)">Conditional</animation>
-            <animation effect="slide" end="0,-20" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
-            <animation effect="slide" end="0,100" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 <onleft>11</onleft>
                 <onright>10</onright>
                 <onclick>SetProperty(actualItem,RSS,1130)</onclick>

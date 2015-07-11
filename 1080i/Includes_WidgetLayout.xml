@@ -3,7 +3,7 @@
     <include name="Weather_Widget">
         <control type="group">
             <posy>410</posy>
-            <visible>Substring(Control.GetLabel(4321),weather) + Weather.IsFetched</visible>
+            <visible>Substring(Window(home).Property(Widget1Type),weather) + Weather.IsFetched</visible>
             <include>Animation_Widgets</include>
             <visible>!IsEmpty(Weather.Plugin)</visible>
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(script-HomeWindow Script-main.xml)]</visible>
@@ -442,444 +442,453 @@
             </content>
         </control>
     </include>
-    <include name="RecentWidget">
-        <control type="group" id="8998">
-            <posx>1542</posx>
-            <posy>678</posy>
-            <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <visible>Substring(Control.GetLabel(4321),classic)</visible>
-            <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" end="100" delay="800" time="240" />
+    <include name="HomePanelWidget">
+        <control type="group" id="$PARAM[group_id]">
+            <animation type="Visible">
+                <effect type="zoom" delay="400" start="150" end="100" center="960,540" time="400" tween="cubic" />
+                <effect type="fade" delay="400" end="100" time="240" />
             </animation>
-            <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | Control.HasFocus(5010)">
-                <effect type="fade" start="100" end="0" time="240" />
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="240" delay="20" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
-            <include>Animation_Widgets</include>
-            <animation effect="slide" end="0,-258" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
+                <width>1920</width>
+                <height>400</height>
+                        <visible>!IsEmpty($PARAM[WidgetPath])</visible>
             <control type="group">
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-4</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture colordiffuse="$VAR[AreaColorVar]" border="50">keyboard/keyboard_back_shadow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <visible>Substring(Control.GetLabel(4321),default)</visible>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                </control>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-5</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture colordiffuse="$VAR[DialogColorVar]" border="20">keyboard/keyboard_back.png</texture>
-                </control>
-                <control type="label">
-                    <posx>15</posx>
-                    <posy>8</posy>
-                    <width>335</width>
-                    <height>60</height>
-                    <align>center</align>
-                    <label>$VAR[WidgetTypeLabelVar]</label>
-                    <font>Font_Reg33_Caps</font>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
-                    <include>Animation_HomeWidget</include>
-                </control>
-                <control type="image">
-                    <posx>105</posx>
-                    <posy>264</posy>
-                    <width>150</width>
-                    <height>30</height>
-                    <texture colordiffuse="grey">$INFO[Container(5010).ListItem.Rating,stars/,.png]</texture>
-                    <visible>Substring(Control.GetLabel(4321),movie)</visible>
-                    <include>Animation_HomeWidget</include>
-                </control>
-                <control type="label">
-                    <posx>15</posx>
-                    <posy>264</posy>
-                    <width>330</width>
-                    <height>30</height>
-                    <align>center</align>
-                    <label>[UPPERCASE]$INFO[Container(5010).ListItem.Label2]$INFO[Container(5010).ListItem.Property(EpisodeNumber), • ][/UPPERCASE]</label>
-                    <font>Font_Reg26</font>
-                    <textcolor>grey</textcolor>
-                    <scrollspeed>30</scrollspeed>
-                    <scroll>true</scroll>
-                    <include>Animation_HomeWidget</include>
-                    <visible>Substring(Control.GetLabel(4321),tv)</visible>
-                </control>
+                <posx>135</posx>
+                <posy>0</posy>
+                <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
+                <visible>Substring($PARAM[WidgetType],panel) | Substring($PARAM[WidgetType],classic)</visible>
+                <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
+                    <effect type="zoom" start="80" delay="800" end="100" center="960,540" time="400" tween="cubic" />
+                    <effect type="fade" end="100" delay="800" time="240" />
+                </animation>
+                <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | [Substring($PARAM[WidgetType],classic) + !Control.HasFocus($PARAM[id])]">
+                    <effect type="fade" start="100" end="0" time="240" />
+                    <effect type="zoom" start="100" end="80" center="960,540" time="240" tween="cubic" easing="in" />
+                </animation>
+                <include>Animation_Widgets</include>
+                <animation effect="slide" end="0,-285" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
+                <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
                 <control type="group">
-                    <posx>7</posx>
-                    <posy>63</posy>
-                    <control type="image" id="80100">
-                        <width>345</width>
-                        <height>240</height>
-                        <aspectratio aligny="top" align="center">keep</aspectratio>
-                        <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(5010).ListItem.Icon]</texture>
-                        <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                        <bordersize>7</bordersize>
-                        <animation effect="fade" time="240">Visible</animation>
-                        <animation effect="fade" time="40">Hidden</animation>
-                        <visible>Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),Icon) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),actor) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),roms)</visible>
-                    </control>
                     <control type="image">
-                        <width>345</width>
-                        <height>194</height>
-                        <aspectratio aligny="top" align="center">scale</aspectratio>
-                        <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$VAR[ClassicWidgetImageVar]</texture>
-                        <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                        <bordersize>7</bordersize>
-                        <animation effect="fade" time="240">Visible</animation>
-                        <animation effect="fade" time="40">Hidden</animation>
-                        <visible>!Control.IsVisible(80100) + !Substring(Control.GetLabel(4321),systemclassic)</visible>
+                        <posx>17</posx>
+                        <posy>15</posy>
+                        <width>1616</width>
+                        <height>369</height>
+                        <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
+                        <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                        <bordersize>10</bordersize>
+                        <visible>Substring($PARAM[WidgetType],default)</visible>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
-                </control>
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4321),systemclassic)</visible>
-                    <include>HomeSystemWidget</include>
-                </control>
-                <control type="label">
-                    <posx>15</posx>
-                    <posy>308</posy>
-                    <width>330</width>
-                    <height>30</height>
-                    <align>center</align>
-                    <label>$INFO[Container(5010).ListItem.Label]</label>
-                    <font>Font_Reg33_Caps</font>
-                    <textcolor>grey</textcolor>
-                    <scrollspeed>30</scrollspeed>
-                    <scroll>true</scroll>
-                </control>
-            </control>
-        </control>
-    </include>
-    <include name="HomePanelWidget">
-        <control type="group" id="5000">
-            <posx>135</posx>
-            <posy>674</posy>
-            <width>1920</width>
-            <height>825</height>
-            <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <visible>Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),panel) | Substring(Control.GetLabel(4321),classic)</visible>
-            <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="80" delay="800" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" end="100" delay="800" time="240" />
-            </animation>
-            <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | [Substring(Control.GetLabel(4321),classic) + !Control.HasFocus(5010)]">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="80" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <include>Animation_Widgets</include>
-            <animation effect="slide" end="0,-285" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
-            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <control type="group">
-                <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include>Animation_PanelFlipUp2</include>
-                </animation>
-                <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include>Animation_PanelFlipDown1</include>
-                </animation>
-                <control type="image">
-                    <posx>17</posx>
-                    <posy>15</posy>
-                    <width>1616</width>
-                    <height>369</height>
-                    <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
-                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-                    <bordersize>10</bordersize>
-                     <visible>Substring(Control.GetLabel(4321),default)</visible>
-                   <animation effect="fade" time="350">VisibleChange</animation>
-                </control>
-                <control type="group">
-                    <visible>!Substring(Control.GetLabel(4321),weather)</visible>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <control type="panel" id="5010">
-                        <visible>!Substring(Control.GetLabel(4321),featured)</visible>
-                        <animation effect="fade" start="0" end="100" delay="50" time="0">WindowOpen</animation>
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1596</width>
-                        <height>360</height>
-                        <orientation>horizontal</orientation>
-                        <onleft>5010</onleft>
-                        <onright>5010</onright>
-                        <include>NavigationWidget1</include>
-                        <scrolltime tween="quadratic">400</scrolltime>
-                        <autoscroll time="6000">!Control.HasFocus(5010) + Substring(Control.GetLabel(4321),classic)</autoscroll>
-                        <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),landscape)">
-                            <include>WidgetLandscapeLayout</include>
-                            <control type="image">
-                                <width>532</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),landscape)">
-                            <include>WidgetLandscapeLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),keepar)">
-                            <include>WidgetRCBLayout</include>
-                            <control type="image">
-                                <width>532</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),keepar)">
-                            <include>WidgetRCBLayout</include>
-                        </itemlayout>
-                        <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panelcoverposter)">
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>218</width>
-                                <height>340</height>
-                                <aspectratio align="center">scale</aspectratio>
-                                <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
-                            </control>
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>218</width>
-                                <height>340</height>
-                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                                <animation effect="fade" time="350">VisibleChange</animation>
-                                <visible>Control.HasFocus(5010)</visible>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panelcoverposter)">
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>218</width>
-                                <height>340</height>
-                                <aspectratio>scale</aspectratio>
-                                <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
-                            </control>
-                            <control type="image">
-                                <width>228</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="798" height="170" condition="Substring(Control.GetLabel(4321),bannerlayout)">
-                            <include>WidgetBannerLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="798" height="170" condition="Substring(Control.GetLabel(4321),bannerlayout)">
-                            <include>WidgetBannerLayout</include>
-                            <control type="image">
-                                <width>798</width>
-                                <height>180</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),clearartlayout)">
-                            <include>WidgetClearArtLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),clearartlayout)">
-                            <include>WidgetClearArtLayout</include>
-                            <control type="image">
-                                <width>532</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panelcoversquare)">
-                            <control type="group">
+                    <control type="group">
+                        <visible>!Substring($PARAM[WidgetType],weather)</visible>
+                        <animation effect="fade" time="350">VisibleChange</animation>
+                        <control type="panel" id="$PARAM[id]">
+                            <animation effect="fade" start="0" end="100" delay="50" time="0">WindowOpen</animation>
+                            <posx>27</posx>
+                            <posy>26</posy>
+                            <width>1596</width>
+                            <height>360</height>
+                            <orientation>horizontal</orientation>
+                            <onleft>$PARAM[id]</onleft>
+                            <onright>$PARAM[id]</onright>
+                            <ondown>$PARAM[OnDown]</ondown>
+                            <onup>$PARAM[OnUp]</onup>
+                            <onback>9000</onback>
+                            <scrolltime tween="quadratic">400</scrolltime>
+                            <autoscroll time="6000">!Control.HasFocus($PARAM[id]) + Substring($PARAM[WidgetType],classic)</autoscroll>
+                            <focusedlayout width="532" height="340" condition="Substring($PARAM[WidgetType],landscape)">
+                                <include>WidgetLandscapeLayout</include>
+                                <control type="image">
+                                    <width>532</width>
+                                    <height>350</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <itemlayout width="532" height="340" condition="Substring($PARAM[WidgetType],landscape)">
+                                <include>WidgetLandscapeLayout</include>
+                            </itemlayout>
+                            <focusedlayout width="532" height="340" condition="Substring($PARAM[WidgetType],keepar)">
+                                <include>WidgetRCBLayout</include>
+                                <control type="image">
+                                    <width>532</width>
+                                    <height>350</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <itemlayout width="532" height="340" condition="Substring($PARAM[WidgetType],keepar)">
+                                <include>WidgetRCBLayout</include>
+                            </itemlayout>
+                            <itemlayout width="228" height="340" condition="Substring($PARAM[WidgetType],panelcoverposter)">
                                 <control type="image">
                                     <posx>5</posx>
                                     <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <aspectratio aligny="top">scale</aspectratio>
-                                    <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg25_2</font>
-                                    <textcolor>grey2</textcolor>
+                                    <width>218</width>
+                                    <height>340</height>
+                                    <aspectratio align="center">scale</aspectratio>
+                                    <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
                                 </control>
                                 <control type="image">
                                     <posx>5</posx>
                                     <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
+                                    <width>218</width>
+                                    <height>340</height>
                                     <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
                                     <animation effect="fade" time="350">VisibleChange</animation>
-                                    <visible>Control.HasFocus(5010)</visible>
+                                    <visible>Control.HasFocus($PARAM[id])</visible>
                                 </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panelcoversquare)">
-                            <control type="group">
+                            </itemlayout>
+                            <focusedlayout width="228" height="340" condition="Substring($PARAM[WidgetType],panelcoverposter)">
                                 <control type="image">
                                     <posx>5</posx>
                                     <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <aspectratio aligny="top">scale</aspectratio>
-                                    <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                                    <width>218</width>
+                                    <height>340</height>
+                                    <aspectratio>scale</aspectratio>
+                                    <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
                                 </control>
-                                <control type="label">
+                                <control type="image">
+                                    <width>228</width>
+                                    <height>350</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <itemlayout width="798" height="170" condition="Substring($PARAM[WidgetType],bannerlayout)">
+                                <include>WidgetBannerLayout</include>
+                            </itemlayout>
+                            <focusedlayout width="798" height="170" condition="Substring($PARAM[WidgetType],bannerlayout)">
+                                <include>WidgetBannerLayout</include>
+                                <control type="image">
+                                    <width>798</width>
+                                    <height>180</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <itemlayout width="532" height="340" condition="Substring($PARAM[WidgetType],clearartlayout)">
+                                <include>WidgetClearArtLayout</include>
+                            </itemlayout>
+                            <focusedlayout width="532" height="340" condition="Substring($PARAM[WidgetType],clearartlayout)">
+                                <include>WidgetClearArtLayout</include>
+                                <control type="image">
+                                    <width>532</width>
+                                    <height>350</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <itemlayout width="319" height="360" condition="Substring($PARAM[WidgetType],panelcoversquare)">
+                                <control type="group">
+                                    <control type="image">
+                                        <posx>5</posx>
+                                        <posy>5</posy>
+                                        <width>309</width>
+                                        <height>309</height>
+                                        <aspectratio aligny="top">scale</aspectratio>
+                                        <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                                    </control>
+                                    <control type="label">
+                                        <posx>5</posx>
+                                        <posy>309</posy>
+                                        <width>309</width>
+                                        <height>50</height>
+                                        <align>center</align>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg25_2</font>
+                                        <textcolor>grey2</textcolor>
+                                    </control>
+                                    <control type="image">
+                                        <posx>5</posx>
+                                        <posy>5</posy>
+                                        <width>309</width>
+                                        <height>309</height>
+                                        <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
+                                        <animation effect="fade" time="350">VisibleChange</animation>
+                                        <visible>Control.HasFocus($PARAM[id])</visible>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="319" height="360" condition="Substring($PARAM[WidgetType],panelcoversquare)">
+                                <control type="group">
+                                    <control type="image">
+                                        <posx>5</posx>
+                                        <posy>5</posy>
+                                        <width>309</width>
+                                        <height>309</height>
+                                        <aspectratio aligny="top">scale</aspectratio>
+                                        <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                                    </control>
+                                    <control type="label">
+                                        <posx>5</posx>
+                                        <posy>309</posy>
+                                        <width>309</width>
+                                        <height>50</height>
+                                        <align>center</align>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg25_2</font>
+                                        <textcolor>grey2</textcolor>
+                                        <visible>!Control.HasFocus($PARAM[id])</visible>
+                                    </control>
+                                    <control type="label">
+                                        <posx>5</posx>
+                                        <posy>309</posy>
+                                        <width>309</width>
+                                        <height>50</height>
+                                        <align>center</align>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg25_2</font>
+                                        <textcolor>$VAR[FontColorVar]</textcolor>
+                                        <visible>Control.HasFocus($PARAM[id])</visible>
+                                    </control>
+                                </control>
+                                <control type="image">
+                                    <width>319</width>
+                                    <height>319</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <itemlayout width="399" height="340" condition="Substring($PARAM[WidgetType],panelcoverepisode)">
+                                <include>PanelCoverEpisodeLayout</include>
+                                <control type="image">
                                     <posx>5</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg25_2</font>
-                                    <textcolor>grey2</textcolor>
-                                    <visible>!Control.HasFocus(5010)</visible>
+                                    <posy>5</posy>
+                                    <width>389</width>
+                                    <height>340</height>
+                                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
+                                    <animation effect="fade" time="350">VisibleChange</animation>
+                                    <visible>Control.HasFocus($PARAM[id])</visible>
                                 </control>
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg25_2</font>
-                                    <textcolor>$VAR[FontColorVar]</textcolor>
-                                    <visible>Control.HasFocus(5010)</visible>
+                            </itemlayout>
+                            <focusedlayout width="399" height="340" condition="Substring($PARAM[WidgetType],panelcoverepisode)">
+                                <include>PanelCoverEpisodeLayout</include>
+                                <control type="image">
+                                    <width>399</width>
+                                    <height>350</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
                                 </control>
-                            </control>
-                            <control type="image">
-                                <width>319</width>
-                                <height>319</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="399" height="340" condition="Substring(Control.GetLabel(4321),panelcoverepisode)">
-                            <include>PanelCoverEpisodeLayout</include>
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>389</width>
-                                <height>340</height>
-                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                                <animation effect="fade" time="350">VisibleChange</animation>
-                                <visible>Control.HasFocus(5010)</visible>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4321),panelcoverepisode)">
-                            <include>PanelCoverEpisodeLayout</include>
-                            <control type="image">
-                                <width>399</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster)">
-                            <include>Panel2WidgetPosterLayout</include>
-                        </itemlayout>
-                        <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster)">
-                            <control type="image">
-                                <posy>0</posy>
-                                <width>532</width>
-                                <height>348</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                            </control>
-                            <include>Panel2WidgetPosterLayout</include>
-                        </focusedlayout>
-                        <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode)">
-                            <include>Panel2WidgetEpisodeLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode)">
-                            <include>Panel2WidgetEpisodeLayout</include>
-                            <control type="image">
-                                <width>798</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square)">
-                            <include>Panel2WidgetSquareLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square)">
-                            <include>Panel2WidgetSquareLayout</include>
-                            <control type="image">
-                                <width>798</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <content target="$VAR[WidgetListTargetVar]">$VAR[Widget1ContentVar]</content>
+                            </focusedlayout>
+                            <itemlayout height="450" width="532" condition="Substring($PARAM[WidgetType],panel2poster)">
+                                <include>Panel2WidgetPosterLayout</include>
+                            </itemlayout>
+                            <focusedlayout height="450" width="532" condition="Substring($PARAM[WidgetType],panel2poster)">
+                                <control type="image">
+                                    <posy>0</posy>
+                                    <width>532</width>
+                                    <height>348</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
+                                </control>
+                                <include>Panel2WidgetPosterLayout</include>
+                            </focusedlayout>
+                            <itemlayout width="798" height="340" condition="Substring($PARAM[WidgetType],panel2episode)">
+                                <include>Panel2WidgetEpisodeLayout</include>
+                            </itemlayout>
+                            <focusedlayout width="798" height="340" condition="Substring($PARAM[WidgetType],panel2episode)">
+                                <include>Panel2WidgetEpisodeLayout</include>
+                                <control type="image">
+                                    <width>798</width>
+                                    <height>350</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <itemlayout width="798" height="360" condition="Substring($PARAM[WidgetType],panel2square)">
+                                <include>Panel2WidgetSquareLayout</include>
+                            </itemlayout>
+                            <focusedlayout width="798" height="360" condition="Substring($PARAM[WidgetType],panel2square)">
+                                <include>Panel2WidgetSquareLayout</include>
+                                <control type="image">
+                                    <width>798</width>
+                                    <height>350</height>
+                                    <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
+                                    <animation effect="fade" time="280" reversible="false">Focus</animation>
+                                </control>
+                            </focusedlayout>
+                            <content target="$VAR[WidgetListTargetVar]">$INFO[$PARAM[WidgetPath]]</content>
+                        </control>
+                    </control>
+                    <control type="label">
+                        <posy>378</posy>
+                        <width>1650</width>
+                        <height>25</height>
+                        <textoffsetx>15</textoffsetx>
+                        <align>center</align>
+                        <label>$PARAM[WidgetTypeLabel]</label>
+                        <font>Font_Reg22_Caps</font>
+                        <shadowcolor>black</shadowcolor>
+                        <visible>SubString($PARAM[WidgetType],panel)</visible>
+                    </control>
+                    <control type="group">
+                        <visible>Substring($PARAM[WidgetType],wunderground)</visible>
+                        <animation effect="fade" time="350">VisibleChange</animation>
+                        <control type="image">
+                            <posx>1015</posx>
+                            <posy>26</posy>
+                            <width>610</width>
+                            <height>350</height>
+                            <texture colordiffuse="$VAR[FocusTextureColorVar]">common/white.png</texture>
+                            <visible>Control.HasFocus(5050)</visible>
+                        </control>
+                        <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
+                    </control>
+                    <control type="button" id="5050">
+                        <include>HiddenObject</include>
+                        <onleft>SetFocus(9000)</onleft>
+                        <onright>SetFocus(9000)</onright>
+                        <onunfocus>ClearProperty(weatherwidget,home)</onunfocus>
+                        <onup condition="Control.IsVisible(4445)">SetFocus(4445)</onup>
+                        <onup condition="!Control.IsVisible(4445)">SetFocus(9000)</onup>
+                        <ondown>9000</ondown>
+                        <onback>
+                            9000</onback>
+                        <onclick condition="Substring($PARAM[WidgetType],wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
+                        <visible>SubString($PARAM[WidgetType],wunderground)</visible>
+                    </control>
+                    <control type="button">
+                        <description>left Arrow</description>
+                        <posx>-40</posx>
+                        <posy>180</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <texturefocus flipx="true">arrowright.png</texturefocus>
+                        <texturenofocus flipx="true">arrowright.png</texturenofocus>
+                        <onclick>Control.Move($PARAM[id],-1)</onclick>
+                        <visible>Control.HasFocus($PARAM[id]) + Container($PARAM[id]).HasPrevious</visible>
+                        <include>Animation_DialogPopupVisibleChange</include>
+                    </control>
+                    <control type="button">
+                        <description>right Arrow</description>
+                        <posx>1650</posx>
+                        <posy>180</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <texturefocus>arrowright.png</texturefocus>
+                        <texturenofocus>arrowright.png</texturenofocus>
+                        <onclick>Control.Move($PARAM[id],1)</onclick>
+                        <visible>Control.HasFocus($PARAM[id]) + Container($PARAM[id]).HasNext</visible>
+                        <include>Animation_DialogPopupVisibleChange</include>
                     </control>
                 </control>
-                <control type="label">
-                    <posy>378</posy>
-                    <width>1650</width>
-                    <height>25</height>
-                    <textoffsetx>15</textoffsetx>
-                    <align>center</align>
-                    <label>$VAR[WidgetTypeLabelVar]</label>
-                    <font>Font_Reg22_Caps</font>
-                    <shadowcolor>black</shadowcolor>
-                    <visible>SubString(Control.GetLabel(4321),panel)</visible>
-                </control>
+            </control>
+            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget</include>
+            <control type="group" id="8998">
+                <posx>1470</posx>
+                <posy>20</posy>
+                <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
+                <visible>Substring($PARAM[WidgetType],classic)</visible>
+                <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
+                    <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
+                    <effect type="fade" end="100" delay="800" time="240" />
+                </animation>
+                <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | Control.HasFocus($PARAM[id])">
+                    <effect type="fade" start="100" end="0" time="240" />
+                    <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+                </animation>
+                <include>Animation_Widgets</include>
+                <animation effect="slide" end="0,-258" time="320" tween="cubic" easing="inout" condition="true">Conditional</animation>
                 <control type="group">
-                    <visible>Substring(Control.GetLabel(4321),wunderground)</visible>
-                    <animation effect="fade" time="350">VisibleChange</animation>
                     <control type="image">
-                        <posx>1015</posx>
-                        <posy>26</posy>
-                        <width>610</width>
-                        <height>350</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">common/white.png</texture>
-                        <visible>Control.HasFocus(5050)</visible>
+                        <posx>-12</posx>
+                        <posy>-4</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture colordiffuse="$VAR[AreaColorVar]" border="50">keyboard/keyboard_back_shadow.png</texture>
+                        <include>PanelGlowFade</include>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <visible>Substring($PARAM[WidgetType],default)</visible>
+                        <animation effect="fade" time="350">VisibleChange</animation>
                     </control>
-                    <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
-                </control>
-                <control type="button" id="5050">
-                    <include>HiddenObject</include>
-                    <onleft>SetFocus(9000)</onleft>
-                    <onright>SetFocus(9000)</onright>
-                    <onunfocus>ClearProperty(weatherwidget,home)</onunfocus>
-                    <include>NavigationWidget1</include>
-                    <onclick condition="Substring(Control.GetLabel(4321),wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
-                    <visible>SubString(Control.GetLabel(4321),wunderground)</visible>
-                </control>
-                <include>FeaturedWidget</include>
-                <control type="button">
-                    <description>left Arrow</description>
-                    <posx>-40</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus flipx="true">arrowright.png</texturefocus>
-                    <texturenofocus flipx="true">arrowright.png</texturenofocus>
-                    <onclick>Control.Move(5010,-1)</onclick>
-                    <visible>Control.HasFocus(5010) + Container(5010).HasPrevious</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
-                </control>
-                <control type="button">
-                    <description>right Arrow</description>
-                    <posx>1650</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus>arrowright.png</texturefocus>
-                    <texturenofocus>arrowright.png</texturenofocus>
-                    <onclick>Control.Move(5010,1)</onclick>
-                    <visible>Control.HasFocus(5010) + Container(5010).HasNext</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
+                    <control type="image">
+                        <posx>-12</posx>
+                        <posy>-5</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture colordiffuse="$VAR[DialogColorVar]" border="20">keyboard/keyboard_back.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>15</posx>
+                        <posy>8</posy>
+                        <width>335</width>
+                        <height>60</height>
+                        <align>center</align>
+                        <label>$PARAM[WidgetTypeLabel]</label>
+                        <font>Font_Reg33_Caps</font>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
+                        <include>Animation_HomeWidget</include>
+                    </control>
+                    <control type="image">
+                        <posx>105</posx>
+                        <posy>264</posy>
+                        <width>150</width>
+                        <height>30</height>
+                        <texture colordiffuse="grey">$INFO[Container($PARAM[id]).ListItem.Rating,stars/,.png]</texture>
+                        <visible>Substring($PARAM[WidgetType],movie)</visible>
+                        <include>Animation_HomeWidget</include>
+                    </control>
+                    <control type="label">
+                        <posx>15</posx>
+                        <posy>264</posy>
+                        <width>330</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <label>[UPPERCASE]$INFO[Container($PARAM[id]).ListItem.Label2]$INFO[Container($PARAM[id]).ListItem.Property(EpisodeNumber), • ][/UPPERCASE]</label>
+                        <font>Font_Reg26</font>
+                        <textcolor>grey</textcolor>
+                        <scrollspeed>30</scrollspeed>
+                        <scroll>true</scroll>
+                        <include>Animation_HomeWidget</include>
+                        <visible>Substring($PARAM[WidgetType],tv)</visible>
+                    </control>
+                    <control type="group">
+                        <posx>7</posx>
+                        <posy>63</posy>
+                        <control type="image">
+                            <width>345</width>
+                            <height>240</height>
+                            <aspectratio aligny="top" align="center">keep</aspectratio>
+                            <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container($PARAM[id]).ListItem.Icon]</texture>
+                            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
+                            <bordersize>7</bordersize>
+                            <animation effect="fade" time="240">Visible</animation>
+                            <animation effect="fade" time="40">Hidden</animation>
+                            <visible>Substring($PARAM[WidgetType],addons) | Substring($PARAM[WidgetType],Icon) | Substring($PARAM[WidgetType],albums) | Substring($PARAM[WidgetType],artists) | Substring($PARAM[WidgetType],actor) | Substring($PARAM[WidgetType],pics) | Substring($PARAM[WidgetType],roms)</visible>
+                        </control>
+                        <control type="image">
+                            <width>345</width>
+                            <height>194</height>
+                            <aspectratio aligny="top" align="center">scale</aspectratio>
+                            <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</texture>
+                            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
+                            <bordersize>7</bordersize>
+                            <animation effect="fade" time="240">Visible</animation>
+                            <animation effect="fade" time="40">Hidden</animation>
+                            <visible>![Substring($PARAM[WidgetType],addons) | Substring($PARAM[WidgetType],Icon) | Substring($PARAM[WidgetType],albums) | Substring($PARAM[WidgetType],artists) | Substring($PARAM[WidgetType],actor) | Substring($PARAM[WidgetType],pics) | Substring($PARAM[WidgetType],roms)]</visible>
+                            <visible>!Substring($PARAM[WidgetType],systemclassic)</visible>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <visible>Substring($PARAM[WidgetType],systemclassic)</visible>
+                        <include>HomeSystemWidget</include>
+                    </control>
+                    <control type="label">
+                        <posx>15</posx>
+                        <posy>308</posy>
+                        <width>330</width>
+                        <height>30</height>
+                        <align>center</align>
+                        <label>$INFO[Container($PARAM[id]).ListItem.Label]</label>
+                        <font>Font_Reg33_Caps</font>
+                        <textcolor>grey</textcolor>
+                        <scrollspeed>30</scrollspeed>
+                        <scroll>true</scroll>
+                    </control>
                 </control>
             </control>
         </control>
@@ -930,1072 +939,6 @@
                 <label>$INFO[ListItem.Episode,, - ]$INFO[ListItem.Label]</label>
                 <font>Font_Reg26</font>
                 <textcolor>white</textcolor>
-            </control>
-        </control>
-    </include>
-    <include name="FeaturedWidget">
-        <control type="group">
-            <posy>31</posy>
-            <visible>Substring(Control.GetLabel(4321),featured)</visible>
-            <animation effect="fade" time="350">VisibleChange</animation>
-            <control type="button" id="5011">
-                <posx>650</posx>
-                <posy>-5</posy>
-                <width>350</width>
-                <height>350</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <onleft>5010</onleft>
-                <onright>5012</onright>
-                <include>NavigationWidget1</include>
-                <onclick condition="Substring(Control.GetLabel(4321),movies) + !IsEmpty(Container(5002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5002).ListItem.Property(DBID)])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),movies) + IsEmpty(Container(5002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5002).ListItem.DBID])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,randomtv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">RunScript(script.home,container=5002,focuscontrol=5055)</onclick>
-                <visible>IntegerGreaterThan(Container(5002).NumItems,0)</visible>
-            </control>
-            <control type="button" id="5010">
-                <posx>26</posx>
-                <posy>-5</posy>
-                <width>624</width>
-                <height>350</height>
-                <visible>Substring(Control.GetLabel(4321),featured) + IntegerGreaterThan(Container(5001).NumItems,0)</visible>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <onleft>5012</onleft>
-                <onright>5011</onright>
-                <include>NavigationWidget1</include>
-                <onclick condition="Substring(Control.GetLabel(4321),movies) + !IsEmpty(Container(5001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5001).ListItem.Property(DBID)])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),movies) + IsEmpty(Container(5001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5001).ListItem.DBID])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">RunScript(script.home,container=5001,focuscontrol=5055)</onclick>
-            </control>
-            <control type="button" id="5012">
-                <posx>1001</posx>
-                <posy>-5</posy>
-                <width>624</width>
-                <height>350</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                <onleft>5011</onleft>
-                <onright>5010</onright>
-                <include>NavigationWidget1</include>
-                <onclick condition="Substring(Control.GetLabel(4321),movies) + !IsEmpty(Container(5003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5003).ListItem.Property(DBID)])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),movies) + IsEmpty(Container(5003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5003).ListItem.DBID])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(WidgetType,recenttv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4321),music)">RunScript(script.home,container=5003,focuscontrol=5055)</onclick>
-                <visible>IntegerGreaterThan(Container(5003).NumItems,0)</visible>
-            </control>
-            <control type="group">
-                <posx>31</posx>
-                <control type="label">
-                    <posy>350</posy>
-                    <width>607</width>
-                    <height>25</height>
-                    <align>center</align>
-                    <textoffsetx>15</textoffsetx>
-                    <label>$LOCALIZE[31163]  $INFO[Container(5001).CurrentPage] / $INFO[Container(5001).NumItems]</label>
-                    <font>Font_Reg22_Caps</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="fixedlist" id="5001">
-                    <width>614</width>
-                    <height>360</height>
-                    <orientation>horizontal</orientation>
-                    <focusposition>0</focusposition>
-                    <autoscroll time="5000">!Control.HasFocus(5010) + !Control.HasFocus(5001)</autoscroll>
-                    <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </itemlayout>
-                    <focusedlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </focusedlayout>
-                    <content>$VAR[FeaturedWidgetLeftContentVar]</content>
-                </control>
-                <control type="image">
-                    <width>614</width>
-                    <height>340</height>
-                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <visible>[Control.HasFocus(5011) | Control.HasFocus(5012)]</visible>
-                </control>
-            </control>
-            <control type="group">
-                <posx>655</posx>
-                <control type="fixedlist" id="5002">
-                    <width>340</width>
-                    <height>340</height>
-                    <orientation>horizontal</orientation>
-                    <focusposition>0</focusposition>
-                    <autoscroll time="5000">!Control.HasFocus(5011) + !Control.HasFocus(5002)</autoscroll>
-                    <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout width="340" height="340">
-                        <include>FeaturedWidgetSquareLayout</include>
-                    </itemlayout>
-                    <focusedlayout width="340" height="340">
-                        <include>FeaturedWidgetSquareLayout</include>
-                    </focusedlayout>
-                    <content>$VAR[FeaturedWidgetMiddleContentVar]</content>
-                </control>
-                <control type="label">
-                    <posx>0</posx>
-                    <posy>355</posy>
-                    <width>340</width>
-                    <height>12</height>
-                    <align>center</align>
-                    <font>Font_Reg22_Caps</font>
-                    <label>Recommended  $INFO[Container(5002).CurrentPage] / $INFO[Container(5002).NumItems]</label>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="image">
-                    <width>340</width>
-                    <height>340</height>
-                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <visible>[Control.HasFocus(5010) | Control.HasFocus(5012)]</visible>
-                </control>
-            </control>
-            <control type="group">
-                <posx>1005</posx>
-                <control type="label">
-                    <posx>0</posx>
-                    <posy>350</posy>
-                    <width>607</width>
-                    <height>25</height>
-                    <textoffsetx>15</textoffsetx>
-                    <align>center</align>
-                    <label>$LOCALIZE[31334]  $INFO[Container(5003).CurrentPage] / $INFO[Container(5003).NumItems]</label>
-                    <font>Font_Reg22_Caps</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="fixedlist" id="5003">
-                    <width>614</width>
-                    <height>360</height>
-                    <orientation>horizontal</orientation>
-                    <focusposition>0</focusposition>
-                    <autoscroll time="5000">!Control.HasFocus(5012) + !Control.HasFocus(5003)</autoscroll>
-                    <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </itemlayout>
-                    <focusedlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </focusedlayout>
-                    <content>$VAR[FeaturedWidgetRightContentVar]</content>
-                </control>
-                <control type="image">
-                    <width>614</width>
-                    <height>340</height>
-                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <visible>Control.HasFocus(5010) | Control.HasFocus(5011)</visible>
-                </control>
-            </control>
-        </control>
-    </include>
-    <include name="WidgetInfoPanel">
-        <control type="group">
-            <control type="button" id="5055">
-                <include>HiddenObject</include>
-                <onfocus condition="Substring(Window(home).Property(WidgetType),addons) | Substring(Window(home).Property(WidgetType),album) | Substring(Window(home).Property(WidgetType),artist) | Substring(Window(home).Property(WidgetType),pics) | Substring(Window(home).Property(WidgetType),rss)">SetFocus(5032)</onfocus>
-            </control>
-            <control type="image">
-                <posx>-79</posx>
-                <posy>-330</posy>
-                <width>1810</width>
-                <height>712</height>
-                <texture colordiffuse="FFFFFFFF">common/bgcolor.png</texture>
-                <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-                <bordersize>10</bordersize>
-            </control>
-            <control type="group" id="53000">
-                <posx>-73</posx>
-                <posy>-324</posy>
-                <width>1596</width>
-                <height>500</height>
-                <visible>Substring(Window(home).Property(WidgetType),addons) | Substring(Window(home).Property(WidgetType),album) | Substring(Window(home).Property(WidgetType),artist) | Substring(Window(home).Property(WidgetType),pics) | Substring(Window(home).Property(WidgetType),rss)</visible>
-                <control type="image">
-                    <posx>695</posx>
-                    <posy>5</posy>
-                    <width>1100</width>
-                    <height>690</height>
-                    <aspectratio>scale</aspectratio>
-                    <texture colordiffuse="44FFFFFF" background="true">$INFO[Window(home).Property(Fanart)]</texture>
-                    <visible>!IsEmpty(Window(home).Property(Fanart))</visible>
-                </control>
-                <control type="image" id="5130">
-                    <posx>1455</posx>
-                    <posy>320</posy>
-                    <width>300</width>
-                    <height>300</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="empty.png">$VAR[cdARTWidget1Var]</texture>
-                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(WidgetType))" reversible="false">
-                        <effect type="slide" start="-1400,0" end="0,0" delay="880" time="1600" tween="cubic" />
-                        <effect type="rotate" start="0" center="auto" end="-720" delay="880" time="1600" tween="cubic" />
-                    </animation>
-                </control>
-                <control type="image">
-                    <posx>5</posx>
-                    <posy>5</posy>
-                    <width>690</width>
-                    <height>690</height>
-                    <aspectratio>scale</aspectratio>
-                    <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Window(home).Property(Icon)]</texture>
-                </control>
-                <control type="grouplist">
-                    <posx>700</posx>
-                    <posy>10</posy>
-                    <orientation>vertical</orientation>
-                    <control type="label">
-                        <width>1251</width>
-                        <height>60</height>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Label)][COLOR $VAR[FontColorVar]]$INFO[Window(home).Property(Year), [,]][/COLOR]</label>
-                        <font>Font_Reg47_2</font>
-                    </control>
-                    <control type="label">
-                        <width>1251</width>
-                        <height>30</height>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Artist_Genre)]$INFO[Window(home).Property(Album_Genre)]</label>
-                        <font>Font_Reg30_2</font>
-                    </control>
-                    <control type="label">
-                        <width>1251</width>
-                        <height>30</height>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Artist_Born),$LOCALIZE[21893]: ]$INFO[Window(home).Property(Artist_Formed),$LOCALIZE[21894]: ]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                        <visible>!IsEmpty(Window(home).Property(Artist_Born)) | !IsEmpty(Window(home).Property(Artist_Formed))</visible>
-                    </control>
-                    <control type="label">
-                        <width>1251</width>
-                        <height>30</height>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Artist_Died),$LOCALIZE[21897]: ]$INFO[Window(home).Property(Artist_Disbanded),$LOCALIZE[21896]: ]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                        <visible>!IsEmpty(Window(home).Property(Artist_Died)) | !IsEmpty(Window(home).Property(Artist_Disbanded))</visible>
-                    </control>
-                    <control type="label">
-                        <width>1251</width>
-                        <height>30</height>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Artist_YearsActive)]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                        <visible>!IsEmpty(Window(home).Property(Artist_YearsActive))</visible>
-                    </control>
-                </control>
-                <control type="label">
-                    <posx>700</posx>
-                    <posy>145</posy>
-                    <width>1221</width>
-                    <height>80</height>
-                    <textoffsetx>15</textoffsetx>
-                    <label>$INFO[Window(home).Property(Fanart)]</label>
-                    <font>Font_Reg30_2</font>
-                    <textcolor>grey2</textcolor>
-                    <visible>Substring(Window(home).Property(WidgetType),pics)</visible>
-                </control>
-                <control type="textbox">
-                    <posx>700</posx>
-                    <posy>245</posy>
-                    <width>1050</width>
-                    <height>338</height>
-                    <aligny>top</aligny>
-                    <label fallback="414">$VAR[WidgetTextboxVar]</label>
-                    <font>Font_Reg30_2</font>
-                    <textcolor>white6</textcolor>
-                    <pagecontrol>5034</pagecontrol>
-                    <visible>Substring(Control.GetLabel(5130),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-                    <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                </control>
-                <control type="textbox">
-                    <posx>700</posx>
-                    <posy>245</posy>
-                    <width>740</width>
-                    <height>338</height>
-                    <aligny>top</aligny>
-                    <label fallback="414">$VAR[WidgetTextboxVar]</label>
-                    <font>Font_Reg30_2</font>
-                    <textcolor>white6</textcolor>
-                    <pagecontrol>5034</pagecontrol>
-                    <visible>![Substring(Control.GetLabel(5130),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))]</visible>
-                    <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                </control>
-                <control type="image">
-                    <posx>725</posx>
-                    <posy>600</posy>
-                    <width>1040</width>
-                    <height>1</height>
-                    <texture>views/lowlistpanel_line.png</texture>
-                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
-                        <effect type="fade" start="0" end="100" delay="1520" time="560" tween="cubic" />
-                    </animation>
-                </control>
-                <control type="grouplist">
-                    <posx>710</posx>
-                    <posy>610</posy>
-                    <width>1200</width>
-                    <align>left</align>
-                    <orientation>horizontal</orientation>
-                    <itemgap>30</itemgap>
-                    <control type="image">
-                        <width>160</width>
-                        <height>80</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="white2">$INFO[Window(home).Property(StarRating)]</texture>
-                        <fadetime>IconCrossfadeTime2</fadetime>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <visible>!IsEmpty(Window(home).Property(Rating)) + !Stringcompare(Window(home).Property(Rating),-1)</visible>
-                    </control>
-                    <control type="image">
-                        <!--todo fallback label-->
-                        <width>160</width>
-                        <height>70</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="white2">$INFO[Window(home).Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                        <fadetime>IconCrossfadeTime2</fadetime>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <visible>!IsEmpty(Window(home).Property(Album_Label))</visible>
-                    </control>
-                    <control type="grouplist">
-                        <posy>10</posy>
-                        <width>1030</width>
-                        <orientation>vertical</orientation>
-                        <height>84</height>
-                        <control type="label">
-                            <width>1251</width>
-                            <height>28</height>
-                            <textoffsetx>0</textoffsetx>
-                            <label>$INFO[Window(home).Property(Album_Theme)]</label>
-                            <font>Font_Reg22_Caps</font>
-                            <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Window(home).Property(Album_Theme))</visible>
-                        </control>
-                        <control type="label">
-                            <width>1251</width>
-                            <height>28</height>
-                            <textoffsetx>0</textoffsetx>
-                            <label>$INFO[Window(home).Property(Artist_Instrument)]</label>
-                            <font>Font_Reg22_Caps</font>
-                            <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Window(home).Property(Artist_Instrument))</visible>
-                        </control>
-                        <control type="label">
-                            <width>1251</width>
-                            <height>28</height>
-                            <textoffsetx>0</textoffsetx>
-                            <label>$INFO[Window(home).Property(Artist_Style)]$INFO[Window(home).Property(Album_Style)]</label>
-                            <font>Font_Reg22_Caps</font>
-                            <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Window(home).Property(Artist_Style)) | !IsEmpty(Window(home).Property(Album_Style))</visible>
-                        </control>
-                        <control type="label">
-                            <width>1251</width>
-                            <height>28</height>
-                            <textoffsetx>0</textoffsetx>
-                            <label>$INFO[Window(home).Property(Artist_Mood)]$INFO[Window(home).Property(Album_Mood)]</label>
-                            <font>Font_Reg22_Caps</font>
-                            <textcolor>grey2</textcolor>
-                            <visible>!IsEmpty(Window(home).Property(Artist_Mood)) | !IsEmpty(Window(home).Property(Album_Mood))</visible>
-                        </control>
-                    </control>
-                </control>
-                <control type="image">
-                    <posx>1331</posx>
-                    <posy>-5</posy>
-                    <width>450</width>
-                    <height>220</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2),,/logo.png]</texture>
-                    <fadetime>400</fadetime>
-                </control>
-                <control type="grouplist" id="5030">
-                    <posx>700</posx>
-                    <posy>168</posy>
-                    <width>1373</width>
-                    <onleft>5030</onleft>
-                    <onright>5030</onright>
-                    <onback condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onback>
-                    <onback condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onback>
-                    <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
-                    <onback>ClearProperty(PanelWidget2Info,Home)</onback>
-                    <onup condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onup>
-                    <onup condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onup>
-                    <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
-                    <onup>ClearProperty(PanelWidget2Info,Home)</onup>
-                    <ondown condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</ondown>
-                    <ondown condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</ondown>
-                    <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
-                    <ondown>ClearProperty(PanelWidget2Info,Home)</ondown>
-                    <orientation>horizontal</orientation>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <control type="button" id="5032">
-                        <label>$LOCALIZE[208]</label>
-                        <include>WidgetMenuLabel</include>
-                        <onclick condition="Substring(Window(home).Property(WidgetType),album)">Playlist.Clear</onclick>
-                        <onclick condition="Substring(Window(home).Property(WidgetType),artist)">ActivateWindow(musiclibrary,$ESCINFO[Window(home).Property(Path)],return)</onclick>
-                        <onclick condition="!Substring(Window(home).Property(WidgetType),artist)">$INFO[Window(home).Property(Path)]</onclick>
-                        <onclick condition="Substring(Window(home).Property(WidgetType),addons)">RunAddon($INFO[Window(home).Property(Path)])</onclick>
-                        <onclick condition="Substring(Window(home).Property(WidgetType),rss)">PlayMedia($ESCINFO[Window(home).Property(Path)])</onclick>
-                        <onclick>Dialog.Close(musicinformation)</onclick>
-                    </control>
-                    <control type="button" id="5036">
-                        <label>$LOCALIZE[31096]</label>
-                        <onclick condition="Substring(Window(home).Property(WidgetType),artist)">SetProperty(listcontent,$INFO[Window(home).Property(Label)],home)</onclick>
-                        <onclick condition="Substring(Window(home).Property(WidgetType),album)">SetProperty(listcontent,$INFO[Window(home).Property(Label)] $INFO[Window(home).Property(Label2)],home)</onclick>
-                        <onclick>ActivateWindow(1168)</onclick>
-                        <include>WidgetMenuLabel</include>
-                    </control>
-                    <control type="spincontrol" id="5034">
-                        <posx>0</posx>
-                        <posy>-5</posy>
-                        <width>70</width>
-                        <height>100</height>
-                    </control>
-                </control>
-            </control>
-        </control>
-    </include>
-    <include name="RecentWidget2">
-        <control type="group">
-            <posx>1542</posx>
-            <posy>13</posy>
-            <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <visible>Substring(Control.GetLabel(4325),classic)</visible>
-            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="130" delay="800" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" end="100" delay="800" time="240" />
-            </animation>
-            <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | Control.HasFocus(6010)">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <include>Animation_Widgets</include>
-            <!--Unfocused widget-->
-            <control type="image">
-                <posx>-12</posx>
-                <posy>-4</posy>
-                <width>385</width>
-                <height>370</height>
-                <texture colordiffuse="$VAR[AreaColorVar]" border="50">keyboard/keyboard_back_shadow.png</texture>
-                <include>PanelGlowFade</include>
-                <visible>Substring(Control.GetLabel(4325),default)</visible>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <animation effect="fade" time="350">VisibleChange</animation>
-            </control>
-            <control type="image">
-                <posx>-12</posx>
-                <posy>-5</posy>
-                <width>385</width>
-                <height>370</height>
-                <texture colordiffuse="$VAR[DialogColorVar]" border="20">keyboard/keyboard_back.png</texture>
-            </control>
-            <control type="label">
-                <posx>15</posx>
-                <posy>8</posy>
-                <width>335</width>
-                <height>60</height>
-                <align>center</align>
-                <label>$VAR[Widget2TypeLabelVar]</label>
-                <font>Font_Reg33_Caps</font>
-                <textcolor>$VAR[FontColorVar]</textcolor>
-                <include>Animation_HomeWidget</include>
-            </control>
-            <control type="image">
-                <posx>105</posx>
-                <posy>264</posy>
-                <width>150</width>
-                <height>30</height>
-                <texture colordiffuse="grey">$INFO[Container(6010).ListItem.Rating,stars/,.png]</texture>
-                <visible>Substring(Control.GetLabel(4325),movie)</visible>
-                <include>Animation_HomeWidget</include>
-            </control>
-            <control type="label">
-                <posx>15</posx>
-                <posy>264</posy>
-                <width>330</width>
-                <height>30</height>
-                <align>center</align>
-                <label>[UPPERCASE]$INFO[Container(6010).ListItem.TVShowTitle]$INFO[Container(6010).ListItem.Episode, • ][/UPPERCASE]</label>
-                <font>Font_Reg26</font>
-                <textcolor>grey</textcolor>
-                <scrollspeed>30</scrollspeed>
-                <scroll>true</scroll>
-                <include>Animation_HomeWidget</include>
-                <visible>Substring(Control.GetLabel(4325),tv)</visible>
-            </control>
-            <control type="image" id="70100">
-                <posx>7</posx>
-                <posy>63</posy>
-                <width>345</width>
-                <height>240</height>
-                <aspectratio aligny="top" align="center">keep</aspectratio>
-                <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(6010).ListItem.Icon]</texture>
-                <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                <bordersize>7</bordersize>
-                <animation effect="fade" time="240">Visible</animation>
-                <animation effect="fade" time="40">Hidden</animation>
-                <visible>Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),Icon) | Substring(Control.GetLabel(4325),artists) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),actor) | Substring(Control.GetLabel(4325),pics) | Substring(Control.GetLabel(4325),roms)</visible>
-            </control>
-            <control type="image">
-                <posx>7</posx>
-                <posy>63</posy>
-                <width>345</width>
-                <height>194</height>
-                <aspectratio aligny="top" align="center">scale</aspectratio>
-                <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$VAR[ClassicWidget2ImageVar]</texture>
-                <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                <bordersize>7</bordersize>
-                <animation effect="fade" time="240">Visible</animation>
-                <animation effect="fade" time="40">Hidden</animation>
-                <visible>!Control.IsVisible(70100) + !Substring(Control.GetLabel(4325),systemclassic)</visible>
-            </control>
-            <control type="group">
-                <visible>Substring(Control.GetLabel(4325),systemclassic)</visible>
-                <include>HomeSystemWidget</include>
-            </control>
-            <control type="label">
-                <posx>15</posx>
-                <posy>308</posy>
-                <width>330</width>
-                <height>30</height>
-                <align>center</align>
-                <label>$INFO[Container(6010).ListItem.Label]</label>
-                <font>Font_Reg33_Caps</font>
-                <textcolor>grey</textcolor>
-                <scrollspeed>30</scrollspeed>
-                <scroll>true</scroll>
-            </control>
-        </control>
-    </include>
-    <include name="HomePanelWidget2">
-        <control type="group" id="6000">
-            <posx>135</posx>
-            <posy>-4</posy>
-            <width>1920</width>
-            <height>825</height>
-            <animation effect="slide" end="0,25" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <visible>Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel) | Substring(Control.GetLabel(4325),classic)</visible>
-            <animation type="Conditional" condition="IsEmpty(Window(home).Property(scrolling))">
-                <effect type="zoom" start="80" delay="800" end="100" center="960,540" time="400" tween="cubic" />
-                <effect type="fade" end="100" delay="800" time="240" />
-            </animation>
-            <animation type="Conditional" condition="!IsEmpty(Window(home).Property(scrolling)) | [Substring(Control.GetLabel(4325),classic) + !Control.HasFocus(6010)]">
-                <effect type="fade" start="100" end="0" time="240" />
-                <effect type="zoom" start="100" end="80" center="960,540" time="240" tween="cubic" easing="in" />
-            </animation>
-            <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <include>Animation_Widgets</include>
-            <control type="group">
-                <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidget2Info))" reversible="false">
-                    <include>Animation_PanelFlipUp2</include>
-                </animation>
-                <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidget2Info))" reversible="false">
-                    <include>Animation_PanelFlipDown1</include>
-                </animation>
-                <control type="image">
-                    <posx>17</posx>
-                    <posy>15</posy>
-                    <width>1616</width>
-                    <height>369</height>
-                    <texture colordiffuse="AAFFFFFF">common/bgcolor.png</texture>
-                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-                    <bordersize>10</bordersize>
-                    <visible>Substring(Control.GetLabel(4325),default)</visible>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                </control>
-                <control type="group">
-                    <visible>!Substring(Control.GetLabel(4325),weather)</visible>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <control type="panel" id="6010">
-                        <visible>!Substring(Control.GetLabel(4325),featured)</visible>
-                        <animation effect="fade" start="0" end="100" delay="50" time="0">WindowOpen</animation>
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1596</width>
-                        <height>360</height>
-                        <orientation>horizontal</orientation>
-                        <onleft>6010</onleft>
-                        <onright>6010</onright>
-                        <include>NavigationWidget2</include>
-                        <onback>ClearProperty(PanelWidget2Info,Home)</onback>
-                        <preloaditems>1</preloaditems>
-                        <scrolltime tween="quadratic">400</scrolltime>
-                        <autoscroll time="6000">!Control.HasFocus(6010) + Substring(Control.GetLabel(4325),classic)</autoscroll>
-                        <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
-                            <include>WidgetLandscapeLayout</include>
-                            <control type="image">
-                                <width>532</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
-                            <include>WidgetLandscapeLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),keepar)">
-                            <include>WidgetRCBLayout</include>
-                            <control type="image">
-                                <width>532</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),keepar)">
-                            <include>WidgetRCBLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),bannerlayout)">
-                            <include>WidgetBannerLayout</include>
-                            <control type="image">
-                                <width>798</width>
-                                <height>180</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),bannerlayout)">
-                            <include>WidgetBannerLayout</include>
-                        </itemlayout>
-                        <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),clearartlayout)">
-                            <include>WidgetClearArtLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),clearartlayout)">
-                            <include>WidgetClearArtLayout</include>
-                            <control type="image">
-                                <width>532</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4325),panelcoverposter)">
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>218</width>
-                                <height>340</height>
-                                <aspectratio align="center">scale</aspectratio>
-                                <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
-                            </control>
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>218</width>
-                                <height>340</height>
-                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                                <animation effect="fade" time="350">VisibleChange</animation>
-                                <visible>Control.HasFocus(6010)</visible>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="228" height="340" condition="Substring(Control.GetLabel(4325),panelcoverposter)">
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>218</width>
-                                <height>340</height>
-                                <aspectratio>scale</aspectratio>
-                                <texture background="true" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar]</texture>
-                            </control>
-                            <control type="image">
-                                <width>228</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4325),panelcoversquare)">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <aspectratio aligny="top">scale</aspectratio>
-                                    <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg25_2</font>
-                                    <textcolor>grey2</textcolor>
-                                </control>
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                                    <animation effect="fade" time="350">VisibleChange</animation>
-                                    <visible>Control.HasFocus(6010)</visible>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4325),panelcoversquare)">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <aspectratio aligny="top">scale</aspectratio>
-                                    <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg25_2</font>
-                                    <textcolor>grey2</textcolor>
-                                    <visible>!Control.HasFocus(6010)</visible>
-                                </control>
-                                <control type="label">
-                                    <posx>5</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>Font_Reg25_2</font>
-                                    <textcolor>$VAR[FontColorVar]</textcolor>
-                                    <visible>Control.HasFocus(6010)</visible>
-                                </control>
-                            </control>
-                            <control type="image">
-                                <width>319</width>
-                                <height>319</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="399" height="340" condition="Substring(Control.GetLabel(4325),panelcoverepisode)">
-                            <include>PanelCoverEpisodeLayout</include>
-                            <control type="image">
-                                <posx>5</posx>
-                                <posy>5</posy>
-                                <width>389</width>
-                                <height>340</height>
-                                <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                                <animation effect="fade" time="350">VisibleChange</animation>
-                                <visible>Control.HasFocus(6010)</visible>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4325),panelcoverepisode)">
-                            <include>PanelCoverEpisodeLayout</include>
-                            <control type="image">
-                                <width>399</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
-                            <include>Panel2WidgetPosterLayout</include>
-                        </itemlayout>
-                        <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
-                            <control type="image">
-                                <posy>0</posy>
-                                <width>532</width>
-                                <height>348</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]">views/tripanel/listselect_fo.png</texture>
-                            </control>
-                            <include>Panel2WidgetPosterLayout</include>
-                        </focusedlayout>
-                        <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
-                            <include>Panel2WidgetEpisodeLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
-                            <include>Panel2WidgetEpisodeLayout</include>
-                            <control type="image">
-                                <width>798</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
-                            <include>Panel2WidgetSquareLayout</include>
-                        </itemlayout>
-                        <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
-                            <include>Panel2WidgetSquareLayout</include>
-                            <control type="image">
-                                <width>798</width>
-                                <height>350</height>
-                                <texture colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texture>
-                                <animation effect="fade" time="280" reversible="false">Focus</animation>
-                            </control>
-                        </focusedlayout>
-                        <content target="$VAR[Widget2ListTargetVar]">$VAR[Widget2ContentVar]</content>
-                    </control>
-                </control>
-                <control type="label">
-                    <posy>378</posy>
-                    <width>1650</width>
-                    <height>25</height>
-                    <textoffsetx>15</textoffsetx>
-                    <align>center</align>
-                    <label>$VAR[Widget2TypeLabelVar]</label>
-                    <font>Font_Reg22_Caps</font>
-                    <shadowcolor>black</shadowcolor>
-                    <visible>SubString(Control.GetLabel(4325),panel)</visible>
-                </control>
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4325),wunderground)</visible>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <control type="image">
-                        <posx>1015</posx>
-                        <posy>26</posy>
-                        <width>610</width>
-                        <height>350</height>
-                        <texture colordiffuse="$VAR[FocusTextureColorVar]">common/white.png</texture>
-                        <visible>Control.HasFocus(6050)</visible>
-                    </control>
-                    <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
-                </control>
-                <control type="button" id="6050">
-                    <include>HiddenObject</include>
-                    <onunfocus>ClearProperty(weatherwidget,home)</onunfocus>
-                    <onleft>SetFocus(9000)</onleft>
-                    <onright>SetFocus(9000)</onright>
-                    <include>NavigationWidget2</include>
-                    <onclick condition="Substring(Control.GetLabel(4325),wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
-                    <visible>SubString(Control.GetLabel(4325),wunderground)</visible>
-                </control>
-                <include>FeaturedWidget2</include>
-                <control type="button">
-                    <description>left Arrow</description>
-                    <posx>-40</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus flipx="true">arrowright.png</texturefocus>
-                    <texturenofocus flipx="true">arrowright.png</texturenofocus>
-                    <onclick>Control.Move(6010,-1)</onclick>
-                    <visible>Control.HasFocus(6010) + Container(6010).HasPrevious</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
-                </control>
-                <control type="button">
-                    <description>right Arrow</description>
-                    <posx>1650</posx>
-                    <posy>180</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texturefocus>arrowright.png</texturefocus>
-                    <texturenofocus>arrowright.png</texturenofocus>
-                    <onclick>Control.Move(6010,1)</onclick>
-                    <visible>Control.HasFocus(6010) + Container(6010).HasNext</visible>
-                    <include>Animation_DialogPopupVisibleChange</include>
-                </control>
-            </control>
-        </control>
-    </include>
-    <include name="FeaturedWidget2">
-        <control type="group">
-            <posy>31</posy>
-            <visible>Substring(Control.GetLabel(4325),featured)</visible>
-            <animation effect="fade" time="350">VisibleChange</animation>
-            <control type="button" id="6011">
-                <posx>650</posx>
-                <posy>-5</posy>
-                <width>350</width>
-                <height>350</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                <texturenofocus></texturenofocus>
-                <onleft>6010</onleft>
-                <onright>6012</onright>
-                <include>NavigationWidget2</include>
-                <onclick condition="Substring(Control.GetLabel(4325),movies) + !IsEmpty(Container(6002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6002).ListItem.Property(DBID)])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),movies) + IsEmpty(Container(6002).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6002).ListItem.DBID])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,randomtv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,watchlistalbums,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">RunScript(script.home,container=6002,focuscontrol=5055)</onclick>
-                <visible>IntegerGreaterThan(Container(6002).NumItems,0)</visible>
-            </control>
-            <control type="button" id="6010">
-                <posx>26</posx>
-                <posy>-5</posy>
-                <width>624</width>
-                <height>350</height>
-                <visible>Substring(Control.GetLabel(4325),featured)</visible>
-                <visible>IntegerGreaterThan(Container(6001).NumItems,0)</visible>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                <texturenofocus></texturenofocus>
-                <include>NavigationWidget2</include>
-                <onleft>6012</onleft>
-                <onright>6011</onright>
-                <onclick condition="Substring(Control.GetLabel(4325),movies) + !IsEmpty(Container(6001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6001).ListItem.Property(DBID)])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),movies) + IsEmpty(Container(6001).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6001).ListItem.DBID])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,watchlisttv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,randomalbums,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">RunScript(script.home,container=6001,focuscontrol=5055)</onclick>
-            </control>
-            <control type="button" id="6012">
-                <posx>1001</posx>
-                <posy>-5</posy>
-                <width>624</width>
-                <height>350</height>
-                <texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="6">views/addonwall_select.png</texturefocus>
-                <texturenofocus></texturenofocus>
-                <onleft>6011</onleft>
-                <onright>6010</onright>
-                <include>NavigationWidget2</include>
-                <onclick condition="Substring(Control.GetLabel(4325),movies) + !IsEmpty(Container(6003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6003).ListItem.Property(DBID)])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),movies) + IsEmpty(Container(6003).ListItem.Property(DBID))">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(6003).ListItem.DBID])</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(WidgetType,recenttv,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(WidgetType,recentalbums,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(PanelWidgetInfo,true,home)</onclick>
-                <onclick condition="Substring(Control.GetLabel(4325),music)">RunScript(script.home,container=6003,focuscontrol=5055)</onclick>
-                <visible>IntegerGreaterThan(Container(6003).NumItems,0)</visible>
-            </control>
-            <control type="group">
-                <posx>31</posx>
-                <control type="label">
-                    <posy>350</posy>
-                    <width>607</width>
-                    <height>25</height>
-                    <align>center</align>
-                   <textoffsetx>15</textoffsetx>
-                    <label>$LOCALIZE[31163]  $INFO[Container(6001).CurrentPage] / $INFO[Container(6001).NumItems]</label>
-                    <font>Font_Reg22_Caps</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="fixedlist" id="6001">
-                    <width>614</width>
-                    <height>360</height>
-                    <orientation>horizontal</orientation>
-                    <focusposition>0</focusposition>
-                    <autoscroll time="5000">!Control.HasFocus(6010) + !Control.HasFocus(6001)</autoscroll>
-                    <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </itemlayout>
-                    <focusedlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </focusedlayout>
-                    <content>$VAR[FeaturedWidget2LeftContentVar]</content>
-                </control>
-                <control type="image">
-                    <width>614</width>
-                    <height>340</height>
-                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <visible>[Control.HasFocus(6011) | Control.HasFocus(6012)]</visible>
-                </control>
-            </control>
-            <control type="group">
-                <posx>655</posx>
-                <control type="fixedlist" id="6002">
-                    <width>340</width>
-                    <height>340</height>
-                    <onup>6011</onup>
-                    <ondown>6011</ondown>
-                    <onback>6011</onback>
-                    <orientation>horizontal</orientation>
-                    <pagecontrol>60</pagecontrol>
-                    <focusposition>0</focusposition>
-                    <autoscroll time="5000">!Control.HasFocus(6011) + !Control.HasFocus(6002)</autoscroll>
-                    <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout width="340" height="340">
-                        <include>FeaturedWidgetSquareLayout</include>
-                    </itemlayout>
-                    <focusedlayout width="340" height="340">
-                        <include>FeaturedWidgetSquareLayout</include>
-                    </focusedlayout>
-                    <content>$VAR[FeaturedWidget2MiddleContentVar]</content>
-                </control>
-                <control type="label">
-                    <posx>0</posx>
-                    <posy>355</posy>
-                    <width>340</width>
-                    <height>12</height>
-                    <align>center</align>
-                    <font>Font_Reg22_Caps</font>
-                    <label>Recommended  $INFO[Container(6002).CurrentPage] / $INFO[Container(6002).NumItems]</label>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="image">
-                    <width>340</width>
-                    <height>340</height>
-                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <visible>[Control.HasFocus(6010) | Control.HasFocus(6012)]</visible>
-                </control>
-            </control>
-            <control type="group">
-                <posx>1005</posx>
-                <control type="label">
-                    <posx>0</posx>
-                    <posy>350</posy>
-                    <width>607</width>
-                    <height>25</height>
-                    <textoffsetx>15</textoffsetx>
-                    <align>center</align>
-                    <label>$LOCALIZE[31334]  $INFO[Container(6003).CurrentPage] / $INFO[Container(6003).NumItems]</label>
-                    <font>Font_Reg22_Caps</font>
-                    <shadowcolor>black</shadowcolor>
-                    <textcolor>white3</textcolor>
-                </control>
-                <control type="fixedlist" id="6003">
-                    <width>614</width>
-                    <height>360</height>
-                    <onup>6010</onup>
-                    <ondown>9000</ondown>
-                    <onback>9000</onback>
-                    <orientation>horizontal</orientation>
-                    <pagecontrol>60</pagecontrol>
-                    <focusposition>0</focusposition>
-                    <autoscroll time="5000">!Control.HasFocus(6012) + !Control.HasFocus(6003)</autoscroll>
-                    <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                    <preloaditems>2</preloaditems>
-                    <itemlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </itemlayout>
-                    <focusedlayout width="614" height="340">
-                        <include>FeaturedWidgetLandscapeLayout</include>
-                    </focusedlayout>
-                    <content>$VAR[FeaturedWidget2RightContentVar]</content>
-                </control>
-                <control type="image">
-                    <width>614</width>
-                    <height>340</height>
-                    <texture colordiffuse="99FFFFFF">common/bgcolor.png</texture>
-                    <animation effect="fade" time="350">VisibleChange</animation>
-                    <visible>[Control.HasFocus(6010) | Control.HasFocus(6011)]</visible>
-                </control>
             </control>
         </control>
     </include>
@@ -2058,7 +1001,6 @@
                 <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>
                 <imagepath>$INFO[Window(weather).Property(MapPath)]</imagepath>
-
                 <timeperimage>500</timeperimage>
                 <pauseatend>1000</pauseatend>
                 <randomize>false</randomize>
@@ -2293,18 +1235,6 @@
             <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
     </include>
-    <include name="WidgetMenuLabel">
-        <width>300</width>
-        <height>90</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_Reg33_Caps</font>
-        <textcolor>grey</textcolor>
-        <focusedcolor>white2</focusedcolor>
-        <scroll>false</scroll>
-        <texturefocus border="20" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-        <texturenofocus border="20">buttons/roundedbutton-nofocus.png</texturenofocus>
-    </include>
     <include name="WidgetLandscapeLayout">
         <control type="group">
             <visible>IsEmpty(ListItem.Art(landscape))</visible>
@@ -2381,8 +1311,8 @@
                     <height>160</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <texture fallback="common/bgcolor.png">$INFO[ListItem.Art(fanart)]</texture>
-                                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
-                <bordersize>10</bordersize>
+                    <bordertexture colordiffuse="$VAR[AreaColorVar]" border="10">thumbs/homewidget_shadow.png</bordertexture>
+                    <bordersize>10</bordersize>
                 </control>
                 <control type="image">
                     <posx>30</posx>
@@ -2496,106 +1426,6 @@
         <ondown>9000</ondown>
         <onback>9000</onback>
     </include>
-    <include name="FeaturedWidgetSquareLayout">
-        <control type="image">
-            <width>340</width>
-            <height>340</height>
-            <aspectratio>scale</aspectratio>
-            <texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Art(fanart)]</texture>
-        </control>
-        <control type="image">
-            <width>340</width>
-            <height>340</height>
-            <aspectratio>scale</aspectratio>
-            <texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
-            <visible>IsEmpty(ListItem.Art(fanart))</visible>
-        </control>
-        <control type="image">
-            <posx>10</posx>
-            <width>320</width>
-            <height>340</height>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-        </control>
-        <control type="image">
-            <posx>260</posx>
-            <width>80</width>
-            <height>80</height>
-            <aspectratio>scale</aspectratio>
-            <texture background="true">$INFO[ListItem.Property(InProgress)]</texture>
-        </control>
-        <control type="group">
-            <!--
-            <visible>IsEmpty(ListItem.Art(clearlogo))</visible>-->
-            <control type="image">
-                <posy>300</posy>
-                <width>340</width>
-                <height>40</height>
-                <texture>common/bgcolor.png</texture>
-                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-            </control>
-            <control type="label">
-                <posy>300</posy>
-                <width>353</width>
-                <height>40</height>
-                <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Label]</label>
-                <font>Font_Reg26</font>
-                <scroll>true</scroll>
-            </control>
-        </control>
-    </include>
-    <include name="FeaturedWidgetLandscapeLayout">
-        <control type="image">
-            <width>614</width>
-            <height>340</height>
-            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Thumb]</texture>
-            <aspectratio align="center">scale</aspectratio>
-        </control>
-        <control type="image">
-            <width>614</width>
-            <height>340</height>
-            <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
-            <aspectratio align="center">scale</aspectratio>
-        </control>
-        <control type="group">
-            <visible>IsEmpty(ListItem.Art(landscape))</visible>
-            <control type="image">
-                <width>614</width>
-                <height>340</height>
-                <aspectratio align="center">scale</aspectratio>
-                <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                <visible>!IsEmpty(ListItem.Art(fanart))</visible>
-            </control>
-            <control type="image">
-                <posx>30</posx>
-                <posy>30</posy>
-                <width>564</width>
-                <height>280</height>
-                <aspectratio align="center">keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-            </control>
-        </control>
-        <control type="group">
-            <!--
-            <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(landscape))</visible>-->
-            <control type="image">
-                <posy>300</posy>
-                <width>614</width>
-                <height>40</height>
-                <texture>common/bgcolor.png</texture>
-                <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-            </control>
-            <control type="label">
-                <posy>300</posy>
-                <width>566</width>
-                <height>40</height>
-                <textoffsetx>15</textoffsetx>
-                <label>$INFO[ListItem.Label]$INFO[ListItem.TVShowTitle, - ]$INFO[ListItem.Artist, - ]</label>
-                <font>Font_Reg26</font>
-            </control>
-        </control>
-    </include>
     <include name="weatherwidgetback">
         <control type="image">
             <posx>8</posx>
@@ -2610,374 +1440,7 @@
             <width>284</width>
             <height>396</height>
             <texture colordiffuse="$VAR[DialogColorVar]">keyboard/numeric_back.png</texture>
-            <visible>Substring(Control.GetLabel(4321),default)</visible>
+            <visible>Substring($PARAM[WidgetType],default)</visible>
         </control>
-    </include>
-    <include name="weatherwidget2back">
-        <control type="image">
-            <posx>8</posx>
-            <posy>8</posy>
-            <width>267</width>
-            <height>380</height>
-            <texture colordiffuse="$VAR[AreaColorVar]" border="40">keyboard/keyboard_back_shadow.png</texture>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <include>PanelGlowFade</include>
-        </control>
-        <control type="image">
-            <width>284</width>
-            <height>396</height>
-            <texture colordiffuse="$VAR[DialogColorVar]">keyboard/numeric_back.png</texture>
-            <visible>Substring(Control.GetLabel(4325),default)</visible>
-        </control>
-    </include>
-    <include name="Weather_Widget2">
-        <control type="group">
-            <posy>30</posy>
-            <visible>Substring(Control.GetLabel(4325),weather) + Weather.IsFetched</visible>
-            <include>Animation_Widgets</include>
-            <visible>!IsEmpty(Weather.Plugin)</visible>
-            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(script-HomeWindow Script-main.xml)]</visible>
-            <control type="group">
-                <posx>75</posx>
-                <control type="group">
-                    <include>weatherwidget2back</include>
-                    <control type="label">
-                        <posy>310</posy>
-                        <width>284</width>
-                        <height>52</height>
-                        <align>center</align>
-                        <label>31374</label>
-                        <font>Font_Bold34</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>38</posx>
-                        <posy>45</posy>
-                        <width>210</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <font>Font_Info</font>
-                        <label>$INFO[Window(weather).Property(Current.Condition)]</label>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="image">
-                        <posx>82</posx>
-                        <posy>90</posy>
-                        <width>120</width>
-                        <height>120</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
-                    </control>
-                    <control type="label">
-                        <posy>225</posy>
-                        <width>284</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Bold56</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Current.Temperature))</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <posx>450</posx>
-                <control type="group">
-                    <include>weatherwidget2back</include>
-                    <control type="label">
-                        <posy>310</posy>
-                        <width>284</width>
-                        <height>52</height>
-                        <align>center</align>
-                        <font>Font_Bold34</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <label>$INFO[Window(weather).Property(Day0.Title)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>38</posx>
-                        <posy>45</posy>
-                        <width>210</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <font>Font_Info</font>
-                        <label>$INFO[Window(weather).Property(Day0.Outlook)]</label>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="image">
-                        <posx>82</posx>
-                        <posy>90</posy>
-                        <width>120</width>
-                        <height>120</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <info>Window(weather).Property(Day0.OutlookIcon)</info>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <label>$INFO[Window(weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>red</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day0.HighTemp))</visible>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>52</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>52</height>
-                        <label>$INFO[Window(weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>blue</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day0.LowTemp))</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <posx>825</posx>
-                <control type="group">
-                    <include>weatherwidget2back</include>
-                    <control type="label">
-                        <posy>310</posy>
-                        <width>284</width>
-                        <height>52</height>
-                        <align>center</align>
-                        <font>Font_Bold34</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <info>Window(weather).Property(Day1.Title)</info>
-                    </control>
-                    <control type="label">
-                        <posx>38</posx>
-                        <posy>45</posy>
-                        <width>210</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <font>Font_Info</font>
-                        <info>Window(weather).Property(Day1.Outlook)</info>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="image">
-                        <posx>82</posx>
-                        <posy>90</posy>
-                        <width>120</width>
-                        <height>120</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <info>Window(weather).Property(Day1.OutlookIcon)</info>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <label>$INFO[Window(weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>red</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day1.HighTemp))</visible>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>45</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>45</height>
-                        <label>$INFO[Window(weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>blue</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day1.LowTemp))</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <posx>1200</posx>
-                <control type="group">
-                    <include>weatherwidget2back</include>
-                    <control type="label">
-                        <posy>310</posy>
-                        <width>284</width>
-                        <height>52</height>
-                        <align>center</align>
-                        <font>Font_Bold34</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <info>Window(weather).Property(Day2.Title)</info>
-                    </control>
-                    <control type="label">
-                        <posx>38</posx>
-                        <posy>45</posy>
-                        <width>210</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <font>Font_Info</font>
-                        <info>Window(weather).Property(Day2.Outlook)</info>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="image">
-                        <posx>82</posx>
-                        <posy>90</posy>
-                        <width>120</width>
-                        <height>120</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <info>Window(weather).Property(Day2.OutlookIcon)</info>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <label>$INFO[Window(weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>red</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day2.HighTemp))</visible>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>45</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>45</height>
-                        <label>$INFO[Window(weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>blue</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day2.LowTemp))</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <posx>1575</posx>
-                <control type="group">
-                    <include>weatherwidget2back</include>
-                    <control type="label">
-                        <posy>310</posy>
-                        <width>284</width>
-                        <height>52</height>
-                        <align>center</align>
-                        <font>Font_Bold34</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <info>Window(weather).Property(Day3.Title)</info>
-                    </control>
-                    <control type="label">
-                        <posx>38</posx>
-                        <posy>45</posy>
-                        <width>210</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <font>Font_Info</font>
-                        <info>Window(weather).Property(Day3.Outlook)</info>
-                        <scroll>true</scroll>
-                    </control>
-                    <control type="image">
-                        <posx>82</posx>
-                        <posy>90</posy>
-                        <width>120</width>
-                        <height>120</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <info>Window(weather).Property(Day3.OutlookIcon)</info>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>221</posy>
-                        <width>142</width>
-                        <height>30</height>
-                        <label>$INFO[Window(weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>red</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day3.HighTemp))</visible>
-                    </control>
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>45</height>
-                        <align>right</align>
-                        <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>150</posx>
-                        <posy>255</posy>
-                        <width>142</width>
-                        <height>45</height>
-                        <label>$INFO[Window(weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg30_2</font>
-                        <textcolor>blue</textcolor>
-                        <visible>!IsEmpty(Window(weather).Property(Day3.LowTemp))</visible>
-                    </control>
-                </control>
-            </control>
-        </control>
-    </include>
-    <include name="NavigationWidget2">
-        <onup>SetFocus(9000)</onup>
-        <ondown condition="!Control.IsVisible(4444)">9000</ondown>
-        <ondown condition="Control.IsVisible(4444)">4444</ondown>
-        <onback>9000</onback>
     </include>
 </includes>

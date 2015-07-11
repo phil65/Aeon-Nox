@@ -7,10 +7,22 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Path,$ESCINFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget3,$INFO[Skin.String(ItemToEdit.Widget3)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget4,$INFO[Skin.String(ItemToEdit.Widget4)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget5,$INFO[Skin.String(ItemToEdit.Widget5)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget6,$INFO[Skin.String(ItemToEdit.Widget6)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].WidgetTitle,$ESCINFO[Skin.String(ItemToEdit.WidgetTitle)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2Title,$ESCINFO[Skin.String(ItemToEdit.Widget2Title)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget3Title,$ESCINFO[Skin.String(ItemToEdit.Widget3Title)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget4Title,$ESCINFO[Skin.String(ItemToEdit.Widget4Title)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget5Title,$ESCINFO[Skin.String(ItemToEdit.Widget5Title)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget6Title,$ESCINFO[Skin.String(ItemToEdit.Widget6Title)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].WidgetContent,$ESCINFO[Skin.String(ItemToEdit.WidgetContent)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget2Content,$ESCINFO[Skin.String(ItemToEdit.Widget2Content)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget3Content,$ESCINFO[Skin.String(ItemToEdit.Widget3Content)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget4Content,$ESCINFO[Skin.String(ItemToEdit.Widget4Content)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget5Content,$ESCINFO[Skin.String(ItemToEdit.Widget5Content)])</onunload>
+    <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Widget6Content,$ESCINFO[Skin.String(ItemToEdit.Widget6Content)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].BackgroundOverlay,$ESCINFO[Skin.String(ItemToEdit.BackgroundOverlay)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].Icon,$ESCINFO[Skin.String(ItemToEdit.Icon)])</onunload>
@@ -18,10 +30,22 @@
     <onunload>Skin.SetString($INFO[Window(home).Property(MenuItem)].SubMenu,$INFO[Skin.String(ItemToEdit.SubMenu)])</onunload>
     <onunload>SetProperty(Widget1Type,$INFO[Skin.String(ItemToEdit.Widget)],home)</onunload>
     <onunload>SetProperty(Widget2Type,$INFO[Skin.String(ItemToEdit.Widget2)],home)</onunload>
+    <onunload>SetProperty(Widget3Type,$INFO[Skin.String(ItemToEdit.Widget3)],home)</onunload>
+    <onunload>SetProperty(Widget4Type,$INFO[Skin.String(ItemToEdit.Widget4)],home)</onunload>
+    <onunload>SetProperty(Widget5Type,$INFO[Skin.String(ItemToEdit.Widget5)],home)</onunload>
+    <onunload>SetProperty(Widget6Type,$INFO[Skin.String(ItemToEdit.Widget6)],home)</onunload>
     <onunload>SetProperty(Widget1Title,$INFO[Skin.String(ItemToEdit.WidgetTitle)],home)</onunload>
     <onunload>SetProperty(Widget2Title,$INFO[Skin.String(ItemToEdit.Widget2Title)],home)</onunload>
+    <onunload>SetProperty(Widget3Title,$INFO[Skin.String(ItemToEdit.Widget3Title)],home)</onunload>
+    <onunload>SetProperty(Widget4Title,$INFO[Skin.String(ItemToEdit.Widget4Title)],home)</onunload>
+    <onunload>SetProperty(Widget5Title,$INFO[Skin.String(ItemToEdit.Widget5Title)],home)</onunload>
+    <onunload>SetProperty(Widget6Title,$INFO[Skin.String(ItemToEdit.Widget6Title)],home)</onunload>
     <onunload>SetProperty(Widget1Content,$INFO[Skin.String(ItemToEdit.WidgetContent)],home)</onunload>
     <onunload>SetProperty(Widget2Content,$INFO[Skin.String(ItemToEdit.Widget2Content)],home)</onunload>
+    <onunload>SetProperty(Widget3Content,$INFO[Skin.String(ItemToEdit.Widget3Content)],home)</onunload>
+    <onunload>SetProperty(Widget4Content,$INFO[Skin.String(ItemToEdit.Widget4Content)],home)</onunload>
+    <onunload>SetProperty(Widget5Content,$INFO[Skin.String(ItemToEdit.Widget5Content)],home)</onunload>
+    <onunload>SetProperty(Widget6Content,$INFO[Skin.String(ItemToEdit.Widget6Content)],home)</onunload>
     <onunload>SetProperty(BackgroundOverlay,$INFO[Skin.String(ItemToEdit.BackgroundOverlay)],home)</onunload>
     <onload>SetProperty(WidgetTargetPrefix,ItemToEdit,skinsettings)</onload>
     <onload>SetProperty(MenuName,MenuItem,home)</onload>
@@ -146,16 +170,21 @@
                         <onclick>Skin.SetString($INFO[Window(home).Property(MenuItem)].Label,$ESCINFO[Skin.String(ItemToEdit.Label)])</onclick>
                     </control>
                     <control type="button" id="24">
-                        <label>$LOCALIZE[31681]</label>
+                        <label>$LOCALIZE[31107]</label>
                         <include>Objects_CustomizerSettingsButton</include>
-                        <onclick>Setproperty(WidgetSelection,Widget,skinsettings)</onclick>
-                        <onclick>ActivateWindow(1133)</onclick>
-                    </control>
-                    <control type="button" id="25">
-                        <label>$LOCALIZE[31957]</label>
-                        <include>Objects_CustomizerSettingsButton</include>
-                        <onclick>Setproperty(WidgetSelection,Widget2,skinsettings)</onclick>
-                        <onclick>ActivateWindow(1133)</onclick>
+                        <onclick>SetProperty(Dialog.1.Label,Widget 1)</onclick>
+                        <onclick>SetProperty(Dialog.1.BuiltIn,Setproperty(WidgetSelection,Widget,skinsettings)||ActivateWindow(1133))</onclick>
+                        <onclick>SetProperty(Dialog.2.Label,Widget 2)</onclick>
+                        <onclick>SetProperty(Dialog.2.BuiltIn,Setproperty(WidgetSelection,Widget2,skinsettings)||ActivateWindow(1133))</onclick>
+                        <onclick>SetProperty(Dialog.3.Label,Widget 3)</onclick>
+                        <onclick>SetProperty(Dialog.3.BuiltIn,Setproperty(WidgetSelection,Widget3,skinsettings)||ActivateWindow(1133))</onclick>
+                        <onclick>SetProperty(Dialog.4.Label,Widget 4)</onclick>
+                        <onclick>SetProperty(Dialog.4.BuiltIn,Setproperty(WidgetSelection,Widget4,skinsettings)||ActivateWindow(1133))</onclick>
+                        <onclick>SetProperty(Dialog.5.Label,Widget 5)</onclick>
+                        <onclick>SetProperty(Dialog.5.BuiltIn,Setproperty(WidgetSelection,Widget5,skinsettings)||ActivateWindow(1133))</onclick>
+                        <onclick>SetProperty(Dialog.6.Label,Widget 6)</onclick>
+                        <onclick>SetProperty(Dialog.6.BuiltIn,Setproperty(WidgetSelection,Widget6,skinsettings)||ActivateWindow(1133))</onclick>
+                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31107])</onclick>
                     </control>
                     <control type="button" id="26">
                         <label>$LOCALIZE[31680]</label>
