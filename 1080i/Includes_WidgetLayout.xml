@@ -452,9 +452,9 @@
                 <effect type="fade" start="100" end="0" time="240" delay="20" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
-                <width>1920</width>
-                <height>400</height>
-                        <visible>!IsEmpty($PARAM[WidgetPath])</visible>
+            <width>1920</width>
+            <height>400</height>
+            <visible>!IsEmpty($PARAM[WidgetPath])</visible>
             <control type="group">
                 <posx>135</posx>
                 <posy>0</posy>
@@ -746,8 +746,7 @@
                         <onup condition="Control.IsVisible(4445)">SetFocus(4445)</onup>
                         <onup condition="!Control.IsVisible(4445)">SetFocus(9000)</onup>
                         <ondown>9000</ondown>
-                        <onback>
-                            9000</onback>
+                        <onback>9000</onback>
                         <onclick condition="Substring($PARAM[WidgetType],wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
                         <visible>SubString($PARAM[WidgetType],wunderground)</visible>
                     </control>
