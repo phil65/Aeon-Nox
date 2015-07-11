@@ -664,7 +664,7 @@
         <value condition="!IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode,,:] $INFO[ListItem.Label]</value>
     </variable>
     <variable name="WidgetConfigLabelVar">
-        <value condition="Stringcompare(Window(skinsettings).Property(WidgetSelection),Widget)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
+        <value condition="Stringcompare(Window(skinsettings).Property(WidgetSelection),Widget1)">$INFO[Skin.String(ItemToEdit.Widget1Title)]</value>
         <value>$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
     </variable>
     <variable name="WidgetStyleLabelVar">
@@ -1250,18 +1250,6 @@
         <value condition="Control.HasFocus(8005)">In Theater Movies</value>
         <value condition="Control.HasFocus(8006)">Top Rated Movies</value>
         <value condition="Control.HasFocus(8007)">In Cinemas Movies</value>
-    </variable>
-    <variable name="WidgetListTargetVar">
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),addons1)">video</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),addons2)">music</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),addons3)">programs</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),addons4)">pictures</value>
-    </variable>
-    <variable name="Widget2ListTargetVar">
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),addons1)">video</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),addons2)">music</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),addons3)">programs</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),addons4)">pictures</value>
     </variable>
     <variable name="PosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
