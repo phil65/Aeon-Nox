@@ -291,74 +291,13 @@
                     </control>
                 </control>
             </control>
-            <!--
-                 <control type="textbox">
-                 <posx>550</posx>
-                 <posy>280</posy>
-                 <width>570</width>
-                 <height>311</height>
-                 <aligny>top</aligny>
-                 <label>$VAR[NowPlayingTextBoxLabelVar]</label>
-                 <font>Font_Reg26</font>
-                 <textcolor>white6</textcolor>
-                 <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                 </control> -->
         </control>
         <control type="grouplist" id="4010">
             <orientation>horizontal</orientation>
             <include>Animation_Widgets</include>
             <width>1920</width>
             <align>center</align>
-            <posy>970</posy>
-            <!--
-                 <control type="group">
-                 <width>70</width>
-                 <control type="button" id="4020">
-                 <width>100</width>
-                 <posx>-13</posx>
-                 <height>93</height>
-                 <align>center</align>
-                 <aligny>center</aligny>
-                 <onleft>4023</onleft>
-                 <onright>4021</onright>
-                 <onup>9000</onup>
-                 <ondown>9000</ondown>
-                 <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                 <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
-                 </control>
-                 <control type="image">
-                 <posy>22</posy>
-                 <height>45</height>
-                 <align>center</align>
-                 <aligny>top</aligny>
-                 <aspectratio>keep</aspectratio>
-                 <texture colordiffuse="grey2">special://skin/extras/icons/poweroff.png</texture>
-                 </control>
-                 </control>
-                 <control type="group">
-                 <width>70</width>
-                 <control type="button" id="4021">
-                 <width>100</width>
-                 <posx>-13</posx>
-                 <height>93</height>
-                 <align>center</align>
-                 <aligny>center</aligny>
-                 <onleft>4020</onleft>
-                 <onright>4022</onright>
-                 <onup>9000</onup>
-                 <ondown>9000</ondown>
-                 <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                 <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
-                 </control>
-                 <control type="image">
-                 <posy>22</posy>
-                 <height>45</height>
-                 <align>center</align>
-                 <aligny>top</aligny>
-                 <aspectratio>keep</aspectratio>
-                 <texture colordiffuse="grey2">special://skin/extras/icons/magnifier.png</texture>
-                 </control>
-                 </control> -->
+            <posy>20</posy>
             <control type="group">
                 <width>70</width>
                 <visible>Player.HasMedia</visible>
@@ -374,7 +313,7 @@
                     <ondown>9000</ondown>
                     <onclick>FullScreen</onclick>
                     <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                    <texturenofocus>-</texturenofocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                 </control>
                 <control type="image">
                     <posy>22</posy>
@@ -400,7 +339,7 @@
                     <ondown>9000</ondown>
                     <onclick>PlayDVD</onclick>
                     <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                    <texturenofocus>-</texturenofocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                 </control>
                 <control type="image">
                     <posy>22</posy>
@@ -427,7 +366,7 @@
                     <onclick condition="IntegerGreaterThan(Playlist.Length(music),1)">ActivateWindow(musicplaylist)</onclick>
                     <onclick condition="IntegerGreaterThan(Playlist.Length(video),1)">ActivateWindow(videoplaylist)</onclick>
                     <texturefocus border="40" colordiffuse="$VAR[FocusTextureColorVar]">buttons/roundedbutton-focus.png</texturefocus>
-                    <texturenofocus>-</texturenofocus>
+                    <texturenofocus border="40">buttons/roundedbutton-nofocus.png</texturenofocus>
                 </control>
                 <control type="image">
                     <posy>22</posy>
