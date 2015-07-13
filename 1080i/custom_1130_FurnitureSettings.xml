@@ -14,7 +14,7 @@
                 <posx>356</posx>
                 <posy>200</posy>
                 <width>1210</width>
-                <height>860</height>
+                <height>810</height>
                 <texture colordiffuse="$VAR[AreaColorVar]" border="50">osd/osd_settings_back_glow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <animation effect="fade" time="350">VisibleChange</animation>
@@ -24,7 +24,7 @@
                 <posx>356</posx>
                 <posy>200</posy>
                 <width>1210</width>
-                <height>860</height>
+                <height>810</height>
                 <texture colordiffuse="$VAR[DialogColorVar]" border="50">osd/osd_settings_back.png</texture>
             </control>
             <control type="image">
@@ -89,12 +89,6 @@
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[StyleLabelVar][/COLOR]</label2>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(classichome)</onclick>
-                </control>
-                <control type="radiobutton" id="456">
-                    <label>Endless List for Main Menu:</label>
-                    <include>Objects_CommonSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(mainmenufixedlist)</onclick>
-                    <selected>!Skin.HasSetting(mainmenufixedlist)</selected>
                 </control>
                 <control type="radiobutton" id="473">
                     <label>Color Panels</label>
