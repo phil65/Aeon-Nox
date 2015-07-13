@@ -9,17 +9,14 @@
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="group">
-            <posy>-130</posy>
+            <posy>0</posy>
             <control type="image">
                 <posx>356</posx>
                 <posy>200</posy>
                 <width>1210</width>
-                <height>620</height>
+                <height>860</height>
                 <texture colordiffuse="$VAR[AreaColorVar]" border="50">osd/osd_settings_back_glow.png</texture>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <animation type="Conditional" condition="!Stringcompare(Window.Property(actualItem),MainMenu) + !Stringcompare(Window.Property(actualItem),RSS)">
-                    <effect type="zoom" end="100,66" time="320" easing="in" tween="cubic" />
-                </animation>
                 <animation effect="fade" time="350">VisibleChange</animation>
                 <include>PanelGlowFade</include>
             </control>
@@ -27,11 +24,8 @@
                 <posx>356</posx>
                 <posy>200</posy>
                 <width>1210</width>
-                <height>620</height>
+                <height>860</height>
                 <texture colordiffuse="$VAR[DialogColorVar]" border="50">osd/osd_settings_back.png</texture>
-                <animation type="Conditional" condition="!Stringcompare(Window.Property(actualItem),MainMenu) + !Stringcompare(Window.Property(actualItem),RSS)">
-                    <effect type="zoom" end="100,66" time="320" easing="in" tween="cubic" />
-                </animation>
             </control>
             <control type="image">
                 <posx>375</posx>
@@ -53,7 +47,7 @@
                 <posx>375</posx>
                 <posy>292</posy>
                 <width>1172</width>
-                <height>540</height>
+                <height>720</height>
                 <aligny>center</aligny>
                 <pagecontrol>60</pagecontrol>
                 <onleft>60</onleft>
@@ -65,35 +59,30 @@
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(DisableTimePanel)</onclick>
                     <selected>Skin.HasSetting(DisableTimePanel)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),LibraryStats)</visible>
                 </control>
                 <control type="radiobutton" id="462">
                     <label>$LOCALIZE[31690]</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(DisableRSS)</onclick>
                     <selected>Skin.HasSetting(DisableRSS)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
                 <control type="button" id="467">
                     <label>$LOCALIZE[31691]</label>
                     <label2>[COLOR $VAR[FontColorVar]] $LOCALIZE[31628]: $VAR[FurniturePositionVar][/COLOR]</label2>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(totalshomehigh)</onclick>
-                    <visible>Stringcompare(Window.Property(actualItem),LibraryStats)</visible>
                 </control>
                 <control type="radiobutton" id="466">
                     <label>Show icons for main menu items</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(mainmenuicons)</onclick>
                     <selected>Skin.HasSetting(mainmenuicons)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
                 </control>
                 <control type="radiobutton" id="468">
                     <label>$LOCALIZE[31699]</label>
                     <include>Objects_CommonSettingsButton</include>
                     <selected>Skin.HasSetting(smallermainmenu)</selected>
                     <onclick>Skin.ToggleSetting(smallermainmenu)</onclick>
-                    <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
                 </control>
                 <control type="button" id="451">
                     <label>31602</label>
@@ -103,20 +92,17 @@
                     <onclick condition="Skin.HasSetting(glasshome)">Skin.SetBool(classichome)</onclick>
                     <onclick condition="Skin.HasSetting(glasshome)">Skin.Reset(glasshome)</onclick>
                     <onclick condition="Skin.HasSetting(classichome)">Skin.Reset(classichome)</onclick>
-                    <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
                 </control>
                 <control type="radiobutton" id="456">
                     <label>Endless List for Main Menu:</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(mainmenufixedlist)</onclick>
                     <selected>!Skin.HasSetting(mainmenufixedlist)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),MainMenu)</visible>
                 </control>
                 <control type="radiobutton" id="473">
                     <label>Color Panels</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.Togglesetting(colorpanels)</onclick>
-                    <visible>Stringcompare(Window.Property(actualItem),LibraryStats) | Stringcompare(Window.Property(actualItem),LibraryStats)</visible>
                 </control>
                 <control type="radiobutton" id="482">
                     <label>$LOCALIZE[31698]</label>
@@ -124,14 +110,12 @@
                     <enable>!Skin.HasSetting(DisableRSS)</enable>
                     <onclick>Skin.ToggleSetting(ActorBirthdayRSS)</onclick>
                     <selected>Skin.HasSetting(ActorBirthdayRSS)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
                 <control type="radiobutton" id="305">
                     <label>31615</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
                     <selected>Skin.HasSetting(ShowBackgroundVis)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
                 <control type="button" id="309">
                     <label>$LOCALIZE[31802]:</label>
@@ -143,14 +127,12 @@
                     <onclick condition="Skin.HasSetting(artistslideshowhome)">Skin.SetBool(musicfanarthome)</onclick>
                     <onclick condition="Skin.HasSetting(artistslideshowhome)">Skin.Reset(artistslideshowhome)</onclick>
                     <onclick condition="Skin.HasSetting(musicfanarthome)">Skin.Reset(musicfanarthome)</onclick>
-                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
                 <control type="radiobutton" id="306">
                     <label>31611</label>
                     <include>Objects_CommonSettingsButton</include>
                     <onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
                     <selected>Skin.HasSetting(ShowBackgroundVideo)</selected>
-                    <visible>Stringcompare(Window.Property(actualItem),RSS)</visible>
                 </control>
             </control>
         </control>
