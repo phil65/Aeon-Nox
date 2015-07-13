@@ -577,12 +577,10 @@
         <value>$LOCALIZE[17]$INFO[Container(206).NumItems, (,)]</value>
     </variable>
     <variable name="HomeMenuBackVar">
-        <value condition="Skin.HasSetting(glasshome)">home/homemenu_back_glass.png</value>
         <value condition="Skin.HasSetting(classichome)">home/homemenu_back.png</value>
         <value>home/homemenu_back_nox.png</value>
     </variable>
     <variable name="StyleLabelVar">
-        <value condition="Skin.HasSetting(glasshome)">$LOCALIZE[31684]</value>
         <value condition="Skin.HasSetting(classichome)">$LOCALIZE[31685]</value>
         <value>$LOCALIZE[31686]</value>
     </variable>
@@ -666,11 +664,6 @@
     <variable name="WidgetConfigLabelVar">
         <value condition="Stringcompare(Window(skinsettings).Property(WidgetSelection),Widget1)">$INFO[Skin.String(ItemToEdit.Widget1Title)]</value>
         <value>$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
-    </variable>
-    <variable name="WidgetStyleLabelVar">
-        <value condition="Stringcompare(Window(home).Property(Transparency),default)">$LOCALIZE[31685]</value>
-        <value condition="Stringcompare(Window(home).Property(Transparency),glass)">$LOCALIZE[31684]</value>
-        <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="MusicOSDRepeatClassicButtonVar">
         <value condition="Playlist.IsRepeatOne">osd/buttons/OSDRepeatOneNF.png</value>

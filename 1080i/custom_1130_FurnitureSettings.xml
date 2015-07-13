@@ -88,10 +88,7 @@
                     <label>31602</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[StyleLabelVar][/COLOR]</label2>
                     <include>Objects_CommonSettingsButton</include>
-                    <onclick condition="!Skin.HasSetting(classichome) + !Skin.HasSetting(glasshome)">Skin.SetBool(glasshome)</onclick>
-                    <onclick condition="Skin.HasSetting(glasshome)">Skin.SetBool(classichome)</onclick>
-                    <onclick condition="Skin.HasSetting(glasshome)">Skin.Reset(glasshome)</onclick>
-                    <onclick condition="Skin.HasSetting(classichome)">Skin.Reset(classichome)</onclick>
+                    <onclick>Skin.ToggleSetting(classichome)</onclick>
                 </control>
                 <control type="radiobutton" id="456">
                     <label>Endless List for Main Menu:</label>

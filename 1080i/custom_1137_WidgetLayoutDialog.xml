@@ -2,7 +2,6 @@
 <window id="1137" type="dialog">
     <defaultcontrol always="true">5400</defaultcontrol>
     <onload>Dialog.Close(1133)</onload>
-    <onload>SetProperty(Transparency,default,home)</onload>
     <onunload>ClearProperty(CustomYesNoDialog,skinsettings)</onunload>
     <onunload>ClearProperty(WidgetType,skinsettings)</onunload>
     <coordinates>
@@ -13,7 +12,7 @@
     <include>Animation_DialogPopupOpenClose</include>
     <controls>
         <control type="label" id="12112">
-            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(home).Property(Transparency)]$INFO[Window(home).Property(PreviewWidget)]</label>
+            <label>$INFO[Window(skinsettings).Property(CustomYesNoDialog)]$INFO[Window(skinsettings).Property(WidgetType)]$INFO[Window(home).Property(PreviewWidget)]</label>
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
         <control type="group">
@@ -52,20 +51,6 @@
                         <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
                         <textcolor>white3</textcolor>
                         <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Title)</onclick>
-                    </control>
-                    <control type="button" id="5302">
-                        <width>837</width>
-                        <height>62</height>
-                        <textoffsetx>25</textoffsetx>
-                        <label>Choose widget style</label>
-                        <label2>$VAR[WidgetStyleLabelVar]</label2>
-                        <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
-                        <textcolor>white3</textcolor>
-                        <onclick condition="Stringcompare(Window(home).Property(Transparency),glass)">SetProperty(Transparency,2,home)</onclick>
-                        <onclick condition="Stringcompare(Window(home).Property(Transparency),default)">SetProperty(Transparency,glass,home)</onclick>
-                        <onclick condition="Stringcompare(Window(home).Property(Transparency),2)">SetProperty(Transparency,default,home)</onclick>
-                        <onclick condition="Stringcompare(Window(home).Property(Transparency),glass)">SetProperty(Transparency,2,home)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(skinsettings).Property(WidgetSelection)]Type,$INFO[Control.GetLabel(12112)])</onclick>
                     </control>
                     <control type="radiobutton" id="5303">
                         <width>837</width>
