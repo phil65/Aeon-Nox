@@ -1522,12 +1522,6 @@
         <value condition="Substring(Control.GetLabel(4328),caserecentalbums,left)">special://skin/extras/Playlists/recentalbums8.xsp</value>
         <value condition="Substring(Control.GetLabel(4328),casemostplayedalbums,left)">special://skin/extras/Playlists/mostplayedalbums8.xsp</value>
     </variable>
-    <variable name="NowPlayingTextBoxLabelVar">
-        <value condition="Window.IsActive(visualisation) + !Skin.HasSetting(activatepanelrotation)">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[24016]:  [COLOR white6],[/COLOR][CR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[24017]: [COLOR white6],[/COLOR][CR]]$INFO[Window(visualisation).Property(ArtistSlideshow.ArtistBiography),$LOCALIZE[21887]:  [COLOR white6],[/COLOR]]</value>
-        <value condition="!IsEmpty(MusicPlayer.Property(Album_Description))">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[24016]:  [COLOR white6],[/COLOR][CR]]</value>
-        <value condition="!IsEmpty(MusicPlayer.Property(Artist_Description))">$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[24017]: [COLOR white6],[/COLOR][CR]]</value>
-        <value>$INFO[Window(visualisation).Property(ArtistSlideshow.ArtistBiography),$LOCALIZE[21887]:  [COLOR white6],[/COLOR]]</value>
-    </variable>
     <variable name="NowPlayingTextBoxLabelVar2">
         <value condition="!IsEmpty(Window(visualisation).Property(ArtistSlideshow.ArtistBiography))">$INFO[Window(visualisation).Property(ArtistSlideshow.ArtistBiography),$LOCALIZE[21887]:  [COLOR white6],[/COLOR]]</value>
         <value condition="!IsEmpty(MusicPlayer.Property(Artist_Description))">$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[24017]: [COLOR white6],[/COLOR][CR]]</value>
@@ -1604,13 +1598,7 @@
         <value condition="Container.Content(albums)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist]\$INFO[ListItem.Album,,\cdart.png]</value>
         <value condition="Window.IsActive(musicinformation)">$INFO[ListItem.FileNameAndPath,,/cdart.png]</value>
         <value>$INFO[ListItem.Path,,cdart.png]</value>
-    </variable>
-    <variable name="cdARTWidget1Var">
-        <value condition="Stringcompare(Skin.String(LibraryStructure),2)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)]\$INFO[Window(home).Property(Year)] - $INFO[Container(5010).ListItem.Label,,\cdart.png]</value>
-        <value condition="Stringcompare(Skin.String(LibraryStructure),3)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)]\$INFO[Container(5010).ListItem.Label] $INFO[Window(home).Property(Year),(,)\cdart.png]</value>
-        <value condition="Stringcompare(Skin.String(LibraryStructure),4)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)] - $INFO[Container(5010).ListItem.Label] $INFO[Window(home).Property(Year),(,)\cdart.png]</value>
-        <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[Window(home).Property(Label2)]\$INFO[Container(5010).ListItem.Label,,\cdart.png]</value>
-    </variable>
+    </variable>>
     <variable name="ShutdownTopVar">
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_top_shutdown_glow.png</value>
         <value>dialogs/context_top_shutdown.png</value>
@@ -1637,14 +1625,6 @@
         <value condition="Container.Content(movies) + Skin.HasSetting(FloorLabelTagline)">$INFO[Listitem.Genre]</value>
         <value condition="Container.Content(tvshows) + Control.IsVisible(8858)">$INFO[Listitem.TvShowTitle]</value>
         <value>$INFO[Listitem.TagLine]</value>
-    </variable>
-    <variable name="WidgetTextboxVar">
-        <value condition="Substring(Window(home).Property(Widget1Type),pics)">$INFO[Window(home).Property(Fanart)]</value>
-        <value condition="!IsEmpty(Window(home).Property(Plot))">$INFO[Window(home).Property(Plot)]</value>
-        <value condition="!IsEmpty(Window(home).Property(Album_Description))">$INFO[Window(home).Property(Album_Description)]</value>
-        <value condition="!IsEmpty(Window(home).Property(Artist_Description))">$INFO[Window(home).Property(Artist_Description)]</value>
-        <value condition="!IsEmpty(Window(home).Property(Addon.Description))">$INFO[Window(home).Property(Addon.Description)]</value>
-        <value>$INFO[Window(home).Property(Description)]</value>
     </variable>
     <variable name="InfoPanelStyleVar">
         <value condition="Control.IsVisible(501) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
