@@ -3,8 +3,8 @@
     <defaultcontrol always="true">1200</defaultcontrol>
     <onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
     <onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
-    <onload condition="[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp) | SubString(Container.FolderPath,plugin://)]">Action(close)</onload>
-    <onload condition="[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp) | SubString(Container.FolderPath,plugin://)]">RunScript(script.extendedinfo,info=openinfodialog)</onload>
+    <onload condition="[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp) | SubString(Container.FolderPath,plugin://)] + !Container.Content(episodes)">Action(close)</onload>
+    <onload condition="[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,.xsp) | SubString(Container.FolderPath,plugin://)] + !Container.Content(episodes)">RunScript(script.extendedinfo,info=openinfodialog)</onload>
     <controls>
         <control type="button" id="1200">
             <include>HiddenObject</include>
