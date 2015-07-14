@@ -111,10 +111,10 @@
                     <effect type="fade" start="100" end="0" time="200" />
                     <condition type="!Player.Playing" />
                 </animation>
-                <posx>-110</posx>
-                <posy>920</posy>
-                <width>360</width>
-                <height>360</height>
+                <posx>-140</posx>
+                <posy>-170</posy>
+                <width>260</width>
+                <height>260</height>
                 <aligny>top</aligny>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
@@ -125,8 +125,8 @@
             </control>
             <control type="image">
                 <width>2100</width>
-                <posy>900</posy>
-                <height>600</height>
+                <posy>0</posy>
+                <height>400</height>
                 <texture colordiffuse="black" flipy="true">home/nowplaying_shadow.png</texture>
                 <animation effect="fade" time="500" delay="160">Visible</animation>
                 <animation effect="fade" time="700">Hidden</animation>
@@ -143,7 +143,7 @@
                 <effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
             </animation>
             <control type="group" id="8995">
-                <posy>260</posy>
+                <posy>0</posy>
                 <posx>15</posx>
                 <control type="group">
                     <visible>Player.HasAudio</visible>
@@ -157,17 +157,17 @@
                     </animation>
                     <control type="textbox">
                         <posx>0</posx>
-                        <posy>700</posy>
+                        <posy>0</posy>
                         <width>830</width>
                         <align>left</align>
                         <height>110</height>
-                        <label>$INFO[MusicPlayer.Artist][CR]$INFO[MusicPlayer.Album] [$INFO[MusicPlayer.Year]][CR][COLOR=$VAR[FontColorVar]]$INFO[MusicPlayer.TrackNumber]: [/COLOR]$INFO[MusicPlayer.Title]</label>
+                        <label>$INFO[MusicPlayer.Artist][CR]$INFO[MusicPlayer.Album] [$INFO[MusicPlayer.Year]] - [COLOR=$VAR[FontColorVar]]$INFO[MusicPlayer.TrackNumber]: [/COLOR]$INFO[MusicPlayer.Title]</label>
                         <font>Font_Reg22_2</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="progress">
                         <posx>0</posx>
-                        <posy>797</posy>
+                        <posy>67</posy>
                         <width>200</width>
                         <height>7</height>
                         <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
@@ -178,32 +178,18 @@
                 <control type="group" id="8994">
                     <visible>Player.HasVideo</visible>
                     <include>Animation_CommonFade</include>
-                    <!--
-                         <control type="image">
-                         <animation effect="zoom" end="40" center="-70,675" time="320" tween="cubic" easing="inout" condition="!Control.HasFocus(2020)">Conditional</animation>
-                         <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
-                         <include>Animation_CommonFade</include>
-                         <visible>!IsEmpty(VideoPlayer.Cover)</visible>
-                         <posx>16</posx>
-                         <posy>710</posy>
-                         <width>480</width>
-                         <height>300</height>
-                         <aspectratio>scale</aspectratio>
-                         <texture>$INFO[VideoPlayer.Cover]</texture>
-                         <fadetime>IconCrossfadeTime</fadetime>
-                         </control> -->
                     <control type="textbox">
                         <aligny>top</aligny>
                         <posx>0</posx>
-                        <posy>700</posy>
+                        <posy>0</posy>
                         <height>110</height>
-                        <label>$INFO[VideoPlayer.Premiered]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Rating,  •  ][CR]$INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x,: ][B]$INFO[VideoPlayer.Title][/B][CR]$INFO[VideoPlayer.Genre]$INFO[VideoPlayer.TVShowTitle]</label>
+                        <label>$INFO[VideoPlayer.Premiered]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Rating,  •  ][CR]$INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x,: ][B]$INFO[VideoPlayer.Title][/B]</label>
                         <font>Font_Reg22_2</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="progress">
                         <posx>0</posx>
-                        <posy>797</posy>
+                        <posy>67</posy>
                         <width>200</width>
                         <height>7</height>
                         <texturebg colordiffuse="$VAR[FontColorVar]" border="3">new_pvr/texturebg_border_white.png</texturebg>
@@ -213,11 +199,11 @@
                 </control>
                 <control type="textbox">
                     <posx>1055</posx>
-                    <posy>695</posy>
+                    <posy>-5</posy>
                     <width>830</width>
                     <align>right</align>
                     <height>115</height>
-                    <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B][CR]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(3).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(3).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(3).Duration, - ,][/COLOR]</label>
+                    <label>[B][UPPERCASE]$LOCALIZE[31889][/UPPERCASE][/B][CR]$INFO[MusicPlayer.Offset(1).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(1).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(1).Duration, - ,][/COLOR][CR]$INFO[MusicPlayer.Offset(2).Title,, - ][COLOR white3]$INFO[MusicPlayer.Offset(2).Artist,,][/COLOR][COLOR $VAR[FontColorVar]]$INFO[MusicPlayer.Offset(2).Duration, - ,][/COLOR]</label>
                     <font>Font_Reg22_2</font>
                     <textcolor>$VAR[FontColorVar]</textcolor>
                     <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
@@ -225,7 +211,7 @@
                 </control>
                 <control type="image">
                     <posx>1570</posx>
-                    <posy>680</posy>
+                    <posy>-20</posy>
                     <width>300</width>
                     <height>140</height>
                     <aspectratio>keep</aspectratio>
@@ -234,40 +220,10 @@
                     <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
                     <visible>!IsEmpty(VideoPlayer.Cover)</visible>
                 </control>
-                <!--
-                     <control type="grouplist">
-                     <visible>VideoPlayer.Content(movies)</visible>
-                     <posx>825</posx>
-                     <posy>710</posy>
-                     <width>855</width>
-                     <height>1080</height>
-                     <orientation>vertical</orientation>
-                     <control type="label">
-                     <width>830</width>
-                     <height>26</height>
-                     <align>right</align>
-                     <label>$INFO[VideoPlayer.Genre]  [COLOR $VAR[FontColorVar]]  -  Genre[/COLOR]</label>
-                     <font>Font_Reg22_2</font>
-                     </control>
-                     <control type="label">
-                     <width>830</width>
-                     <height>26</height>
-                     <align>right</align>
-                     <label>$INFO[VideoPlayer.Director]  [COLOR $VAR[FontColorVar]]  -  Director[/COLOR]</label>
-                     <font>Font_Reg22_2</font>
-                     </control>
-                     <control type="label">
-                     <width>830</width>
-                     <height>26</height>
-                     <align>right</align>
-                     <label>$INFO[VideoPlayer.Writer]  [COLOR $VAR[FontColorVar]]  -  Writer[/COLOR]</label>
-                     <font>Font_Reg22_2</font>
-                     </control>
-                     </control> -->
                 <control type="grouplist">
                     <visible>VideoPlayer.Content(LiveTV)</visible>
                     <posx>1055</posx>
-                    <posy>700</posy>
+                    <posy>0</posy>
                     <width>950</width>
                     <height>1080</height>
                     <orientation>vertical</orientation>
