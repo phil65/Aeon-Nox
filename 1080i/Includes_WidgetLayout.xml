@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <include name="WeatherDailyItem">
+        <item id="$PARAM[item_id]">
+            <label>$INFO[Window(weather).Property(Daily.$PARAM[item_id].LongDay)]</label>
+            <label2>$INFO[Window(weather).Property(Daily.$PARAM[item_id].LongDate)]</label2>
+            <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(Daily.$PARAM[item_id].FanartCode)]/1.jpg</property>
+            <property name="FanartCode">$INFO[Window(weather).Property(Daily.$PARAM[item_id].FanartCode)]</property>
+            <property name="Humidity">$INFO[Window(weather).Property(Daily.$PARAM[item_id].Humidity)]</property>
+            <property name="Pressure">$INFO[Window(weather).Property(Daily.$PARAM[item_id].Pressure)]</property>
+            <property name="DewPoint">$INFO[Window(weather).Property(Daily.$PARAM[item_id].DewPoint)]</property>
+            <property name="FeelsLike">$INFO[Window(weather).Property(Daily.$PARAM[item_id].FeelsLike)]</property>
+            <property name="Rain">$INFO[Window(weather).Property(Daily.$PARAM[item_id].Rain)]</property>
+            <property name="Snow">$INFO[Window(weather).Property(Daily.$PARAM[item_id].Snow)]</property>
+            <property name="TempMorn">$INFO[Window(weather).Property(Daily.$PARAM[item_id].TempMorn)]</property>
+            <property name="TempDay">$INFO[Window(weather).Property(Daily.$PARAM[item_id].TempDay)]</property>
+            <property name="TempEve">$INFO[Window(weather).Property(Daily.$PARAM[item_id].TempEve)]</property>
+            <property name="TempNight">$INFO[Window(weather).Property(Daily.$PARAM[item_id].TempNight)]</property>
+            <property name="WindSpeed">$INFO[Window(weather).Property(Daily.$PARAM[item_id].WindSpeed)]</property>
+            <property name="WindGust">$INFO[Window(weather).Property(Daily.$PARAM[item_id].WindGust)]</property>
+            <property name="WindDirection">$INFO[Window(weather).Property(Daily.$PARAM[item_id].WindDirection)]</property>
+            <property name="Precipitation">$INFO[Window(weather).Property(Daily.$PARAM[item_id].Precipitation)]</property>
+            <property name="LowTemperature">$INFO[Window(weather).Property(Daily.$PARAM[item_id].LowTemperature)]</property>
+            <property name="HighTemperature">$INFO[Window(weather).Property(Daily.$PARAM[item_id].HighTemperature)]</property>
+            <property name="Outlook">$INFO[Window(weather).Property(Daily.$PARAM[item_id].Outlook)]</property>
+            <property name="Cloudiness">$INFO[Window(weather).Property(Daily.$PARAM[item_id].Cloudiness)]</property>
+            <onclick>SetProperty(FocusedItem,$PARAM[item_id])</onclick>
+            <icon>$INFO[Window(weather).Property(Daily.$PARAM[item_id].OutlookIcon)]</icon>
+        </item>
+    </include>
+    <include name="WeatherHourlyItem">
+        <item id="$PARAM[item_id]">
+            <label>$INFO[Window(weather).Property(Hourly.$PARAM[item_id].Time)]</label>
+            <label2>$INFO[Window(weather).Property(Hourly.$PARAM[item_id].LongDate)]</label2>
+            <property name="Fanart">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/$INFO[Window(weather).Property(Hourly.$PARAM[item_id].FanartCode)]/1.jpg</property>
+            <property name="Humidity">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].Humidity)]</property>
+            <property name="WindSpeed">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].WindSpeed)]</property>
+            <property name="WindDirection">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].WindDirection)]</property>
+            <property name="Precipitation">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].Precipitation)]</property>
+            <property name="FeelsLike">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].FeelsLike)]</property>
+            <property name="Temperature">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].Temperature)]</property>
+            <property name="Outlook">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].Outlook)]</property>
+            <onclick>noop</onclick>
+            <icon>$INFO[Window(weather).Property(Hourly.$PARAM[item_id].OutlookIcon)]</icon>
+        </item>
+    </include>
     <include name="Weather_Widget">
         <control type="group">
             <posy>410</posy>
